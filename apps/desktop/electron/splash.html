@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline';" />
+    <title>Starting Jtutor</title>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: grid;
+        place-items: center;
+        font-family: "Segoe UI", -apple-system, system-ui, sans-serif;
+        color: #f2efe6;
+        background:
+          radial-gradient(600px 300px at 20% -20%, rgba(224, 164, 90, 0.22), transparent 60%),
+          linear-gradient(160deg, #142033, #0f1828);
+        user-select: none;
+        -webkit-app-region: drag;
+      }
+      .wrap { text-align: center; padding: 0 2rem; }
+      .brand { font-size: 2.1rem; letter-spacing: 0.05em; margin: 0 0 0.15rem; font-weight: 600; }
+      .brand span { color: #e0a45a; }
+      .sub { color: #a8b4c7; font-size: 0.82rem; margin: 0 0 1.6rem; }
+      .bar { width: 220px; height: 4px; border-radius: 999px; background: rgba(242,239,230,.12); overflow: hidden; margin: 0 auto 1rem; }
+      .bar i { display: block; height: 100%; width: 40%; border-radius: 999px;
+               background: linear-gradient(90deg, #5bb8a8, #e0a45a); animation: slide 1.4s ease-in-out infinite; }
+      @keyframes slide { 0% { transform: translateX(-100%);} 100% { transform: translateX(250%);} }
+      #status { color: #a8b4c7; font-size: 0.85rem; min-height: 1.2em; margin: 0; }
+      @media (prefers-reduced-motion: reduce) { .bar i { animation: none; width: 100%; } }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <p class="brand">J<span>tutor</span></p>
+      <p class="sub">Irodori · local Japanese tutor</p>
+      <div class="bar"><i></i></div>
+      <p id="status">Starting…</p>
+    </div>
+    <script>
+      window.setStatus = (text) => {
+        document.getElementById("status").textContent = text;
+      };
+    </script>
+  </body>
+</html>

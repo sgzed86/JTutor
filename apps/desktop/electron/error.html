@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jtutor — could not load</title>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: grid; place-items: center; padding: 2rem;
+        font-family: "Segoe UI", -apple-system, system-ui, sans-serif;
+        color: #f2efe6; background: linear-gradient(160deg, #142033, #0f1828);
+      }
+      .card {
+        max-width: 560px; width: 100%; padding: 1.75rem 1.9rem;
+        border: 1px solid rgba(242,239,230,.12); border-radius: 16px;
+        background: rgba(28,43,68,.72);
+      }
+      h1 { font-size: 1.3rem; margin: 0 0 .6rem; }
+      p { color: #a8b4c7; line-height: 1.55; margin: 0 0 .9rem; }
+      code { background: rgba(10,16,28,.55); padding: .15rem .4rem; border-radius: 6px; font-size: .85em; }
+      .row { display: flex; gap: .6rem; margin-top: 1.2rem; }
+      button {
+        font: inherit; cursor: pointer; border-radius: 999px; padding: .55rem 1.1rem;
+        border: 1px solid rgba(242,239,230,.12); background: #243552; color: #f2efe6;
+      }
+      button.primary { background: linear-gradient(135deg, #d79445, #c47a2e); color: #1a1208; border-color: transparent; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Jtutor couldn't load its window</h1>
+      <p id="detail">The app started, but the interface failed to load.</p>
+      <p>This usually means the backend stopped after the window opened. Retrying is safe — nothing you have studied is lost.</p>
+      <div class="row">
+        <button class="primary" onclick="location.reload()">Retry</button>
+        <button onclick="window.jtutor && window.jtutor.openLogs()">Open log</button>
+      </div>
+    </div>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const code = params.get("code");
+      const message = params.get("message");
+      const url = params.get("url");
+      const bits = [];
+      if (message) bits.push(message);
+      if (code) bits.push("(error " + code + ")");
+      if (url) bits.push("\u2014 " + url);
+      if (bits.length) document.getElementById("detail").textContent = bits.join(" ");
+    </script>
+  </body>
+</html>

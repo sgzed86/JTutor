@@ -1,0 +1,64 @@
+/* Design tokens. Components reference these only — no raw hex values below. */
+
+:root {
+  /* spacing, 4px base */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+
+  /* radii */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-full: 999px;
+
+  /* type */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.85rem;
+  --fs-md: 0.95rem;
+  --fs-lg: 1.1rem;
+  --fs-xl: 1.35rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: clamp(1.9rem, 3.4vw, 2.6rem);
+
+  --lh-tight: 1.3;
+  --lh-body: 1.55;
+  --lh-jp: 1.7;
+
+  /* layout */
+  --rail-w: 288px;
+  --ctx-w: 340px;
+  --titlebar-h: 52px;
+  --transport-h: 84px;
+
+  /* motion */
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --dur-slow: 320ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* fonts — bundled locally; no CDN dependency for an offline app */
+  --font-body: "Inter", "Segoe UI", -apple-system, "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-mincho: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  --font-gothic: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  --font-jp: var(--font-mincho);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+}
+
+:root[data-jp-font="gothic"] {
+  --font-jp: var(--font-gothic);
+}
+
+:root[data-text-size="large"] {
+  --fs-sm: 0.95rem;
+  --fs-md: 1.05rem;
+  --fs-lg: 1.2rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 1.95rem;
+}
