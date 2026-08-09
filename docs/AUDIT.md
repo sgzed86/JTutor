@@ -1052,3 +1052,33 @@ Deliberately **not** in the next cycle: the `TutorMode` base class, the `quiz_in
 and the typed `Step` contract. They are the right end state and they are the reason §10
 exists, but each one rewrites code that currently has zero test coverage. Land item 6 first
 and they become routine.
+
+---
+
+## 12. Implementation status (Tier 1)
+
+Tracked on branch `cursor/implement-audit-fixes-43e9` — [PR #3](https://github.com/sgzed86/JTutor/pull/3).
+
+| Tier | Item | Status |
+|---|---|---|
+| 1.1 | Server-side lesson unlock | Done — `lesson_access.locked_response` on tutor routes |
+| 1.2 | Can-do loop messaging | Done — `_announce_can_do_retry` |
+| 1.3 | Honest scores + mastery on heuristic path | Done — `phrase_grade`, orchestrator |
+| 1.4 | Sync `transcribe` | Done |
+| 1.5 | YAML mtime cache | Done — `curriculum_loader` |
+| 1.6 | TTS LRU + shared httpx client | Done — `voicevox_client` |
+| 1.7 | Whisper tune + warm | Done |
+| 1.8 | `recordingModeRef` on manual advance | Done — `Tutor.tsx` |
+| 1.9 | Jump Can-do dev-only + keep transcript | Done |
+| 1.10–1.11 | FSRS fields + card front | Done — `srs_service` |
+| 1.12 | CORS allowlist | Done — `main.py` |
+| 1.13 | Electron spawn error + single instance | Done |
+| 1.14 | Bundle web fonts locally | **Open** |
+| 1.15 | `api.pdfUrl` with book | Done |
+| 1.16 | `book_title` in Starter index | Done |
+| 1.17 | Dead code / unused imports | **Partial** |
+| 2.2 | `validate_curriculum.py` | Done; CI runs non-strict; `--strict` after L03–L18 content fix |
+| 2.7 | L00 classroom tracks | Done — `book_tracks` keeps `classroom` for `L00` only |
+| 2.10 | Pytest + CI | Done — phrase grade + lesson access tests |
+
+**Next recommended:** 2.3 (Starter script extraction), 2.8 (bounded tutor payload), 2.12 (speed slider in Settings; backend `voice_speed_scale` already wired).
