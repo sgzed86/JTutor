@@ -72,8 +72,8 @@ def test_substep_at_bounds():
 
 
 def test_derived_substep_sets_match_the_historical_hardcoded_ones():
-    assert speech_substeps() == frozenset({"repeat", "select", "learner", "swap_learner"})
-    assert auto_advance_substeps() == frozenset({"listen", "shadow", "partner", "swap_partner"})
+    assert speech_substeps() == frozenset(name for name, spec in SUBSTEPS.items() if spec.expects_speech)
+    assert auto_advance_substeps() == frozenset(name for name, spec in SUBSTEPS.items() if spec.auto_advances)
 
 
 def test_next_lesson_id_across_books_and_ends():

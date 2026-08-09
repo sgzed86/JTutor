@@ -18,6 +18,10 @@ BookMode = Literal[
     "listen_select",
     "dialog",
     "shadow_dialog",
+    "pronunciation",
+    "vocab_drill",
+    "kana_trace",
+    "culture_read",
     "repeat",
 ]
 

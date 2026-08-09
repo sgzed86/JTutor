@@ -22,6 +22,10 @@ FLOW_BY_MODE: dict[str, list[str]] = {
     "dialog": ["listen", "shadow", "partner", "learner", "swap_learner", "swap_partner"],
     # Standalone shadow-only activity (optional YAML book_mode)
     "shadow_dialog": ["shadow"],
+    "pronunciation": ["listen", "pronounce"],
+    "vocab_drill": ["listen", "vocab_say"],
+    "kana_trace": ["listen", "trace"],
+    "culture_read": ["listen", "reflect"],
     "repeat": ["listen", "repeat"],  # legacy default
 }
 
@@ -71,6 +75,22 @@ SUBSTEPS: dict[str, SubStepSpec] = {
     "swap_partner": SubStepSpec(
         "swap_partner", False, True, False, False,
         "Swap — partner", "Roles swapped: Yuki replies.",
+    ),
+    "pronounce": SubStepSpec(
+        "pronounce", True, False, False, True,
+        "Pronunciation", "Say the word clearly.",
+    ),
+    "vocab_say": SubStepSpec(
+        "vocab_say", True, False, False, True,
+        "Vocabulary", "Say each word aloud.",
+    ),
+    "trace": SubStepSpec(
+        "trace", False, True, True, False,
+        "Trace", "Listen and trace the characters in your book.",
+    ),
+    "reflect": SubStepSpec(
+        "reflect", False, True, False, False,
+        "Reflect", "Read the culture note in your book.",
     ),
 }
 

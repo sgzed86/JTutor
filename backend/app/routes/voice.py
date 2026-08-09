@@ -28,6 +28,10 @@ class SetSpeakerIn(BaseModel):
     speaker_id: int = Field(..., ge=0)
 
 
+class SetSpeedIn(BaseModel):
+    speed_scale: float = Field(..., ge=0.5, le=2.0)
+
+
 @router.post("/speak")
 async def speak(body: SpeakIn):
     if not body.text.strip():
@@ -45,6 +49,12 @@ async def speak(body: SpeakIn):
         raise VoicevoxDown(detail=str(e)) from e
     except ValueError as e:
         raise InvalidRequest(str(e)) from e
+    log_event(
+        "voice",
+        "speak",
+        chars=len(body.text),
+        speaker_id=body.speaker_id if body.speaker_id is not None else voicevox_client.get_selected_speaker_id(),
+    )
     return Response(content=wav, media_type="audio/wav")
 
 
@@ -90,6 +100,13 @@ async def set_speaker(body: SetSpeakerIn):
     return {"ok": True, "selected_speaker_id": sid}
 
 
+@router.post("/set-speed")
+def set_speed(body: SetSpeedIn):
+    scale = voicevox_client.set_speed_scale(body.speed_scale)
+    log_event("voice", "set_speed", speed_scale=scale)
+    return {"ok": True, "voice_speed_scale": scale}
+
+
 @router.post("/transcribe")
 async def transcribe(
     file: UploadFile = File(...),  # noqa: B008 - FastAPI dependency marker
@@ -97,7 +114,7 @@ async def transcribe(
 ):
     suffix = Path(file.filename or "audio.webm").suffix or ".webm"
     with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
-        data = await file.read()
+        data = file.file.read()
         tmp.write(data)
         tmp_path = Path(tmp.name)
     try:
@@ -139,4 +156,5 @@ def voice_settings():
         "whisper_model": settings.whisper_model,
         "whisper_device": settings.whisper_device,
         "tts_cache": speech_service.stats(),
+        "voice_speed_scale": voicevox_client.get_speed_scale(),
     }

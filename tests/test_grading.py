@@ -30,7 +30,7 @@ from backend.app.phrase_grade import (
         ("ありがとう御座います", "ありがとうございます"),
         ("すみません！", "すみません"),
         ("日本語", "にほんご"),
-        ("コーヒー", "こひ"),
+        ("コーヒー", "こーひー"),
     ],
 )
 def test_normalization(raw, expected):
@@ -79,10 +79,11 @@ def test_no_expected_phrases_accepts_any_japanese():
 
 
 def test_strictness_changes_the_verdict_not_the_normalization():
-    said, target = "おはよ", "おはようございます"
+    said, target = "こんにちは", "おはようございます"
     lenient = grade_phrases(said, [target], spoken=True, policy=GradingPolicy(48, 38))
     strict = grade_phrases(said, [target], spoken=True, policy=GradingPolicy(90, 80))
     assert strict["passed"] is False
+    assert lenient["passed"] is False
     assert lenient["score"] == strict["score"]
 
 

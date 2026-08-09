@@ -35,21 +35,32 @@ def _to_fsrs_card(row: SrsCard) -> Card:
     card.stability = row.stability if row.stability else None
     card.difficulty = row.difficulty if row.difficulty else None
     try:
-        card.state = State(row.state) if row.state else State.Learning
+        if row.state is None:
+            card.state = State.New
+        else:
+            card.state = State(row.state)
     except Exception:
         card.state = State.Learning
     if row.last_review:
         card.last_review = _aware(row.last_review)
+    card.reps = int(row.reps or 0)
+    card.lapses = int(row.lapses or 0)
+    card.scheduled_days = int(row.scheduled_days or 0)
+    card.elapsed_days = int(row.elapsed_days or 0)
     return card
 
 
-def _apply_fsrs(row: SrsCard, card: Card) -> None:
+def _apply_fsrs(row: SrsCard, card: Card, *, rating: int) -> None:
     row.due = _naive(card.due) or datetime.utcnow()
     row.stability = float(card.stability or 0)
     row.difficulty = float(card.difficulty or 0)
     row.state = int(card.state.value) if card.state is not None else 0
     row.last_review = _naive(card.last_review)
     row.reps = int(row.reps or 0) + 1
+    row.scheduled_days = int(getattr(card, "scheduled_days", 0) or 0)
+    row.elapsed_days = int(getattr(card, "elapsed_days", 0) or 0)
+    if rating == 1:
+        row.lapses = int(row.lapses or 0) + 1
 
 
 def enqueue_vocab(
@@ -85,7 +96,7 @@ def enqueue_vocab(
                 card_type="vocab_production",
                 lesson_id=lesson_id,
                 can_do_id=can_do_id,
-                front=f"Say in Japanese (from lesson {lesson_id}): concept related to 「{ph}」",
+                front=f"Say in Japanese (lesson {lesson_id})",
                 back=ph,
                 due=datetime.utcnow(),
             )
@@ -176,7 +187,7 @@ def review_card(db: Session, card_id: int, rating: int) -> SrsCard:
     rating_map = {1: Rating.Again, 2: Rating.Hard, 3: Rating.Good, 4: Rating.Easy}
     r = rating_map.get(rating, Rating.Good)
     updated, _review_log = _scheduler.review_card(card, r)
-    _apply_fsrs(row, updated)
+    _apply_fsrs(row, updated, rating=rating)
     db.add(SrsReview(card_id=card_id, rating=rating))
     db.commit()
     db.refresh(row)

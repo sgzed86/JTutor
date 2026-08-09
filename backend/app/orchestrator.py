@@ -14,11 +14,45 @@ from backend.app.config import settings
 from backend.app.curriculum_loader import load_lesson
 from backend.app.db import CanDoProgress, ChatSession, LessonProgress
 from backend.app.free_response import acknowledge_intro, intro_questions, intro_step
+from backend.app.lesson_access import locked_response
+from backend.app.lesson_controller import current_step_snapshot
 from backend.app.lesson_progress import lesson_progress_snapshot
 from backend.app.lesson_unlock import is_lesson_unlocked, next_lesson_id
 from backend.app.logging_setup import log_event
-from backend.app.phrase_grade import current_policy, grade_phrases, quiz_grade
+from backend.app.phrase_grade import current_policy, grade_phrases, normalize_jp_for_grade, quiz_grade
 from backend.app.self_check import save_self_check, self_check_step, self_check_summary
+from backend.app.session_flow import bump_phase_index, enter_phase, normalize_session, phase_payload_fields, set_phase_index
+from backend.app.step_models import coerce_step
+
+
+def _apply_mastery_gate(grade: dict) -> dict:
+    score = float(grade.get("score") or 0)
+    grade["passed"] = bool(grade.get("passed")) and score >= settings.mastery_min_score
+    return grade
+
+
+def _outstanding_can_dos(db: Session, lesson: dict) -> list[dict]:
+    pending: list[dict] = []
+    for c in lesson.get("can_dos") or []:
+        row = db.get(CanDoProgress, c["id"])
+        if not row or not row.mastered:
+            pending.append(c)
+    return pending
+
+
+def _announce_can_do_retry(db: Session, session: ChatSession, lesson: dict, messages: list[dict]) -> None:
+    pending = _outstanding_can_dos(db, lesson)
+    labels = [c.get("statement_en") or c.get("id") or "" for c in pending[:4]]
+    en_list = "; ".join(labels) if labels else "see Progress map"
+    jp = "まだ Can-do が ぜんぶ クリア ではありません。もういちど れんしゅう しましょう。"
+    en = f"Not all Can-do checks are mastered yet ({len(pending)} remaining). Still need: {en_list}"
+    _append_tutor(
+        messages,
+        jp,
+        en,
+        {"phase": "quiz", "help": True, "expect_speech": False, "play_audio": []},
+        session.state,
+    )
 
 
 def _activity_by_id(lesson: dict, activity_id: str | None) -> dict | None:
@@ -28,6 +62,10 @@ def _activity_by_id(lesson: dict, activity_id: str | None) -> dict | None:
         if a.get("id") == activity_id:
             return a
     return None
+
+
+def _transition(session: ChatSession, phase: str, index: int = 0) -> None:
+    enter_phase(session, phase, index=index)
 
 
 def _msgs(session: ChatSession) -> list[dict]:
@@ -96,6 +134,7 @@ def _book_emit_step(
     quiz_index: int,
 ) -> dict:
     session.quiz_index = quiz_index
+    set_phase_index(session, quiz_index)
     jp, en, step = flow.book_step(activity, lesson, quiz_index)
     _append_tutor(messages, jp, en, step, session.state)
     return step
@@ -153,27 +192,22 @@ def _lesson_step_snapshot(
     lesson: dict,
     db: Session,
 ) -> dict:
-    """Current exercise step — unchanged after a help reply."""
-    activity = flow.track_by_id(lesson, session.activity_id)
-    if session.state == "book" and activity:
-        return dict(flow.book_step(activity, lesson, session.quiz_index)[2])
-    if session.state == "intro_chat":
-        return dict(intro_step(lesson, session.quiz_index)[2])
-    if session.state == "self_check":
-        can_dos = lesson.get("can_dos") or []
-        if session.quiz_index < len(can_dos):
-            return dict(self_check_step(can_dos[session.quiz_index]))
-    if session.state == "can_do_quiz":
-        can_dos = lesson.get("can_dos") or []
-        if session.quiz_index < len(can_dos):
-            cd = can_dos[session.quiz_index]
-            scenario = _quiz_scenario(db, lesson, cd["id"])
-            return dict(flow.quiz_step(cd, scenario, expect_speech=True))
-    if session.state == "grammar":
-        return {"phase": "grammar", "expect_speech": True, "play_audio": [], "help": False}
-    if session.state == "lesson_intro":
-        return {"phase": "intro", "expect_speech": False, "play_audio": [], "auto_advance_after_audio": True}
-    return {"phase": session.state, "expect_speech": False, "play_audio": []}
+    return current_step_snapshot(session, lesson, db, quiz_scenario_fn=_quiz_scenario)
+
+
+def slice_messages_for_payload(
+    messages: list[dict],
+    window: int,
+) -> tuple[list[dict], int, int, int]:
+    """Return (tail, message_total, message_offset, assistant_total)."""
+    total = len(messages)
+    assistant_total = sum(1 for m in messages if m.get("role") == "assistant")
+    limit = max(20, int(window))
+    if total <= limit:
+        return messages, total, 0, assistant_total
+    tail = messages[-limit:]
+    offset = total - len(tail)
+    return tail, total, offset, assistant_total
 
 
 def _payload(
@@ -195,7 +229,8 @@ def _payload(
     """
     activity = flow.track_by_id(lesson, session.activity_id)
     last = messages[-1] if messages else {}
-    resolved = _resolve_step(session, lesson, activity, messages, step)
+    normalize_session(session)
+    resolved = coerce_step(_resolve_step(session, lesson, activity, messages, step))
     can_dos = lesson.get("can_dos") or []
     pending_self = None
     if session.state == "self_check" and session.quiz_index < len(can_dos):
@@ -207,6 +242,9 @@ def _payload(
         }
     lesson_messages = [m for m in messages if not (m.get("step") or {}).get("help") and m.get("kind") != "question"]
     help_messages = [m for m in messages if (m.get("step") or {}).get("help") or m.get("kind") == "question"]
+    tail, message_total, message_offset, assistant_total = slice_messages_for_payload(
+        messages, settings.tutor_message_window
+    )
     return {
         "kind": kind,
         "session_id": session.id,
@@ -216,12 +254,20 @@ def _payload(
         "state": session.state,
         "activity_id": session.activity_id,
         "activity": activity,
-        "messages": messages,
+        "messages": tail,
+        "message_total": message_total,
+        "message_offset": message_offset,
+        "assistant_total": assistant_total,
         "lesson_messages": lesson_messages,
         "help_messages": help_messages,
         "can_dos": can_dos,
         "quiz_index": session.quiz_index,
+        **phase_payload_fields(session),
         "step": resolved,
+        "lesson_meta": {
+            "english_notes": (lesson.get("english_notes") or "")[:1200],
+            "portfolio_prompts": list(lesson.get("portfolio_prompts") or [])[:8],
+        },
         "hint_en": last.get("hint_en"),
         "progress": lesson_progress_snapshot(lesson, session),
         "segments": flow.lesson_segments(lesson),
@@ -263,6 +309,8 @@ async def ensure_session(db: Session, lesson_id: str) -> ChatSession:
     session = ChatSession(
         lesson_id=lesson_id,
         state="lesson_intro",
+        phase="lesson_intro",
+        phase_index=0,
         activity_id=first_id,
         quiz_index=0,
         messages_json="[]",
@@ -344,7 +392,7 @@ async def llm_refine_grade(
         base["jp_feedback"] = flow.feedback_pass_short() if base.get("passed") else flow.feedback_retry(
             base.get("gaps") or []
         )
-        return base
+        return _apply_mastery_gate(base)
 
 
 def apply_can_do_result(db: Session, lesson_id: str, can_do_id: str, grade: dict) -> CanDoProgress:
@@ -409,8 +457,7 @@ def _begin_intro_chat(session: ChatSession, lesson: dict, messages: list[dict]) 
         if tracks:
             session.activity_id = tracks[0]["id"]
         return _begin_book_track(session, lesson, messages)
-    session.state = "intro_chat"
-    session.quiz_index = 0
+    _transition(session, "intro_chat", index=0)
     jp, en, step = intro_step(lesson, 0)
     _append_tutor(messages, jp, en, step, session.state)
     return step
@@ -420,8 +467,7 @@ def _begin_book_track(session: ChatSession, lesson: dict, messages: list[dict]) 
     activity = flow.track_by_id(lesson, session.activity_id)
     if not activity:
         return _begin_grammar(session, lesson, messages)
-    session.state = "book"
-    session.quiz_index = 0
+    _transition(session, "book", index=0)
     intro = flow.book_section_intro(activity)
     if intro:
         jp_i, en_i = intro
@@ -449,7 +495,7 @@ def _after_can_do_passed(
     can_do: dict,
 ) -> dict:
     """Open soft self-check for this Can-do (does not unlock; quiz_index stays)."""
-    session.state = "self_check"
+    _transition(session, "self_check", index=session.phase_index)
     jp = "Can-do チェックです。じぶんの できを えらんでください。"
     en = "Soft self-check — how well could you do this? Stars only; unlock uses the graded quiz."
     step = self_check_step(can_do)
@@ -465,10 +511,10 @@ def _continue_after_self_check(
 ) -> dict:
     """Move to next Can-do quiz or lesson complete after self-check."""
     can_dos = lesson.get("can_dos") or []
-    session.quiz_index += 1
-    if session.quiz_index >= len(can_dos):
+    bump_phase_index(session)
+    if session.phase_index >= len(can_dos):
         if check_lesson_mastery(db, lesson["lesson_id"]):
-            session.state = "lesson_complete"
+            _transition(session, "lesson_complete", index=0)
             jp, en = flow.lesson_complete_script()
             nxt = next_lesson_id(lesson["lesson_id"])
             step = {
@@ -479,17 +525,14 @@ def _continue_after_self_check(
             }
             _append_tutor(messages, jp, en, step, session.state)
             return step
-        session.quiz_index = 0
-        session.state = "can_do_quiz"
+        _transition(session, "can_do_quiz", index=0)
         return _prompt_can_do_quiz(db, session, lesson, messages, 0)
-    session.state = "can_do_quiz"
-    return _prompt_can_do_quiz(db, session, lesson, messages, session.quiz_index)
+    _transition(session, "can_do_quiz", index=session.phase_index)
+    return _prompt_can_do_quiz(db, session, lesson, messages, session.phase_index)
 
 
 def _begin_grammar(session: ChatSession, lesson: dict, messages: list[dict]) -> dict:
-    session.state = "grammar"
-    session.activity_id = None
-    session.quiz_index = 0
+    _transition(session, "grammar", index=0)
     pts = flow._grammar_for_lesson(lesson["lesson_id"])
     if not pts:
         jp, en, step = flow.grammar_intro(lesson["lesson_id"])
@@ -503,12 +546,11 @@ def _begin_grammar(session: ChatSession, lesson: dict, messages: list[dict]) -> 
 
 
 def _begin_quiz(session: ChatSession, lesson: dict, messages: list[dict], db: Session) -> dict:
-    session.state = "can_do_quiz"
+    _transition(session, "can_do_quiz", index=0)
     session.activity_id = None
-    session.quiz_index = 0
     can_dos = lesson.get("can_dos") or []
     if not can_dos:
-        session.state = "lesson_complete"
+        _transition(session, "lesson_complete", index=0)
         jp, en = flow.lesson_complete_script()
         step = {"phase": "complete", "expect_speech": False, "play_audio": []}
         _append_tutor(messages, jp, en, step, session.state)
@@ -522,16 +564,16 @@ def _next_book_track(session: ChatSession, lesson: dict) -> bool:
     if idx + 1 >= len(tracks):
         return False
     session.activity_id = tracks[idx + 1]["id"]
-    session.quiz_index = 0
+    set_phase_index(session, 0)
     return True
 
 
 async def start_or_resume(db: Session, lesson_id: str) -> dict:
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
-    lp = db.get(LessonProgress, lesson_id)
-    if lp and not is_lesson_unlocked(db, lesson_id):
-        return {"error": "Lesson locked. Master previous can-dos first.", "locked": True}
     session = await ensure_session(db, lesson_id)
+    normalize_session(session)
     messages = _msgs(session)
     _sync_book_substep(session, messages)
     step = None
@@ -545,6 +587,7 @@ async def start_or_resume(db: Session, lesson_id: str) -> dict:
         }
         _append_tutor(messages, jp, en, step, "lesson_intro")
         session.state = "lesson_intro"
+        enter_phase(session, "lesson_intro", index=0)
         _save_msgs(session, messages)
         db.commit()
         log_event("orchestrator", "start", lesson_id=lesson_id, new_session=True)
@@ -563,6 +606,8 @@ async def start_or_resume(db: Session, lesson_id: str) -> dict:
 
 
 async def advance(db: Session, lesson_id: str) -> dict:
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
     session = await ensure_session(db, lesson_id)
     messages = _msgs(session)
@@ -587,7 +632,7 @@ async def advance(db: Session, lesson_id: str) -> dict:
         if not pts:
             step = _begin_quiz(session, lesson, messages, db)
         else:
-            session.quiz_index += 1
+            bump_phase_index(session)
             if session.quiz_index >= len(pts):
                 step = _begin_quiz(session, lesson, messages, db)
             else:
@@ -600,10 +645,10 @@ async def advance(db: Session, lesson_id: str) -> dict:
 
     elif session.state == "can_do_quiz":
         can_dos = lesson.get("can_dos") or []
-        session.quiz_index += 1
+        bump_phase_index(session)
         if session.quiz_index >= len(can_dos):
             if check_lesson_mastery(db, lesson_id):
-                session.state = "lesson_complete"
+                _transition(session, "lesson_complete", index=0)
                 jp, en = flow.lesson_complete_script()
                 nxt = next_lesson_id(lesson_id)
                 step = {
@@ -615,6 +660,7 @@ async def advance(db: Session, lesson_id: str) -> dict:
                 _append_tutor(messages, jp, en, step, session.state)
             else:
                 session.quiz_index = 0
+                _announce_can_do_retry(db, session, lesson, messages)
                 step = _prompt_can_do_quiz(db, session, lesson, messages, 0)
         else:
             step = _prompt_can_do_quiz(db, session, lesson, messages, session.quiz_index)
@@ -642,6 +688,8 @@ async def user_message(
     *,
     spoken: bool = False,
 ) -> dict:
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
     session = await ensure_session(db, lesson_id)
     messages = _msgs(session)
@@ -671,7 +719,7 @@ async def user_message(
         # Free response — transcribe only, no grade
         jp_ack, en_ack = acknowledge_intro(text)
         qs = intro_questions(lesson)
-        session.quiz_index += 1
+        bump_phase_index(session)
         if session.quiz_index >= len(qs):
             _append_tutor(
                 messages,
@@ -774,32 +822,66 @@ async def user_message(
         return _payload(session, lesson, messages, retry, grade, db=db)
 
     if session.state == "grammar":
-        # A spoken grammar example used to reply "よくできました。" and re-arm the
-        # mic without ever incrementing quiz_index, so the phase looped forever
-        # unless the learner pressed Skip. Acknowledge, then move on exactly the
-        # way `advance()` does.
         pts = flow._grammar_for_lesson(lesson_id)
-        if len(text.strip()) < 2:
-            step = flow.grammar_item(pts[session.quiz_index], session.quiz_index, len(pts))[2] if pts else {
-                "phase": "grammar",
-                "expect_speech": True,
-                "expects_speech": True,
-                "play_audio": [],
-                "audio": [],
-            }
-            _append_tutor(messages, flow.feedback_retry([]), "Say a little more, or tap Next.", step, session.state)
+        idx = min(session.quiz_index, max(len(pts) - 1, 0)) if pts else 0
+        point = pts[idx] if pts else {}
+        expected: list[str] = []
+        for ex in point.get("examples") or []:
+            if isinstance(ex, dict) and ex.get("jp"):
+                expected.append(str(ex["jp"]))
+            elif isinstance(ex, str) and ex.strip():
+                expected.append(ex.strip())
+        if not expected and point.get("point"):
+            expected = [str(point["point"])[:80]]
+        grade = None
+        policy = current_policy()
+        if expected:
+            grade = grade_phrases(text, expected, spoken=spoken, policy=policy)
+            passed = bool(grade.get("passed"))
+            reply = (
+                flow.feedback_pass_short()
+                if passed
+                else grade.get("feedback_jp") or flow.feedback_retry(expected)
+            )
+            en = grade.get("feedback_en") or (
+                "Nice — next grammar point." if passed else "Try again or tap Next."
+            )
+        else:
+            passed = len(text.strip()) >= 4
+            reply = flow.feedback_pass_short() if passed else flow.feedback_retry([])
+            en = "Nice — next grammar point." if passed else "Say a little more, or tap Next."
+
+        if not passed:
+            if pts:
+                _jp, _en, step = flow.grammar_item(point, idx, len(pts))
+            else:
+                step = {
+                    "phase": "grammar",
+                    "expect_speech": True,
+                    "expects_speech": True,
+                    "play_audio": [],
+                    "audio": [],
+                }
+            _append_tutor(messages, reply, en, step, session.state)
             _save_msgs(session, messages)
             db.commit()
-            return _payload(session, lesson, messages, step, db=db)
+            return _payload(session, lesson, messages, step, grade, db=db)
 
         _append_tutor(
             messages,
-            flow.feedback_pass_short(),
-            "Nice — next grammar point.",
-            {"phase": "grammar", "expect_speech": False, "expects_speech": False, "play_audio": [], "audio": [], "help": True},
+            reply,
+            en,
+            {
+                "phase": "grammar",
+                "expect_speech": False,
+                "expects_speech": False,
+                "play_audio": [],
+                "audio": [],
+                "help": True,
+            },
             session.state,
         )
-        session.quiz_index += 1
+        bump_phase_index(session)
         if not pts or session.quiz_index >= len(pts):
             step = _begin_quiz(session, lesson, messages, db)
         else:
@@ -807,7 +889,7 @@ async def user_message(
             _append_tutor(messages, jp, en, step, session.state)
         _save_msgs(session, messages)
         db.commit()
-        return _payload(session, lesson, messages, step, db=db)
+        return _payload(session, lesson, messages, step, grade, db=db)
 
     if session.state == "can_do_quiz":
         can_dos = lesson.get("can_dos") or []
@@ -816,12 +898,22 @@ async def user_message(
             scenario = _quiz_scenario(db, lesson, cd["id"])
             must = (cd.get("rubric") or {}).get("must_include") or []
             expected = list((scenario or {}).get("expected") or must)
-            policy = current_policy()
+            mastery_th = float(settings.mastery_min_score)
             if scenario:
-                base = quiz_grade(text, expected, spoken, policy=policy)
+                base = quiz_grade(text, expected, spoken, pass_threshold=mastery_th)
             else:
-                base = grade_phrases(text, must, spoken=spoken, policy=policy)
-            grade = await llm_refine_grade(text, cd, base, scenario)
+                base = grade_phrases(text, must, spoken=spoken, pass_threshold=mastery_th)
+            sc = float(base.get("score") or 0)
+            if 55 <= sc <= 80:
+                grade = await llm_refine_grade(text, cd, base, scenario)
+            else:
+                grade = _apply_mastery_gate(dict(base))
+                if not grade.get("jp_feedback"):
+                    grade["jp_feedback"] = (
+                        flow.feedback_pass_short()
+                        if grade.get("passed")
+                        else flow.feedback_retry(expected if scenario else must)
+                    )
             apply_can_do_result(db, lesson_id, cd["id"], grade)
             srs_service.enqueue_from_gaps(db, lesson_id, cd["id"], grade.get("gaps") or [], text)
             retry_phrases = expected if scenario else must
@@ -861,6 +953,8 @@ async def answer_question(
     spoken: bool = False,
 ) -> dict:
     """Answer a learner question without advancing the lesson."""
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
     session = await ensure_session(db, lesson_id)
     messages = _msgs(session)
@@ -883,7 +977,7 @@ async def answer_question(
         text=text[:200],
     )
 
-    jp, en = await _ollama_lesson_help(lesson, session, activity, step_snapshot, text)
+    jp, en = await _ollama_lesson_help(lesson, session, activity, step_snapshot, text, messages)
     help_step = {**step_snapshot, "help": True}
     _append_tutor(messages, jp, en, help_step, session.state)
     # Restore session position (guard against accidental mutation in helpers).
@@ -901,31 +995,40 @@ async def _ollama_lesson_help(
     activity: dict | None,
     step: dict,
     question: str,
+    messages: list[dict] | None = None,
 ) -> tuple[str, str]:
     phrases = flow._phrases(activity) if activity else []
     grammar_pts = flow._grammar_for_lesson(lesson["lesson_id"])
+    recent_turns: list[dict] = []
+    if messages:
+        for m in messages[-10:]:
+            if m.get("role") in ("user", "assistant"):
+                recent_turns.append(
+                    {"role": m["role"], "content": (m.get("content") or "")[:180], "kind": m.get("kind")}
+                )
+    recent_turns = recent_turns[-4:]
     ctx = {
         "lesson_id": lesson["lesson_id"],
         "title_en": lesson.get("title_en"),
         "title_jp": lesson.get("title_jp"),
         "state": session.state,
-        "lesson_phrases": _lesson_phrase_bank(lesson),
-        "grammar_points": [g.get("point") for g in grammar_pts[:12]],
+        "lesson_phrases": (phrases or _lesson_phrase_bank(lesson))[:12],
+        "grammar_points": [g.get("point") for g in grammar_pts[:4]],
         "activity": {
             "book_activity": (activity or {}).get("book_activity"),
             "kind": (activity or {}).get("kind"),
             "book_mode": (activity or {}).get("book_mode"),
-            "key_phrases": phrases,
-            "phrase_meta": (activity or {}).get("phrase_meta"),
+            "key_phrases": (phrases or [])[:6],
             "picture_hint_en": (activity or {}).get("picture_hint_en"),
         },
         "step": {
             "phase": step.get("phase"),
             "book_substep": step.get("book_substep"),
             "partner_jp": step.get("partner_jp"),
-            "expected_phrases": step.get("expected_phrases"),
+            "expected_phrases": (step.get("expected_phrases") or [])[:4],
             "say_target_jp": step.get("say_target_jp"),
         },
+        "recent_turns": recent_turns,
     }
     from backend.app import user_settings
 
@@ -989,6 +1092,8 @@ async def submit_self_check(
     comment: str = "",
 ) -> dict:
     """Store soft self-check and continue lesson flow. Does not affect unlock."""
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
     session = await ensure_session(db, lesson_id)
     messages = _msgs(session)
@@ -1021,7 +1126,31 @@ async def submit_self_check(
     return _payload(session, lesson, messages, step, db=db)
 
 
+async def get_message_history(
+    db: Session,
+    lesson_id: str,
+    *,
+    offset: int = 0,
+    limit: int = 200,
+) -> dict:
+    if block := locked_response(db, lesson_id):
+        return block
+    session = await ensure_session(db, lesson_id)
+    messages = _msgs(session)
+    off = max(0, int(offset))
+    lim = min(max(1, int(limit)), 500)
+    return {
+        "lesson_id": lesson_id,
+        "messages": messages[off : off + lim],
+        "message_total": len(messages),
+        "offset": off,
+        "limit": lim,
+    }
+
+
 async def reset_lesson(db: Session, lesson_id: str) -> dict:
+    if block := locked_response(db, lesson_id):
+        return block
     log_event("orchestrator", "reset", lesson_id=lesson_id)
     db.query(ChatSession).filter(ChatSession.lesson_id == lesson_id).delete()
     db.commit()
@@ -1030,6 +1159,8 @@ async def reset_lesson(db: Session, lesson_id: str) -> dict:
 
 async def jump_to_can_do_quiz(db: Session, lesson_id: str, *, reset_can_do: bool = False) -> dict:
     """Skip book/grammar and open the first Can-do role-play (for testing)."""
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
     can_dos = lesson.get("can_dos") or []
     if not can_dos:
@@ -1043,10 +1174,16 @@ async def jump_to_can_do_quiz(db: Session, lesson_id: str, *, reset_can_do: bool
         db.commit()
 
     session = await ensure_session(db, lesson_id)
-    messages: list[dict] = []
-    session.state = "can_do_quiz"
+    messages = _msgs(session)
+    _transition(session, "can_do_quiz", index=0)
     session.activity_id = None
-    session.quiz_index = 0
+    _append_tutor(
+        messages,
+        "Can-do テストに いきます。",
+        "Jumped to Can-do quiz (book steps skipped).",
+        {"phase": "quiz", "help": True, "expect_speech": False, "play_audio": []},
+        session.state,
+    )
     step = _prompt_can_do_quiz(db, session, lesson, messages, 0)
     _save_msgs(session, messages)
     db.commit()

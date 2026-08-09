@@ -4,12 +4,15 @@ from pathlib import Path
 
 import yaml
 
-from backend.app.books import BOOKS, book_for_lesson_id, content_dir_for_book, content_dir_for_lesson
+from backend.app.books import BOOKS, book_for_lesson_id, content_dir_for_book, content_dir_for_lesson, get_book
 from backend.app.config import settings
+from backend.app.curriculum_schema import validate_lesson_dict
+
+_lesson_cache: dict[str, tuple[float, dict]] = {}
+_index_cache: dict[str, tuple[float, dict]] = {}
 
 
 def _active_book_id() -> str:
-    # Prefer DB setting when available
     try:
         from backend.app.db import SessionLocal, SettingRow
 
@@ -37,6 +40,7 @@ def set_active_book(book_id: str) -> str:
             row.value = book_id
         db.commit()
     settings.active_book = book_id
+    _index_cache.clear()
     return book_id
 
 
@@ -92,6 +96,9 @@ def load_index(book_id: str | None = None) -> dict:
     if data is None:
         return {"book_id": bid, "lessons": []}
     data.setdefault("book_id", bid)
+    if not data.get("book_title"):
+        data["book_title"] = get_book(bid).title
+    data.setdefault("schema_version", 0)
     return data
 
 
@@ -101,7 +108,9 @@ def load_lesson(lesson_id: str) -> dict:
     if data is None:
         raise FileNotFoundError(lesson_id)
     data.setdefault("book_id", book_for_lesson_id(lesson_id).id)
-    return data
+    if "schema_version" not in data:
+        data["schema_version"] = 0
+    return validate_lesson_dict(data)
 
 
 def list_lessons(book_id: str | None = None) -> list[dict]:

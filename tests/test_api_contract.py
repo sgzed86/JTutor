@@ -33,6 +33,20 @@ REQUIRED_PAYLOAD_KEYS = {
 
 @pytest.fixture()
 def client(clean_db):
+    from backend.app.curriculum_loader import list_lessons
+    from backend.app.db import LessonProgress, SessionLocal
+
+    with SessionLocal() as db:
+        for book in ("starter", "elementary1"):
+            for entry in list_lessons(book):
+                lid = str(entry["lesson_id"])
+                row = db.get(LessonProgress, lid)
+                if row is None:
+                    db.add(LessonProgress(lesson_id=lid, unlocked=True))
+                else:
+                    row.unlocked = True
+        db.commit()
+
     with TestClient(app) as c:
         yield c
 

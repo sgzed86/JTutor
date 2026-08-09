@@ -21,6 +21,21 @@ MAX_TURNS = 900
 def _answer_for(payload: dict[str, Any]) -> str:
     """What a learner who always answers correctly would say at this step."""
     step = payload.get("step") or {}
+    if payload.get("state") == "grammar":
+        expected = step.get("expected_phrases") or []
+        if expected:
+            return str(expected[0])
+        grammar_pts = payload.get("grammar") or []
+        idx = min(int(payload.get("quiz_index") or 0), max(len(grammar_pts) - 1, 0))
+        if grammar_pts:
+            point = grammar_pts[idx]
+            for ex in point.get("examples") or []:
+                if isinstance(ex, dict) and ex.get("jp"):
+                    return str(ex["jp"])
+                if isinstance(ex, str) and ex.strip():
+                    return str(ex)
+            if point.get("point"):
+                return str(point["point"])[:80]
     target = step.get("say_target_jp")
     if target:
         return str(target)
@@ -96,10 +111,17 @@ async def _run_async(
     answer: Callable[[dict[str, Any]], str] = _answer_for,
 ) -> list[dict[str, Any]]:
     from backend.app import orchestrator
-    from backend.app.db import SessionLocal
+    from backend.app.db import LessonProgress, SessionLocal
 
     trace: list[dict[str, Any]] = []
     with SessionLocal() as db:
+        row = db.get(LessonProgress, lesson_id)
+        if row is None:
+            db.add(LessonProgress(lesson_id=lesson_id, unlocked=True))
+        else:
+            row.unlocked = True
+        db.commit()
+
         payload = await orchestrator.start_or_resume(db, lesson_id)
         trace.append(_trace_row("start", payload))
 

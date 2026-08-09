@@ -1,11 +1,16 @@
-"""Book registry for Irodori Starter / Elementary 1 content pipelines."""
+"""Book registry for build scripts — re-exports canonical backend registry (Tier 3.7)."""
 
 from __future__ import annotations
 
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from backend.app.books import BOOKS as _META, BookInfo, get_book as _get_book_info
 
 
 @dataclass(frozen=True)
@@ -16,44 +21,38 @@ class BookConfig:
     content_dir: Path
     textbook_pdf: Path
     grammar_pdf: Path
-    audio_prefix: str  # X_ starter, Y_ elementary1
-    lesson_id_prefix: str  # L or EL
+    audio_prefix: str
+    lesson_id_prefix: str
     unlock_first: tuple[str, ...]
     toc_en_pages: range
     toc_jp_pages: range
 
 
-BOOKS: dict[str, BookConfig] = {
-    "starter": BookConfig(
-        id="starter",
-        title="Irodori Starter (A1)",
-        level="A1",
-        content_dir=ROOT / "content" / "starter",
-        textbook_pdf=ROOT / "assets" / "irodori_starter.pdf",
-        grammar_pdf=ROOT / "assets" / "Grammar_Worksheets_X.pdf",
-        audio_prefix="X_",
-        lesson_id_prefix="L",
-        unlock_first=("L00", "L01"),
-        toc_en_pages=range(36, 42),
-        toc_jp_pages=range(30, 36),
-    ),
-    "elementary1": BookConfig(
-        id="elementary1",
-        title="Irodori Elementary 1 (A2)",
-        level="A2",
-        content_dir=ROOT / "content" / "elementary1",
-        textbook_pdf=ROOT / "assets" / "Elementary1.pdf",
-        grammar_pdf=ROOT / "assets" / "Grammar_Elementary_1.pdf",
-        audio_prefix="Y_",
-        lesson_id_prefix="EL",
-        unlock_first=("EL01",),
-        toc_en_pages=range(36, 42),
-        toc_jp_pages=range(30, 36),
-    ),
-}
+def _to_config(info: BookInfo) -> BookConfig:
+    return BookConfig(
+        id=info.id,
+        title=info.title,
+        level=info.level,
+        content_dir=ROOT / "content" / info.content_subdir,
+        textbook_pdf=ROOT / "assets" / info.textbook_pdf,
+        grammar_pdf=ROOT / "assets" / info.grammar_pdf,
+        audio_prefix=info.audio_prefix,
+        lesson_id_prefix=info.lesson_prefix,
+        unlock_first=info.unlock_first,
+        toc_en_pages=range(info.toc_en_pages[0], info.toc_en_pages[-1] + 1)
+        if info.toc_en_pages
+        else range(0),
+        toc_jp_pages=range(info.toc_jp_pages[0], info.toc_jp_pages[-1] + 1)
+        if info.toc_jp_pages
+        else range(0),
+    )
 
 
 def get_book(book_id: str) -> BookConfig:
-    if book_id not in BOOKS:
-        raise SystemExit(f"Unknown book '{book_id}'. Choose: {', '.join(BOOKS)}")
-    return BOOKS[book_id]
+    try:
+        return _to_config(_get_book_info(book_id))
+    except KeyError:
+        raise SystemExit(f"Unknown book '{book_id}'. Choose: {', '.join(_META)}")
+
+
+BOOKS: dict[str, BookConfig] = {bid: _to_config(_META[bid]) for bid in _META}

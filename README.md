@@ -95,6 +95,10 @@ Backend output goes to a rotating log in the app's data folder; **Settings →
 Advanced → Open log folder** reveals it. In development the backend also logs to
 `data/jtutor.log`.
 
+## Technical audit
+
+Full-stack review of the state machine, voice pipeline, curriculum generation, and UI, with a prioritized improvement roadmap: **[docs/AUDIT.md](docs/AUDIT.md)**.
+
 ## Project layout
 
 | Path | Role |

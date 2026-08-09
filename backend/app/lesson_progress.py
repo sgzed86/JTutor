@@ -15,6 +15,7 @@ def lesson_progress_snapshot(lesson: dict, session: ChatSession) -> dict:
     can_n = len(lesson.get("can_dos") or [])
     intro_n = len(intro_questions(lesson))
 
+    pi = getattr(session, "phase_index", session.quiz_index) or 0
     state = session.state or "lesson_intro"
     fraction = 0.0
     label = "Starting"
@@ -24,8 +25,8 @@ def lesson_progress_snapshot(lesson: dict, session: ChatSession) -> dict:
         label = "Introduction"
     elif state == "intro_chat":
         if intro_n:
-            fraction = 0.03 + min(session.quiz_index, intro_n) / intro_n * 0.05
-            label = f"Warm-up · {min(session.quiz_index + 1, intro_n)}/{intro_n}"
+            fraction = 0.03 + min(pi, intro_n) / intro_n * 0.05
+            label = f"Warm-up · {min(pi + 1, intro_n)}/{intro_n}"
         else:
             fraction = 0.05
             label = "Warm-up"
@@ -33,13 +34,13 @@ def lesson_progress_snapshot(lesson: dict, session: ChatSession) -> dict:
         idx = flow.track_index(lesson, session.activity_id)
         act = flow.track_by_id(lesson, session.activity_id)
         subs = max(len(flow_substeps(act)), 1) if act else 1
-        sub_frac = min(session.quiz_index, subs) / subs
+        sub_frac = min(pi, subs) / subs
         fraction = 0.08 + (idx + sub_frac) / n_tracks * 0.58
         label = f"Book · activity {idx + 1}/{n_tracks}"
     elif state == "grammar":
         if grammar_n:
-            fraction = 0.68 + min(session.quiz_index, grammar_n) / grammar_n * 0.10
-            label = f"Grammar · {min(session.quiz_index + 1, grammar_n)}/{grammar_n}"
+            fraction = 0.68 + min(pi, grammar_n) / grammar_n * 0.10
+            label = f"Grammar · {min(pi + 1, grammar_n)}/{grammar_n}"
         else:
             fraction = 0.72
             label = "Grammar"
