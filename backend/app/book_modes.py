@@ -14,6 +14,9 @@ FLOW_BY_MODE: dict[str, list[str]] = {
     "dialog": ["listen", "shadow", "partner", "learner", "swap_learner", "swap_partner"],
     # Standalone shadow-only activity (optional YAML book_mode)
     "shadow_dialog": ["shadow"],
+    "pronunciation": ["listen", "pronounce"],
+    "vocab_drill": ["listen", "vocab_say"],
+    "kana_trace": ["listen", "trace"],
     "repeat": ["listen", "repeat"],  # legacy default
 }
 
@@ -54,14 +57,14 @@ def substep_at(activity: dict | None, quiz_index: int) -> str | None:
 
 def speech_substeps() -> frozenset[str]:
     """Substeps that require graded learner speech."""
-    return frozenset({"repeat", "select", "learner", "swap_learner"})
+    return frozenset({"repeat", "select", "learner", "swap_learner", "pronounce", "vocab_say"})
 
 
 def auto_advance_substeps() -> frozenset[str]:
     """Tutor/CD-only steps — UI advances after audio (and optional TTS)."""
-    return frozenset({"listen", "shadow", "partner", "swap_partner"})
+    return frozenset({"listen", "shadow", "partner", "swap_partner", "trace"})
 
 
 def timed_audio_substeps() -> frozenset[str]:
     """Play book audio without stopping for mic/grade."""
-    return frozenset({"listen", "shadow"})
+    return frozenset({"listen", "shadow", "trace"})

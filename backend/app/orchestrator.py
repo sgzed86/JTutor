@@ -12,7 +12,7 @@ from backend.app import ollama_client
 from backend.app import srs_service
 from backend.app.book_modes import flow_substeps, speech_substeps, substep_at
 from backend.app.config import settings
-from backend.app.curriculum_loader import load_lesson, list_lessons
+from backend.app.curriculum_loader import load_lesson
 from backend.app.db import CanDoProgress, ChatSession, LessonProgress
 from backend.app.free_response import acknowledge_intro, intro_questions, intro_step
 from backend.app.lesson_access import locked_response
@@ -812,12 +812,40 @@ async def user_message(
         return _payload(session, lesson, messages, retry, grade)
 
     if session.state == "grammar":
-        reply = flow.feedback_pass_short() if len(text.strip()) >= 2 else flow.feedback_retry([])
-        step = {"phase": "grammar", "expect_speech": True, "play_audio": []}
-        _append_tutor(messages, reply, "Continue or tap Next.", step, session.state)
+        pts = flow._grammar_for_lesson(lesson_id)
+        idx = min(session.quiz_index, max(len(pts) - 1, 0)) if pts else 0
+        point = pts[idx] if pts else {}
+        expected: list[str] = []
+        for ex in point.get("examples") or []:
+            if isinstance(ex, dict) and ex.get("jp"):
+                expected.append(str(ex["jp"]))
+            elif isinstance(ex, str) and ex.strip():
+                expected.append(ex.strip())
+        if not expected and point.get("point"):
+            expected = [str(point["point"])[:80]]
+        grade = None
+        if expected:
+            grade = grade_phrases(text, expected, spoken=spoken)
+            reply = (
+                flow.feedback_pass_short()
+                if grade.get("passed")
+                else grade.get("feedback_jp") or flow.feedback_retry(expected)
+            )
+            en = grade.get("feedback_en") or "Continue or tap Next."
+        else:
+            passed = len(text.strip()) >= 4
+            reply = flow.feedback_pass_short() if passed else flow.feedback_retry([])
+            en = "Continue or tap Next."
+        step = {
+            "phase": "grammar",
+            "expect_speech": True,
+            "play_audio": [],
+            "expected_phrases": expected,
+        }
+        _append_tutor(messages, reply, en, step, session.state)
         _save_msgs(session, messages)
         db.commit()
-        return _payload(session, lesson, messages, step)
+        return _payload(session, lesson, messages, step, grade)
 
     if session.state == "can_do_quiz":
         can_dos = lesson.get("can_dos") or []
@@ -831,7 +859,17 @@ async def user_message(
                 base = quiz_grade(text, expected, spoken, pass_threshold=mastery_th)
             else:
                 base = grade_phrases(text, must, spoken=spoken, pass_threshold=mastery_th)
-            grade = await llm_refine_grade(text, cd, base, scenario)
+            sc = float(base.get("score") or 0)
+            if 55 <= sc <= 80:
+                grade = await llm_refine_grade(text, cd, base, scenario)
+            else:
+                grade = _apply_mastery_gate(dict(base))
+                if not grade.get("jp_feedback"):
+                    grade["jp_feedback"] = (
+                        flow.feedback_pass_short()
+                        if grade.get("passed")
+                        else flow.feedback_retry(expected if scenario else must)
+                    )
             apply_can_do_result(db, lesson_id, cd["id"], grade)
             srs_service.enqueue_from_gaps(db, lesson_id, cd["id"], grade.get("gaps") or [], text)
             retry_phrases = expected if scenario else must
@@ -895,7 +933,7 @@ async def answer_question(
         text=text[:200],
     )
 
-    jp, en = await _ollama_lesson_help(lesson, session, activity, step_snapshot, text)
+    jp, en = await _ollama_lesson_help(lesson, session, activity, step_snapshot, text, messages)
     help_step = {**step_snapshot, "help": True}
     _append_tutor(messages, jp, en, help_step, session.state)
     # Restore session position (guard against accidental mutation in helpers).
@@ -913,31 +951,40 @@ async def _ollama_lesson_help(
     activity: dict | None,
     step: dict,
     question: str,
+    messages: list[dict] | None = None,
 ) -> tuple[str, str]:
     phrases = flow._phrases(activity) if activity else []
     grammar_pts = flow._grammar_for_lesson(lesson["lesson_id"])
+    recent_turns: list[dict] = []
+    if messages:
+        for m in messages[-10:]:
+            if m.get("role") in ("user", "assistant"):
+                recent_turns.append(
+                    {"role": m["role"], "content": (m.get("content") or "")[:180], "kind": m.get("kind")}
+                )
+    recent_turns = recent_turns[-4:]
     ctx = {
         "lesson_id": lesson["lesson_id"],
         "title_en": lesson.get("title_en"),
         "title_jp": lesson.get("title_jp"),
         "state": session.state,
-        "lesson_phrases": _lesson_phrase_bank(lesson),
-        "grammar_points": [g.get("point") for g in grammar_pts[:12]],
+        "lesson_phrases": (phrases or _lesson_phrase_bank(lesson))[:12],
+        "grammar_points": [g.get("point") for g in grammar_pts[:4]],
         "activity": {
             "book_activity": (activity or {}).get("book_activity"),
             "kind": (activity or {}).get("kind"),
             "book_mode": (activity or {}).get("book_mode"),
-            "key_phrases": phrases,
-            "phrase_meta": (activity or {}).get("phrase_meta"),
+            "key_phrases": (phrases or [])[:6],
             "picture_hint_en": (activity or {}).get("picture_hint_en"),
         },
         "step": {
             "phase": step.get("phase"),
             "book_substep": step.get("book_substep"),
             "partner_jp": step.get("partner_jp"),
-            "expected_phrases": step.get("expected_phrases"),
+            "expected_phrases": (step.get("expected_phrases") or [])[:4],
             "say_target_jp": step.get("say_target_jp"),
         },
+        "recent_turns": recent_turns,
     }
     prompt = [
         {

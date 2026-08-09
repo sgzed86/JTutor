@@ -7,7 +7,7 @@ import { SelfCheckModal } from "../components/SelfCheckModal";
 import type { MascotMood } from "../components/TutorMascot";
 import { buildTutorStageModel } from "../lib/tutorDisplay";
 import { jlog } from "../jlog";
-import { speakTutor } from "../speech";
+import { speakTutor, stopSpeaking } from "../speech";
 import { ChatBubble } from "../components/ChatBubble";
 
 type Step = {
@@ -497,6 +497,11 @@ export default function Tutor() {
           speaking={speaking}
           busy={busy}
           onMicClick={() => (recording ? stopListening() : startListening())}
+          onStopSpeaking={() => {
+            stopSpeaking();
+            speakingRef.current = false;
+            setSpeaking(false);
+          }}
           lastGrade={lastGrade}
           activity={activity}
           step={session?.step}

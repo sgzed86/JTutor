@@ -12,6 +12,7 @@ type Props = {
   speaking: boolean;
   busy: boolean;
   onMicClick: () => void;
+  onStopSpeaking?: () => void;
   lastGrade?: any;
   activity?: any;
   step?: any;
@@ -26,6 +27,7 @@ export function TutorStage({
   speaking,
   busy,
   onMicClick,
+  onStopSpeaking,
   lastGrade,
   activity,
   step,
@@ -126,11 +128,16 @@ export function TutorStage({
 
       <div className="tutor-stage-actions">
         <p className="tutor-status-line">{status}</p>
+        {speaking && onStopSpeaking && (
+          <button type="button" className="btn" onClick={onStopSpeaking}>
+            Stop speaking
+          </button>
+        )}
         {expectSpeech && (
           <button
             type="button"
             className={`btn primary tutor-mic-btn ${recording ? "danger" : ""}`}
-            disabled={busy || speaking}
+            disabled={busy}
             onClick={onMicClick}
           >
             {recording ? "Done speaking" : "Tap to speak"}

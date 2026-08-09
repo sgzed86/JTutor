@@ -1055,33 +1055,48 @@ and they become routine.
 
 ---
 
-## 12. Implementation status (Tier 1)
+## 12. Implementation status
 
 Tracked on branch `cursor/implement-audit-fixes-43e9` — [PR #3](https://github.com/sgzed86/JTutor/pull/3).
 
-| Tier | Item | Status |
-|---|---|---|
-| 1.1 | Server-side lesson unlock | Done — `lesson_access.locked_response` on tutor routes |
-| 1.2 | Can-do loop messaging | Done — `_announce_can_do_retry` |
-| 1.3 | Honest scores + mastery on heuristic path | Done — `phrase_grade`, orchestrator |
-| 1.4 | Sync `transcribe` | Done |
-| 1.5 | YAML mtime cache | Done — `curriculum_loader` |
-| 1.6 | TTS LRU + shared httpx client | Done — `voicevox_client` |
-| 1.7 | Whisper tune + warm | Done |
-| 1.8 | `recordingModeRef` on manual advance | Done — `Tutor.tsx` |
-| 1.9 | Jump Can-do dev-only + keep transcript | Done |
-| 1.10–1.11 | FSRS fields + card front | Done — `srs_service` |
-| 1.12 | CORS allowlist | Done — `main.py` |
-| 1.13 | Electron spawn error + single instance | Done |
-| 1.14 | Bundle web fonts locally | **Open** |
-| 1.15 | `api.pdfUrl` with book | Done |
-| 1.16 | `book_title` in Starter index | Done |
-| 1.17 | Dead code / unused imports | **Partial** |
-| 2.2 | `validate_curriculum.py` | Done; CI runs non-strict; `--strict` after L03–L18 content fix |
-| 2.3 | Starter PDF script extractor | Done — `extract_scripts_starter.py`; builder prefers scripts over Whisper |
-| 2.7 | L00 classroom tracks | Done — `book_tracks` keeps `classroom` for `L00` only |
-| 2.8 | Bounded tutor payload + history | Done — `tutor_message_window`, `GET /tutor/{id}/history` |
-| 2.10 | Pytest + CI | Done — phrase grade + lesson access tests |
-| 2.12 | Speech rate in Settings | Done — `/voice/set-speed`, Voice settings slider |
+### Tier 1
 
-**Next recommended:** 2.3 (run `extract_scripts_starter.py` + `build_curriculum.py` to regen YAML), bounded payload (2.8 done), speed slider (2.12 done).
+| Item | Status |
+|---|---|
+| 1.1–1.13, 1.15–1.16 | Done |
+| 1.14 Bundle fonts | Done — `@fontsource` in desktop app (no Google Fonts CDN) |
+| 1.17 Dead code | Done — unused imports cleaned (`orchestrator`, `progress`) |
+
+### Tier 2
+
+| Item | Status |
+|---|---|
+| 2.1 Grading | Done — polarity, topic, equiv table, long vowels (heuristic); optional fugashi deferred |
+| 2.2 Validator + CI | Done — non-strict in CI |
+| 2.3 Starter scripts | Done — extractor + builder; regen YAML locally when PDF extract exists |
+| 2.4 Pronunciation mode | Done — `pronunciation` book_mode |
+| 2.5 Vocab drill | Done — `vocab_drill` book_mode |
+| 2.6 Grammar grading | Done — grades `examples` / point text, not 2-char pass |
+| 2.7 L00 / kana | Done — `kana_trace`, L00 `book_mode` |
+| 2.8 Bounded payload | Done |
+| 2.9 Barge-in | Done — stop speaking + mic during TTS |
+| 2.10 Flow tests | Done — `test_flow_snapshots.py`, `pytest-asyncio` |
+| 2.11 Ask Yuki budget | Done — capped phrases + `recent_turns` |
+| 2.12 Speech rate | Done |
+| 2.13 Error surfaces | Partial — global handler, VoiceVox 503 copy; Setup link in UI still minimal |
+
+### Tier 3 (structural — foundations only)
+
+| Item | Status |
+|---|---|
+| 3.1 TutorMode base | **Foundation** — `tutor_mode_protocol.py`; modes still in `lesson_flow` |
+| 3.2 phase + phase_index | **Open** — needs migration |
+| 3.3 Typed Step | **Open** — large TS sweep |
+| 3.4 Unified audio hook | **Partial** — `speechControl.ts` barge-in; full `useAudioPipeline` not extracted |
+| 3.5 Whisper worker queue | **Partial** — model lock + warm; no bounded queue API |
+| 3.6 Canonical schema | **Partial** — `schema_version` shim, `docs/CURRICULUM_SCHEMA.md` |
+| 3.7 Book registry | **Partial** — runtime `backend/app/books.py`; scripts keep `scripts/books.py` for builds |
+| 3.8 YAML overlays | **Open** |
+| 3.9 New pedagogy steps | **Open** |
+
+**Manual:** run `python scripts/extract_scripts.py starter` + `build_curriculum.py`, then `validate_curriculum.py --strict` when content is clean.

@@ -7,9 +7,9 @@ import sys
 import time
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 # Prefer packaged / portable root when set
@@ -27,6 +27,13 @@ setup_logging()
 _http_log = get_logger("http")
 
 app = FastAPI(title="Jtutor", version="0.1.0")
+
+
+@app.exception_handler(Exception)
+async def unhandled_exception(_request: Request, exc: Exception):
+    get_logger("app").exception("unhandled: %s", exc)
+    return JSONResponse(status_code=500, content={"detail": str(exc)[:200]})
+
 
 app.add_middleware(
     CORSMiddleware,

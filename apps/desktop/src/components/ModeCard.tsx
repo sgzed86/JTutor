@@ -24,6 +24,21 @@ const MODE_LABELS: Record<string, { title: string; desc: string; icon: string }>
     desc: "Partner line, your line, then swap roles.",
     icon: "💬",
   },
+  pronunciation: {
+    title: "Pronunciation",
+    desc: "Listen for rhythm and long vowels, then repeat clearly.",
+    icon: "🎯",
+  },
+  vocab_drill: {
+    title: "Vocabulary",
+    desc: "Listen, then say each word in Japanese.",
+    icon: "📚",
+  },
+  kana_trace: {
+    title: "Kana trace",
+    desc: "Listen and trace characters in the book (ungraded).",
+    icon: "✍️",
+  },
   intro_chat: {
     title: "Warm-up",
     desc: "Answer a short personal question — any language is OK.",
@@ -45,6 +60,9 @@ const SUB_LABELS: Record<string, string> = {
   learner: "Your line",
   swap_learner: "Swap — you first",
   swap_partner: "Swap — partner",
+  pronounce: "Pronunciation",
+  vocab_say: "Say the word",
+  trace: "Trace kana",
   reply: "Can-do reply",
   free_answer: "Your answer",
   rate: "Rate yourself",

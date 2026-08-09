@@ -147,7 +147,29 @@ def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, 
 
     if sub == "listen":
         mode = book_mode(activity)
-        if mode == "listen_repeat_all":
+        if mode == "kana_trace":
+            jp = "ききましょう。CDを きいて、もじを なぞって れんしゅう してください。"
+            en = "Listen to the CD and trace the characters in your book. No speaking grade."
+            step = _step_base(activity, sub, quiz_index)
+            step.update(
+                {
+                    "play_audio": audio[:2],
+                    "expect_speech": False,
+                    "auto_advance_after_audio": True,
+                    "instruction_en": "Listen and trace kana in the book",
+                    "book_mode": "kana_trace",
+                }
+            )
+            return jp, en, step
+        if mode == "vocab_drill":
+            jp = "ことばを ききましょう。CDを きいてください。"
+            en = "Vocabulary — listen to the CD, then say each word in Japanese."
+            up_next = f"Next say: {phrases[0]}" if phrases else None
+        elif mode == "pronunciation":
+            jp = "はつおんに ちゅういして ききましょう。CDを きいてください。"
+            en = "Pronunciation — listen for rhythm and long vowels, then repeat carefully."
+            up_next = f"Next pronounce: {phrases[0]}" if phrases else None
+        elif mode == "listen_repeat_all":
             jp = "聞いて、言いましょう。CDを きいてください。"
             n = len(phrases)
             en = (
@@ -184,6 +206,59 @@ def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, 
         )
         return jp, en, step
 
+    if sub == "trace":
+        jp = "もじを なぞって れんしゅう しましょう。こたえは ありません。"
+        en = "Trace the characters in your book. This step is not graded — tap Skip when ready."
+        step = _step_base(activity, sub, quiz_index)
+        step.update(
+            {
+                "play_audio": [],
+                "expect_speech": False,
+                "auto_advance_after_audio": True,
+                "instruction_en": "Trace kana in the book (ungraded)",
+                "book_mode": "kana_trace",
+                "shadow_card": True,
+            }
+        )
+        return jp, en, step
+
+    if sub == "pronounce":
+        target = phrases[0] if phrases else ""
+        jp = f"はつおんを たしかに いってください。{target}" if target else "はつおんを たしかに いってください。"
+        en = f"Pronunciation — say clearly (watch long vowels): {target}" if target else "Say the phrase clearly."
+        step = _step_base(activity, sub, quiz_index)
+        step.update(
+            {
+                "play_audio": audio[:1],
+                "expect_speech": True,
+                "auto_advance_after_audio": False,
+                "instruction_en": "Focus on mora and long vowels",
+                "say_target_jp": target or None,
+                "say_alternates_jp": phrases[1:3],
+                "book_mode": "pronunciation",
+            }
+        )
+        return jp, en, step
+
+    if sub == "vocab_say":
+        target = phrases[0] if phrases else ""
+        gloss = (activity.get("vocab_gloss_en") or activity.get("gloss_en") or "").strip()
+        jp = f"ことばを いってください。{target}" if target else "ことばを いってください。"
+        en = f"Say the vocabulary word in Japanese{f' ({gloss})' if gloss else ''}: {target}"
+        step = _step_base(activity, sub, quiz_index)
+        step.update(
+            {
+                "play_audio": [],
+                "expect_speech": True,
+                "auto_advance_after_audio": False,
+                "instruction_en": en,
+                "say_target_jp": target or None,
+                "gloss_en": gloss or None,
+                "book_mode": "vocab_drill",
+            }
+        )
+        return jp, en, step
+
     if sub == "shadow":
         # Full dialog CD for shadowing — no mic, no grade (Irodori speaking step 2).
         jp = "シャドーイングしましょう。CDに 合わせて、小声で いってください。"
@@ -213,7 +288,6 @@ def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, 
         return jp, en, step
 
     if sub == "repeat":
-        # listen_repeat_all: cycle through each key_phrase; otherwise first phrase only
         p_idx = repeat_phrase_index(activity, quiz_index)
         if p_idx is not None and phrases:
             target = phrases[min(p_idx, len(phrases) - 1)]
@@ -321,6 +395,8 @@ def expected_phrases_for_substep(activity: dict, quiz_index: int) -> list[str]:
             if p and p not in out:
                 out.append(p)
         return out or phrases
+    if sub in ("pronounce", "vocab_say", "select"):
+        return phrases[:4] if phrases else []
     if sub == "repeat":
         p_idx = repeat_phrase_index(activity, quiz_index)
         if p_idx is not None and phrases:
@@ -353,6 +429,13 @@ def grammar_intro(lesson_id: str) -> tuple[str, str, dict]:
 
 def grammar_item(point: dict, index: int, total: int) -> tuple[str, str, dict]:
     p = (point.get("point") or "")[:40]
+    examples = point.get("examples") or []
+    expected: list[str] = []
+    for ex in examples:
+        if isinstance(ex, dict) and ex.get("jp"):
+            expected.append(str(ex["jp"]))
+        elif isinstance(ex, str) and ex.strip():
+            expected.append(ex.strip())
     jp = f"ぶんぽう {index + 1}。{p}。れいを いってみてください。"
     en = f"Grammar {index + 1}/{total}: {point.get('point')}"
     step = {
@@ -361,6 +444,8 @@ def grammar_item(point: dict, index: int, total: int) -> tuple[str, str, dict]:
         "expect_speech": True,
         "auto_advance_after_audio": False,
         "grammar_index": index,
+        "expected_phrases": expected,
+        "say_target_jp": expected[0] if expected else None,
     }
     return jp, en, step
 

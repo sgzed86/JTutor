@@ -516,7 +516,9 @@ def apply_generic_book_flow(lesson_num: int, activities: list[dict]) -> None:
             if audio:
                 a["dialog_listen_audio"] = audio[:2]
         elif kind == "vocabulary":
-            a["book_mode"] = "listen_repeat"
+            a["book_mode"] = "vocab_drill" if len(phrases) < 5 else "listen_repeat_all"
+        elif kind in ("hiragana", "katakana", "classroom"):
+            a["book_mode"] = "kana_trace"
         else:
             a["book_mode"] = "listen_repeat"
 
@@ -748,7 +750,10 @@ def apply_phrases_from_transcripts(
             if len(phrases) >= 5:
                 a["book_mode"] = "listen_repeat_all"
             else:
-                a["book_mode"] = "listen_repeat"
+                a["book_mode"] = "vocab_drill"
+            continue
+        if kind in ("hiragana", "katakana"):
+            a["book_mode"] = "kana_trace"
             continue
 
     apply_generic_book_flow(lesson_num, activities)
@@ -1051,6 +1056,7 @@ def main() -> None:
                         "audio": [t["rel_path"]],
                         "key_phrases": [],
                         "prompt_en": "Listen to classroom Japanese used by the teacher.",
+                        "book_mode": "kana_trace",
                     }
                     for i, t in enumerate(tracks)
                 ],

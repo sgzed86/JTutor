@@ -82,6 +82,7 @@ def load_index(book_id: str | None = None) -> dict:
     data.setdefault("book_id", bid)
     if not data.get("book_title"):
         data["book_title"] = get_book(bid).title
+    data.setdefault("schema_version", 0)
     return data
 
 
@@ -91,6 +92,8 @@ def load_lesson(lesson_id: str) -> dict:
         raise FileNotFoundError(lesson_id)
     data = _cached_yaml(path, _lesson_cache)
     data.setdefault("book_id", book_for_lesson_id(lesson_id).id)
+    if "schema_version" not in data:
+        data["schema_version"] = 0
     return data
 
 

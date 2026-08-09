@@ -36,7 +36,10 @@ async def speak(body: SpeakIn):
         wav = await voicevox_client.synthesize(body.text, body.speaker_id)
     except Exception as e:
         log_event("voice", "speak_error", error=str(e), chars=len(body.text))
-        raise HTTPException(503, f"VoiceVox error: {e}")
+        raise HTTPException(
+            503,
+            "VoiceVox is not running. Start VoiceVox and open Setup to verify the connection.",
+        )
     log_event(
         "voice",
         "speak",
