@@ -1,11 +1,12 @@
 from __future__ import annotations
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from fastapi.responses import FileResponse
 
 from backend.app.books import BOOKS, get_book
 from backend.app.config import settings
 from backend.app.curriculum_loader import _active_book_id, resolve_asset
+from backend.app.errors import AudioNotFound, InvalidRequest, PdfNotFound
 
 router = APIRouter()
 
@@ -15,10 +16,10 @@ def get_audio(path: str):
     """Serve an MP3 by relative path under project root (must be under assets/audio)."""
     rel = path.replace("\\", "/")
     if ".." in rel or not rel.startswith("assets/audio/"):
-        raise HTTPException(400, "Invalid audio path")
+        raise InvalidRequest("Invalid audio path.")
     file_path = resolve_asset(rel)
     if not file_path.is_file():
-        raise HTTPException(404, f"Audio not found: {rel}")
+        raise AudioNotFound(detail=rel)
     return FileResponse(file_path, media_type="audio/mpeg", filename=file_path.name)
 
 
@@ -38,8 +39,8 @@ def get_pdf(which: str = "textbook", book: str | None = None):
         bid, which = "starter", "textbook"
     try:
         info = get_book(bid)
-    except KeyError:
-        raise HTTPException(404, "Unknown book")
+    except KeyError as e:
+        raise InvalidRequest("Unknown book.") from e
     if which in ("textbook", "book"):
         name = info.textbook_pdf
     elif which in ("grammar", "worksheets"):
@@ -47,7 +48,10 @@ def get_pdf(which: str = "textbook", book: str | None = None):
     else:
         # legacy Grammar_Worksheets_X
         name = "Grammar_Worksheets_X.pdf" if which != "starter" else info.textbook_pdf
-    path = settings.assets_dir / name
+    assets = settings.assets_dir.resolve()
+    path = (assets / name).resolve()
+    if assets not in path.parents:
+        raise InvalidRequest("Invalid PDF path.")
     if not path.is_file():
-        raise HTTPException(404, f"PDF not found: {name}")
+        raise PdfNotFound(detail=name)
     return FileResponse(path, media_type="application/pdf", filename=name)

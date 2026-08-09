@@ -113,8 +113,10 @@ def init_db() -> None:
     Base.metadata.create_all(bind=engine)
     try:
         _migrate_sqlite_columns()
-    except Exception:
-        pass
+    except Exception as exc:  # noqa: BLE001 - a failed migration must not block startup
+        from backend.app.logging_setup import get_logger
+
+        get_logger("db").warning("sqlite column migration failed: %s", exc)
     # Unlock first lesson(s) of each book by default
     with SessionLocal() as db:
         for lid, unlocked in [("L00", True), ("L01", True), ("EL01", True)]:

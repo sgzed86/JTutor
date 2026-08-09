@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from fastapi import APIRouter, HTTPException
 
-from backend.app.curriculum_loader import list_lessons, load_lesson
 from backend.app import srs_service
+from backend.app.curriculum_loader import load_lesson
 from backend.app.db import SessionLocal
 
 router = APIRouter()
@@ -26,7 +26,7 @@ def get_lesson(lesson_id: str):
     try:
         lesson = load_lesson(lesson_id)
     except FileNotFoundError:
-        raise HTTPException(404, "Lesson not found")
+        raise HTTPException(404, "Lesson not found") from None
     return lesson
 
 
@@ -35,7 +35,7 @@ def seed_srs(lesson_id: str):
     try:
         lesson = load_lesson(lesson_id)
     except FileNotFoundError:
-        raise HTTPException(404, "Lesson not found")
+        raise HTTPException(404, "Lesson not found") from None
     with SessionLocal() as db:
         n = srs_service.enqueue_vocab(
             db,

@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
+from backend.app import lesson_flow as flow
 from backend.app.book_modes import flow_substeps
 from backend.app.db import ChatSession
-from backend.app import lesson_flow as flow
 from backend.app.free_response import intro_questions
 
 
@@ -43,20 +43,21 @@ def lesson_progress_snapshot(lesson: dict, session: ChatSession) -> dict:
         else:
             fraction = 0.72
             label = "Grammar"
-    elif state == "can_do_quiz":
+    elif state in ("can_do_quiz", "self_check"):
+        # The quiz and its self-check interleave (quiz 1 → self-check 1 → quiz 2),
+        # so they share one 0.78–0.98 band. Giving each its own band made the
+        # percentage jump backwards every time a new Can-do started.
         if can_n:
-            fraction = 0.78 + min(session.quiz_index, can_n) / can_n * 0.12
-            label = f"Can-do · {min(session.quiz_index + 1, can_n)}/{can_n}"
+            idx = min(session.quiz_index, can_n - 1)
+            offset = 0.5 if state == "self_check" else 0.0
+            fraction = 0.78 + (idx + offset) / can_n * 0.20
+            if state == "self_check":
+                label = f"Self-check · {idx + 1}/{can_n}"
+            else:
+                label = f"Can-do · {idx + 1}/{can_n}"
         else:
-            fraction = 0.88
-            label = "Can-do check"
-    elif state == "self_check":
-        if can_n:
-            fraction = 0.90 + min(session.quiz_index, can_n) / can_n * 0.08
-            label = f"Self-check · {min(session.quiz_index + 1, can_n)}/{can_n}"
-        else:
-            fraction = 0.95
-            label = "Self-check"
+            fraction = 0.88 if state == "can_do_quiz" else 0.95
+            label = "Can-do check" if state == "can_do_quiz" else "Self-check"
     elif state == "lesson_complete":
         fraction = 1.0
         label = "Lesson complete"

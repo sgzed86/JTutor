@@ -12,7 +12,6 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from pypdf import PdfReader
-
 from text_cleanup import cleanup_text, extract_english_blocks
 
 PDF = ROOT / "assets" / "irodori_starter.pdf"
@@ -142,7 +141,7 @@ def extract_lesson_pages(reader: PdfReader, starts: dict[int, int]) -> dict[int,
     """Collect page ranges and cleaned text samples per lesson."""
     ordered = sorted(starts.items())
     result = {}
-    total = len(reader.pages)
+    _total = len(reader.pages)
     for i, (lesson, start) in enumerate(ordered):
         end = (ordered[i + 1][1] - 1) if i + 1 < len(ordered) else min(start + 40, 505)
         pages = list(range(start, end + 1))

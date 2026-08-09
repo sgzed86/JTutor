@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from backend.app.curriculum_loader import list_lessons, load_lesson
+from backend.app.curriculum_loader import load_lesson
 from backend.app.db import CanDoProgress, LessonProgress, get_db
 from backend.app.lesson_unlock import is_lesson_unlocked
 

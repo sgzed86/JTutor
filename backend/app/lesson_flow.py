@@ -3,23 +3,91 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
-from typing import Any
 
 from backend.app.book_modes import (
-    auto_advance_substeps,
     book_mode,
     flow_substeps,
     repeat_phrase_index,
-    speech_substeps,
+    spec_for,
     substep_at,
 )
 from backend.app.books import content_dir_for_lesson
 from backend.app.curriculum_loader import load_lesson
 
-# quiz_index substeps during `book` phase
-SUB_ANNOUNCE = 0
-SUB_PRACTICE = 1
+_transcript_cache: dict[str, dict[str, str]] = {}
+
+
+def audio_transcripts(lesson_id: str) -> dict[str, str]:
+    """Whisper transcripts for the book MP3s, keyed by relative path.
+
+    Optional: the file is excluded from some packaged builds, in which case the
+    Script tab simply has nothing extra to show.
+    """
+    key = str(content_dir_for_lesson(lesson_id))
+    cached = _transcript_cache.get(key)
+    if cached is not None:
+        return cached
+    path = content_dir_for_lesson(lesson_id) / "audio_transcripts.json"
+    data: dict[str, str] = {}
+    if path.is_file():
+        try:
+            raw = json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(raw, dict):
+                data = {str(k): str(v) for k, v in raw.items()}
+        except (OSError, json.JSONDecodeError):
+            data = {}
+    _transcript_cache[key] = data
+    return data
+
+
+def audio_entries(lesson_id: str, paths: list[str]) -> list[dict]:
+    """Audio descriptors with transcripts, so the client can show a script."""
+    transcripts = audio_transcripts(lesson_id)
+    return [{"path": p, "transcript": transcripts.get(p)} for p in paths if p]
+
+
+def lesson_segments(lesson: dict) -> list[dict]:
+    """Consecutive activities sharing a can_do_id form one presentational segment.
+
+    Purely for display — the orchestrator does not use segments to sequence
+    anything.
+    """
+    segments: list[dict] = []
+    for activity in book_tracks(lesson):
+        cid = activity.get("can_do_id")
+        if segments and segments[-1]["can_do_id"] == cid:
+            segments[-1]["activity_ids"].append(activity.get("id"))
+            continue
+        title = None
+        for cd in lesson.get("can_dos") or []:
+            if cd.get("id") == cid:
+                title = cd.get("statement_en")
+                break
+        segments.append(
+            {
+                "index": len(segments),
+                "can_do_id": cid,
+                "title_en": title,
+                "activity_ids": [activity.get("id")],
+            }
+        )
+    for seg in segments:
+        seg["total"] = len(segments)
+    return segments
+
+
+def segment_for_activity(lesson: dict, activity_id: str | None) -> dict | None:
+    if not activity_id:
+        return None
+    for seg in lesson_segments(lesson):
+        if activity_id in seg["activity_ids"]:
+            return {
+                "index": seg["index"],
+                "total": seg["total"],
+                "can_do_id": seg["can_do_id"],
+                "title_en": seg["title_en"],
+            }
+    return None
 
 
 def _grammar_for_lesson(lesson_id: str) -> list[dict]:
@@ -124,8 +192,10 @@ def _dialog_line(activity: dict, substep: str) -> dict | None:
     return lines[0] if lines else None
 
 
-def _step_base(activity: dict, substep: str, quiz_index: int) -> dict:
-    return {
+def _step_base(activity: dict, substep: str, quiz_index: int, lesson: dict | None = None) -> dict:
+    subs = flow_substeps(activity)
+    spec = spec_for(substep)
+    step = {
         "phase": "book",
         "book_mode": book_mode(activity),
         "book_substep": substep,
@@ -134,10 +204,34 @@ def _step_base(activity: dict, substep: str, quiz_index: int) -> dict:
         "kind": activity.get("kind"),
         "book_flow_index": quiz_index,
         "section_title_en": activity.get("book_section_en"),
+        # Self-describing fields so the client never has to re-derive the flow.
+        "substeps": subs,
+        "substep_index": quiz_index if 0 <= quiz_index < len(subs) else None,
+        "substep_total": len(subs),
+        "expects_speech": bool(spec and spec.expects_speech),
+        "auto_advance": bool(spec and spec.auto_advances),
+        "graded": bool(spec and spec.graded),
+        "substep_label_en": spec.label_en if spec else None,
     }
+    if lesson:
+        step["activity_index"] = track_index(lesson, activity.get("id"))
+        step["activity_total"] = len(book_tracks(lesson))
+        step["segment"] = segment_for_activity(lesson, activity.get("id"))
+    return step
 
 
 def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, dict]:
+    """One book sub-step, with audio/script metadata attached for the client."""
+    jp, en, step = _book_step_impl(activity, lesson, quiz_index)
+    lesson_id = str(lesson.get("lesson_id") or "") if lesson else ""
+    if lesson_id:
+        step["audio"] = audio_entries(lesson_id, list(step.get("play_audio") or []))
+    if activity.get("dialog_script") and "dialog_script" not in step:
+        step["dialog_script"] = activity.get("dialog_script")
+    return jp, en, step
+
+
+def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, dict]:
     """One book sub-step (listen / select / role-play line)."""
     sub = substep_at(activity, quiz_index) or "repeat"
     phrases = _phrases(activity)
@@ -166,7 +260,7 @@ def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, 
             jp = "会話を ききましょう。CDを きいてください。"
             en = activity.get("book_scene_en") or "Listen to the dialog on the CD."
             up_next = None
-        step = _step_base(activity, sub, quiz_index)
+        step = _step_base(activity, sub, quiz_index, lesson)
         step.update(
             {
                 "play_audio": audio[:2],
@@ -189,7 +283,7 @@ def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, 
             "Shadow the dialog — speak quietly along with the CD. "
             "No grading; just follow the rhythm."
         )
-        step = _step_base(activity, sub, quiz_index)
+        step = _step_base(activity, sub, quiz_index, lesson)
         # Prefer full dialog tracks (may be 1–2 files); fall back to activity audio.
         shadow_audio = list(activity.get("dialog_listen_audio") or activity.get("audio") or [])
         step.update(
@@ -223,7 +317,7 @@ def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, 
             en = f"Listen and repeat — say: {target}" if target else "Repeat the phrase from the CD."
             alts = phrases[1:4]
         jp = f"言いましょう。{target}" if target else "言いましょう。"
-        step = _step_base(activity, sub, quiz_index)
+        step = _step_base(activity, sub, quiz_index, lesson)
         step.update(
             {
                 "play_audio": [],
@@ -242,7 +336,7 @@ def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, 
         target = phrases[0] if phrases else ""
         jp = "どんな あいさつ ですか。日本語で いってください。"
         en = activity.get("picture_hint_en") or "Which greeting fits the picture? Say it in Japanese."
-        step = _step_base(activity, sub, quiz_index)
+        step = _step_base(activity, sub, quiz_index, lesson)
         step.update(
             {
                 "play_audio": [],
@@ -268,7 +362,7 @@ def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, 
             en = "Dialog — yellow line (partner). You take orange next."
         else:
             en = "Your turn — orange line in the book."
-        step = _step_base(activity, sub, quiz_index)
+        step = _step_base(activity, sub, quiz_index, lesson)
         step.update(
             {
                 "play_audio": [],
@@ -284,7 +378,7 @@ def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, 
         jp = text if is_tutor else (f"あなたの セリフです。{text}" if text else "あなたの セリフを いってください。")
         return jp, en, step
 
-    step = _step_base(activity, "repeat", quiz_index)
+    step = _step_base(activity, "repeat", quiz_index, lesson)
     step.update({"play_audio": [], "expect_speech": True, "auto_advance_after_audio": False})
     return "言いましょう。", "Say the phrase.", step
 
@@ -295,15 +389,6 @@ def book_section_intro(activity: dict) -> tuple[str, str] | None:
     if jp or en:
         return (jp or en or ""), (en or jp or "")
     return None
-
-
-def book_announce(activity: dict, lesson: dict) -> tuple[str, str, dict]:
-    return book_step(activity, lesson, 0)
-
-
-def book_practice_prompt(activity: dict) -> tuple[str, str, dict]:
-    idx = 1 if len(flow_substeps(activity)) > 1 else 0
-    return book_step(activity, {}, idx)
 
 
 def expected_phrases_for_substep(activity: dict, quiz_index: int) -> list[str]:
@@ -342,8 +427,12 @@ def grammar_intro(lesson_id: str) -> tuple[str, str, dict]:
     step = {
         "phase": "grammar",
         "play_audio": [],
+        "audio": [],
         "expect_speech": bool(pts),
+        "expects_speech": bool(pts),
         "auto_advance_after_audio": False,
+        "auto_advance": False,
+        "graded": False,
         "grammar_count": len(pts),
     }
     return jp, en, step
@@ -356,9 +445,18 @@ def grammar_item(point: dict, index: int, total: int) -> tuple[str, str, dict]:
     step = {
         "phase": "grammar",
         "play_audio": [],
+        "audio": [],
         "expect_speech": True,
+        "expects_speech": True,
         "auto_advance_after_audio": False,
+        "auto_advance": False,
+        "graded": False,
         "grammar_index": index,
+        "grammar_total": total,
+        "grammar_point": point.get("point"),
+        "substep_index": index,
+        "substep_total": total,
+        "instruction_en": f"Grammar {index + 1} of {total} — say an example aloud",
     }
     return jp, en, step
 
@@ -405,19 +503,6 @@ def quiz_prompt(can_do: dict, lesson: dict, scenario: dict | None = None) -> tup
         jp = f"Can-do テストです。{stmt[:50]}。 日本語で いってください。"
         en = f"Can-do check: {can_do.get('statement_en')}"
     step = quiz_step(can_do, scenario, expect_speech=True)
-    return jp, en, step
-
-
-def quiz_intro_script() -> tuple[str, str, dict]:
-    jp = "Can-do チェックです。わたしが セリフを いいます。あなたが へんじ してください。"
-    en = "Can-do check. I'll say a line from a situation — you reply in Japanese."
-    step = {
-        "phase": "quiz",
-        "play_audio": [],
-        "expect_speech": False,
-        "auto_advance_after_audio": True,
-        "book_substep": "quiz_intro",
-    }
     return jp, en, step
 
 

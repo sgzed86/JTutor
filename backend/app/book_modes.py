@@ -1,6 +1,14 @@
-"""Irodori book exercise modes (listen → select → shadow → role-play)."""
+"""Irodori book exercise modes (listen → select → shadow → role-play).
+
+`SUBSTEPS` is the single source of truth for what each sub-step does. The old
+module-level `speech_substeps()` / `auto_advance_substeps()` sets, the per-branch
+flags scattered through `lesson_flow.book_step()` and the hardcoded list in the
+React client were three independent copies of this table.
+"""
 
 from __future__ import annotations
+
+from dataclasses import dataclass
 
 # quiz_index → substep name while in `book` phase
 # Design: dialog embeds a true shadowing step (full CD, no grade) before role-play,
@@ -16,6 +24,59 @@ FLOW_BY_MODE: dict[str, list[str]] = {
     "shadow_dialog": ["shadow"],
     "repeat": ["listen", "repeat"],  # legacy default
 }
+
+
+@dataclass(frozen=True)
+class SubStepSpec:
+    """What one book sub-step does. Drives both the server flow and the client UI."""
+
+    name: str
+    expects_speech: bool
+    auto_advances: bool
+    plays_audio: bool
+    graded: bool
+    label_en: str
+    hint_en: str
+
+
+SUBSTEPS: dict[str, SubStepSpec] = {
+    "listen": SubStepSpec(
+        "listen", False, True, True, False,
+        "Listen", "Play the book CD and follow along.",
+    ),
+    "shadow": SubStepSpec(
+        "shadow", False, True, True, False,
+        "Shadow", "Speak quietly along with the CD. Not graded.",
+    ),
+    "repeat": SubStepSpec(
+        "repeat", True, False, False, True,
+        "Repeat", "Say the phrase aloud.",
+    ),
+    "select": SubStepSpec(
+        "select", True, False, False, True,
+        "Choose & say", "Match the picture in your book, then say it.",
+    ),
+    "partner": SubStepSpec(
+        "partner", False, True, False, False,
+        "Partner line", "Yuki speaks the yellow line.",
+    ),
+    "learner": SubStepSpec(
+        "learner", True, False, False, True,
+        "Your line", "Say the orange line.",
+    ),
+    "swap_learner": SubStepSpec(
+        "swap_learner", True, False, False, True,
+        "Swap — you first", "Roles swapped: you speak first.",
+    ),
+    "swap_partner": SubStepSpec(
+        "swap_partner", False, True, False, False,
+        "Swap — partner", "Roles swapped: Yuki replies.",
+    ),
+}
+
+
+def spec_for(substep: str | None) -> SubStepSpec | None:
+    return SUBSTEPS.get(substep or "")
 
 
 def book_mode(activity: dict | None) -> str:
@@ -54,14 +115,14 @@ def substep_at(activity: dict | None, quiz_index: int) -> str | None:
 
 def speech_substeps() -> frozenset[str]:
     """Substeps that require graded learner speech."""
-    return frozenset({"repeat", "select", "learner", "swap_learner"})
+    return frozenset(name for name, spec in SUBSTEPS.items() if spec.expects_speech)
 
 
 def auto_advance_substeps() -> frozenset[str]:
-    """Tutor/CD-only steps — UI advances after audio (and optional TTS)."""
-    return frozenset({"listen", "shadow", "partner", "swap_partner"})
+    """Tutor/CD-only steps — the UI continues once audio (and optional TTS) ends."""
+    return frozenset(name for name, spec in SUBSTEPS.items() if spec.auto_advances)
 
 
 def timed_audio_substeps() -> frozenset[str]:
     """Play book audio without stopping for mic/grade."""
-    return frozenset({"listen", "shadow"})
+    return frozenset(name for name, spec in SUBSTEPS.items() if spec.plays_audio)

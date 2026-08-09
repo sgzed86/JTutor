@@ -6,7 +6,6 @@ from __future__ import annotations
 import re
 import unicodedata
 
-
 # Common furigana-only lines (hiragana/katakana short readings)
 _RUBY_LINE = re.compile(r"^[\u3040-\u309F\u30A0-\u30FF\u30FC\s]{1,12}$")
 _PAGE_NOISE = re.compile(r"©\s*The Japan Foundation.*", re.IGNORECASE)

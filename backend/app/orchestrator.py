@@ -8,17 +8,16 @@ from datetime import datetime
 from sqlalchemy.orm import Session
 
 from backend.app import lesson_flow as flow
-from backend.app import ollama_client
-from backend.app import srs_service
-from backend.app.book_modes import auto_advance_substeps, flow_substeps, speech_substeps, substep_at
+from backend.app import ollama_client, srs_service
+from backend.app.book_modes import flow_substeps, speech_substeps, substep_at
 from backend.app.config import settings
-from backend.app.curriculum_loader import load_lesson, list_lessons
+from backend.app.curriculum_loader import load_lesson
 from backend.app.db import CanDoProgress, ChatSession, LessonProgress
 from backend.app.free_response import acknowledge_intro, intro_questions, intro_step
 from backend.app.lesson_progress import lesson_progress_snapshot
 from backend.app.lesson_unlock import is_lesson_unlocked, next_lesson_id
 from backend.app.logging_setup import log_event
-from backend.app.phrase_grade import grade_phrases, hybrid_grade, normalize_jp_for_grade, quiz_grade
+from backend.app.phrase_grade import current_policy, grade_phrases, quiz_grade
 from backend.app.self_check import save_self_check, self_check_step, self_check_summary
 
 
@@ -184,7 +183,16 @@ def _payload(
     step: dict | None = None,
     grade: dict | None = None,
     db: Session | None = None,
+    kind: str = "step",
 ) -> dict:
+    """The tutor response envelope.
+
+    `kind` is "step" for anything that moves or re-renders the lesson, and "help"
+    for Ask Yuki replies. The client must never treat a "help" payload as a step
+    transition: the echoed step still carries the current sub-step's audio and
+    auto-advance flags so the UI can keep rendering it, and acting on those was
+    silently advancing the lesson.
+    """
     activity = flow.track_by_id(lesson, session.activity_id)
     last = messages[-1] if messages else {}
     resolved = _resolve_step(session, lesson, activity, messages, step)
@@ -197,27 +205,37 @@ def _payload(
             "statement_en": cd.get("statement_en"),
             "statement_jp": cd.get("statement_jp"),
         }
-    out = {
+    lesson_messages = [m for m in messages if not (m.get("step") or {}).get("help") and m.get("kind") != "question"]
+    help_messages = [m for m in messages if (m.get("step") or {}).get("help") or m.get("kind") == "question"]
+    return {
+        "kind": kind,
         "session_id": session.id,
         "lesson_id": lesson["lesson_id"],
+        "lesson_title_en": lesson.get("title_en"),
+        "book_id": lesson.get("book_id"),
         "state": session.state,
         "activity_id": session.activity_id,
         "activity": activity,
         "messages": messages,
+        "lesson_messages": lesson_messages,
+        "help_messages": help_messages,
         "can_dos": can_dos,
         "quiz_index": session.quiz_index,
         "step": resolved,
         "hint_en": last.get("hint_en"),
         "progress": lesson_progress_snapshot(lesson, session),
+        "segments": flow.lesson_segments(lesson),
+        "grammar": flow._grammar_for_lesson(lesson["lesson_id"]),
+        "vocab": lesson.get("vocab") or [],
         "grade": grade,
         "self_check": pending_self,
+        # Always present: this used to appear only when a db handle was passed,
+        # so the field came and went between endpoints.
+        "self_checks": self_check_summary(db, lesson["lesson_id"], can_dos) if db is not None else [],
         "next_lesson_id": next_lesson_id(lesson["lesson_id"])
         if session.state == "lesson_complete"
         else None,
     }
-    if db is not None:
-        out["self_checks"] = self_check_summary(db, lesson["lesson_id"], can_dos)
-    return out
 
 
 def _lesson_phrase_bank(lesson: dict) -> list[str]:
@@ -541,7 +559,7 @@ async def start_or_resume(db: Session, lesson_id: str) -> dict:
             messages=len(messages),
         )
         db.commit()
-    return _payload(session, lesson, messages, step)
+    return _payload(session, lesson, messages, step, db=db)
 
 
 async def advance(db: Session, lesson_id: str) -> dict:
@@ -705,10 +723,10 @@ async def user_message(
             _append_tutor(messages, jp, en, {**step, "expect_speech": False}, session.state)
             _save_msgs(session, messages)
             db.commit()
-            return _payload(session, lesson, messages, step)
+            return _payload(session, lesson, messages, step, db=db)
 
         must = flow.expected_phrases_for_substep(activity, session.quiz_index)
-        grade = grade_phrases(text, must, spoken=spoken)
+        grade = grade_phrases(text, must, spoken=spoken, policy=current_policy())
         log_event(
             "orchestrator",
             "grade",
@@ -738,7 +756,7 @@ async def user_message(
                 )
             _save_msgs(session, messages)
             db.commit()
-            return _payload(session, lesson, messages, step, grade)
+            return _payload(session, lesson, messages, step, grade, db=db)
         reply = grade.get("feedback_jp") or flow.feedback_retry(must)
         step = flow.book_step(activity, lesson, session.quiz_index)[2]
         retry = dict(step)
@@ -753,15 +771,43 @@ async def user_message(
         )
         _save_msgs(session, messages)
         db.commit()
-        return _payload(session, lesson, messages, retry, grade)
+        return _payload(session, lesson, messages, retry, grade, db=db)
 
     if session.state == "grammar":
-        reply = flow.feedback_pass_short() if len(text.strip()) >= 2 else flow.feedback_retry([])
-        step = {"phase": "grammar", "expect_speech": True, "play_audio": []}
-        _append_tutor(messages, reply, "Continue or tap Next.", step, session.state)
+        # A spoken grammar example used to reply "よくできました。" and re-arm the
+        # mic without ever incrementing quiz_index, so the phase looped forever
+        # unless the learner pressed Skip. Acknowledge, then move on exactly the
+        # way `advance()` does.
+        pts = flow._grammar_for_lesson(lesson_id)
+        if len(text.strip()) < 2:
+            step = flow.grammar_item(pts[session.quiz_index], session.quiz_index, len(pts))[2] if pts else {
+                "phase": "grammar",
+                "expect_speech": True,
+                "expects_speech": True,
+                "play_audio": [],
+                "audio": [],
+            }
+            _append_tutor(messages, flow.feedback_retry([]), "Say a little more, or tap Next.", step, session.state)
+            _save_msgs(session, messages)
+            db.commit()
+            return _payload(session, lesson, messages, step, db=db)
+
+        _append_tutor(
+            messages,
+            flow.feedback_pass_short(),
+            "Nice — next grammar point.",
+            {"phase": "grammar", "expect_speech": False, "expects_speech": False, "play_audio": [], "audio": [], "help": True},
+            session.state,
+        )
+        session.quiz_index += 1
+        if not pts or session.quiz_index >= len(pts):
+            step = _begin_quiz(session, lesson, messages, db)
+        else:
+            jp, en, step = flow.grammar_item(pts[session.quiz_index], session.quiz_index, len(pts))
+            _append_tutor(messages, jp, en, step, session.state)
         _save_msgs(session, messages)
         db.commit()
-        return _payload(session, lesson, messages, step)
+        return _payload(session, lesson, messages, step, db=db)
 
     if session.state == "can_do_quiz":
         can_dos = lesson.get("can_dos") or []
@@ -770,10 +816,11 @@ async def user_message(
             scenario = _quiz_scenario(db, lesson, cd["id"])
             must = (cd.get("rubric") or {}).get("must_include") or []
             expected = list((scenario or {}).get("expected") or must)
+            policy = current_policy()
             if scenario:
-                base = quiz_grade(text, expected, spoken)
+                base = quiz_grade(text, expected, spoken, policy=policy)
             else:
-                base = hybrid_grade(text, must, spoken)
+                base = grade_phrases(text, must, spoken=spoken, policy=policy)
             grade = await llm_refine_grade(text, cd, base, scenario)
             apply_can_do_result(db, lesson_id, cd["id"], grade)
             srs_service.enqueue_from_gaps(db, lesson_id, cd["id"], grade.get("gaps") or [], text)
@@ -803,7 +850,7 @@ async def user_message(
     _append_tutor(messages, reply, "Use Next activity to continue.", {"phase": "book", "expect_speech": False, "play_audio": []}, session.state)
     _save_msgs(session, messages)
     db.commit()
-    return _payload(session, lesson, messages, None)
+    return _payload(session, lesson, messages, None, db=db)
 
 
 async def answer_question(
@@ -845,7 +892,7 @@ async def answer_question(
     session.quiz_index = frozen["quiz_index"]
     _save_msgs(session, messages)
     db.commit()
-    return _payload(session, lesson, messages, step_snapshot)
+    return _payload(session, lesson, messages, step_snapshot, db=db, kind="help")
 
 
 async def _ollama_lesson_help(
@@ -880,6 +927,20 @@ async def _ollama_lesson_help(
             "say_target_jp": step.get("say_target_jp"),
         },
     }
+    from backend.app import user_settings
+
+    ask_prefs = user_settings.load().ask_yuki
+    length_hint = {
+        "brief": "Keep en to one short sentence.",
+        "normal": "Keep en to two or three sentences.",
+        "detailed": "en may be a short paragraph with one example.",
+    }[ask_prefs.answer_length]
+    language_hint = {
+        "en": "Answer mainly in English; jp may be a single short line.",
+        "ja": "Answer mainly in simple Japanese; keep en to a one-line gloss.",
+        "both": "Give both a Japanese line and an English explanation.",
+    }[ask_prefs.answer_language]
+
     prompt = [
         {
             "role": "system",
@@ -889,6 +950,7 @@ async def _ollama_lesson_help(
                 "Return JSON only: {\"jp\": \"...\", \"en\": \"...\"}. "
                 "jp: short, simple Japanese (1-3 sentences). "
                 "en: clear English explanation. "
+                f"{language_hint} {length_hint} "
                 "Use the lesson context and phrase list; if they ask what to say, give the phrase and meaning. "
                 "Do not invent unrelated grammar. "
                 "This is help only — do not tell them to skip ahead or finish the lesson."
@@ -900,13 +962,13 @@ async def _ollama_lesson_help(
         },
     ]
     try:
-        raw = await ollama_client.chat(prompt, format_json=True)
+        raw = await ollama_client.chat(prompt, format_json=True, model=ask_prefs.model)
         data = json.loads(raw)
         jp = (data.get("jp") or "").strip()[:500]
         en = (data.get("en") or "").strip()[:800]
         if jp and en:
             return jp, en
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - falls back to a scripted phrase hint
         log_event("orchestrator", "ask_question_fallback", error=str(e)[:120])
 
     if phrases:
@@ -995,4 +1057,4 @@ async def jump_to_can_do_quiz(db: Session, lesson_id: str, *, reset_can_do: bool
         reset_can_do=reset_can_do,
         can_do_id=can_dos[0].get("id"),
     )
-    return _payload(session, lesson, messages, step)
+    return _payload(session, lesson, messages, step, db=db)

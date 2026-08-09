@@ -4,12 +4,41 @@ from __future__ import annotations
 
 import re
 import unicodedata
+from dataclasses import dataclass
 from difflib import SequenceMatcher
 
 # Spoken / STT grading is intentionally soft — exact kanji vs kana should not block.
 DEFAULT_PASS_THRESHOLD = 58
 # Soft pass when close and length is in the same ballpark (Whisper near-misses).
 SOFT_PASS_THRESHOLD = 48
+
+
+@dataclass(frozen=True)
+class GradingPolicy:
+    """How strict phrase matching is. Can-do mastery thresholds are separate and
+    deliberately not user-adjustable — see `settings.mastery_min_score`."""
+
+    pass_threshold: float = DEFAULT_PASS_THRESHOLD
+    soft_pass_threshold: float = SOFT_PASS_THRESHOLD
+    spoken_soft_pass: bool = True
+
+
+DEFAULT_POLICY = GradingPolicy()
+
+
+def current_policy() -> GradingPolicy:
+    """Policy derived from the user's grading-strictness setting."""
+    try:
+        from backend.app import user_settings
+
+        threshold = user_settings.load().pass_threshold
+    except Exception:  # noqa: BLE001 - grading must work before settings exist
+        return DEFAULT_POLICY
+    return GradingPolicy(
+        pass_threshold=threshold,
+        soft_pass_threshold=min(SOFT_PASS_THRESHOLD, threshold - 10),
+        spoken_soft_pass=True,
+    )
 
 # Common learner / STT normalizations (applied before compare). Longer keys first.
 _KANJI_VARIANTS = (
@@ -105,10 +134,15 @@ def similarity_score(user_text: str, expected: str) -> float:
     return round(min(100.0, blended * 100.0), 1)
 
 
-def _soft_pass(user_text: str, expected: str, score: float) -> bool:
-    if score >= DEFAULT_PASS_THRESHOLD:
+def _soft_pass(
+    user_text: str,
+    expected: str,
+    score: float,
+    policy: GradingPolicy = DEFAULT_POLICY,
+) -> bool:
+    if score >= policy.pass_threshold:
         return True
-    if score < SOFT_PASS_THRESHOLD:
+    if score < policy.soft_pass_threshold:
         return False
     u = normalize_jp_for_grade(user_text)
     e = normalize_jp_for_grade(expected)
@@ -135,17 +169,49 @@ def _feedback(passed: bool, score: float, best: str | None, expected: list[str])
     return jp, en
 
 
+def diff_against(user_text: str, expected: str) -> list[dict]:
+    """Character runs of the target marked matched / missing, for inline feedback."""
+    u = normalize_jp_for_grade(user_text)
+    e = normalize_jp_for_grade(expected)
+    if not e:
+        return []
+    runs: list[dict] = []
+    for tag, _i1, _i2, j1, j2 in SequenceMatcher(None, u, e).get_opcodes():
+        if j1 == j2:
+            continue
+        runs.append({"text": e[j1:j2], "match": tag == "equal"})
+    merged: list[dict] = []
+    for run in runs:
+        if merged and merged[-1]["match"] == run["match"]:
+            merged[-1]["text"] += run["text"]
+        else:
+            merged.append(dict(run))
+    return merged
+
+
 def grade_phrases(
     user_text: str,
     expected: list[str],
     *,
     spoken: bool = True,
-    pass_threshold: float = DEFAULT_PASS_THRESHOLD,
+    pass_threshold: float | None = None,
+    policy: GradingPolicy | None = None,
 ) -> dict:
     """
     Compare transcript to one or more acceptable phrases.
     Returns pass/fail, score, hits, gaps, and UI feedback strings.
     """
+    if policy is None:
+        policy = (
+            DEFAULT_POLICY
+            if pass_threshold is None
+            else GradingPolicy(
+                pass_threshold=pass_threshold,
+                soft_pass_threshold=min(SOFT_PASS_THRESHOLD, pass_threshold - 10),
+            )
+        )
+    pass_threshold = policy.pass_threshold
+
     candidates = [p for p in expected if p and str(p).strip()]
     if not candidates:
         has_jp = bool(re.search(r"[\u3040-\u30ff\u4e00-\u9fff]", user_text or ""))
@@ -162,6 +228,8 @@ def grade_phrases(
             "feedback_jp": jp,
             "feedback_en": en,
             "spoken": spoken,
+            "transcript": user_text,
+            "diff": [],
         }
 
     best_phrase = candidates[0]
@@ -172,7 +240,8 @@ def grade_phrases(
         u_n = normalize_jp_for_grade(user_text)
         e_n = normalize_jp_for_grade(phrase)
         contains_full = bool(e_n) and e_n in u_n
-        ok = sc >= pass_threshold or (spoken and _soft_pass(user_text, phrase, sc)) or contains_full
+        soft = spoken and policy.spoken_soft_pass and _soft_pass(user_text, phrase, sc, policy)
+        ok = sc >= pass_threshold or soft or contains_full
         if ok:
             hits.append(phrase)
         if sc > best_score:
@@ -180,7 +249,12 @@ def grade_phrases(
             best_phrase = phrase
 
     # Soft pass on best candidate even if threshold loop missed (spoken only)
-    if spoken and not hits and _soft_pass(user_text, best_phrase, best_score):
+    if (
+        spoken
+        and policy.spoken_soft_pass
+        and not hits
+        and _soft_pass(user_text, best_phrase, best_score, policy)
+    ):
         hits.append(best_phrase)
 
     passed = bool(hits) or best_score >= pass_threshold
@@ -197,16 +271,19 @@ def grade_phrases(
         "feedback_jp": jp,
         "feedback_en": en,
         "spoken": spoken,
+        "transcript": user_text,
+        "diff": [] if passed else diff_against(user_text, best_phrase),
     }
 
 
-def hybrid_grade(user_text: str, must: list[str], spoken: bool) -> dict:
-    """Drop-in replacement for orchestrator grading."""
-    return grade_phrases(user_text, must, spoken=spoken)
-
-
-def quiz_grade(user_text: str, expected: list[str], spoken: bool) -> dict:
-    g = grade_phrases(user_text, expected, spoken=spoken)
+def quiz_grade(
+    user_text: str,
+    expected: list[str],
+    spoken: bool,
+    *,
+    policy: GradingPolicy | None = None,
+) -> dict:
+    g = grade_phrases(user_text, expected, spoken=spoken, policy=policy)
     if expected and not g["passed"]:
         g["score"] = max(g["score"], 40.0)
     return g

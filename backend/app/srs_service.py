@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from fsrs import Card, Rating, Scheduler, State
 from sqlalchemy.orm import Session
@@ -17,7 +17,7 @@ def _aware(dt: datetime | None) -> datetime | None:
     if dt is None:
         return None
     if dt.tzinfo is None:
-        return dt.replace(tzinfo=timezone.utc)
+        return dt.replace(tzinfo=UTC)
     return dt
 
 
@@ -25,13 +25,13 @@ def _naive(dt: datetime | None) -> datetime | None:
     if dt is None:
         return None
     if dt.tzinfo is not None:
-        return dt.astimezone(timezone.utc).replace(tzinfo=None)
+        return dt.astimezone(UTC).replace(tzinfo=None)
     return dt
 
 
 def _to_fsrs_card(row: SrsCard) -> Card:
     card = Card()
-    card.due = _aware(row.due) or datetime.now(timezone.utc)
+    card.due = _aware(row.due) or datetime.now(UTC)
     card.stability = row.stability if row.stability else None
     card.difficulty = row.difficulty if row.difficulty else None
     try:

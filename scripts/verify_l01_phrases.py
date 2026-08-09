@@ -2,8 +2,9 @@
 """Print L01 activity → expected phrase (for cross-check with book CD)."""
 from __future__ import annotations
 
-import yaml
 from pathlib import Path
+
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 L01 = ROOT / "content" / "starter" / "L01.yaml"

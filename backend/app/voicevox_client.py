@@ -1,12 +1,32 @@
+"""VOICEVOX engine client: reachability, speaker catalogue and speaker selection.
+
+Synthesis itself lives in `backend.app.speech.tts` so it can be cached.
+"""
+
 from __future__ import annotations
 
 import httpx
 
 from backend.app.config import settings
+from backend.app.logging_setup import get_logger
+from backend.app.speech.text import prepare_for_voicevox  # re-exported for callers
+from backend.app.speech.tts import SynthesisRequest, VoicevoxUnavailable, speech_service
+
+_log = get_logger("voicevox")
 
 # In-process selection; seeded from config / DB on first read.
 _selected_speaker_id: int | None = None
 _SPEAKER_SETTING_KEY = "selected_speaker_id"
+
+__all__ = [
+    "VoicevoxUnavailable",
+    "check_voicevox",
+    "get_selected_speaker_id",
+    "list_speakers",
+    "prepare_for_voicevox",
+    "set_selected_speaker_id",
+    "synthesize",
+]
 
 
 def _default_speaker_id() -> int:
@@ -27,8 +47,8 @@ def get_selected_speaker_id() -> int:
             if row and row.value.strip().isdigit():
                 _selected_speaker_id = int(row.value.strip())
                 return _selected_speaker_id
-    except Exception:
-        pass
+    except Exception as exc:  # noqa: BLE001 - config read must not break synthesis
+        _log.warning("could not read persisted speaker id: %s", exc)
     _selected_speaker_id = _default_speaker_id()
     return _selected_speaker_id
 
@@ -48,8 +68,8 @@ def set_selected_speaker_id(speaker_id: int) -> int:
             else:
                 row.value = str(speaker_id)
             db.commit()
-    except Exception:
-        pass
+    except Exception as exc:  # noqa: BLE001 - selection still applies in-process
+        _log.warning("could not persist speaker id %s: %s", speaker_id, exc)
     return _selected_speaker_id
 
 
@@ -60,51 +80,30 @@ async def check_voicevox() -> dict:
             if r.status_code >= 400:
                 r = await client.get(f"{settings.voicevox_url}/docs")
             return {"ok": r.status_code < 500, "status": r.status_code}
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - health probe reports, never raises
         return {"ok": False, "error": str(e)}
 
 
 async def list_speakers() -> list[dict]:
     """Proxy VOICEVOX GET /speakers (character + style list)."""
-    async with httpx.AsyncClient(timeout=10.0) as client:
-        r = await client.get(f"{settings.voicevox_url}/speakers")
-        r.raise_for_status()
-        data = r.json()
-        return data if isinstance(data, list) else []
+    try:
+        async with httpx.AsyncClient(timeout=10.0) as client:
+            r = await client.get(f"{settings.voicevox_url}/speakers")
+            r.raise_for_status()
+            data = r.json()
+            return data if isinstance(data, list) else []
+    except httpx.HTTPError as exc:
+        raise VoicevoxUnavailable(str(exc)) from exc
 
 
-def prepare_for_voicevox(text: str) -> str:
-    """Normalize tutor text so VoiceVox can speak it cleanly."""
-    import re
-
-    t = (text or "").strip()
-    t = re.sub(r"```[\s\S]*?```", " ", t)
-    t = re.sub(r"[*_`#]+", " ", t)
-    t = re.sub(r"\([A-Za-z][^)]{0,80}\)", " ", t)
-    t = re.sub(r"\s+", " ", t).strip()
-    # VoiceVox struggles with long Latin runs — drop them when JP is present
-    if re.search(r"[\u3040-\u30ff\u4e00-\u9fff]", t):
-        t = re.sub(r"[A-Za-z]{3,}", " ", t)
-        t = re.sub(r"\s+", " ", t).strip()
-    return t[:300]
-
-
-async def synthesize(text: str, speaker: int | None = None) -> bytes:
+async def synthesize(
+    text: str,
+    speaker: int | None = None,
+    *,
+    speed: float = 1.0,
+    pitch: float = 0.0,
+) -> bytes:
     speaker = speaker if speaker is not None else get_selected_speaker_id()
-    text = prepare_for_voicevox(text)
-    if not text:
-        raise ValueError("Nothing speakable for VoiceVox")
-    async with httpx.AsyncClient(timeout=60.0) as client:
-        q = await client.post(
-            f"{settings.voicevox_url}/audio_query",
-            params={"text": text, "speaker": speaker},
-        )
-        q.raise_for_status()
-        query = q.json()
-        s = await client.post(
-            f"{settings.voicevox_url}/synthesis",
-            params={"speaker": speaker},
-            json=query,
-        )
-        s.raise_for_status()
-        return s.content
+    return await speech_service.synthesize(
+        SynthesisRequest(text=text, speaker=int(speaker), speed=speed, pitch=pitch)
+    )

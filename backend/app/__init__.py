@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from backend.app import db as db_module
-from backend.app.config import settings
 
 # Re-export for clarity
 Base = db_module.Base

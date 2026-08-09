@@ -25,7 +25,7 @@ def review(card_id: int, body: ReviewIn, db: Session = Depends(get_db)):
     try:
         row = srs_service.review_card(db, card_id, body.rating)
     except KeyError:
-        raise HTTPException(404, "Card not found")
+        raise HTTPException(404, "Card not found") from None
     return srs_service.card_to_dict(row)
 
 

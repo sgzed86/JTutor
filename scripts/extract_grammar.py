@@ -12,7 +12,6 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from pypdf import PdfReader
-
 from text_cleanup import cleanup_text
 
 PDF = ROOT / "assets" / "Grammar_Worksheets_X.pdf"

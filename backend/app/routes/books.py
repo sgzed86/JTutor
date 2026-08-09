@@ -22,6 +22,6 @@ def set_book(body: SetBookBody):
     try:
         bid = set_active_book(body.book_id)
     except KeyError:
-        raise HTTPException(404, "Unknown book")
+        raise HTTPException(404, "Unknown book") from None
     idx = load_index(bid)
     return {"ok": True, "active": bid, "lesson_count": len(idx.get("lessons") or [])}
