@@ -70,6 +70,12 @@ Keep Japan Foundation materials in **`assets/`** only on your machine.
 
 While the API runs, events append to **`data/jtutor.log`**. In the app: **Setup → Session log**, or `GET http://127.0.0.1:8765/log/tail?lines=200`.
 
+## Planned redesign
+
+A full UI/UX audit, redesign plan, and a plan to replace the start/stop batch
+files with a self-contained installer live in
+**[docs/redesign/](docs/redesign/README.md)**.
+
 ## Project layout
 
 | Path | Role |
