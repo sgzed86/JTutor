@@ -70,6 +70,10 @@ Keep Japan Foundation materials in **`assets/`** only on your machine.
 
 While the API runs, events append to **`data/jtutor.log`**. In the app: **Setup → Session log**, or `GET http://127.0.0.1:8765/log/tail?lines=200`.
 
+## Technical audit
+
+Full-stack review of the state machine, voice pipeline, curriculum generation, and UI, with a prioritized improvement roadmap: **[docs/AUDIT.md](docs/AUDIT.md)**.
+
 ## Project layout
 
 | Path | Role |
