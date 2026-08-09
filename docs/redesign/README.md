@@ -3,6 +3,27 @@
 This folder holds the audit and plans for turning Jtutor from a working
 developer-run prototype into a polished consumer desktop app.
 
+## Implementation status
+
+Waves 1 and 2 of [the roadmap](05-roadmap-and-tasks.md) are implemented in this
+repository. The audit below describes the app **before** those changes; it is
+kept as written because it is the evidence the redesign was derived from.
+
+| Area | Status |
+|------|--------|
+| Safety net: golden transcripts, grading/schema/API tests, CI | Done — 219 backend + 24 UI tests |
+| Backend: Whisper off the event loop, TTS cache, error envelope, settings API, self-describing steps | Done |
+| Electron: supervised backend, splash, failure dialog, orphan sweep, deterministic shutdown | Done |
+| Frontend: three-pane shell, single `TutorPhase` machine, audio pipeline, recorder + waveform, SVG avatar, settings dialog, themes | Done |
+| Packaging: PyInstaller backend, installer, `.bat` scripts removed | Done |
+| Wave 3: `LessonPhase` registry and `BookSubStep` base class | **Not done** — internal-only refactors with no user-visible effect. The golden transcripts that make them safe are in place, so they can be picked up at any time |
+| Wave 3: generated TypeScript client types from OpenAPI | Not done — the client types in `src/api/types.ts` are hand-written but complete and `strict` |
+
+One deliberate deviation from [the redesign plan](02-ui-redesign-plan.md): styles
+live in a token-driven stylesheet organised by area (`src/styles/`) rather than
+per-component CSS Modules. Same outcome — no inline styles, fully themeable —
+with far fewer files.
+
 | Document | Contents |
 |----------|----------|
 | [01 — UI/UX audit](01-ux-audit.md) | What the app does today, measured problems, missing features, inconsistencies, pain points |
