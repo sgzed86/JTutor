@@ -1,130 +1,128 @@
 # Jtutor
 
-Local Japanese tutor for **Irodori: Japanese for Life in Japan** — **Starter (A1)** and **Elementary 1 (A2)**. Electron + FastAPI app that walks the book in order, grades spoken answers, and unlocks lessons via can-do checks—not a free-form chat bot.
+Local Japanese tutor for **Irodori: Japanese for Life in Japan** — **Starter (A1)** and **Elementary 1 (A2)**. Electron + FastAPI desktop app that walks the book in order, grades spoken answers, and unlocks lessons via can-do checks—not a free-form chat bot.
 
 ## What it does
 
-- **Book flow** — Activities in CD order: listen & repeat, picture-based “choose & say,” and role-play (partner vs learner lines, then role swap). Lesson 1 uses book-faithful modes; other lessons default to listen → repeat until extended in the curriculum builder.
-- **Voice** — Official Irodori MP3s in-app; tutor lines via **VOICEVOX**; your answers via **Whisper** (push-to-talk).
+- **Book flow** — Activities in CD order: listen & repeat, picture-based “choose & say,” and role-play (partner vs learner lines, then role swap).
+- **Voice** — Official Irodori MP3s in-app; tutor lines via **VOICEVOX**; your answers via **Whisper** (push-to-talk with a live waveform and silence detection).
 - **Can-do gates** — Spoken role-play quizzes at the end of each lesson; pass counts unlock the next lesson.
-- **Ask Yuki** — Mid-lesson questions (English or Japanese) without advancing the exercise; **Ollama** answers with lesson context.
+- **Ask Yuki** — Mid-lesson questions (English or Japanese) that never move the lesson; **Ollama** answers with lesson context.
 - **FSRS** — Spaced repetition cards from vocab and quiz gaps.
-- **Progress** — Dashboard and lesson map; optional jump to Can-do quiz for testing.
+- **Progress** — Lesson rail with per-lesson can-do state, plus a full progress page.
 
-Tutor UI uses an animated **Yuki** avatar (speech bubble + clear “say this” card for the phrase you need).
+The window is one screen: lesson rail on the left, Yuki and the phrase you need in the middle, Ask Yuki / grammar notes / dialog script / vocabulary on the right, and a transport bar along the bottom that always holds the next action.
 
-## Prerequisites
+## Install (end users)
 
-**Python 3.11+**, **Node.js LTS**, **[Ollama](https://ollama.com/)** (e.g. `ollama pull qwen2.5:7b`), **[VOICEVOX](https://voicevox.hiroshiba.jp/)** on `http://127.0.0.1:50021`, and your own Irodori Starter PDFs/MP3s under `assets/` (gitignored—do not redistribute).
+Run the installer and launch Jtutor. **Python is bundled** — there is nothing to
+install, start or stop by hand.
 
-Full install details: **[docs/SETUP.md](docs/SETUP.md)**.
+Optional local services add features; the app works without them and the
+in-app **Setup guide** (click the status dot in the title bar) explains what
+each one gives you:
 
-## Quick start (Windows)
+- **[VOICEVOX](https://voicevox.hiroshiba.jp/)** — Yuki's voice
+- **[Ollama](https://ollama.com/)** (`ollama pull qwen2.5:7b`) — Ask Yuki answers
+- Your own Irodori PDFs/MP3s in the app's `assets` folder — book audio
 
-1. Install dependencies (once):
+See **[release/README.md](release/README.md)** for the end-user guide.
 
-   ```powershell
-   pip install -r backend\requirements.txt
-   npm install
-   npm install --prefix apps\desktop
-   ```
+## Run from source (developers)
 
-2. Start Ollama and VOICEVOX, then double-click **`start_jtutor.bat`** (API + Vite, opens http://127.0.0.1:5173).
+```bash
+pip install -r backend/requirements.txt
+npm install
+npm install --prefix apps/desktop
 
-   - Electron window: **`start_jtutor_electron.bat`**
-   - Stop stray dev servers: **`stop_jtutor.bat`**
-
-Or from the repo root:
-
-```powershell
-npm run dev
+npm run dev      # FastAPI + Vite + Electron together
 ```
 
-Runs API (`127.0.0.1:8765`) and UI (`5173`) together.
+`npm run dev` starts the API on `127.0.0.1:8765`, Vite on `5173`, and the
+Electron window once both are up. Closing the window stops everything.
 
-Manual split terminal commands are in [docs/SETUP.md](docs/SETUP.md).
+Details: **[docs/SETUP.md](docs/SETUP.md)**.
+
+## Build an installer
+
+```bash
+npm run dist         # current platform
+npm run dist:win     # Windows NSIS
+```
+
+This freezes the backend with PyInstaller (`npm run build:backend`), builds the
+UI, and packages both with electron-builder. The result needs no Python on the
+target machine. See **[docs/DISTRIBUTE.md](docs/DISTRIBUTE.md)**.
+
+## Tests
+
+```bash
+npm test             # vitest + pytest
+npm run lint         # eslint + ruff
+npm run typecheck    # tsc --noEmit
+```
+
+`tests/golden/` holds a recorded transcript for every lesson: the exact
+sequence of states, activities, sub-steps and scripted lines a learner walks
+through. Any change to the tutor flow has to reproduce them, which is how
+deterministic progression is protected. Regenerate deliberately, and review the
+diff, with `JTUTOR_REGEN_GOLDENS=1 pytest tests/test_flow_golden.py`.
+
+## Planned work
+
+The UI/UX audit and the redesign, startup and architecture plans this app was
+rebuilt from live in **[docs/redesign/](docs/redesign/README.md)**.
 
 ## Content & curriculum
 
 - Generated YAML: `content/starter/` (**L00–L18**) and `content/elementary1/` (**EL01–EL18**).
-- Switch books in the app sidebar (Starter ↔ Elementary 1).
+- Switch books in the left rail.
 - Rebuild from local PDFs/audio:
 
-  ```powershell
-  # Starter
-  python scripts/run_scrape.py
-
-  # Elementary 1 (after placing Elementary1.pdf, Grammar_Elementary_1.pdf, and Y_*.mp3 under assets/)
-  python scripts/run_scrape_elementary1.py
+  ```bash
+  python scripts/run_scrape.py                # Starter
+  python scripts/run_scrape_elementary1.py    # Elementary 1
   ```
 
-  Elementary 1 phrases are taken from the textbook dialog scripts (not Whisper).
-
   Optional fields and migration notes: [docs/CURRICULUM_SCHEMA.md](docs/CURRICULUM_SCHEMA.md).
+  Every lesson is validated against `backend/app/schema.py` in CI.
 
-- L01 phrase sanity check: `python scripts/verify_l01_phrases.py`
-
-Keep Japan Foundation materials in **`assets/`** only on your machine.
+Keep Japan Foundation materials in your own `assets/` folder only.
 
 ## Debugging
 
-While the API runs, events append to **`data/jtutor.log`**. In the app: **Setup → Session log**, or `GET http://127.0.0.1:8765/log/tail?lines=200`.
-
-## Planned redesign
-
-A full UI/UX audit, redesign plan, and a plan to replace the start/stop batch
-files with a self-contained installer live in
-**[docs/redesign/](docs/redesign/README.md)**.
+Backend output goes to a rotating log in the app's data folder; **Settings →
+Advanced → Open log folder** reveals it. In development the backend also logs to
+`data/jtutor.log`.
 
 ## Project layout
 
 | Path | Role |
 |------|------|
-| `backend/app/` | FastAPI, tutor state machine, voice clients |
-| `apps/desktop/` | React UI + Electron |
-| `content/starter/` | Lesson YAML (generated) |
-| `assets/` | Your Irodori PDFs/MP3s (local, gitignored) |
+| `backend/app/` | FastAPI, tutor state machine, speech services |
+| `backend/main_frozen.py` | Entry point for the packaged backend |
+| `apps/desktop/src/` | React UI |
+| `apps/desktop/electron/` | Electron main process + backend supervisor |
+| `packaging/` | PyInstaller spec |
+| `content/` | Lesson YAML (generated) |
+| `tests/` | Golden transcripts, grading, schema and API contract tests |
 | `scripts/` | Scrape & curriculum build |
 
 ## API (local only)
 
-Backend binds **`127.0.0.1:8765`**. Main routes:
+The backend binds `127.0.0.1` on a port the app picks at launch, and requires a
+per-run token on API routes. Main routes:
 
 | Area | Examples |
 |------|----------|
 | Health | `GET /health` |
 | Curriculum | `GET /curriculum`, `GET /curriculum/{id}` |
 | Progress | `GET /progress` |
-| Tutor | `POST /tutor/{id}/start`, `/advance`, `/message`, `/ask`, `/reset`, `/jump-can-do` |
+| Tutor | `POST /tutor/{id}/start`, `/advance`, `/message`, `/ask`, `/reset`, `/self-check`, `/jump-can-do` |
+| Settings | `GET /settings`, `PATCH /settings` |
 | Media | `GET /media/audio`, `GET /media/pdf` |
-| Voice | `POST /voice/speak`, `POST /voice/transcribe` |
+| Voice | `POST /voice/speak`, `/voice/transcribe`, `GET /voice/model-status` |
 | SRS | `GET /srs/due`, `POST /srs/{id}/review` |
-| Log | `GET /log/tail`, `POST /log/client` |
-
-## Packaging (send to someone)
-
-**Recommended — portable zip (no Node needed for the recipient):**
-
-```powershell
-npm run release
-```
-
-Creates `dist-release/Jtutor-portable-win.zip`. Send that zip.
-
-Recipient:
-1. Unzip
-2. Run `INSTALL.bat` (needs Python 3.11+)
-3. Put Irodori PDFs/MP3s in `assets\` (see `assets\README.txt`)
-4. Start Ollama + VOICEVOX
-5. Run `START.bat`
-
-**Do not** put Japan Foundation PDFs/MP3s inside the zip you send.
-
-Optional Electron NSIS installer (still needs Python on the PC):
-
-```powershell
-npm run dist
-```
 
 ## License & materials
 

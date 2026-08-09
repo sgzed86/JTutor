@@ -49,3 +49,7 @@ dist-electron/
 .idea/
 .vscode/
 *.swp
+
+# Frozen backend + PyInstaller work dirs
+dist-backend/
+.pyinstaller/

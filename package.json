@@ -1,41 +1,48 @@
 {
   "name": "jtutor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Irodori Starter local Japanese tutor",
+  "description": "Irodori local Japanese tutor",
   "main": "apps/desktop/electron/main.cjs",
   "scripts": {
-    "dev:backend": "set PYTHONPATH=%CD%&& python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8765",
+    "dev": "concurrently -k -n api,ui,app -c blue,green,magenta \"npm:dev:backend\" \"npm:dev:ui\" \"npm:dev:electron\"",
+    "dev:backend": "python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8765 --reload",
     "dev:ui": "npm run dev --prefix apps/desktop",
-    "dev": "concurrently -k \"npm run dev:backend\" \"npm run dev:ui\"",
+    "dev:electron": "wait-on tcp:127.0.0.1:5173 tcp:127.0.0.1:8765 && electron .",
     "build:ui": "npm run build --prefix apps/desktop",
+    "build:backend": "pyinstaller packaging/jtutor-backend.spec --noconfirm --distpath dist-backend --workpath .pyinstaller",
     "start": "npm run build:ui && electron .",
-    "pack": "npm run build:ui && electron-builder --win dir",
-    "dist": "npm run build:ui && electron-builder --win nsis",
-    "release": "powershell -ExecutionPolicy Bypass -File scripts/make_release.ps1",
+    "lint": "npm run lint --prefix apps/desktop && ruff check backend tests scripts",
+    "test": "npm run test --prefix apps/desktop && pytest -q",
+    "typecheck": "npm run typecheck --prefix apps/desktop",
+    "pack": "npm run build:ui && npm run build:backend && electron-builder --dir",
+    "dist": "npm run build:ui && npm run build:backend && electron-builder",
+    "dist:win": "npm run build:ui && npm run build:backend && electron-builder --win nsis",
+    "dist:mac": "npm run build:ui && npm run build:backend && electron-builder --mac dmg",
+    "dist:linux": "npm run build:ui && npm run build:backend && electron-builder --linux AppImage",
     "scrape": "python scripts/run_scrape.py"
   },
   "build": {
     "appId": "com.jtutor.app",
     "productName": "Jtutor",
+    "asar": true,
     "directories": {
-      "output": "dist-electron"
+      "output": "dist-electron",
+      "buildResources": "build"
     },
     "files": [
-      "apps/desktop/dist/**/*",
       "apps/desktop/electron/**/*",
       "package.json"
     ],
     "extraResources": [
       {
-        "from": "backend",
-        "to": "backend",
-        "filter": ["**/*", "!**/__pycache__/**", "!**/*.pyc"]
+        "from": "dist-backend/jtutor-backend",
+        "to": "backend-dist"
       },
       {
         "from": "content",
         "to": "content",
-        "filter": ["**/*", "!**/audio_transcripts.json"]
+        "filter": ["**/*", "!**/pdf_extract.json", "!**/grammar_extract.json"]
       },
       {
         "from": "apps/desktop/dist",
@@ -50,14 +57,26 @@
       "target": ["nsis"],
       "signAndEditExecutable": false
     },
+    "mac": {
+      "target": ["dmg"],
+      "category": "public.app-category.education"
+    },
+    "linux": {
+      "target": ["AppImage"],
+      "category": "Education"
+    },
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
     }
   },
   "devDependencies": {
     "concurrently": "^9.1.0",
     "electron": "^33.2.0",
-    "electron-builder": "^25.1.8"
+    "electron-builder": "^25.1.8",
+    "wait-on": "^8.0.1"
   }
 }

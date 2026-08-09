@@ -1,98 +1,117 @@
-# Jtutor setup
+# Jtutor setup (development)
 
-Local-first Japanese tutor for **Irodori Starter (A1)** using Ollama, VOICEVOX, Whisper, and official lesson audio.
+End users install Jtutor from an installer and need nothing else — see
+[release/README.md](../release/README.md). This page is for working on the code.
 
 ## Prerequisites
 
 1. **Python 3.11+**
 2. **Node.js LTS**
-3. **[Ollama](https://ollama.com/)** — e.g. `ollama pull qwen2.5:7b`
-4. **[VOICEVOX](https://voicevox.hiroshiba.jp/)** — engine listening on `http://127.0.0.1:50021`
-5. Irodori materials in `assets/` (PDF + `assets/audio/*.mp3`) — already moved if you followed the project layout
+3. Optional at runtime: **[Ollama](https://ollama.com/)** (`ollama pull qwen2.5:7b`),
+   **[VOICEVOX](https://voicevox.hiroshiba.jp/)** on `http://127.0.0.1:50021`,
+   and your Irodori PDFs/MP3s under `assets/`.
+
+The app runs without the optional three; you lose Ask Yuki answers, the tutor
+voice and the book audio respectively.
 
 ## Install
 
-```powershell
-cd C:\Users\Zach\Desktop\Jtutor
-pip install -r backend\requirements.txt
+```bash
+pip install -r backend/requirements.txt
 npm install
-npm install --prefix apps\desktop
+npm install --prefix apps/desktop
 ```
 
-Optional: rebuild curriculum from PDFs/audio:
+## Run
 
-```powershell
-python scripts\run_scrape.py
+```bash
+npm run dev
 ```
 
-## Run (development)
+Starts the API (`127.0.0.1:8765`), Vite (`5173`) and the Electron window once
+both are listening. Closing the window stops the whole tree.
 
-**Easiest:** double-click `start_jtutor.bat` in the project folder (starts API + Vite and opens http://127.0.0.1:5173). For the Electron window instead, use `start_jtutor_electron.bat`.
+Individually:
 
-If Vite says **port 5173 is already in use**, a previous dev server is still running — double-click `stop_jtutor.bat` or close the old **Jtutor UI** terminal window, then start again.
-
-Or manually:
-
-```powershell
-$env:PYTHONPATH = (Get-Location).Path
-$env:PYTHONIOENCODING = "utf-8"
-python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8765
+```bash
+npm run dev:backend    # uvicorn with --reload
+npm run dev:ui         # vite
+npm run dev:electron   # electron against the dev servers
 ```
 
-Terminal 2 — UI:
+There are no `.bat` launchers any more. In development Electron talks to the
+Vite dev server; in a packaged build it starts the frozen backend itself and
+loads the UI the backend serves.
 
-```powershell
-npm run dev --prefix apps\desktop
-```
+## How startup works
 
-Open `http://127.0.0.1:5173`.
+`apps/desktop/electron/backend.cjs` supervises the backend:
 
-Or from Electron (spawns backend):
-
-```powershell
-npm run dev --prefix apps\desktop
-# separate terminal:
-npx electron .
-```
+1. Sweeps an orphaned backend from a previous run (verified through a pid file
+   plus a `/health` identity check, so it can never kill an unrelated process).
+2. Picks a free loopback port and mints a per-run token.
+3. Resolves the backend command: `JTUTOR_BACKEND_EXE` → the bundled
+   `backend-dist/jtutor-backend` → `JTUTOR_PYTHON` → a probed `python3`/`python`/`py -3`
+   that reports 3.11+.
+4. Spawns it with stdout/stderr teed to `<userData>/logs/backend.log`.
+5. Polls `/health` behind a splash window, then opens the main window. On
+   failure it shows a dialog with the log tail and Retry / Open log / Quit.
+6. Restarts the backend up to three times with backoff if it exits unexpectedly.
+7. On quit: `POST /internal/shutdown` → `SIGTERM` → force kill, gated on
+   `before-quit` so the app cannot exit ahead of its backend.
 
 ## Environment variables
 
 | Variable | Default | Meaning |
 |----------|---------|---------|
-| `OLLAMA_MODEL` | `qwen2.5:7b` | Chat / grading model |
+| `JTUTOR_ROOT` | repo root | Folder holding `content/` and `ui/` |
+| `JTUTOR_DATA_DIR` | `<root>/data` | Database, logs, TTS cache (the app points this at per-user app data) |
+| `JTUTOR_ASSETS_DIR` | `<root>/assets` | Irodori PDFs and MP3s |
+| `JTUTOR_TOKEN` | unset | When set, API routes require `x-jtutor-token` |
+| `JTUTOR_PYTHON` | — | Interpreter the supervisor should prefer |
+| `OLLAMA_MODEL` | `qwen2.5:7b` | Ask Yuki model |
 | `OLLAMA_URL` | `http://127.0.0.1:11434` | Ollama API |
 | `VOICEVOX_URL` | `http://127.0.0.1:50021` | VOICEVOX engine |
-| `SELECTED_SPEAKER_ID` | `2` | Default VoiceVox style id (also set in Settings → Tutor Voice) |
-| `VOICEVOX_SPEAKER` | `2` | Legacy alias for the default speaker id |
-| `WHISPER_MODEL` | `small` | faster-whisper size |
-| `WHISPER_DEVICE` | `cpu` | `cpu` or `cuda` |
-| `LOG_LEVEL` | `INFO` | Set to `DEBUG` for more detail |
+| `SELECTED_SPEAKER_ID` | `2` | Default VOICEVOX style id |
+| `WHISPER_MODEL` / `WHISPER_DEVICE` | `small` / `cpu` | faster-whisper size and device |
+| `GRADING_STRICTNESS` | `standard` | `lenient` / `standard` / `strict` default |
+| `LOG_LEVEL` | `INFO` | `DEBUG` for more detail |
+
+Anything the user changes in **Settings** is stored in the database and
+overrides these defaults at runtime.
+
+## Tests
+
+```bash
+npm test          # vitest (UI) + pytest (backend)
+npm run lint      # eslint + ruff
+npm run typecheck # tsc --noEmit
+```
+
+The backend suite includes `tests/golden/`: a recorded transcript per lesson
+covering every state, activity, sub-step and scripted line. A flow change that
+alters progression fails these. Regenerate deliberately with
+`JTUTOR_REGEN_GOLDENS=1 pytest tests/test_flow_golden.py` and review the diff.
 
 ## Debug log
 
-While the API runs, events are appended to **`data/jtutor.log`** (rotating, under the project folder). Includes tutor state changes, speech/transcribe, HTTP calls to `/tutor` and `/voice`, and UI pipeline steps.
-
-- In the app: **Setup → Session log → Refresh log**
-- Or open the file directly, or `GET http://127.0.0.1:8765/log/tail?lines=200`
-
-Share the tail of this file when reporting tutor bugs.
-
-## Packaging (Windows)
-
-```powershell
-npm run dist
-```
-
-Builds an NSIS installer via electron-builder. **Do not** redistribute `assets/` (Japan Foundation copyright). Point users at the official Irodori download and keep materials local.
+The backend writes to `<data dir>/jtutor.log`; the supervisor additionally tees
+the child's output to `<userData>/logs/backend.log`. **Settings → Advanced →
+Open log folder** reveals it, or `GET /log/tail?lines=200`.
 
 ## API
 
-Backend binds **127.0.0.1:8765** only.
+The backend binds `127.0.0.1` on a port chosen at launch (`8765` in
+development). API routes require `x-jtutor-token` when `JTUTOR_TOKEN` is set;
+`/health`, `/` and `/assets/*` stay open so the window can load, and media URLs
+accept `?token=` because `<audio src>` cannot send headers.
 
-- `GET /health`
+- `GET /health` — services, instance id, pid
 - `GET /curriculum`, `GET /curriculum/{id}`
 - `POST /tutor/{id}/start|advance|message|ask|self-check|reset|jump-can-do`
-- `GET /media/audio?path=assets/audio/...`
-- `POST /voice/speak`, `POST /voice/transcribe`
-- `GET /voice/speakers`, `POST /voice/set-speaker`, `GET /voice/settings`
+- `GET /settings`, `PATCH /settings`, `POST /settings/reset`
+- `GET /media/audio?path=assets/audio/...`, `GET /media/pdf`
+- `POST /voice/speak`, `POST /voice/transcribe`, `GET /voice/model-status`
+- `GET /voice/speakers`, `POST /voice/set-speaker`
 - `GET /srs/due`, `POST /srs/{id}/review`
+- `POST /internal/shutdown` — used by the supervisor

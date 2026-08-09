@@ -46,7 +46,11 @@ _app_log = get_logger("app")
 # Per-run token minted by the Electron supervisor. When unset (plain `uvicorn`
 # during development) authentication is disabled.
 APP_TOKEN = os.environ.get("JTUTOR_TOKEN", "").strip()
-_OPEN_PATHS = ("/health", "/docs", "/openapi.json", "/redoc")
+# The token guards the API. The UI document and its bundle must stay open: a
+# top-level browser navigation cannot attach a header, and serving the built
+# assets is not a capability worth protecting. Media requests carry the token as
+# a query parameter instead, since <audio src> has the same limitation.
+_OPEN_PATHS = ("/health", "/docs", "/openapi.json", "/redoc", "/assets", "/favicon")
 
 
 @asynccontextmanager
@@ -88,7 +92,7 @@ app.add_middleware(
 @app.middleware("http")
 async def auth_and_log(request: Request, call_next):
     path = request.url.path
-    if APP_TOKEN and request.method != "OPTIONS" and not path.startswith(_OPEN_PATHS):
+    if APP_TOKEN and request.method != "OPTIONS" and path != "/" and not path.startswith(_OPEN_PATHS):
         supplied = request.headers.get("x-jtutor-token") or request.query_params.get("token")
         if supplied != APP_TOKEN:
             err = Unauthorized()
