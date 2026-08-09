@@ -1052,3 +1052,51 @@ Deliberately **not** in the next cycle: the `TutorMode` base class, the `quiz_in
 and the typed `Step` contract. They are the right end state and they are the reason §10
 exists, but each one rewrites code that currently has zero test coverage. Land item 6 first
 and they become routine.
+
+---
+
+## 12. Implementation status
+
+Implementation merged to `main` (formerly [PR #3](https://github.com/sgzed86/JTutor/pull/3)).
+
+### Tier 1
+
+| Item | Status |
+|---|---|
+| 1.1–1.13, 1.15–1.16 | Done |
+| 1.14 Bundle fonts | Done — `@fontsource` in desktop app (no Google Fonts CDN) |
+| 1.17 Dead code | Done — unused imports cleaned (`orchestrator`, `progress`) |
+
+### Tier 2
+
+| Item | Status |
+|---|---|
+| 2.1 Grading | Done — polarity, topic, equiv table, long vowels (heuristic); optional fugashi deferred |
+| 2.2 Validator + CI | Done — non-strict in CI |
+| 2.3 Starter scripts | Done — extractor + builder; regen YAML locally when PDF extract exists |
+| 2.4 Pronunciation mode | Done — `pronunciation` book_mode |
+| 2.5 Vocab drill | Done — `vocab_drill` book_mode |
+| 2.6 Grammar grading | Done — grades `examples` / point text, not 2-char pass |
+| 2.7 L00 / kana | Done — `kana_trace`, L00 `book_mode` |
+| 2.8 Bounded payload | Done |
+| 2.9 Barge-in | Done — stop speaking + mic during TTS |
+| 2.10 Flow tests | Done — `test_flow_snapshots.py`, `pytest-asyncio` |
+| 2.11 Ask Yuki budget | Done — capped phrases + `recent_turns` |
+| 2.12 Speech rate | Done |
+| 2.13 Error surfaces | Partial — global handler, VoiceVox 503 copy; Setup link in UI still minimal |
+
+### Tier 3 (structural)
+
+| Item | Status |
+|---|---|
+| 3.1 TutorMode registry | Done — `tutor_modes/registry.py` dispatches `book_step` |
+| 3.2 phase + phase_index | Done — DB columns, `session_flow`, synced with `quiz_index` |
+| 3.3 Typed Step | Done — `step_models.TutorStep`, `types/step.ts`, `coerce_step` in payload |
+| 3.4 Unified audio | Done — `useAudioPipeline` hook (book + TTS + stopAll) |
+| 3.5 Whisper worker | Done — `_job_lock` serializes decode |
+| 3.6 Canonical schema | Done — `curriculum_schema.py`, validate on load, `CURRICULUM_SCHEMA.md` |
+| 3.7 Book registry | Done — `backend/app/books.py`; `scripts/books.py` re-exports |
+| 3.8 YAML overlays | Done — `content/starter/overrides/`, `apply_lesson_overrides` in builder |
+| 3.9 Culture / portfolio | Done — `culture_read` mode; `lesson_meta` + `english_notes` in tutor payload; self-check in progress |
+
+`lesson_controller.current_step_snapshot` replaces duplicate orchestrator resolvers. Tutor routes use `require_unlocked` dependency.

@@ -44,7 +44,7 @@ export default function Setup() {
           <span className={`pill ${health ? "ok" : "bad"}`}>API :8765</span>
           <span className={`pill ${health?.ollama?.ok ? "ok" : "bad"}`}>Ollama</span>
           <span className={`pill ${health?.voicevox?.ok ? "ok" : "bad"}`}>VoiceVox</span>
-          <span className={`pill ok`}>Whisper (lazy-load)</span>
+          <span className={`pill ${health?.whisper?.ok ? "ok" : "bad"}`}>Whisper</span>
           <button className="btn" onClick={refresh}>Refresh</button>
         </div>
         {health?.ollama?.models && (

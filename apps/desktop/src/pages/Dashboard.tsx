@@ -82,7 +82,7 @@ export default function Dashboard() {
               <span className={`pill ${health?.backend ? "ok" : "bad"}`}>Backend</span>
               <span className={`pill ${health?.ollama?.ok ? "ok" : "bad"}`}>Ollama</span>
               <span className={`pill ${health?.voicevox?.ok ? "ok" : "bad"}`}>VoiceVox</span>
-              <span className={`pill ${health?.whisper ? "ok" : "bad"}`}>Whisper</span>
+              <span className={`pill ${health?.whisper?.ok ? "ok" : "bad"}`}>Whisper</span>
             </div>
             <p className="muted" style={{ marginTop: "0.75rem" }}>
               <Link to="/setup">Setup checklist</Link>

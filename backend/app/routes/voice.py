@@ -24,6 +24,10 @@ class SetSpeakerIn(BaseModel):
     speaker_id: int = Field(..., ge=0)
 
 
+class SetSpeedIn(BaseModel):
+    speed_scale: float = Field(..., ge=0.5, le=2.0)
+
+
 @router.post("/speak")
 async def speak(body: SpeakIn):
     if not body.text.strip():
@@ -32,7 +36,10 @@ async def speak(body: SpeakIn):
         wav = await voicevox_client.synthesize(body.text, body.speaker_id)
     except Exception as e:
         log_event("voice", "speak_error", error=str(e), chars=len(body.text))
-        raise HTTPException(503, f"VoiceVox error: {e}")
+        raise HTTPException(
+            503,
+            "VoiceVox is not running. Start VoiceVox and open Setup to verify the connection.",
+        )
     log_event(
         "voice",
         "speak",
@@ -81,11 +88,18 @@ async def set_speaker(body: SetSpeakerIn):
     return {"ok": True, "selected_speaker_id": sid}
 
 
+@router.post("/set-speed")
+def set_speed(body: SetSpeedIn):
+    scale = voicevox_client.set_speed_scale(body.speed_scale)
+    log_event("voice", "set_speed", speed_scale=scale)
+    return {"ok": True, "voice_speed_scale": scale}
+
+
 @router.post("/transcribe")
-async def transcribe(file: UploadFile = File(...)):
+def transcribe(file: UploadFile = File(...)):
     suffix = Path(file.filename or "audio.webm").suffix or ".webm"
     with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
-        data = await file.read()
+        data = file.file.read()
         tmp.write(data)
         tmp_path = Path(tmp.name)
     try:
@@ -112,4 +126,5 @@ def voice_settings():
         "default_speaker_id": settings.selected_speaker_id,
         "whisper_model": settings.whisper_model,
         "whisper_device": settings.whisper_device,
+        "voice_speed_scale": voicevox_client.get_speed_scale(),
     }

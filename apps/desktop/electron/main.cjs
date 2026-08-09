@@ -14,6 +14,19 @@ function projectRoot() {
   return path.join(__dirname, "..", "..", "..");
 }
 
+const gotLock = app.requestSingleInstanceLock();
+if (!gotLock) {
+  app.quit();
+} else {
+  app.on("second-instance", () => {
+    const wins = BrowserWindow.getAllWindows();
+    if (wins[0]) {
+      if (wins[0].isMinimized()) wins[0].restore();
+      wins[0].focus();
+    }
+  });
+}
+
 function startBackend() {
   const root = projectRoot();
   const python = process.env.JTUTOR_PYTHON || "python";
@@ -28,6 +41,9 @@ function startBackend() {
     ["-m", "uvicorn", "backend.app.main:app", "--host", "127.0.0.1", "--port", "8765"],
     { cwd: root, env, stdio: "ignore", windowsHide: true }
   );
+  backendProc.on("error", (err) => {
+    console.error("Failed to start Python backend:", err.message);
+  });
   backendProc.on("exit", (code) => {
     console.log("backend exited", code);
   });
@@ -83,8 +99,12 @@ function createWindow() {
 }
 
 app.whenReady().then(async () => {
+  if (!gotLock) return;
   startBackend();
-  await waitForHealth();
+  const ok = await waitForHealth();
+  if (!ok) {
+    console.error("Backend did not respond on", API);
+  }
   createWindow();
 });
 

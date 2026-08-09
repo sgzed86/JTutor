@@ -1,4 +1,4 @@
-"""Registered Irodori books available to the tutor."""
+"""Registered Irodori books (canonical registry — Tier 3.7)."""
 
 from __future__ import annotations
 
@@ -17,6 +17,10 @@ class BookInfo:
     content_subdir: str
     textbook_pdf: str
     grammar_pdf: str
+    audio_prefix: str
+    unlock_first: tuple[str, ...]
+    toc_en_pages: tuple[int, ...]
+    toc_jp_pages: tuple[int, ...]
 
 
 BOOKS: dict[str, BookInfo] = {
@@ -28,6 +32,10 @@ BOOKS: dict[str, BookInfo] = {
         content_subdir="starter",
         textbook_pdf="irodori_starter.pdf",
         grammar_pdf="Grammar_Worksheets_X.pdf",
+        audio_prefix="X_",
+        unlock_first=("L00", "L01"),
+        toc_en_pages=tuple(range(36, 42)),
+        toc_jp_pages=tuple(range(30, 36)),
     ),
     "elementary1": BookInfo(
         id="elementary1",
@@ -37,6 +45,10 @@ BOOKS: dict[str, BookInfo] = {
         content_subdir="elementary1",
         textbook_pdf="Elementary1.pdf",
         grammar_pdf="Grammar_Elementary_1.pdf",
+        audio_prefix="Y_",
+        unlock_first=("EL01",),
+        toc_en_pages=tuple(range(36, 42)),
+        toc_jp_pages=tuple(range(30, 36)),
     ),
 }
 

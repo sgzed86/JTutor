@@ -1,7 +1,14 @@
+import { useEffect, useState } from "react";
 import VoiceSettings from "../components/Settings/VoiceSettings";
 import { api } from "../api";
 
 export default function Settings() {
+  const [activeBook, setActiveBook] = useState("starter");
+
+  useEffect(() => {
+    api.books().then((b) => setActiveBook(b.active || "starter")).catch(() => undefined);
+  }, []);
+
   return (
     <div className="stack">
       <div>
@@ -33,10 +40,10 @@ export default function Settings() {
           <strong>Mastery</strong>: pass each Can-do role-play once (spoken, score ≥ 80) to finish the lesson
         </p>
         <p>
-          <a className="btn" href={api.pdfUrl("starter")} target="_blank" rel="noreferrer">
-            Open starter PDF
+          <a className="btn" href={api.pdfUrl("textbook", activeBook)} target="_blank" rel="noreferrer">
+            Open textbook PDF
           </a>{" "}
-          <a className="btn" href={api.pdfUrl("grammar")} target="_blank" rel="noreferrer">
+          <a className="btn" href={api.pdfUrl("grammar", activeBook)} target="_blank" rel="noreferrer">
             Open grammar PDF
           </a>
         </p>

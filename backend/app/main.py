@@ -7,9 +7,9 @@ import sys
 import time
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 # Prefer packaged / portable root when set
@@ -28,9 +28,20 @@ _http_log = get_logger("http")
 
 app = FastAPI(title="Jtutor", version="0.1.0")
 
+
+@app.exception_handler(Exception)
+async def unhandled_exception(_request: Request, exc: Exception):
+    get_logger("app").exception("unhandled: %s", exc)
+    return JSONResponse(status_code=500, content={"detail": str(exc)[:200]})
+
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://127.0.0.1:5173",
+        "http://localhost:5173",
+        "http://127.0.0.1:8765",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -85,6 +96,9 @@ async def log_requests(request, call_next):
 def _startup() -> None:
     init_db()
     get_logger("app").info("api ready host=%s port=%s", settings.host, settings.port)
+    import threading
+
+    threading.Thread(target=lambda: __import__("backend.app.whisper_service", fromlist=["warm_whisper"]).warm_whisper(), daemon=True).start()
 
 
 def main() -> None:

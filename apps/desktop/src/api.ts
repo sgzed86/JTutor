@@ -43,7 +43,14 @@ export const api = {
       voicevox_speaker: number;
       whisper_model: string;
       whisper_device: string;
+      voice_speed_scale?: number;
     }>("/voice/settings"),
+  setVoiceSpeed: (speedScale: number) =>
+    req<{ ok: boolean; voice_speed_scale: number }>("/voice/set-speed", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ speed_scale: speedScale }),
+    }),
   books: () => req<{ books: any[]; active: string }>("/books"),
   setBook: (bookId: string) =>
     req<{ ok: boolean; active: string; lesson_count: number }>("/books/active", {
@@ -59,6 +66,10 @@ export const api = {
     req<{ lessons: any[]; book_id?: string; book_title?: string }>("/progress"),
   startTutor: (id: string) =>
     req<any>(`/tutor/${id}/start`, { method: "POST" }),
+  tutorHistory: (id: string, offset = 0, limit = 200) =>
+    req<{ messages: any[]; message_total: number; offset: number }>(
+      `/tutor/${id}/history?offset=${offset}&limit=${limit}`
+    ),
   resetTutor: (id: string) =>
     req<any>(`/tutor/${id}/reset`, { method: "POST" }),
   advance: (id: string) =>
@@ -95,8 +106,11 @@ export const api = {
     }),
   audioUrl: (relPath: string) =>
     `${API}/media/audio?path=${encodeURIComponent(relPath)}`,
-  pdfUrl: (which: "starter" | "grammar" = "starter") =>
-    `${API}/media/pdf?which=${which}`,
+  pdfUrl: (which: "textbook" | "grammar" = "textbook", book?: string) => {
+    const q = new URLSearchParams({ which });
+    if (book) q.set("book", book);
+    return `${API}/media/pdf?${q.toString()}`;
+  },
   speak: async (text: string) => {
     const r = await fetch(`${API}/voice/speak`, {
       method: "POST",

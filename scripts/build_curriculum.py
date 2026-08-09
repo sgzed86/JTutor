@@ -18,7 +18,7 @@ STARTER = ROOT / "content" / "starter"
 AUDIO_INDEX = STARTER / "audio_index.json"
 AUDIO_TRANSCRIPTS = STARTER / "audio_transcripts.json"
 PDF_EXTRACT = STARTER / "pdf_extract.json"
-GRAMMAR_EXTRACT = STARTER / "grammar_extract.json"
+SCRIPT_EXTRACT = STARTER / "script_extract.json"
 
 # Curated English can-dos from Irodori Starter TOC (fallback / merge)
 CURATED_CANDOS: dict[int, list[tuple[int, str, str, list[str]]]] = {
@@ -516,7 +516,9 @@ def apply_generic_book_flow(lesson_num: int, activities: list[dict]) -> None:
             if audio:
                 a["dialog_listen_audio"] = audio[:2]
         elif kind == "vocabulary":
-            a["book_mode"] = "listen_repeat"
+            a["book_mode"] = "vocab_drill" if len(phrases) < 5 else "listen_repeat_all"
+        elif kind in ("hiragana", "katakana", "classroom"):
+            a["book_mode"] = "kana_trace"
         else:
             a["book_mode"] = "listen_repeat"
 
@@ -603,6 +605,84 @@ def apply_l02_book_flow_overrides(activities: list[dict]) -> None:
             attach_phrase_meta(a)
 
 
+def apply_phrases_from_scripts(
+    lesson_num: int,
+    activities: list[dict],
+    script: dict,
+) -> None:
+    """Map PDF script phrases onto activities by CD track number (Starter L03+)."""
+    by_track = script.get("by_track") or {}
+    pool = list(script.get("phrases") or [])
+    dialogs = list(script.get("dialogs") or [])
+    dialog_i = 0
+    pool_i = 0
+    listen_counter = 0
+    lid = f"L{lesson_num:02d}"
+
+    for a in activities:
+        if a.get("kind") in ("script", "classroom") or a.get("book_skip"):
+            continue
+        kind = a.get("kind") or "activity"
+        track = a.get("track")
+        phrases = list(by_track.get(str(track), [])) if track is not None else []
+        if kind in ("speaking", "conversation") and dialog_i < len(dialogs):
+            partner, learner = dialogs[dialog_i]
+            dialog_i += 1
+            a["book_mode"] = "dialog"
+            a["dialog_script"] = _dialog(partner, learner)
+            audio = list(a.get("audio") or [])
+            if audio:
+                a["dialog_listen_audio"] = audio[:2]
+            alts = [p for p in phrases if p not in (partner, learner)][:2]
+            a["key_phrases"] = [learner, partner, *alts]
+            attach_phrase_meta(a)
+            continue
+
+        if not phrases and pool:
+            while pool_i < len(pool) * 2:
+                cand = pool[pool_i % len(pool)]
+                pool_i += 1
+                if "ましょう" in cand or "トピック" in cand:
+                    continue
+                phrases = [cand]
+                break
+
+        if phrases:
+            a["key_phrases"] = [p for p in phrases if "ましょう" not in p][:4] or phrases[:4]
+            attach_phrase_meta(a)
+
+        if kind in ("speaking", "conversation"):
+            if len(a.get("key_phrases") or []) >= 2:
+                kp = a["key_phrases"]
+                a["book_mode"] = "dialog"
+                a["dialog_script"] = _dialog(kp[1], kp[0])
+                audio = list(a.get("audio") or [])
+                if audio:
+                    a["dialog_listen_audio"] = audio[:2]
+            elif a.get("key_phrases"):
+                a["book_mode"] = "listen_repeat"
+            continue
+
+        if kind == "listening":
+            listen_counter += 1
+            a["book_mode"] = "listen_repeat" if listen_counter == 1 else "listen_select"
+            if a["book_mode"] == "listen_select":
+                a["picture_has_image"] = True
+                a["picture_hint_en"] = (
+                    f"{lid} activity {a.get('book_activity')}: listen to the CD, "
+                    f"then say the phrase that matches the book."
+                )
+            continue
+        if kind == "grammar_form":
+            a["book_mode"] = "listen_repeat"
+            continue
+        if kind == "vocabulary":
+            a["book_mode"] = "listen_repeat_all" if len(phrases) >= 5 else "listen_repeat"
+            continue
+
+    apply_generic_book_flow(lesson_num, activities)
+
+
 def _activity_transcript(activity: dict, transcripts: dict[str, str]) -> str:
     for rel in activity.get("audio") or []:
         t = transcripts.get(rel)
@@ -670,7 +750,10 @@ def apply_phrases_from_transcripts(
             if len(phrases) >= 5:
                 a["book_mode"] = "listen_repeat_all"
             else:
-                a["book_mode"] = "listen_repeat"
+                a["book_mode"] = "vocab_drill"
+            continue
+        if kind in ("hiragana", "katakana"):
+            a["book_mode"] = "kana_trace"
             continue
 
     apply_generic_book_flow(lesson_num, activities)
@@ -825,6 +908,21 @@ def build_quiz(can_dos: list[dict], phrases: list[str]) -> list[dict]:
     return quizzes
 
 
+def apply_lesson_overrides(lesson: dict, lid: str) -> dict:
+    """Merge content/starter/overrides/LXX.yaml when present (Tier 3.8)."""
+    ov = STARTER / "overrides" / f"{lid}.yaml"
+    if not ov.is_file():
+        return lesson
+    patch = yaml.safe_load(ov.read_text(encoding="utf-8")) or {}
+    if not isinstance(patch, dict):
+        return lesson
+    out = dict(lesson)
+    for key, val in patch.items():
+        out[key] = val
+    out["schema_version"] = max(int(out.get("schema_version") or 0), int(patch.get("schema_version") or 0))
+    return out
+
+
 def build_intro_questions(lesson_num: int, title_en: str, topic_en: str, can_dos: list[dict]) -> list[dict]:
     """
     Warm-up questions (Irodori introductory questions). Optional YAML field.
@@ -946,6 +1044,9 @@ def main() -> None:
     transcripts: dict[str, str] = {}
     if AUDIO_TRANSCRIPTS.exists():
         transcripts = load_json(AUDIO_TRANSCRIPTS)
+    scripts: dict = {}
+    if SCRIPT_EXTRACT.exists():
+        scripts = load_json(SCRIPT_EXTRACT).get("lessons") or {}
 
     index_lessons = []
     for n in range(0, 19):
@@ -970,6 +1071,7 @@ def main() -> None:
                         "audio": [t["rel_path"]],
                         "key_phrases": [],
                         "prompt_en": "Listen to classroom Japanese used by the teacher.",
+                        "book_mode": "kana_trace",
                     }
                     for i, t in enumerate(tracks)
                 ],
@@ -994,6 +1096,8 @@ def main() -> None:
                 apply_l02_phrases(activities)
                 apply_generic_book_flow(n, activities)
                 apply_l02_book_flow_overrides(activities)
+            elif scripts.get(lid):
+                apply_phrases_from_scripts(n, activities, scripts[lid])
             elif transcripts:
                 apply_phrases_from_transcripts(n, activities, transcripts)
             else:
@@ -1047,8 +1151,10 @@ def main() -> None:
                 "quiz_scenarios": quiz_scenarios,
                 "english_notes": (pdf_L.get("english_notes") or "")[:1500],
                 "unlock_requires_mastery": True,
+                "schema_version": 1,
             }
 
+        lesson = apply_lesson_overrides(lesson, lid)
         out = STARTER / f"{lid}.yaml"
         out.write_text(
             yaml.safe_dump(lesson, allow_unicode=True, sort_keys=False, width=100),
@@ -1068,6 +1174,8 @@ def main() -> None:
 
     index = {
         "book": "irodori_starter",
+        "book_id": "starter",
+        "book_title": "Irodori Starter (A1)",
         "level": "A1",
         "title": "Irodori Starter",
         "lessons": index_lessons,
