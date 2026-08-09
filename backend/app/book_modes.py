@@ -17,6 +17,7 @@ FLOW_BY_MODE: dict[str, list[str]] = {
     "pronunciation": ["listen", "pronounce"],
     "vocab_drill": ["listen", "vocab_say"],
     "kana_trace": ["listen", "trace"],
+    "culture_read": ["listen", "reflect"],
     "repeat": ["listen", "repeat"],  # legacy default
 }
 
@@ -62,7 +63,7 @@ def speech_substeps() -> frozenset[str]:
 
 def auto_advance_substeps() -> frozenset[str]:
     """Tutor/CD-only steps — UI advances after audio (and optional TTS)."""
-    return frozenset({"listen", "shadow", "partner", "swap_partner", "trace"})
+    return frozenset({"listen", "shadow", "partner", "swap_partner", "trace", "reflect"})
 
 
 def timed_audio_substeps() -> frozenset[str]:

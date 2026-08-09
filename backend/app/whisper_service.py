@@ -7,6 +7,7 @@ from backend.app.config import settings
 
 _model = None
 _lock = Lock()
+_job_lock = Lock()
 _import_error: str | None = None
 _warm_attempted = False
 
@@ -41,6 +42,12 @@ def warm_whisper() -> None:
 
 
 def transcribe_file(path: Path, language: str = "ja", *, prompt: str | None = None) -> dict:
+    """Serialize decode jobs (Tier 3.5 — single worker lock)."""
+    with _job_lock:
+        return _transcribe_inner(path, language, prompt=prompt)
+
+
+def _transcribe_inner(path: Path, language: str, *, prompt: str | None) -> dict:
     model = get_whisper()
     kwargs: dict = {
         "language": language,

@@ -16,11 +16,14 @@ from backend.app.curriculum_loader import load_lesson
 from backend.app.db import CanDoProgress, ChatSession, LessonProgress
 from backend.app.free_response import acknowledge_intro, intro_questions, intro_step
 from backend.app.lesson_access import locked_response
+from backend.app.lesson_controller import current_step_snapshot
 from backend.app.lesson_progress import lesson_progress_snapshot
 from backend.app.lesson_unlock import is_lesson_unlocked, next_lesson_id
 from backend.app.logging_setup import log_event
 from backend.app.phrase_grade import grade_phrases, normalize_jp_for_grade, quiz_grade
 from backend.app.self_check import save_self_check, self_check_step, self_check_summary
+from backend.app.session_flow import bump_phase_index, enter_phase, normalize_session, phase_payload_fields, set_phase_index
+from backend.app.step_models import coerce_step
 
 
 def _apply_mastery_gate(grade: dict) -> dict:
@@ -60,6 +63,10 @@ def _activity_by_id(lesson: dict, activity_id: str | None) -> dict | None:
         if a.get("id") == activity_id:
             return a
     return None
+
+
+def _transition(session: ChatSession, phase: str, index: int = 0) -> None:
+    enter_phase(session, phase, index=index)
 
 
 def _msgs(session: ChatSession) -> list[dict]:
@@ -128,6 +135,7 @@ def _book_emit_step(
     quiz_index: int,
 ) -> dict:
     session.quiz_index = quiz_index
+    set_phase_index(session, quiz_index)
     jp, en, step = flow.book_step(activity, lesson, quiz_index)
     _append_tutor(messages, jp, en, step, session.state)
     return step
@@ -185,27 +193,7 @@ def _lesson_step_snapshot(
     lesson: dict,
     db: Session,
 ) -> dict:
-    """Current exercise step — unchanged after a help reply."""
-    activity = flow.track_by_id(lesson, session.activity_id)
-    if session.state == "book" and activity:
-        return dict(flow.book_step(activity, lesson, session.quiz_index)[2])
-    if session.state == "intro_chat":
-        return dict(intro_step(lesson, session.quiz_index)[2])
-    if session.state == "self_check":
-        can_dos = lesson.get("can_dos") or []
-        if session.quiz_index < len(can_dos):
-            return dict(self_check_step(can_dos[session.quiz_index]))
-    if session.state == "can_do_quiz":
-        can_dos = lesson.get("can_dos") or []
-        if session.quiz_index < len(can_dos):
-            cd = can_dos[session.quiz_index]
-            scenario = _quiz_scenario(db, lesson, cd["id"])
-            return dict(flow.quiz_step(cd, scenario, expect_speech=True))
-    if session.state == "grammar":
-        return {"phase": "grammar", "expect_speech": True, "play_audio": [], "help": False}
-    if session.state == "lesson_intro":
-        return {"phase": "intro", "expect_speech": False, "play_audio": [], "auto_advance_after_audio": True}
-    return {"phase": session.state, "expect_speech": False, "play_audio": []}
+    return current_step_snapshot(session, lesson, db, quiz_scenario_fn=_quiz_scenario)
 
 
 def slice_messages_for_payload(
@@ -233,7 +221,8 @@ def _payload(
 ) -> dict:
     activity = flow.track_by_id(lesson, session.activity_id)
     last = messages[-1] if messages else {}
-    resolved = _resolve_step(session, lesson, activity, messages, step)
+    normalize_session(session)
+    resolved = coerce_step(_resolve_step(session, lesson, activity, messages, step))
     can_dos = lesson.get("can_dos") or []
     pending_self = None
     if session.state == "self_check" and session.quiz_index < len(can_dos):
@@ -258,7 +247,12 @@ def _payload(
         "assistant_total": assistant_total,
         "can_dos": can_dos,
         "quiz_index": session.quiz_index,
+        **phase_payload_fields(session),
         "step": resolved,
+        "lesson_meta": {
+            "english_notes": (lesson.get("english_notes") or "")[:1200],
+            "portfolio_prompts": list(lesson.get("portfolio_prompts") or [])[:8],
+        },
         "hint_en": last.get("hint_en"),
         "progress": lesson_progress_snapshot(lesson, session),
         "grade": grade,
@@ -297,6 +291,8 @@ async def ensure_session(db: Session, lesson_id: str) -> ChatSession:
     session = ChatSession(
         lesson_id=lesson_id,
         state="lesson_intro",
+        phase="lesson_intro",
+        phase_index=0,
         activity_id=first_id,
         quiz_index=0,
         messages_json="[]",
@@ -443,8 +439,7 @@ def _begin_intro_chat(session: ChatSession, lesson: dict, messages: list[dict]) 
         if tracks:
             session.activity_id = tracks[0]["id"]
         return _begin_book_track(session, lesson, messages)
-    session.state = "intro_chat"
-    session.quiz_index = 0
+    _transition(session, "intro_chat", index=0)
     jp, en, step = intro_step(lesson, 0)
     _append_tutor(messages, jp, en, step, session.state)
     return step
@@ -454,8 +449,7 @@ def _begin_book_track(session: ChatSession, lesson: dict, messages: list[dict]) 
     activity = flow.track_by_id(lesson, session.activity_id)
     if not activity:
         return _begin_grammar(session, lesson, messages)
-    session.state = "book"
-    session.quiz_index = 0
+    _transition(session, "book", index=0)
     intro = flow.book_section_intro(activity)
     if intro:
         jp_i, en_i = intro
@@ -483,7 +477,7 @@ def _after_can_do_passed(
     can_do: dict,
 ) -> dict:
     """Open soft self-check for this Can-do (does not unlock; quiz_index stays)."""
-    session.state = "self_check"
+    _transition(session, "self_check", index=session.phase_index)
     jp = "Can-do チェックです。じぶんの できを えらんでください。"
     en = "Soft self-check — how well could you do this? Stars only; unlock uses the graded quiz."
     step = self_check_step(can_do)
@@ -499,10 +493,10 @@ def _continue_after_self_check(
 ) -> dict:
     """Move to next Can-do quiz or lesson complete after self-check."""
     can_dos = lesson.get("can_dos") or []
-    session.quiz_index += 1
-    if session.quiz_index >= len(can_dos):
+    bump_phase_index(session)
+    if session.phase_index >= len(can_dos):
         if check_lesson_mastery(db, lesson["lesson_id"]):
-            session.state = "lesson_complete"
+            _transition(session, "lesson_complete", index=0)
             jp, en = flow.lesson_complete_script()
             nxt = next_lesson_id(lesson["lesson_id"])
             step = {
@@ -513,17 +507,14 @@ def _continue_after_self_check(
             }
             _append_tutor(messages, jp, en, step, session.state)
             return step
-        session.quiz_index = 0
-        session.state = "can_do_quiz"
+        _transition(session, "can_do_quiz", index=0)
         return _prompt_can_do_quiz(db, session, lesson, messages, 0)
-    session.state = "can_do_quiz"
-    return _prompt_can_do_quiz(db, session, lesson, messages, session.quiz_index)
+    _transition(session, "can_do_quiz", index=session.phase_index)
+    return _prompt_can_do_quiz(db, session, lesson, messages, session.phase_index)
 
 
 def _begin_grammar(session: ChatSession, lesson: dict, messages: list[dict]) -> dict:
-    session.state = "grammar"
-    session.activity_id = None
-    session.quiz_index = 0
+    _transition(session, "grammar", index=0)
     pts = flow._grammar_for_lesson(lesson["lesson_id"])
     if not pts:
         jp, en, step = flow.grammar_intro(lesson["lesson_id"])
@@ -537,12 +528,11 @@ def _begin_grammar(session: ChatSession, lesson: dict, messages: list[dict]) -> 
 
 
 def _begin_quiz(session: ChatSession, lesson: dict, messages: list[dict], db: Session) -> dict:
-    session.state = "can_do_quiz"
+    _transition(session, "can_do_quiz", index=0)
     session.activity_id = None
-    session.quiz_index = 0
     can_dos = lesson.get("can_dos") or []
     if not can_dos:
-        session.state = "lesson_complete"
+        _transition(session, "lesson_complete", index=0)
         jp, en = flow.lesson_complete_script()
         step = {"phase": "complete", "expect_speech": False, "play_audio": []}
         _append_tutor(messages, jp, en, step, session.state)
@@ -556,7 +546,7 @@ def _next_book_track(session: ChatSession, lesson: dict) -> bool:
     if idx + 1 >= len(tracks):
         return False
     session.activity_id = tracks[idx + 1]["id"]
-    session.quiz_index = 0
+    set_phase_index(session, 0)
     return True
 
 
@@ -565,6 +555,7 @@ async def start_or_resume(db: Session, lesson_id: str) -> dict:
         return block
     lesson = load_lesson(lesson_id)
     session = await ensure_session(db, lesson_id)
+    normalize_session(session)
     messages = _msgs(session)
     _sync_book_substep(session, messages)
     step = None
@@ -578,6 +569,7 @@ async def start_or_resume(db: Session, lesson_id: str) -> dict:
         }
         _append_tutor(messages, jp, en, step, "lesson_intro")
         session.state = "lesson_intro"
+        enter_phase(session, "lesson_intro", index=0)
         _save_msgs(session, messages)
         db.commit()
         log_event("orchestrator", "start", lesson_id=lesson_id, new_session=True)
@@ -638,7 +630,7 @@ async def advance(db: Session, lesson_id: str) -> dict:
         session.quiz_index += 1
         if session.quiz_index >= len(can_dos):
             if check_lesson_mastery(db, lesson_id):
-                session.state = "lesson_complete"
+                _transition(session, "lesson_complete", index=0)
                 jp, en = flow.lesson_complete_script()
                 nxt = next_lesson_id(lesson_id)
                 step = {
@@ -1116,9 +1108,8 @@ async def jump_to_can_do_quiz(db: Session, lesson_id: str, *, reset_can_do: bool
 
     session = await ensure_session(db, lesson_id)
     messages = _msgs(session)
-    session.state = "can_do_quiz"
+    _transition(session, "can_do_quiz", index=0)
     session.activity_id = None
-    session.quiz_index = 0
     _append_tutor(
         messages,
         "Can-do テストに いきます。",

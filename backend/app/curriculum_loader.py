@@ -7,6 +7,7 @@ import yaml
 
 from backend.app.books import BOOKS, book_for_lesson_id, content_dir_for_book, content_dir_for_lesson, get_book
 from backend.app.config import settings
+from backend.app.curriculum_schema import validate_lesson_dict
 
 _lesson_cache: dict[str, tuple[float, dict]] = {}
 _index_cache: dict[str, tuple[float, dict]] = {}
@@ -94,7 +95,7 @@ def load_lesson(lesson_id: str) -> dict:
     data.setdefault("book_id", book_for_lesson_id(lesson_id).id)
     if "schema_version" not in data:
         data["schema_version"] = 0
-    return data
+    return validate_lesson_dict(data)
 
 
 def list_lessons(book_id: str | None = None) -> list[dict]:

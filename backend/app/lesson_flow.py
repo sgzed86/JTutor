@@ -147,6 +147,21 @@ def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, 
 
     if sub == "listen":
         mode = book_mode(activity)
+        if mode == "culture_read":
+            jp = "文化の メモを よみましょう。CDを きいてください。"
+            en = "Life and culture — listen, then read the notes in your book."
+            step = _step_base(activity, sub, quiz_index)
+            step.update(
+                {
+                    "play_audio": audio[:2],
+                    "expect_speech": False,
+                    "auto_advance_after_audio": True,
+                    "instruction_en": "Culture notes (listen)",
+                    "book_mode": "culture_read",
+                    "culture_notes_en": (lesson.get("english_notes") or "")[:600],
+                }
+            )
+            return jp, en, step
         if mode == "kana_trace":
             jp = "ききましょう。CDを きいて、もじを なぞって れんしゅう してください。"
             en = "Listen to the CD and trace the characters in your book. No speaking grade."
@@ -202,6 +217,23 @@ def book_step(activity: dict, lesson: dict, quiz_index: int) -> tuple[str, str, 
                 "say_alternates_jp": phrases[1:4] if mode != "listen_repeat_all" else [],
                 "up_next_en": up_next,
                 "phrase_total": len(phrases) if mode == "listen_repeat_all" else None,
+            }
+        )
+        return jp, en, step
+
+    if sub == "reflect":
+        notes = (lesson.get("english_notes") or activity.get("culture_notes_en") or "").strip()
+        jp = "文化について かんがえましょう。"
+        en = notes[:400] or "Read the culture notes in your book. No grade — tap Skip when ready."
+        step = _step_base(activity, sub, quiz_index)
+        step.update(
+            {
+                "play_audio": [],
+                "expect_speech": False,
+                "auto_advance_after_audio": True,
+                "instruction_en": en,
+                "book_mode": "culture_read",
+                "culture_card": True,
             }
         )
         return jp, en, step

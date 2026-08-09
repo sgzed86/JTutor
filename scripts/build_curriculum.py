@@ -908,6 +908,21 @@ def build_quiz(can_dos: list[dict], phrases: list[str]) -> list[dict]:
     return quizzes
 
 
+def apply_lesson_overrides(lesson: dict, lid: str) -> dict:
+    """Merge content/starter/overrides/LXX.yaml when present (Tier 3.8)."""
+    ov = STARTER / "overrides" / f"{lid}.yaml"
+    if not ov.is_file():
+        return lesson
+    patch = yaml.safe_load(ov.read_text(encoding="utf-8")) or {}
+    if not isinstance(patch, dict):
+        return lesson
+    out = dict(lesson)
+    for key, val in patch.items():
+        out[key] = val
+    out["schema_version"] = max(int(out.get("schema_version") or 0), int(patch.get("schema_version") or 0))
+    return out
+
+
 def build_intro_questions(lesson_num: int, title_en: str, topic_en: str, can_dos: list[dict]) -> list[dict]:
     """
     Warm-up questions (Irodori introductory questions). Optional YAML field.
@@ -1136,8 +1151,10 @@ def main() -> None:
                 "quiz_scenarios": quiz_scenarios,
                 "english_notes": (pdf_L.get("english_notes") or "")[:1500],
                 "unlock_requires_mastery": True,
+                "schema_version": 1,
             }
 
+        lesson = apply_lesson_overrides(lesson, lid)
         out = STARTER / f"{lid}.yaml"
         out.write_text(
             yaml.safe_dump(lesson, allow_unicode=True, sort_keys=False, width=100),

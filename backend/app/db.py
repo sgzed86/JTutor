@@ -55,6 +55,8 @@ class ChatSession(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     lesson_id: Mapped[str] = mapped_column(String(8), index=True)
     state: Mapped[str] = mapped_column(String(32), default="lesson_intro")
+    phase: Mapped[str] = mapped_column(String(32), default="lesson_intro")
+    phase_index: Mapped[int] = mapped_column(Integer, default=0)
     activity_id: Mapped[str | None] = mapped_column(String(16), nullable=True)
     quiz_index: Mapped[int] = mapped_column(Integer, default=0)
     messages_json: Mapped[str] = mapped_column(Text, default="[]")
@@ -107,6 +109,12 @@ def _migrate_sqlite_columns() -> None:
             conn.execute(text("ALTER TABLE can_do_progress ADD COLUMN self_stars INTEGER"))
         if "self_comment" not in names:
             conn.execute(text("ALTER TABLE can_do_progress ADD COLUMN self_comment TEXT"))
+        rows2 = conn.execute(text("PRAGMA table_info(chat_sessions)")).fetchall()
+        names2 = {r[1] for r in rows2}
+        if "phase" not in names2:
+            conn.execute(text("ALTER TABLE chat_sessions ADD COLUMN phase VARCHAR(32) DEFAULT 'lesson_intro'"))
+        if "phase_index" not in names2:
+            conn.execute(text("ALTER TABLE chat_sessions ADD COLUMN phase_index INTEGER DEFAULT 0"))
 
 
 def init_db() -> None:

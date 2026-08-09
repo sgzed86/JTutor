@@ -1085,18 +1085,18 @@ Tracked on branch `cursor/implement-audit-fixes-43e9` — [PR #3](https://github
 | 2.12 Speech rate | Done |
 | 2.13 Error surfaces | Partial — global handler, VoiceVox 503 copy; Setup link in UI still minimal |
 
-### Tier 3 (structural — foundations only)
+### Tier 3 (structural)
 
 | Item | Status |
 |---|---|
-| 3.1 TutorMode base | **Foundation** — `tutor_mode_protocol.py`; modes still in `lesson_flow` |
-| 3.2 phase + phase_index | **Open** — needs migration |
-| 3.3 Typed Step | **Open** — large TS sweep |
-| 3.4 Unified audio hook | **Partial** — `speechControl.ts` barge-in; full `useAudioPipeline` not extracted |
-| 3.5 Whisper worker queue | **Partial** — model lock + warm; no bounded queue API |
-| 3.6 Canonical schema | **Partial** — `schema_version` shim, `docs/CURRICULUM_SCHEMA.md` |
-| 3.7 Book registry | **Partial** — runtime `backend/app/books.py`; scripts keep `scripts/books.py` for builds |
-| 3.8 YAML overlays | **Open** |
-| 3.9 New pedagogy steps | **Open** |
+| 3.1 TutorMode registry | Done — `tutor_modes/registry.py` dispatches `book_step` |
+| 3.2 phase + phase_index | Done — DB columns, `session_flow`, synced with `quiz_index` |
+| 3.3 Typed Step | Done — `step_models.TutorStep`, `types/step.ts`, `coerce_step` in payload |
+| 3.4 Unified audio | Done — `useAudioPipeline` hook (book + TTS + stopAll) |
+| 3.5 Whisper worker | Done — `_job_lock` serializes decode |
+| 3.6 Canonical schema | Done — `curriculum_schema.py`, validate on load, `CURRICULUM_SCHEMA.md` |
+| 3.7 Book registry | Done — `backend/app/books.py`; `scripts/books.py` re-exports |
+| 3.8 YAML overlays | Done — `content/starter/overrides/`, `apply_lesson_overrides` in builder |
+| 3.9 Culture / portfolio | Done — `culture_read` mode; `lesson_meta` + `english_notes` in tutor payload; self-check in progress |
 
-**Manual:** run `python scripts/extract_scripts.py starter` + `build_curriculum.py`, then `validate_curriculum.py --strict` when content is clean.
+`lesson_controller.current_step_snapshot` replaces duplicate orchestrator resolvers. Tutor routes use `require_unlocked` dependency.

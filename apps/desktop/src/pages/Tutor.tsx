@@ -8,6 +8,7 @@ import type { MascotMood } from "../components/TutorMascot";
 import { buildTutorStageModel } from "../lib/tutorDisplay";
 import { jlog } from "../jlog";
 import { speakTutor, stopSpeaking } from "../speech";
+import { useAudioPipeline } from "../hooks/useAudioPipeline";
 import { ChatBubble } from "../components/ChatBubble";
 
 type Step = {
@@ -40,6 +41,7 @@ export default function Tutor() {
   const speakingRef = useRef(false);
   const handlingRef = useRef(false);
   const recordingModeRef = useRef<"practice" | "question" | null>(null);
+  const { playBookTracks, stopAll } = useAudioPipeline();
 
   useEffect(() => {
     api.progress().then((p) => setLessons(p.lessons || [])).catch(() => {});
@@ -48,17 +50,6 @@ export default function Tutor() {
   useEffect(() => {
     if (paramId) setLessonId(paramId);
   }, [paramId]);
-
-  const playBookTracks = async (paths: string[]) => {
-    for (const rel of paths) {
-      const audio = new Audio(api.audioUrl(rel));
-      await new Promise<void>((resolve, reject) => {
-        audio.onended = () => resolve();
-        audio.onerror = () => reject(new Error("Book audio failed"));
-        audio.play().catch(reject);
-      });
-    }
-  };
 
   const startListening = useCallback(async () => {
     if (speakingRef.current || mediaRef.current) return;
@@ -498,7 +489,7 @@ export default function Tutor() {
           busy={busy}
           onMicClick={() => (recording ? stopListening() : startListening())}
           onStopSpeaking={() => {
-            stopSpeaking();
+            stopAll();
             speakingRef.current = false;
             setSpeaking(false);
           }}
