@@ -48,6 +48,24 @@ def get_speed_scale() -> float:
     return float(getattr(settings, "voice_speed_scale", 0.95) or 0.95)
 
 
+def set_speed_scale(scale: float) -> float:
+    scale = max(0.5, min(2.0, float(scale)))
+    try:
+        from backend.app.db import SessionLocal, SettingRow
+
+        with SessionLocal() as db:
+            row = db.get(SettingRow, _SPEED_KEY)
+            if row is None:
+                db.add(SettingRow(key=_SPEED_KEY, value=str(scale)))
+            else:
+                row.value = str(scale)
+            db.commit()
+    except Exception:
+        pass
+    _tts_cache.clear()
+    return scale
+
+
 def set_selected_speaker_id(speaker_id: int) -> int:
     global _selected_speaker_id
     speaker_id = int(speaker_id)
@@ -112,7 +130,8 @@ async def synthesize(text: str, speaker: int | None = None) -> bytes:
     text = prepare_for_voicevox(text)
     if not text:
         raise ValueError("Nothing speakable for VoiceVox")
-    cache_key = (text, speaker)
+    speed = get_speed_scale()
+    cache_key = (text, speaker, speed)
     if cache_key in _tts_cache:
         return _tts_cache[cache_key]
 

@@ -21,6 +21,19 @@ class SelfCheckIn(BaseModel):
     comment: str = ""
 
 
+@router.get("/{lesson_id}/history")
+async def history(
+    lesson_id: str,
+    offset: int = 0,
+    limit: int = 200,
+    db: Session = Depends(get_db),
+):
+    try:
+        return await orchestrator.get_message_history(db, lesson_id, offset=offset, limit=limit)
+    except FileNotFoundError:
+        raise HTTPException(404, "Lesson not found")
+
+
 @router.post("/{lesson_id}/start")
 async def start(lesson_id: str, db: Session = Depends(get_db)):
     try:

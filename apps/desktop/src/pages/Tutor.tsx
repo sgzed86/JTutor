@@ -8,6 +8,7 @@ import type { MascotMood } from "../components/TutorMascot";
 import { buildTutorStageModel } from "../lib/tutorDisplay";
 import { jlog } from "../jlog";
 import { speakTutor } from "../speech";
+import { ChatBubble } from "../components/ChatBubble";
 
 type Step = {
   phase?: string;
@@ -32,6 +33,7 @@ export default function Tutor() {
   const [askText, setAskText] = useState("");
   const [asking, setAsking] = useState(false);
   const [lastGrade, setLastGrade] = useState<any>(null);
+  const [transcript, setTranscript] = useState<any[]>([]);
   const mediaRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const spokenLenRef = useRef(0);
@@ -124,13 +126,16 @@ export default function Tutor() {
       try {
         const messages = data.messages || [];
         const assistants = messages.filter((m: any) => m.role === "assistant");
-        if (assistants.length <= spokenLenRef.current) {
+        const totalAssistants =
+          typeof data.assistant_total === "number" ? data.assistant_total : assistants.length;
+        if (totalAssistants <= spokenLenRef.current) {
           handlingRef.current = false;
           return;
         }
 
-        const newest = assistants.slice(spokenLenRef.current);
-        spokenLenRef.current = assistants.length;
+        const newCount = totalAssistants - spokenLenRef.current;
+        const newest = assistants.slice(-newCount);
+        spokenLenRef.current = totalAssistants;
         const last = newest[newest.length - 1];
         const step: Step = data.step || last?.step || {};
         jlog("pipeline_step", {
@@ -218,16 +223,20 @@ export default function Tutor() {
 
   useEffect(() => {
     let cancelled = false;
+    spokenLenRef.current = 0;
+    setTranscript([]);
     (async () => {
       setBusy(true);
       setError("");
-      spokenLenRef.current = 0;
       try {
         const s = await api.startTutor(lessonId);
         if (cancelled) return;
         if (s.locked) setError(s.error || "Lesson locked");
-        const assistants = (s.messages || []).filter((m: any) => m.role === "assistant");
-        spokenLenRef.current = assistants.length > 1 ? assistants.length - 1 : 0;
+        const totalAssistants =
+          typeof s.assistant_total === "number"
+            ? s.assistant_total
+            : (s.messages || []).filter((m: any) => m.role === "assistant").length;
+        spokenLenRef.current = totalAssistants > 1 ? totalAssistants - 1 : 0;
         setSession(s);
       } catch (e: any) {
         if (!cancelled) setError(e.message || String(e));
@@ -241,11 +250,41 @@ export default function Tutor() {
   }, [lessonId]);
 
   useEffect(() => {
+    if (!session) {
+      setTranscript([]);
+      return;
+    }
+    let cancelled = false;
+    const tail = session.messages || [];
+    const total = session.message_total ?? tail.length;
+    const offset = session.message_offset ?? 0;
+    if (offset === 0) {
+      setTranscript(tail);
+      return;
+    }
+    (async () => {
+      try {
+        const hist = await api.tutorHistory(lessonId, 0, offset);
+        if (cancelled) return;
+        setTranscript([...(hist.messages || []), ...tail]);
+      } catch {
+        if (!cancelled) setTranscript(tail);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [session, lessonId]);
+
+  useEffect(() => {
     if (!session?.messages?.length || busy || handlingRef.current) return;
-    const ac = session.messages.filter((m: any) => m.role === "assistant").length;
+    const ac =
+      typeof session.assistant_total === "number"
+        ? session.assistant_total
+        : session.messages.filter((m: any) => m.role === "assistant").length;
     if (ac <= spokenLenRef.current) return;
     void runPipeline(session);
-  }, [session?.messages, busy, runPipeline]);
+  }, [session?.messages, session?.assistant_total, busy, runPipeline]);
 
   async function manualAdvance() {
     recordingModeRef.current = null;
@@ -389,7 +428,7 @@ export default function Tutor() {
     navigate(`/tutor/${nextLessonId}`);
   }
   const activity = session?.activity;
-  const messages = session?.messages || [];
+  const messages = transcript;
   const expectSpeech = session?.step?.expect_speech;
   const stageModel = useMemo(
     () => (session ? buildTutorStageModel(session) : null),
@@ -545,14 +584,13 @@ export default function Tutor() {
           <h2>Transcript</h2>
           <div className="chat">
             {messages.map((m: any, i: number) => (
-              <div key={i}>
-                <div className={`bubble ${m.role}${m.kind === "question" ? " question" : ""}`}>{m.content}</div>
-                {m.hint_en && m.role === "assistant" && (
-                  <p className="muted" style={{ fontSize: "0.82rem", margin: "0.2rem 0 0.6rem 0.4rem" }}>
-                    {m.hint_en}
-                  </p>
-                )}
-              </div>
+              <ChatBubble
+                key={`${session?.message_offset ?? 0}-${i}-${m.role}-${(m.content || "").slice(0, 24)}`}
+                role={m.role}
+                kind={m.kind}
+                content={m.content}
+                hintEn={m.hint_en}
+              />
             ))}
           </div>
         </div>

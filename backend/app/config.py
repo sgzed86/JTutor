@@ -34,6 +34,7 @@ class Settings(BaseSettings):
     srs_daily_review_cap: int = 20
     srs_daily_new_cap: int = 10
     voice_speed_scale: float = 0.95
+    tutor_message_window: int = 80
     log_level: str = "INFO"
     # Active book id: starter | elementary1 (overridable via settings DB / API)
     active_book: str = "starter"

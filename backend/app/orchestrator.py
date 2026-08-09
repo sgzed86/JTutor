@@ -208,6 +208,21 @@ def _lesson_step_snapshot(
     return {"phase": session.state, "expect_speech": False, "play_audio": []}
 
 
+def slice_messages_for_payload(
+    messages: list[dict],
+    window: int,
+) -> tuple[list[dict], int, int, int]:
+    """Return (tail, message_total, message_offset, assistant_total)."""
+    total = len(messages)
+    assistant_total = sum(1 for m in messages if m.get("role") == "assistant")
+    limit = max(20, int(window))
+    if total <= limit:
+        return messages, total, 0, assistant_total
+    tail = messages[-limit:]
+    offset = total - len(tail)
+    return tail, total, offset, assistant_total
+
+
 def _payload(
     session: ChatSession,
     lesson: dict,
@@ -228,13 +243,19 @@ def _payload(
             "statement_en": cd.get("statement_en"),
             "statement_jp": cd.get("statement_jp"),
         }
+    tail, message_total, message_offset, assistant_total = slice_messages_for_payload(
+        messages, settings.tutor_message_window
+    )
     out = {
         "session_id": session.id,
         "lesson_id": lesson["lesson_id"],
         "state": session.state,
         "activity_id": session.activity_id,
         "activity": activity,
-        "messages": messages,
+        "messages": tail,
+        "message_total": message_total,
+        "message_offset": message_offset,
+        "assistant_total": assistant_total,
         "can_dos": can_dos,
         "quiz_index": session.quiz_index,
         "step": resolved,
@@ -997,6 +1018,28 @@ async def submit_self_check(
     _save_msgs(session, messages)
     db.commit()
     return _payload(session, lesson, messages, step, db=db)
+
+
+async def get_message_history(
+    db: Session,
+    lesson_id: str,
+    *,
+    offset: int = 0,
+    limit: int = 200,
+) -> dict:
+    if block := locked_response(db, lesson_id):
+        return block
+    session = await ensure_session(db, lesson_id)
+    messages = _msgs(session)
+    off = max(0, int(offset))
+    lim = min(max(1, int(limit)), 500)
+    return {
+        "lesson_id": lesson_id,
+        "messages": messages[off : off + lim],
+        "message_total": len(messages),
+        "offset": off,
+        "limit": lim,
+    }
 
 
 async def reset_lesson(db: Session, lesson_id: str) -> dict:

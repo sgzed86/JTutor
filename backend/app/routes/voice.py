@@ -24,6 +24,10 @@ class SetSpeakerIn(BaseModel):
     speaker_id: int = Field(..., ge=0)
 
 
+class SetSpeedIn(BaseModel):
+    speed_scale: float = Field(..., ge=0.5, le=2.0)
+
+
 @router.post("/speak")
 async def speak(body: SpeakIn):
     if not body.text.strip():
@@ -79,6 +83,13 @@ async def set_speaker(body: SetSpeakerIn):
     sid = voicevox_client.set_selected_speaker_id(body.speaker_id)
     log_event("voice", "set_speaker", speaker_id=sid)
     return {"ok": True, "selected_speaker_id": sid}
+
+
+@router.post("/set-speed")
+def set_speed(body: SetSpeedIn):
+    scale = voicevox_client.set_speed_scale(body.speed_scale)
+    log_event("voice", "set_speed", speed_scale=scale)
+    return {"ok": True, "voice_speed_scale": scale}
 
 
 @router.post("/transcribe")

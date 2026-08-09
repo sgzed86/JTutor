@@ -1078,7 +1078,10 @@ Tracked on branch `cursor/implement-audit-fixes-43e9` — [PR #3](https://github
 | 1.16 | `book_title` in Starter index | Done |
 | 1.17 | Dead code / unused imports | **Partial** |
 | 2.2 | `validate_curriculum.py` | Done; CI runs non-strict; `--strict` after L03–L18 content fix |
+| 2.3 | Starter PDF script extractor | Done — `extract_scripts_starter.py`; builder prefers scripts over Whisper |
 | 2.7 | L00 classroom tracks | Done — `book_tracks` keeps `classroom` for `L00` only |
+| 2.8 | Bounded tutor payload + history | Done — `tutor_message_window`, `GET /tutor/{id}/history` |
 | 2.10 | Pytest + CI | Done — phrase grade + lesson access tests |
+| 2.12 | Speech rate in Settings | Done — `/voice/set-speed`, Voice settings slider |
 
-**Next recommended:** 2.3 (Starter script extraction), 2.8 (bounded tutor payload), 2.12 (speed slider in Settings; backend `voice_speed_scale` already wired).
+**Next recommended:** 2.3 (run `extract_scripts_starter.py` + `build_curriculum.py` to regen YAML), bounded payload (2.8 done), speed slider (2.12 done).

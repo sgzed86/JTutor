@@ -13,13 +13,19 @@ export default function VoiceSettings() {
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
 
+  const [speed, setSpeed] = useState(0.95);
+  const [speedSaving, setSpeedSaving] = useState(false);
+
   const load = useCallback(async () => {
     setLoading(true);
     setError("");
     try {
-      const data = await api.voiceSpeakers();
+      const [data, settings] = await Promise.all([api.voiceSpeakers(), api.voiceSettings()]);
       setOptions(data.options || []);
       setSelectedId(data.selected_speaker_id ?? null);
+      if (typeof settings.voice_speed_scale === "number") {
+        setSpeed(settings.voice_speed_scale);
+      }
       if (!(data.options || []).length) {
         setError("No VoiceVox speakers found. Is VoiceVox running?");
       }
@@ -52,6 +58,21 @@ export default function VoiceSettings() {
       setError(e.message || String(e));
     } finally {
       setSaving(false);
+    }
+  }
+
+  async function onSpeedChange(next: number) {
+    setSpeed(next);
+    setSpeedSaving(true);
+    setError("");
+    try {
+      const res = await api.setVoiceSpeed(next);
+      setSpeed(res.voice_speed_scale);
+      setStatus(`Speech rate: ${res.voice_speed_scale.toFixed(2)}×`);
+    } catch (e: any) {
+      setError(e.message || String(e));
+    } finally {
+      setSpeedSaving(false);
     }
   }
 
@@ -118,6 +139,22 @@ export default function VoiceSettings() {
           <p className="muted" style={{ margin: 0, fontSize: "0.88rem" }}>
             Current: <strong style={{ color: "var(--ink)" }}>{selectedLabel}</strong>
           </p>
+
+          <label className="stack" style={{ gap: "0.35rem" }}>
+            <span style={{ fontSize: "0.9rem" }}>
+              Speech rate ({speed.toFixed(2)}×) — slower helps A1 listening
+            </span>
+            <input
+              type="range"
+              min={0.75}
+              max={1.25}
+              step={0.05}
+              value={speed}
+              disabled={speedSaving || saving}
+              onChange={(e) => void onSpeedChange(Number(e.target.value))}
+              style={{ maxWidth: 480 }}
+            />
+          </label>
 
           <div className="row" style={{ gap: "0.5rem" }}>
             <button

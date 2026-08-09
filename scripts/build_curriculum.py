@@ -18,7 +18,7 @@ STARTER = ROOT / "content" / "starter"
 AUDIO_INDEX = STARTER / "audio_index.json"
 AUDIO_TRANSCRIPTS = STARTER / "audio_transcripts.json"
 PDF_EXTRACT = STARTER / "pdf_extract.json"
-GRAMMAR_EXTRACT = STARTER / "grammar_extract.json"
+SCRIPT_EXTRACT = STARTER / "script_extract.json"
 
 # Curated English can-dos from Irodori Starter TOC (fallback / merge)
 CURATED_CANDOS: dict[int, list[tuple[int, str, str, list[str]]]] = {
@@ -603,6 +603,84 @@ def apply_l02_book_flow_overrides(activities: list[dict]) -> None:
             attach_phrase_meta(a)
 
 
+def apply_phrases_from_scripts(
+    lesson_num: int,
+    activities: list[dict],
+    script: dict,
+) -> None:
+    """Map PDF script phrases onto activities by CD track number (Starter L03+)."""
+    by_track = script.get("by_track") or {}
+    pool = list(script.get("phrases") or [])
+    dialogs = list(script.get("dialogs") or [])
+    dialog_i = 0
+    pool_i = 0
+    listen_counter = 0
+    lid = f"L{lesson_num:02d}"
+
+    for a in activities:
+        if a.get("kind") in ("script", "classroom") or a.get("book_skip"):
+            continue
+        kind = a.get("kind") or "activity"
+        track = a.get("track")
+        phrases = list(by_track.get(str(track), [])) if track is not None else []
+        if kind in ("speaking", "conversation") and dialog_i < len(dialogs):
+            partner, learner = dialogs[dialog_i]
+            dialog_i += 1
+            a["book_mode"] = "dialog"
+            a["dialog_script"] = _dialog(partner, learner)
+            audio = list(a.get("audio") or [])
+            if audio:
+                a["dialog_listen_audio"] = audio[:2]
+            alts = [p for p in phrases if p not in (partner, learner)][:2]
+            a["key_phrases"] = [learner, partner, *alts]
+            attach_phrase_meta(a)
+            continue
+
+        if not phrases and pool:
+            while pool_i < len(pool) * 2:
+                cand = pool[pool_i % len(pool)]
+                pool_i += 1
+                if "ましょう" in cand or "トピック" in cand:
+                    continue
+                phrases = [cand]
+                break
+
+        if phrases:
+            a["key_phrases"] = [p for p in phrases if "ましょう" not in p][:4] or phrases[:4]
+            attach_phrase_meta(a)
+
+        if kind in ("speaking", "conversation"):
+            if len(a.get("key_phrases") or []) >= 2:
+                kp = a["key_phrases"]
+                a["book_mode"] = "dialog"
+                a["dialog_script"] = _dialog(kp[1], kp[0])
+                audio = list(a.get("audio") or [])
+                if audio:
+                    a["dialog_listen_audio"] = audio[:2]
+            elif a.get("key_phrases"):
+                a["book_mode"] = "listen_repeat"
+            continue
+
+        if kind == "listening":
+            listen_counter += 1
+            a["book_mode"] = "listen_repeat" if listen_counter == 1 else "listen_select"
+            if a["book_mode"] == "listen_select":
+                a["picture_has_image"] = True
+                a["picture_hint_en"] = (
+                    f"{lid} activity {a.get('book_activity')}: listen to the CD, "
+                    f"then say the phrase that matches the book."
+                )
+            continue
+        if kind == "grammar_form":
+            a["book_mode"] = "listen_repeat"
+            continue
+        if kind == "vocabulary":
+            a["book_mode"] = "listen_repeat_all" if len(phrases) >= 5 else "listen_repeat"
+            continue
+
+    apply_generic_book_flow(lesson_num, activities)
+
+
 def _activity_transcript(activity: dict, transcripts: dict[str, str]) -> str:
     for rel in activity.get("audio") or []:
         t = transcripts.get(rel)
@@ -946,6 +1024,9 @@ def main() -> None:
     transcripts: dict[str, str] = {}
     if AUDIO_TRANSCRIPTS.exists():
         transcripts = load_json(AUDIO_TRANSCRIPTS)
+    scripts: dict = {}
+    if SCRIPT_EXTRACT.exists():
+        scripts = load_json(SCRIPT_EXTRACT).get("lessons") or {}
 
     index_lessons = []
     for n in range(0, 19):
@@ -994,6 +1075,8 @@ def main() -> None:
                 apply_l02_phrases(activities)
                 apply_generic_book_flow(n, activities)
                 apply_l02_book_flow_overrides(activities)
+            elif scripts.get(lid):
+                apply_phrases_from_scripts(n, activities, scripts[lid])
             elif transcripts:
                 apply_phrases_from_transcripts(n, activities, transcripts)
             else:
