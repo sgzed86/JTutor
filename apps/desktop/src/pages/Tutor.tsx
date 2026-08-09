@@ -7,7 +7,7 @@ import { SelfCheckModal } from "../components/SelfCheckModal";
 import type { MascotMood } from "../components/TutorMascot";
 import { buildTutorStageModel } from "../lib/tutorDisplay";
 import { jlog } from "../jlog";
-import { speakTutor, stopSpeaking } from "../speech";
+import { speakTutor } from "../speech";
 import { useAudioPipeline } from "../hooks/useAudioPipeline";
 import { ChatBubble } from "../components/ChatBubble";
 
