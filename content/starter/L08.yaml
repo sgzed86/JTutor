@@ -1,0 +1,900 @@
+lesson_id: L08
+lesson: 8
+title_en: Where is Yamada-san?
+title_jp: 山田さんはどこですか
+topic_en: Homes and Workplaces
+pdf_pages:
+- 215
+- 239
+intro_questions:
+- jp: Where is Yamada-san? について、あなたの けいけんは？
+  en: Thinking about "Homes and Workplaces" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can ask where someone is. What do you want to be able to do?'
+can_dos:
+- id: CD_L08_29
+  can_do_number: 29
+  statement_en: Can ask where someone is.
+  statement_jp: 人がどこにいるか質問することができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - どこ
+    min_score: 80
+- id: CD_L08_30
+  can_do_number: 30
+  statement_en: Can say where someone/something is using location words.
+  statement_jp: 場所を表す言葉を使って、人やものの場所を言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - です
+    min_score: 80
+- id: CD_L08_31
+  can_do_number: 31
+  statement_en: Can understand simple directions about location at work/home.
+  statement_jp: 職場や家での簡単な位置の説明を理解することができる。
+  activity_hint: '1'
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: vocabulary
+  book_activity: 1
+  can_do_id: CD_L08_29
+  label: kotoba1
+  audio:
+  - assets/audio/X_[08-01]_kotoba1.mp3
+  key_phrases:
+  - 会社の部屋えこういう質ビ食動し旧と質り会いう質いいきつんじょえそうこ
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 会社の部屋えこういう質ビ食動し旧と質り会いう質いいきつんじょえそうこ
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A2
+  kind: vocabulary
+  book_activity: 2
+  can_do_id: CD_L08_30
+  label: kotoba2
+  audio:
+  - assets/audio/X_[08-02]_kotoba2.mp3
+  key_phrases:
+  - 1ここは回復室です2ここは食動です3ここは小室です4ここはきつえんじょです5ここは急頭室です6ここは小室です
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1ここは回復室です2ここは食動です3ここは小室です4ここはきつえんじょです5ここは急頭室です6ここは小室です
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_L08_31
+  label: kiku1
+  audio:
+  - assets/audio/X_[08-03]_kiku1.mp3
+  key_phrases:
+  - 1ここは男性の公室ですここで機械います分かりました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1ここは男性の公室ですここで機械います分かりました
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_L08_29
+  label: kiku2
+  audio:
+  - assets/audio/X_[08-04]_kiku2.mp3
+  key_phrases:
+  - ここでお茶を入れます
+  - ここは旧頭出です
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ここでお茶を入れます
+    tags:
+    - short
+    - polite
+  - jp: ここは旧頭出です
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 4: listen to the CD, then say the phrase that matches the book.'
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_L08_30
+  label: kiku3
+  audio:
+  - assets/audio/X_[08-05]_kiku3.mp3
+  key_phrases:
+  - ここで打ち合わせをします
+  - 3ここは回復室です
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ここで打ち合わせをします
+    tags:
+    - long
+    - polite
+  - jp: 3ここは回復室です
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 5: listen to the CD, then say the phrase that matches the book.'
+- id: A6
+  kind: listening
+  book_activity: 6
+  can_do_id: CD_L08_31
+  label: kiku4
+  audio:
+  - assets/audio/X_[08-06]_kiku4.mp3
+  key_phrases:
+  - よんえっとここは食動ですここでご飯を食べますはいおいしいですよ
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: よんえっとここは食動ですここでご飯を食べますはいおいしいですよ
+    tags:
+    - long
+    - polite
+    - casual
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 6: listen to the CD, then say the phrase that matches the book.'
+- id: A7
+  kind: grammar_form
+  book_activity: 7
+  can_do_id: CD_L08_29
+  label: katachi
+  audio:
+  - assets/audio/X_[08-07]_katachi.mp3
+  key_phrases:
+  - ここで打ち合わせをします
+  - ここは男性の交易室です
+  - ここでお茶を入れます
+  - ここでご飯を食べます
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ここで打ち合わせをします
+    tags:
+    - long
+    - polite
+  - jp: ここは男性の交易室です
+    tags:
+    - long
+    - polite
+  - jp: ここでお茶を入れます
+    tags:
+    - short
+    - polite
+  - jp: ここでご飯を食べます
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A8
+  kind: listening
+  book_activity: 8
+  can_do_id: CD_L08_30
+  label: kiku1
+  audio:
+  - assets/audio/X_[08-08]_kiku1.mp3
+  key_phrases:
+  - 1すみません山田さんはどこにいますか
+  - 食度にいますわかりましたありがとうございました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1すみません山田さんはどこにいますか
+    tags:
+    - long
+    - polite
+  - jp: 食度にいますわかりましたありがとうございました
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 8: listen to the CD, then say the phrase that matches the book.'
+- id: A9
+  kind: listening
+  book_activity: 9
+  can_do_id: CD_L08_31
+  label: kiku2
+  audio:
+  - assets/audio/X_[08-09]_kiku2.mp3
+  key_phrases:
+  - 長いさんはどこですか
+  - ああ、恋月にいるよ
+  - 2あの、すみません
+  - 長いさん
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 長いさんはどこですか
+    tags:
+    - short
+    - polite
+  - jp: ああ、恋月にいるよ
+    tags:
+    - short
+    - casual
+  - jp: 2あの、すみません
+    tags:
+    - short
+    - polite
+  - jp: 長いさん
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 9: listen to the CD, then say the phrase that matches the book.'
+- id: A10
+  kind: listening
+  book_activity: 10
+  can_do_id: CD_L08_29
+  label: kiku3
+  audio:
+  - assets/audio/X_[08-10]_kiku3.mp3
+  key_phrases:
+  - 通じさんはいますか
+  - じゃあ、探してみます
+  - 通じさんは、あれ
+  - 多分、そうです
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 通じさんはいますか
+    tags:
+    - short
+    - polite
+  - jp: じゃあ、探してみます
+    tags:
+    - short
+    - polite
+    - casual
+  - jp: 通じさんは、あれ
+    tags:
+    - short
+  - jp: 多分、そうです
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 10: listen to the CD, then say the phrase that matches the book.'
+- id: A11
+  kind: listening
+  book_activity: 11
+  can_do_id: CD_L08_30
+  label: kiku4
+  audio:
+  - assets/audio/X_[08-11]_kiku4.mp3
+  key_phrases:
+  - えーと、いないですねそうですか、分かりました
+  - 4あマンダさんいますか
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: えーと、いないですねそうですか、分かりました
+    tags:
+    - long
+    - polite
+  - jp: 4あマンダさんいますか
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 11: listen to the CD, then say the phrase that matches the book.'
+- id: A12
+  kind: grammar_form
+  book_activity: 12
+  can_do_id: CD_L08_31
+  label: katachi
+  audio:
+  - assets/audio/X_[08-12]_katachi.mp3
+  key_phrases:
+  - 山田さんはどこにいますか食道にいます長いさんはどこですか
+  - 海域出にいるよ土地さんはいますか
+  - いませんねあまんださんいますか
+  - いないですね
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 山田さんはどこにいますか食道にいます長いさんはどこですか
+    tags:
+    - long
+    - polite
+  - jp: 海域出にいるよ土地さんはいますか
+    tags:
+    - long
+    - polite
+  - jp: いませんねあまんださんいますか
+    tags:
+    - long
+    - polite
+  - jp: いないですね
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A13
+  kind: speaking
+  book_activity: 13
+  can_do_id: CD_L08_29
+  label: hanasu1
+  audio:
+  - assets/audio/X_[08-13]_hanasu1.mp3
+  key_phrases:
+  - 食道にいますわかりました
+  - 1すみませんやまださんはどこにいますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 食道にいますわかりました
+    tags:
+    - long
+    - polite
+  - jp: 1すみませんやまださんはどこにいますか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 1すみませんやまださんはどこにいますか
+  - speaker: learner
+    jp: 食道にいますわかりました
+  dialog_listen_audio:
+  - assets/audio/X_[08-13]_hanasu1.mp3
+- id: A14
+  kind: speaking
+  book_activity: 14
+  can_do_id: CD_L08_30
+  label: hanasu2
+  audio:
+  - assets/audio/X_[08-14]_hanasu2.mp3
+  key_phrases:
+  - わかりました
+  - 多分、そうです
+  - 姿勢は、いませんね
+  - 姿勢はいますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: わかりました
+    tags:
+    - short
+  - jp: 多分、そうです
+    tags:
+    - short
+    - polite
+  - jp: 姿勢は、いませんね
+    tags:
+    - short
+    - polite
+  - jp: 姿勢はいますか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 姿勢はいますか
+  - speaker: learner
+    jp: わかりました
+  dialog_listen_audio:
+  - assets/audio/X_[08-14]_hanasu2.mp3
+- id: A15
+  kind: vocabulary
+  book_activity: 15
+  can_do_id: CD_L08_31
+  label: kotoba1
+  audio:
+  - assets/audio/X_[08-15]_kotoba1.mp3
+  key_phrases:
+  - 1avしたcなかvよこ
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1avしたcなかvよこ
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A16
+  kind: vocabulary
+  book_activity: 16
+  can_do_id: CD_L08_29
+  label: kotoba2
+  audio:
+  - assets/audio/X_[08-16]_kotoba2.mp3
+  key_phrases:
+  - 1中です上です3横です4下です
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1中です上です3横です4下です
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A17
+  kind: listening
+  book_activity: 17
+  can_do_id: CD_L08_30
+  label: kiku1
+  audio:
+  - assets/audio/X_[08-17]_kiku1.mp3
+  key_phrases:
+  - 一あのー、乗りはどこにありますか
+  - ひきらしの中にあります
+  - は、すみません
+  - はい、どうぞ
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 一あのー、乗りはどこにありますか
+    tags:
+    - long
+    - polite
+  - jp: ひきらしの中にあります
+    tags:
+    - long
+    - polite
+  - jp: は、すみません
+    tags:
+    - short
+    - polite
+  - jp: はい、どうぞ
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 17: listen to the CD, then say the phrase that matches the book.'
+- id: A18
+  kind: listening
+  book_activity: 18
+  can_do_id: CD_L08_31
+  label: kiku2
+  audio:
+  - assets/audio/X_[08-18]_kiku2.mp3
+  key_phrases:
+  - 2住みませんガムテープはどこですか
+  - あそこです箱の中あ、わかりました
+  - ガムテープ
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 2住みませんガムテープはどこですか
+    tags:
+    - long
+    - polite
+  - jp: あそこです箱の中あ、わかりました
+    tags:
+    - long
+    - polite
+  - jp: ガムテープ
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 18: listen to the CD, then say the phrase that matches the book.'
+- id: A19
+  kind: listening
+  book_activity: 19
+  can_do_id: CD_L08_29
+  label: kiku3
+  audio:
+  - assets/audio/X_[08-19]_kiku3.mp3
+  key_phrases:
+  - さんあのーすみませんファックスはどこにありますか
+  - ああああああそうかコピーキのよくあわかりましたありがとうございました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: さんあのーすみませんファックスはどこにありますか
+    tags:
+    - long
+    - polite
+  - jp: ああああああそうかコピーキのよくあわかりましたありがとうございました
+    tags:
+    - long
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 19: listen to the CD, then say the phrase that matches the book.'
+- id: A20
+  kind: listening
+  book_activity: 20
+  can_do_id: CD_L08_30
+  label: kiku4
+  audio:
+  - assets/audio/X_[08-20]_kiku4.mp3
+  key_phrases:
+  - よんはさみありますか
+  - あ、ありがとうございます
+  - あ、そこにあります
+  - 作業上です
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: よんはさみありますか
+    tags:
+    - short
+    - polite
+  - jp: あ、ありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: あ、そこにあります
+    tags:
+    - short
+    - polite
+  - jp: 作業上です
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 20: listen to the CD, then say the phrase that matches the book.'
+- id: A21
+  kind: listening
+  book_activity: 21
+  can_do_id: CD_L08_31
+  label: kiku5
+  audio:
+  - assets/audio/X_[08-21]_kiku5.mp3
+  key_phrases:
+  - えーと、ゴミバクは...おぉ、そこそこ、え
+  - 作業のした...あ、ありました
+  - ごっ
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: えーと、ゴミバクは...おぉ、そこそこ、え
+    tags:
+    - long
+  - jp: 作業のした...あ、ありました
+    tags:
+    - long
+  - jp: ごっ
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L08 activity 21: listen to the CD, then say the phrase that matches the book.'
+- id: A22
+  kind: grammar_form
+  book_activity: 22
+  can_do_id: CD_L08_29
+  label: katachi
+  audio:
+  - assets/audio/X_[08-22]_katachi.mp3
+  key_phrases:
+  - ノリはどこにやりますかここですかめていくはどこですかあそこですはさみありますかそこにやります
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ノリはどこにやりますかここですかめていくはどこですかあそこですはさみありますかそこにやります
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A23
+  kind: grammar_form
+  book_activity: 23
+  can_do_id: CD_L08_30
+  label: katachi
+  audio:
+  - assets/audio/X_[08-23]_katachi.mp3
+  key_phrases:
+  - 引き出しの中にあります
+  - コピーキの横
+  - 作への上です
+  - 作への下
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 引き出しの中にあります
+    tags:
+    - long
+    - polite
+  - jp: コピーキの横
+    tags:
+    - short
+  - jp: 作への上です
+    tags:
+    - short
+    - polite
+  - jp: 作への下
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A24
+  kind: speaking
+  book_activity: 24
+  can_do_id: CD_L08_31
+  label: hanasu1
+  audio:
+  - assets/audio/X_[08-24]_hanasu1.mp3
+  key_phrases:
+  - そこにやります作への上ですありがとうございます
+  - すみませんはさみはどこにやりますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: そこにやります作への上ですありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: すみませんはさみはどこにやりますか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみませんはさみはどこにやりますか
+  - speaker: learner
+    jp: そこにやります作への上ですありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[08-24]_hanasu1.mp3
+- id: A25
+  kind: speaking
+  book_activity: 25
+  can_do_id: CD_L08_29
+  label: hanasu2
+  audio:
+  - assets/audio/X_[08-25]_hanasu2.mp3
+  key_phrases:
+  - あそこです箱の中にありますありがとうございます
+  - すみませんガムテープはどこですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: あそこです箱の中にありますありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: すみませんガムテープはどこですか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみませんガムテープはどこですか
+  - speaker: learner
+    jp: あそこです箱の中にありますありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[08-25]_hanasu2.mp3
+grammar:
+- point: A： アンさん、いますか？
+  worksheet_pages:
+  - 18
+  examples: []
+- point: A： タインさん、いますか？
+  worksheet_pages:
+  - 18
+  examples: []
+- point: A： アルニさん、いますか？
+  worksheet_pages:
+  - 18
+  examples: []
+- point: 【something もの】 は 【ここ／そこ／あそこ】 に あります
+  worksheet_pages:
+  - 18
+  examples: []
+- point: A： すみません、ガムテープ、ありますか？
+  worksheet_pages:
+  - 18
+  examples: []
+- point: A： ええと、コピー機
+  worksheet_pages:
+  - 18
+  examples: []
+- point: A： あのう、すみません。のりは、どこにありますか？
+  worksheet_pages:
+  - 18
+  examples: []
+- point: N の 【location 位置
+  worksheet_pages:
+  - 19
+  examples: []
+- point: のりは、そこ（ ） （ います／あります ）。
+  worksheet_pages:
+  - 19
+  examples: []
+- point: はさみは、 机
+  worksheet_pages:
+  - 19
+  examples: []
+- point: アンさんは、たぶん倉庫
+  worksheet_pages:
+  - 19
+  examples: []
+- point: つ（ います／あります ）。 ここ（ ） ソンさんの部屋
+  worksheet_pages:
+  - 19
+  examples: []
+- point: ここが管理人室
+  worksheet_pages:
+  - 19
+  examples: []
+- point: A： ガムテープは、どこ（ ） （ います／あります ）か？
+  worksheet_pages:
+  - 19
+  examples: []
+- point: A： ヤミンさんは、どこ（ ） （ います／あります ）か？
+  worksheet_pages:
+  - 19
+  examples: []
+vocab:
+- jp: 会社の部屋えこういう質ビ食動し旧と質り会いう質いいきつんじょえそうこ
+  reading: ''
+  en: ''
+  tags:
+  - L08
+- jp: 1ここは回復室です2ここは食動です3ここは小室です4ここはきつえんじょです5ここは急頭室です6ここは小室です
+  reading: ''
+  en: ''
+  tags:
+  - L08
+- jp: 1avしたcなかvよこ
+  reading: ''
+  en: ''
+  tags:
+  - L08
+- jp: 1中です上です3横です4下です
+  reading: ''
+  en: ''
+  tags:
+  - L08
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_L08_29
+  prompt_en: 'Demonstrate this can-do in Japanese: Can ask where someone is.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L08_29
+  prompt_en: 'In a new everyday situation, show you can: Can ask where someone is.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L08_30
+  prompt_en: 'Demonstrate this can-do in Japanese: Can say where someone/something is using location words.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L08_30
+  prompt_en: 'In a new everyday situation, show you can: Can say where someone/something is using location
+    words.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L08_31
+  prompt_en: 'Demonstrate this can-do in Japanese: Can understand simple directions about location at
+    work/home.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L08_31
+  prompt_en: 'In a new everyday situation, show you can: Can understand simple directions about location
+    at work/home.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_L08_29
+  partner_jp: では、お願いします。
+  expected:
+  - どこ
+  hint_en: 'Situation: Can ask where someone is. Reply using lesson phrases.'
+- can_do_id: CD_L08_29
+  partner_jp: もう一度、お願いします。
+  expected:
+  - どこ
+  hint_en: Again — 人がどこにいるか質問することができる。
+- can_do_id: CD_L08_30
+  partner_jp: では、お願いします。
+  expected:
+  - です
+  hint_en: 'Situation: Can say where someone/something is using location words. Reply using lesson phrases.'
+- can_do_id: CD_L08_30
+  partner_jp: もう一度、お願いします。
+  expected:
+  - です
+  hint_en: Again — 場所を表す言葉を使って、人やものの場所を言うことができる。
+- can_do_id: CD_L08_29
+  partner_jp: 1すみませんやまださんはどこにいますか
+  expected:
+  - 食道にいますわかりました
+  - 1すみませんやまださんはどこにいますか
+  hint_en: Reply as in the book dialog (activity 13).
+- can_do_id: CD_L08_30
+  partner_jp: 姿勢はいますか
+  expected:
+  - わかりました
+  - 多分、そうです
+  - 姿勢は、いませんね
+  - 姿勢はいますか
+  hint_en: Reply as in the book dialog (activity 14).
+- can_do_id: CD_L08_31
+  partner_jp: すみませんはさみはどこにやりますか
+  expected:
+  - そこにやります作への上ですありがとうございます
+  - すみませんはさみはどこにやりますか
+  hint_en: Reply as in the book dialog (activity 24).
+- can_do_id: CD_L08_29
+  partner_jp: すみませんガムテープはどこですか
+  expected:
+  - あそこです箱の中にありますありがとうございます
+  - すみませんガムテープはどこですか
+  hint_en: Reply as in the book dialog (activity 25).
+- can_do_id: CD_L08_29
+  partner_jp: 会社の部屋えこういう質ビ食動し旧と質り会いう質いいきつんじょえそうこ。
+  expected:
+  - 会社の部屋えこういう質ビ食動し旧と質り会いう質いいきつんじょえそうこ
+  - ここでお茶を入れます
+  - ここは旧頭出です
+  - ここで打ち合わせをします
+  - どこ
+  hint_en: Can ask where someone is.
+- can_do_id: CD_L08_30
+  partner_jp: 1ここは回復室です2ここは食動です3ここは小室です4ここはきつえんじょです5ここは急頭室です6ここは小室です。
+  expected:
+  - 1ここは回復室です2ここは食動です3ここは小室です4ここはきつえんじょです5ここは急頭室です6ここは小室です
+  - ここで打ち合わせをします
+  - 3ここは回復室です
+  - 1すみません山田さんはどこにいますか
+  - です
+  hint_en: Can say where someone/something is using location words.
+- can_do_id: CD_L08_31
+  partner_jp: 1ここは男性の公室ですここで機械います分かりました。
+  expected:
+  - 1ここは男性の公室ですここで機械います分かりました
+  - よんえっとここは食動ですここでご飯を食べますはいおいしいですよ
+  - 長いさんはどこですか
+  - ああ、恋月にいるよ
+  hint_en: Can understand simple directions about location at work/home.
+english_notes: 'Have you ever worked for a company? What rooms and facilities did your company have?
+
+  Can listen to a simple explanation when being shown around a room at work and understand what room it
+  is.
+
+  Preparation for the words
+
+  屋 Company rooms 】
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen and choose from a–f.
+
+  Listen to the dialog.
+
+  You are being shown around the rooms at your first workplace.
+
+  Which room is being introduced? Choose from 1 a–f.
+
+  Listen to the dialog again. What do people do in each room? Choose from ア–エ.
+
+  Check the word and listen to the dialog again.
+
+  性 men
+
+  Listen to the recording and fill in the blanks.
+
+  What do you think で means?
+
+  Focus on the expression used and listen to the dialog again.
+
+  Can ask and answer questions about where someone is.
+
+  Listen to the dialogs.
+
+  The people are each looking for someone at work.
+
+  Where are the people in ①–④? Choose from a–e.
+
+  Write “—” if it is not mentioned.
+
+  Check the words and listen to the dialogs again.
+
+  Where are they?
+
+  たぶん probably ｜ 探
+
+  してみます I’ll try to look.
+
+  う used when telling someone information they did not know）
+
+  う used when sharing information with someone）'
+unlock_requires_mastery: true

@@ -1,0 +1,762 @@
+lesson_id: EL02
+lesson: 2
+book_id: elementary1
+title_en: I like playing video games
+title_jp: ゲームをするのが好きです
+topic_en: About Me Now
+pdf_pages:
+- 62
+- 80
+intro_questions:
+- jp: I like playing video games について、あなたの けいけんは？
+  en: Thinking about "About Me Now" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can talk in simple terms about your hobbies and favorite
+    things to do. What do you want to be able to do?'
+can_dos:
+- id: CD_EL02_04
+  can_do_number: 4
+  statement_en: Can talk in simple terms about your hobbies and favorite things to
+    do.
+  statement_jp: 趣味や好きなことについて、簡単に話すことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL02_05
+  can_do_number: 5
+  statement_en: Can ask and answer questions about how you spend your days off.
+  statement_jp: 趣味や好きなことについて、簡単に話すことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL02_06
+  can_do_number: 6
+  statement_en: Can read staff descriptions posted in a store, facility, etc. and
+    under - stand their families, hobbies, etc.
+  statement_jp: 趣味や好きなことについて、簡単に話すことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL02_07
+  can_do_number: 7
+  statement_en: Can write in simple terms about your hobbies, your days off, etc.
+    for staff descriptions posted at work.
+  statement_jp: 趣味や好きなことについて、簡単に話すことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: vocabulary
+  book_activity: 1
+  can_do_id: CD_EL02_04
+  label: kotoba1
+  audio:
+  - assets/audio/Y_[02-01]_kotoba1.mp3
+  key_phrases:
+  - が好きです
+  - 趣味は料理をすることです
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: が好きです
+    tags:
+    - short
+    - polite
+  - jp: 趣味は料理をすることです
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: vocabulary
+  book_activity: 2
+  can_do_id: CD_EL02_05
+  label: kotoba2
+  audio:
+  - assets/audio/Y_[02-02]_kotoba2.mp3
+  key_phrases:
+  - が好きです
+  - 趣味は料理をすることです
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: が好きです
+    tags:
+    - short
+    - polite
+  - jp: 趣味は料理をすることです
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL02_06
+  label: kiku1
+  audio:
+  - assets/audio/Y_[02-03]_kiku1.mp3
+  key_phrases:
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  - 趣味や好きなことは何ですか。
+  - 趣味は何ですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 趣味や好きなことは何ですか。
+    tags:
+    - long
+    - polite
+  - jp: 趣味は何ですか？
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_EL02_07
+  label: kiku2
+  audio:
+  - assets/audio/Y_[02-04]_kiku2.mp3
+  key_phrases:
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  - 趣味や好きなことは何ですか。
+  - 趣味は何ですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 趣味や好きなことは何ですか。
+    tags:
+    - long
+    - polite
+  - jp: 趣味は何ですか？
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL02 activity 4: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_EL02_04
+  label: kiku3
+  audio:
+  - assets/audio/Y_[02-05]_kiku3.mp3
+  key_phrases:
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  - 趣味や好きなことは何ですか。
+  - 趣味は何ですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 趣味や好きなことは何ですか。
+    tags:
+    - long
+    - polite
+  - jp: 趣味は何ですか？
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL02 activity 5: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A6
+  kind: listening
+  book_activity: 6
+  can_do_id: CD_EL02_05
+  label: kiku4
+  audio:
+  - assets/audio/Y_[02-06]_kiku4.mp3
+  key_phrases:
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  - 趣味や好きなことは何ですか。
+  - 趣味は何ですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 趣味や好きなことは何ですか。
+    tags:
+    - long
+    - polite
+  - jp: 趣味は何ですか？
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL02 activity 6: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A7
+  kind: listening
+  book_activity: 7
+  can_do_id: CD_EL02_06
+  label: kiku5
+  audio:
+  - assets/audio/Y_[02-07]_kiku5.mp3
+  key_phrases:
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  - 趣味や好きなことは何ですか。
+  - 趣味は何ですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 趣味や好きなことは何ですか。
+    tags:
+    - long
+    - polite
+  - jp: 趣味は何ですか？
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL02 activity 7: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A8
+  kind: listening
+  book_activity: 8
+  can_do_id: CD_EL02_07
+  label: kiku6
+  audio:
+  - assets/audio/Y_[02-08]_kiku6.mp3
+  key_phrases:
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  - 趣味や好きなことは何ですか。
+  - 趣味は何ですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 趣味や好きなことは何ですか。
+    tags:
+    - long
+    - polite
+  - jp: 趣味は何ですか？
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL02 activity 8: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A9
+  kind: listening
+  book_activity: 9
+  can_do_id: CD_EL02_04
+  label: kiku7
+  audio:
+  - assets/audio/Y_[02-09]_kiku7.mp3
+  key_phrases:
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  - 趣味や好きなことは何ですか。
+  - 好きなことは何ですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 趣味や好きなことは何ですか。
+    tags:
+    - long
+    - polite
+  - jp: 好きなことは何ですか？
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL02 activity 9: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A10
+  kind: grammar_form
+  book_activity: 10
+  can_do_id: CD_EL02_05
+  label: katachi
+  audio:
+  - assets/audio/Y_[02-10]_katachi.mp3
+  key_phrases:
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  - 趣味や好きなことは何ですか。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 趣味や好きなことは何ですか。
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A11
+  kind: speaking
+  book_activity: 11
+  can_do_id: CD_EL02_06
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[02-11]_hanasu1.mp3
+  key_phrases:
+  - 映画を見ることです。あと、本を読むのも好きです。
+  - 趣味は何ですか？
+  - ゲームをするのが好きです
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 趣味は何ですか？
+  - speaker: learner
+    jp: 映画を見ることです。あと、本を読むのも好きです。
+  dialog_listen_audio:
+  - assets/audio/Y_[02-11]_hanasu1.mp3
+  phrase_meta:
+  - jp: 映画を見ることです。あと、本を読むのも好きです。
+    tags:
+    - long
+    - polite
+  - jp: 趣味は何ですか？
+    tags:
+    - short
+    - polite
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+- id: A12
+  kind: speaking
+  book_activity: 12
+  can_do_id: CD_EL02_07
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[02-12]_hanasu2.mp3
+  key_phrases:
+  - 趣味は何ですか？
+  - 私もです。
+  - ゲームをするのが好きです
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 私もです。
+  - speaker: learner
+    jp: 趣味は何ですか？
+  dialog_listen_audio:
+  - assets/audio/Y_[02-12]_hanasu2.mp3
+  phrase_meta:
+  - jp: 趣味は何ですか？
+    tags:
+    - short
+    - polite
+  - jp: 私もです。
+    tags:
+    - short
+    - polite
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+- id: A13
+  kind: conversation
+  book_activity: 13
+  can_do_id: CD_EL02_04
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[02-13]_kaiwa.mp3
+  key_phrases:
+  - へー。
+  - 趣味？うーん、音楽を聞くことです。あと、ゲームをするのが好きです。
+  - ゲームをするのが好きです
+  - みの日の過ごし方について話しています。
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 趣味？うーん、音楽を聞くことです。あと、ゲームをするのが好きです。
+  - speaker: learner
+    jp: へー。
+  dialog_listen_audio:
+  - assets/audio/Y_[02-13]_kaiwa.mp3
+  phrase_meta:
+  - jp: へー。
+    tags:
+    - short
+  - jp: 趣味？うーん、音楽を聞くことです。あと、ゲームをするのが好きです。
+    tags:
+    - long
+    - polite
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: みの日の過ごし方について話しています。
+    tags:
+    - long
+    - polite
+- id: A14
+  kind: grammar_form
+  book_activity: 14
+  can_do_id: CD_EL02_05
+  label: katachi
+  audio:
+  - assets/audio/Y_[02-14]_katachi.mp3
+  key_phrases:
+  - ゲームをするのが好きです
+  - バドミントンをします。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: バドミントンをします。
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A15
+  kind: speaking
+  book_activity: 15
+  can_do_id: CD_EL02_06
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[02-15]_hanasu1.mp3
+  key_phrases:
+  - 旅行です。いろいろな国に行くのが好きです。
+  - 趣味は何ですか？
+  - ゲームをするのが好きです
+  - アニメを見ます
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 趣味は何ですか？
+  - speaker: learner
+    jp: 旅行です。いろいろな国に行くのが好きです。
+  dialog_listen_audio:
+  - assets/audio/Y_[02-15]_hanasu1.mp3
+  phrase_meta:
+  - jp: 旅行です。いろいろな国に行くのが好きです。
+    tags:
+    - long
+    - polite
+  - jp: 趣味は何ですか？
+    tags:
+    - short
+    - polite
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: アニメを見ます
+    tags:
+    - short
+    - polite
+- id: A16
+  kind: speaking
+  book_activity: 16
+  can_do_id: CD_EL02_07
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[02-16]_hanasu2.mp3
+  key_phrases:
+  - 趣味は何ですか？
+  - いいですね。
+  - ゲームをするのが好きです
+  - アニメを見ます
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: いいですね。
+  - speaker: learner
+    jp: 趣味は何ですか？
+  dialog_listen_audio:
+  - assets/audio/Y_[02-16]_hanasu2.mp3
+  phrase_meta:
+  - jp: 趣味は何ですか？
+    tags:
+    - short
+    - polite
+  - jp: いいですね。
+    tags:
+    - short
+    - polite
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: アニメを見ます
+    tags:
+    - short
+    - polite
+- id: A17
+  kind: grammar_form
+  book_activity: 17
+  can_do_id: CD_EL02_04
+  label: katachi
+  audio:
+  - assets/audio/Y_[02-17]_katachi.mp3
+  key_phrases:
+  - ゲームをするのが好きです
+  - どんな言い方をしていました
+  - だれと話がしたいですか。
+  - どんな質問をしたいですか。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ゲームをするのが好きです
+    tags:
+    - long
+    - polite
+  - jp: どんな言い方をしていました
+    tags:
+    - long
+  - jp: だれと話がしたいですか。
+    tags:
+    - long
+    - polite
+  - jp: どんな質問をしたいですか。
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+grammar:
+- point: V-る ことです
+  worksheet_pages:
+  - 6
+  examples: []
+- point: V-るのが 好
+  worksheet_pages:
+  - 7
+  examples: []
+- point: 😞 スポーツをします →（ スポーツをするのは、あまり好
+  worksheet_pages:
+  - 7
+  examples: []
+- point: 😄 うちでごろごろします →（ ）。
+  worksheet_pages:
+  - 7
+  examples: []
+- point: 😞 テレビを見
+  worksheet_pages:
+  - 7
+  examples: []
+- point: V-て います ②
+  worksheet_pages:
+  - 8
+  examples: []
+- point: N が できます
+  worksheet_pages:
+  - 9
+  examples: []
+- point: A： あきさんは、（インドネシア語
+  worksheet_pages:
+  - 9
+  examples: []
+vocab:
+- jp: が好きです
+  reading: ''
+  en: ''
+  tags:
+  - EL02
+- jp: 趣味は料理をすることです
+  reading: ''
+  en: ''
+  tags:
+  - EL02
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL02_04
+  prompt_en: 'Demonstrate: Can talk in simple terms about your hobbies and favorite
+    things to do.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL02_05
+  prompt_en: 'Demonstrate: Can ask and answer questions about how you spend your days
+    off.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL02_06
+  prompt_en: 'Demonstrate: Can read staff descriptions posted in a store, facility,
+    etc. and under - stand their families, hobbies, etc.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL02_07
+  prompt_en: 'Demonstrate: Can write in simple terms about your hobbies, your days
+    off, etc. for staff descriptions posted at work.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL02_04
+  partner_jp: が好きです。
+  expected: &id001
+  - が好きです
+  - 趣味は料理をすることです
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  hint_en: Can talk in simple terms about your hobbies and favorite things to do.
+- can_do_id: CD_EL02_04
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can talk in simple terms about your hobbies and favorite things
+    to do.
+- can_do_id: CD_EL02_05
+  partner_jp: が好きです。
+  expected: &id002
+  - が好きです
+  - 趣味は料理をすることです
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  hint_en: Can ask and answer questions about how you spend your days off.
+- can_do_id: CD_EL02_05
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can ask and answer questions about how you spend your days off.
+- can_do_id: CD_EL02_06
+  partner_jp: ゲームをするのが好きです。
+  expected: &id003
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  - 趣味や好きなことは何ですか。
+  - 趣味は何ですか？
+  hint_en: Can read staff descriptions posted in a store, facility, etc. and under
+    - stand their families, hobbies, etc.
+- can_do_id: CD_EL02_06
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: 'Again — Can read staff descriptions posted in a store, facility, etc.
+    and under - stand '
+- can_do_id: CD_EL02_07
+  partner_jp: ゲームをするのが好きです。
+  expected: &id004
+  - ゲームをするのが好きです
+  - 人の人が話しています。
+  - 趣味や好きなことは何ですか。
+  - 趣味は何ですか？
+  hint_en: Can write in simple terms about your hobbies, your days off, etc. for staff
+    descriptions posted at work.
+- can_do_id: CD_EL02_07
+  partner_jp: もう一度、お願いします。
+  expected: *id004
+  hint_en: Again — Can write in simple terms about your hobbies, your days off, etc.
+    for staff desc
+english_notes: 'How do you spend your days off?
+
+  Can talk in simple terms about your hobbies and favorite things to do.
+
+  Preparation for the words
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen and choose from a-l.
+
+  Listen to the dialogs.
+
+  The seven people are each talking about their hobbies.
+
+  What are their hobbies and favorite things to do? Choose from a-l of 1 .
+
+  Check the words and listen to the dialogs again.
+
+  す talk ｜ 特
+
+  にない nothing in particular
+
+  Listen to the recording and fill in the blanks.
+
+  What form of verb was used before ?
+
+  Focus on the expressions used and listen to the dialogs again.
+
+  Talk about your hobbies and favorite things to do.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Practice using the words from 1 .
+
+  Talk about yourself.
+
+  Can ask and answer questions about how you spend your days off.
+
+  Listen to the dialog.
+
+  Eco-san, Huong-san, and Ishikawa-san are talking during a break at
+
+  work about how they each spend their days off.
+
+  First, listen to the dialog without looking at the script.How do the three people
+  each spend their days off? Choose from a-c.
+
+  a. b. c.
+
+  Listen to the dialog again. This time, follow along with the script. What do they
+  each do? Where and with whom? Also, what do the
+
+  three people like to do?'
+unlock_requires_mastery: true

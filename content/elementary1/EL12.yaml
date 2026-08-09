@@ -1,0 +1,865 @@
+lesson_id: EL12
+lesson: 12
+book_id: elementary1
+title_en: Your bento looks delicious
+title_jp: お弁当、おいしそうですね
+topic_en: Shopping and Cooking
+pdf_pages:
+- 244
+- 266
+intro_questions:
+- jp: Your bento looks delicious について、あなたの けいけんは？
+  en: Thinking about "Shopping and Cooking" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can give your impressions about the appearance of food.
+    What do you want to be able to do?'
+can_dos:
+- id: CD_EL12_39
+  can_do_number: 39
+  statement_en: Can give your impressions about the appearance of food.
+  statement_jp: 食べ物を見て、見た目から感じた印象を言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - から
+    min_score: 80
+- id: CD_EL12_40
+  can_do_number: 40
+  statement_en: Can comment about the recommended food after eating it.
+  statement_jp: 食べ物を見て、見た目から感じた印象を言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - から
+    min_score: 80
+- id: CD_EL12_41
+  can_do_number: 41
+  statement_en: Can ask or answer questions about the taste, ingredients, etc. of
+    dishes.
+  statement_jp: 食べ物を見て、見た目から感じた印象を言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - から
+    min_score: 80
+- id: CD_EL12_42
+  can_do_number: 42
+  statement_en: Can read and understand cooking instructions for making instant food.
+  statement_jp: 食べ物を見て、見た目から感じた印象を言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - から
+    min_score: 80
+activities:
+- id: A1
+  kind: vocabulary
+  book_activity: 1
+  can_do_id: CD_EL12_39
+  label: kotoba1
+  audio:
+  - assets/audio/Y_[12-01]_kotoba1.mp3
+  key_phrases:
+  - 辛そうな料理です
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 辛そうな料理です
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: vocabulary
+  book_activity: 2
+  can_do_id: CD_EL12_40
+  label: kotoba2
+  audio:
+  - assets/audio/Y_[12-02]_kotoba2.mp3
+  key_phrases:
+  - 辛そうな料理です
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 辛そうな料理です
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL12_41
+  label: kiku1
+  audio:
+  - assets/audio/Y_[12-03]_kiku1.mp3
+  key_phrases:
+  - どんなことばを使っています
+  - そのお弁当、おいしですね。
+  - あ、これですか？ですよ。
+  - それ、辛料理ですね。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: どんなことばを使っています
+    tags:
+    - long
+    - polite
+  - jp: そのお弁当、おいしですね。
+    tags:
+    - long
+    - polite
+  - jp: あ、これですか？ですよ。
+    tags:
+    - long
+    - polite
+  - jp: それ、辛料理ですね。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_EL12_42
+  label: kiku2
+  audio:
+  - assets/audio/Y_[12-04]_kiku2.mp3
+  key_phrases:
+  - どんなことばを使っています
+  - そのお弁当、おいしそうですね。
+  - あ、これですか？おいしいですよ。駅前のコンビニで買いました。
+  - へー。じゃ、今度、買ってみます。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: どんなことばを使っています
+    tags:
+    - long
+    - polite
+  - jp: そのお弁当、おいしそうですね。
+    tags:
+    - long
+    - polite
+  - jp: あ、これですか？おいしいですよ。駅前のコンビニで買いました。
+    tags:
+    - long
+    - polite
+  - jp: へー。じゃ、今度、買ってみます。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL12 activity 4: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_EL12_39
+  label: kiku3
+  audio:
+  - assets/audio/Y_[12-05]_kiku3.mp3
+  key_phrases:
+  - どんなことばを使っています
+  - そのお弁当、おいしそうですね。
+  - あ、これですか？おいしいですよ。駅前のコンビニで買いました。
+  - へー。じゃ、今度、買ってみます。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: どんなことばを使っています
+    tags:
+    - long
+    - polite
+  - jp: そのお弁当、おいしそうですね。
+    tags:
+    - long
+    - polite
+  - jp: あ、これですか？おいしいですよ。駅前のコンビニで買いました。
+    tags:
+    - long
+    - polite
+  - jp: へー。じゃ、今度、買ってみます。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL12 activity 5: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A6
+  kind: listening
+  book_activity: 6
+  can_do_id: CD_EL12_40
+  label: kiku4
+  audio:
+  - assets/audio/Y_[12-06]_kiku4.mp3
+  key_phrases:
+  - どんなことばを使っています
+  - そのお弁当、おいしですね。
+  - あ、これですか？ですよ。
+  - それ、辛料理ですね。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: どんなことばを使っています
+    tags:
+    - long
+    - polite
+  - jp: そのお弁当、おいしですね。
+    tags:
+    - long
+    - polite
+  - jp: あ、これですか？ですよ。
+    tags:
+    - long
+    - polite
+  - jp: それ、辛料理ですね。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL12 activity 6: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A7
+  kind: grammar_form
+  book_activity: 7
+  can_do_id: CD_EL12_41
+  label: katachi
+  audio:
+  - assets/audio/Y_[12-07]_katachi.mp3
+  key_phrases:
+  - そのお弁当、おいしですね。
+  - あ、これですか？ですよ。
+  - それ、辛料理ですね。
+  - 私の国のカレーです。あまりですよ。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: そのお弁当、おいしですね。
+    tags:
+    - long
+    - polite
+  - jp: あ、これですか？ですよ。
+    tags:
+    - long
+    - polite
+  - jp: それ、辛料理ですね。
+    tags:
+    - short
+    - polite
+  - jp: 私の国のカレーです。あまりですよ。
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A8
+  kind: speaking
+  book_activity: 8
+  can_do_id: CD_EL12_42
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[12-08]_hanasu1.mp3
+  key_phrases:
+  - あ、これですか？ですよ。
+  - そのお弁当、おいしですね。
+  - みんなで食事をしています。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: そのお弁当、おいしですね。
+  - speaker: learner
+    jp: あ、これですか？ですよ。
+  dialog_listen_audio:
+  - assets/audio/Y_[12-08]_hanasu1.mp3
+  phrase_meta:
+  - jp: あ、これですか？ですよ。
+    tags:
+    - long
+    - polite
+  - jp: そのお弁当、おいしですね。
+    tags:
+    - long
+    - polite
+  - jp: みんなで食事をしています。
+    tags:
+    - long
+    - polite
+- id: A9
+  kind: speaking
+  book_activity: 9
+  can_do_id: CD_EL12_39
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[12-09]_hanasu2.mp3
+  key_phrases:
+  - 私の国のカレーです。あまりですよ。
+  - それ、辛料理ですね。
+  - みんなで食事をしています。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: それ、辛料理ですね。
+  - speaker: learner
+    jp: 私の国のカレーです。あまりですよ。
+  dialog_listen_audio:
+  - assets/audio/Y_[12-09]_hanasu2.mp3
+  phrase_meta:
+  - jp: 私の国のカレーです。あまりですよ。
+    tags:
+    - long
+    - polite
+  - jp: それ、辛料理ですね。
+    tags:
+    - short
+    - polite
+  - jp: みんなで食事をしています。
+    tags:
+    - long
+    - polite
+- id: A10
+  kind: listening
+  book_activity: 10
+  can_do_id: CD_EL12_40
+  label: kiku1
+  audio:
+  - assets/audio/Y_[12-10]_kiku1.mp3
+  key_phrases:
+  - ています。
+  - それについてどう言っています
+  - よかったら、この卵焼き、食べてみてください。
+  - ありがとうございます。……あ、甘くておいしいですね。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: それについてどう言っています
+    tags:
+    - long
+    - polite
+  - jp: よかったら、この卵焼き、食べてみてください。
+    tags:
+    - long
+    - polite
+  - jp: ありがとうございます。……あ、甘くておいしいですね。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL12 activity 10: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A11
+  kind: listening
+  book_activity: 11
+  can_do_id: CD_EL12_41
+  label: kiku2
+  audio:
+  - assets/audio/Y_[12-11]_kiku2.mp3
+  key_phrases:
+  - ています。
+  - それについてどう言っています
+  - よかったら、この卵焼き、食べてみてください。
+  - ありがとうございます。……あ、甘くておいしいですね。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: それについてどう言っています
+    tags:
+    - long
+    - polite
+  - jp: よかったら、この卵焼き、食べてみてください。
+    tags:
+    - long
+    - polite
+  - jp: ありがとうございます。……あ、甘くておいしいですね。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL12 activity 11: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A12
+  kind: listening
+  book_activity: 12
+  can_do_id: CD_EL12_42
+  label: kiku3
+  audio:
+  - assets/audio/Y_[12-12]_kiku3.mp3
+  key_phrases:
+  - ています。
+  - それについてどう言っています
+  - よかったら、この卵焼き、食べてみてください。
+  - ありがとうございます。……あ、甘くておいしいですね。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: それについてどう言っています
+    tags:
+    - long
+    - polite
+  - jp: よかったら、この卵焼き、食べてみてください。
+    tags:
+    - long
+    - polite
+  - jp: ありがとうございます。……あ、甘くておいしいですね。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL12 activity 12: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A13
+  kind: listening
+  book_activity: 13
+  can_do_id: CD_EL12_39
+  label: kiku4
+  audio:
+  - assets/audio/Y_[12-13]_kiku4.mp3
+  key_phrases:
+  - ています。
+  - それについてどう言っています
+  - よかったら、この卵焼き、食べてみてください。
+  - ありがとうございます。……あ、甘くておいしいですね。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: それについてどう言っています
+    tags:
+    - long
+    - polite
+  - jp: よかったら、この卵焼き、食べてみてください。
+    tags:
+    - long
+    - polite
+  - jp: ありがとうございます。……あ、甘くておいしいですね。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL12 activity 13: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A14
+  kind: grammar_form
+  book_activity: 14
+  can_do_id: CD_EL12_40
+  label: katachi
+  audio:
+  - assets/audio/Y_[12-14]_katachi.mp3
+  key_phrases:
+  - 辛そうな料理です
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 辛そうな料理です
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A15
+  kind: speaking
+  book_activity: 15
+  can_do_id: CD_EL12_41
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[12-15]_hanasu1.mp3
+  key_phrases:
+  - おいしいです。
+  - 味は、うす？
+  - 食べてみてください。
+  - すみません。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 味は、うす？
+  - speaker: learner
+    jp: おいしいです。
+  dialog_listen_audio:
+  - assets/audio/Y_[12-15]_hanasu1.mp3
+  phrase_meta:
+  - jp: おいしいです。
+    tags:
+    - short
+    - polite
+  - jp: 味は、うす？
+    tags:
+    - short
+  - jp: 食べてみてください。
+    tags:
+    - short
+    - polite
+  - jp: すみません。
+    tags:
+    - short
+    - polite
+- id: A16
+  kind: speaking
+  book_activity: 16
+  can_do_id: CD_EL12_42
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[12-16]_hanasu2.mp3
+  key_phrases:
+  - あ、これですか？おいしいですよ。駅前のコンビニで買いました。
+  - そのお弁当、おいしそうですね。
+  - 食べてみてください。
+  - すみません。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: そのお弁当、おいしそうですね。
+  - speaker: learner
+    jp: あ、これですか？おいしいですよ。駅前のコンビニで買いました。
+  dialog_listen_audio:
+  - assets/audio/Y_[12-16]_hanasu2.mp3
+  phrase_meta:
+  - jp: あ、これですか？おいしいですよ。駅前のコンビニで買いました。
+    tags:
+    - long
+    - polite
+  - jp: そのお弁当、おいしそうですね。
+    tags:
+    - long
+    - polite
+  - jp: 食べてみてください。
+    tags:
+    - short
+    - polite
+  - jp: すみません。
+    tags:
+    - short
+    - polite
+- id: A17
+  kind: speaking
+  book_activity: 17
+  can_do_id: CD_EL12_39
+  label: hanasu3
+  audio:
+  - assets/audio/Y_[12-17]_hanasu3.mp3
+  key_phrases:
+  - わー、それ、辛そうな料理ですね。
+  - へー。じゃ、今度、買ってみます。
+  - 食べてみてください。
+  - すみません。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: へー。じゃ、今度、買ってみます。
+  - speaker: learner
+    jp: わー、それ、辛そうな料理ですね。
+  dialog_listen_audio:
+  - assets/audio/Y_[12-17]_hanasu3.mp3
+  phrase_meta:
+  - jp: わー、それ、辛そうな料理ですね。
+    tags:
+    - long
+    - polite
+  - jp: へー。じゃ、今度、買ってみます。
+    tags:
+    - long
+    - polite
+  - jp: 食べてみてください。
+    tags:
+    - short
+    - polite
+  - jp: すみません。
+    tags:
+    - short
+    - polite
+- id: A18
+  kind: conversation
+  book_activity: 18
+  can_do_id: CD_EL12_40
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[12-18]_kaiwa.mp3
+  key_phrases:
+  - そうなんですか。
+  - これですか？私の国のカレーです。あまり辛くないですよ。
+  - はどんな料理ですか。
+  - どんな味ですか。
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: これですか？私の国のカレーです。あまり辛くないですよ。
+  - speaker: learner
+    jp: そうなんですか。
+  dialog_listen_audio:
+  - assets/audio/Y_[12-18]_kaiwa.mp3
+  phrase_meta:
+  - jp: そうなんですか。
+    tags:
+    - short
+    - polite
+  - jp: これですか？私の国のカレーです。あまり辛くないですよ。
+    tags:
+    - long
+    - polite
+  - jp: はどんな料理ですか。
+    tags:
+    - short
+    - polite
+  - jp: どんな味ですか。
+    tags:
+    - short
+    - polite
+- id: A19
+  kind: grammar_form
+  book_activity: 19
+  can_do_id: CD_EL12_41
+  label: katachi
+  audio:
+  - assets/audio/Y_[12-19]_katachi.mp3
+  key_phrases:
+  - 味は、うす？
+  - おいしいです。
+  - プリンに似てます
+  - ると思います
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 味は、うす？
+    tags:
+    - short
+  - jp: おいしいです。
+    tags:
+    - short
+    - polite
+  - jp: プリンに似てます
+    tags:
+    - short
+    - polite
+  - jp: ると思います
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A20
+  kind: speaking
+  book_activity: 20
+  can_do_id: CD_EL12_42
+  label: hanasu
+  audio:
+  - assets/audio/Y_[12-20]_hanasu.mp3
+  key_phrases:
+  - これ？これは、チョコレートバニラクリームラテ。
+  - それ、何ですか？
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: それ、何ですか？
+  - speaker: learner
+    jp: これ？これは、チョコレートバニラクリームラテ。
+  dialog_listen_audio:
+  - assets/audio/Y_[12-20]_hanasu.mp3
+  phrase_meta:
+  - jp: これ？これは、チョコレートバニラクリームラテ。
+    tags:
+    - long
+  - jp: それ、何ですか？
+    tags:
+    - short
+    - polite
+grammar:
+- point: ナ A-／イ A-そうです
+  worksheet_pages:
+  - 39
+  examples: []
+- point: A： すき焼
+  worksheet_pages:
+  - 39
+  examples: []
+- point: A： そのみかん、まだ（すっぱい → ）ですね。
+  worksheet_pages:
+  - 39
+  examples: []
+- point: ナ A-／イ A-そうな N
+  worksheet_pages:
+  - 39
+  examples: []
+- point: すき焼
+  worksheet_pages:
+  - 39
+  examples: []
+- point: このみかん、すっぱそうですね。→（ ）ですね。
+  worksheet_pages:
+  - 39
+  examples: []
+- point: イ A-くて、～
+  worksheet_pages:
+  - 40
+  examples: []
+- point: このコーヒー、あまり苦
+  worksheet_pages:
+  - 40
+  examples: []
+- point: ここのチョコレートは、あまり甘
+  worksheet_pages:
+  - 40
+  examples: []
+- point: ビール、あまり冷
+  worksheet_pages:
+  - 40
+  examples: []
+- point: V-て みます
+  worksheet_pages:
+  - 41
+  examples: []
+- point: A： うーん、ちょっと、味
+  worksheet_pages:
+  - 41
+  examples: []
+- point: A： このカレー、（ ）ました。
+  worksheet_pages:
+  - 41
+  examples: []
+- point: A：（ ）たいんですが・・・。
+  worksheet_pages:
+  - 41
+  examples: []
+- point: ネットで買
+  worksheet_pages:
+  - 41
+  examples: []
+- point: はじめに、野菜
+  worksheet_pages:
+  - 42
+  examples: []
+- point: イ A-く ないですか？
+  worksheet_pages:
+  - 42
+  examples: []
+vocab:
+- jp: 辛そうな料理です
+  reading: ''
+  en: ''
+  tags:
+  - EL12
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL12_39
+  prompt_en: 'Demonstrate: Can give your impressions about the appearance of food.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL12_40
+  prompt_en: 'Demonstrate: Can comment about the recommended food after eating it.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL12_41
+  prompt_en: 'Demonstrate: Can ask or answer questions about the taste, ingredients,
+    etc. of dishes.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL12_42
+  prompt_en: 'Demonstrate: Can read and understand cooking instructions for making
+    instant food.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL12_39
+  partner_jp: 辛そうな料理です。
+  expected: &id001
+  - 辛そうな料理です
+  - どんなことばを使っています
+  - そのお弁当、おいしそうですね。
+  - あ、これですか？おいしいですよ。駅前のコンビニで買いました。
+  - から
+  hint_en: Can give your impressions about the appearance of food.
+- can_do_id: CD_EL12_39
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can give your impressions about the appearance of food.
+- can_do_id: CD_EL12_40
+  partner_jp: 辛そうな料理です。
+  expected: &id002
+  - 辛そうな料理です
+  - どんなことばを使っています
+  - そのお弁当、おいしですね。
+  - あ、これですか？ですよ。
+  - から
+  hint_en: Can comment about the recommended food after eating it.
+- can_do_id: CD_EL12_40
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can comment about the recommended food after eating it.
+- can_do_id: CD_EL12_41
+  partner_jp: どんなことばを使っています。
+  expected: &id003
+  - どんなことばを使っています
+  - そのお弁当、おいしですね。
+  - あ、これですか？ですよ。
+  - それ、辛料理ですね。
+  - から
+  hint_en: Can ask or answer questions about the taste, ingredients, etc. of dishes.
+- can_do_id: CD_EL12_41
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can ask or answer questions about the taste, ingredients, etc.
+    of dishes.
+- can_do_id: CD_EL12_42
+  partner_jp: どんなことばを使っています。
+  expected: &id004
+  - どんなことばを使っています
+  - そのお弁当、おいしそうですね。
+  - あ、これですか？おいしいですよ。駅前のコンビニで買いました。
+  - へー。じゃ、今度、買ってみます。
+  - から
+  hint_en: Can read and understand cooking instructions for making instant food.
+- can_do_id: CD_EL12_42
+  partner_jp: もう一度、お願いします。
+  expected: *id004
+  hint_en: Again — Can read and understand cooking instructions for making instant
+    food.
+english_notes: 'Have you ever eaten Japanese food? How was it?
+
+  Can give your impressions about the appearance of food.
+
+  Preparation for the words
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen and choose from a-i.
+
+  Listen to the dialogs.
+
+  The people are each looking at the food someone else brought and talking about it
+  during a lunch break at work.
+
+  What did the person say about the taste? Choose from a-i of 1 .
+
+  Check the words and listen to the dialogs again.
+
+  garden ｜ とれる pick
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used to describe the impression from the appearance?
+
+  Focus on the expressions used and listen to the dialogs again.
+
+  Talk about your impression of a food.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Have a practice conversation using the contents of 2 .
+
+  Role-play this situation. You are having a meal with other people. Talk about what
+  you are each eating.'
+unlock_requires_mastery: true

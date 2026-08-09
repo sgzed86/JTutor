@@ -1,0 +1,657 @@
+lesson_id: EL18
+lesson: 18
+book_id: elementary1
+title_en: How about giving something as a gift?
+title_jp: 何かプレゼントをあげませんか ？
+topic_en: Visiting People
+pdf_pages:
+- 377
+- 407
+intro_questions:
+- jp: How about giving something as a gift? について、あなたの けいけんは？
+  en: Thinking about "Visiting People" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can say congratulations for a birthday, wedding, etc.
+    What do you want to be able to do?'
+can_dos:
+- id: CD_EL18_65
+  can_do_number: 65
+  statement_en: Can say congratulations for a birthday, wedding, etc.
+  statement_jp: 誕生日や結婚などのお祝いを言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL18_66
+  can_do_number: 66
+  statement_en: Can discuss what to give when selecting a gift for someone.
+  statement_jp: 誕生日や結婚などのお祝いを言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL18_67
+  can_do_number: 67
+  statement_en: Can thank someone and offer comments when someone gives you a gift.
+  statement_jp: 誕生日や結婚などのお祝いを言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL18_68
+  can_do_number: 68
+  statement_en: Can read and understand a post on social media that your friend wrote
+    on their birthday.
+  statement_jp: 誕生日や結婚などのお祝いを言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL18_69
+  can_do_number: 69
+  statement_en: Can write a message of congratulations or goodbye on a card.
+  statement_jp: 誕生日や結婚などのお祝いを言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_EL18_65
+  label: kiku1
+  audio:
+  - assets/audio/Y_[18-01]_kiku1.mp3
+  key_phrases:
+  - 人の人にお祝いを言っています。
+  - 何のお祝いですか。
+  - 子どもは男の子ですか
+  - 女の子ですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人の人にお祝いを言っています。
+    tags:
+    - long
+    - polite
+  - jp: 何のお祝いですか。
+    tags:
+    - short
+    - polite
+  - jp: 子どもは男の子ですか
+    tags:
+    - short
+    - polite
+  - jp: 女の子ですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_EL18_66
+  label: kiku2
+  audio:
+  - assets/audio/Y_[18-02]_kiku2.mp3
+  key_phrases:
+  - 人の人にお祝いを言っています。
+  - 何のお祝いですか。
+  - 子どもは男の子ですか
+  - 女の子ですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人の人にお祝いを言っています。
+    tags:
+    - long
+    - polite
+  - jp: 何のお祝いですか。
+    tags:
+    - short
+    - polite
+  - jp: 子どもは男の子ですか
+    tags:
+    - short
+    - polite
+  - jp: 女の子ですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL18 activity 2: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL18_67
+  label: kiku3
+  audio:
+  - assets/audio/Y_[18-03]_kiku3.mp3
+  key_phrases:
+  - 人の人にお祝いを言っています。
+  - 何のお祝いですか。
+  - 子どもは男の子ですか
+  - 女の子ですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人の人にお祝いを言っています。
+    tags:
+    - long
+    - polite
+  - jp: 何のお祝いですか。
+    tags:
+    - short
+    - polite
+  - jp: 子どもは男の子ですか
+    tags:
+    - short
+    - polite
+  - jp: 女の子ですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL18 activity 3: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_EL18_68
+  label: kiku4
+  audio:
+  - assets/audio/Y_[18-04]_kiku4.mp3
+  key_phrases:
+  - 人の人にお祝いを言っています。
+  - 何のお祝いですか。
+  - 子どもは男の子ですか
+  - 女の子ですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人の人にお祝いを言っています。
+    tags:
+    - long
+    - polite
+  - jp: 何のお祝いですか。
+    tags:
+    - short
+    - polite
+  - jp: 子どもは男の子ですか
+    tags:
+    - short
+    - polite
+  - jp: 女の子ですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL18 activity 4: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A5
+  kind: grammar_form
+  book_activity: 5
+  can_do_id: CD_EL18_69
+  label: katachi
+  audio:
+  - assets/audio/Y_[18-05]_katachi.mp3
+  key_phrases:
+  - どんな意味だと思います
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: どんな意味だと思います
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A6
+  kind: speaking
+  book_activity: 6
+  can_do_id: CD_EL18_65
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[18-06]_hanasu1.mp3
+  key_phrases:
+  - うん、ありがとう。昨日、生まれたんだ。
+  - お子さんが生まれたそうですね。
+  - 女の子ですか
+  - どんな人ですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: お子さんが生まれたそうですね。
+  - speaker: learner
+    jp: うん、ありがとう。昨日、生まれたんだ。
+  dialog_listen_audio:
+  - assets/audio/Y_[18-06]_hanasu1.mp3
+  phrase_meta:
+  - jp: うん、ありがとう。昨日、生まれたんだ。
+    tags:
+    - long
+  - jp: お子さんが生まれたそうですね。
+    tags:
+    - long
+    - polite
+  - jp: 女の子ですか
+    tags:
+    - short
+    - polite
+  - jp: どんな人ですか
+    tags:
+    - short
+    - polite
+- id: A7
+  kind: speaking
+  book_activity: 7
+  can_do_id: CD_EL18_66
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[18-07]_hanasu2.mp3
+  key_phrases:
+  - 女の子
+  - おめでとうございます。男の子ですか？女の子ですか？
+  - 女の子ですか
+  - どんな人ですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: おめでとうございます。男の子ですか？女の子ですか？
+  - speaker: learner
+    jp: 女の子
+  dialog_listen_audio:
+  - assets/audio/Y_[18-07]_hanasu2.mp3
+  phrase_meta:
+  - jp: 女の子
+    tags:
+    - short
+  - jp: おめでとうございます。男の子ですか？女の子ですか？
+    tags:
+    - long
+    - polite
+  - jp: 女の子ですか
+    tags:
+    - short
+    - polite
+  - jp: どんな人ですか
+    tags:
+    - short
+    - polite
+- id: A8
+  kind: vocabulary
+  book_activity: 8
+  can_do_id: CD_EL18_67
+  label: kotoba1
+  audio:
+  - assets/audio/Y_[18-08]_kotoba1.mp3
+  key_phrases:
+  - 人の人にお祝いを言っています。
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 人の人にお祝いを言っています。
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A9
+  kind: vocabulary
+  book_activity: 9
+  can_do_id: CD_EL18_68
+  label: kotoba2
+  audio:
+  - assets/audio/Y_[18-09]_kotoba2.mp3
+  key_phrases:
+  - 何のお祝いですか。
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 何のお祝いですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A10
+  kind: conversation
+  book_activity: 10
+  can_do_id: CD_EL18_69
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[18-10]_kaiwa.mp3
+  key_phrases:
+  - ううん、まだ。これから考える。
+  - そうですか。名前は決めましたか？
+  - もうすぐ国に帰ります。
+  - ナさんの送別会について相談しています。
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: そうですか。名前は決めましたか？
+  - speaker: learner
+    jp: ううん、まだ。これから考える。
+  dialog_listen_audio:
+  - assets/audio/Y_[18-10]_kaiwa.mp3
+  phrase_meta:
+  - jp: ううん、まだ。これから考える。
+    tags:
+    - long
+  - jp: そうですか。名前は決めましたか？
+    tags:
+    - long
+    - polite
+  - jp: もうすぐ国に帰ります。
+    tags:
+    - long
+    - polite
+  - jp: ナさんの送別会について相談しています。
+    tags:
+    - long
+    - polite
+- id: A11
+  kind: grammar_form
+  book_activity: 11
+  can_do_id: CD_EL18_65
+  label: katachi
+  audio:
+  - assets/audio/Y_[18-11]_katachi.mp3
+  key_phrases:
+  - どんな意味ですか。
+  - とどう違うと思います
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: どんな意味ですか。
+    tags:
+    - short
+    - polite
+  - jp: とどう違うと思います
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A12
+  kind: speaking
+  book_activity: 12
+  can_do_id: CD_EL18_66
+  label: hanasu
+  audio:
+  - assets/audio/Y_[18-12]_hanasu.mp3
+  key_phrases:
+  - ご結婚おめでとうございます。
+  - 楽しみですね。
+  - ほかの人にプレゼントを贈ります。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 楽しみですね。
+  - speaker: learner
+    jp: ご結婚おめでとうございます。
+  dialog_listen_audio:
+  - assets/audio/Y_[18-12]_hanasu.mp3
+  phrase_meta:
+  - jp: ご結婚おめでとうございます。
+    tags:
+    - long
+    - polite
+  - jp: 楽しみですね。
+    tags:
+    - short
+    - polite
+  - jp: ほかの人にプレゼントを贈ります。
+    tags:
+    - long
+    - polite
+- id: A13
+  kind: conversation
+  book_activity: 13
+  can_do_id: CD_EL18_67
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[18-13]_kaiwa.mp3
+  key_phrases:
+  - えー、ありがとう。うれしい。
+  - え、あ、ありがとう。
+  - いろいろお世話になりました
+  - アナさんの送別会を開いています。
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: え、あ、ありがとう。
+  - speaker: learner
+    jp: えー、ありがとう。うれしい。
+  dialog_listen_audio:
+  - assets/audio/Y_[18-13]_kaiwa.mp3
+  phrase_meta:
+  - jp: えー、ありがとう。うれしい。
+    tags:
+    - long
+  - jp: え、あ、ありがとう。
+    tags:
+    - short
+  - jp: いろいろお世話になりました
+    tags:
+    - long
+  - jp: アナさんの送別会を開いています。
+    tags:
+    - long
+    - polite
+- id: A14
+  kind: speaking
+  book_activity: 14
+  can_do_id: CD_EL18_68
+  label: hanasu
+  audio:
+  - assets/audio/Y_[18-14]_hanasu.mp3
+  key_phrases:
+  - うーんと、まあ、普通の人
+  - 相手は、どんな人ですか？
+  - 開けてみてください。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 相手は、どんな人ですか？
+  - speaker: learner
+    jp: うーんと、まあ、普通の人
+  dialog_listen_audio:
+  - assets/audio/Y_[18-14]_hanasu.mp3
+  phrase_meta:
+  - jp: うーんと、まあ、普通の人
+    tags:
+    - long
+  - jp: 相手は、どんな人ですか？
+    tags:
+    - long
+    - polite
+  - jp: 開けてみてください。
+    tags:
+    - short
+    - polite
+grammar:
+- point: キムさんもパーティーに来
+  worksheet_pages:
+  - 59
+  examples: []
+- point: プレゼントはギフトカードがいいです。
+  worksheet_pages:
+  - 59
+  examples: []
+- point: アリさんは送別会
+  worksheet_pages:
+  - 60
+  examples: []
+- point: プレゼントは 周
+  worksheet_pages:
+  - 62
+  examples: []
+- point: キムさんはもう帰
+  worksheet_pages:
+  - 62
+  examples: []
+- point: コンビニにはフォトフレームはありません。
+  worksheet_pages:
+  - 62
+  examples: []
+vocab:
+- jp: 人の人にお祝いを言っています。
+  reading: ''
+  en: ''
+  tags:
+  - EL18
+- jp: 何のお祝いですか。
+  reading: ''
+  en: ''
+  tags:
+  - EL18
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL18_65
+  prompt_en: 'Demonstrate: Can say congratulations for a birthday, wedding, etc.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL18_66
+  prompt_en: 'Demonstrate: Can discuss what to give when selecting a gift for someone.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL18_67
+  prompt_en: 'Demonstrate: Can thank someone and offer comments when someone gives
+    you a gift.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL18_68
+  prompt_en: 'Demonstrate: Can read and understand a post on social media that your
+    friend wrote on their birthday.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL18_69
+  prompt_en: 'Demonstrate: Can write a message of congratulations or goodbye on a
+    card.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL18_65
+  partner_jp: 人の人にお祝いを言っています。
+  expected: &id001
+  - 人の人にお祝いを言っています。
+  - 何のお祝いですか。
+  - 子どもは男の子ですか
+  - 女の子ですか。
+  hint_en: Can say congratulations for a birthday, wedding, etc.
+- can_do_id: CD_EL18_65
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can say congratulations for a birthday, wedding, etc.
+- can_do_id: CD_EL18_66
+  partner_jp: 人の人にお祝いを言っています。
+  expected: &id002
+  - 人の人にお祝いを言っています。
+  - 何のお祝いですか。
+  - 子どもは男の子ですか
+  - 女の子ですか。
+  hint_en: Can discuss what to give when selecting a gift for someone.
+- can_do_id: CD_EL18_66
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can discuss what to give when selecting a gift for someone.
+- can_do_id: CD_EL18_67
+  partner_jp: 人の人にお祝いを言っています。
+  expected: &id003
+  - 人の人にお祝いを言っています。
+  - 何のお祝いですか。
+  - 子どもは男の子ですか
+  - 女の子ですか。
+  hint_en: Can thank someone and offer comments when someone gives you a gift.
+- can_do_id: CD_EL18_67
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can thank someone and offer comments when someone gives you a gift.
+- can_do_id: CD_EL18_68
+  partner_jp: 人の人にお祝いを言っています。
+  expected: &id004
+  - 人の人にお祝いを言っています。
+  - 何のお祝いですか。
+  - 子どもは男の子ですか
+  - 女の子ですか。
+  hint_en: Can read and understand a post on social media that your friend wrote on
+    their birthday.
+- can_do_id: CD_EL18_68
+  partner_jp: もう一度、お願いします。
+  expected: *id004
+  hint_en: Again — Can read and understand a post on social media that your friend
+    wrote on their b
+- can_do_id: CD_EL18_69
+  partner_jp: どんな意味だと思います。
+  expected: &id005
+  - どんな意味だと思います
+  - ううん、まだ。これから考える。
+  - そうですか。名前は決めましたか？
+  - もうすぐ国に帰ります。
+  hint_en: Can write a message of congratulations or goodbye on a card.
+- can_do_id: CD_EL18_69
+  partner_jp: もう一度、お願いします。
+  expected: *id005
+  hint_en: Again — Can write a message of congratulations or goodbye on a card.
+english_notes: 'When do you give gifts to someone?
+
+  Can say congratulations for a birthday, wedding, etc.
+
+  Listen to the dialogs.
+
+  The four people are each being congratulated.
+
+  What is the occasion? Choose from a-d.
+
+  Listen to the dialogs again and answer the questions.
+
+  Is the baby a boy or a girl? What is the name?
+
+  What is the person’s spouse like?
+
+  Did the woman receive a birthday gift?
+
+  What will the man receive from the woman?
+
+  Check the words and listen to the dialogs again.
+
+  boy ｜ 女
+
+  girl ｜ 決
+
+  める decide ｜ 考
+
+  える think ｜ 私
+
+  手 spouse ｜ お祝
+
+  い gift ｜ ごちそうする treat a meal ｜ きっと surely ｜ あげる give
+
+  しみですね That sounds exciting. ｜ お幸
+
+  せに Wish you all the happiness.
+
+  Listen to the recording and fill in the blanks.
+
+  J
+
+  LPT 、合
+
+  What do you think is the meaning of そうです?
+
+  What expression was used to congratulate someone?
+
+  Focus on the expressions used and listen to the dialogs again.
+
+  Say words of congratulations.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Have a practice conversation using the contents of 1 .
+
+  Role-play this situation. Freely think up any occasion and offer suitable words
+  of congratulations. After that, freely carry on a
+
+  conversation. If you do not know what to say in Japanese, try to look it up.'
+unlock_requires_mastery: true

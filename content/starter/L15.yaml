@@ -1,0 +1,1011 @@
+lesson_id: L15
+lesson: 15
+title_en: I need some batteries
+title_jp: 電池がほしいんですが…
+topic_en: At Stores
+pdf_pages:
+- 395
+- 421
+intro_questions:
+- jp: I need some batteries について、あなたの けいけんは？
+  en: Thinking about "At Stores" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can say what you want/need at a store. What do you want to be able to do?'
+can_dos:
+- id: CD_L15_58
+  can_do_number: 58
+  statement_en: Can say what you want/need at a store.
+  statement_jp: 店でほしいもの・必要なものを言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - ほしい
+    min_score: 80
+- id: CD_L15_59
+  can_do_number: 59
+  statement_en: Can ask store staff for a product.
+  statement_jp: 店員に商品についてたずねることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_L15_60
+  can_do_number: 60
+  statement_en: Can understand simple replies from store staff.
+  statement_jp: 店員の簡単な返事を理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: vocabulary
+  book_activity: 1
+  can_do_id: CD_L15_58
+  label: kotoba1
+  audio:
+  - assets/audio/X_[15-01]_kotoba1.mp3
+  key_phrases:
+  - みせえコンビニビスーパシキャクエンショップリドラグストアいいショッピングセンターショッピングモールフオームセンタージデパート
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: みせえコンビニビスーパシキャクエンショップリドラグストアいいショッピングセンターショッピングモールフオームセンタージデパート
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A2
+  kind: vocabulary
+  book_activity: 2
+  can_do_id: CD_L15_59
+  label: kotoba2
+  audio:
+  - assets/audio/X_[15-02]_kotoba2.mp3
+  key_phrases:
+  - 1スーパーに行きます2デパートに行きます3ドラグストアに行きます4ショッピングセンターに行きます5オームセンターに行きます6100円ショップとコンビニに行きます7ショッピングモールに行きます
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1スーパーに行きます2デパートに行きます3ドラグストアに行きます4ショッピングセンターに行きます5オームセンターに行きます6100円ショップとコンビニに行きます7ショッピングモールに行きます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_L15_60
+  label: kiku1
+  audio:
+  - assets/audio/X_[15-03]_kiku1.mp3
+  key_phrases:
+  - 1電池が欲しいんですがどこで買えますか
+  - コンビニで買えますよあ、そうですか
+  - 電池
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1電池が欲しいんですがどこで買えますか
+    tags:
+    - long
+    - polite
+  - jp: コンビニで買えますよあ、そうですか
+    tags:
+    - long
+    - polite
+  - jp: 電池
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_L15_58
+  label: kiku2
+  audio:
+  - assets/audio/X_[15-04]_kiku2.mp3
+  key_phrases:
+  - に戦畑場様が欲しいんですがどこで買えますかドラックストアで買えますよわかりましたありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: に戦畑場様が欲しいんですがどこで買えますかドラックストアで買えますよわかりましたありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 4: listen to the CD, then say the phrase that matches the book.'
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_L15_59
+  label: kiku3
+  audio:
+  - assets/audio/X_[15-05]_kiku3.mp3
+  key_phrases:
+  - いきまえのショッピングセンターで買えますよ2回にお見せがありますそうですか
+  - 3ゆかたが欲しいんですがどこで買えますか
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: いきまえのショッピングセンターで買えますよ2回にお見せがありますそうですか
+    tags:
+    - long
+    - polite
+  - jp: 3ゆかたが欲しいんですがどこで買えますか
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 5: listen to the CD, then say the phrase that matches the book.'
+- id: A6
+  kind: listening
+  book_activity: 6
+  can_do_id: CD_L15_60
+  label: kiku4
+  audio:
+  - assets/audio/X_[15-06]_kiku4.mp3
+  key_phrases:
+  - よん回中電頭が欲しいんですがどこで買えますかあ、ホームセンターがいいよこの近くにあるよそうですか、ありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: よん回中電頭が欲しいんですがどこで買えますかあ、ホームセンターがいいよこの近くにあるよそうですか、ありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 6: listen to the CD, then say the phrase that matches the book.'
+- id: A7
+  kind: listening
+  book_activity: 7
+  can_do_id: CD_L15_58
+  label: kiku5
+  audio:
+  - assets/audio/X_[15-07]_kiku5.mp3
+  key_phrases:
+  - ごお便当箱が欲しいんですがどこで買えますか
+  - 100円ショップにありますよお便当箱もおはしもありますありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ごお便当箱が欲しいんですがどこで買えますか
+    tags:
+    - long
+    - polite
+  - jp: 100円ショップにありますよお便当箱もおはしもありますありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 7: listen to the CD, then say the phrase that matches the book.'
+- id: A8
+  kind: listening
+  book_activity: 8
+  can_do_id: CD_L15_59
+  label: kiku6
+  audio:
+  - assets/audio/X_[15-08]_kiku6.mp3
+  key_phrases:
+  - 6ここなつ見るくが欲しいんですがどこで買いますか
+  - ニコニコスーパーとかそうですか
+  - ああ、大きいスーパーにあるよ
+  - ありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 6ここなつ見るくが欲しいんですがどこで買いますか
+    tags:
+    - long
+    - polite
+  - jp: ニコニコスーパーとかそうですか
+    tags:
+    - long
+    - polite
+  - jp: ああ、大きいスーパーにあるよ
+    tags:
+    - long
+    - casual
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 8: listen to the CD, then say the phrase that matches the book.'
+- id: A9
+  kind: grammar_form
+  book_activity: 9
+  can_do_id: CD_L15_60
+  label: katachi
+  audio:
+  - assets/audio/X_[15-09]_katachi.mp3
+  key_phrases:
+  - 電池が欲しいんですがどこで買えますかコンビニで買えますよ100円ショップにありますよ
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 電池が欲しいんですがどこで買えますかコンビニで買えますよ100円ショップにありますよ
+    tags:
+    - long
+    - polite
+    - casual
+  book_mode: listen_repeat
+- id: A10
+  kind: speaking
+  book_activity: 10
+  can_do_id: CD_L15_58
+  label: hanasu1
+  audio:
+  - assets/audio/X_[15-10]_hanasu1.mp3
+  key_phrases:
+  - ありがとうございます
+  - 電池が欲しいんですがどこで買えますか
+  - コンビニで買えますよそうですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+  - jp: 電池が欲しいんですがどこで買えますか
+    tags:
+    - long
+    - polite
+  - jp: コンビニで買えますよそうですか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 電池が欲しいんですがどこで買えますか
+  - speaker: learner
+    jp: ありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[15-10]_hanasu1.mp3
+- id: A11
+  kind: speaking
+  book_activity: 11
+  can_do_id: CD_L15_59
+  label: hanasu2
+  audio:
+  - assets/audio/X_[15-11]_hanasu2.mp3
+  key_phrases:
+  - ありがとうございます
+  - 電池が欲しいんですがどこで買えますか
+  - そうですか
+  - 100円ショップにありますよ
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+  - jp: 電池が欲しいんですがどこで買えますか
+    tags:
+    - long
+    - polite
+  - jp: そうですか
+    tags:
+    - short
+    - polite
+  - jp: 100円ショップにありますよ
+    tags:
+    - long
+    - polite
+    - casual
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 電池が欲しいんですがどこで買えますか
+  - speaker: learner
+    jp: ありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[15-11]_hanasu2.mp3
+- id: A12
+  kind: listening
+  book_activity: 12
+  can_do_id: CD_L15_60
+  label: kiku1
+  audio:
+  - assets/audio/X_[15-12]_kiku1.mp3
+  key_phrases:
+  - 1すみませんドライアーバーとこですか
+  - ドライアーですね2回ですあ、どうも
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1すみませんドライアーバーとこですか
+    tags:
+    - long
+    - polite
+  - jp: ドライアーですね2回ですあ、どうも
+    tags:
+    - long
+    - polite
+    - casual
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 12: listen to the CD, then say the phrase that matches the book.'
+- id: A13
+  kind: listening
+  book_activity: 13
+  can_do_id: CD_L15_58
+  label: kiku2
+  audio:
+  - assets/audio/X_[15-13]_kiku2.mp3
+  key_phrases:
+  - 2あのーすみませんカメラは何回ですか
+  - はい4回でございますありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 2あのーすみませんカメラは何回ですか
+    tags:
+    - long
+    - polite
+  - jp: はい4回でございますありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 13: listen to the CD, then say the phrase that matches the book.'
+- id: A14
+  kind: listening
+  book_activity: 14
+  can_do_id: CD_L15_59
+  label: kiku3
+  audio:
+  - assets/audio/X_[15-14]_kiku3.mp3
+  key_phrases:
+  - 住魔法ケースが欲しいんですが、どこにありますか
+  - あちらでございます
+  - ご案内いたします
+  - あ、住みません
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 住魔法ケースが欲しいんですが、どこにありますか
+    tags:
+    - long
+    - polite
+  - jp: あちらでございます
+    tags:
+    - short
+    - polite
+  - jp: ご案内いたします
+    tags:
+    - short
+    - polite
+  - jp: あ、住みません
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 14: listen to the CD, then say the phrase that matches the book.'
+- id: A15
+  kind: listening
+  book_activity: 15
+  can_do_id: CD_L15_60
+  label: kiku4
+  audio:
+  - assets/audio/X_[15-15]_kiku4.mp3
+  key_phrases:
+  - よんすみません延長コードが欲しいんですがご案内しますこちらになりますはいありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: よんすみません延長コードが欲しいんですがご案内しますこちらになりますはいありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 15: listen to the CD, then say the phrase that matches the book.'
+- id: A16
+  kind: grammar_form
+  book_activity: 16
+  can_do_id: CD_L15_58
+  label: katachi1
+  audio:
+  - assets/audio/X_[15-16]_katachi1.mp3
+  key_phrases:
+  - スマホケースが欲しいんですが、どこにありますか
+  - エンチョーコードが欲しいんですが
+  - ドライアーはどこですか
+  - カメラは何回ですか
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: スマホケースが欲しいんですが、どこにありますか
+    tags:
+    - long
+    - polite
+  - jp: エンチョーコードが欲しいんですが
+    tags:
+    - long
+    - polite
+  - jp: ドライアーはどこですか
+    tags:
+    - long
+    - polite
+  - jp: カメラは何回ですか
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A17
+  kind: grammar_form
+  book_activity: 17
+  can_do_id: CD_L15_59
+  label: katachi2_floor
+  audio:
+  - assets/audio/X_[15-17]_katachi2_floor.mp3
+  key_phrases:
+  - 1回2回3回3回4回5回6回7回8回8回9回10回7回7回
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 1回2回3回3回4回5回6回7回8回8回9回10回7回7回
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A18
+  kind: speaking
+  book_activity: 18
+  can_do_id: CD_L15_60
+  label: hanasu1
+  audio:
+  - assets/audio/X_[15-18]_hanasu1.mp3
+  key_phrases:
+  - ありがとうございます
+  - すみませんドライヤーはどこですか
+  - 2回です
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+  - jp: すみませんドライヤーはどこですか
+    tags:
+    - long
+    - polite
+  - jp: 2回です
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみませんドライヤーはどこですか
+  - speaker: learner
+    jp: ありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[15-18]_hanasu1.mp3
+- id: A19
+  kind: speaking
+  book_activity: 19
+  can_do_id: CD_L15_58
+  label: hanasu2
+  audio:
+  - assets/audio/X_[15-19]_hanasu2.mp3
+  key_phrases:
+  - 4回ですありがとうございます
+  - すみませんカメラは何回ですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 4回ですありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: すみませんカメラは何回ですか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみませんカメラは何回ですか
+  - speaker: learner
+    jp: 4回ですありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[15-19]_hanasu2.mp3
+- id: A20
+  kind: speaking
+  book_activity: 20
+  can_do_id: CD_L15_59
+  label: hanasu3
+  audio:
+  - assets/audio/X_[15-20]_hanasu3.mp3
+  key_phrases:
+  - ありがとうございます
+  - スマホケースが欲しいんですが、どこにありますか
+  - あちらでございます
+  - すみません
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+  - jp: スマホケースが欲しいんですが、どこにありますか
+    tags:
+    - long
+    - polite
+  - jp: あちらでございます
+    tags:
+    - short
+    - polite
+  - jp: すみません
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: スマホケースが欲しいんですが、どこにありますか
+  - speaker: learner
+    jp: ありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[15-20]_hanasu3.mp3
+- id: A21
+  kind: speaking
+  book_activity: 21
+  can_do_id: CD_L15_60
+  label: hanasu4
+  audio:
+  - assets/audio/X_[15-21]_hanasu4.mp3
+  key_phrases:
+  - すみません延長行動が欲しいんですがこちらでございますありがとうございます
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: すみません延長行動が欲しいんですがこちらでございますありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみません延長行動が欲しいんですがこちらでございますありがとうございます
+  - speaker: learner
+    jp: すみません延長行動が欲しいんですがこちらでございますありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[15-21]_hanasu4.mp3
+- id: A22
+  kind: vocabulary
+  book_activity: 22
+  can_do_id: CD_L15_58
+  label: kotoba1
+  audio:
+  - assets/audio/X_[15-22]_kotoba1.mp3
+  key_phrases:
+  - えかっこいいビ可愛いし高いビやすいいい面白いえきれいなじステキなHおしゃれなはい変なえバックカバンビくつしたシシャツビズボンパンツいいTシャツF1PGGくつHNectiIBOSS
+  - どう
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: えかっこいいビ可愛いし高いビやすいいい面白いえきれいなじステキなHおしゃれなはい変なえバックカバンビくつしたシシャツビズボンパンツいいTシャツF1PGGくつHNectiIBOSS
+    tags:
+    - long
+  - jp: どう
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A23
+  kind: vocabulary
+  book_activity: 23
+  can_do_id: CD_L15_59
+  label: kotoba2
+  audio:
+  - assets/audio/X_[15-23]_kotoba2.mp3
+  key_phrases:
+  - 一可愛くつしたですね2高いシャツですね3ステキのくつですね4かっこいいバックですね5おしゃれなネクタイですね6綺麗なワンピースですね名前面白いティシャツですね8変なボーシですね
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 一可愛くつしたですね2高いシャツですね3ステキのくつですね4かっこいいバックですね5おしゃれなネクタイですね6綺麗なワンピースですね名前面白いティシャツですね8変なボーシですね
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A24
+  kind: listening
+  book_activity: 24
+  can_do_id: CD_L15_60
+  label: kiku1
+  audio:
+  - assets/audio/X_[15-24]_kiku1.mp3
+  key_phrases:
+  - 1見てこのカサーを面白いですね
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1見てこのカサーを面白いですね
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 24: listen to the CD, then say the phrase that matches the book.'
+- id: A25
+  kind: listening
+  book_activity: 25
+  can_do_id: CD_L15_58
+  label: kiku2
+  audio:
+  - assets/audio/X_[15-25]_kiku2.mp3
+  key_phrases:
+  - ニッどうしてお話駆言ですね
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ニッどうしてお話駆言ですね
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 25: listen to the CD, then say the phrase that matches the book.'
+- id: A26
+  kind: listening
+  book_activity: 26
+  can_do_id: CD_L15_59
+  label: kiku3
+  audio:
+  - assets/audio/X_[15-26]_kiku3.mp3
+  key_phrases:
+  - 3このバック可愛い
+  - 本当可愛いですね
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 3このバック可愛い
+    tags:
+    - short
+  - jp: 本当可愛いですね
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 26: listen to the CD, then say the phrase that matches the book.'
+- id: A27
+  kind: listening
+  book_activity: 27
+  can_do_id: CD_L15_60
+  label: kiku4
+  audio:
+  - assets/audio/X_[15-27]_kiku4.mp3
+  key_phrases:
+  - 4このジャケットいいねそうですね、それにやすいですね
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 4このジャケットいいねそうですね、それにやすいですね
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 27: listen to the CD, then say the phrase that matches the book.'
+- id: A28
+  kind: listening
+  book_activity: 28
+  can_do_id: CD_L15_58
+  label: kiku5
+  audio:
+  - assets/audio/X_[15-28]_kiku5.mp3
+  key_phrases:
+  - ああ、おしゃれですね
+  - ごこのこと素敵
+  - でも高いですね
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ああ、おしゃれですね
+    tags:
+    - short
+    - polite
+  - jp: ごこのこと素敵
+    tags:
+    - short
+  - jp: でも高いですね
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L15 activity 28: listen to the CD, then say the phrase that matches the book.'
+- id: A29
+  kind: grammar_form
+  book_activity: 29
+  can_do_id: CD_L15_59
+  label: katachi
+  audio:
+  - assets/audio/X_[15-29]_katachi.mp3
+  key_phrases:
+  - この防止、かっこいいですね
+  - このかさ、面白いですね
+  - このバック、可愛い
+  - 本当、可愛いですね
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: この防止、かっこいいですね
+    tags:
+    - long
+    - polite
+  - jp: このかさ、面白いですね
+    tags:
+    - long
+    - polite
+  - jp: このバック、可愛い
+    tags:
+    - short
+  - jp: 本当、可愛いですね
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A30
+  kind: speaking
+  book_activity: 30
+  can_do_id: CD_L15_60
+  label: hanasu1
+  audio:
+  - assets/audio/X_[15-30]_hanasu1.mp3
+  key_phrases:
+  - かっこいいですねそれにやすいですね
+  - この防止
+  - どう
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: かっこいいですねそれにやすいですね
+    tags:
+    - long
+    - polite
+  - jp: この防止
+    tags:
+    - short
+  - jp: どう
+    tags:
+    - short
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: どう
+  - speaker: learner
+    jp: かっこいいですねそれにやすいですね
+  dialog_listen_audio:
+  - assets/audio/X_[15-30]_hanasu1.mp3
+- id: A31
+  kind: speaking
+  book_activity: 31
+  can_do_id: CD_L15_58
+  label: hanasu2
+  audio:
+  - assets/audio/X_[15-31]_hanasu2.mp3
+  key_phrases:
+  - 素敵ですねでも高いですね
+  - この場所
+  - どう
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 素敵ですねでも高いですね
+    tags:
+    - long
+    - polite
+  - jp: この場所
+    tags:
+    - short
+  - jp: どう
+    tags:
+    - short
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: どう
+  - speaker: learner
+    jp: 素敵ですねでも高いですね
+  dialog_listen_audio:
+  - assets/audio/X_[15-31]_hanasu2.mp3
+grammar:
+- point: N が ほしいんですが
+  worksheet_pages:
+  - 41
+  examples: []
+- point: ナ A-ですね
+  worksheet_pages:
+  - 42
+  examples: []
+vocab:
+- jp: みせえコンビニビスーパシキャクエンショップリドラグストアいいショッピングセンターショッピングモールフオームセンタージデパート
+  reading: ''
+  en: ''
+  tags:
+  - L15
+- jp: 1スーパーに行きます2デパートに行きます3ドラグストアに行きます4ショッピングセンターに行きます5オームセンターに行きます6100円ショップとコンビニに行きます7ショッピングモールに行きます
+  reading: ''
+  en: ''
+  tags:
+  - L15
+- jp: えかっこいいビ可愛いし高いビやすいいい面白いえきれいなじステキなHおしゃれなはい変なえバックカバンビくつしたシシャツビズボンパンツいいTシャツF1PGGくつHNectiIBOSS
+  reading: ''
+  en: ''
+  tags:
+  - L15
+- jp: どう
+  reading: ''
+  en: ''
+  tags:
+  - L15
+- jp: 一可愛くつしたですね2高いシャツですね3ステキのくつですね4かっこいいバックですね5おしゃれなネクタイですね6綺麗なワンピースですね名前面白いティシャツですね8変なボーシですね
+  reading: ''
+  en: ''
+  tags:
+  - L15
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_L15_58
+  prompt_en: 'Demonstrate this can-do in Japanese: Can say what you want/need at a store.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L15_58
+  prompt_en: 'In a new everyday situation, show you can: Can say what you want/need at a store.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L15_59
+  prompt_en: 'Demonstrate this can-do in Japanese: Can ask store staff for a product.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L15_59
+  prompt_en: 'In a new everyday situation, show you can: Can ask store staff for a product.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L15_60
+  prompt_en: 'Demonstrate this can-do in Japanese: Can understand simple replies from store staff.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L15_60
+  prompt_en: 'In a new everyday situation, show you can: Can understand simple replies from store staff.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_L15_58
+  partner_jp: では、お願いします。
+  expected:
+  - ほしい
+  hint_en: 'Situation: Can say what you want/need at a store. Reply using lesson phrases.'
+- can_do_id: CD_L15_58
+  partner_jp: もう一度、お願いします。
+  expected:
+  - ほしい
+  hint_en: Again — 店でほしいもの・必要なものを言うことができる。
+- can_do_id: CD_L15_58
+  partner_jp: 電池が欲しいんですがどこで買えますか
+  expected:
+  - ありがとうございます
+  - 電池が欲しいんですがどこで買えますか
+  - コンビニで買えますよそうですか
+  hint_en: Reply as in the book dialog (activity 10).
+- can_do_id: CD_L15_59
+  partner_jp: 電池が欲しいんですがどこで買えますか
+  expected:
+  - ありがとうございます
+  - 電池が欲しいんですがどこで買えますか
+  - そうですか
+  - 100円ショップにありますよ
+  hint_en: Reply as in the book dialog (activity 11).
+- can_do_id: CD_L15_60
+  partner_jp: すみませんドライヤーはどこですか
+  expected:
+  - ありがとうございます
+  - すみませんドライヤーはどこですか
+  - 2回です
+  hint_en: Reply as in the book dialog (activity 18).
+- can_do_id: CD_L15_58
+  partner_jp: すみませんカメラは何回ですか
+  expected:
+  - 4回ですありがとうございます
+  - すみませんカメラは何回ですか
+  hint_en: Reply as in the book dialog (activity 19).
+- can_do_id: CD_L15_59
+  partner_jp: スマホケースが欲しいんですが、どこにありますか
+  expected:
+  - ありがとうございます
+  - スマホケースが欲しいんですが、どこにありますか
+  - あちらでございます
+  - すみません
+  hint_en: Reply as in the book dialog (activity 20).
+- can_do_id: CD_L15_60
+  partner_jp: すみません延長行動が欲しいんですがこちらでございますありがとうございます
+  expected:
+  - すみません延長行動が欲しいんですがこちらでございますありがとうございます
+  hint_en: Reply as in the book dialog (activity 21).
+- can_do_id: CD_L15_60
+  partner_jp: どう
+  expected:
+  - かっこいいですねそれにやすいですね
+  - この防止
+  - どう
+  hint_en: Reply as in the book dialog (activity 30).
+- can_do_id: CD_L15_58
+  partner_jp: どう
+  expected:
+  - 素敵ですねでも高いですね
+  - この場所
+  - どう
+  hint_en: Reply as in the book dialog (activity 31).
+- can_do_id: CD_L15_58
+  partner_jp: みせえコンビニビスーパシキャクエンショップリドラグストアいいショッピングセンターショッピングモールフオームセンタージデパート。
+  expected:
+  - みせえコンビニビスーパシキャクエンショップリドラグストアいいショッピングセンターショッピングモールフオームセンタージデパート
+  - に戦畑場様が欲しいんですがどこで買えますかドラックストアで買えますよわかりましたありがとうございます
+  - ごお便当箱が欲しいんですがどこで買えますか
+  - 100円ショップにありますよお便当箱もおはしもありますありがとうございます
+  - ほしい
+  hint_en: Can say what you want/need at a store.
+- can_do_id: CD_L15_59
+  partner_jp: 1スーパーに行きます2デパートに行きます3ドラグストアに行きます4ショッピングセンターに行きます5オームセンターに行きます6100円ショップとコンビニに行きます7ショッピングモールに行きます。
+  expected:
+  - 1スーパーに行きます2デパートに行きます3ドラグストアに行きます4ショッピングセンターに行きます5オームセンターに行きます6100円ショップとコンビニに行きます7ショッピングモールに行きます
+  - いきまえのショッピングセンターで買えますよ2回にお見せがありますそうですか
+  - 3ゆかたが欲しいんですがどこで買えますか
+  - 6ここなつ見るくが欲しいんですがどこで買いますか
+  hint_en: Can ask store staff for a product.
+- can_do_id: CD_L15_60
+  partner_jp: 1電池が欲しいんですがどこで買えますか。
+  expected:
+  - 1電池が欲しいんですがどこで買えますか
+  - コンビニで買えますよあ、そうですか
+  - 電池
+  - よん回中電頭が欲しいんですがどこで買えますかあ、ホームセンターがいいよこの近くにあるよそうですか、ありがとうございます
+  hint_en: Can understand simple replies from store staff.
+english_notes: 'Can ask someone where to buy something and understand the answer.
+
+  Do you often go shopping? What items do you regularly buy?
+
+  Preparation for the words
+
+  Stores 】
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen and choose from a–g.
+
+  Listen to the dialogs.
+
+  Six people are each asking an acquaintance where they can buy something.
+
+  Where can they buy ①–⑥? Choose from 1 a–g.
+
+  Check the words and listen to the dialogs again.
+
+  前 in front of the station ｜（お）店
+
+  store
+
+  〜とか for example（例
+
+  う used when giving an example）
+
+  Where can I buy 〜 ?
+
+  Listen to the recording and fill in the blanks.
+
+  What expressions were used to ask and answer where to buy something? 文
+
+  Focus on the expressions used and listen to the dialogs again.
+
+  Ask where you can buy something.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Practice using the information from the dialogs in 2 .
+
+  Ask someone where you can buy a certain item.
+
+  Can look at the floor guide for a store and find where to go for the item you want.
+
+  Read the store floor guide.
+
+  You are at a shopping center to buy something, and are looking at the floor guide.
+
+  Read A – D . What can you buy on each of these floors?
+
+  A
+
+  C
+
+  D
+
+  B'
+unlock_requires_mastery: true

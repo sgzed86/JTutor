@@ -1,0 +1,1123 @@
+lesson_id: L13
+lesson: 13
+title_en: Does this bus go to the airport?
+title_jp: このバスは空港に行きますか？
+topic_en: Walking around Town
+pdf_pages:
+- 336
+- 368
+intro_questions:
+- jp: Does this bus go to the airport? について、あなたの けいけんは？
+  en: Thinking about "Walking around Town" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can ask whether a train/bus goes where you want and understand the answer.
+    What do you want to be able to do?'
+can_dos:
+- id: CD_L13_52
+  can_do_number: 52
+  statement_en: Can ask whether a train/bus goes where you want and understand the answer.
+  statement_jp: 電車やバスが行きたいところに行くか質問し、答えを理解することができる。
+  activity_hint: '1'
+  rubric:
+    must_include:
+    - 行きますか
+    min_score: 80
+- id: CD_L13_53
+  can_do_number: 53
+  statement_en: Can ask where you are when announcements are unclear.
+  statement_jp: 車内アナウンスがわからないとき、今どこか質問することができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - どこ
+    min_score: 80
+- id: CD_L13_54
+  can_do_number: 54
+  statement_en: Can understand simple transit information.
+  statement_jp: 簡単な交通情報を理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: vocabulary
+  book_activity: 1
+  can_do_id: CD_L13_52
+  label: kotoba1
+  audio:
+  - assets/audio/X_[13-01]_kotoba1.mp3
+  key_phrases:
+  - ノリモノエ電車ビパスシタクシD地下鉄いい機構機F運ね
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: ノリモノエ電車ビパスシタクシD地下鉄いい機構機F運ね
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A2
+  kind: vocabulary
+  book_activity: 2
+  can_do_id: CD_L13_53
+  label: kotoba2
+  audio:
+  - assets/audio/X_[13-02]_kotoba2.mp3
+  key_phrases:
+  - 1近鉄に乗ります2比較気に乗ります3パクシーに乗ります4うれに乗ります電車とバスに乗ります
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1近鉄に乗ります2比較気に乗ります3パクシーに乗ります4うれに乗ります電車とバスに乗ります
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_L13_54
+  label: kiku1
+  audio:
+  - assets/audio/X_[13-03]_kiku1.mp3
+  key_phrases:
+  - 1すみませんこのバスは空港に行きますか
+  - 行きますよ
+  - ありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1すみませんこのバスは空港に行きますか
+    tags:
+    - long
+    - polite
+  - jp: 行きますよ
+    tags:
+    - short
+    - polite
+    - casual
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_L13_52
+  label: kiku2
+  audio:
+  - assets/audio/X_[13-04]_kiku2.mp3
+  key_phrases:
+  - 2あのーすみませんこのバスは市民病院に行きますかこのバスは行きません市民病院は23番のバスです23番ですねわかりました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 2あのーすみませんこのバスは市民病院に行きますかこのバスは行きません市民病院は23番のバスです23番ですねわかりました
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 4: listen to the CD, then say the phrase that matches the book.'
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_L13_53
+  label: kiku3
+  audio:
+  - assets/audio/X_[13-05]_kiku3.mp3
+  key_phrases:
+  - 3すみませんこの電車は大阪駅に行きますか大阪駅は反対側です7番線え
+  - 7番線ですか
+  - 7番線ですありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 3すみませんこの電車は大阪駅に行きますか大阪駅は反対側です7番線え
+    tags:
+    - long
+    - polite
+  - jp: 7番線ですか
+    tags:
+    - short
+    - polite
+  - jp: 7番線ですありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 5: listen to the CD, then say the phrase that matches the book.'
+- id: A6
+  kind: listening
+  book_activity: 6
+  can_do_id: CD_L13_54
+  label: kiku4
+  audio:
+  - assets/audio/X_[13-06]_kiku4.mp3
+  key_phrases:
+  - 4すみませんこの船はクロシマに行きますか
+  - いいえクロシマはこの先ご番のりばですあ、わかりました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 4すみませんこの船はクロシマに行きますか
+    tags:
+    - long
+    - polite
+  - jp: いいえクロシマはこの先ご番のりばですあ、わかりました
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 6: listen to the CD, then say the phrase that matches the book.'
+- id: A7
+  kind: listening
+  book_activity: 7
+  can_do_id: CD_L13_52
+  label: kiku5
+  audio:
+  - assets/audio/X_[13-07]_kiku5.mp3
+  key_phrases:
+  - ごっ...あの...この電車は東新宿に行きますか
+  - 回速ですから、確定に乗ってください
+  - あ、これは東新宿には止まりますね
+  - 確定来て下です
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ごっ...あの...この電車は東新宿に行きますか
+    tags:
+    - long
+    - polite
+  - jp: 回速ですから、確定に乗ってください
+    tags:
+    - long
+    - polite
+  - jp: あ、これは東新宿には止まりますね
+    tags:
+    - long
+    - polite
+  - jp: 確定来て下です
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 7: listen to the CD, then say the phrase that matches the book.'
+- id: A8
+  kind: grammar_form
+  book_activity: 8
+  can_do_id: CD_L13_53
+  label: katachi
+  audio:
+  - assets/audio/X_[13-08]_katachi.mp3
+  key_phrases:
+  - この電車は大阪駅に行きますか
+  - この風には苦労島に行きますか
+  - このバスは空港に行きますか
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: この電車は大阪駅に行きますか
+    tags:
+    - long
+    - polite
+  - jp: この風には苦労島に行きますか
+    tags:
+    - long
+    - polite
+  - jp: このバスは空港に行きますか
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A9
+  kind: speaking
+  book_activity: 9
+  can_do_id: CD_L13_54
+  label: hanasu1
+  audio:
+  - assets/audio/X_[13-09]_hanasu1.mp3
+  key_phrases:
+  - ありがとうございます
+  - すみませんこのバスは空港に行きますか
+  - 行きますよ
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+  - jp: すみませんこのバスは空港に行きますか
+    tags:
+    - long
+    - polite
+  - jp: 行きますよ
+    tags:
+    - short
+    - polite
+    - casual
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみませんこのバスは空港に行きますか
+  - speaker: learner
+    jp: ありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[13-09]_hanasu1.mp3
+- id: A10
+  kind: speaking
+  book_activity: 10
+  can_do_id: CD_L13_52
+  label: hanasu2
+  audio:
+  - assets/audio/X_[13-10]_hanasu2.mp3
+  key_phrases:
+  - いいえいきませんかく生きて下に乗ってくださいありがとうございます
+  - すみませんこの電車は東新宿に行きますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: いいえいきませんかく生きて下に乗ってくださいありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: すみませんこの電車は東新宿に行きますか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみませんこの電車は東新宿に行きますか
+  - speaker: learner
+    jp: いいえいきませんかく生きて下に乗ってくださいありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[13-10]_hanasu2.mp3
+- id: A11
+  kind: listening
+  book_activity: 11
+  can_do_id: CD_L13_53
+  label: kiku1
+  audio:
+  - assets/audio/X_[13-11]_kiku1.mp3
+  key_phrases:
+  - 1さき山シントシンさき山シントシンですすみませんここはさき山シントシンですか
+  - はい、そうですありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1さき山シントシンさき山シントシンですすみませんここはさき山シントシンですか
+    tags:
+    - long
+    - polite
+  - jp: はい、そうですありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 11: listen to the CD, then say the phrase that matches the book.'
+- id: A12
+  kind: listening
+  book_activity: 12
+  can_do_id: CD_L13_54
+  label: kiku2
+  audio:
+  - assets/audio/X_[13-12]_kiku2.mp3
+  key_phrases:
+  - 2黒場ねー黒場ねです住みませんここはどこですか
+  - ああ、黒場ねですありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 2黒場ねー黒場ねです住みませんここはどこですか
+    tags:
+    - long
+    - polite
+  - jp: ああ、黒場ねですありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 12: listen to the CD, then say the phrase that matches the book.'
+- id: A13
+  kind: listening
+  book_activity: 13
+  can_do_id: CD_L13_52
+  label: kiku3
+  audio:
+  - assets/audio/X_[13-13]_kiku3.mp3
+  key_phrases:
+  - 3中転本宮ですお忘れ物の内容を追うりくださいすみません今どこですか
+  - 本宮です集点ですよありがとうございました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 3中転本宮ですお忘れ物の内容を追うりくださいすみません今どこですか
+    tags:
+    - long
+    - polite
+  - jp: 本宮です集点ですよありがとうございました
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 13: listen to the CD, then say the phrase that matches the book.'
+- id: A14
+  kind: listening
+  book_activity: 14
+  can_do_id: CD_L13_53
+  label: kiku4
+  audio:
+  - assets/audio/X_[13-14]_kiku4.mp3
+  key_phrases:
+  - あの、次はどこですか
+  - 次は、さわぐち、さわぐちです
+  - ありがとうございます
+  - さわぐちです
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: あの、次はどこですか
+    tags:
+    - short
+    - polite
+  - jp: 次は、さわぐち、さわぐちです
+    tags:
+    - long
+    - polite
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+  - jp: さわぐちです
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 14: listen to the CD, then say the phrase that matches the book.'
+- id: A15
+  kind: listening
+  book_activity: 15
+  can_do_id: CD_L13_54
+  label: kiku5
+  audio:
+  - assets/audio/X_[13-15]_kiku5.mp3
+  key_phrases:
+  - がません
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: がません
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 15: listen to the CD, then say the phrase that matches the book.'
+- id: A16
+  kind: grammar_form
+  book_activity: 16
+  can_do_id: CD_L13_52
+  label: katachi
+  audio:
+  - assets/audio/X_[13-16]_katachi.mp3
+  key_phrases:
+  - ここは先山審と審ですか
+  - ここはどこですか
+  - 次は、うらたですか
+  - 次はどこですか
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ここは先山審と審ですか
+    tags:
+    - long
+    - polite
+  - jp: ここはどこですか
+    tags:
+    - short
+    - polite
+  - jp: 次は、うらたですか
+    tags:
+    - short
+    - polite
+  - jp: 次はどこですか
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A17
+  kind: speaking
+  book_activity: 17
+  can_do_id: CD_L13_53
+  label: hanasu1
+  audio:
+  - assets/audio/X_[13-17]_hanasu1.mp3
+  key_phrases:
+  - 黒脈ですありがとうございます
+  - 1すみませんここはどこですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 黒脈ですありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: 1すみませんここはどこですか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 1すみませんここはどこですか
+  - speaker: learner
+    jp: 黒脈ですありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[13-17]_hanasu1.mp3
+- id: A18
+  kind: speaking
+  book_activity: 18
+  can_do_id: CD_L13_54
+  label: hanasu2-1
+  audio:
+  - assets/audio/X_[13-18]_hanasu2-1.mp3
+  key_phrases:
+  - はい、そうです
+  - 2すみません次はうらたですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: はい、そうです
+    tags:
+    - short
+    - polite
+  - jp: 2すみません次はうらたですか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 2すみません次はうらたですか
+  - speaker: learner
+    jp: はい、そうです
+  dialog_listen_audio:
+  - assets/audio/X_[13-18]_hanasu2-1.mp3
+- id: A19
+  kind: speaking
+  book_activity: 19
+  can_do_id: CD_L13_52
+  label: hanasu2-2
+  audio:
+  - assets/audio/X_[13-19]_hanasu2-2.mp3
+  key_phrases:
+  - ありがとうございます
+  - いや、みなみ裏たです
+  - 次は、裏たですか
+  - つみません
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+  - jp: いや、みなみ裏たです
+    tags:
+    - short
+    - polite
+  - jp: 次は、裏たですか
+    tags:
+    - short
+    - polite
+  - jp: つみません
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 次は、裏たですか
+  - speaker: learner
+    jp: ありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[13-19]_hanasu2-2.mp3
+- id: A20
+  kind: vocabulary
+  book_activity: 20
+  can_do_id: CD_L13_53
+  label: kotoba1
+  audio:
+  - assets/audio/X_[13-20]_kotoba1.mp3
+  key_phrases:
+  - 時間の長さえ一時間ビ一時間半し二時間ビ10点20点30点40点50点1.2.1.2.3.4.4.4.5.6.6.7.5.8.5.8.5.9.5
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 時間の長さえ一時間ビ一時間半し二時間ビ10点20点30点40点50点1.2.1.2.3.4.4.4.5.6.6.7.5.8.5.8.5.9.5
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A21
+  kind: vocabulary
+  book_activity: 21
+  can_do_id: CD_L13_54
+  label: kotoba2
+  audio:
+  - assets/audio/X_[13-21]_kotoba2.mp3
+  key_phrases:
+  - 13時間です22時間半です310分です45分です53分です61分です71時間2分です82時間50分です
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 13時間です22時間半です310分です45分です53分です61分です71時間2分です82時間50分です
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A22
+  kind: listening
+  book_activity: 22
+  can_do_id: CD_L13_52
+  label: kiku1
+  audio:
+  - assets/audio/X_[13-22]_kiku1.mp3
+  key_phrases:
+  - バイクできますへぇーどのぐらいかかりますか
+  - 一ヨギさんは家から会社までどうやってきますか
+  - 10分ぐらいですそうですか
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: バイクできますへぇーどのぐらいかかりますか
+    tags:
+    - long
+    - polite
+  - jp: 一ヨギさんは家から会社までどうやってきますか
+    tags:
+    - long
+    - polite
+  - jp: 10分ぐらいですそうですか
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 22: listen to the CD, then say the phrase that matches the book.'
+- id: A23
+  kind: listening
+  book_activity: 23
+  can_do_id: CD_L13_53
+  label: kiku2
+  audio:
+  - assets/audio/X_[13-23]_kiku2.mp3
+  key_phrases:
+  - 一時間半かかります
+  - 私は電車です
+  - 2片山さんは
+  - 大変ですね
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 一時間半かかります
+    tags:
+    - short
+    - polite
+  - jp: 私は電車です
+    tags:
+    - short
+    - polite
+  - jp: 2片山さんは
+    tags:
+    - short
+  - jp: 大変ですね
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 23: listen to the CD, then say the phrase that matches the book.'
+- id: A24
+  kind: listening
+  book_activity: 24
+  can_do_id: CD_L13_54
+  label: kiku3
+  audio:
+  - assets/audio/X_[13-24]_kiku3.mp3
+  key_phrases:
+  - は、家から会社まで何できますか
+  - どのぐらいかかりますか
+  - そうですか
+  - 私は自転車できます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: は、家から会社まで何できますか
+    tags:
+    - long
+    - polite
+  - jp: どのぐらいかかりますか
+    tags:
+    - long
+    - polite
+  - jp: そうですか
+    tags:
+    - short
+    - polite
+  - jp: 私は自転車できます
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 24: listen to the CD, then say the phrase that matches the book.'
+- id: A25
+  kind: listening
+  book_activity: 25
+  can_do_id: CD_L13_52
+  label: kiku4
+  audio:
+  - assets/audio/X_[13-25]_kiku4.mp3
+  key_phrases:
+  - バスできます15本ぐらいですそうですか
+  - 時々、歩いてきます1時間ぐらいかかりますうーん、お出すね
+  - 4徳井さんは
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: バスできます15本ぐらいですそうですか
+    tags:
+    - long
+    - polite
+  - jp: 時々、歩いてきます1時間ぐらいかかりますうーん、お出すね
+    tags:
+    - long
+    - polite
+  - jp: 4徳井さんは
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 25: listen to the CD, then say the phrase that matches the book.'
+- id: A26
+  kind: grammar_form
+  book_activity: 26
+  can_do_id: CD_L13_53
+  label: katachi
+  audio:
+  - assets/audio/X_[13-26]_katachi.mp3
+  key_phrases:
+  - えから会社までどうやってきますかえから会社まで何できますかバイクできます自転車できますときどき歩いてきます
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: えから会社までどうやってきますかえから会社まで何できますかバイクできます自転車できますときどき歩いてきます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A27
+  kind: grammar_form
+  book_activity: 27
+  can_do_id: CD_L13_54
+  label: katachi
+  audio:
+  - assets/audio/X_[13-27]_katachi.mp3
+  key_phrases:
+  - どのぐらいかかりますか10分ぐらいです1時間半かかります1時間ぐらいかかります10分ぐらいかかります
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: どのぐらいかかりますか10分ぐらいです1時間半かかります1時間ぐらいかかります10分ぐらいかかります
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A28
+  kind: speaking
+  book_activity: 28
+  can_do_id: CD_L13_52
+  label: hanasu1
+  audio:
+  - assets/audio/X_[13-28]_hanasu1.mp3
+  key_phrases:
+  - 家から会社までどうやってきますか電車できますどのぐらいかかりますか一時間半かかります
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 家から会社までどうやってきますか電車できますどのぐらいかかりますか一時間半かかります
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 家から会社までどうやってきますか電車できますどのぐらいかかりますか一時間半かかります
+  - speaker: learner
+    jp: 家から会社までどうやってきますか電車できますどのぐらいかかりますか一時間半かかります
+  dialog_listen_audio:
+  - assets/audio/X_[13-28]_hanasu1.mp3
+- id: A29
+  kind: speaking
+  book_activity: 29
+  can_do_id: CD_L13_53
+  label: hanasu2
+  audio:
+  - assets/audio/X_[13-29]_hanasu2.mp3
+  key_phrases:
+  - 10分ぐらいです
+  - 家から会社まで、何できますか
+  - どのぐらいかかりますか
+  - 悪い的ます
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 10分ぐらいです
+    tags:
+    - short
+    - polite
+  - jp: 家から会社まで、何できますか
+    tags:
+    - long
+    - polite
+  - jp: どのぐらいかかりますか
+    tags:
+    - long
+    - polite
+  - jp: 悪い的ます
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 家から会社まで、何できますか
+  - speaker: learner
+    jp: 10分ぐらいです
+  dialog_listen_audio:
+  - assets/audio/X_[13-29]_hanasu2.mp3
+- id: A30
+  kind: listening
+  book_activity: 30
+  can_do_id: CD_L13_54
+  label: kiku1
+  audio:
+  - assets/audio/X_[13-30]_kiku1.mp3
+  key_phrases:
+  - 1すみませんおやしよう一番までどうやって行きますか
+  - はい、おやしよう一番ですねここから新民なといけまで電車に乗ります新民なといけからマリンしていまでバスに乗りますマリンしていから歩いてご分暮らいいですありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1すみませんおやしよう一番までどうやって行きますか
+    tags:
+    - long
+    - polite
+  - jp: はい、おやしよう一番ですねここから新民なといけまで電車に乗ります新民なといけからマリンしていまでバスに乗りますマリンしていから歩いてご分暮らいいですありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 30: listen to the CD, then say the phrase that matches the book.'
+- id: A31
+  kind: listening
+  book_activity: 31
+  can_do_id: CD_L13_52
+  label: kiku2
+  audio:
+  - assets/audio/X_[13-31]_kiku2.mp3
+  key_phrases:
+  - し悪勝はここから12番のバスに乗りますバスセンターでバスをおりますご番のバスに乗り返いますし悪勝は集点ですわかりました
+  - 2すみませんし悪勝までどうやっていきますか
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: し悪勝はここから12番のバスに乗りますバスセンターでバスをおりますご番のバスに乗り返いますし悪勝は集点ですわかりました
+    tags:
+    - long
+    - polite
+  - jp: 2すみませんし悪勝までどうやっていきますか
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 31: listen to the CD, then say the phrase that matches the book.'
+- id: A32
+  kind: listening
+  book_activity: 32
+  can_do_id: CD_L13_53
+  label: kiku3
+  audio:
+  - assets/audio/X_[13-32]_kiku3.mp3
+  key_phrases:
+  - さん住みません桜もールまでどうやって行きますか
+  - えっと、モミジへ力、桜へ来まで南北線に乗ります桜へ来て、途在線に乗り返します新桜へ来ております新桜へ来からバスがありますありがとうございます
+  - 桜もールですか
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: さん住みません桜もールまでどうやって行きますか
+    tags:
+    - long
+    - polite
+  - jp: えっと、モミジへ力、桜へ来まで南北線に乗ります桜へ来て、途在線に乗り返します新桜へ来ております新桜へ来からバスがありますありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: 桜もールですか
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L13 activity 32: listen to the CD, then say the phrase that matches the book.'
+- id: A33
+  kind: grammar_form
+  book_activity: 33
+  can_do_id: CD_L13_54
+  label: katachi
+  audio:
+  - assets/audio/X_[13-33]_katachi.mp3
+  key_phrases:
+  - ここから12番のバスに乗りますバッセンターでバスを折りますご番のバスに乗り替えます桜液で登載戦に乗り替えますここから12番のバスに乗り替えます新鮮などのバスに乗り替えます新鮮などのバスに乗り替えます
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ここから12番のバスに乗りますバッセンターでバスを折りますご番のバスに乗り替えます桜液で登載戦に乗り替えますここから12番のバスに乗り替えます新鮮などのバスに乗り替えます新鮮などのバスに乗り替えます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+grammar:
+- point: このバスは、大阪
+  worksheet_pages:
+  - 33
+  examples: []
+- point: ヨギさんは、たぶん倉庫
+  worksheet_pages:
+  - 33
+  examples: []
+- point: ここは 【place 場所
+  worksheet_pages:
+  - 34
+  examples: []
+- point: A： すみません、ここは（ どこ ）ですか？
+  worksheet_pages:
+  - 34
+  examples: []
+- point: A： すみません、（ ）は（ ）ですか？
+  worksheet_pages:
+  - 34
+  examples: []
+- point: A： あのう、（ ）は西沢口
+  worksheet_pages:
+  - 34
+  examples: []
+- point: A： あのう、すみません。（ ）は（ ）ですか？
+  worksheet_pages:
+  - 34
+  examples: []
+- point: A： すみません、（ ）はさきやま新都心
+  worksheet_pages:
+  - 34
+  examples: []
+- point: A： あのう、すみません、（ ）は（ ）ですか？
+  worksheet_pages:
+  - 34
+  examples: []
+- point: A： さくらモールまで、何
+  worksheet_pages:
+  - 35
+  examples: []
+- point: ここ（ で／に／を ） 4 番
+  worksheet_pages:
+  - 37
+  examples: []
+- point: ここ～市民
+  worksheet_pages:
+  - 37
+  examples: []
+- point: マリンシティ～おやしお市場
+  worksheet_pages:
+  - 37
+  examples: []
+vocab:
+- jp: ノリモノエ電車ビパスシタクシD地下鉄いい機構機F運ね
+  reading: ''
+  en: ''
+  tags:
+  - L13
+- jp: 1近鉄に乗ります2比較気に乗ります3パクシーに乗ります4うれに乗ります電車とバスに乗ります
+  reading: ''
+  en: ''
+  tags:
+  - L13
+- jp: 時間の長さえ一時間ビ一時間半し二時間ビ10点20点30点40点50点1.2.1.2.3.4.4.4.5.6.6.7.5.8.5.8.5.9.5
+  reading: ''
+  en: ''
+  tags:
+  - L13
+- jp: 13時間です22時間半です310分です45分です53分です61分です71時間2分です82時間50分です
+  reading: ''
+  en: ''
+  tags:
+  - L13
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_L13_52
+  prompt_en: 'Demonstrate this can-do in Japanese: Can ask whether a train/bus goes where you want and
+    understand the answer.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L13_52
+  prompt_en: 'In a new everyday situation, show you can: Can ask whether a train/bus goes where you want
+    and understand the answer.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L13_53
+  prompt_en: 'Demonstrate this can-do in Japanese: Can ask where you are when announcements are unclear.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L13_53
+  prompt_en: 'In a new everyday situation, show you can: Can ask where you are when announcements are
+    unclear.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L13_54
+  prompt_en: 'Demonstrate this can-do in Japanese: Can understand simple transit information.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L13_54
+  prompt_en: 'In a new everyday situation, show you can: Can understand simple transit information.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_L13_52
+  partner_jp: では、お願いします。
+  expected:
+  - 行きますか
+  hint_en: 'Situation: Can ask whether a train/bus goes where you want and understand the answer. Reply
+    using lesson phrases.'
+- can_do_id: CD_L13_52
+  partner_jp: もう一度、お願いします。
+  expected:
+  - 行きますか
+  hint_en: Again — 電車やバスが行きたいところに行くか質問し、答えを理解することができる。
+- can_do_id: CD_L13_53
+  partner_jp: では、お願いします。
+  expected:
+  - どこ
+  hint_en: 'Situation: Can ask where you are when announcements are unclear. Reply using lesson phrases.'
+- can_do_id: CD_L13_53
+  partner_jp: もう一度、お願いします。
+  expected:
+  - どこ
+  hint_en: Again — 車内アナウンスがわからないとき、今どこか質問することができる。
+- can_do_id: CD_L13_54
+  partner_jp: すみませんこのバスは空港に行きますか
+  expected:
+  - ありがとうございます
+  - すみませんこのバスは空港に行きますか
+  - 行きますよ
+  hint_en: Reply as in the book dialog (activity 9).
+- can_do_id: CD_L13_52
+  partner_jp: すみませんこの電車は東新宿に行きますか
+  expected:
+  - いいえいきませんかく生きて下に乗ってくださいありがとうございます
+  - すみませんこの電車は東新宿に行きますか
+  hint_en: Reply as in the book dialog (activity 10).
+- can_do_id: CD_L13_53
+  partner_jp: 1すみませんここはどこですか
+  expected:
+  - 黒脈ですありがとうございます
+  - 1すみませんここはどこですか
+  hint_en: Reply as in the book dialog (activity 17).
+- can_do_id: CD_L13_54
+  partner_jp: 2すみません次はうらたですか
+  expected:
+  - はい、そうです
+  - 2すみません次はうらたですか
+  hint_en: Reply as in the book dialog (activity 18).
+- can_do_id: CD_L13_52
+  partner_jp: 次は、裏たですか
+  expected:
+  - ありがとうございます
+  - いや、みなみ裏たです
+  - 次は、裏たですか
+  - つみません
+  hint_en: Reply as in the book dialog (activity 19).
+- can_do_id: CD_L13_52
+  partner_jp: 家から会社までどうやってきますか電車できますどのぐらいかかりますか一時間半かかります
+  expected:
+  - 家から会社までどうやってきますか電車できますどのぐらいかかりますか一時間半かかります
+  hint_en: Reply as in the book dialog (activity 28).
+- can_do_id: CD_L13_53
+  partner_jp: 家から会社まで、何できますか
+  expected:
+  - 10分ぐらいです
+  - 家から会社まで、何できますか
+  - どのぐらいかかりますか
+  - 悪い的ます
+  hint_en: Reply as in the book dialog (activity 29).
+- can_do_id: CD_L13_52
+  partner_jp: ノリモノエ電車ビパスシタクシD地下鉄いい機構機F運ね。
+  expected:
+  - ノリモノエ電車ビパスシタクシD地下鉄いい機構機F運ね
+  - 2あのーすみませんこのバスは市民病院に行きますかこのバスは行きません市民病院は23番のバスです23番ですねわかりました
+  - ごっ...あの...この電車は東新宿に行きますか
+  - 回速ですから、確定に乗ってください
+  - 行きますか
+  hint_en: Can ask whether a train/bus goes where you want and understand the answer.
+- can_do_id: CD_L13_53
+  partner_jp: 1近鉄に乗ります2比較気に乗ります3パクシーに乗ります4うれに乗ります電車とバスに乗ります。
+  expected:
+  - 1近鉄に乗ります2比較気に乗ります3パクシーに乗ります4うれに乗ります電車とバスに乗ります
+  - 3すみませんこの電車は大阪駅に行きますか大阪駅は反対側です7番線え
+  - 7番線ですか
+  - 7番線ですありがとうございます
+  - どこ
+  hint_en: Can ask where you are when announcements are unclear.
+- can_do_id: CD_L13_54
+  partner_jp: 1すみませんこのバスは空港に行きますか。
+  expected:
+  - 1すみませんこのバスは空港に行きますか
+  - 行きますよ
+  - ありがとうございます
+  - 4すみませんこの船はクロシマに行きますか
+  hint_en: Can understand simple transit information.
+english_notes: 'What types of transport do you have in your country? What transport do you use often?
+
+  Can ask whether a train or bus is going to where you want to go and understand the answer.
+
+  Preparation for the words
+
+  Types of transport 】
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen and choose from a–f.
+
+  I will take 〜 .
+
+  Listen to the dialogs.
+
+  Five people are each asking where a form of transport is going.
+
+  Is the transport going to the places in ①-⑤? If it is, write 〇, and if it isn’t, write ×.
+
+  Listen to ②–⑤ again. Which bus / track / pier / train do they need? Write the numbers in the blanks.
+
+  Write a check mark next to the correct answer in ⑤.
+
+  Check the words and listen to the dialogs again.
+
+  対側 opposite side ｜ 先
+
+  ahead ｜ 次
+
+  next
+
+  まりません It does not stop there. （止
+
+  まる stop）
+
+  る take）
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used when checking whether the transport goes to a certain place?
+
+  Focus on the expression used and listen to the dialogs again.
+
+  Check where something is going.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Practice using the illustrations from 2 .
+
+  Role-play this situation. You are taking transport and checking whether it goes to a certain place.
+
+  Use local transport and place names.'
+unlock_requires_mastery: true

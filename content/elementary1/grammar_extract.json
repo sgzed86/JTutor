@@ -1,0 +1,862 @@
+{
+  "source": "assets/Grammar_Elementary_1.pdf",
+  "book_id": "elementary1",
+  "page_count": 62,
+  "lessons": {
+    "EL01": {
+      "lesson_id": "EL01",
+      "lesson": 1,
+      "pages": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "points": [
+        {
+          "point": "おはよう！ →（ ）！",
+          "page": 2
+        },
+        {
+          "point": "どうもありがとう。 →（ ）。",
+          "page": 2
+        },
+        {
+          "point": "ミロさんは、何歳",
+          "page": 2
+        },
+        {
+          "point": "カッターは、ここにあるよ。 →（ ）。",
+          "page": 2
+        },
+        {
+          "point": "スポーツは、ぜんぜんしないね。 →（ ）。",
+          "page": 2
+        },
+        {
+          "point": "ここで 働",
+          "page": 3
+        },
+        {
+          "point": "V-て います ①",
+          "page": 4
+        }
+      ],
+      "practice_prompts_en": []
+    },
+    "EL02": {
+      "lesson_id": "EL02",
+      "lesson": 2,
+      "pages": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "points": [
+        {
+          "point": "V-る ことです",
+          "page": 6
+        },
+        {
+          "point": "V-るのが 好",
+          "page": 7
+        },
+        {
+          "point": "😞 スポーツをします →（ スポーツをするのは、あまり好",
+          "page": 7
+        },
+        {
+          "point": "😄 うちでごろごろします →（ ）。",
+          "page": 7
+        },
+        {
+          "point": "😞 テレビを見",
+          "page": 7
+        },
+        {
+          "point": "V-て います ②",
+          "page": 8
+        },
+        {
+          "point": "N が できます",
+          "page": 9
+        },
+        {
+          "point": "A： あきさんは、（インドネシア語",
+          "page": 9
+        }
+      ],
+      "practice_prompts_en": [
+        "say the sentence, just like the example."
+      ]
+    },
+    "EL03": {
+      "lesson_id": "EL03",
+      "lesson": 3,
+      "pages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "points": [
+        {
+          "point": "N に／ナ A-に／イ A-く なります",
+          "page": 10
+        },
+        {
+          "point": "せみが鳴",
+          "page": 10
+        },
+        {
+          "point": "もみじで、山",
+          "page": 10
+        },
+        {
+          "point": "いちばん ナ A-です／イ A-です",
+          "page": 10
+        },
+        {
+          "point": "イ A-のが 好",
+          "page": 11
+        },
+        {
+          "point": "ナ A-です／イ A-です から",
+          "page": 12
+        },
+        {
+          "point": "N1 や N2",
+          "page": 13
+        },
+        {
+          "point": "とか （N2 とか）",
+          "page": 13
+        }
+      ],
+      "practice_prompts_en": [
+        "Fill in the blanks by choosing a word from the box below, just like the example."
+      ]
+    },
+    "EL04": {
+      "lesson_id": "EL04",
+      "lesson": 4,
+      "pages": [
+        14,
+        15,
+        16
+      ],
+      "points": [
+        {
+          "point": "わあ、もみじがきれいです（ ）。",
+          "page": 14
+        },
+        {
+          "point": "はじめて雪",
+          "page": 14
+        },
+        {
+          "point": "Non-past / Past 非",
+          "page": 14
+        },
+        {
+          "point": "V-て います ③",
+          "page": 15
+        },
+        {
+          "point": "N／ナ A-／イ A-い／V-る でしょう",
+          "page": 16
+        }
+      ],
+      "practice_prompts_en": [
+        "say the phrase using \"～ています\", just like the example.",
+        "Say the sentence using \"～でしょう\", just like the example."
+      ]
+    },
+    "EL05": {
+      "lesson_id": "EL05",
+      "lesson": 5,
+      "pages": [
+        17,
+        18
+      ],
+      "points": [
+        {
+          "point": "N で、～／ナ A-で、～／イ A-くて、～",
+          "page": 17
+        },
+        {
+          "point": "N だ／ナ A-だ／イ A-い けど、～",
+          "page": 17
+        },
+        {
+          "point": "ここ｜すずしい｜気",
+          "page": 17
+        },
+        {
+          "point": "やしが浜",
+          "page": 17
+        },
+        {
+          "point": "V-る ことが できます",
+          "page": 18
+        },
+        {
+          "point": "スポーツセンターでは、（ ）。",
+          "page": 18
+        },
+        {
+          "point": "このホテルでは、（ ）。",
+          "page": 18
+        }
+      ],
+      "practice_prompts_en": []
+    },
+    "EL06": {
+      "lesson_id": "EL06",
+      "lesson": 6,
+      "pages": [
+        19,
+        20,
+        21
+      ],
+      "points": [
+        {
+          "point": "N に 行",
+          "page": 19
+        },
+        {
+          "point": "V-て、～",
+          "page": 20
+        },
+        {
+          "point": "N1 じゃなくて、N2",
+          "page": 21
+        },
+        {
+          "point": "A： ここをまっすぐ行",
+          "page": 21
+        },
+        {
+          "point": "A： コンビニは、駅",
+          "page": 21
+        },
+        {
+          "point": "A： あのう、すみません。須賀",
+          "page": 21
+        }
+      ],
+      "practice_prompts_en": []
+    },
+    "EL07": {
+      "lesson_id": "EL07",
+      "lesson": 7,
+      "pages": [
+        22,
+        23,
+        24
+      ],
+      "points": [
+        {
+          "point": "N は どうですか？",
+          "page": 22
+        },
+        {
+          "point": "N でも いいですか？",
+          "page": 23
+        },
+        {
+          "point": "N で、～／V-て、～ ＜Cause / Reason 原因",
+          "page": 24
+        },
+        {
+          "point": "ねぼうしました 4. 台風",
+          "page": 24
+        }
+      ],
+      "practice_prompts_en": [
+        "fill in the blanks, just like the example."
+      ]
+    },
+    "EL08": {
+      "lesson_id": "EL08",
+      "lesson": 8,
+      "pages": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "points": [
+        {
+          "point": "もう V-ました",
+          "page": 25
+        },
+        {
+          "point": "V-た ことがあります",
+          "page": 26
+        },
+        {
+          "point": "パンダを見",
+          "page": 26
+        },
+        {
+          "point": "パチンコをする →（ ）？",
+          "page": 26
+        },
+        {
+          "point": "（ねぼうする → ） 11. （貸",
+          "page": 27
+        },
+        {
+          "point": "V-に 行",
+          "page": 28
+        },
+        {
+          "point": "コンサートを聞",
+          "page": 28
+        },
+        {
+          "point": "いけばなを習",
+          "page": 28
+        },
+        {
+          "point": "N の前",
+          "page": 29
+        },
+        {
+          "point": "V-たいんですが・・・",
+          "page": 29
+        },
+        {
+          "point": "すみません、ちょっと（休",
+          "page": 29
+        },
+        {
+          "point": "おすしを（食",
+          "page": 29
+        }
+      ],
+      "practice_prompts_en": [
+        "fill in the blanks, just like the examples."
+      ]
+    },
+    "EL09": {
+      "lesson_id": "EL09",
+      "lesson": 9,
+      "pages": [
+        30,
+        31,
+        32
+      ],
+      "points": [
+        {
+          "point": "N で ＜Means 手段",
+          "page": 30
+        },
+        {
+          "point": "N1 は N2 が ナ A-です／イ A-です ①",
+          "page": 31
+        },
+        {
+          "point": "N1 は、～。 （でも、） N2 は、～。 ＜Comparison 対比",
+          "page": 31
+        },
+        {
+          "point": "ひらがな＝好",
+          "page": 31
+        },
+        {
+          "point": "V-て もらえませんか？",
+          "page": 32
+        },
+        {
+          "point": "そのことば、紙",
+          "page": 32
+        },
+        {
+          "point": "シャドーイング、どうやってやりますか？",
+          "page": 32
+        },
+        {
+          "point": "このことば、どうやって発音",
+          "page": 32
+        },
+        {
+          "point": "ネットでどうやってラジオを聞",
+          "page": 32
+        }
+      ],
+      "practice_prompts_en": [
+        "Fill in the blanks with a word using \"～方\", just like the example."
+      ]
+    },
+    "EL10": {
+      "lesson_id": "EL10",
+      "lesson": 10,
+      "pages": [
+        33,
+        34,
+        35
+      ],
+      "points": [
+        {
+          "point": "V-て みたいんですが・・・",
+          "page": 33
+        },
+        {
+          "point": "V-ましょうか？",
+          "page": 34
+        },
+        {
+          "point": "N のとき、～／ナ A-なとき／イ A-いとき",
+          "page": 35
+        }
+      ],
+      "practice_prompts_en": [
+        "say the frequency, just like the example."
+      ]
+    },
+    "EL11": {
+      "lesson_id": "EL11",
+      "lesson": 11,
+      "pages": [
+        36,
+        37,
+        38
+      ],
+      "points": [
+        {
+          "point": "A： ケーキを（ 持",
+          "page": 36
+        },
+        {
+          "point": "N1 と N2（と）、 どっちが いいですか？",
+          "page": 37
+        },
+        {
+          "point": "N の ほうが いいです",
+          "page": 38
+        },
+        {
+          "point": "A： オレンジジュースとりんごジュース、どっちがいいですか？",
+          "page": 38
+        },
+        {
+          "point": "A： コーヒーと紅茶",
+          "page": 38
+        },
+        {
+          "point": "A： おにぎりは、昆布",
+          "page": 38
+        }
+      ],
+      "practice_prompts_en": []
+    },
+    "EL12": {
+      "lesson_id": "EL12",
+      "lesson": 12,
+      "pages": [
+        39,
+        40,
+        41,
+        42
+      ],
+      "points": [
+        {
+          "point": "ナ A-／イ A-そうです",
+          "page": 39
+        },
+        {
+          "point": "A： すき焼",
+          "page": 39
+        },
+        {
+          "point": "A： そのみかん、まだ（すっぱい → ）ですね。",
+          "page": 39
+        },
+        {
+          "point": "ナ A-／イ A-そうな N",
+          "page": 39
+        },
+        {
+          "point": "すき焼",
+          "page": 39
+        },
+        {
+          "point": "このみかん、すっぱそうですね。→（ ）ですね。",
+          "page": 39
+        },
+        {
+          "point": "イ A-くて、～",
+          "page": 40
+        },
+        {
+          "point": "このコーヒー、あまり苦",
+          "page": 40
+        },
+        {
+          "point": "ここのチョコレートは、あまり甘",
+          "page": 40
+        },
+        {
+          "point": "ビール、あまり冷",
+          "page": 40
+        },
+        {
+          "point": "V-て みます",
+          "page": 41
+        },
+        {
+          "point": "A： うーん、ちょっと、味",
+          "page": 41
+        },
+        {
+          "point": "A： このカレー、（ ）ました。",
+          "page": 41
+        },
+        {
+          "point": "A：（ ）たいんですが・・・。",
+          "page": 41
+        },
+        {
+          "point": "ネットで買",
+          "page": 41
+        },
+        {
+          "point": "はじめに、野菜",
+          "page": 42
+        },
+        {
+          "point": "イ A-く ないですか？",
+          "page": 42
+        }
+      ],
+      "practice_prompts_en": []
+    },
+    "EL13": {
+      "lesson_id": "EL13",
+      "lesson": 13,
+      "pages": [
+        43,
+        44,
+        45
+      ],
+      "points": [
+        {
+          "point": "～んですが",
+          "page": 43
+        },
+        {
+          "point": "パソコンが動",
+          "page": 43
+        },
+        {
+          "point": "（する → ） 10. （寝",
+          "page": 43
+        },
+        {
+          "point": "V-そうです",
+          "page": 44
+        },
+        {
+          "point": "A： すみません、5分",
+          "page": 44
+        },
+        {
+          "point": "A： できましたか？",
+          "page": 44
+        },
+        {
+          "point": "A： トイレットペーパーが、もうすぐ（なくなります→ ）。",
+          "page": 44
+        },
+        {
+          "point": "V-たい とき、～",
+          "page": 44
+        },
+        {
+          "point": "（カラーコピーする→ ）？",
+          "page": 44
+        },
+        {
+          "point": "にする→ ）？",
+          "page": 44
+        },
+        {
+          "point": "（スキャナを使",
+          "page": 44
+        },
+        {
+          "point": "V-ると、～",
+          "page": 45
+        },
+        {
+          "point": "このボタンを押",
+          "page": 45
+        },
+        {
+          "point": "ここに紙",
+          "page": 45
+        },
+        {
+          "point": "ここに数字",
+          "page": 45
+        },
+        {
+          "point": "」と入",
+          "page": 45
+        },
+        {
+          "point": "ここにコップを置",
+          "page": 45
+        },
+        {
+          "point": "ここに手",
+          "page": 45
+        },
+        {
+          "point": "はい、【negative sentence 否定文",
+          "page": 45
+        },
+        {
+          "point": "A： カラーコピー、できますか？",
+          "page": 45
+        }
+      ],
+      "practice_prompts_en": []
+    },
+    "EL14": {
+      "lesson_id": "EL14",
+      "lesson": 14,
+      "pages": [
+        46,
+        47,
+        48,
+        49
+      ],
+      "points": [
+        {
+          "point": "N で、～／ナ A-で、～／イ A-くて、～／V-て、～ ＜Cause / Reason 原因",
+          "page": 46
+        },
+        {
+          "point": "つにつないで言",
+          "page": 46
+        },
+        {
+          "point": "せきがひどいです。これから病院",
+          "page": 46
+        },
+        {
+          "point": "S1。それで、S2。",
+          "page": 46
+        },
+        {
+          "point": "V-ても いいですか？",
+          "page": 47
+        },
+        {
+          "point": "ちょっと（ ）？",
+          "page": 47
+        },
+        {
+          "point": "すみません、今",
+          "page": 47
+        },
+        {
+          "point": "すみません、（ ）？",
+          "page": 47
+        },
+        {
+          "point": "ちょっと寒",
+          "page": 47
+        },
+        {
+          "point": "あのう、ここ、ちょっと（ ）？",
+          "page": 47
+        },
+        {
+          "point": "トイレに行",
+          "page": 47
+        },
+        {
+          "point": "たばこを吸",
+          "page": 47
+        },
+        {
+          "point": "ちょっと休憩",
+          "page": 47
+        },
+        {
+          "point": "V-ても いいでしょうか？",
+          "page": 48
+        },
+        {
+          "point": "ちょっと質問",
+          "page": 48
+        },
+        {
+          "point": "V-なければ なりません",
+          "page": 48
+        },
+        {
+          "point": "すみません、今日",
+          "page": 48
+        },
+        {
+          "point": "～んです ①",
+          "page": 49
+        },
+        {
+          "point": "A： すみません、これから病院",
+          "page": 49
+        },
+        {
+          "point": "A： はい、 JF",
+          "page": 49
+        }
+      ],
+      "practice_prompts_en": []
+    },
+    "EL15": {
+      "lesson_id": "EL15",
+      "lesson": 15,
+      "pages": [
+        50,
+        51,
+        52,
+        53
+      ],
+      "points": [
+        {
+          "point": "V-んです ②",
+          "page": 50
+        },
+        {
+          "point": "（ のどが痛",
+          "page": 50
+        },
+        {
+          "point": "のどが痛",
+          "page": 50
+        },
+        {
+          "point": "せきが止",
+          "page": 51
+        },
+        {
+          "point": "V-ないで ください",
+          "page": 51
+        },
+        {
+          "point": "あまり（ ）。",
+          "page": 51
+        },
+        {
+          "point": "つらいときは、（ ）。",
+          "page": 51
+        },
+        {
+          "point": "～とき（に）、～",
+          "page": 53
+        },
+        {
+          "point": "かぜをひきました。",
+          "page": 53
+        }
+      ],
+      "practice_prompts_en": [
+        "fill in the blanks with a word using \"～前に\" or \"～あとに\", just like the example."
+      ]
+    },
+    "EL16": {
+      "lesson_id": "EL16",
+      "lesson": 16,
+      "pages": [
+        54,
+        55
+      ],
+      "points": [
+        {
+          "point": "V-ると いいです（よ）",
+          "page": 54
+        },
+        {
+          "point": "V-すぎます",
+          "page": 54
+        },
+        {
+          "point": "ドラッグストアでマスクをたくさん買",
+          "page": 54
+        },
+        {
+          "point": "V1-たり、V2-たり（します）",
+          "page": 55
+        },
+        {
+          "point": "サラダを食",
+          "page": 55
+        },
+        {
+          "point": "かぜをひく｜インフルエンザにかかる",
+          "page": 55
+        },
+        {
+          "point": "V-る ように しています",
+          "page": 55
+        }
+      ],
+      "practice_prompts_en": []
+    },
+    "EL17": {
+      "lesson_id": "EL17",
+      "lesson": 17,
+      "pages": [
+        56,
+        57,
+        58
+      ],
+      "points": [],
+      "practice_prompts_en": []
+    },
+    "EL18": {
+      "lesson_id": "EL18",
+      "lesson": 18,
+      "pages": [
+        59,
+        60,
+        61,
+        62
+      ],
+      "points": [
+        {
+          "point": "キムさんもパーティーに来",
+          "page": 59
+        },
+        {
+          "point": "プレゼントはギフトカードがいいです。",
+          "page": 59
+        },
+        {
+          "point": "アリさんは送別会",
+          "page": 60
+        },
+        {
+          "point": "プレゼントは 周",
+          "page": 62
+        },
+        {
+          "point": "キムさんはもう帰",
+          "page": 62
+        },
+        {
+          "point": "コンビニにはフォトフレームはありません。",
+          "page": 62
+        }
+      ],
+      "practice_prompts_en": []
+    }
+  }
+}

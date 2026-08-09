@@ -1,0 +1,961 @@
+lesson_id: EL09
+lesson: 9
+book_id: elementary1
+title_en: Will you tell me how to read this?
+title_jp: 読 み方 を 教 えてもらえま せん か？
+topic_en: Eating Out
+pdf_pages:
+- 182
+- 202
+intro_questions:
+- jp: Will you tell me how to read this? について、あなたの けいけんは？
+  en: Thinking about "Eating Out" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can talk in simple terms about your experience learning
+    Japanese. What do you want to be able to do?'
+can_dos:
+- id: CD_EL09_27
+  can_do_number: 27
+  statement_en: Can talk in simple terms about your experience learning Japanese.
+  statement_jp: 日本語の学習経験について、簡単に話すことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL09_28
+  can_do_number: 28
+  statement_en: Can give your impressions and comments about learning Japanese.
+  statement_jp: 日本語の学習経験について、簡単に話すことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL09_29
+  can_do_number: 29
+  statement_en: Can ask someone for help when, for example, you have a problem with
+    Japanese.
+  statement_jp: 日本語の学習経験について、簡単に話すことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL09_30
+  can_do_number: 30
+  statement_en: Can read an online forum about learning Japanese and understand the
+    recommended study methods.
+  statement_jp: 日本語の学習経験について、簡単に話すことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_EL09_27
+  label: kiku1
+  audio:
+  - assets/audio/Y_[09-01]_kiku1.mp3
+  key_phrases:
+  - どこで日本語を勉強しました
+  - 人の人が話しています。
+  - 日本語を勉強しました
+  - 読み方を教えてもらえません
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: どこで日本語を勉強しました
+    tags:
+    - long
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 日本語を勉強しました
+    tags:
+    - short
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_EL09_28
+  label: kiku2
+  audio:
+  - assets/audio/Y_[09-02]_kiku2.mp3
+  key_phrases:
+  - どこで日本語を勉強しました
+  - 人の人が話しています。
+  - 日本語を勉強しました
+  - どこで日本語を勉強しましたか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: どこで日本語を勉強しました
+    tags:
+    - long
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 日本語を勉強しました
+    tags:
+    - short
+  - jp: どこで日本語を勉強しましたか？
+    tags:
+    - long
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL09 activity 2: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL09_29
+  label: kiku3
+  audio:
+  - assets/audio/Y_[09-03]_kiku3.mp3
+  key_phrases:
+  - どこで日本語を勉強しました
+  - 人の人が話しています。
+  - 日本語を勉強しました
+  - どこで日本語を勉強しましたか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: どこで日本語を勉強しました
+    tags:
+    - long
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 日本語を勉強しました
+    tags:
+    - short
+  - jp: どこで日本語を勉強しましたか？
+    tags:
+    - long
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL09 activity 3: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_EL09_30
+  label: kiku4
+  audio:
+  - assets/audio/Y_[09-04]_kiku4.mp3
+  key_phrases:
+  - どこで日本語を勉強しました
+  - 人の人が話しています。
+  - 日本語を勉強しました
+  - 読み方を教えてもらえません
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: どこで日本語を勉強しました
+    tags:
+    - long
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 日本語を勉強しました
+    tags:
+    - short
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL09 activity 4: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A5
+  kind: grammar_form
+  book_activity: 5
+  can_do_id: CD_EL09_27
+  label: katachi
+  audio:
+  - assets/audio/Y_[09-05]_katachi.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - 日本語を勉強しました
+  - 勉強しました。
+  - 勉強しました
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: 日本語を勉強しました
+    tags:
+    - short
+  - jp: 勉強しました。
+    tags:
+    - short
+  - jp: 勉強しました
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A6
+  kind: speaking
+  book_activity: 6
+  can_do_id: CD_EL09_28
+  label: hanasu
+  audio:
+  - assets/audio/Y_[09-06]_hanasu.mp3
+  key_phrases:
+  - 日本語学校で勉強しました。
+  - どこで日本語を勉強しましたか？
+  - 読み方を教えてもらえません
+  - どれぐらい勉強しました
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: どこで日本語を勉強しましたか？
+  - speaker: learner
+    jp: 日本語学校で勉強しました。
+  dialog_listen_audio:
+  - assets/audio/Y_[09-06]_hanasu.mp3
+  phrase_meta:
+  - jp: 日本語学校で勉強しました。
+    tags:
+    - long
+  - jp: どこで日本語を勉強しましたか？
+    tags:
+    - long
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: どれぐらい勉強しました
+    tags:
+    - long
+- id: A7
+  kind: vocabulary
+  book_activity: 7
+  can_do_id: CD_EL09_29
+  label: kotoba1
+  audio:
+  - assets/audio/Y_[09-07]_kotoba1.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - 人の人が話しています。
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A8
+  kind: vocabulary
+  book_activity: 8
+  can_do_id: CD_EL09_30
+  label: kotoba2
+  audio:
+  - assets/audio/Y_[09-08]_kotoba2.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - 人の人が話しています。
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A9
+  kind: listening
+  book_activity: 9
+  can_do_id: CD_EL09_27
+  label: kiku1
+  audio:
+  - assets/audio/Y_[09-09]_kiku1.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - 人の人が話しています。
+  - どんな関係ですか。
+  - 日本語の勉強はどうですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: どんな関係ですか。
+    tags:
+    - short
+    - polite
+  - jp: 日本語の勉強はどうですか？
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL09 activity 9: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A10
+  kind: listening
+  book_activity: 10
+  can_do_id: CD_EL09_28
+  label: kiku2
+  audio:
+  - assets/audio/Y_[09-10]_kiku2.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - 人の人が話しています。
+  - 日本語の勉強はどうですか？
+  - 大変です。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 日本語の勉強はどうですか？
+    tags:
+    - long
+    - polite
+  - jp: 大変です。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL09 activity 10: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A11
+  kind: listening
+  book_activity: 11
+  can_do_id: CD_EL09_29
+  label: kiku3
+  audio:
+  - assets/audio/Y_[09-11]_kiku3.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - 人の人が話しています。
+  - 日本語の勉強はどうですか？
+  - 大変です。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: 日本語の勉強はどうですか？
+    tags:
+    - long
+    - polite
+  - jp: 大変です。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL09 activity 11: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A12
+  kind: listening
+  book_activity: 12
+  can_do_id: CD_EL09_30
+  label: kiku4
+  audio:
+  - assets/audio/Y_[09-12]_kiku4.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - 人の人が話しています。
+  - どんな関係ですか。
+  - 日本語の勉強はどうですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: どんな関係ですか。
+    tags:
+    - short
+    - polite
+  - jp: 日本語の勉強はどうですか？
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL09 activity 12: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A13
+  kind: grammar_form
+  book_activity: 13
+  can_do_id: CD_EL09_27
+  label: katachi1
+  audio:
+  - assets/audio/Y_[09-13]_katachi1.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - どんな関係ですか。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: どんな関係ですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A14
+  kind: grammar_form
+  book_activity: 14
+  can_do_id: CD_EL09_28
+  label: katachi2
+  audio:
+  - assets/audio/Y_[09-14]_katachi2.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - どんな関係ですか。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: どんな関係ですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A15
+  kind: speaking
+  book_activity: 15
+  can_do_id: CD_EL09_29
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[09-15]_hanasu1.mp3
+  key_phrases:
+  - 1年ぐらいです。
+  - どれぐらい勉強しましたか？
+  - 読み方を教えてもらえません
+  - 日本語の勉強はどうですか。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: どれぐらい勉強しましたか？
+  - speaker: learner
+    jp: 1年ぐらいです。
+  dialog_listen_audio:
+  - assets/audio/Y_[09-15]_hanasu1.mp3
+  phrase_meta:
+  - jp: 1年ぐらいです。
+    tags:
+    - short
+    - polite
+  - jp: どれぐらい勉強しましたか？
+    tags:
+    - long
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: 日本語の勉強はどうですか。
+    tags:
+    - long
+    - polite
+- id: A16
+  kind: speaking
+  book_activity: 16
+  can_do_id: CD_EL09_30
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[09-16]_hanasu2.mp3
+  key_phrases:
+  - 日本語、上手ね。
+  - そうですか。
+  - 読み方を教えてもらえません
+  - 日本語の勉強はどうですか。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: そうですか。
+  - speaker: learner
+    jp: 日本語、上手ね。
+  dialog_listen_audio:
+  - assets/audio/Y_[09-16]_hanasu2.mp3
+  phrase_meta:
+  - jp: 日本語、上手ね。
+    tags:
+    - short
+  - jp: そうですか。
+    tags:
+    - short
+    - polite
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: 日本語の勉強はどうですか。
+    tags:
+    - long
+    - polite
+- id: A17
+  kind: speaking
+  book_activity: 17
+  can_do_id: CD_EL09_27
+  label: hanasu3-1
+  audio:
+  - assets/audio/Y_[09-17]_hanasu3-1.mp3
+  key_phrases:
+  - どこで勉強したの？
+  - いえ、まだまだです。
+  - 読み方を教えてもらえません
+  - 日本語の勉強はどうですか。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: いえ、まだまだです。
+  - speaker: learner
+    jp: どこで勉強したの？
+  dialog_listen_audio:
+  - assets/audio/Y_[09-17]_hanasu3-1.mp3
+  phrase_meta:
+  - jp: どこで勉強したの？
+    tags:
+    - short
+  - jp: いえ、まだまだです。
+    tags:
+    - short
+    - polite
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: 日本語の勉強はどうですか。
+    tags:
+    - long
+    - polite
+- id: A18
+  kind: speaking
+  book_activity: 18
+  can_do_id: CD_EL09_28
+  label: hanasu3-2
+  audio:
+  - assets/audio/Y_[09-18]_hanasu3-2.mp3
+  key_phrases:
+  - へー。
+  - アニメで勉強しました。日本のアニメをたくさん見ました。
+  - 読み方を教えてもらえません
+  - 日本語の勉強はどうですか。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: アニメで勉強しました。日本のアニメをたくさん見ました。
+  - speaker: learner
+    jp: へー。
+  dialog_listen_audio:
+  - assets/audio/Y_[09-18]_hanasu3-2.mp3
+  phrase_meta:
+  - jp: へー。
+    tags:
+    - short
+  - jp: アニメで勉強しました。日本のアニメをたくさん見ました。
+    tags:
+    - long
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: 日本語の勉強はどうですか。
+    tags:
+    - long
+    - polite
+- id: A19
+  kind: listening
+  book_activity: 19
+  can_do_id: CD_EL09_29
+  label: kiku1
+  audio:
+  - assets/audio/Y_[09-19]_kiku1.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - どんなことをお願いしました
+  - 自信がありません
+  - この漢字がわかりません。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: どんなことをお願いしました
+    tags:
+    - long
+  - jp: 自信がありません
+    tags:
+    - short
+    - polite
+  - jp: この漢字がわかりません。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL09 activity 19: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A20
+  kind: listening
+  book_activity: 20
+  can_do_id: CD_EL09_30
+  label: kiku2
+  audio:
+  - assets/audio/Y_[09-20]_kiku2.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - どんなことをお願いしました
+  - 自信がありません
+  - 日本語の勉強はどうですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: どんなことをお願いしました
+    tags:
+    - long
+  - jp: 自信がありません
+    tags:
+    - short
+    - polite
+  - jp: 日本語の勉強はどうですか？
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL09 activity 20: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A21
+  kind: listening
+  book_activity: 21
+  can_do_id: CD_EL09_27
+  label: kiku3
+  audio:
+  - assets/audio/Y_[09-21]_kiku3.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - どんなことをお願いしました
+  - 自信がありません
+  - 日本語の勉強はどうですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: どんなことをお願いしました
+    tags:
+    - long
+  - jp: 自信がありません
+    tags:
+    - short
+    - polite
+  - jp: 日本語の勉強はどうですか？
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL09 activity 21: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A22
+  kind: listening
+  book_activity: 22
+  can_do_id: CD_EL09_28
+  label: kiku4
+  audio:
+  - assets/audio/Y_[09-22]_kiku4.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - どんなことをお願いしました
+  - 自信がありません
+  - この漢字がわかりません。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: どんなことをお願いしました
+    tags:
+    - long
+  - jp: 自信がありません
+    tags:
+    - short
+    - polite
+  - jp: この漢字がわかりません。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL09 activity 22: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A23
+  kind: grammar_form
+  book_activity: 23
+  can_do_id: CD_EL09_29
+  label: katachi
+  audio:
+  - assets/audio/Y_[09-23]_katachi.mp3
+  key_phrases:
+  - 読み方を教えてもらえません
+  - この漢字がわかりません。
+  - どんな意味だと思います
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: この漢字がわかりません。
+    tags:
+    - long
+    - polite
+  - jp: どんな意味だと思います
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A24
+  kind: speaking
+  book_activity: 24
+  can_do_id: CD_EL09_30
+  label: hanasu
+  audio:
+  - assets/audio/Y_[09-24]_hanasu.mp3
+  key_phrases:
+  - はい、少し。
+  - 日本語できますか？
+  - 読み方を教えてもらえません
+  - すみません。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 日本語できますか？
+  - speaker: learner
+    jp: はい、少し。
+  dialog_listen_audio:
+  - assets/audio/Y_[09-24]_hanasu.mp3
+  phrase_meta:
+  - jp: はい、少し。
+    tags:
+    - short
+  - jp: 日本語できますか？
+    tags:
+    - short
+    - polite
+  - jp: 読み方を教えてもらえません
+    tags:
+    - long
+    - polite
+  - jp: すみません。
+    tags:
+    - short
+    - polite
+grammar:
+- point: N で ＜Means 手段
+  worksheet_pages:
+  - 30
+  examples: []
+- point: N1 は N2 が ナ A-です／イ A-です ①
+  worksheet_pages:
+  - 31
+  examples: []
+- point: N1 は、～。 （でも、） N2 は、～。 ＜Comparison 対比
+  worksheet_pages:
+  - 31
+  examples: []
+- point: ひらがな＝好
+  worksheet_pages:
+  - 31
+  examples: []
+- point: V-て もらえませんか？
+  worksheet_pages:
+  - 32
+  examples: []
+- point: そのことば、紙
+  worksheet_pages:
+  - 32
+  examples: []
+- point: シャドーイング、どうやってやりますか？
+  worksheet_pages:
+  - 32
+  examples: []
+- point: このことば、どうやって発音
+  worksheet_pages:
+  - 32
+  examples: []
+- point: ネットでどうやってラジオを聞
+  worksheet_pages:
+  - 32
+  examples: []
+vocab:
+- jp: 読み方を教えてもらえません
+  reading: ''
+  en: ''
+  tags:
+  - EL09
+- jp: 人の人が話しています。
+  reading: ''
+  en: ''
+  tags:
+  - EL09
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL09_27
+  prompt_en: 'Demonstrate: Can talk in simple terms about your experience learning
+    Japanese.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL09_28
+  prompt_en: 'Demonstrate: Can give your impressions and comments about learning Japanese.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL09_29
+  prompt_en: 'Demonstrate: Can ask someone for help when, for example, you have a
+    problem with Japanese.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL09_30
+  prompt_en: 'Demonstrate: Can read an online forum about learning Japanese and understand
+    the recommended study methods.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL09_27
+  partner_jp: どこで日本語を勉強しました。
+  expected: &id001
+  - どこで日本語を勉強しました
+  - 人の人が話しています。
+  - 日本語を勉強しました
+  - 読み方を教えてもらえません
+  hint_en: Can talk in simple terms about your experience learning Japanese.
+- can_do_id: CD_EL09_27
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can talk in simple terms about your experience learning Japanese.
+- can_do_id: CD_EL09_28
+  partner_jp: どこで日本語を勉強しました。
+  expected: &id002
+  - どこで日本語を勉強しました
+  - 人の人が話しています。
+  - 日本語を勉強しました
+  - どこで日本語を勉強しましたか？
+  hint_en: Can give your impressions and comments about learning Japanese.
+- can_do_id: CD_EL09_28
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can give your impressions and comments about learning Japanese.
+- can_do_id: CD_EL09_29
+  partner_jp: どこで日本語を勉強しました。
+  expected: &id003
+  - どこで日本語を勉強しました
+  - 人の人が話しています。
+  - 日本語を勉強しました
+  - どこで日本語を勉強しましたか？
+  hint_en: Can ask someone for help when, for example, you have a problem with Japanese.
+- can_do_id: CD_EL09_29
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can ask someone for help when, for example, you have a problem
+    with Japanese.
+- can_do_id: CD_EL09_30
+  partner_jp: どこで日本語を勉強しました。
+  expected: &id004
+  - どこで日本語を勉強しました
+  - 人の人が話しています。
+  - 日本語を勉強しました
+  - 読み方を教えてもらえません
+  hint_en: Can read an online forum about learning Japanese and understand the recommended
+    study methods.
+- can_do_id: CD_EL09_30
+  partner_jp: もう一度、お願いします。
+  expected: *id004
+  hint_en: 'Again — Can read an online forum about learning Japanese and understand
+    the recommended '
+english_notes: 'How is your Japanese learning going? What do you find interesting?
+  What do you find difficult?
+
+  Can talk in simple terms about your experience learning Japanese.
+
+  Listen to the dialogs.
+
+  The four people are each talking about their experience studying Japanese.
+
+  Where did they study Japanese? Choose from a-d.
+
+  Listen to the dialogs again. How long did they study Japanese? Take notes. Write
+  ‘-’ if the person did not mention it.
+
+  Check the words and listen to the dialogs again.
+
+  間 for two years （～間
+
+  for ～）｜ 自
+
+  分で on my own
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used to describe how they studied Japanese?
+
+  What expression was used to describe the period?
+
+  Focus on the expressions used and listen to the dialogs again.
+
+  Listen to the dialog.
+
+  Shadow the dialog.
+
+  Talk about yourself.
+
+  Talk about your experience of learning Japanese.
+
+  Preparation for the words
+
+  Can give your impressions and comments about learning Japanese.'
+unlock_requires_mastery: true

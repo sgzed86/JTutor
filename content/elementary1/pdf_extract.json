@@ -1,0 +1,808 @@
+{
+  "source": "assets/Elementary1.pdf",
+  "book_id": "elementary1",
+  "page_count": 412,
+  "lesson_starts": {
+    "1": 42,
+    "2": 62,
+    "3": 81,
+    "4": 100,
+    "5": 115,
+    "6": 131,
+    "7": 148,
+    "8": 161,
+    "9": 182,
+    "10": 203,
+    "11": 223,
+    "12": 244,
+    "13": 267,
+    "14": 290,
+    "15": 312,
+    "16": 337,
+    "17": 356,
+    "18": 377
+  },
+  "lessons": {
+    "EL01": {
+      "lesson_id": "EL01",
+      "lesson": 1,
+      "book_id": "elementary1",
+      "title_en": "I work in a restaurant",
+      "title_jp": "レストランで働いています",
+      "topic_en": "About Me Now",
+      "pdf_pages": [
+        42,
+        61
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL01_01",
+          "can_do_number": 1,
+          "statement_en": "Can exchange greetings with a person you are meeting for the first time in a long time. 2. 日本に来てどのぐらいですか？ 02 Can talk in simple terms about how you have been recently when asked by a close person. 3. 日本では何をし ていますか ？ 03 Can talk in simple terms about your work in Japan.",
+          "statement_jp": "久しぶりに会った人とあいさつをすることができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [
+        "あ、お久",
+        "お久",
+        "お元",
+        "はい。おかげさまで。",
+        "あ、久",
+        "うん。元"
+      ],
+      "english_notes": "Is there a job you want to do when you go to Japan?\nCan exchange greetings with a person you are meeting for the first time in a long time.\nListen to the dialogs.\nTwo people who are meeting for the first time in a long time are exchanging greetings with each other.\nFirst, listen to the dialogs without looking at the script. What do you think are the relationships of these two people shown in the\nillustrations from ①-③? Choose from a-c.\nだち friends b. 先\n輩 senior and junior colleagues c. 知\nい acquaintances\nListen to the dialogs again. This time, follow along with the script.\nListen to the dialogs again. Which expression did the woman use, a or b?\nWith what kind of people would you use a? With what kind of people would you use b?\nFocus on the expressions used and listen to the dialogs again.\nPractice greetings when you are meeting someone for the first time in a long time.\nListen to the dialogs.\nShadow the dialogs.\nDecide who you are meeting with for the first time in a long time, such as a friend, senior colleague, teacher, and acquaintance. Ex-\nchange greetings with each other.\nCan talk in simple terms about how you have been recently when asked by a close person.\nListen to the dialogs.\nThe four people are each talking about themselves.\nHow long has each person been in Japan? When did they come to Japan? Choose from a-d.\nListen to the dialogs again. Has each person gotten used to living in Japan? Draw a circle by the people who have gotten used to\nliving in Japan.\nCheck the words and listen to the dialogs again.\n活 life ｜ もう already ｜ 慣\nれる get used to ｜ ちょうど just / exactly\nなんとか somehow / a little bit ｜ まだ not yet",
+      "page_samples": [
+        {
+          "page": 42,
+          "text": "初級1\n初級1 L1 - 1\n第\n課\n▶トピック\n日\n本に行\nったら、したい仕\n事がありますか？\nIs there a job you want to do when you go to Japan?\nレストラン で働\nいています1\n今\nの私\n久\nしぶりに会\nった人\nとあいさつをすることができる。\nCan exchange greetings with a person you are meeting for the first time in a long time.\n1 会\n話を聞\nきましょう。\nListen to the dialogs.\n久\nしぶりに会\nった2\n人が 、あいさつ をしています。\nTwo people who are meeting for the first time in a long time are exchanging greetings with each other.\n(1) はじめに、 スクリプトを見\nないで会\n話を聞\nきましょう。\n①- ③の イラスト の2\n人は、どんな関\n係だと思\nいますか。a-c から選\nび ましょう。\nFirst, listen to the dialogs without looking at the script. What do you think are the relationships of these two people shown in the\nillustrations from ①-③? Choose from a-c.\na. 友\nだち friends b. 先\n輩と後\n輩 senior and junior colleagues c. 知\nり合\nい acquaintances\n① 01-01 ② 01-02 ③ 01-03\nお久\nしぶりです1.\n01"
+        },
+        {
+          "page": 43,
+          "text": "第 課\n1 レストランで働いています\n今の私▶トピック\n初級1 L1 - 2\n(2) スクリプトを見\nながら聞\nきましょう。\nListen to the dialogs again. This time, follow along with the script.\nＡ：あ、お久\nしぶりです。\nＢ：お久\nしぶりです。\nＡ：お元\n気ですか？\nＢ：はい。おかげさまで。\nＡ：あ、久\nしぶり。\nＢ：お久\nしぶりです。\nＡ：元\n気？\nＢ：はい。おかげさまで。\n（ 1 ） 会\n話をもういちど聞\nきましょう。女\nの人\nは、a、b のどちらの形\nを使\nって い ました か。\nListen to the dialogs again. Which expression did the woman use, a or b?\n① 01-01\na. 久\na. 元\n気？\nb. お久\nb. お元\n気ですか？\n② 01-02\na. 久\na. 元\n気？\nb. お久\nb. お元\n気ですか？\n③ 01-03\na. 久\na. 元\n気？\nb. お久\nb. お元\n気ですか？\nどんな人\nに a を使\nいますか。どんな人\nに b を使\nいますか。 文\n法ノート ➊\nWith what kind of people would you use a? With what kind of people would you use b?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n01-01 01-03\n① 01-01 ② 01-02\nＡ：あ、久\nしぶり。\nＢ：久\nしぶり。\nＡ：元\n気？\nＢ：うん。元\n気。\n③ 01-03"
+        },
+        {
+          "page": 44,
+          "text": "第 課\n1 レストランで働いています\n今の私▶トピック\nお元\n気ですか？\n元\n気？\nお久\nしぶりです。\n久\nしぶり。\nお久\nしぶりです。\n久\nしぶり。\nはい。おかげさまで。\nうん。元\n気。\n初級1 L1 - 3\n2 久\nしぶりに会\nった人\nにあいさつをしましょう。\nPractice greetings when you are meeting someone for the first time in a long time.\n(1) 会\n話を聞\nきましょう。\nListen to the dialogs.\n(2) シャド ー イン グ しましょう。\nShadow the dialogs.\n(3) 友\nだち、先\n輩や先\n生、知\nり合\nいなど、相\n手を決\nめて、久\nしぶりに会\nったという設\n定であいさつを\nしましょう。\nDecide who you are meeting with for the first time in a long time, such as a friend, senior colleague, teacher, and acquaintance. Ex-\nchange greetings with each other.\n01-04 01-05\n01-04 01-05"
+        },
+        {
+          "page": 45,
+          "text": "第 課\n1 レストランで働いています\n今の私▶トピック\n初級1 L1 - 4\n身\n近な人\nに聞\nかれ たとき、自\n分の近\n況を簡\n単に話\nすことが できる。\nCan talk in simple terms about how you have been recently when asked by a close person.\n1 会\n話を聞\nきましょう。\nListen to the dialogs.\n4\n人の人\nが、自\n分のことを話\nしています。\nThe four people are each talking about themselves.\n(1) 日\n本に来\nてどのぐらいですか。いつ来\nましたか。a-d から選\nび ましょう。\nHow long has each person been in Japan? When did they come to Japan? Choose from a-d.\na. 半\n年 b. 1 年\nc. 先\n月 d. 去\n年の 9\n月\n① 01-06 ② 01-07 ③ 01-08 ④ 01-09\nど の ぐ ら い？\nい つ？\n(2) もういちど聞\nきましょう。日\n本に慣\nれましたか。慣\nれた人\nには○を書\nきましょう。\nListen to the dialogs again. Has each person gotten used to living in Japan? Draw a circle by the people who have gotten used to\nliving in Japan.\n① 01-06 ② 01-07 ③ 01-08 ④ 01-09\n慣\nれ た？\n(3) ことばを確\n認して、 もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\n生\n活 life ｜ もう already ｜ 慣\nれる get used to ｜ ちょうど just / exactly\nなんとか somehow / a little bit ｜ まだ not yet\n01-06 01-09\n日\n本に来\nてどの ぐ らい で す か？2.\n02"
+        }
+      ]
+    },
+    "EL02": {
+      "lesson_id": "EL02",
+      "lesson": 2,
+      "book_id": "elementary1",
+      "title_en": "I like playing video games",
+      "title_jp": "ゲームをするのが好きです",
+      "topic_en": "About Me Now",
+      "pdf_pages": [
+        62,
+        80
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL02_04",
+          "can_do_number": 4,
+          "statement_en": "Can talk in simple terms about your hobbies and favorite things to do. 2. 休 み の日は 何 をします か？ 05 Can ask and answer questions about how you spend your days off. 3. スタッフ紹介 06 Can read staff descriptions posted in a store, facility, etc. and under - stand their families, hobbies, etc. 4. 自己紹介 07 Can write in simple terms about your hobbies, your days off, etc. for staff descriptions posted at work.",
+          "statement_jp": "趣味や好きなことについて、簡単に話すことができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [],
+      "english_notes": "How do you spend your days off?\nCan talk in simple terms about your hobbies and favorite things to do.\nPreparation for the words\nListen while looking at the illustrations.\nListen and repeat the words.\nListen and choose from a-l.\nListen to the dialogs.\nThe seven people are each talking about their hobbies.\nWhat are their hobbies and favorite things to do? Choose from a-l of 1 .\nCheck the words and listen to the dialogs again.\nす talk ｜ 特\nにない nothing in particular\nListen to the recording and fill in the blanks.\nWhat form of verb was used before ?\nFocus on the expressions used and listen to the dialogs again.\nTalk about your hobbies and favorite things to do.\nListen to the dialogs.\nShadow the dialogs.\nPractice using the words from 1 .\nTalk about yourself.\nCan ask and answer questions about how you spend your days off.\nListen to the dialog.\nEco-san, Huong-san, and Ishikawa-san are talking during a break at\nwork about how they each spend their days off.\nFirst, listen to the dialog without looking at the script.How do the three people each spend their days off? Choose from a-c.\na. b. c.\nListen to the dialog again. This time, follow along with the script. What do they each do? Where and with whom? Also, what do the\nthree people like to do?",
+      "page_samples": [
+        {
+          "page": 62,
+          "text": "初級1\n初級1 L2 - 1\n第\n課\n▶トピック\n休\nみの日\nは ど ん なことをして過\nご しま す か？\nHow do you spend your days off?\nゲームをするの が好\nきです2\n今\nの私\n趣\n味や好\nきなことについて、簡\n単に話\nすことが できる。\nCan talk in simple terms about your hobbies and favorite things to do.\n趣\n味は料\n理をすることです1.\n04\n1 ことば の準\n備\nPreparation for the words\n【趣\n味】\na. 映\n画を見\nる b. 音\n楽を聞\nく c. 本\nを読\nむ d. おいしいものを食\ne. 写\n真を撮\nる f . ピ アノ／ ギ タ ー を弾\nく g . おしゃべりをする h. 料\n理をする\ni. 旅\n行をする j . テニスをする k . ゲームをする l. 寝\n(1) 絵\nを見\nながら聞\nきましょう。\nListen while looking at the illustrations.\n(2) 聞\nいて言\nいましょう。\nListen and repeat the words.\n(3) 聞\nいて、a-l から選\nびましょう。\nListen and choose from a-l.\n02-01\n02-01\n02-02"
+        },
+        {
+          "page": 63,
+          "text": "第 課\n2 ゲームをするのが好きです\n今の私▶トピック\n初級1 L2 - 2\n2 会\n話を聞\nきましょう。\nListen to the dialogs.\n趣\n味について、7人\nの人\nが話\nしています。\nThe seven people are each talking about their hobbies.\n(1) 趣\n味や好\nきなことは何\nですか。 1 の a-l から選\nびましょう。\nWhat are their hobbies and favorite things to do? Choose from a-l of 1 .\n① 02-03 ② 02-04 ③ 02-05 ④ 02-06 ⑤ 02-07 ⑥ 02-08 ⑦ 02-09\n， ， ，\n(2) ことばを確\n認して、もういちど聞\nきましょう。 02-03 ～ 02-09\nCheck the words and listen to the dialogs again.\nいろいろ （な） various ｜ 話\nす talk ｜ 特\nにない nothing in particular\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\n趣\n味は何\nで す か？\n映\n画を見\nる で す。\n音\n楽を聞\nく で す。\nゲームをする が好\nき で す。\n人\nと話\nす が大\n好\nき で す。\nの前\nは、動\n詞のどんな形\nを使\nって い ました か。 文\n法\nノート ➊➋\nWhat form of verb was used before ?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n02-10\n02-03 02-09"
+        },
+        {
+          "page": 64,
+          "text": "第 課\n2 ゲームをするのが好きです\n今の私▶トピック\n音\n楽を聞\nく ことで す。\nあと、ゲームをする のが好\nき で す。\n料\n理をする ことで す。\nおいしいものを食\nべる のが好\nき で す。\n趣\n味は何\nで す か？\n好\nきなことは何\nで す か？\nそうで すか。\n私\nもで す。\n初級1 L2 - 3\n3 趣\n味や好\nきなことについて話\nしましょう。\nTalk about your hobbies and favorite things to do.\n(1) 会\n話を聞\nきましょう。\nListen to the dialogs.\n(2) シャドーイングしましょう。\nShadow the dialogs.\n(3) 1 のことばを使\nって、練\n習しましょう。\nPractice using the words from 1 .\n(4) 自\n分のことを話\nしましょう。\nTalk about yourself.\n02-11 02-12\n02-11 02-12"
+        },
+        {
+          "page": 65,
+          "text": "第 課\n2 ゲームをするのが好きです\n今の私▶トピック\n初級1 L2 - 4\n休\nみの日\nの過\nごし方\nについて、質\n問したり、質\n問に答\nえたりすることができる。\nCan ask and answer questions about how you spend your days off.\n1 会\n話を聞\nきましょう。\nListen to the dialog.\n会\n社の休\nみ時\n間に 、エコさんとフオンさんと石\n川さんが\n休\nみの日\nの過\nごし方\nについて話\nしています。\nEco-san, Huong-san, and Ishikawa-san are talking during a break at\nwork about how they each spend their days off.\n(1) はじめに、スクリプトを見\nないで会\n話を聞\nきましょう。 02-13\n3 人\nの休\nみの日\nの過\nごし方\nは、どれですか。a-c から選\nびましょう。\nFirst, listen to the dialog without looking at the script.How do the three people each spend their days off? Choose from a-c.\na. b. c.\nフオンさん エコさん 石\n川さん\n(2) スクリプトを見\nながら聞\nきましょう。\n何\nを、どこで、だれとしますか。また、3人\nは何\nが好\nきだと言\nっていますか。\nListen to the dialog again. This time, follow along with the script. What do they each do? Where and with whom? Also, what do the\nthree people like to do?\nフオンさん エコさん 石\n川さん\n何\nを？\nどこで？\nだ れと？ ――\n何\nが好\nき？\n02-13\n休\nみの日\nは何\nをしま す か？2.\n05\nフオン 石\n川"
+        }
+      ]
+    },
+    "EL03": {
+      "lesson_id": "EL03",
+      "lesson": 3,
+      "book_id": "elementary1",
+      "title_en": "It gets very cold in winter",
+      "title_jp": "冬 はとても寒くなります",
+      "topic_en": "Seasons and Weather",
+      "pdf_pages": [
+        81,
+        99
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL03_08",
+          "can_do_number": 8,
+          "statement_en": "Can watch a short video about the four seasons in Japan and under - stand seasonal characteristics. 2. どん な 季 節 が あります か？ 09 Can talk in simple terms about the seasonal characteristics of your own country. 3. もみじの景色がきれいですから 10 Can talk in simple terms about your favorite season and the reason.",
+          "statement_jp": "日本の四季についての短い動画を見て、季節の特徴を理解することができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [],
+      "english_notes": "What are the seasons like in your country?\nCan watch a short video about the four seasons in Japan and understand seasonal characteristics.\nPreparation for the words\nListen while looking at the illustrations.\nListen and repeat the words.\nListen and choose from a-j.\nListen to the recording.\nYou are watching a video that introduces Japan.\nChoose the characteristics of each season in Japan from a-j of 1 .\nCheck the words and listen to the narration again.\nたくさん many / much ｜ 学\n校 school\nListen to the recording and fill in the blanks.\nWhat expression was used to describe the changes?\nFocus on the expressions used and listen to the narration again.\nCan talk in simple terms about the seasonal characteristics of your own country.\nListen to the dialogs.\nThe four people are each talking about the seasons and climate of their countries.\nWhat is the season of each country? Choose from a-d.\na. b. c. d.\nListen to the dialogs again.What are the seasonal characteristics of each person’s country? Choose from ア-キ.\nCheck the words and listen to the dialogs again.\nじ same ｜ 40 度\n40 degrees （～度\n～ degree(s)）｜ マイナス minus ｜ 短\nい short",
+      "page_samples": [
+        {
+          "page": 81,
+          "text": "初級1\n初級1 L3 - 1\n第\n課\n▶トピック\nあなたの国\nにはどんな季\n節が ありま す か？\nWhat are the seasons like in your country?\n冬\nはとても寒\nくなります3\n季\n節と天\n気\n日\n本の四\n季についての短\nい動\n画を見\nて、季\n節の特\n徴を理\n解することが できる。\nCan watch a short video about the four seasons in Japan and understand seasonal characteristics.\n春\nは桜\nの花\nが咲\nきます1.\n08\n1 ことば の準\n備\nPreparation for the words\n【季\n節のことば】\na. 暑\nい b. すずしい c. 寒\nい d. 暖\nかい e. じめじめする／\n蒸\nし暑\nf. 雨\nが降\nる g. 雪\nが降\nる h. 桜\nの花\nが咲\nく i . も み じ が き れ い（ な ）j. セミが鳴\n(1) 絵\nを見\nながら聞\nきましょう。\nListen while looking at the illustrations.\n(2) 聞\nいて言\nいましょう。\nListen and repeat the words.\n(3) 聞\nいて、a-jから選\nびましょう。\nListen and choose from a-j.\n03-01\n03-01\n03-02"
+        },
+        {
+          "page": 82,
+          "text": "第 課\n3 冬 はとても寒くなります\n季節と天気▶トピック\n初級1 L3 - 2\n2 音\n声を聞\nきましょう。\nListen to the recording.\n日\n本を紹\n介する映\n像を見\nています。\nYou are watching a video that introduces Japan.\n(1) 日\n本の季\n節の特\n徴を、 1 の a-jから選\nびましょう。\nChoose the characteristics of each season in Japan from a-j of 1 .\n(2) ことばを確\n認して、もういちど聞\nきましょう。\nCheck the words and listen to the narration again.\nたくさん many / much ｜ 学\n校 school\n03-03\n03-03\n12 月\n5 月\n11 月\n6 月\n7\n月\n8 月\n9\n月\n3 月\n2 月\n10 月\n4\n月\n1 月\n春\n（ ， ）\n冬\n（ ， ）\n梅\n雨（ ， ）\n夏\n（ ， ）\n秋\n（ ， ）"
+        },
+        {
+          "page": 83,
+          "text": "第 課\n3 冬はとても寒くなります\n季節と天気▶トピック\n初級1 L3 - 3\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\n春\nは桜\nの花\nが咲\nきま す。暖\nかく 。\n夏\nは暑\nいで す。学\n校が休\nみに 。\n秋\nはすずしく 。\n変\n化について言\nうとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➊\nWhat expression was used to describe the changes?\n（2） 形\nに注\n目して、音\n声をもういちど聞\nきましょう。\nFocus on the expressions used and listen to the narration again.\n03-04\n03-03"
+        },
+        {
+          "page": 84,
+          "text": "第 課\n3 冬 はとても寒くなります\n季節と天気▶トピック\n初級1 L3 - 4\n自\n分の国\nの季\n節の特\n徴について、簡\n単に話\nすことが できる。\nCan talk in simple terms about the seasonal characteristics of your own country.\n1 会\n話を聞\nきましょう。\nListen to the dialogs.\n自\n分の国\nの季\n節や気\n候について、4\n人の人\nが話\nしています。\nThe four people are each talking about the seasons and climate of their countries.\n(1) それぞれの国\nの季\n節は、a-d のどれですか。\nWhat is the season of each country? Choose from a-d.\na. b. c. d.\n① 03-05 ② 03-06 ③ 03-07 ④ 03-08\n(2) もういちど聞\nきましょう。\n4\n人の国\nの季\n節には、それぞれどんな特\n徴がありますか。ア - キから選\nびましょう。\nListen to the dialogs again.What are the seasonal characteristics of each person’s country? Choose from ア-キ.\nア. 夏\nはとても暑\nい・冬\nはとても寒\nい イ. 一\n年中夏\nウ. 冬\nが長\nエ . ずっと 暑\nい オ . 雨\n季と乾\n季がある カ . 四\n季がある キ . 雪\nが たくさん降\n① 03-05 ② 03-06 ③ 03-07 ④ 03-08\n， ， ， ，\n(3) ことばを確\n認して、もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\n同\nじ same ｜ 40 度\n40 degrees （～度\n～ degree(s)）｜ マイナス minus ｜ 短\nい short\nそうな んですか I see.\n03-05 03-08\nどんな季\n節が ありま す か？2.\n09"
+        }
+      ]
+    },
+    "EL04": {
+      "lesson_id": "EL04",
+      "lesson": 4,
+      "book_id": "elementary1",
+      "title_en": "It rained heavily yesterday",
+      "title_jp": "昨日はすごい雨でしたね",
+      "topic_en": "Seasons and Weather",
+      "pdf_pages": [
+        100,
+        114
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL04_11",
+          "can_do_number": 11,
+          "statement_en": "Can exchange greetings while talking about the weather. 2. 明日は 晴 れるでしょう 12 Can listen to the weather forecast and mostly understand it. 3. 台風が来てます 13 Can read and understand simple posts about the weather on social me - dia.",
+          "statement_jp": "天気の話題に触れながら、あいさつをすることができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [],
+      "english_notes": "What is your favorite weather?\nCan exchange greetings while talking about the weather.\nPreparation for the words\nListen while looking at the illustrations.\nListen and repeat the words.\nListen and choose from a-f.\nListen to the dialogs.\nEach person is exchanging greetings with a neighbor or acquaintance.\nHow is the weather? Choose from a-d.\na. b. c. d.\nListen to the dialogs again. Which day’s weather are they talking about? Choose from ア-ウ.\nCheck the words and listen to the dialogs again.\nになる be annoying ｜ ゆうべ last night\n当ですね That’s true.\nListen to the recording and fill in the blanks.\nWhat do you think is the meaning of ね at the end of a sentence?\nWhat is the difference between the forms used when talking about the present and the past?\nFocus on the expressions used and listen to the dialogs again.\nExchange greetings while talking about the weather.\nListen to the dialogs.\nShadow the dialogs.\nDecide what the weather is like and exchange greetings accordingly.",
+      "page_samples": [
+        {
+          "page": 100,
+          "text": "初級1\n初級1 L4 - 1\n第\n課\n▶トピック\nどんな天\n気が好\nき で す か？\nWhat is your favorite weather?\n昨\n日はすごい雨\nでしたね4\n季\n節と天\n気\n天\n気の話\n題に触\nれながら、あいさつをすることができる。\nCan exchange greetings while talking about the weather.\n朝\nから暑\nいですね1.\n11\n1 ことば の準\n備\nPreparation for the words\n【天\n気】\na. 晴\nれ／晴\nれる／いい天\n気 b . くもり／くもる c. 雨\n／雨\nが降\nd. 雪\n／雪\nが降\nる e. 風\n／風\nが吹\nく f. 雷\n／ 雷\nが鳴\n(1) 絵\nを見\nながら聞\nきましょう。\nListen while looking at the illustrations.\n(2) 聞\nいて言\nいましょう。\nListen and repeat the words.\n(3) 聞\nいて、a-f から選\nびましょう。\nListen and choose from a-f.\n04-01\n04-01\n04-02"
+        },
+        {
+          "page": 101,
+          "text": "第 課\n4 昨日はすごい雨でしたね\n季節と天気▶トピック\n初級1 L4 - 2\n2 会\n話を聞\nきましょう。\nListen to the dialogs.\n近\n所の人\nや知\nり合\nいと会\nったときに 、あいさつ をしています。\nEach person is exchanging greetings with a neighbor or acquaintance.\n(1) どんな天\n気ですか。a-d から選\nびましょう。\nHow is the weather? Choose from a-d.\na. b. c. d.\n① 04-03 ② 04-04 ③ 04-05 ④ 04-06\nどんな天\n気？\n(2) もういちど聞\nきましょう。\nいつの天\n気のことを話\nしていますか。ア - ウから選\nびましょう。\nListen to the dialogs again. Which day’s weather are they talking about? Choose from ア-ウ.\nア. 今\nの天\n気 イ. 昨\n日の天\n気 ウ. 毎\n日の天\n気\n① 04-03 ② 04-04 ③ 04-05 ④ 04-06\nいつの天\n気？ ，\n(3) ことばを確\n認して、もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\nだいぶ much ｜ 嫌\nになる be annoying ｜ ゆうべ last night\n本\n当ですね That’s true.\n04-03 04-06"
+        },
+        {
+          "page": 102,
+          "text": "第 課\n4 昨日はすごい雨でしたね\n季節と天気▶トピック\n初級1 L4 - 3\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\n今\n日はいい天\n気です 。\n毎\n日、 よく降\nります 。\n昨\n日はすごい雨\nね。\n風\nも ね。\n大\n変 ね。\n文\n末の 「ね」には、どんな意\n味があると思\nいますか。 文\n法\nノート ➊\nWhat do you think is the meaning of ね at the end of a sentence?\n今\nのことを言\nうときと、過\n去のことを言\nうときでは、形\nはどう違\nいますか。 文\n法\nノート ➋\nWhat is the difference between the forms used when talking about the present and the past?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n04-07\n04-03 04-06"
+        },
+        {
+          "page": 103,
+          "text": "第 課\n4 昨日はすごい雨でしたね\n季節と天気▶トピック\n初級1 L4 - 4\n3 天\n気の話\nをしながら、あいさつをしましょう。\nExchange greetings while talking about the weather.\nお は ようご ざ い ま す。\nだいぶ 暖\nかくなりました ね。 嫌\nになります ね。 風\nもすごかったです ね。\nお は ようご ざ い ま す。\n本\n当ですね。\n今\n日は いい天\n気です ね。 毎\n日、よく降\nります ね。 昨\n日は すごい雨\nでした ね。\nそうで すね 。\nいい天\n気です ね。\nそうで すね 。\nよく降\nります ね。\nそうで すね 。\nすごい雨\nでした ね。\n(1) 会\n話を聞\nきましょう。\nListen to the dialogs.\n(2) シャドーイングしましょう。\nShadow the dialogs.\n(3) どんな天\n気かを決\nめて、それに合\nったあいさつをしましょう。\nDecide what the weather is like and exchange greetings accordingly.\n04-08 04-09 04-10\n04-08 04-09 04-10"
+        }
+      ]
+    },
+    "EL05": {
+      "lesson_id": "EL05",
+      "lesson": 5,
+      "book_id": "elementary1",
+      "title_en": "It is very lively and convenient",
+      "title_jp": "とてもにぎやかで便利です",
+      "topic_en": "Towns and Neighborhoods",
+      "pdf_pages": [
+        115,
+        130
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL05_14",
+          "can_do_number": 14,
+          "statement_en": "Can talk in simple terms about your impressions of your town. 2. 場 所 は 不 便 だ けどき れ いで すよ 15 Can ask questions about recommended places around town and under - stand the answers. 3. タウンマップ 16 Can look at a town map and get information about famous spots, stores, etc.",
+          "statement_jp": "住 んでいる町の 感 想を簡単に話 すことが できる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [],
+      "english_notes": "What is it like where you live?\nCan talk in simple terms about your impressions of your town.\nPreparation for the words\nListen while looking at the illustrations.\nListen and repeat the words.\nListen and choose from a-k.\nListen to the dialogs.\nThe four people are talking about the town they each live in now.\nWhat is the town like? Choose from a-k of 1 .\nCheck the words and listen to the dialogs again.\nかに certainly ｜ 住\nみやすい comfortable ｜ 店\nstore / restaurant\nListen to the recording and fill in the blanks.\nWhat expression was used to connect the adjectives?\nFocus on the expressions used and listen to the dialogs again.\nTalk about the town you live in.\nListen to the dialogs.\nShadow the dialogs.\nPractice using the words from 1 .\nFreely talk about the town you live in.",
+      "page_samples": [
+        {
+          "page": 115,
+          "text": "初級1\n初級1 L5 - 1\n第\n課\n▶トピック\nあなたの住\nんで い る町\nは 、 ど ん な ところで す か？\nWhat is it like where you live?\nとてもにぎやかで便\n利です5\n私\nの町\n住\nんで い る町\nの感\n想を簡\n単に話\nすことが できる。\nCan talk in simple terms about your impressions of your town.\nこの町\nは どうで す か？1.\n14\n1 ことば の準\n備\nPreparation for the words\n【どんな町\n？】\na. 便\n利（な） b. 不\n便（な） c . に ぎ や か（ な ） d. 静\nか（ な ）\ne. 緑\nが多\nい f. 緑\nが少\nない g. 人\nがやさしい／親\n切（な） h. 人\nが冷\ni. 田\n舎 j. 都\n会 k. 景\n色が き れ い（ な ）"
+        },
+        {
+          "page": 116,
+          "text": "第 課\n5 とてもにぎやかで便利です\n私の町▶トピック\n初級1 L5 - 2\n(1) 絵\nを見\nながら聞\nきましょう。\nListen while looking at the illustrations.\n(2) 聞\nいて言\nいましょう。\nListen and repeat the words.\n(3) 聞\nいて、a-k から選\nびましょう。\nListen and choose from a-k.\n2 会\n話を聞\nきましょう。\nListen to the dialogs.\n今\n住\nんでいる町\nについて、4\n人の人\nが話\nしています。\nThe four people are talking about the town they each live in now.\n(1) この町\nはどうだと言\nっていますか。 1 の a-k から選\nびましょう。\nWhat is the town like? Choose from a-k of 1 .\n① 05-03 ② 05-04 ③ 05-05 ④ 05-06\n， ， ， ， ， ， ，\n(2) ことばを確\n認して、もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\n確\nかに certainly ｜ 住\nみやすい comfortable ｜ 店\nstore / restaurant\n05-01\n05-01\n05-02\n05-03 05-06"
+        },
+        {
+          "page": 117,
+          "text": "第 課\n5 とてもにぎやかで便利です\n私の町▶トピック\n初級1 L5 - 3\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\nとてもにぎやか 、便\n利で す。\n人\nも店\nも多\n、にぎやかですね。\n緑\nが多\n、静\nか いいですね。\n形\n容詞をつなげるとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➊\nWhat expression was used to connect the adjectives?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n05-07\n05-03 05-06"
+        },
+        {
+          "page": 118,
+          "text": "第 課\n5 とてもにぎやかで便利です\n私の町▶トピック\n初級1 L5 - 4\n3 自\n分の住\nんで い る町\nについて話\nしましょう。\nTalk about the town you live in.\nこの町\nには慣\nれ ました か？\nでも、緑\nが少\nない で す。 それに、景\n色がきれい で す。\nどう ですか ？ この町\nは。\nそうで すか。\nそうで すか。\nそうで すね 。\n(1) 会\n話を聞\nきましょう。\nListen to the dialogs.\n(2) シャドーイングしましょう。\nShadow the dialogs.\n(3) 1 のことばを使\nって、練\n習しましょう。\nPractice using the words from 1 .\n(4) 自\n分の住\nんでいる町\nについて、自\n由に話\nしましょう。\nFreely talk about the town you live in.\n05-08 05-09\n05-08 05-09\nはい、おかげさまで。\nそうですねえ ……。 にぎやか で、 便\n利 で す。\nそうですねえ ……。 人\nがやさし くて、住\nみやすい で す。"
+        }
+      ]
+    },
+    "EL06": {
+      "lesson_id": "EL06",
+      "lesson": 6,
+      "book_id": "elementary1",
+      "title_en": "Please tell me how to get to the post office",
+      "title_jp": "郵便局はどう行ったらいいですか ？",
+      "topic_en": "Towns and Neighborhoods",
+      "pdf_pages": [
+        131,
+        147
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL06_17",
+          "can_do_number": 17,
+          "statement_en": "Can ask and understand directions. 2. そちらに行きたいんですが … 18 Can ask and understand directions on the phone. 3. この 先 に白くて大きな 家 が あります 19 Can give directions to the destination by car when, for example, some - one gives you a ride.",
+          "statement_jp": "ほかの人に道をたずねて、その答えを理解することができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [],
+      "english_notes": "Have you asked someone for directions or been asked for directions?\nCan ask and understand directions.\nPreparation for the words\nListen while looking at the illustrations.\nListen and repeat the words.\nListen and choose from a-f.\nListen while looking at the illustrations.\nListen and repeat the words.\nListen and choose from a-h.\nf. 1\nh. 3\ng. 2\nListen to the dialogs.\nEach person does not know how to get to their destination and is asking someone for directions.\nWhere are ①-④ located? Choose from a - d on the map.\nCheck the words and listen to the dialogs again.\nずっと without turning ｜ 市\n立 municipal ｜ すぐ just ｜ 曲\nがったところ after turning\na\nb\nc\nd\nListen to the recording and fill in the blanks.\nWhat expression was used to ask for directions?\nWhat expression was used to give directions?\nWhat expression was used to correct the other person?\nFocus on the expressions used and listen to the dialogs again.",
+      "page_samples": [
+        {
+          "page": 131,
+          "text": "初級1\n初級1 L6 - 1\n第\n課\n▶トピック\nほかの人\nに道\nを聞\nいたり、聞\nかれたりしたことがありますか？\nHave you asked someone for directions or been asked for directions?\n郵\n便局はどう行\nったらい い で す か？6\n私\nの町\nほかの人\nに道\nをたずねて、その答\nえを理\n解することが できる。\nCan ask and understand directions.\n1 ことば の準\n備\nPreparation for the words\n【町\nにあるもの】\n(1) 絵\nを見\nながら聞\nきましょう。\nListen while looking at the illustrations.\n(2) 聞\nいて言\nいましょう。\nListen and repeat the words.\n(3) 聞\nいて、a-f から選\nびましょう。\nListen and choose from a-f.\n06-01\n06-01\n06-02\nバス停\nは どこで す か？1.\n17\na. 信\n号\nb. 横\n断歩道\nc. 角\nf. 橋\ne. 道\nd. 交\n差点"
+        },
+        {
+          "page": 132,
+          "text": "第 課\n6 郵便局はどう行ったらいいで す か？\n私の町▶トピック\n初級1 L6 - 3初級1 L6 - 2\n【道\n案内】\n(1) 絵\nを見\nながら聞\nきましょう。\nListen while looking at the illustrations.\n(2) 聞\nいて言\nいましょう。\nListen and repeat the words.\n(3) 聞\nいて、a-h から選\nびましょう。\nListen and choose from a-h.\n06-03\n06-03\n06-04\na . まっすぐ行\nb. 左\nに曲\nがる c. 右\nに曲\nがる e. 橋\nを渡\nd. 道\nを渡\nf. 1\nつ目\nの角\nh. 3\nつ目\nの角\ng. 2\nつ目\nの角"
+        },
+        {
+          "page": 133,
+          "text": "第 課\n6 郵便局はどう行ったらいいで す か？\n私の町▶トピック\n初級1 L6 - 3\n2 会\n話を聞\nきましょう。\nListen to the dialogs.\n目\n的地への行\nき方\nが わ かりませ ん 。人\nに道\nを聞\nいています。\nEach person does not know how to get to their destination and is asking someone for directions.\n(1) ① - ④はどこにありますか。地\n図の a - d から選\nびましょう。\nWhere are ①-④ located? Choose from a - d on the map.\n①バス停\n06-05\n②郵\n便局\n06-06\n③マルイチデパート\n06-07\n④科\n学博\n物館\n06-08\n(2) ことばを確\n認して、もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\nずっと without turning ｜ 市\n立 municipal ｜ すぐ just ｜ 曲\nがったところ after turning\n06-05 06-08\na\nb\nc\nd"
+        },
+        {
+          "page": 134,
+          "text": "第 課\n6 郵便局はどう行ったらいいで す か？\n私の町▶トピック\n初級1 L6 - 5初級1 L6 - 4\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\nバス停\nは ですか？\n郵\n便局は 行\nったらいいですか？\nマルイチデパートに行\nき 。\nこの道\nをまっすぐ 、2\nつ目\nの信\n号を左\nに ください。\n1\nつ目\n、2\nつ目\nです。\n市\n立博\n物館 科\n学博\n物館です。\n道\nを聞\nくとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➊\nWhat expression was used to ask for directions?\n道\nを教\nえるとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➋\nWhat expression was used to give directions?\n訂\n正するとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➌\nWhat expression was used to correct the other person?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n06-09\n06-05 06-08"
+        }
+      ]
+    },
+    "EL07": {
+      "lesson_id": "EL07",
+      "lesson": 7,
+      "book_id": "elementary1",
+      "title_en": "I will be a bit late because I got lost",
+      "title_jp": "道に 迷ってちょっと遅 れます",
+      "topic_en": "Going Out",
+      "pdf_pages": [
+        148,
+        160
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL07_20",
+          "can_do_number": 20,
+          "statement_en": "Can ask and understand the time and place to meet. 2. 明 日 、 何 時 にします か？ 21 Can talk about and decide the time and place to meet. 3. 電車が止まりました 22 Can read and understand a message saying that the person you are meeting will be late. 4. 3 0 分おくれます 23 Can write a message saying that you will be late for the arranged time.",
+          "statement_jp": "待ち合わせや集合の時間と場所を質問して、 その答えを理解することができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [
+        "平\n和の鳥\n",
+        "6 時",
+        "ちょ っと早",
+        "どこにしますか ？",
+        "わかりません。駅"
+      ],
+      "english_notes": "What kind of places do you meet with people? Do you arrive right on time at the time you promised?\nCan ask and understand the time and place to meet.\nListen to the dialogs.\nThe four people are each asking questions about the time and place to meet.\nWhat time are they going? Take notes.\nListen to the dialogs again. Where are they going? Choose from a-d.\nCheck the words and listen to the dialogs again.\n合（する） assemble ｜ では so ｜ 案\n内する show / guide ｜ 待\nわせ meet with\nまる start ｜ ス タッフ staff ｜ 3\n0 分前 30 minutes before （～前\n～before）\nCan talk about and decide the time and place to meet.\nListen to the dialog.\nViet-san, Li-san, and Sato-san are co-workers. They are going out for dinner on their day off.\nFirst, listen to the dialog without looking at the script. What time and where did they decide to meet?\nListen to the dialog again. This time, follow along with the script.\n和 peace ｜ 鳥\nbird ｜ 像\nstatue\n現This expression is used to ask\nagain what the other person\nsaid if you do not understand\nwhat they mean.\nListen to the recording and fill in the blanks.\nWhat expression was used to suggest a time and place to meet?\nWhat expression was used to make another suggestion?\nFocus on the expressions used and listen to the dialog again.",
+      "page_samples": [
+        {
+          "page": 148,
+          "text": "初級1\n初級1 L7 - 1\n第\n課\n▶トピック\n待\nち合\nわせはどんな場\n所でしますか ？ あなたは約\n束の時\n間ちょうどに行\nき ま す か？\nWhat kind of places do you meet with people? Do you arrive right on time at the time you promised?\n道\nに迷\nって ちょっと遅\nれます7\nいっしょに出\n待\nち合\nわせや集\n合の時\n間と場\n所を質\n問して、 そ の答\nえを理\n解することが できる。\nCan ask and understand the time and place to meet.\n何\n時に どこで す か？1.\n20\n1 会\n話を聞\nきましょう。\nListen to the dialogs.\n待\nち合\nわせの時\n間や場\n所について、4\n人の人\nが質\n問しています。\nThe four people are each asking questions about the time and place to meet.\n(1) 何\n時に行\nきますか。 メモしましょう。\nWhat time are they going? Take notes.\n① 07-01 ② 07-02 ③ 07-03 ④ 07-04\n何\n時？\n(2) もういちど聞\nきましょう。 どこに行\nきますか。a-d から選\nび ましょう。\nListen to the dialogs again. Where are they going? Choose from a-d.\na. 駅\nの改\n札 b. 受\n付 c. ホール d. 会\n社の門\n① 07-01 ② 07-02 ③ 07-03 ④ 07-04\nど こ？"
+        },
+        {
+          "page": 149,
+          "text": "第 課\n7 道に迷ってちょっと遅れます\nいっしょに出 かける▶トピック\n初級1 L7 - 2\n(3) ことばを確\n認して、 もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\n集\n合（する） assemble ｜ では so ｜ 案\n内する show / guide ｜ 待\nち合\nわせ meet with\nイベント event ｜ 始\nまる start ｜ ス タッフ staff ｜ 3\n0 分前 30 minutes before （～前\n～before）\n07-01 07-04\n待\nち合\nわせの時\n間と場\n所を相\n談して決\nめることが できる。\nCan talk about and decide the time and place to meet.\n明\n日、何\n時にしま す か？2.\n21\n1 会\n話を聞\nきましょう。\nListen to the dialog.\nベトさんと李\nさんと佐\n藤さんの 3人\nは、会\n社\nの同\n僚で す。休\nみの日\nに 、い っしょに食\n事に行\nくこと に し まし た 。\nViet-san, Li-san, and Sato-san are co-workers. They are going out for dinner on their day off.\n(1) はじめに、 スクリプトを見\nないで会\n話を聞\nきましょう。\n3 人\nは、何\n時に、どこで待\nち合\nわせすることにしましたか。\nFirst, listen to the dialog without looking at the script. What time and where did they decide to meet?\n何\n時？\nど こ？\n07-05\nベト 佐\n藤\n李"
+        },
+        {
+          "page": 150,
+          "text": "第 課\n7 道に迷ってちょっと遅れます\nいっしょに出 かける▶トピック\n初級1 L7 - 3\n(2) スクリプトを見\nながら聞\nきましょう。 07-05\nListen to the dialog again. This time, follow along with the script.\nベ ト ： 明\n日、何\n時にしま す か？\n佐\n藤 ： 6時\nは どうで す か？\n李\n： 6時\nはちょっと早\nいで す。 6時\n半\nで も い いで す か？\nベ ト ： 6時\n半\n？ いいです よ。\n佐\n藤 ： じゃあ、そうしましょう。待\nち合\nわ せして、 い っしょに行\nき ま す か？\n李\n： そうしましょう。どこにしますか？\n佐\n藤 ： じ ゃ あ 、駅\n前の「平\n和の鳥\n」の像\nの前\nにしましょう。\nベ ト ： え ？ それ、何\nで す か？\n李\n： 私\nもわかりません。駅\nの改\n札で も い いで す か？\n佐\n藤 ： じゃあ、そうしましょう。6時\n半\nに駅\nの改\n札集\n合で。\nベ ト ： は い 。\n李\n： わ か り ま し た 。\n平\n和 peace ｜ 鳥\nbird ｜ 像\nstatue\nそれ、何\nですか？\n相\n手が言\nないときに聞\nき返\nす表\n現This expression is used to ask\nagain what the other person\nsaid if you do not understand\nwhat they mean."
+        },
+        {
+          "page": 151,
+          "text": "第 課\n7 道に迷ってちょっと遅れます\nいっしょに出 かける▶トピック\n初級1 L7 - 4\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\nＡ：明\n日、何\n時にしま す か？\nＢ：6 時\nは ？\nＡ：ちょ っと早\nいで す。 6時\n半\n？\nＡ：どこにしますか ？\nＢ：駅\n前の「平\n和の鳥\n」の像\nの前\nにしましょう。\nＡ：わかりません。駅\nの改\n札 ？\n待\nち合\nわせの時\n間や場\n所を提\n案するとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➊\nWhat expression was used to suggest a time and place to meet?\n別\nの提\n案をするとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➋\nWhat expression was used to make another suggestion?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。\nFocus on the expressions used and listen to the dialog again.\n07-06\n07-05"
+        }
+      ]
+    },
+    "EL08": {
+      "lesson_id": "EL08",
+      "lesson": 8,
+      "book_id": "elementary1",
+      "title_en": "Have you ever played baseball?",
+      "title_jp": "野球、したことありますか？",
+      "topic_en": "Going Out",
+      "pdf_pages": [
+        161,
+        181
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL08_24",
+          "can_do_number": 24,
+          "statement_en": "Can ask someone out to eat, go shopping, or go to an event while asking about their experience and interest. 2. この あと、 どうします か？ 25 Can discuss what to do next and where to go while you are out with someone. 3. パンダがかわいかったです 26 Can give your impressions about the event to the person you went with.",
+          "statement_jp": "",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [
+        " パ ー ム キ ッ チ ン ",
+        "いえ、 で す。",
+        "ポー ト タワー、 登",
+        "いいえ ……。",
+        "「 パ ー ム キ ッ チ ン 」っ て い う ア ジ ア レ ス ト ラ ン 、行",
+        "いいえ、 。",
+        "プロレ ス を見",
+        "いいえ、見",
+        "え、 で す。",
+        "いいですね。行",
+        "すご くおいしいです よ。",
+        "いいですね。ぜひ、行"
+      ],
+      "english_notes": "What kind of places do you ask your friend to accompany you to?\nCan ask someone out to eat, go shopping, or go to an event while asking about their experience and interest.\nListen to the dialogs.\nThe six people are each inviting an acquaintance somewhere.\nWhere did they invite their acquaintance to go? Choose from a-h.\nWhat was the answer by the person invited? Write 〇 if the person agrees, and Write × if the person does not agree.\nCheck the words and listen to the dialogs again.\nりない not enough\n理（な） impossible\nListen to the recording and fill in the blanks.\nWhat expression was used to ask about the person’s experience?\nWhat expression was used to invite someone?\nFocus on the expressions used and listen to the dialogs again.\nInvite a person who is new to town.\nListen to the dialogs.\nShadow the dialogs.\nRole-play this situation. There is a person who is new to your town. Invite the person to dinner, to go shopping, or to attend an\nevent.",
+      "page_samples": [
+        {
+          "page": 161,
+          "text": "初級1\n初級1 L8 - 1\n第\n課\n▶トピック\n友\nだちを誘\nって、 ど ん な ところ に行\nき ま す か？\nWhat kind of places do you ask your friend to accompany you to?\n野\n球、したことありますか？8\nいっしょに出\n相\n手の経\n験や興\n味をたずねながら、食\n事や買\nい物\n、 イベ ントな ど に誘\nうことが できる。\nCan ask someone out to eat, go shopping, or go to an event while asking about their experience and interest.\nもう行\nきました か？1.\n24\n1 会\n話を聞\nきましょう。\nListen to the dialogs.\n6 人\nの人\nが、知\nり合\nいを誘\nっています。\nThe six people are each inviting an acquaintance somewhere.\n(1) 何\nに誘\nいましたか。a-h から選\nび ましょう。\nWhere did they invite their acquaintance to go? Choose from a-h.\na. 動\n物園 b. お城\nc. レストラン d. 博\n物館\ne. アウトレットモール f. プロレス g. タワー h. 野\n球\n① 08-01 ② 08-02 ③ 08-03 ④ 08-04 ⑤ 08-05 ⑥ 08-06\n何\nに？"
+        },
+        {
+          "page": 162,
+          "text": "第 課\n8 野球、したことありますか？\nいっしょに出 かける▶トピック\n初級1 L8 - 2\n(2) 誘\nわれた人\nは、 どう答\nえましたか。\n行\nきたいと言\nって い るとき は 〇 、行\nきたくないと言\nって い るとき は×を書\nきましょう。\nWhat was the answer by the person invited? Write 〇 if the person agrees, and Write × if the person does not agree.\n① 08-01 ② 08-02 ③ 08-03 ④ 08-04 ⑤ 08-05 ⑥ 08-06\n行\nき た い？\n(3) ことばを確\n認して、 もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\nアジア Asia ｜ すごく very ｜ 試\n合 game ｜ やる do ｜ メンバー member ｜ 足\nりない not enough\n無\n理（な） impossible\n08-01 08-06\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\nＡ：新\nし い ア ウトレ ットモ ール 、 行\nき ました か？\nＢ：いえ、 で す。\nＡ：ポー ト タワー、 登\nりました か？\nＢ：いいえ ……。\nＡ ：「 パ ー ム キ ッ チ ン 」っ て い う ア ジ ア レ ス ト ラ ン 、行\nった か？\nＢ：いいえ、 。\nＡ：プロレ ス を見\nた か？\nＢ：いいえ、見\nた で す。\n08-07 08-08"
+        },
+        {
+          "page": 163,
+          "text": "第 課\n8 野球、したことありますか？\nいっしょに出 かける▶トピック\n初級1 L8 - 3\nＡ：野\n球、した ？\nＢ：え、 で す。\n経\n験を聞\nくとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➊➋\nWhat expression was used to ask about the person’s experience?\nＡ：市\n民体\n育館で試\n合が ありま すよ 。\nいっ しょに 行\nき ？\nＢ：いいですね。行\nきましょう。\nＡ：すご くおいしいです よ。\n今\n度、 いっしょに 行\nき ？\nＢ：いいですね。ぜひ、行\nきましょう。\n誘\nうとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➌\nWhat expression was used to invite someone?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n08-01 08-06"
+        },
+        {
+          "page": 164,
+          "text": "第 課\n8 野球、したことありますか？\nいっしょに出 かける▶トピック\n①\n②\n初級1 L8 - 4\n2 新\nしく町\nに来\nた人\nを誘\nいましょう。\nInvite a person who is new to town.\n新\nし い ア ウトレ ット モ ール 、もう 行\nき ました か？\nプロレスを見\nた こと が ありま す か？\nい いえ、 ま だ で す。\nい いえ、 な いで す。\nいいえ、ありません。\nじゃあ、今\n度、 いっしょに行\nき ま せ ん か？\n今\n度の日\n曜日、市\n民体\n育館で試\n合があります よ。\nいっしょに見\nに行\nき ま せ ん か？\nありがとうご ざ い ま す。 ぜ ひ。\nえー 、 すみ ま せ ん 。\nプロレス はちょっと……。\nへー、いいですね 。\n行\nき ましょう。\n(1) 会\n話を聞\nきましょう。 ／\nListen to the dialogs.\n(2) シャド ー イン グ しましょう。 ／\nShadow the dialogs.\n(3) ロールプレイをしましょう。\n自\n分の町\nに新\nしく来\nた人\nが い ま す。 そ の人\nを食\n事や買\nい物\n、 イベ ントな ど に誘\nいましょう。\nRole-play this situation. There is a person who is new to your town. Invite the person to dinner, to go shopping, or to attend an\nevent.\n08-09 08-10 08-11\n08-09 08-10 08-11"
+        }
+      ]
+    },
+    "EL09": {
+      "lesson_id": "EL09",
+      "lesson": 9,
+      "book_id": "elementary1",
+      "title_en": "Will you tell me how to read this?",
+      "title_jp": "読 み方 を 教 えてもらえま せん か？",
+      "topic_en": "Eating Out",
+      "pdf_pages": [
+        182,
+        202
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL09_27",
+          "can_do_number": 27,
+          "statement_en": "Can talk in simple terms about your experience learning Japanese. 2. 会話は得意です 28 Can give your impressions and comments about learning Japanese. 3. 日本語をチェックしてもらえませんか？ 29 Can ask someone for help when, for example, you have a problem with Japanese. 4. いい 練 習 のし方 が あります か？ 30 Can read an online forum about learning Japanese and understand the recommended study methods.",
+          "statement_jp": "日本語の学習経験について、簡単に話すことができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [
+        " － ",
+        "入\n門"
+      ],
+      "english_notes": "How is your Japanese learning going? What do you find interesting? What do you find difficult?\nCan talk in simple terms about your experience learning Japanese.\nListen to the dialogs.\nThe four people are each talking about their experience studying Japanese.\nWhere did they study Japanese? Choose from a-d.\nListen to the dialogs again. How long did they study Japanese? Take notes. Write ‘-’ if the person did not mention it.\nCheck the words and listen to the dialogs again.\n間 for two years （～間\nfor ～）｜ 自\n分で on my own\nListen to the recording and fill in the blanks.\nWhat expression was used to describe how they studied Japanese?\nWhat expression was used to describe the period?\nFocus on the expressions used and listen to the dialogs again.\nListen to the dialog.\nShadow the dialog.\nTalk about yourself.\nTalk about your experience of learning Japanese.\nPreparation for the words\nCan give your impressions and comments about learning Japanese.",
+      "page_samples": [
+        {
+          "page": 182,
+          "text": "初級1\n初級1 L9 - 1\n第\n課\n▶トピック\n日\n本語の勉\n強は どうで す か？ 何\nが お もし ろ いで す か？ 何\nが難\nし いで す か？\nHow is your Japanese learning going? What do you find interesting? What do you find difficult?\n読\nみ方\nを教\nえてもらえ ま せ ん か？9\n日\n本語学\n習\n日\n本語の学\n習経験について、簡\n単に話\nすことが できる。\nCan talk in simple terms about your experience learning Japanese.\nどこで日\n本語を勉\n強しました か？1.\n27\n1 会\n話を聞\nきましょう。\nListen to the dialogs.\n日\n本語の学\n習経験について、4\n人の人\nが話\nしています。\nThe four people are each talking about their experience studying Japanese.\n(1) どこで日\n本語を勉\n強しましたか。a-d から選\nび ましょう。\nWhere did they study Japanese? Choose from a-d.\na. アニメ b. 日\n本語学\n校 c. 高\n校 d. 本\n① 09-01 ② 09-02 ③ 09-03 ④ 09-04\nどこで？\n(2) もういちど聞\nきましょう。 ど れぐらいの期\n間、日\n本語を勉\n強しましたか。 メモしましょう。\n言\nっ て い な い と き は「 － 」を書\nきましょう。\nListen to the dialogs again. How long did they study Japanese? Take notes. Write ‘-’ if the person did not mention it.\n① 09-01 ② 09-02 ③ 09-03 ④ 09-04\nど れぐ ら い？"
+        },
+        {
+          "page": 183,
+          "text": "第 課\n9 読み方を教えてもらえません か？\n日本語学習▶トピック\n初級1 L9 - 2\n(3) ことばを確\n認して、 もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\nどれぐらい how long ｜ 上\n手（な） well ｜ 2 年\n間 for two years （～間\nfor ～）｜ 自\n分で on my own\nまだまだです Not even close. ｜ そんなことないです Not really.\n09-01 09-04\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\n日\n本語を勉\n強しました か？\n日\n本語学\n校 勉\n強しました。\nアニメ 勉\n強しました。\n自\n分 勉\n強しました。\n勉\n強しました か？\nで す。\n高\n校で、 勉\n強しました。\n手\n段を言\nうとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➊\nWhat expression was used to describe how they studied Japanese?\n期\n間を言\nうとき、 どんな形\nを使\nって い ました か。 『入\n門』\nWhat expression was used to describe the period?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n09-05\n09-01 09-04"
+        },
+        {
+          "page": 184,
+          "text": "第 課\n9 読み方を教えてもらえません か？\n日本語学習▶トピック\n初級1 L9 - 3\n(1) 会\n話を聞\nきましょう。\nListen to the dialog.\n(2) シャド ー イン グ しましょう。\nShadow the dialog.\n(3) 自\n分のことを話\nしましょう。\nTalk about yourself.\n09-06\n09-06\n2 日\n本語の学\n習経験について話\nしましょう。\nTalk about your experience of learning Japanese.\n日\n本語で き ま す か？\nどれぐらい勉\n強しました か？\nはい、少\nし。\n1年\nぐらい で す。\nどこで勉\n強しました か？\n日\n本語学\n校／アニメ で勉\n強しました。\n大\n学"
+        },
+        {
+          "page": 185,
+          "text": "第 課\n9 読み方を教えてもらえません か？\n日本語学習▶トピック\n初級1 L9 - 4\n1 ことば の準\n備\nPreparation for the words\n【日\n本語の勉\n強】\nf. 似\nている g. 違\nh. 得\n意（な） i. 苦\n手（な）\nj. 文\n法 k. 発\n音 l. 文\n字 m. 会\n話\n（ ひ らが な・カ タカ ナ・漢\n字）\n日\n本語の勉\n強について、感\n想やコメントを言\nうことが できる。\nCan give your impressions and comments about learning Japanese.\n会\n話は得\n意です2.\n28\nc. まあまあ （な）a. 簡\n単（な）\nb. おもしろい\nd. 難\ne. 大\n変（な）"
+        }
+      ]
+    },
+    "EL10": {
+      "lesson_id": "EL10",
+      "lesson": 10,
+      "book_id": "elementary1",
+      "title_en": "I would like to take a Japanese-language class",
+      "title_jp": "日本語教室に参加したいんですが…",
+      "topic_en": "Eating Out",
+      "pdf_pages": [
+        203,
+        222
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL10_31",
+          "can_do_number": 31,
+          "statement_en": "Can find and understand information such as the place, date, and time of lessons offered at a local community center, etc. 2. 合 気 道を やってみたいんですが … 32 Can ask questions about the lesson you are interested in at a local gov - ernment office and understand the answers. 3. 日本語のクラスはどうですか ？ 33 Can ask friends or answer questions about Japanese-language classes in the community. 4. 高校のとき、少し勉強しました 34 Can answer questions about your experience or your goals in learning Japanese, in order to participate in Japanese-language classes.",
+          "statement_jp": "公民館などの講座の案内を見て、場所や日時などの情報を読み取ることがで",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [],
+      "english_notes": "Have you ever taken any lessons before? What type of lessons did you take?\nRead the following flyer for information about the lessons.\nYou are reading a flyer for information about the lessons offered at a local community center.\nWhat lessons do ①-④ mention?\nCan find and understand information such as the place, date, and time of lessons offered at a local community center, etc.\nMark where you see the following topics.\n月 every month ｜ 第\n3 the third （第\n～ the first, the second, etc.）｜ 費\n用 cost ｜ 問\nわせ inquiry\n民館 local community center\n道 Japanese calligraphy ｜ 日\n時 date and time ｜ テ キスト代\ntextbook fee （～代\n～ fee）\nけ for non-Japanese residents ｜ 体\n験教室 trial lesson\n気道 aikido\nWhich lesson are you interested in?\nCan ask questions about the lesson you are interested in at a local government office and understand the answers.\nListen to the dialogs.\nThe four people who saw lesson information are each asking the person in\ncharge about the lesson they are interested in.\nWhat are the people talking about? Put a check mark where appropriate.\nListen to the dialogs again. Take notes related to the topics that you checked in (1).\nCheck the words and listen to the dialogs again.\n要（な） necessary ｜ 最\n初 at first ｜ あとは after that\nいて い ま す か？ Is there still availability?\nう pay\n味がある be interested in ｜ それとも or ｜ コ ース course ｜ 全\n意する offer\nListen to the recording and fill in the blanks.\nWhat expression was used by the person to ask about what they want to do?\nFocus on the expressions used and listen to the dialogs again.\nAsk about something you want to do.",
+      "page_samples": [
+        {
+          "page": 203,
+          "text": "初級1 L10 - 1\n初級1\n第\n課\n▶トピック\nあなたは習\nい事\nをしたこと が ありま す か？ 何\nをしたこと が ありま す か？\nHave you ever taken any lessons before? What type of lessons did you take?\n日\n本語教\n室に参\n加したい んで す が …10\n日\n本語学\n習\n1 教\n室案内のチラシを読\nみましょう。\nRead the following flyer for information about the lessons.\n公\n民館で行\nわれる教\n室の案\n内のチラシを見\nています。\nYou are reading a flyer for information about the lessons offered at a local community center.\n(1) ① - ④は、何\nの教\n室の案\n内ですか。\nWhat lessons do ①-④ mention?\n公\n民館などの講\n座の案\n内を見\nて、場\n所や日\n時などの情\n報を読\nみ取\nることが できる。\nCan find and understand information such as the place, date, and time of lessons offered at a local community center, etc.\n教\n室案内\n31\n1.\n①\n④\n②\n③"
+        },
+        {
+          "page": 204,
+          "text": "第 課\n10 日本語教室に参加したいんですが …\n日本語学習▶トピック\n初級1 L10 - 2\n(2) 次\nのことは、どこに書\nいてありますか。印\nをつけましょう。\nMark where you see the following topics.\nA. 曜\n日・時\n間\nB. 場\n所\nC. 費\n用\n🔖 大\n切なことば\n① 毎\n月 every month ｜ 第\n3 the third （第\n～ the first, the second, etc.）｜ 費\n用 cost ｜ 問\nい合\nわせ inquiry\n公\n民館 local community center\n② 書\n道 Japanese calligraphy ｜ 日\n時 date and time ｜ テ キスト代\ntextbook fee （～代\n～ fee）\n外\n国人向\nけ for non-Japanese residents ｜ 体\n験教室 trial lesson\n④ 合\n気道 aikido\n2 どの 教\n室に興\n味が あります か。\nWhich lesson are you interested in?"
+        },
+        {
+          "page": 205,
+          "text": "第 課\n10 日本語教室に参加したいんですが …\n日本語学習▶トピック\n初級1 L10 - 3\n役\n所の窓\n口などで、興\n味のある講\n座について質\n問して、 そ の答\nえを理\n解することが できる。\nCan ask questions about the lesson you are interested in at a local government office and understand the answers.\n合\n気道をやっ てみたいん ですが…2.\n32\n1 会\n話を聞\nきましょう。\nListen to the dialogs.\n教\n室の案\n内を見\nた 4\n人の人\nが、興\n味のある教\n室について\n担\n当の人\nに質\n問をして いま す。\nThe four people who saw lesson information are each asking the person in\ncharge about the lesson they are interested in.\n(1) 何\nについて話\nしていますか。□にチェック✓ をつけましょう。\nWhat are the people talking about? Put a check mark where appropriate.\n①日\n本語 10-01 ②合\n気道 10-02 ③料\n理 10-03 ④書\n道 10-04\n何\nについて？\n□ いつ ？\n□ いく ら ？\n□ 服\n・道\n具\n□ いつ ？\n□ いく ら ？\n□ 服\n・道\n具\n□ いつ ？\n□ いく ら ？\n□ 服\n・道\n具\n□ いつ ？\n□ いく ら ？\n□ 服\n・道\n具\n(2) もういちど聞\nきましょう。( 1 ) でチェックしたことについて、わかったことをメモしましょう。\nListen to the dialogs again. Take notes related to the topics that you checked in (1).\n①日\n本語 10-01 ②合\n気道 10-02 ③料\n理 10-03 ④書\n道 10-04\nどう言\nって い る？\n(3) ことばを確\n認して、もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\n① 参\n加する join ｜ クラス class\n② 必\n要（な） necessary ｜ 最\n初 at first ｜ あとは after that\nまだ 空\nいて い ま す か？ Is there still availability?\n③ 払\nう pay\n少\n々お待\nち く だ さ い（ ＝少\nし待\nってく だ さ い ）｜ もういっぱ いです It is full.\n④ 興\n味がある be interested in ｜ それとも or ｜ コ ース course ｜ 全\n部 all ｜ 用\n意する offer\n10-01 10-04"
+        },
+        {
+          "page": 206,
+          "text": "第 課\n10 日本語教室に参加したいんですが …\n日本語学習▶トピック\n初級1 L10 - 4\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\n日\n本語教\n室に参\n加 。\n合\n気道を や って 。\n書\n道教\n室に参\n加して 。\n自\n分のしたいことを言\nって相\n談するとき、 どう言\nって い ました か。 文\n法\nノート ➊\nWhat expression was used by the person to ask about what they want to do?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n（ 3 ） 自\n分がやってみたいことを相\n談しましょう。\nAsk about something you want to do.\n（例\n） 日\n本語教\n室に参\n加したいんで すが … …。\n合\n気道をやっ てみたいんですが……。\n書\n道教\n室に参\n加してみたいんですが……。\n10-05\n10-01 10-04"
+        }
+      ]
+    },
+    "EL11": {
+      "lesson_id": "EL11",
+      "lesson": 11,
+      "book_id": "elementary1",
+      "title_en": "I will bring meat and vegetables",
+      "title_jp": "肉と野 菜は 私 が 買って行きます",
+      "topic_en": "Shopping and Cooking",
+      "pdf_pages": [
+        223,
+        243
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL11_35",
+          "can_do_number": 35,
+          "statement_en": "Can discuss who will bring which item when, for example, having a bar - becue. 2. どっちが いいで す か？ 36 Can discuss what to buy when, for example, having a house party. 3. この料理、卵を使ってますか？ 37 Can ask store staff about the ingredients and expiration dates of food and understand the answers. 4. 食品表示 38 Can read food labels to check if the food contains something you cannot eat.",
+          "statement_jp": "バーベキューなどをするとき、だれが何を準備するか話し合うことができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [
+        "行\nきます"
+      ],
+      "english_notes": "Do you have parties with people sometimes? At that time, what do you eat and drink?\nCan discuss who will bring which item when, for example, having a barbecue.\nPreparation for the words\nListen while looking at the illustrations.\nListen and repeat the words.\nListen and choose from a-n.\nListen to the dialog.\nThe four people are co-workers. They have decided to have a barbecue on their day off. They are talking about how they will prepare for\nthe barbecue.\nWho will bring which item? Take notes.\nCheck the words and listen to the dialog again.\n備 preparation ｜ 飲\nbeverage ｜ デザート dessert ｜ 焼\nく grill\nListen to the recording and fill in the blanks.\nWhat expression was used before 行\nFocus on the expressions used and listen to the dialog again.\nDiscuss what to bring for a barbecue or other activity and who will bring each item.\nListen to the dialogs.\nShadow the dialogs.\nPractice using the words from 1 .\nRole-play this situation with three or more people. You are having a barbecue with friends. Freely talk about who will bring what.",
+      "page_samples": [
+        {
+          "page": 223,
+          "text": "初級1\n初級1 L11 - 1\n第\n課\n▶トピック\nだれかの家\nに集\nま ってパ ー ティー を す る こ と が あ りま す か？\nそのとき、どんなものを食\nべたり飲\nん だ りしま す か？\nDo you have parties with people sometimes? At that time, what do you eat and drink?\n肉\nと野\n菜は私\nが買\nって行\nきます11\nおいしい料\n理\nバーベキューなどをするとき、だれ が何\nを準\n備するか話\nし合\nうことが できる。\nCan discuss who will bring which item when, for example, having a barbecue.\nだれが何\nを持\nって行\nきま す か？1.\n35\n1 ことば の準\n備\nPreparation for the words\n【バーベキュー】\na. 肉\nb. 野\n菜 c . シ ーフ ー ド d. 果\n物\n（牛\n肉・豚\n肉・鶏\n肉・\nソーセージ）\n（魚\n・エ ビ・イ カ・ホ タ テ ） （ り ん ご ・ バ ナ ナ ）\ne. 焼\nきそば f. おにぎり g. 焼\n肉のたれ・ソース h. お菓\n子\ni . ソ フ ト ド リ ン ク（ お茶\n・ジュース） j. お酒\n（ ビール・ワイン・日\n本酒・焼\n酎）\nk . コップ l. お皿\nm. わりばし n. ごみ袋"
+        },
+        {
+          "page": 224,
+          "text": "第 課\n11 肉と野菜は私が買って行きます\nおいしい料理▶トピック\n初級1 L11 - 2\n(1) 絵\nを見\nながら聞\nきましょう。\nListen while looking at the illustrations.\n(2) 聞\nいて言\nいましょう。\nListen and repeat the words.\n(3) 聞\nいて、a-n から選\nびましょう。\nListen and choose from a-n.\n2 会\n話を聞\nきましょう。\nListen to the dialog.\n４\n人は会\n社の同\n僚で す。休\nみの日\nに バ ー ベ キュー をすることに なりました 。そ の準\n備について話\nしています。\nThe four people are co-workers. They have decided to have a barbecue on their day off. They are talking about how they will prepare for\nthe barbecue.\n(1) だれが何\nを持\nって行\nきますか。メモしましょう。\nWho will bring which item? Take notes.\n①楊\nさん 11-03 ②マルコさん 11-04 ③長\n谷川さん 11-05 ④ノイさん 11-06\n(2) ことばを確\n認して、もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialog again.\n準\n備 preparation ｜ 飲\nみ物\nbeverage ｜ デザート dessert ｜ 焼\nく grill\n11-01\n11-01\n11-02\n11-03 11-06\n長\n谷川\n楊"
+        },
+        {
+          "page": 225,
+          "text": "第 課\n11 肉と野菜は私が買って行きます\nおいしい料理▶トピック\n初級1 L11 - 3\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\nだれが何\nを持\nって か？\n肉\nと野\n菜は、私\nが買\nって よ。\nじゃあ、私\nはおにぎりを作\nって ね。\nじゃあ、バナナを持\nって 。\n「行\nきます」の前\nは、どんな形\nを使\nって い ました か。 文\n法\nノート ➊\nWhat expression was used before 行\nきます?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialog again.\n11-07\n11-03 11-06"
+        },
+        {
+          "page": 226,
+          "text": "第 課\n11 肉と野菜は私が買って行きます\nおいしい料理▶トピック\n初級1 L11 - 4\n3 バー ベキューなどに 、 だれ が何\nを持\nって行\nくか、話\nし合\nいましょう。\nDiscuss what to bring for a barbecue or other activity and who will bring each item.\n来\n週のバーベキュー 、\nだれが何\nを持\nって行\nき ま す か？\nじゃあ、飲\nみ物\nをお願\nいしま す。\nじゃあ、飲\nみ物\nは どうで す か？\n私\nは 肉\nと野\n菜 を買\nって行\nきま す。\n私\nは おにぎり を作\nって行\nきま す。\n私\nは バナナ を持\nって行\nきま す。\nわかりました。\n私\nは、何\nを持\nって行\nきましょうか？\n(1) 会\n話を聞\nきましょう。\nListen to the dialogs.\n(2) シャドーイングしましょう。\nShadow the dialogs.\n(3) 1 のことばを使\nって、練\n習しましょう。\nPractice using the words from 1 .\n(4) 3 人\n以\n上でロールプレイをしましょう。\n友\nだちとバーベキューをすることになりました。だれが何\nを持\nって行\nきますか。自\n由に話\nしましょう。\nRole-play this situation with three or more people. You are having a barbecue with friends. Freely talk about who will bring what.\n11-08 11-09\n11-08 11-09"
+        }
+      ]
+    },
+    "EL12": {
+      "lesson_id": "EL12",
+      "lesson": 12,
+      "book_id": "elementary1",
+      "title_en": "Your bento looks delicious",
+      "title_jp": "お弁当、おいしそうですね",
+      "topic_en": "Shopping and Cooking",
+      "pdf_pages": [
+        244,
+        266
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL12_39",
+          "can_do_number": 39,
+          "statement_en": "Can give your impressions about the appearance of food. 2. 甘くておいしいです ね 40 Can comment about the recommended food after eating it. 3. 卵の料理です 41 Can ask or answer questions about the taste, ingredients, etc. of dishes. 4. カップ焼きそばの作り方 42 Can read and understand cooking instructions for making instant food.",
+          "statement_jp": "食べ物を見て、見た目から感じた印象を言うことができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [
+        "そのお弁",
+        "あ、これですか ？ で すよ 。",
+        "それ、辛"
+      ],
+      "english_notes": "Have you ever eaten Japanese food? How was it?\nCan give your impressions about the appearance of food.\nPreparation for the words\nListen while looking at the illustrations.\nListen and repeat the words.\nListen and choose from a-i.\nListen to the dialogs.\nThe people are each looking at the food someone else brought and talking about it during a lunch break at work.\nWhat did the person say about the taste? Choose from a-i of 1 .\nCheck the words and listen to the dialogs again.\ngarden ｜ とれる pick\nListen to the recording and fill in the blanks.\nWhat expression was used to describe the impression from the appearance?\nFocus on the expressions used and listen to the dialogs again.\nTalk about your impression of a food.\nListen to the dialogs.\nShadow the dialogs.\nHave a practice conversation using the contents of 2 .\nRole-play this situation. You are having a meal with other people. Talk about what you are each eating.",
+      "page_samples": [
+        {
+          "page": 244,
+          "text": "初級1\n初級1 L12 - 1\n第\n課\n▶トピック\n日\n本の食\nべ物\nを食\nべ たこと が ありま す か？ どうで した か？\nHave you ever eaten Japanese food? How was it?\nお弁\n当、 お いしそうで す ね12\nおいしい料\n理\n食\nべ物\nを見\nて、見\nた目\nから感\nじた印\n象を言\nうことが できる。\nCan give your impressions about the appearance of food.\n辛\nそうな料\n理ですね1.\n39\n1 ことば の準\n備\nPreparation for the words\n【味\n】\na. 甘\nい b. 辛\nい c . すっ ぱ い d. し ょ っぱい e. 苦\n(1) 絵\nを見\nながら聞\nきましょう。\nListen while looking at the illustrations.\n(2) 聞\nいて言\nいましょう。\nListen and repeat the words.\n(3) 聞\nいて、a-i から選\nびましょう。\nListen and choose from a-i.\n12-01\n12-01\n12-02\nf. 味\nがこい g. 味\nがうすい h. おいしい i. まずい"
+        },
+        {
+          "page": 245,
+          "text": "第 課\n12 お弁当、おいしそうですね\nおいしい料理▶トピック\n初級1 L12 - 2\n2 会\n話を聞\nきましょう。\nListen to the dialogs.\n職\n場の昼\n休みに、ほかの人\nが持\nって来\nた食\nべ物\nを見\nて話\nして いま す。\nThe people are each looking at the food someone else brought and talking about it during a lunch break at work.\n(1) 味\nについて言\nうとき、どんなことばを使\nっていますか。 1 の a-i から選\nびましょう。\nWhat did the person say about the taste? Choose from a-i of 1 .\n①お弁\n当 12-03 ②カレー 12-04 ③ チョコレートバニラ\n12-05\n④みかん 12-06\n，\n(2) ことばを確\n認して、もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\n庭\ngarden ｜ とれる pick\n12-03 12-06"
+        },
+        {
+          "page": 246,
+          "text": "第 課\n12 お弁当、おいしそうですね\nおいしい料理▶トピック\n初級1 L12 - 3\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\nＡ：そのお弁\n当、おいし ですね。\nＢ：あ、これですか ？ で すよ 。\nＡ：それ、辛\n料\n理ですね。\nＢ：私\nの国\nの カレ ーで す。 あまり で すよ 。\nへー、甘\nですね。\nまだ、ちょっとす っぱ ですね。\n見\nた目\nの印\n象を言\nうとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➊ ❷\nWhat expression was used to describe the impression from the appearance?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n12-07\n12-03 12-06"
+        },
+        {
+          "page": 247,
+          "text": "第 課\n12 お弁当、おいしそうですね\nおいしい料理▶トピック\n初級1 L12 - 4\n3 食\nべ物\nの印\n象を話\nしましょう。\nTalk about your impression of a food.\nそれ、何\nで す か？\nおいし そうで すね 。\nこれは 私\nの国\nのカレー で す。\nあまり辛\nくな いで すよ 。\n辛\nそうで すね 。\n(1) 会\n話を聞\nきましょう。\nListen to the dialogs.\n(2) シャドーイングしましょう。\nShadow the dialogs.\n(3) 2 の会\n話の内\n容で、練\n習しましょう。\nHave a practice conversation using the contents of 2 .\n(4) ロールプレイをしましょう。\nみんなで食\n事をしています。お互\nいの料\n理について話\nしましょう。\nRole-play this situation. You are having a meal with other people. Talk about what you are each eating.\n12-08 12-09\n12-08 12-09"
+        }
+      ]
+    },
+    "EL13": {
+      "lesson_id": "EL13",
+      "lesson": 13,
+      "book_id": "elementary1",
+      "title_en": "It will probably end in about ten minutes",
+      "title_jp": "あと 10 分ぐらいで 終わりそうです",
+      "topic_en": "At Work",
+      "pdf_pages": [
+        267,
+        289
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL13_43",
+          "can_do_number": 43,
+          "statement_en": "Can tell your supervisor what is going on when you have a problem at work. 2. どのぐらいかかりそうですか？ 44 Can briefly answer when asked about the status of work. 3. コピー機の使い方を教えてもらえませんか？ 45 Can ask about and understand, for example, how to use a machine at work. 4. 会議の準備は、どうしますか ？ 46 Can listen to and understand explanations and instructions on tasks at work. 5. お知らせのメール 47 Can read and understand a simple email for work.",
+          "statement_jp": "職場で困ったことがあったとき、上司などに状況を伝えることができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [
+        "～ん ですが"
+      ],
+      "english_notes": "What kind of work are you good at? What kind of work are you not good at?\nCan tell your supervisor what is going on when you have a problem at work.\nListen to the dialogs.\nThere was a problem at work.\nWhat kind of problem? Choose from a-d.\nListen to the dialogs again. What kind of instructions did each person receive? Choose from ア-エ.\nCheck the words and listen to the dialogs again.\nコ ー ヒー マ シ ーン coffeemaker ｜ パソコン personal computer ｜ とりあえず tentatively\nListen to the recording and fill in the blanks.\nWhat expression was used to explain the problem?\nWhat form was used before ～んですが?\nFocus on the expressions used and listen to the dialogs again.\nReport the problem.\nListen to the dialog.\nShadow the dialog.\nHave a practice conversation using the contents of 1 .\nRole-play this situation. Think about a problem that could actually occur and talk about it.\nCan briefly answer when asked about the status of work.\nListen to the dialogs.\nA supervisor talks to each person while they are working.\nHow is the person’s job going? Choose from a-d.\nCheck the word and listen to the dialogs again.\nで きる finish",
+      "page_samples": [
+        {
+          "page": 267,
+          "text": "初級1\n初級1 L13 - 1\n第\n課\n▶トピック\nどんな仕\n事が得\n意ですか ？ どんな仕\n事が苦\n手で す か？\nWhat kind of work are you good at? What kind of work are you not good at?\nあと 1\n0分 ぐらいで終\nわりそうで す13\n仕\n事の連\n絡\n職\n場で困\nったことがあったとき、上\n司などに状\n況を伝\nえることが できる。\nCan tell your supervisor what is going on when you have a problem at work.\nパソコンが動\nか な い んで す が …1.\n43\n1 会\n話を聞\nきましょう。\nListen to the dialogs.\n職\n場で困\nったことが起\nこりまし た 。\nThere was a problem at work.\n(1) 困\nったことは何\nですか。a-d から選\nび ましょう。\nWhat kind of problem? Choose from a-d.\na. 電\n気がつかない b. 変\nな音\nが する c. 動\nかない d . ト イレ ット ペ ー パ ー が\n① 13-01 ② 13-02 ③ 13-03 ④ 13-04\n困"
+        },
+        {
+          "page": 268,
+          "text": "第 課\n13 あと10分ぐらいで終わりそうです\n仕事の連絡▶トピック\n初級1 L13 - 2\n(2) もういちど聞\nきましょう。 どんな指\n示でしたか。ア - エから選\nび ましょう。\nListen to the dialogs again. What kind of instructions did each person receive? Choose from ア-エ.\nア. 業\n者に電\n話する イ. 再\n起動する ウ. 管\n理室に連\n絡する エ. 倉\n庫から取\nって来\n① 13-01 ② 13-02 ③ 13-03 ④ 13-04\nどんな指\n示？\n(3) ことばを確\n認して、 もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\nコ ー ヒー マ シ ーン coffeemaker ｜ パソコン personal computer ｜ とりあえず tentatively\n13-01 13-04"
+        },
+        {
+          "page": 269,
+          "text": "第 課\n13 あと10分ぐらいで終わりそうです\n仕事の連絡▶トピック\n初級1 L13 - 3\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\nトイレッ トペーパーがなくなった 。\n変\nな音\nがする 。\nパソコンが動\nかない 。\n電\n気がつかない 。\n困\nったことを伝\nえるとき、 どう言\nって い ました か。 文\n法\nノート ➊\nWhat expression was used to explain the problem?\n「～ん ですが」の前\nは、どんな形\nですか。 文\n法\nノート ➊\nWhat form was used before ～んですが?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n13-05\n13-01 13-04\n2 困\nったことを報\n告しましょう。\nReport the problem.\n(1) 会\n話を聞\nきましょう。\nListen to the dialog.\n(2) シャド ー イン グ しましょう。\nShadow the dialog.\n(3) 1 の会\n話の内\n容で、練\n習しましょう。\nHave a practice conversation using the contents of 1 .\n(4) ロールプレイをしましょう。\n実\n際にありそうなトラブルを考\nえて、話\nしましょう。\nRole-play this situation. Think about a problem that could actually occur and talk about it.\n13-06\n13-06\n電\n気がつかない んで すが … …。\n業\n者に電\n話し てくだ さ い 。"
+        },
+        {
+          "page": 270,
+          "text": "第 課\n13 あと10分ぐらいで終わりそうです\n仕事の連絡▶トピック\n初級1 L13 - 4\n仕\n事の作\n業状\n況を聞\nかれ たとき、簡\n単に答\nえることが できる。\nCan briefly answer when asked about the status of work.\nどの ぐ らい か か りそ うで す か？2.\n44\n1 会\n話を聞\nきましょう。\nListen to the dialogs.\n仕\n事をしているとき、上\n司に話\nしか けら れ ました 。\nA supervisor talks to each person while they are working.\n(1) 仕\n事はどうですか。a-d から選\nび ましょう。\nHow is the person’s job going? Choose from a-d.\na. やり方\nがわかりません b . だ いじょうぶ です c . もう終\nわりました d . もうすぐ終\n① 13-07 ② 13-08 ③ 13-09 ④ 13-10\n(2) ことばを確\n認して、 もういちど聞\nきましょう。 ～\nCheck the word and listen to the dialogs again.\nで きる finish\n13-07 13-10"
+        }
+      ]
+    },
+    "EL14": {
+      "lesson_id": "EL14",
+      "lesson": 14,
+      "book_id": "elementary1",
+      "title_en": "May I take a day off?",
+      "title_jp": "休 み を取ってもいいでしょうか？",
+      "topic_en": "At Work",
+      "pdf_pages": [
+        290,
+        311
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL14_48",
+          "can_do_number": 48,
+          "statement_en": "Can call your workplace to say that you will be late or take the day off. 2. トイレに行って来てもいいですか ？ 49 Can ask for permission from a co-worker when leaving the area for a moment. 3. 明 日の 午 後 、 早 退してもい いでしょうか？ 50 Can ask for permission in advance when you want to take a day off from work. 4. 休 暇 届 を 出してくだ さい 51 Can ask and understand how to fill out a form, such as a vacation re - quest.",
+          "statement_jp": "職場に、電話で休みや遅刻の連絡をすることができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [],
+      "english_notes": "For what reason do you take time off from work?\nCan call your workplace to say that you will be late or take the day off.\nListen to the dialogs.\nThe four people are each calling their workplaces to say that they will be late or take the day off.\nWhy did each person call their workplace? Write A if the person will be late and write B if the person is taking a day off.\nListen to the dialogs again. What is the reason? Choose from a-f.\nCheck the words and listen to the dialogs again.\nくなる be late ｜ みなさん everyone ｜ 伝\n刻する be late\nあとで later\nありません I am sorry.\nListen to the recording and fill in the blanks.\nWhat expression was used to give a reason?\nWhat expression was used to apologize?\nFocus on the expressions used and listen to the dialogs again.\nCall to say that you will be late or take the day off.\nListen to the dialogs.\nShadow the dialogs.\nPractice using the words from 1 .\nRole-play this situation. One person thinks about the reason for being late or taking the day off and calls their work. The other person\nanswers the call. If you do not know what to say in Japanese, try to look it up.",
+      "page_samples": [
+        {
+          "page": 290,
+          "text": "初級1\n初級1 L14 - 1\n第\n課\n▶トピック\nどんなときに仕\n事を休\nみますか？\nFor what reason do you take time off from work?\n休\nみを取\nってもい い で しょうか？14\n仕\n事の連\n絡\n職\n場に、電\n話で休\nみや遅\n刻の連\n絡をすることができる。\nCan call your workplace to say that you will be late or take the day off.\n少\nし遅\nくなります1.\n48\n1 会\n話を聞\nきましょう。\nListen to the dialogs.\n4\n人の人\nが、遅\n刻や休\nみの連\n絡をするために、職\n場に電\n話をかけ ています。\nThe four people are each calling their workplaces to say that they will be late or take the day off.\n(1) 何\nの連\n絡ですか。遅\n刻のときは A、休\nむときは B を書\nきましょう。\nWhy did each person call their workplace? Write A if the person will be late and write B if the person is taking a day off.\n① 14-01 ② 14-02 ③ 14-03 ④ 14-04\n遅\n刻？ 休\nむ？"
+        },
+        {
+          "page": 291,
+          "text": "第 課\n14 休みを取ってもいいでしょうか？\n仕事の連絡▶トピック\n初級1 L14 - 2\n(2) もういちど聞\nきましょう。理\n由は何\nですか。a-f から選\nび ましょう。\nListen to the dialogs again. What is the reason? Choose from a-f.\na. 道\nが混\nんで いる b. せきがひどい c. 熱\nd. 財\n布を忘\nれた e. 病\n院に行\nく f. 家\nに帰\n① 14-01 ② 14-02 ③ 14-03 ④ 14-04\n理\n由 ， ，\n(3) ことばを確\n認して、 もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\nこれから from now ｜ 遅\nくなる be late ｜ みなさん everyone ｜ 伝\nえる tell ｜ 遅\n刻する be late\nあとで later\n申\nし訳\nありません I am sorry.\n14-01 14-04"
+        },
+        {
+          "page": 292,
+          "text": "第 課\n14 休みを取ってもいいでしょうか？\n仕事の連絡▶トピック\n初級1 L14 - 3\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\n家\nに財\n布を忘\nれました。これから取\nりに帰\nります。 、少\nし遅\nれます。\n道\nが混\nんでい 、ぜんぜん動\nきません。\n昨\n日からせきがひど 、これから病\n院に行\nきます。 、\n少\nし遅\n刻します。\nおはようございます。 、申\nし訳\nありません。\n昨\n日は、 すみませんでした。\n理\n由を言\nうとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➊ ❷\nWhat expression was used to give a reason?\n謝\nるとき、 どう言\nって い ました か。 文\n法\nノート ➊\nWhat expression was used to apologize?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n14-05\n14-01 14-04"
+        },
+        {
+          "page": 293,
+          "text": "第 課\n14 休みを取ってもいいでしょうか？\n仕事の連絡▶トピック\n初級1 L14 - 4\n2 電\n話で遅\n刻や休\nみの連\n絡をしましょう。\nCall to say that you will be late or take the day off.\nもしもし、フエン です。\nみなさんに伝\nえてください。\n…… あとで …………………………………………\nあ、フエン さん。\nわかりました。\nそうですか。\nせきがひどく て、病\n院に行\nきます。\n熱\nがあります。\nそれで、少\nし遅\nれます。／遅\nくなります。／遅\n刻します。\nそれで、今\n日は1 日\n休みたいんですが……。\n遅\nれて 、すみません。／遅\nくなって、 すみません 。\n昨\n日は、休\nんですみませんでした。\n(1) 会\n話を聞\nきましょう。\nListen to the dialogs.\n(2) シャド ー イン グ しましょう。\nShadow the dialogs.\n(3) 1 のことばを使\nって、練\n習しましょう。\nPractice using the words from 1 .\n(4) ロールプレイをしましょう。\n1\n人が遅\n刻や休\nみの理\n由を考\nえて、職\n場に電\n話しましょう。 もう1\n人は、電\n話を受\nけましょう。\n言\nいたいことばが日\n本語でわからないときは、調\nべましょう。\nRole-play this situation. One person thinks about the reason for being late or taking the day off and calls their work. The other person\nanswers the call. If you do not know what to say in Japanese, try to look it up.\n14-06 14-07\n14-06 14-07\n具\n合が悪"
+        }
+      ]
+    },
+    "EL15": {
+      "lesson_id": "EL15",
+      "lesson": 15,
+      "book_id": "elementary1",
+      "title_en": "I have a fever, and my throat is sore",
+      "title_jp": "熱 が あってのどが 痛いんです",
+      "topic_en": "Health",
+      "pdf_pages": [
+        312,
+        336
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL15_52",
+          "can_do_number": 52,
+          "statement_en": "Can explain in simple terms your symptoms at the hospital. 2. インフルエンザ ですね 53 Can listen to and understand the doctor at the hospital. 3. 問診票 54 Can fill out the necessary information on a questionnaire form at the hospital reception desk. 4. 熱を下げるお薬です 55 Can listen to instructions about medicine and understand directions for use and precautions. 5. 薬の説明 56 Can read instructions about medicine and understand directions for use and dosage.",
+          "statement_jp": "病院で、自分の症状を簡単に伝えることができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [],
+      "english_notes": "Have you recently visited a doctor? For what symptom did you see a doctor?\nCan explain in simple terms your symptoms at the hospital.\nPreparation for the words\nListen while looking at the illustrations.\nListen and repeat the words.\nListen and choose from a-j.\nListen to the dialogs.\nThe four people are each talking to a doctor at the hospital.\nWhat are the symptoms? Choose from a-j of 1 .\nListen to the dialogs again. When did the symptoms start? Take notes.\nCheck the words and listen to the dialogs again.\nおととい the day before yesterday ｜ 転\nる take an x-ray\n週間 one week （～週\n間 ～ week(s)）｜ 花\n粉症 pollen allergy\nListen to the recording and fill in the blanks.\nWhat expression was used to describe the symptoms?\nFocus on the expressions used and listen to the dialogs again.\nDescribe the symptoms to a doctor.\nListen to the dialogs.\nShadow the dialogs.\nPractice using the words from 1 .\nRole-play this situation. One person plays the part of the doctor and asks questions. The other person plays the part of the patient\nand describes the symptoms.",
+      "page_samples": [
+        {
+          "page": 312,
+          "text": "38.0°\n初級1\n初級1 L15 - 1\n第\n課\n▶トピック\n最\n近、病\n院に行\nきましたか？ どんな症\n状でしたか？\nHave you recently visited a doctor? For what symptom did you see a doctor?\n熱\nが あってのどが痛\nい んで す15\n健\n康な生\n活\n病\n院で、自\n分の症\n状を簡\n単に伝\nえることが できる。\nCan explain in simple terms your symptoms at the hospital.\n今\n日は どうしました か？1.\n52\n1 ことば の準\n備\nPreparation for the words\n【症\n状】\na. のどが痛\nい b. お腹\nが痛\nい c. 熱\nがある d. せきが出\ne. 鼻\n水が出\nる f. 吐\nき気\nがする g. 食\n欲がない h. 目\ni. 足\nをくじいた （ くじく） j. 頭\nをぶつけた （ぶつける）"
+        },
+        {
+          "page": 313,
+          "text": "第 課\n15 熱があってのどが痛いんです\n健康な生活▶トピック\n初級1 L15 - 2\n(1) 絵\nを見\nながら聞\nきましょう。\nListen while looking at the illustrations.\n(2) 聞\nいて言\nいましょう。\nListen and repeat the words.\n(3) 聞\nいて、a-jから選\nびましょう。\nListen and choose from a-j.\n2 会\n話を聞\nきましょう。\nListen to the dialogs.\n病\n院で、4\n人の人\nが医\n者と話\nして いま す。\nThe four people are each talking to a doctor at the hospital.\n(1) どんな症\n状ですか。 1 の a-jから選\nびましょう。\nWhat are the symptoms? Choose from a-j of 1 .\n① 15-03 ② 15-04 ③ 15-05 ④ 15-06\n症\n状 ， ， ， ，\n(2) もういちど聞\nきましょう。いつからですか。メモしましょう。\nListen to the dialogs again. When did the symptoms start? Take notes.\n① 15-03 ② 15-04 ③ 15-05 ④ 15-06\nいつから？\n(3) ことばを確\n認して、もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\nおととい the day before yesterday ｜ 転\nぶ fall ｜ レントゲンを撮\nる take an x-ray\n1\n週間 one week （～週\n間 ～ week(s)）｜ 花\n粉症 pollen allergy\n15-01\n15-01\n15-02\n15-03 15-06"
+        },
+        {
+          "page": 314,
+          "text": "第 課\n15 熱があってのどが痛いんです\n健康な生活▶トピック\n初級1 L15 - 3\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\n今\n日はどうしましたか？\nお腹\nが痛\nくて、吐\nき気\nがする 。\n昨\n日から 38度\nの熱\nが あって、 のどが すごく痛\nい 。\n昨\n日、道\nで転\nんで、足\nをくじいた 。\n目\nがかゆくて、鼻\n水も出\nる 。\n症\n状を説\n明するとき、 どんな形\nを使\nって い ました か。 文\n法\nノート ➊\nWhat expression was used to describe the symptoms?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n15-07\n15-03 15-06"
+        },
+        {
+          "page": 315,
+          "text": "第 課\n15 熱があってのどが痛いんです\n健康な生活▶トピック\n初級1 L15 - 4\n3 医\n者に症\n状を話\nしましょう。\nDescribe the symptoms to a doctor.\n(1) 会\n話を聞\nきましょう。\nListen to the dialogs.\n(2) シャドーイングしましょう。\nShadow the dialogs.\n(3) 1 のことばを使\nって、練\n習しましょう。\nPractice using the words from 1 .\n(4) ロールプレイをしましょう。\n1\n人が医\n者になって質\n問しましょう。もう1\n人は患\n者になって、症\n状を話\nしましょう。\nRole-play this situation. One person plays the part of the doctor and asks questions. The other person plays the part of the patient\nand describes the symptoms.\n15-08 15-09\n15-08 15-09\n今\n日はどうしましたか？\nいつからですか？\nおなかが痛\nい んです。\n目\nがかゆく て、鼻\n水も出\nる んです。\nおととい からです。\n1\n週間ぐらい 前\nからです。"
+        }
+      ]
+    },
+    "EL16": {
+      "lesson_id": "EL16",
+      "lesson": 16,
+      "book_id": "elementary1",
+      "title_en": "I try not to eat too much",
+      "title_jp": "食べすぎないようにしています",
+      "topic_en": "Health",
+      "pdf_pages": [
+        337,
+        355
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL16_57",
+          "can_do_number": 57,
+          "statement_en": "Can give advice when someone is feeling unwell, or listen to and under - stand the advice. 2. 夜 は 早く寝 るようにしています 58 Can talk about what you are mindful of to maintain your health. 3. 食中毒 が増えています 59 Can look at news about an epidemic illness and more or less understand the contents, such as its name, symptoms, and prevention methods. 4. 病気予防のポスター 60 Can look at a poster about an illness at a hospital and understand the symptoms, prevention methods, etc.",
+          "statement_jp": "体調が悪いときの対処法をアドバイスしたり、アドバイスを聞いて理解したり",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [
+        "飲\nみ ま し た ",
+        "飲\nみすぎま した",
+        "どう した か？"
+      ],
+      "english_notes": "Is there anything you do daily for your health? What kind of things are you mindful of?\nCan give advice when someone is feeling unwell, or listen to and understand the advice.\nListen while looking at the illustrations.\nListen and repeat the words.\nListen and choose from a-p.\nPreparation for the words\nListen to the dialogs.\nThe four people are feeling unwell and are listening to advice from someone.\nWhat are their health problems? Choose from a-f.\nListen to the dialogs again. What was the advice? Choose from ア-カ.\nCheck the words and listen to the dialogs again.\n近 recently ｜ ぬるい warm ｜ 試\nす try ｜ けっこう quite\nそれはいけませんね That is not good. ｜ どうしていますか？ How do you deal with it?\nListen to the recording and fill in the blanks.\nWhat was said to the person who looks unwell?\nWhat expression was used to give advice?\nWhat is the difference between 飲\nFocus on the expressions used and listen to the dialogs again.",
+      "page_samples": [
+        {
+          "page": 337,
+          "text": "初級1 L16 - 1\n第\n課\n▶トピック\n初級1\n健\n康のために気\nをつけていることがありますか ？ どんなことに気\nを つ け て い ま す か？\nIs there anything you do daily for your health? What kind of things are you mindful of?\n食\nべすぎないようにし ています16\n健\n康な生\n活\n体\n調が悪\nいときの対\n処法をアドバイスしたり、 アドバイスを聞\nいて理\n解したりすることができる。\nCan give advice when someone is feeling unwell, or listen to and understand the advice.\n具\n合が悪\nそうで す ね1.\n57\n(1) 絵\nを見\nながら聞\nきましょう。\nListen while looking at the illustrations.\n(2) 聞\nいて言\nいましょう。\nListen and repeat the words.\n(3) 聞\nいて、a-p から選\nびましょう。\nListen and choose from a-p.\n16-01\n16-01\n16-02\n1 ことば の準\n備\nPreparation for the words\n【顔\nと体\n】\n◉ 顔\n◉ 体\ne. 目\nh. 肩\ng. 口\nj. お腹\nk. 足\na. 頭\nl. 背\n中\nc. 歯\nn. 腕\nf. 耳\ni. 胸\nb. 鼻\nm. 腰\nd. 首\no. 手\np. 指"
+        },
+        {
+          "page": 338,
+          "text": "第 課\n16 食べすぎないようにしています\n健康な生活▶トピック\n初級1 L16 - 2\n2 会\n話を聞\nきましょう。\nListen to the dialogs.\n体\nの調\n子が悪\nい４\n人の人\nが 、ほかの人\nの アドバ イスを聞\nいています。\nThe four people are feeling unwell and are listening to advice from someone.\n(1) どのように体\nの調\n子が悪\nいですか。a-f から選\nびましょう。\nWhat are their health problems? Choose from a-f.\na. 肩\nがこる b. 体\nがだるい c. 頭\nが痛\nd. 胃\nの調\n子が悪\nい e. 二\n日酔\nい f. よく眠\n① 16-03 ② 16-04 ③ 16-05 ④ 16-06\nどんな不\n調？ ， ，"
+        },
+        {
+          "page": 339,
+          "text": "第 課\n16 食べすぎないようにしています\n健康な生活▶トピック\n初級1 L16 - 3\n(2) もういちど聞\nきましょう。どんなアドバイスでしたか。ア- カから選\nびましょう。\nListen to the dialogs again. What was the advice? Choose from ア-カ.\nア . ゆっくりお風\n呂に入\nる イ.お 腹\nを温\nめる ウ. 寝\nエ. 温\nかい飲\nみ物\nを飲\nむ オ . マッサージする カ. 薬\nを飲\n① 16-03 ② 16-04 ③ 16-05 ④ 16-06\nアドバイス ， ，\n(3) ことばを確\n認して、もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\n最\n近 recently ｜ ぬるい warm ｜ 試\nす try ｜ けっこう quite\nそれはいけませんね That is not good. ｜ どうしていますか？ How do you deal with it?\n16-03 16-06"
+        },
+        {
+          "page": 340,
+          "text": "第 課\n16 食べすぎないようにしています\n健康な生活▶トピック\n初級1 L16 - 4\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\nＡ：どう した か？\nＢ：最\n近よく眠\nれ なくて、体\nがだるい 。\nよく眠\nれないときは、ぬるいお風\n呂に ゆ っくり入\nる で すよ 。\n温\nかい飲\nみ物\nを飲\nむ で すよ 。\nお腹\nを温\nめる で すよ 。\n昨\n日、飲\nみ ました。\n体\n調の悪\nそうな人\nに声\nをかけるとき、 どう言\nって い ました か。 第\n15課\nWhat was said to the person who looks unwell?\nアドバイスをするとき、 ど ん な形\nを使\nって い ました か。 文\n法\nノート ➊\nWhat expression was used to give advice?\n「飲\nみ ま し た 」 と「飲\nみすぎま した」は、どう違\nうと思\nいますか。 文\n法\nノート ❷\nWhat is the difference between 飲\nみました and 飲\nみすぎました?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n16-07\n16-03 16-06"
+        }
+      ]
+    },
+    "EL17": {
+      "lesson_id": "EL17",
+      "lesson": 17,
+      "book_id": "elementary1",
+      "title_en": "This is a personal amulet my older brother gave me",
+      "title_jp": "兄 がくれたお守りです",
+      "topic_en": "Visiting People",
+      "pdf_pages": [
+        356,
+        376
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL17_61",
+          "can_do_number": 61,
+          "statement_en": "Can exchange basic greetings when you visit someone’s house. 2. これ、お土産です 62 Can give a simple explanation about a gift you give. 3. 誕生日に、友だちにもらったんです 63 Can talk about your belongings, for example, where you bought it or who gave it to you. 4. お礼のメール 64 Can write a simple email to thank someone who, for example, invited you to their house.",
+          "statement_jp": "ほかの人の家を訪問したとき、基本的なあいさつをすることができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [],
+      "english_notes": "What will you bring as a gift to Japan?\nCan exchange basic greetings when you visit someone’s house.\nListen to the dialog.\nToan-san was invited to visit Fukuda-san’s house.\nFirst, listen to the dialog without looking at the script.\nWhich of Fukuda-san’s family members were there?\nWhat did Toan-san bring as a gift?\nAfter offering the gift, what did Toan-san ask Fukuda-san?\nListen to the dialog again. This time, follow along with the script.\n関で At the front door\n間で In the living room\nThank you for everything you do.\nThis phrase is used to express\nwords of appreciation to your or\nyour family’s acquaintances.\nこちらこそ Same here.\nThis phrase is used to return a\ngreeting or words of appreciation to\nthe other person.\n関で At the entrance\nをくず す sit at ease\nにする make yourself at home ｜ 遊\nる come see me\nWhich expressions are used by a guest and which by a host? Draw a circle where appropriate. When are these\nexpressions used?\nFocus on the expressions used and listen to the dialog again.\nThank you for the meal.\nA greeting after eating, or expressing\ngratitude afterwards to someone who\ntreated you to the meal.\nPractice conversations as if you are visiting someone’s home.\nListen to the dialogs.\nShadow the dialogs.\nRole-play this situation. One person plays the guest, and the other person plays the host.",
+      "page_samples": [
+        {
+          "page": 356,
+          "text": "初級1\n初級1 L17 - 1初級1 L17 - 1\n第\n課\n▶トピック\n日\n本にお土\n産を持\nって行\nくとしたら 、何\nを持\nって行\nき ま す か？\nWhat will you bring as a gift to Japan?\n兄\nがくれ た お守\nりです17\n交\n際\nほかの人\nの家\nを訪\n問したとき、基\n本的なあいさつをすることができる。\nCan exchange basic greetings when you visit someone’s house.\nごめんください1.\n61\n1 会\n話を聞\nきましょう。\nListen to the dialog.\nトア ン さん が福\n田さんに招\n待されて、福\n田さんの家\nを訪\n問しました 。\nToan-san was invited to visit Fukuda-san’s house.\n(1) はじめに、スクリプトを見\nないで会\n話を聞\nきましょう。\nFirst, listen to the dialog without looking at the script.\n1. 福\n田さんの家\n族は、だれがいましたか。\nWhich of Fukuda-san’s family members were there?\n家\n族\n2 . ト ア ン さ ん は 、 お土\n産に何\nを渡\nしましたか。\nWhat did Toan-san bring as a gift?\nお土\n産\n3 . トア ン さ ん は 、 お土\n産を渡\nしたあと、福\n田さんに何\nを聞\nきましたか。\nAfter offering the gift, what did Toan-san ask Fukuda-san?\n聞\n17-01"
+        },
+        {
+          "page": 357,
+          "text": "第 課\n17 兄がくれたお守りです\n交際▶トピック\n初級1 L17 - 3初級1 L17 - 2\n(2) スクリプトを見\nながら聞\nきましょう。 17-01\nListen to the dialog again. This time, follow along with the script.\n会\n話 1 玄\n関で At the front door\nトアン ： ごめんください。\n福\n田 ： はい。\nトアンさん、いらっしゃい。ようこそ。さ、 上\nがって。\nトアン ： おじゃまします。\n福\n田（妻\n） ： こんにちは。\n福\n田 ： うちの奥\nさん。こっちは息\n子のタケル。\nタケル ： こんにちは。\n福\n田 ： こちら、トアンさん。\nトアン ： はじめまして。トアンです。\n福\n田さんには、いつもお世\n話になっています。\n福\n田（妻\n） ： こちらこそ、夫\nがお世\n話に な って い ま す。\n会\n話 2 居\n間で In the living room\n福\n田 ： お茶\nをどうぞ。\nトアン ： いただきます。\nあのう、これ、ベトナムのコーヒーです。どうぞ。\n福\n田 ： おお、ありがとう。\nトアン ： すみません。 足\nをくずしてもいいですか？\n福\n田 ： あー、どうぞ。楽\nにしてね。\nお世\n話になっています\nThank you for everything you do.\n自\n分や身\n内とつき合\n相\n手に使\nう感\n謝のことば\nThis phrase is used to express\nwords of appreciation to your or\nyour family’s acquaintances.\nこちらこそ Same here.\n相\n手にあいさつや感\n謝のことば\nを言\nわれたときに返\nThis phrase is used to return a\ngreeting or words of appreciation to\nthe other person."
+        },
+        {
+          "page": 358,
+          "text": "第 課\n17 兄がくれたお守りです\n交際▶トピック\n初級1 L17 - 3\n会\n話 3 玄\n関で At the entrance\nトアン ： 今\n日はごちそうさまでした。\n楽\nしかったです。\n福\n田 ： いえいえ、また来\nてね。\n福\n田（妻\n） ： いつでも遊\nびに来\nてください。\nトアン ： ありがとうございます。\nおじゃましました。\n上\nがる come in ｜ うちの～ my ～ ｜ 奥\nさん wife ｜ 息\n子 son ｜ 足\nをくず す sit at ease\n楽\nにする make yourself at home ｜ 遊\nびに来\nる come see me\n（ 1 ） 次\nの表\n現は、訪\n問する人\n、訪\n問を受\nける人\nのどちらが言\nいますか。○をつけましょう。\nまた、どんなときに使\nいますか。\nWhich expressions are used by a guest and which by a host? Draw a circle where appropriate. When are these\nexpressions used?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。\nFocus on the expressions used and listen to the dialog again.\n17-01\n訪\n問する人\n訪\n問を受\nける人\n使\nう場\n面\nThank you for the meal.\n食\nべ終\nわったときのあいさつ。また、\n食\n事をふるまってくれた人\nに対\nして、あとから言\nうお礼\nA greeting after eating, or expressing\ngratitude afterwards to someone who\ntreated you to the meal."
+        },
+        {
+          "page": 359,
+          "text": "第 課\n17 兄がくれたお守りです\n交際▶トピック\n初級1 L17 - 5初級1 L17 - 4\n2 ほかの 人\nの家\nを訪\n問する場\n面の会\n話をしましょう。\nPractice conversations as if you are visiting someone’s home.\nごめんください。\n今\n日はご ちそうさまでした。楽\nしか ったで す。\nこれ、ベトナムのコ ー ヒー で す。 どう ぞ。\nおじ ゃましま す。\nありがとうござ います。おじゃましました。\nい た だ きま す。\nいらっしゃい 。 どうぞ、上\nが ってく だ さ い 。\nまた来\nてくだ さ い ね 。\nお茶\nをどうぞ。\nありがとうご ざ い ま す。\n(1) 会\n話を聞\nきましょう。\nListen to the dialogs.\n(2) シャドーイングしましょう。\nShadow the dialogs.\n(3) ロールプレイをしましょう。\n訪\n問する人\nと、訪\n問を受\nける人\nになって話\nしましょう。\nRole-play this situation. One person plays the guest, and the other person plays the host.\n17-02 17-03 17-04\n17-02 17-03 17-04\n① 玄\n関で\n② 居\n間で\n③ 玄\n関で"
+        }
+      ]
+    },
+    "EL18": {
+      "lesson_id": "EL18",
+      "lesson": 18,
+      "book_id": "elementary1",
+      "title_en": "How about giving something as a gift?",
+      "title_jp": "何かプレゼントをあげませんか ？",
+      "topic_en": "Visiting People",
+      "pdf_pages": [
+        377,
+        407
+      ],
+      "can_dos": [
+        {
+          "id": "CD_EL18_65",
+          "can_do_number": 65,
+          "statement_en": "Can say congratulations for a birthday, wedding, etc. 2. 送 別 会 をしません か？ 66 Can discuss what to give when selecting a gift for someone. 3. いろいろお世話になりました 67 Can thank someone and offer comments when someone gives you a gift. 4. 誕生日の書き込み 68 Can read and understand a post on social media that your friend wrote on their birthday. 5. お 祝 い のメッセージ 69 Can write a message of congratulations or goodbye on a card.",
+          "statement_jp": "誕生日や結婚などのお祝いを言うことができる。",
+          "activity_hint": ""
+        }
+      ],
+      "key_phrases": [
+        "そう です"
+      ],
+      "english_notes": "When do you give gifts to someone?\nCan say congratulations for a birthday, wedding, etc.\nListen to the dialogs.\nThe four people are each being congratulated.\nWhat is the occasion? Choose from a-d.\nListen to the dialogs again and answer the questions.\nIs the baby a boy or a girl? What is the name?\nWhat is the person’s spouse like?\nDid the woman receive a birthday gift?\nWhat will the man receive from the woman?\nCheck the words and listen to the dialogs again.\nboy ｜ 女\ngirl ｜ 決\nめる decide ｜ 考\nえる think ｜ 私\n手 spouse ｜ お祝\nい gift ｜ ごちそうする treat a meal ｜ きっと surely ｜ あげる give\nしみですね That sounds exciting. ｜ お幸\nせに Wish you all the happiness.\nListen to the recording and fill in the blanks.\nJ\nLPT 、合\nWhat do you think is the meaning of そうです?\nWhat expression was used to congratulate someone?\nFocus on the expressions used and listen to the dialogs again.\nSay words of congratulations.\nListen to the dialogs.\nShadow the dialogs.\nHave a practice conversation using the contents of 1 .\nRole-play this situation. Freely think up any occasion and offer suitable words of congratulations. After that, freely carry on a\nconversation. If you do not know what to say in Japanese, try to look it up.",
+      "page_samples": [
+        {
+          "page": 377,
+          "text": "初級1\n初級1 L18 - 1\n第\n課\n▶トピック\nだれかにプレゼントをするのは、どんなときですか ？\nWhen do you give gifts to someone?\n何\nかプ レ ゼ ント を あ げ ま せ ん か？18\n交\n際\n誕\n生日や結\n婚などのお祝\nいを言\nうことが できる。\nCan say congratulations for a birthday, wedding, etc.\nおめでとうござ います1.\n65\n1 会\n話を聞\nきましょう。\nListen to the dialogs.\n4\n人の人\nにお祝\nいを言\nっています。\nThe four people are each being congratulated.\n(1) 何\nのお祝\nいですか。a-d から選\nびましょう。\nWhat is the occasion? Choose from a-d.\na. 誕\n生日 b. 結\n婚／結\n婚する c. 出\n産／\n子\nどもが生\nd. 合\n格／合\n格する\n① 18-01 ② 18-02 ③ 18-03 ④ 18-04\n何\nのお祝\nい？"
+        },
+        {
+          "page": 378,
+          "text": "第 課\n18 何かプレ ゼントをあ げ ません か？\n交際▶トピック\n初級1 L18 - 2\n(2) もういちど聞\nいて、それぞれの質\n問に答\nえましょう。\nListen to the dialogs again and answer the questions.\n質\n問\n答\n① 18-01\n子\nどもは男\nの子\nですか、女\nの子\nですか。\n名\n前は何\nですか。\nIs the baby a boy or a girl? What is the name?\n② 18-02 結\n婚相手はどんな人\nですか。\nWhat is the person’s spouse like?\n③ 18-03 女\nの人\nは、誕\n生日のプレゼントをもらいましたか。\nDid the woman receive a birthday gift?\n④ 18-04 男\nの人\nは女\nの人\nに何\nをもらいますか。\nWhat will the man receive from the woman?\n(3) ことばを確\n認して、もういちど聞\nきましょう。 ～\nCheck the words and listen to the dialogs again.\n男\nの子\nboy ｜ 女\nの子\ngirl ｜ 決\nめる decide ｜ 考\nえる think ｜ 私\nたち we ｜ うれしい glad\n相\n手 spouse ｜ お祝\nい gift ｜ ごちそうする treat a meal ｜ きっと surely ｜ あげる give\n楽\nしみですね That sounds exciting. ｜ お幸\nせに Wish you all the happiness.\n18-01 18-04"
+        },
+        {
+          "page": 379,
+          "text": "第 課\n18 何かプレ ゼントをあ げ ません か？\n交際▶トピック\n初級1 L18 - 3\n（ 1 ） 音\n声を聞\nいて、 にことばを書\nきましょう。\nListen to the recording and fill in the blanks.\nお子\nさんが生\nまれた ね。\nJ\nLPT 、合\n格した ね。\nご結\n婚 。\nお誕\n生日 。\n「そう です」は、どんな意\n味だと思\nいますか。 文\n法\nノート ➊\nWhat do you think is the meaning of そうです?\nお 祝\nいを言\nうとき、 どう言\nって い ました か。\nWhat expression was used to congratulate someone?\n（2） 形\nに注\n目して、会\n話をもういちど聞\nきましょう。 ～\nFocus on the expressions used and listen to the dialogs again.\n18-05\n18-01 18-04"
+        },
+        {
+          "page": 380,
+          "text": "第 課\n18 何かプレ ゼントをあ げ ません か？\n交際▶トピック\n初級1 L18 - 4\n2 お 祝\nいを言\nいましょう。\nSay words of congratulations.\n男\nの子\nで す か？ 女\nの子\nですか ？\n相\n手は、どんな人\nですか ？\nお子\nさんが生\nまれた そうですね。おめでとうございます。\nご結\n婚 おめでとうございます。\nありがとうご ざ い ま す。\n(1) 会\n話を聞\nきましょう。\nListen to the dialogs.\n(2) シャドーイングしましょう。\nShadow the dialogs.\n(3) 1 の会\n話の内\n容で、練\n習しましょう。\nHave a practice conversation using the contents of 1 .\n(4) ロールプレイをしましょう。\n場\n面を自\n由に考\nえて、お祝\nいを言\nいましょう。そのあと、会\n話を自\n由に続\nけましょう。\n言\nいたいことばが日\n本語でわからないときは、調\nべましょう。\nRole-play this situation. Freely think up any occasion and offer suitable words of congratulations. After that, freely carry on a\nconversation. If you do not know what to say in Japanese, try to look it up.\n18-06 18-07\n18-06 18-07"
+        }
+      ]
+    }
+  }
+}

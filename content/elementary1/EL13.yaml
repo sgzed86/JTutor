@@ -1,0 +1,1019 @@
+lesson_id: EL13
+lesson: 13
+book_id: elementary1
+title_en: It will probably end in about ten minutes
+title_jp: あと 10 分ぐらいで 終わりそうです
+topic_en: At Work
+pdf_pages:
+- 267
+- 289
+intro_questions:
+- jp: It will probably end in about ten minutes について、あなたの けいけんは？
+  en: Thinking about "At Work" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can tell your supervisor what is going on when you have
+    a problem at work. What do you want to be able to do?'
+can_dos:
+- id: CD_EL13_43
+  can_do_number: 43
+  statement_en: Can tell your supervisor what is going on when you have a problem
+    at work.
+  statement_jp: 職場で困ったことがあったとき、上司などに状況を伝えることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL13_44
+  can_do_number: 44
+  statement_en: Can briefly answer when asked about the status of work.
+  statement_jp: 職場で困ったことがあったとき、上司などに状況を伝えることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL13_45
+  can_do_number: 45
+  statement_en: Can ask about and understand, for example, how to use a machine at
+    work.
+  statement_jp: 職場で困ったことがあったとき、上司などに状況を伝えることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL13_46
+  can_do_number: 46
+  statement_en: Can listen to and understand explanations and instructions on tasks
+    at work.
+  statement_jp: 職場で困ったことがあったとき、上司などに状況を伝えることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL13_47
+  can_do_number: 47
+  statement_en: Can read and understand a simple email for work.
+  statement_jp: 職場で困ったことがあったとき、上司などに状況を伝えることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_EL13_43
+  label: kiku1
+  audio:
+  - assets/audio/Y_[13-01]_kiku1.mp3
+  key_phrases:
+  - 困ったことは何ですか。
+  - 分ぐらいで終わりそうです
+  - どんな形ですか。
+  - あのう、トイレットペーパーがなくなったんですが……。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 困ったことは何ですか。
+    tags:
+    - long
+    - polite
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: どんな形ですか。
+    tags:
+    - short
+    - polite
+  - jp: あのう、トイレットペーパーがなくなったんですが……。
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_EL13_44
+  label: kiku2
+  audio:
+  - assets/audio/Y_[13-02]_kiku2.mp3
+  key_phrases:
+  - 困ったことは何ですか。
+  - 分ぐらいで終わりそうです
+  - あのう、トイレットペーパーがなくなったんですが……。
+  - あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 困ったことは何ですか。
+    tags:
+    - long
+    - polite
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: あのう、トイレットペーパーがなくなったんですが……。
+    tags:
+    - long
+    - polite
+  - jp: あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+    tags:
+    - long
+    - casual
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL13 activity 2: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL13_45
+  label: kiku3
+  audio:
+  - assets/audio/Y_[13-03]_kiku3.mp3
+  key_phrases:
+  - 困ったことは何ですか。
+  - 分ぐらいで終わりそうです
+  - あのう、トイレットペーパーがなくなったんですが……。
+  - あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 困ったことは何ですか。
+    tags:
+    - long
+    - polite
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: あのう、トイレットペーパーがなくなったんですが……。
+    tags:
+    - long
+    - polite
+  - jp: あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+    tags:
+    - long
+    - casual
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL13 activity 3: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_EL13_46
+  label: kiku4
+  audio:
+  - assets/audio/Y_[13-04]_kiku4.mp3
+  key_phrases:
+  - 困ったことは何ですか。
+  - 分ぐらいで終わりそうです
+  - どんな形ですか。
+  - あのう、トイレットペーパーがなくなったんですが……。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 困ったことは何ですか。
+    tags:
+    - long
+    - polite
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: どんな形ですか。
+    tags:
+    - short
+    - polite
+  - jp: あのう、トイレットペーパーがなくなったんですが……。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL13 activity 4: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A5
+  kind: grammar_form
+  book_activity: 5
+  can_do_id: CD_EL13_47
+  label: katachi
+  audio:
+  - assets/audio/Y_[13-05]_katachi.mp3
+  key_phrases:
+  - 分ぐらいで終わりそうです
+  - どんな形ですか。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: どんな形ですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A6
+  kind: speaking
+  book_activity: 6
+  can_do_id: CD_EL13_43
+  label: hanasu
+  audio:
+  - assets/audio/Y_[13-06]_hanasu.mp3
+  key_phrases:
+  - あと1
+  - どのぐらいかかりですか？
+  - 分ぐらいで終わりそうです
+  - どんな形ですか。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: どのぐらいかかりですか？
+  - speaker: learner
+    jp: あと1
+  dialog_listen_audio:
+  - assets/audio/Y_[13-06]_hanasu.mp3
+  phrase_meta:
+  - jp: あと1
+    tags:
+    - short
+  - jp: どのぐらいかかりですか？
+    tags:
+    - long
+    - polite
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: どんな形ですか。
+    tags:
+    - short
+    - polite
+- id: A7
+  kind: listening
+  book_activity: 7
+  can_do_id: CD_EL13_44
+  label: kiku1
+  audio:
+  - assets/audio/Y_[13-07]_kiku1.mp3
+  key_phrases:
+  - 分ぐらいで終わりそうです
+  - 仕事はどうですか。
+  - やり方がわかりません
+  - もう終わりました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: 仕事はどうですか。
+    tags:
+    - short
+    - polite
+  - jp: やり方がわかりません
+    tags:
+    - short
+    - polite
+  - jp: もう終わりました
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL13 activity 7: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A8
+  kind: listening
+  book_activity: 8
+  can_do_id: CD_EL13_45
+  label: kiku2
+  audio:
+  - assets/audio/Y_[13-08]_kiku2.mp3
+  key_phrases:
+  - 分ぐらいで終わりそうです
+  - 仕事はどうですか。
+  - やり方がわかりません
+  - もう終わりました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: 仕事はどうですか。
+    tags:
+    - short
+    - polite
+  - jp: やり方がわかりません
+    tags:
+    - short
+    - polite
+  - jp: もう終わりました
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL13 activity 8: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A9
+  kind: listening
+  book_activity: 9
+  can_do_id: CD_EL13_46
+  label: kiku3
+  audio:
+  - assets/audio/Y_[13-09]_kiku3.mp3
+  key_phrases:
+  - 分ぐらいで終わりそうです
+  - 仕事はどうですか。
+  - やり方がわかりません
+  - もう終わりました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: 仕事はどうですか。
+    tags:
+    - short
+    - polite
+  - jp: やり方がわかりません
+    tags:
+    - short
+    - polite
+  - jp: もう終わりました
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL13 activity 9: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A10
+  kind: listening
+  book_activity: 10
+  can_do_id: CD_EL13_47
+  label: kiku4
+  audio:
+  - assets/audio/Y_[13-10]_kiku4.mp3
+  key_phrases:
+  - 分ぐらいで終わりそうです
+  - 仕事はどうですか。
+  - やり方がわかりません
+  - もう終わりました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: 仕事はどうですか。
+    tags:
+    - short
+    - polite
+  - jp: やり方がわかりません
+    tags:
+    - short
+    - polite
+  - jp: もう終わりました
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL13 activity 10: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A11
+  kind: grammar_form
+  book_activity: 11
+  can_do_id: CD_EL13_43
+  label: katachi
+  audio:
+  - assets/audio/Y_[13-11]_katachi.mp3
+  key_phrases:
+  - どのぐらいかかりですか？
+  - あと1
+  - 分ぐらいで終わりそうです
+  - 終わりました
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: どのぐらいかかりですか？
+    tags:
+    - long
+    - polite
+  - jp: あと1
+    tags:
+    - short
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: 終わりました
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A12
+  kind: speaking
+  book_activity: 12
+  can_do_id: CD_EL13_44
+  label: hanasu1-1
+  audio:
+  - assets/audio/Y_[13-12]_hanasu1-1.mp3
+  key_phrases:
+  - 、ないです。
+  - （コピー機
+  - どのぐらいかかりですか？
+  - あと1
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: （コピー機
+  - speaker: learner
+    jp: 、ないです。
+  dialog_listen_audio:
+  - assets/audio/Y_[13-12]_hanasu1-1.mp3
+  phrase_meta:
+  - jp: 、ないです。
+    tags:
+    - short
+    - polite
+  - jp: （コピー機
+    tags:
+    - short
+  - jp: どのぐらいかかりですか？
+    tags:
+    - long
+    - polite
+  - jp: あと1
+    tags:
+    - short
+- id: A13
+  kind: speaking
+  book_activity: 13
+  can_do_id: CD_EL13_45
+  label: hanasu1-2
+  audio:
+  - assets/audio/Y_[13-13]_hanasu1-2.mp3
+  key_phrases:
+  - あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+  - あのう、トイレットペーパーがなくなったんですが……。
+  - どのぐらいかかりですか？
+  - あと1
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: あのう、トイレットペーパーがなくなったんですが……。
+  - speaker: learner
+    jp: あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+  dialog_listen_audio:
+  - assets/audio/Y_[13-13]_hanasu1-2.mp3
+  phrase_meta:
+  - jp: あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+    tags:
+    - long
+    - casual
+  - jp: あのう、トイレットペーパーがなくなったんですが……。
+    tags:
+    - long
+    - polite
+  - jp: どのぐらいかかりですか？
+    tags:
+    - long
+    - polite
+  - jp: あと1
+    tags:
+    - short
+- id: A14
+  kind: speaking
+  book_activity: 14
+  can_do_id: CD_EL13_46
+  label: hanasu2-1
+  audio:
+  - assets/audio/Y_[13-14]_hanasu2-1.mp3
+  key_phrases:
+  - 本当？じゃあ、業者に電話してくれる？
+  - すみません、コーヒーマシーンから変な音がするんですが……。
+  - どのぐらいかかりですか？
+  - あと1
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみません、コーヒーマシーンから変な音がするんですが……。
+  - speaker: learner
+    jp: 本当？じゃあ、業者に電話してくれる？
+  dialog_listen_audio:
+  - assets/audio/Y_[13-14]_hanasu2-1.mp3
+  phrase_meta:
+  - jp: 本当？じゃあ、業者に電話してくれる？
+    tags:
+    - long
+    - casual
+  - jp: すみません、コーヒーマシーンから変な音がするんですが……。
+    tags:
+    - long
+    - polite
+  - jp: どのぐらいかかりですか？
+    tags:
+    - long
+    - polite
+  - jp: あと1
+    tags:
+    - short
+- id: A15
+  kind: speaking
+  book_activity: 15
+  can_do_id: CD_EL13_47
+  label: hanasu2-2
+  audio:
+  - assets/audio/Y_[13-15]_hanasu2-2.mp3
+  key_phrases:
+  - うーん、とりあえず、再起動してみて。
+  - パソコンが動かないんですが……。
+  - どのぐらいかかりですか？
+  - あと1
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: パソコンが動かないんですが……。
+  - speaker: learner
+    jp: うーん、とりあえず、再起動してみて。
+  dialog_listen_audio:
+  - assets/audio/Y_[13-15]_hanasu2-2.mp3
+  phrase_meta:
+  - jp: うーん、とりあえず、再起動してみて。
+    tags:
+    - long
+  - jp: パソコンが動かないんですが……。
+    tags:
+    - long
+    - polite
+  - jp: どのぐらいかかりですか？
+    tags:
+    - long
+    - polite
+  - jp: あと1
+    tags:
+    - short
+- id: A16
+  kind: speaking
+  book_activity: 16
+  can_do_id: CD_EL13_43
+  label: hanasu2-3
+  audio:
+  - assets/audio/Y_[13-16]_hanasu2-3.mp3
+  key_phrases:
+  - じゃあ、管理室に連絡してください。
+  - あのう、すみません、会議室の電気がつかないんですが……。
+  - どのぐらいかかりですか？
+  - あと1
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: あのう、すみません、会議室の電気がつかないんですが……。
+  - speaker: learner
+    jp: じゃあ、管理室に連絡してください。
+  dialog_listen_audio:
+  - assets/audio/Y_[13-16]_hanasu2-3.mp3
+  phrase_meta:
+  - jp: じゃあ、管理室に連絡してください。
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: あのう、すみません、会議室の電気がつかないんですが……。
+    tags:
+    - long
+    - polite
+  - jp: どのぐらいかかりですか？
+    tags:
+    - long
+    - polite
+  - jp: あと1
+    tags:
+    - short
+- id: A17
+  kind: conversation
+  book_activity: 17
+  can_do_id: CD_EL13_44
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[13-17]_kaiwa.mp3
+  key_phrases:
+  - はい、だいじょうぶです。
+  - どう？だいじょうぶ？
+  - 分ぐらいで終わりそうです
+  - ピー機の使い方を教えてもらっています。
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: どう？だいじょうぶ？
+  - speaker: learner
+    jp: はい、だいじょうぶです。
+  dialog_listen_audio:
+  - assets/audio/Y_[13-17]_kaiwa.mp3
+  phrase_meta:
+  - jp: はい、だいじょうぶです。
+    tags:
+    - long
+    - polite
+  - jp: どう？だいじょうぶ？
+    tags:
+    - short
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: ピー機の使い方を教えてもらっています。
+    tags:
+    - long
+    - polite
+- id: A18
+  kind: grammar_form
+  book_activity: 18
+  can_do_id: CD_EL13_45
+  label: katachi
+  audio:
+  - assets/audio/Y_[13-18]_katachi.mp3
+  key_phrases:
+  - （コピー機
+  - 、ないです。
+  - 分ぐらいで終わりそうです
+  - どう答えていました
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: （コピー機
+    tags:
+    - short
+  - jp: 、ないです。
+    tags:
+    - short
+    - polite
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: どう答えていました
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A19
+  kind: speaking
+  book_activity: 19
+  can_do_id: CD_EL13_46
+  label: hanasu
+  audio:
+  - assets/audio/Y_[13-19]_hanasu.mp3
+  key_phrases:
+  - いえ、ありません。
+  - そう。わからないこと、ある？
+  - 分ぐらいで終わりそうです
+  - わかりました。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: そう。わからないこと、ある？
+  - speaker: learner
+    jp: いえ、ありません。
+  dialog_listen_audio:
+  - assets/audio/Y_[13-19]_hanasu.mp3
+  phrase_meta:
+  - jp: いえ、ありません。
+    tags:
+    - short
+    - polite
+  - jp: そう。わからないこと、ある？
+    tags:
+    - long
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: わかりました。
+    tags:
+    - short
+- id: A20
+  kind: listening
+  book_activity: 20
+  can_do_id: CD_EL13_47
+  label: kiku1
+  audio:
+  - assets/audio/Y_[13-20]_kiku1.mp3
+  key_phrases:
+  - 分ぐらいで終わりそうです
+  - 指示を聞いています。
+  - に戻します。
+  - 資料はどこに戻します
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: 指示を聞いています。
+    tags:
+    - short
+    - polite
+  - jp: に戻します。
+    tags:
+    - short
+    - polite
+  - jp: 資料はどこに戻します
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL13 activity 20: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A21
+  kind: listening
+  book_activity: 21
+  can_do_id: CD_EL13_43
+  label: kiku2
+  audio:
+  - assets/audio/Y_[13-21]_kiku2.mp3
+  key_phrases:
+  - 分ぐらいで終わりそうです
+  - どう並べます
+  - もう終わりましたか？
+  - あ、まだです。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: どう並べます
+    tags:
+    - short
+    - polite
+  - jp: もう終わりましたか？
+    tags:
+    - short
+  - jp: あ、まだです。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL13 activity 21: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A22
+  kind: listening
+  book_activity: 22
+  can_do_id: CD_EL13_44
+  label: kiku3
+  audio:
+  - assets/audio/Y_[13-22]_kiku3.mp3
+  key_phrases:
+  - 分ぐらいで終わりそうです
+  - 会議の準備をします。
+  - アリさんは何をします
+  - 西村さんは何をします
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 分ぐらいで終わりそうです
+    tags:
+    - long
+    - polite
+  - jp: 会議の準備をします。
+    tags:
+    - short
+    - polite
+  - jp: アリさんは何をします
+    tags:
+    - short
+    - polite
+  - jp: 西村さんは何をします
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL13 activity 22: listen to the CD, then say the phrase that matches
+    the book.'
+grammar:
+- point: ～んですが
+  worksheet_pages:
+  - 43
+  examples: []
+- point: パソコンが動
+  worksheet_pages:
+  - 43
+  examples: []
+- point: （する → ） 10. （寝
+  worksheet_pages:
+  - 43
+  examples: []
+- point: V-そうです
+  worksheet_pages:
+  - 44
+  examples: []
+- point: A： すみません、5分
+  worksheet_pages:
+  - 44
+  examples: []
+- point: A： できましたか？
+  worksheet_pages:
+  - 44
+  examples: []
+- point: A： トイレットペーパーが、もうすぐ（なくなります→ ）。
+  worksheet_pages:
+  - 44
+  examples: []
+- point: V-たい とき、～
+  worksheet_pages:
+  - 44
+  examples: []
+- point: （カラーコピーする→ ）？
+  worksheet_pages:
+  - 44
+  examples: []
+- point: にする→ ）？
+  worksheet_pages:
+  - 44
+  examples: []
+- point: （スキャナを使
+  worksheet_pages:
+  - 44
+  examples: []
+- point: V-ると、～
+  worksheet_pages:
+  - 45
+  examples: []
+- point: このボタンを押
+  worksheet_pages:
+  - 45
+  examples: []
+- point: ここに紙
+  worksheet_pages:
+  - 45
+  examples: []
+- point: ここに数字
+  worksheet_pages:
+  - 45
+  examples: []
+- point: 」と入
+  worksheet_pages:
+  - 45
+  examples: []
+- point: ここにコップを置
+  worksheet_pages:
+  - 45
+  examples: []
+- point: ここに手
+  worksheet_pages:
+  - 45
+  examples: []
+- point: はい、【negative sentence 否定文
+  worksheet_pages:
+  - 45
+  examples: []
+- point: A： カラーコピー、できますか？
+  worksheet_pages:
+  - 45
+  examples: []
+vocab: []
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL13_43
+  prompt_en: 'Demonstrate: Can tell your supervisor what is going on when you have
+    a problem at work.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL13_44
+  prompt_en: 'Demonstrate: Can briefly answer when asked about the status of work.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL13_45
+  prompt_en: 'Demonstrate: Can ask about and understand, for example, how to use a
+    machine at work.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL13_46
+  prompt_en: 'Demonstrate: Can listen to and understand explanations and instructions
+    on tasks at work.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL13_47
+  prompt_en: 'Demonstrate: Can read and understand a simple email for work.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL13_43
+  partner_jp: 困ったことは何ですか。
+  expected: &id001
+  - 困ったことは何ですか。
+  - 分ぐらいで終わりそうです
+  - どんな形ですか。
+  - あのう、トイレットペーパーがなくなったんですが……。
+  hint_en: Can tell your supervisor what is going on when you have a problem at work.
+- can_do_id: CD_EL13_43
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can tell your supervisor what is going on when you have a problem
+    at work.
+- can_do_id: CD_EL13_44
+  partner_jp: 困ったことは何ですか。
+  expected: &id002
+  - 困ったことは何ですか。
+  - 分ぐらいで終わりそうです
+  - あのう、トイレットペーパーがなくなったんですが……。
+  - あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+  hint_en: Can briefly answer when asked about the status of work.
+- can_do_id: CD_EL13_44
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can briefly answer when asked about the status of work.
+- can_do_id: CD_EL13_45
+  partner_jp: 困ったことは何ですか。
+  expected: &id003
+  - 困ったことは何ですか。
+  - 分ぐらいで終わりそうです
+  - あのう、トイレットペーパーがなくなったんですが……。
+  - あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+  hint_en: Can ask about and understand, for example, how to use a machine at work.
+- can_do_id: CD_EL13_45
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can ask about and understand, for example, how to use a machine
+    at work.
+- can_do_id: CD_EL13_46
+  partner_jp: 困ったことは何ですか。
+  expected: &id004
+  - 困ったことは何ですか。
+  - 分ぐらいで終わりそうです
+  - どんな形ですか。
+  - あのう、トイレットペーパーがなくなったんですが……。
+  hint_en: Can listen to and understand explanations and instructions on tasks at
+    work.
+- can_do_id: CD_EL13_46
+  partner_jp: もう一度、お願いします。
+  expected: *id004
+  hint_en: Again — Can listen to and understand explanations and instructions on tasks
+    at work.
+- can_do_id: CD_EL13_47
+  partner_jp: 分ぐらいで終わりそうです。
+  expected: &id005
+  - 分ぐらいで終わりそうです
+  - どんな形ですか。
+  - 仕事はどうですか。
+  - やり方がわかりません
+  hint_en: Can read and understand a simple email for work.
+- can_do_id: CD_EL13_47
+  partner_jp: もう一度、お願いします。
+  expected: *id005
+  hint_en: Again — Can read and understand a simple email for work.
+english_notes: 'What kind of work are you good at? What kind of work are you not good
+  at?
+
+  Can tell your supervisor what is going on when you have a problem at work.
+
+  Listen to the dialogs.
+
+  There was a problem at work.
+
+  What kind of problem? Choose from a-d.
+
+  Listen to the dialogs again. What kind of instructions did each person receive?
+  Choose from ア-エ.
+
+  Check the words and listen to the dialogs again.
+
+  コ ー ヒー マ シ ーン coffeemaker ｜ パソコン personal computer ｜ とりあえず tentatively
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used to explain the problem?
+
+  What form was used before ～んですが?
+
+  Focus on the expressions used and listen to the dialogs again.
+
+  Report the problem.
+
+  Listen to the dialog.
+
+  Shadow the dialog.
+
+  Have a practice conversation using the contents of 1 .
+
+  Role-play this situation. Think about a problem that could actually occur and talk
+  about it.
+
+  Can briefly answer when asked about the status of work.
+
+  Listen to the dialogs.
+
+  A supervisor talks to each person while they are working.
+
+  How is the person’s job going? Choose from a-d.
+
+  Check the word and listen to the dialogs again.
+
+  で きる finish'
+unlock_requires_mastery: true

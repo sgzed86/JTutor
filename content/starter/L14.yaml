@@ -1,0 +1,984 @@
+lesson_id: L14
+lesson: 14
+title_en: It's a big building, isn't it
+title_jp: 大きい建物ですね
+topic_en: Walking around Town
+pdf_pages:
+- 369
+- 394
+intro_questions:
+- jp: It's a big building, isn't it について、あなたの けいけんは？
+  en: Thinking about "Walking around Town" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can comment simply on buildings and places you see. What do you want to be
+    able to do?'
+can_dos:
+- id: CD_L14_55
+  can_do_number: 55
+  statement_en: Can comment simply on buildings and places you see.
+  statement_jp: 建物や場所について簡単に感想を言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - ですね
+    min_score: 80
+- id: CD_L14_56
+  can_do_number: 56
+  statement_en: Can ask/confirm what a place is.
+  statement_jp: それが何の場所か質問したり確認したりすることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_L14_57
+  can_do_number: 57
+  statement_en: Can describe size/appearance with simple adjectives.
+  statement_jp: 簡単な形容詞で大きさや様子を説明することができる。
+  activity_hint: '1'
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_L14_55
+  label: kiku1
+  audio:
+  - assets/audio/X_[14-01]_kiku1.mp3
+  key_phrases:
+  - トイレはどこですか
+  - あっちらです
+  - 1すみません
+  - どうも
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: トイレはどこですか
+    tags:
+    - short
+    - polite
+  - jp: あっちらです
+    tags:
+    - short
+    - polite
+  - jp: 1すみません
+    tags:
+    - short
+    - polite
+  - jp: どうも
+    tags:
+    - short
+    - casual
+  book_mode: listen_repeat
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_L14_56
+  label: kiku2
+  audio:
+  - assets/audio/X_[14-02]_kiku2.mp3
+  key_phrases:
+  - 2あの、飲み物のジドアハンバイキはどこにありますか
+  - ありがとうございます
+  - あっちにやりますよ
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 2あの、飲み物のジドアハンバイキはどこにありますか
+    tags:
+    - long
+    - polite
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+  - jp: あっちにやりますよ
+    tags:
+    - short
+    - polite
+    - casual
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 2: listen to the CD, then say the phrase that matches the book.'
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_L14_57
+  label: kiku3
+  audio:
+  - assets/audio/X_[14-03]_kiku3.mp3
+  key_phrases:
+  - さんすみませんコインロックアはどこにありますか
+  - あ、すみませんちょっとわからないですねそうですか
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: さんすみませんコインロックアはどこにありますか
+    tags:
+    - long
+    - polite
+  - jp: あ、すみませんちょっとわからないですねそうですか
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 3: listen to the CD, then say the phrase that matches the book.'
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_L14_55
+  label: kiku4
+  audio:
+  - assets/audio/X_[14-04]_kiku4.mp3
+  key_phrases:
+  - 4きついんじゃわどこですか
+  - あ、このビルにはありますそうですか
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 4きついんじゃわどこですか
+    tags:
+    - long
+    - polite
+  - jp: あ、このビルにはありますそうですか
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 4: listen to the CD, then say the phrase that matches the book.'
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_L14_56
+  label: kiku5
+  audio:
+  - assets/audio/X_[14-05]_kiku5.mp3
+  key_phrases:
+  - この近くに、コンビニはありますか
+  - ありがとうございます
+  - えぇ、この先です
+  - ごすみません
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: この近くに、コンビニはありますか
+    tags:
+    - long
+    - polite
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+  - jp: えぇ、この先です
+    tags:
+    - short
+    - polite
+  - jp: ごすみません
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 5: listen to the CD, then say the phrase that matches the book.'
+- id: A6
+  kind: listening
+  book_activity: 6
+  can_do_id: CD_L14_57
+  label: kiku6
+  audio:
+  - assets/audio/X_[14-06]_kiku6 .mp3
+  key_phrases:
+  - 6あのーこの近くにATMはありますか
+  - この奥ですわかりました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 6あのーこの近くにATMはありますか
+    tags:
+    - long
+    - polite
+  - jp: この奥ですわかりました
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 6: listen to the CD, then say the phrase that matches the book.'
+- id: A7
+  kind: grammar_form
+  book_activity: 7
+  can_do_id: CD_L14_55
+  label: katachi
+  audio:
+  - assets/audio/X_[14-07]_katachi.mp3
+  key_phrases:
+  - コインロッターはどこにありますか
+  - この近くに、こんでにはありますか
+  - この近くに、ATMはありますか
+  - といれはどこですか
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: コインロッターはどこにありますか
+    tags:
+    - long
+    - polite
+  - jp: この近くに、こんでにはありますか
+    tags:
+    - long
+    - polite
+  - jp: この近くに、ATMはありますか
+    tags:
+    - long
+    - polite
+  - jp: といれはどこですか
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A8
+  kind: speaking
+  book_activity: 8
+  can_do_id: CD_L14_56
+  label: hanasu1
+  audio:
+  - assets/audio/X_[14-08]_hanasu1.mp3
+  key_phrases:
+  - あっちらですありがとうございます
+  - すみませんトイレはどこですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: あっちらですありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: すみませんトイレはどこですか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみませんトイレはどこですか
+  - speaker: learner
+    jp: あっちらですありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[14-08]_hanasu1.mp3
+- id: A9
+  kind: speaking
+  book_activity: 9
+  can_do_id: CD_L14_57
+  label: hanasu2
+  audio:
+  - assets/audio/X_[14-09]_hanasu2.mp3
+  key_phrases:
+  - この多くですありがとうございます
+  - すみませんこの近くにATMはありますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: この多くですありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: すみませんこの近くにATMはありますか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみませんこの近くにATMはありますか
+  - speaker: learner
+    jp: この多くですありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[14-09]_hanasu2.mp3
+- id: A10
+  kind: speaking
+  book_activity: 10
+  can_do_id: CD_L14_55
+  label: hanasu3
+  audio:
+  - assets/audio/X_[14-10]_hanasu3.mp3
+  key_phrases:
+  - ちょっとわかりませんそうですか
+  - すみませんこんいんどっかはどこにありますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: ちょっとわかりませんそうですか
+    tags:
+    - long
+    - polite
+  - jp: すみませんこんいんどっかはどこにありますか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみませんこんいんどっかはどこにありますか
+  - speaker: learner
+    jp: ちょっとわかりませんそうですか
+  dialog_listen_audio:
+  - assets/audio/X_[14-10]_hanasu3.mp3
+- id: A11
+  kind: vocabulary
+  book_activity: 11
+  can_do_id: CD_L14_56
+  label: kotoba1
+  audio:
+  - assets/audio/X_[14-11]_kotoba1.mp3
+  key_phrases:
+  - 1え上bしたc前dcf
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1え上bしたc前dcf
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A12
+  kind: vocabulary
+  book_activity: 12
+  can_do_id: CD_L14_57
+  label: kotoba2
+  audio:
+  - assets/audio/X_[14-12]_kotoba2.mp3
+  key_phrases:
+  - 1車の上にいます2車の下にいます3車の後ろにいます4車の横にいます5車の中にいます6車の前にいます
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1車の上にいます2車の下にいます3車の後ろにいます4車の横にいます5車の中にいます6車の前にいます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A13
+  kind: listening
+  book_activity: 13
+  can_do_id: CD_L14_55
+  label: kiku1
+  audio:
+  - assets/audio/X_[14-13]_kiku1.mp3
+  key_phrases:
+  - いるまさ、今どこですか
+  - 今、開札の前にいますわかりました
+  - 1もしもし
+  - もしもし
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: いるまさ、今どこですか
+    tags:
+    - long
+    - polite
+  - jp: 今、開札の前にいますわかりました
+    tags:
+    - long
+    - polite
+  - jp: 1もしもし
+    tags:
+    - short
+  - jp: もしもし
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 13: listen to the CD, then say the phrase that matches the book.'
+- id: A14
+  kind: listening
+  book_activity: 14
+  can_do_id: CD_L14_56
+  label: kiku2
+  audio:
+  - assets/audio/X_[14-14]_kiku2.mp3
+  key_phrases:
+  - 2あ、ピセットですお、ピセットさん、今どこにいますか
+  - えっと、コンビニの中にいます中ですね今、そっちに行きます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 2あ、ピセットですお、ピセットさん、今どこにいますか
+    tags:
+    - long
+    - polite
+  - jp: えっと、コンビニの中にいます中ですね今、そっちに行きます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 14: listen to the CD, then say the phrase that matches the book.'
+- id: A15
+  kind: listening
+  book_activity: 15
+  can_do_id: CD_L14_57
+  label: kiku3
+  audio:
+  - assets/audio/X_[14-15]_kiku3.mp3
+  key_phrases:
+  - 3もしもしもしもしリリアンさんはい今どこえー今インフォメーションの横ですインフォメーションねわかったすぐいく
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 3もしもしもしもしリリアンさんはい今どこえー今インフォメーションの横ですインフォメーションねわかったすぐいく
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 15: listen to the CD, then say the phrase that matches the book.'
+- id: A16
+  kind: listening
+  book_activity: 16
+  can_do_id: CD_L14_55
+  label: kiku4
+  audio:
+  - assets/audio/X_[14-16]_kiku4.mp3
+  key_phrases:
+  - 今、エスカレーターの下にいますエスカレーターの下ですねわかりましたちょっと待っててくださいね
+  - 4あのチェですあ、チェサー今はどこにいますか
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 今、エスカレーターの下にいますエスカレーターの下ですねわかりましたちょっと待っててくださいね
+    tags:
+    - long
+    - polite
+  - jp: 4あのチェですあ、チェサー今はどこにいますか
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 16: listen to the CD, then say the phrase that matches the book.'
+- id: A17
+  kind: grammar_form
+  book_activity: 17
+  can_do_id: CD_L14_56
+  label: katachi
+  audio:
+  - assets/audio/X_[14-17]_katachi.mp3
+  key_phrases:
+  - インフォメーションの横です
+  - エスカレーターの下にいます
+  - コンビニの中にいます
+  - 今、どこに言いますか
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: インフォメーションの横です
+    tags:
+    - long
+    - polite
+  - jp: エスカレーターの下にいます
+    tags:
+    - long
+    - polite
+  - jp: コンビニの中にいます
+    tags:
+    - short
+    - polite
+  - jp: 今、どこに言いますか
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A18
+  kind: speaking
+  book_activity: 18
+  can_do_id: CD_L14_57
+  label: hanasu1
+  audio:
+  - assets/audio/X_[14-18]_hanasu1.mp3
+  key_phrases:
+  - 今、コンビニの中にいますわかりました
+  - 今、どこにいますか
+  - もしもし
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 今、コンビニの中にいますわかりました
+    tags:
+    - long
+    - polite
+  - jp: 今、どこにいますか
+    tags:
+    - short
+    - polite
+  - jp: もしもし
+    tags:
+    - short
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 今、どこにいますか
+  - speaker: learner
+    jp: 今、コンビニの中にいますわかりました
+  dialog_listen_audio:
+  - assets/audio/X_[14-18]_hanasu1.mp3
+- id: A19
+  kind: speaking
+  book_activity: 19
+  can_do_id: CD_L14_55
+  label: hanasu2
+  audio:
+  - assets/audio/X_[14-19]_hanasu2.mp3
+  key_phrases:
+  - 今開札の前ですわかりました
+  - もしもし今どこですか
+  - もしもし
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 今開札の前ですわかりました
+    tags:
+    - long
+    - polite
+  - jp: もしもし今どこですか
+    tags:
+    - short
+    - polite
+  - jp: もしもし
+    tags:
+    - short
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: もしもし今どこですか
+  - speaker: learner
+    jp: 今開札の前ですわかりました
+  dialog_listen_audio:
+  - assets/audio/X_[14-19]_hanasu2.mp3
+- id: A20
+  kind: vocabulary
+  book_activity: 20
+  can_do_id: CD_L14_56
+  label: kotoba1
+  audio:
+  - assets/audio/X_[14-20]_kotoba1.mp3
+  key_phrases:
+  - ふるいビ新しいシー大きい大きなビ小さい小さないい高いF低いジ逃げやかなHしずかなI黄色いジェせまいK綺麗なL来たない
+  - どんなところ
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: ふるいビ新しいシー大きい大きなビ小さい小さないい高いF低いジ逃げやかなHしずかなI黄色いジェせまいK綺麗なL来たない
+    tags:
+    - long
+  - jp: どんなところ
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A21
+  kind: vocabulary
+  book_activity: 21
+  can_do_id: CD_L14_57
+  label: kotoba2
+  audio:
+  - assets/audio/X_[14-21]_kotoba2.mp3
+  key_phrases:
+  - 1逃げ赤ですね2高いですね3大きいですね4フルーヨイですね5綺麗ですね6広いですね7小さいですね8新しいですね9来たないですね10静かですね11低いですね12せ前ですね
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1逃げ赤ですね2高いですね3大きいですね4フルーヨイですね5綺麗ですね6広いですね7小さいですね8新しいですね9来たないですね10静かですね11低いですね12せ前ですね
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A22
+  kind: listening
+  book_activity: 22
+  can_do_id: CD_L14_55
+  label: kiku1
+  audio:
+  - assets/audio/X_[14-22]_kiku1.mp3
+  key_phrases:
+  - 1ここは水もと公園です広い公園ですねそうですね
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1ここは水もと公園です広い公園ですねそうですね
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 22: listen to the CD, then say the phrase that matches the book.'
+- id: A23
+  kind: listening
+  book_activity: 23
+  can_do_id: CD_L14_56
+  label: kiku2
+  audio:
+  - assets/audio/X_[14-23]_kiku2.mp3
+  key_phrases:
+  - ここは徐々省展大ですあ、逃げ赤な通りですね
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ここは徐々省展大ですあ、逃げ赤な通りですね
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 23: listen to the CD, then say the phrase that matches the book.'
+- id: A24
+  kind: listening
+  book_activity: 24
+  can_do_id: CD_L14_57
+  label: kiku3
+  audio:
+  - assets/audio/X_[14-24]_kiku3.mp3
+  key_phrases:
+  - 3このカワーはシマンとかはです
+  - あーー、キレイな水ですねー
+  - 有名なカワーです
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 3このカワーはシマンとかはです
+    tags:
+    - long
+    - polite
+  - jp: あーー、キレイな水ですねー
+    tags:
+    - long
+    - polite
+  - jp: 有名なカワーです
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 24: listen to the CD, then say the phrase that matches the book.'
+- id: A25
+  kind: listening
+  book_activity: 25
+  can_do_id: CD_L14_55
+  label: kiku4
+  audio:
+  - assets/audio/X_[14-25]_kiku4.mp3
+  key_phrases:
+  - 大きな建物ですねあああれはサッポロ動画見です焼級上ですへぇ、大きいですね
+  - 4あれは何ですか
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 大きな建物ですねあああれはサッポロ動画見です焼級上ですへぇ、大きいですね
+    tags:
+    - long
+    - polite
+  - jp: 4あれは何ですか
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 25: listen to the CD, then say the phrase that matches the book.'
+- id: A26
+  kind: listening
+  book_activity: 26
+  can_do_id: CD_L14_56
+  label: kiku5
+  audio:
+  - assets/audio/X_[14-26]_kiku5.mp3
+  key_phrases:
+  - 5お、古いお手らがありますね
+  - いいお手らでしょう
+  - 水戦時です
+  - はい
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 5お、古いお手らがありますね
+    tags:
+    - long
+    - polite
+  - jp: いいお手らでしょう
+    tags:
+    - short
+  - jp: 水戦時です
+    tags:
+    - short
+    - polite
+  - jp: はい
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 26: listen to the CD, then say the phrase that matches the book.'
+- id: A27
+  kind: listening
+  book_activity: 27
+  can_do_id: CD_L14_57
+  label: kiku6
+  audio:
+  - assets/audio/X_[14-27]_kiku6.mp3
+  key_phrases:
+  - あれはセンタービルあれはスニトモビルあれは3つイビル高いビルがたくさんありますねそうだね
+  - 6見て
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: あれはセンタービルあれはスニトモビルあれは3つイビル高いビルがたくさんありますねそうだね
+    tags:
+    - long
+    - polite
+  - jp: 6見て
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L14 activity 27: listen to the CD, then say the phrase that matches the book.'
+- id: A28
+  kind: grammar_form
+  book_activity: 28
+  can_do_id: CD_L14_55
+  label: katachi
+  audio:
+  - assets/audio/X_[14-28]_katachi.mp3
+  key_phrases:
+  - 広い公園ですね古いお手らがありますね高いビルがたくさんありますね逃げやかな通りですね綺麗な水ですね大きな建物ですね大きいですね
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 広い公園ですね古いお手らがありますね高いビルがたくさんありますね逃げやかな通りですね綺麗な水ですね大きな建物ですね大きいですね
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A29
+  kind: speaking
+  book_activity: 29
+  can_do_id: CD_L14_56
+  label: hanasu1
+  audio:
+  - assets/audio/X_[14-29]_hanasu1.mp3
+  key_phrases:
+  - ここは水元公園です
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: ここは水元公園です
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: ここは水元公園です
+  - speaker: learner
+    jp: ここは水元公園です
+  dialog_listen_audio:
+  - assets/audio/X_[14-29]_hanasu1.mp3
+- id: A30
+  kind: speaking
+  book_activity: 30
+  can_do_id: CD_L14_57
+  label: hanasu2
+  audio:
+  - assets/audio/X_[14-30]_hanasu2.mp3
+  key_phrases:
+  - ここは水元公園です綺麗な公園ですね
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: ここは水元公園です綺麗な公園ですね
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: ここは水元公園です綺麗な公園ですね
+  - speaker: learner
+    jp: ここは水元公園です綺麗な公園ですね
+  dialog_listen_audio:
+  - assets/audio/X_[14-30]_hanasu2.mp3
+grammar:
+- point: N の 【location 位置
+  worksheet_pages:
+  - 39
+  examples: []
+- point: レオは、 車
+  worksheet_pages:
+  - 39
+  examples: []
+- point: タマは、 車
+  worksheet_pages:
+  - 39
+  examples: []
+- point: クロは、 車
+  worksheet_pages:
+  - 39
+  examples: []
+- point: モモは、 車
+  worksheet_pages:
+  - 39
+  examples: []
+- point: トラは、 車
+  worksheet_pages:
+  - 39
+  examples: []
+- point: ナ A-な N ですね
+  worksheet_pages:
+  - 40
+  examples: []
+- point: ビルです。大
+  worksheet_pages:
+  - 40
+  examples: []
+vocab:
+- jp: 1え上bしたc前dcf
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: 1車の上にいます2車の下にいます3車の後ろにいます4車の横にいます5車の中にいます6車の前にいます
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: ふるいビ新しいシー大きい大きなビ小さい小さないい高いF低いジ逃げやかなHしずかなI黄色いジェせまいK綺麗なL来たない
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: どんなところ
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: 1逃げ赤ですね2高いですね3大きいですね4フルーヨイですね5綺麗ですね6広いですね7小さいですね8新しいですね9来たないですね10静かですね11低いですね12せ前ですね
+  reading: ''
+  en: ''
+  tags:
+  - L14
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_L14_55
+  prompt_en: 'Demonstrate this can-do in Japanese: Can comment simply on buildings and places you see.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L14_55
+  prompt_en: 'In a new everyday situation, show you can: Can comment simply on buildings and places you
+    see.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L14_56
+  prompt_en: 'Demonstrate this can-do in Japanese: Can ask/confirm what a place is.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L14_56
+  prompt_en: 'In a new everyday situation, show you can: Can ask/confirm what a place is.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L14_57
+  prompt_en: 'Demonstrate this can-do in Japanese: Can describe size/appearance with simple adjectives.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L14_57
+  prompt_en: 'In a new everyday situation, show you can: Can describe size/appearance with simple adjectives.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_L14_55
+  partner_jp: では、お願いします。
+  expected:
+  - ですね
+  hint_en: 'Situation: Can comment simply on buildings and places you see. Reply using lesson phrases.'
+- can_do_id: CD_L14_55
+  partner_jp: もう一度、お願いします。
+  expected:
+  - ですね
+  hint_en: Again — 建物や場所について簡単に感想を言うことができる。
+- can_do_id: CD_L14_56
+  partner_jp: すみませんトイレはどこですか
+  expected:
+  - あっちらですありがとうございます
+  - すみませんトイレはどこですか
+  hint_en: Reply as in the book dialog (activity 8).
+- can_do_id: CD_L14_57
+  partner_jp: すみませんこの近くにATMはありますか
+  expected:
+  - この多くですありがとうございます
+  - すみませんこの近くにATMはありますか
+  hint_en: Reply as in the book dialog (activity 9).
+- can_do_id: CD_L14_55
+  partner_jp: すみませんこんいんどっかはどこにありますか
+  expected:
+  - ちょっとわかりませんそうですか
+  - すみませんこんいんどっかはどこにありますか
+  hint_en: Reply as in the book dialog (activity 10).
+- can_do_id: CD_L14_57
+  partner_jp: 今、どこにいますか
+  expected:
+  - 今、コンビニの中にいますわかりました
+  - 今、どこにいますか
+  - もしもし
+  hint_en: Reply as in the book dialog (activity 18).
+- can_do_id: CD_L14_55
+  partner_jp: もしもし今どこですか
+  expected:
+  - 今開札の前ですわかりました
+  - もしもし今どこですか
+  - もしもし
+  hint_en: Reply as in the book dialog (activity 19).
+- can_do_id: CD_L14_56
+  partner_jp: ここは水元公園です
+  expected:
+  - ここは水元公園です
+  hint_en: Reply as in the book dialog (activity 29).
+- can_do_id: CD_L14_57
+  partner_jp: ここは水元公園です綺麗な公園ですね
+  expected:
+  - ここは水元公園です綺麗な公園ですね
+  hint_en: Reply as in the book dialog (activity 30).
+- can_do_id: CD_L14_55
+  partner_jp: トイレはどこですか。
+  expected:
+  - トイレはどこですか
+  - あっちらです
+  - 1すみません
+  - どうも
+  - ですね
+  hint_en: Can comment simply on buildings and places you see.
+- can_do_id: CD_L14_56
+  partner_jp: 2あの、飲み物のジドアハンバイキはどこにありますか。
+  expected:
+  - 2あの、飲み物のジドアハンバイキはどこにありますか
+  - ありがとうございます
+  - あっちにやりますよ
+  - この近くに、コンビニはありますか
+  hint_en: Can ask/confirm what a place is.
+- can_do_id: CD_L14_57
+  partner_jp: さんすみませんコインロックアはどこにありますか。
+  expected:
+  - さんすみませんコインロックアはどこにありますか
+  - あ、すみませんちょっとわからないですねそうですか
+  - 6あのーこの近くにATMはありますか
+  - この奥ですわかりました
+  hint_en: Can describe size/appearance with simple adjectives.
+english_notes: 'What facilities and places are in your town? What are they like?
+
+  Can ask where the toilets or an ATM, etc., are.
+
+  Listen to the dialogs.
+
+  Six people are each asking someone where something is.
+
+  What places are they asking about? Choose from a–f.
+
+  TM f. 喫
+
+  Listen to the dialogs again. Did the people learn where the places are? Write 〇 if they did, and × if
+  they didn’t.
+
+  Check the words and listen to the dialogs again.
+
+  あちら over there ｜ 飲
+
+  drink
+
+  a casual way of saying あちら）
+
+  ビル building ｜ 奥
+
+  inside
+
+  an informal way of saying すみません）
+
+  Listen to the recording and fill in the blanks.
+
+  What expressions were used when asking about a place?
+
+  Focus on the expressions used and listen to the dialogs again.
+
+  Ask where something is.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Practice using the illustrations from 1 (2).
+
+  Ask about places inside the building you are in, such as the facilities.'
+unlock_requires_mastery: true

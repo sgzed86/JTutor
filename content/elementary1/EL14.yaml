@@ -1,0 +1,872 @@
+lesson_id: EL14
+lesson: 14
+book_id: elementary1
+title_en: May I take a day off?
+title_jp: 休 み を取ってもいいでしょうか？
+topic_en: At Work
+pdf_pages:
+- 290
+- 311
+intro_questions:
+- jp: May I take a day off? について、あなたの けいけんは？
+  en: Thinking about "At Work" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can call your workplace to say that you will be late or
+    take the day off. What do you want to be able to do?'
+can_dos:
+- id: CD_EL14_48
+  can_do_number: 48
+  statement_en: Can call your workplace to say that you will be late or take the day
+    off.
+  statement_jp: 職場に、電話で休みや遅刻の連絡をすることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL14_49
+  can_do_number: 49
+  statement_en: Can ask for permission from a co-worker when leaving the area for
+    a moment.
+  statement_jp: 職場に、電話で休みや遅刻の連絡をすることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL14_50
+  can_do_number: 50
+  statement_en: Can ask for permission in advance when you want to take a day off
+    from work.
+  statement_jp: 職場に、電話で休みや遅刻の連絡をすることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL14_51
+  can_do_number: 51
+  statement_en: Can ask and understand how to fill out a form, such as a vacation
+    re - quest.
+  statement_jp: 職場に、電話で休みや遅刻の連絡をすることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_EL14_48
+  label: kiku1
+  audio:
+  - assets/audio/Y_[14-01]_kiku1.mp3
+  key_phrases:
+  - 少し遅くなります
+  - ています。
+  - 何の連絡ですか。
+  - 理由は何ですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 少し遅くなります
+    tags:
+    - short
+    - polite
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: 何の連絡ですか。
+    tags:
+    - short
+    - polite
+  - jp: 理由は何ですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_EL14_49
+  label: kiku2
+  audio:
+  - assets/audio/Y_[14-02]_kiku2.mp3
+  key_phrases:
+  - 少し遅くなります
+  - ています。
+  - 何の連絡ですか。
+  - 理由は何ですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 少し遅くなります
+    tags:
+    - short
+    - polite
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: 何の連絡ですか。
+    tags:
+    - short
+    - polite
+  - jp: 理由は何ですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL14 activity 2: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL14_50
+  label: kiku3
+  audio:
+  - assets/audio/Y_[14-03]_kiku3.mp3
+  key_phrases:
+  - 少し遅くなります
+  - ています。
+  - 何の連絡ですか。
+  - 理由は何ですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 少し遅くなります
+    tags:
+    - short
+    - polite
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: 何の連絡ですか。
+    tags:
+    - short
+    - polite
+  - jp: 理由は何ですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL14 activity 3: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_EL14_51
+  label: kiku4
+  audio:
+  - assets/audio/Y_[14-04]_kiku4.mp3
+  key_phrases:
+  - 少し遅くなります
+  - ています。
+  - 何の連絡ですか。
+  - 理由は何ですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 少し遅くなります
+    tags:
+    - short
+    - polite
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: 何の連絡ですか。
+    tags:
+    - short
+    - polite
+  - jp: 理由は何ですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL14 activity 4: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A5
+  kind: grammar_form
+  book_activity: 5
+  can_do_id: CD_EL14_48
+  label: katachi
+  audio:
+  - assets/audio/Y_[14-05]_katachi.mp3
+  key_phrases:
+  - 家に財布を忘れました。
+  - これから取りに帰ります。
+  - 少し遅れます。
+  - ぜんぜん動きません。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 家に財布を忘れました。
+    tags:
+    - long
+  - jp: これから取りに帰ります。
+    tags:
+    - long
+    - polite
+  - jp: 少し遅れます。
+    tags:
+    - short
+    - polite
+  - jp: ぜんぜん動きません。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A6
+  kind: speaking
+  book_activity: 6
+  can_do_id: CD_EL14_49
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[14-06]_hanasu1.mp3
+  key_phrases:
+  - どうぞ。
+  - あのう、ちょっとトイレに行って来てもいいですか？
+  - みなさんに伝えてください。
+  - わかりました。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: あのう、ちょっとトイレに行って来てもいいですか？
+  - speaker: learner
+    jp: どうぞ。
+  dialog_listen_audio:
+  - assets/audio/Y_[14-06]_hanasu1.mp3
+  phrase_meta:
+  - jp: どうぞ。
+    tags:
+    - short
+  - jp: あのう、ちょっとトイレに行って来てもいいですか？
+    tags:
+    - long
+    - polite
+  - jp: みなさんに伝えてください。
+    tags:
+    - long
+    - polite
+  - jp: わかりました。
+    tags:
+    - short
+- id: A7
+  kind: speaking
+  book_activity: 7
+  can_do_id: CD_EL14_50
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[14-07]_hanasu2.mp3
+  key_phrases:
+  - え、今
+  - あのう、ちょっと飲み物を買って来てもいいですか？
+  - みなさんに伝えてください。
+  - わかりました。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: あのう、ちょっと飲み物を買って来てもいいですか？
+  - speaker: learner
+    jp: え、今
+  dialog_listen_audio:
+  - assets/audio/Y_[14-07]_hanasu2.mp3
+  phrase_meta:
+  - jp: え、今
+    tags:
+    - short
+  - jp: あのう、ちょっと飲み物を買って来てもいいですか？
+    tags:
+    - long
+    - polite
+  - jp: みなさんに伝えてください。
+    tags:
+    - long
+    - polite
+  - jp: わかりました。
+    tags:
+    - short
+- id: A8
+  kind: listening
+  book_activity: 8
+  can_do_id: CD_EL14_51
+  label: kiku1
+  audio:
+  - assets/audio/Y_[14-08]_kiku1.mp3
+  key_phrases:
+  - ています。
+  - どんな許可を求めました
+  - 職場の人は許可しました
+  - あのう、ちょっとトイレに行って来てもいいですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: どんな許可を求めました
+    tags:
+    - long
+  - jp: 職場の人は許可しました
+    tags:
+    - long
+  - jp: あのう、ちょっとトイレに行って来てもいいですか？
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL14 activity 8: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A9
+  kind: listening
+  book_activity: 9
+  can_do_id: CD_EL14_48
+  label: kiku2
+  audio:
+  - assets/audio/Y_[14-09]_kiku2.mp3
+  key_phrases:
+  - ています。
+  - どんな許可を求めました
+  - 職場の人は許可しました
+  - あのう、ちょっとトイレに行って来てもいいですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: どんな許可を求めました
+    tags:
+    - long
+  - jp: 職場の人は許可しました
+    tags:
+    - long
+  - jp: あのう、ちょっとトイレに行って来てもいいですか？
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL14 activity 9: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A10
+  kind: listening
+  book_activity: 10
+  can_do_id: CD_EL14_49
+  label: kiku3
+  audio:
+  - assets/audio/Y_[14-10]_kiku3.mp3
+  key_phrases:
+  - ています。
+  - どんな許可を求めました
+  - 職場の人は許可しました
+  - あのう、ちょっとトイレに行って来てもいいですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: どんな許可を求めました
+    tags:
+    - long
+  - jp: 職場の人は許可しました
+    tags:
+    - long
+  - jp: あのう、ちょっとトイレに行って来てもいいですか？
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL14 activity 10: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A11
+  kind: listening
+  book_activity: 11
+  can_do_id: CD_EL14_50
+  label: kiku4
+  audio:
+  - assets/audio/Y_[14-11]_kiku4.mp3
+  key_phrases:
+  - ています。
+  - どんな許可を求めました
+  - 職場の人は許可しました
+  - あのう、ちょっとトイレに行って来てもいいですか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  - jp: どんな許可を求めました
+    tags:
+    - long
+  - jp: 職場の人は許可しました
+    tags:
+    - long
+  - jp: あのう、ちょっとトイレに行って来てもいいですか？
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL14 activity 11: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A12
+  kind: grammar_form
+  book_activity: 12
+  can_do_id: CD_EL14_51
+  label: katachi
+  audio:
+  - assets/audio/Y_[14-12]_katachi.mp3
+  key_phrases:
+  - 少し遅くなります
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 少し遅くなります
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A13
+  kind: speaking
+  book_activity: 13
+  can_do_id: CD_EL14_48
+  label: hanasu
+  audio:
+  - assets/audio/Y_[14-13]_hanasu.mp3
+  key_phrases:
+  - ちょっと外でたばこを吸って来てもいいですか？
+  - じゃあ、今から休憩。
+  - すみません。
+  - 飲み物を買って来てもいいですか？
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: じゃあ、今から休憩。
+  - speaker: learner
+    jp: ちょっと外でたばこを吸って来てもいいですか？
+  dialog_listen_audio:
+  - assets/audio/Y_[14-13]_hanasu.mp3
+  phrase_meta:
+  - jp: ちょっと外でたばこを吸って来てもいいですか？
+    tags:
+    - long
+    - polite
+  - jp: じゃあ、今から休憩。
+    tags:
+    - short
+    - casual
+  - jp: すみません。
+    tags:
+    - short
+    - polite
+  - jp: 飲み物を買って来てもいいですか？
+    tags:
+    - long
+    - polite
+- id: A14
+  kind: conversation
+  book_activity: 14
+  can_do_id: CD_EL14_49
+  label: kaiwa1
+  audio:
+  - assets/audio/Y_[14-14]_kaiwa1.mp3
+  key_phrases:
+  - あのう、すみません。今
+  - ああ、いいよ。
+  - 上司に相談しています。
+  - 許可を求めました
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: ああ、いいよ。
+  - speaker: learner
+    jp: あのう、すみません。今
+  dialog_listen_audio:
+  - assets/audio/Y_[14-14]_kaiwa1.mp3
+  phrase_meta:
+  - jp: あのう、すみません。今
+    tags:
+    - long
+    - polite
+  - jp: ああ、いいよ。
+    tags:
+    - short
+  - jp: 上司に相談しています。
+    tags:
+    - long
+    - polite
+  - jp: 許可を求めました
+    tags:
+    - short
+- id: A15
+  kind: conversation
+  book_activity: 15
+  can_do_id: CD_EL14_50
+  label: kaiwa2
+  audio:
+  - assets/audio/Y_[14-15]_kaiwa2.mp3
+  key_phrases:
+  - えっと、どこに何を書きますか？
+  - お休みを取るときには、休暇届を出してください。このフォームです。
+  - 上司に相談しています。
+  - 許可を求めました
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: お休みを取るときには、休暇届を出してください。このフォームです。
+  - speaker: learner
+    jp: えっと、どこに何を書きますか？
+  dialog_listen_audio:
+  - assets/audio/Y_[14-15]_kaiwa2.mp3
+  phrase_meta:
+  - jp: えっと、どこに何を書きますか？
+    tags:
+    - long
+    - polite
+  - jp: お休みを取るときには、休暇届を出してください。このフォームです。
+    tags:
+    - long
+    - polite
+  - jp: 上司に相談しています。
+    tags:
+    - long
+    - polite
+  - jp: 許可を求めました
+    tags:
+    - short
+- id: A16
+  kind: grammar_form
+  book_activity: 16
+  can_do_id: CD_EL14_51
+  label: katachi
+  audio:
+  - assets/audio/Y_[14-16]_katachi.mp3
+  key_phrases:
+  - ています。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ています。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A17
+  kind: speaking
+  book_activity: 17
+  can_do_id: CD_EL14_48
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[14-17]_hanasu1.mp3
+  key_phrases:
+  - じゃあ、私は「総務」ですね。
+  - いちばん上の「所属」のところには、自分の所属チームの名前を書ください。
+  - すみません。
+  - ありがとうございます。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: いちばん上の「所属」のところには、自分の所属チームの名前を書ください。
+  - speaker: learner
+    jp: じゃあ、私は「総務」ですね。
+  dialog_listen_audio:
+  - assets/audio/Y_[14-17]_hanasu1.mp3
+  phrase_meta:
+  - jp: じゃあ、私は「総務」ですね。
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: いちばん上の「所属」のところには、自分の所属チームの名前を書ください。
+    tags:
+    - long
+    - polite
+  - jp: すみません。
+    tags:
+    - short
+    - polite
+  - jp: ありがとうございます。
+    tags:
+    - long
+    - polite
+- id: A18
+  kind: speaking
+  book_activity: 18
+  can_do_id: CD_EL14_49
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[14-18]_hanasu2.mp3
+  key_phrases:
+  - はい。
+  - はい。それから、その下の「氏名」のところに名前を書きます。
+  - すみません。
+  - ありがとうございます。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: はい。それから、その下の「氏名」のところに名前を書きます。
+  - speaker: learner
+    jp: はい。
+  dialog_listen_audio:
+  - assets/audio/Y_[14-18]_hanasu2.mp3
+  phrase_meta:
+  - jp: はい。
+    tags:
+    - short
+  - jp: はい。それから、その下の「氏名」のところに名前を書きます。
+    tags:
+    - long
+    - polite
+  - jp: すみません。
+    tags:
+    - short
+    - polite
+  - jp: ありがとうございます。
+    tags:
+    - long
+    - polite
+- id: A19
+  kind: listening
+  book_activity: 19
+  can_do_id: CD_EL14_50
+  label: kiku
+  audio:
+  - assets/audio/Y_[14-19]_kiku.mp3
+  key_phrases:
+  - 休暇届の書き方を聞いています。
+  - 説明しています
+  - 休暇届は事前に提出してください。
+  - 何を書きます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 休暇届の書き方を聞いています。
+    tags:
+    - long
+    - polite
+  - jp: 説明しています
+    tags:
+    - short
+    - polite
+  - jp: 休暇届は事前に提出してください。
+    tags:
+    - long
+    - polite
+  - jp: 何を書きます
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL14 activity 19: listen to the CD, then say the phrase that matches
+    the book.'
+grammar:
+- point: N で、～／ナ A-で、～／イ A-くて、～／V-て、～ ＜Cause / Reason 原因
+  worksheet_pages:
+  - 46
+  examples: []
+- point: つにつないで言
+  worksheet_pages:
+  - 46
+  examples: []
+- point: せきがひどいです。これから病院
+  worksheet_pages:
+  - 46
+  examples: []
+- point: S1。それで、S2。
+  worksheet_pages:
+  - 46
+  examples: []
+- point: V-ても いいですか？
+  worksheet_pages:
+  - 47
+  examples: []
+- point: ちょっと（ ）？
+  worksheet_pages:
+  - 47
+  examples: []
+- point: すみません、今
+  worksheet_pages:
+  - 47
+  examples: []
+- point: すみません、（ ）？
+  worksheet_pages:
+  - 47
+  examples: []
+- point: ちょっと寒
+  worksheet_pages:
+  - 47
+  examples: []
+- point: あのう、ここ、ちょっと（ ）？
+  worksheet_pages:
+  - 47
+  examples: []
+- point: トイレに行
+  worksheet_pages:
+  - 47
+  examples: []
+- point: たばこを吸
+  worksheet_pages:
+  - 47
+  examples: []
+- point: ちょっと休憩
+  worksheet_pages:
+  - 47
+  examples: []
+- point: V-ても いいでしょうか？
+  worksheet_pages:
+  - 48
+  examples: []
+- point: ちょっと質問
+  worksheet_pages:
+  - 48
+  examples: []
+- point: V-なければ なりません
+  worksheet_pages:
+  - 48
+  examples: []
+- point: すみません、今日
+  worksheet_pages:
+  - 48
+  examples: []
+- point: ～んです ①
+  worksheet_pages:
+  - 49
+  examples: []
+- point: A： すみません、これから病院
+  worksheet_pages:
+  - 49
+  examples: []
+- point: A： はい、 JF
+  worksheet_pages:
+  - 49
+  examples: []
+vocab: []
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL14_48
+  prompt_en: 'Demonstrate: Can call your workplace to say that you will be late or
+    take the day off.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL14_49
+  prompt_en: 'Demonstrate: Can ask for permission from a co-worker when leaving the
+    area for a moment.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL14_50
+  prompt_en: 'Demonstrate: Can ask for permission in advance when you want to take
+    a day off from work.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL14_51
+  prompt_en: 'Demonstrate: Can ask and understand how to fill out a form, such as
+    a vacation re - quest.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL14_48
+  partner_jp: 少し遅くなります。
+  expected: &id001
+  - 少し遅くなります
+  - ています。
+  - 何の連絡ですか。
+  - 理由は何ですか。
+  hint_en: Can call your workplace to say that you will be late or take the day off.
+- can_do_id: CD_EL14_48
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can call your workplace to say that you will be late or take the
+    day off.
+- can_do_id: CD_EL14_49
+  partner_jp: 少し遅くなります。
+  expected: &id002
+  - 少し遅くなります
+  - ています。
+  - 何の連絡ですか。
+  - 理由は何ですか。
+  hint_en: Can ask for permission from a co-worker when leaving the area for a moment.
+- can_do_id: CD_EL14_49
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can ask for permission from a co-worker when leaving the area for
+    a moment.
+- can_do_id: CD_EL14_50
+  partner_jp: 少し遅くなります。
+  expected: &id003
+  - 少し遅くなります
+  - ています。
+  - 何の連絡ですか。
+  - 理由は何ですか。
+  hint_en: Can ask for permission in advance when you want to take a day off from
+    work.
+- can_do_id: CD_EL14_50
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can ask for permission in advance when you want to take a day off
+    from work.
+- can_do_id: CD_EL14_51
+  partner_jp: 少し遅くなります。
+  expected: &id004
+  - 少し遅くなります
+  - ています。
+  - 何の連絡ですか。
+  - 理由は何ですか。
+  hint_en: Can ask and understand how to fill out a form, such as a vacation re -
+    quest.
+- can_do_id: CD_EL14_51
+  partner_jp: もう一度、お願いします。
+  expected: *id004
+  hint_en: Again — Can ask and understand how to fill out a form, such as a vacation
+    re - quest.
+english_notes: 'For what reason do you take time off from work?
+
+  Can call your workplace to say that you will be late or take the day off.
+
+  Listen to the dialogs.
+
+  The four people are each calling their workplaces to say that they will be late
+  or take the day off.
+
+  Why did each person call their workplace? Write A if the person will be late and
+  write B if the person is taking a day off.
+
+  Listen to the dialogs again. What is the reason? Choose from a-f.
+
+  Check the words and listen to the dialogs again.
+
+  くなる be late ｜ みなさん everyone ｜ 伝
+
+  刻する be late
+
+  あとで later
+
+  ありません I am sorry.
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used to give a reason?
+
+  What expression was used to apologize?
+
+  Focus on the expressions used and listen to the dialogs again.
+
+  Call to say that you will be late or take the day off.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Practice using the words from 1 .
+
+  Role-play this situation. One person thinks about the reason for being late or taking
+  the day off and calls their work. The other person
+
+  answers the call. If you do not know what to say in Japanese, try to look it up.'
+unlock_requires_mastery: true

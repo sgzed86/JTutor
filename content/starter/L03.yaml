@@ -1,0 +1,531 @@
+lesson_id: L03
+lesson: 3
+title_en: Nice to meet you
+title_jp: よろしくお願いします
+topic_en: About Myself
+pdf_pages:
+- 81
+- 100
+intro_questions:
+- jp: Nice to meet you について、あなたの けいけんは？
+  en: Thinking about "About Myself" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can give a simple self-introduction (name, country/hometown). What do you
+    want to be able to do?'
+can_dos:
+- id: CD_L03_07
+  can_do_number: 7
+  statement_en: Can give a simple self-introduction (name, country/hometown).
+  statement_jp: 簡単な自己紹介（名前・国など）をすることができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - です
+    - から来ました
+    min_score: 80
+- id: CD_L03_08
+  can_do_number: 8
+  statement_en: Can ask someone's name and where they are from.
+  statement_jp: 相手の名前や出身を質問することができる。
+  activity_hint: '1'
+  rubric:
+    must_include:
+    - お名前
+    - どこ
+    min_score: 80
+- id: CD_L03_09
+  can_do_number: 9
+  statement_en: Can use simple set phrases when meeting someone for the first time.
+  statement_jp: 初めて会った人に簡単な定型表現を使うことができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - よろしく
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_L03_07
+  label: kiku1
+  audio:
+  - assets/audio/X_[03-01]_kiku1.mp3
+  key_phrases:
+  - よろしくお願いします
+  - 1始めまして、トンです
+  - 体からきました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: よろしくお願いします
+    tags:
+    - short
+    - polite
+  - jp: 1始めまして、トンです
+    tags:
+    - long
+    - polite
+  - jp: 体からきました
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_L03_08
+  label: kiku2
+  audio:
+  - assets/audio/X_[03-02]_kiku2.mp3
+  key_phrases:
+  - どうぞよろしくお願いします
+  - 2初めましてやみんです
+  - やんまわからきました
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: どうぞよろしくお願いします
+    tags:
+    - long
+    - polite
+  - jp: 2初めましてやみんです
+    tags:
+    - long
+    - polite
+  - jp: やんまわからきました
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L03 activity 2: listen to the CD, then say the phrase that matches the book.'
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_L03_09
+  label: kiku3
+  audio:
+  - assets/audio/X_[03-03]_kiku3.mp3
+  key_phrases:
+  - 3初めまして私はマルシアですブラジルからきましたよろしくお願いします
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 3初めまして私はマルシアですブラジルからきましたよろしくお願いします
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L03 activity 3: listen to the CD, then say the phrase that matches the book.'
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_L03_07
+  label: kiku4
+  audio:
+  - assets/audio/X_[03-04]_kiku4.mp3
+  key_phrases:
+  - 4パクですパクソン人です韓国から来ましたどうぞよろしくお願いします
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 4パクですパクソン人です韓国から来ましたどうぞよろしくお願いします
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L03 activity 4: listen to the CD, then say the phrase that matches the book.'
+- id: A5
+  kind: grammar_form
+  book_activity: 5
+  can_do_id: CD_L03_08
+  label: katachi
+  audio:
+  - assets/audio/X_[03-05]_katachi.mp3
+  key_phrases:
+  - ブラジルからきました
+  - 初めまして、トンです
+  - 私はマルシアです
+  - 体からきました
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ブラジルからきました
+    tags:
+    - short
+  - jp: 初めまして、トンです
+    tags:
+    - short
+    - polite
+  - jp: 私はマルシアです
+    tags:
+    - short
+    - polite
+  - jp: 体からきました
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A6
+  kind: speaking
+  book_activity: 6
+  can_do_id: CD_L03_09
+  label: hanasu
+  audio:
+  - assets/audio/X_[03-06]_hanasu.mp3
+  key_phrases:
+  - 始めましてトンです体から来ましたどうぞよろしくお願いします
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 始めましてトンです体から来ましたどうぞよろしくお願いします
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 始めましてトンです体から来ましたどうぞよろしくお願いします
+  - speaker: learner
+    jp: 始めましてトンです体から来ましたどうぞよろしくお願いします
+  dialog_listen_audio:
+  - assets/audio/X_[03-06]_hanasu.mp3
+- id: A7
+  kind: conversation
+  book_activity: 7
+  can_do_id: CD_L03_07
+  label: kaiwa
+  audio:
+  - assets/audio/X_[03-07]_kaiwa.mp3
+  key_phrases:
+  - 同じ会社です
+  - けまらさんも、ベトナムからですか
+  - みんなは、みんなさんは、友達ですか
+  - ベトナムのどちらからですか
+  prompt_en: Listen to the conversation, then practice both roles.
+  phrase_meta:
+  - jp: 同じ会社です
+    tags:
+    - short
+    - polite
+  - jp: けまらさんも、ベトナムからですか
+    tags:
+    - long
+    - polite
+  - jp: みんなは、みんなさんは、友達ですか
+    tags:
+    - long
+    - polite
+  - jp: ベトナムのどちらからですか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: ベトナムのどちらからですか
+  - speaker: learner
+    jp: 同じ会社です
+  dialog_listen_audio:
+  - assets/audio/X_[03-07]_kaiwa.mp3
+- id: A8
+  kind: grammar_form
+  book_activity: 8
+  can_do_id: CD_L03_08
+  label: katachi1
+  audio:
+  - assets/audio/X_[03-08]_katachi1.mp3
+  key_phrases:
+  - お名前はちゃんですご視聴はベトナムです
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: お名前はちゃんですご視聴はベトナムです
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A9
+  kind: grammar_form
+  book_activity: 9
+  can_do_id: CD_L03_09
+  label: katachi2
+  audio:
+  - assets/audio/X_[03-09]_katachi2.mp3
+  key_phrases:
+  - ケマラさんもベトナムからですかいいえみなさんは友達ですかはい
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ケマラさんもベトナムからですかいいえみなさんは友達ですかはい
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A10
+  kind: grammar_form
+  book_activity: 10
+  can_do_id: CD_L03_07
+  label: katachi3
+  audio:
+  - assets/audio/X_[03-10]_katachi3.mp3
+  key_phrases:
+  - ちゃんさん、ご出身はベトナムですはいさんは私もベトナムですけまらさんもベトナムからですか
+  - ベトナムじゃないです
+  - いいえ
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ちゃんさん、ご出身はベトナムですはいさんは私もベトナムですけまらさんもベトナムからですか
+    tags:
+    - long
+    - polite
+  - jp: ベトナムじゃないです
+    tags:
+    - short
+    - polite
+  - jp: いいえ
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A11
+  kind: speaking
+  book_activity: 11
+  can_do_id: CD_L03_08
+  label: hanasu
+  audio:
+  - assets/audio/X_[03-11]_hanasu.mp3
+  key_phrases:
+  - お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
+  - speaker: learner
+    jp: お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
+  dialog_listen_audio:
+  - assets/audio/X_[03-11]_hanasu.mp3
+grammar:
+- point: N です
+  worksheet_pages:
+  - 2
+  examples: []
+- point: は N2 です
+  worksheet_pages:
+  - 2
+  examples: []
+- point: A： はじめまして。マルシア（ ）。
+  worksheet_pages:
+  - 2
+  examples: []
+- point: A： こんにちは。田中
+  worksheet_pages:
+  - 2
+  examples: []
+- point: はじめまして。（自分
+  worksheet_pages:
+  - 2
+  examples: []
+- point: N は？
+  worksheet_pages:
+  - 3
+  examples: []
+- point: A： こんにちは、金子
+  worksheet_pages:
+  - 3
+  examples: []
+- point: A： トンさんは、（タイからです → ）？
+  worksheet_pages:
+  - 3
+  examples: []
+- point: N も
+  worksheet_pages:
+  - 4
+  examples: []
+- point: N じゃないです
+  worksheet_pages:
+  - 4
+  examples: []
+- point: A： ジェインさんは、ミャンマーからですか？
+  worksheet_pages:
+  - 4
+  examples: []
+- point: A： トンさんは、ベトナムからですか？
+  worksheet_pages:
+  - 4
+  examples: []
+- point: A： はじめまして。アニカです。
+  worksheet_pages:
+  - 4
+  examples: []
+vocab: []
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_L03_07
+  prompt_en: 'Demonstrate this can-do in Japanese: Can give a simple self-introduction (name, country/hometown).'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L03_07
+  prompt_en: 'In a new everyday situation, show you can: Can give a simple self-introduction (name, country/hometown).'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L03_08
+  prompt_en: 'Demonstrate this can-do in Japanese: Can ask someone''s name and where they are from.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L03_08
+  prompt_en: 'In a new everyday situation, show you can: Can ask someone''s name and where they are from.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L03_09
+  prompt_en: 'Demonstrate this can-do in Japanese: Can use simple set phrases when meeting someone for
+    the first time.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L03_09
+  prompt_en: 'In a new everyday situation, show you can: Can use simple set phrases when meeting someone
+    for the first time.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_L03_07
+  partner_jp: では、お願いします。
+  expected:
+  - です
+  - から来ました
+  hint_en: 'Situation: Can give a simple self-introduction (name, country/hometown). Reply using lesson
+    phrases.'
+- can_do_id: CD_L03_07
+  partner_jp: もう一度、お願いします。
+  expected:
+  - です
+  - から来ました
+  hint_en: Again — 簡単な自己紹介（名前・国など）をすることができる。
+- can_do_id: CD_L03_08
+  partner_jp: では、お願いします。
+  expected:
+  - お名前
+  - どこ
+  hint_en: 'Situation: Can ask someone''s name and where they are from. Reply using lesson phrases.'
+- can_do_id: CD_L03_08
+  partner_jp: もう一度、お願いします。
+  expected:
+  - お名前
+  - どこ
+  hint_en: Again — 相手の名前や出身を質問することができる。
+- can_do_id: CD_L03_09
+  partner_jp: では、お願いします。
+  expected:
+  - よろしく
+  hint_en: 'Situation: Can use simple set phrases when meeting someone for the first time. Reply using
+    lesson phrases.'
+- can_do_id: CD_L03_09
+  partner_jp: もう一度、お願いします。
+  expected:
+  - よろしく
+  hint_en: Again — 初めて会った人に簡単な定型表現を使うことができる。
+- can_do_id: CD_L03_09
+  partner_jp: 始めましてトンです体から来ましたどうぞよろしくお願いします
+  expected:
+  - 始めましてトンです体から来ましたどうぞよろしくお願いします
+  hint_en: Reply as in the book dialog (activity 6).
+- can_do_id: CD_L03_07
+  partner_jp: ベトナムのどちらからですか
+  expected:
+  - 同じ会社です
+  - けまらさんも、ベトナムからですか
+  - みんなは、みんなさんは、友達ですか
+  - ベトナムのどちらからですか
+  hint_en: Reply as in the book dialog (activity 7).
+- can_do_id: CD_L03_08
+  partner_jp: お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
+  expected:
+  - お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
+  hint_en: Reply as in the book dialog (activity 11).
+- can_do_id: CD_L03_07
+  partner_jp: よろしくお願いします。
+  expected:
+  - よろしくお願いします
+  - 1始めまして、トンです
+  - 体からきました
+  - 4パクですパクソン人です韓国から来ましたどうぞよろしくお願いします
+  - です
+  - から来ました
+  hint_en: Can give a simple self-introduction (name, country/hometown).
+- can_do_id: CD_L03_08
+  partner_jp: どうぞよろしくお願いします。
+  expected:
+  - どうぞよろしくお願いします
+  - 2初めましてやみんです
+  - やんまわからきました
+  - ブラジルからきました
+  - お名前
+  - どこ
+  hint_en: Can ask someone's name and where they are from.
+- can_do_id: CD_L03_09
+  partner_jp: 3初めまして私はマルシアですブラジルからきましたよろしくお願いします。
+  expected:
+  - 3初めまして私はマルシアですブラジルからきましたよろしくお願いします
+  - 始めましてトンです体から来ましたどうぞよろしくお願いします
+  - ケマラさんもベトナムからですかいいえみなさんは友達ですかはい
+  - よろしく
+  hint_en: Can use simple set phrases when meeting someone for the first time.
+english_notes: 'What do you say when you are introducing yourself to someone you are meeting for the first
+  time?
+
+  Can give a simple self-introduction, for example by saying your name and country / hometown.
+
+  Listen to the dialog.
+
+  Four people are joining a local Japanese class and introducing themselves.
+
+  Choose the names and nationalities (countries) of the people ①–④ from below.
+
+  前 Name
+
+  Country
+
+  Check the words and listen to the dialog again.
+
+  る come）｜ 私
+
+  I / myself
+
+  はじめまして Hello. (said when meeting someone for the first time)
+
+  いします Nice to meet you.
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used when the speakers said their names?
+
+  What expression was used when the speakers said their countries / hometowns?
+
+  Focus on the expressions used and listen to the dialog again.
+
+  Introduce yourself.
+
+  Listen to the dialog.
+
+  Shadow the dialog.
+
+  Talk as if you are introducing yourself at work or in a Japanese class.
+
+  First words
+
+  Final words
+
+  Name
+
+  Country / hometown
+
+  Write your name and country.
+
+  You are going to attend an international exchange party. At the party reception, you have been told
+  to write your name and country on a
+
+  name tag.
+
+  入例 example）
+
+  Look at the filled-in example above. Which country does the person come from? What is his name?
+
+  Write your country and your name, just like the example.
+
+  Can write your name and country on a name tag, etc.'
+unlock_requires_mastery: true

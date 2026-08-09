@@ -1,0 +1,63 @@
+{
+  "name": "jtutor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Irodori Starter local Japanese tutor",
+  "main": "apps/desktop/electron/main.cjs",
+  "scripts": {
+    "dev:backend": "set PYTHONPATH=%CD%&& python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8765",
+    "dev:ui": "npm run dev --prefix apps/desktop",
+    "dev": "concurrently -k \"npm run dev:backend\" \"npm run dev:ui\"",
+    "build:ui": "npm run build --prefix apps/desktop",
+    "start": "npm run build:ui && electron .",
+    "pack": "npm run build:ui && electron-builder --win dir",
+    "dist": "npm run build:ui && electron-builder --win nsis",
+    "release": "powershell -ExecutionPolicy Bypass -File scripts/make_release.ps1",
+    "scrape": "python scripts/run_scrape.py"
+  },
+  "build": {
+    "appId": "com.jtutor.app",
+    "productName": "Jtutor",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "apps/desktop/dist/**/*",
+      "apps/desktop/electron/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "backend",
+        "to": "backend",
+        "filter": ["**/*", "!**/__pycache__/**", "!**/*.pyc"]
+      },
+      {
+        "from": "content",
+        "to": "content",
+        "filter": ["**/*", "!**/audio_transcripts.json"]
+      },
+      {
+        "from": "apps/desktop/dist",
+        "to": "ui"
+      },
+      {
+        "from": "release/assets/README.txt",
+        "to": "assets/README.txt"
+      }
+    ],
+    "win": {
+      "target": ["nsis"],
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  }
+}

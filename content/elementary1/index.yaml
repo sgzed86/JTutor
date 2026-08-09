@@ -1,0 +1,148 @@
+book_id: elementary1
+book_title: Irodori Elementary 1 (A2)
+level: A2
+lessons:
+- lesson_id: EL01
+  lesson: 1
+  book_id: elementary1
+  title_en: I work in a restaurant
+  title_jp: レストランで働いています
+  topic_en: About Me Now
+  can_do_count: 3
+  activity_count: 27
+- lesson_id: EL02
+  lesson: 2
+  book_id: elementary1
+  title_en: I like playing video games
+  title_jp: ゲームをするのが好きです
+  topic_en: About Me Now
+  can_do_count: 4
+  activity_count: 17
+- lesson_id: EL03
+  lesson: 3
+  book_id: elementary1
+  title_en: It gets very cold in winter
+  title_jp: 冬 はとても寒くなります
+  topic_en: Seasons and Weather
+  can_do_count: 3
+  activity_count: 14
+- lesson_id: EL04
+  lesson: 4
+  book_id: elementary1
+  title_en: It rained heavily yesterday
+  title_jp: 昨日はすごい雨でしたね
+  topic_en: Seasons and Weather
+  can_do_count: 3
+  activity_count: 12
+- lesson_id: EL05
+  lesson: 5
+  book_id: elementary1
+  title_en: It is very lively and convenient
+  title_jp: とてもにぎやかで便利です
+  topic_en: Towns and Neighborhoods
+  can_do_count: 3
+  activity_count: 14
+- lesson_id: EL06
+  lesson: 6
+  book_id: elementary1
+  title_en: Please tell me how to get to the post office
+  title_jp: 郵便局はどう行ったらいいですか ？
+  topic_en: Towns and Neighborhoods
+  can_do_count: 3
+  activity_count: 15
+- lesson_id: EL07
+  lesson: 7
+  book_id: elementary1
+  title_en: I will be a bit late because I got lost
+  title_jp: 道に 迷ってちょっと遅 れます
+  topic_en: Going Out
+  can_do_count: 4
+  activity_count: 9
+- lesson_id: EL08
+  lesson: 8
+  book_id: elementary1
+  title_en: Have you ever played baseball?
+  title_jp: 野球、したことありますか？
+  topic_en: Going Out
+  can_do_count: 3
+  activity_count: 22
+- lesson_id: EL09
+  lesson: 9
+  book_id: elementary1
+  title_en: Will you tell me how to read this?
+  title_jp: 読 み方 を 教 えてもらえま せん か？
+  topic_en: Eating Out
+  can_do_count: 4
+  activity_count: 24
+- lesson_id: EL10
+  lesson: 10
+  book_id: elementary1
+  title_en: I would like to take a Japanese-language class
+  title_jp: 日本語教室に参加したいんですが…
+  topic_en: Eating Out
+  can_do_count: 4
+  activity_count: 11
+- lesson_id: EL11
+  lesson: 11
+  book_id: elementary1
+  title_en: I will bring meat and vegetables
+  title_jp: 肉と野 菜は 私 が 買って行きます
+  topic_en: Shopping and Cooking
+  can_do_count: 4
+  activity_count: 26
+- lesson_id: EL12
+  lesson: 12
+  book_id: elementary1
+  title_en: Your bento looks delicious
+  title_jp: お弁当、おいしそうですね
+  topic_en: Shopping and Cooking
+  can_do_count: 4
+  activity_count: 20
+- lesson_id: EL13
+  lesson: 13
+  book_id: elementary1
+  title_en: It will probably end in about ten minutes
+  title_jp: あと 10 分ぐらいで 終わりそうです
+  topic_en: At Work
+  can_do_count: 5
+  activity_count: 22
+- lesson_id: EL14
+  lesson: 14
+  book_id: elementary1
+  title_en: May I take a day off?
+  title_jp: 休 み を取ってもいいでしょうか？
+  topic_en: At Work
+  can_do_count: 4
+  activity_count: 19
+- lesson_id: EL15
+  lesson: 15
+  book_id: elementary1
+  title_en: I have a fever, and my throat is sore
+  title_jp: 熱 が あってのどが 痛いんです
+  topic_en: Health
+  can_do_count: 5
+  activity_count: 18
+- lesson_id: EL16
+  lesson: 16
+  book_id: elementary1
+  title_en: I try not to eat too much
+  title_jp: 食べすぎないようにしています
+  topic_en: Health
+  can_do_count: 4
+  activity_count: 20
+- lesson_id: EL17
+  lesson: 17
+  book_id: elementary1
+  title_en: This is a personal amulet my older brother gave me
+  title_jp: 兄 がくれたお守りです
+  topic_en: Visiting People
+  can_do_count: 4
+  activity_count: 22
+- lesson_id: EL18
+  lesson: 18
+  book_id: elementary1
+  title_en: How about giving something as a gift?
+  title_jp: 何かプレゼントをあげませんか ？
+  topic_en: Visiting People
+  can_do_count: 5
+  activity_count: 14

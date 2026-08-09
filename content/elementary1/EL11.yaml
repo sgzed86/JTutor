@@ -1,0 +1,1049 @@
+lesson_id: EL11
+lesson: 11
+book_id: elementary1
+title_en: I will bring meat and vegetables
+title_jp: 肉と野 菜は 私 が 買って行きます
+topic_en: Shopping and Cooking
+pdf_pages:
+- 223
+- 243
+intro_questions:
+- jp: I will bring meat and vegetables について、あなたの けいけんは？
+  en: Thinking about "Shopping and Cooking" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can discuss who will bring which item when, for example,
+    having a bar - becue. What do you want to be able to do?'
+can_dos:
+- id: CD_EL11_35
+  can_do_number: 35
+  statement_en: Can discuss who will bring which item when, for example, having a
+    bar - becue.
+  statement_jp: バーベキューなどをするとき、だれが何を準備するか話し合うことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL11_36
+  can_do_number: 36
+  statement_en: Can discuss what to buy when, for example, having a house party.
+  statement_jp: バーベキューなどをするとき、だれが何を準備するか話し合うことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL11_37
+  can_do_number: 37
+  statement_en: Can ask store staff about the ingredients and expiration dates of
+    food and understand the answers.
+  statement_jp: バーベキューなどをするとき、だれが何を準備するか話し合うことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL11_38
+  can_do_number: 38
+  statement_en: Can read food labels to check if the food contains something you cannot
+    eat.
+  statement_jp: バーベキューなどをするとき、だれが何を準備するか話し合うことができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: vocabulary
+  book_activity: 1
+  can_do_id: CD_EL11_35
+  label: kotoba1
+  audio:
+  - assets/audio/Y_[11-01]_kotoba1.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  - の準備について話しています。
+  - だれが何を持って行きます
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: の準備について話しています。
+    tags:
+    - long
+    - polite
+  - jp: だれが何を持って行きます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: vocabulary
+  book_activity: 2
+  can_do_id: CD_EL11_36
+  label: kotoba2
+  audio:
+  - assets/audio/Y_[11-02]_kotoba2.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  - の準備について話しています。
+  - だれが何を持って行きます
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: の準備について話しています。
+    tags:
+    - long
+    - polite
+  - jp: だれが何を持って行きます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL11_37
+  label: kiku1
+  audio:
+  - assets/audio/Y_[11-03]_kiku1.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  - の準備について話しています。
+  - だれが何を持って行きます
+  - 行きます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: の準備について話しています。
+    tags:
+    - long
+    - polite
+  - jp: だれが何を持って行きます
+    tags:
+    - long
+    - polite
+  - jp: 行きます
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_EL11_38
+  label: kiku2
+  audio:
+  - assets/audio/Y_[11-04]_kiku2.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  - の準備について話しています。
+  - だれが何を持って行きます
+  - 来週のバーベキューです
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: の準備について話しています。
+    tags:
+    - long
+    - polite
+  - jp: だれが何を持って行きます
+    tags:
+    - long
+    - polite
+  - jp: 来週のバーベキューです
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL11 activity 4: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_EL11_35
+  label: kiku3
+  audio:
+  - assets/audio/Y_[11-05]_kiku3.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  - の準備について話しています。
+  - だれが何を持って行きます
+  - 来週のバーベキューです
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: の準備について話しています。
+    tags:
+    - long
+    - polite
+  - jp: だれが何を持って行きます
+    tags:
+    - long
+    - polite
+  - jp: 来週のバーベキューです
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL11 activity 5: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A6
+  kind: listening
+  book_activity: 6
+  can_do_id: CD_EL11_36
+  label: kiku4
+  audio:
+  - assets/audio/Y_[11-06]_kiku4.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  - の準備について話しています。
+  - だれが何を持って行きます
+  - 行きます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: の準備について話しています。
+    tags:
+    - long
+    - polite
+  - jp: だれが何を持って行きます
+    tags:
+    - long
+    - polite
+  - jp: 行きます
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL11 activity 6: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A7
+  kind: grammar_form
+  book_activity: 7
+  can_do_id: CD_EL11_37
+  label: katachi
+  audio:
+  - assets/audio/Y_[11-07]_katachi.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  - 行きます
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: 行きます
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A8
+  kind: speaking
+  book_activity: 8
+  can_do_id: CD_EL11_38
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[11-08]_hanasu1.mp3
+  key_phrases:
+  - 塩いいです。
+  - 焼き鳥も買いますか？塩たれ、がいいですか？
+  - 肉と野菜は私が買って行きます
+  - わかりました。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 焼き鳥も買いますか？塩たれ、がいいですか？
+  - speaker: learner
+    jp: 塩いいです。
+  dialog_listen_audio:
+  - assets/audio/Y_[11-08]_hanasu1.mp3
+  phrase_meta:
+  - jp: 塩いいです。
+    tags:
+    - short
+    - polite
+  - jp: 焼き鳥も買いますか？塩たれ、がいいですか？
+    tags:
+    - long
+    - polite
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: わかりました。
+    tags:
+    - short
+- id: A9
+  kind: speaking
+  book_activity: 9
+  can_do_id: CD_EL11_35
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[11-09]_hanasu2.mp3
+  key_phrases:
+  - 私はいいです。
+  - チョコレートケーキチーズケーキ、がいいですか？
+  - 肉と野菜は私が買って行きます
+  - わかりました。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: チョコレートケーキチーズケーキ、がいいですか？
+  - speaker: learner
+    jp: 私はいいです。
+  dialog_listen_audio:
+  - assets/audio/Y_[11-09]_hanasu2.mp3
+  phrase_meta:
+  - jp: 私はいいです。
+    tags:
+    - short
+    - polite
+  - jp: チョコレートケーキチーズケーキ、がいいですか？
+    tags:
+    - long
+    - polite
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: わかりました。
+    tags:
+    - short
+- id: A10
+  kind: conversation
+  book_activity: 10
+  can_do_id: CD_EL11_36
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[11-10]_kaiwa.mp3
+  key_phrases:
+  - いいです。
+  - 何が食べたいですか？
+  - 肉と野菜は私が買って行きます
+  - スーパーに買い物に来ています。
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 何が食べたいですか？
+  - speaker: learner
+    jp: いいです。
+  dialog_listen_audio:
+  - assets/audio/Y_[11-10]_kaiwa.mp3
+  phrase_meta:
+  - jp: いいです。
+    tags:
+    - short
+    - polite
+  - jp: 何が食べたいですか？
+    tags:
+    - short
+    - polite
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: スーパーに買い物に来ています。
+    tags:
+    - long
+    - polite
+- id: A11
+  kind: grammar_form
+  book_activity: 11
+  can_do_id: CD_EL11_37
+  label: katachi
+  audio:
+  - assets/audio/Y_[11-11]_katachi.mp3
+  key_phrases:
+  - 焼き鳥も買いますか？塩たれ、がいいですか？
+  - 塩いいです。
+  - チョコレートケーキチーズケーキ、がいいですか？
+  - 私はいいです。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 焼き鳥も買いますか？塩たれ、がいいですか？
+    tags:
+    - long
+    - polite
+  - jp: 塩いいです。
+    tags:
+    - short
+    - polite
+  - jp: チョコレートケーキチーズケーキ、がいいですか？
+    tags:
+    - long
+    - polite
+  - jp: 私はいいです。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A12
+  kind: speaking
+  book_activity: 12
+  can_do_id: CD_EL11_38
+  label: hanasu1-1
+  audio:
+  - assets/audio/Y_[11-12]_hanasu1-1.mp3
+  key_phrases:
+  - ウーロン茶にしましょう。
+  - お茶
+  - 肉と野菜は私が買って行きます
+  - 友だちの家でパーティーをします。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: お茶
+  - speaker: learner
+    jp: ウーロン茶にしましょう。
+  dialog_listen_audio:
+  - assets/audio/Y_[11-12]_hanasu1-1.mp3
+  phrase_meta:
+  - jp: ウーロン茶にしましょう。
+    tags:
+    - long
+  - jp: お茶
+    tags:
+    - short
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: 友だちの家でパーティーをします。
+    tags:
+    - long
+    - polite
+- id: A13
+  kind: speaking
+  book_activity: 13
+  can_do_id: CD_EL11_35
+  label: hanasu1-2
+  audio:
+  - assets/audio/Y_[11-13]_hanasu1-2.mp3
+  key_phrases:
+  - あのう、この料理、卵を使ってますか？
+  - さあ、どうぞ。
+  - 肉と野菜は私が買って行きます
+  - 友だちの家でパーティーをします。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: さあ、どうぞ。
+  - speaker: learner
+    jp: あのう、この料理、卵を使ってますか？
+  dialog_listen_audio:
+  - assets/audio/Y_[11-13]_hanasu1-2.mp3
+  phrase_meta:
+  - jp: あのう、この料理、卵を使ってますか？
+    tags:
+    - long
+    - polite
+  - jp: さあ、どうぞ。
+    tags:
+    - short
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: 友だちの家でパーティーをします。
+    tags:
+    - long
+    - polite
+- id: A14
+  kind: speaking
+  book_activity: 14
+  can_do_id: CD_EL11_36
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[11-14]_hanasu2.mp3
+  key_phrases:
+  - よかったら、ピザ、どう？
+  - あ、じゃあ、だいじょうぶです。いただきます！
+  - 肉と野菜は私が買って行きます
+  - 友だちの家でパーティーをします。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: あ、じゃあ、だいじょうぶです。いただきます！
+  - speaker: learner
+    jp: よかったら、ピザ、どう？
+  dialog_listen_audio:
+  - assets/audio/Y_[11-14]_hanasu2.mp3
+  phrase_meta:
+  - jp: よかったら、ピザ、どう？
+    tags:
+    - long
+  - jp: あ、じゃあ、だいじょうぶです。いただきます！
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: 友だちの家でパーティーをします。
+    tags:
+    - long
+    - polite
+- id: A15
+  kind: vocabulary
+  book_activity: 15
+  can_do_id: CD_EL11_37
+  label: kotoba1
+  audio:
+  - assets/audio/Y_[11-15]_kotoba1.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A16
+  kind: vocabulary
+  book_activity: 16
+  can_do_id: CD_EL11_38
+  label: kotoba2
+  audio:
+  - assets/audio/Y_[11-16]_kotoba2.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A17
+  kind: listening
+  book_activity: 17
+  can_do_id: CD_EL11_35
+  label: kiku1
+  audio:
+  - assets/audio/Y_[11-17]_kiku1.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  - 材料や消費期限などを質問しています。
+  - 何について質問しています
+  - 答えはどうですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: 材料や消費期限などを質問しています。
+    tags:
+    - long
+    - polite
+  - jp: 何について質問しています
+    tags:
+    - long
+    - polite
+  - jp: 答えはどうですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL11 activity 17: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A18
+  kind: listening
+  book_activity: 18
+  can_do_id: CD_EL11_36
+  label: kiku2
+  audio:
+  - assets/audio/Y_[11-18]_kiku2.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  - 材料や消費期限などを質問しています。
+  - 何について質問しています
+  - 答えはどうですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: 材料や消費期限などを質問しています。
+    tags:
+    - long
+    - polite
+  - jp: 何について質問しています
+    tags:
+    - long
+    - polite
+  - jp: 答えはどうですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL11 activity 18: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A19
+  kind: listening
+  book_activity: 19
+  can_do_id: CD_EL11_37
+  label: kiku3
+  audio:
+  - assets/audio/Y_[11-19]_kiku3.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  - 材料や消費期限などを質問しています。
+  - 何について質問しています
+  - 答えはどうですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: 材料や消費期限などを質問しています。
+    tags:
+    - long
+    - polite
+  - jp: 何について質問しています
+    tags:
+    - long
+    - polite
+  - jp: 答えはどうですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL11 activity 19: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A20
+  kind: listening
+  book_activity: 20
+  can_do_id: CD_EL11_38
+  label: kiku4
+  audio:
+  - assets/audio/Y_[11-20]_kiku4.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  - 材料や消費期限などを質問しています。
+  - 何について質問しています
+  - 答えはどうですか。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: 材料や消費期限などを質問しています。
+    tags:
+    - long
+    - polite
+  - jp: 何について質問しています
+    tags:
+    - long
+    - polite
+  - jp: 答えはどうですか。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL11 activity 20: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A21
+  kind: grammar_form
+  book_activity: 21
+  can_do_id: CD_EL11_35
+  label: katachi
+  audio:
+  - assets/audio/Y_[11-21]_katachi.mp3
+  key_phrases:
+  - 肉と野菜は私が買って行きます
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A22
+  kind: speaking
+  book_activity: 22
+  can_do_id: CD_EL11_36
+  label: hanasu1-1
+  audio:
+  - assets/audio/Y_[11-22]_hanasu1-1.mp3
+  key_phrases:
+  - エビ、入ってるよ。
+  - このピザ、エビが入ってますか？
+  - 肉と野菜は私が買って行きます
+  - ぐらいもちます。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: このピザ、エビが入ってますか？
+  - speaker: learner
+    jp: エビ、入ってるよ。
+  dialog_listen_audio:
+  - assets/audio/Y_[11-22]_hanasu1-1.mp3
+  phrase_meta:
+  - jp: エビ、入ってるよ。
+    tags:
+    - short
+  - jp: このピザ、エビが入ってますか？
+    tags:
+    - long
+    - polite
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: ぐらいもちます。
+    tags:
+    - short
+    - polite
+- id: A23
+  kind: speaking
+  book_activity: 23
+  can_do_id: CD_EL11_37
+  label: hanasu1-2
+  audio:
+  - assets/audio/Y_[11-23]_hanasu1-2.mp3
+  key_phrases:
+  - そうなんだ……。
+  - じゃあ、私はだめです。エビのアレルギーですから。
+  - 肉と野菜は私が買って行きます
+  - ぐらいもちます。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: じゃあ、私はだめです。エビのアレルギーですから。
+  - speaker: learner
+    jp: そうなんだ……。
+  dialog_listen_audio:
+  - assets/audio/Y_[11-23]_hanasu1-2.mp3
+  phrase_meta:
+  - jp: そうなんだ……。
+    tags:
+    - short
+  - jp: じゃあ、私はだめです。エビのアレルギーですから。
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: ぐらいもちます。
+    tags:
+    - short
+    - polite
+- id: A24
+  kind: speaking
+  book_activity: 24
+  can_do_id: CD_EL11_38
+  label: hanasu1-3
+  audio:
+  - assets/audio/Y_[11-24]_hanasu1-3.mp3
+  key_phrases:
+  - あ、お刺身は、今日中に食べてください。
+  - すみません。このお刺身、明日までもちますか？
+  - 肉と野菜は私が買って行きます
+  - ぐらいもちます。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみません。このお刺身、明日までもちますか？
+  - speaker: learner
+    jp: あ、お刺身は、今日中に食べてください。
+  dialog_listen_audio:
+  - assets/audio/Y_[11-24]_hanasu1-3.mp3
+  phrase_meta:
+  - jp: あ、お刺身は、今日中に食べてください。
+    tags:
+    - long
+    - polite
+  - jp: すみません。このお刺身、明日までもちますか？
+    tags:
+    - long
+    - polite
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: ぐらいもちます。
+    tags:
+    - short
+    - polite
+- id: A25
+  kind: speaking
+  book_activity: 25
+  can_do_id: CD_EL11_35
+  label: hanasu2-1
+  audio:
+  - assets/audio/Y_[11-25]_hanasu2-1.mp3
+  key_phrases:
+  - ちょっと無理ですね。
+  - そうですか。明日はだめですか？
+  - 肉と野菜は私が買って行きます
+  - ぐらいもちます。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: そうですか。明日はだめですか？
+  - speaker: learner
+    jp: ちょっと無理ですね。
+  dialog_listen_audio:
+  - assets/audio/Y_[11-25]_hanasu2-1.mp3
+  phrase_meta:
+  - jp: ちょっと無理ですね。
+    tags:
+    - short
+    - polite
+  - jp: そうですか。明日はだめですか？
+    tags:
+    - long
+    - polite
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: ぐらいもちます。
+    tags:
+    - short
+    - polite
+- id: A26
+  kind: speaking
+  book_activity: 26
+  can_do_id: CD_EL11_36
+  label: hanasu2-2
+  audio:
+  - assets/audio/Y_[11-26]_hanasu2-2.mp3
+  key_phrases:
+  - そうですよ。
+  - すみません。このラーメン、ハラルですか？
+  - 肉と野菜は私が買って行きます
+  - ぐらいもちます。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみません。このラーメン、ハラルですか？
+  - speaker: learner
+    jp: そうですよ。
+  dialog_listen_audio:
+  - assets/audio/Y_[11-26]_hanasu2-2.mp3
+  phrase_meta:
+  - jp: そうですよ。
+    tags:
+    - short
+    - polite
+  - jp: すみません。このラーメン、ハラルですか？
+    tags:
+    - long
+    - polite
+  - jp: 肉と野菜は私が買って行きます
+    tags:
+    - long
+    - polite
+  - jp: ぐらいもちます。
+    tags:
+    - short
+    - polite
+grammar:
+- point: A： ケーキを（ 持
+  worksheet_pages:
+  - 36
+  examples: []
+- point: N1 と N2（と）、 どっちが いいですか？
+  worksheet_pages:
+  - 37
+  examples: []
+- point: N の ほうが いいです
+  worksheet_pages:
+  - 38
+  examples: []
+- point: A： オレンジジュースとりんごジュース、どっちがいいですか？
+  worksheet_pages:
+  - 38
+  examples: []
+- point: A： コーヒーと紅茶
+  worksheet_pages:
+  - 38
+  examples: []
+- point: A： おにぎりは、昆布
+  worksheet_pages:
+  - 38
+  examples: []
+vocab:
+- jp: 肉と野菜は私が買って行きます
+  reading: ''
+  en: ''
+  tags:
+  - EL11
+- jp: の準備について話しています。
+  reading: ''
+  en: ''
+  tags:
+  - EL11
+- jp: だれが何を持って行きます
+  reading: ''
+  en: ''
+  tags:
+  - EL11
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL11_35
+  prompt_en: 'Demonstrate: Can discuss who will bring which item when, for example,
+    having a bar - becue.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL11_36
+  prompt_en: 'Demonstrate: Can discuss what to buy when, for example, having a house
+    party.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL11_37
+  prompt_en: 'Demonstrate: Can ask store staff about the ingredients and expiration
+    dates of food and understand the answers.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL11_38
+  prompt_en: 'Demonstrate: Can read food labels to check if the food contains something
+    you cannot eat.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL11_35
+  partner_jp: 肉と野菜は私が買って行きます。
+  expected: &id001
+  - 肉と野菜は私が買って行きます
+  - の準備について話しています。
+  - だれが何を持って行きます
+  - 来週のバーベキューです
+  hint_en: Can discuss who will bring which item when, for example, having a bar -
+    becue.
+- can_do_id: CD_EL11_35
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can discuss who will bring which item when, for example, having
+    a bar - becue.
+- can_do_id: CD_EL11_36
+  partner_jp: 肉と野菜は私が買って行きます。
+  expected: &id002
+  - 肉と野菜は私が買って行きます
+  - の準備について話しています。
+  - だれが何を持って行きます
+  - 行きます
+  hint_en: Can discuss what to buy when, for example, having a house party.
+- can_do_id: CD_EL11_36
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can discuss what to buy when, for example, having a house party.
+- can_do_id: CD_EL11_37
+  partner_jp: 肉と野菜は私が買って行きます。
+  expected: &id003
+  - 肉と野菜は私が買って行きます
+  - の準備について話しています。
+  - だれが何を持って行きます
+  - 行きます
+  hint_en: Can ask store staff about the ingredients and expiration dates of food
+    and understand the answers.
+- can_do_id: CD_EL11_37
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can ask store staff about the ingredients and expiration dates
+    of food and under
+- can_do_id: CD_EL11_38
+  partner_jp: 肉と野菜は私が買って行きます。
+  expected: &id004
+  - 肉と野菜は私が買って行きます
+  - の準備について話しています。
+  - だれが何を持って行きます
+  - 来週のバーベキューです
+  hint_en: Can read food labels to check if the food contains something you cannot
+    eat.
+- can_do_id: CD_EL11_38
+  partner_jp: もう一度、お願いします。
+  expected: *id004
+  hint_en: Again — Can read food labels to check if the food contains something you
+    cannot eat.
+english_notes: 'Do you have parties with people sometimes? At that time, what do you
+  eat and drink?
+
+  Can discuss who will bring which item when, for example, having a barbecue.
+
+  Preparation for the words
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen and choose from a-n.
+
+  Listen to the dialog.
+
+  The four people are co-workers. They have decided to have a barbecue on their day
+  off. They are talking about how they will prepare for
+
+  the barbecue.
+
+  Who will bring which item? Take notes.
+
+  Check the words and listen to the dialog again.
+
+  備 preparation ｜ 飲
+
+  beverage ｜ デザート dessert ｜ 焼
+
+  く grill
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used before 行
+
+  Focus on the expressions used and listen to the dialog again.
+
+  Discuss what to bring for a barbecue or other activity and who will bring each item.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Practice using the words from 1 .
+
+  Role-play this situation with three or more people. You are having a barbecue with
+  friends. Freely talk about who will bring what.'
+unlock_requires_mastery: true

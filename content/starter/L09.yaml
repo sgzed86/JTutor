@@ -1,0 +1,802 @@
+lesson_id: L09
+lesson: 9
+title_en: Lunch is from noon to 1 o'clock
+title_jp: 12時から1時まで昼休みです
+topic_en: Daily Life
+pdf_pages:
+- 240
+- 259
+intro_questions:
+- jp: Lunch is from noon to 1 o'clock について、あなたの けいけんは？
+  en: Thinking about "Daily Life" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can say what time something starts and ends. What do you want to be able to
+    do?'
+can_dos:
+- id: CD_L09_32
+  can_do_number: 32
+  statement_en: Can say what time something starts and ends.
+  statement_jp: 何時から何時までか言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - 時
+    min_score: 80
+- id: CD_L09_33
+  can_do_number: 33
+  statement_en: Can ask about daily schedules simply.
+  statement_jp: 毎日のスケジュールについて簡単に質問することができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - 何時
+    min_score: 80
+- id: CD_L09_34
+  can_do_number: 34
+  statement_en: Can understand simple spoken times and schedules.
+  statement_jp: 簡単な時刻やスケジュールを聞いて理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: vocabulary
+  book_activity: 1
+  can_do_id: CD_L09_32
+  label: kotoba1
+  audio:
+  - assets/audio/X_[09-01]_kotoba1.mp3
+  key_phrases:
+  - 時間え切るし夜で午前い午後え一時二時三時夜地午時六時一時八時十時十一時十二時南地ジューゴッション三時夜地
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 時間え切るし夜で午前い午後え一時二時三時夜地午時六時一時八時十時十一時十二時南地ジューゴッション三時夜地
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A2
+  kind: vocabulary
+  book_activity: 2
+  can_do_id: CD_L09_33
+  label: kotoba2
+  audio:
+  - assets/audio/X_[09-02]_kotoba2.mp3
+  key_phrases:
+  - 1今何時ですか9時です2今何時ですか10時半です3今何時ですか430分です4何時ですか朝の8時です5今何時ですか1時です6今何時ですか4の11時です77今何時ですか7今何時ですか5時です8今何時ですか5時3時分です9今何時ですか5時15分です10今何時ですか55時415分です
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1今何時ですか9時です2今何時ですか10時半です3今何時ですか430分です4何時ですか朝の8時です5今何時ですか1時です6今何時ですか4の11時です77今何時ですか7今何時ですか5時です8今何時ですか5時3時分です9今何時ですか5時15分です10今何時ですか55時415分です
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_L09_34
+  label: kiku1
+  audio:
+  - assets/audio/X_[09-03]_kiku1.mp3
+  key_phrases:
+  - 1おはようございますおはようございますパオロさんも山川さんも毎日早いですねパオロさん、朝何時におきますか
+  - ご事におきますご事早いですねえ、毎朝上人号します夜は10時半に寝ますそうですか
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1おはようございますおはようございますパオロさんも山川さんも毎日早いですねパオロさん、朝何時におきますか
+    tags:
+    - long
+    - polite
+  - jp: ご事におきますご事早いですねえ、毎朝上人号します夜は10時半に寝ますそうですか
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_L09_32
+  label: kiku2
+  audio:
+  - assets/audio/X_[09-04]_kiku2.mp3
+  key_phrases:
+  - 夜は何時に寝ますか
+  - そうですか
+  - パウロさんも山川さんも夜はやいですね
+  - 私は、だいたい知事頃をおきます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 夜は何時に寝ますか
+    tags:
+    - short
+    - polite
+  - jp: そうですか
+    tags:
+    - short
+    - polite
+  - jp: パウロさんも山川さんも夜はやいですね
+    tags:
+    - long
+    - polite
+  - jp: 私は、だいたい知事頃をおきます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L09 activity 4: listen to the CD, then say the phrase that matches the book.'
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_L09_33
+  label: kiku3
+  audio:
+  - assets/audio/X_[09-05]_kiku3.mp3
+  key_phrases:
+  - おすいですね夜はゲームをしますへぇぇぇぇぇぇおさを何時におきますか
+  - さん村神さんは何時に寝ますか
+  - 二時頃ですご全二時
+  - 8時15分ですおさーい
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: おすいですね夜はゲームをしますへぇぇぇぇぇぇおさを何時におきますか
+    tags:
+    - long
+    - polite
+  - jp: さん村神さんは何時に寝ますか
+    tags:
+    - long
+    - polite
+  - jp: 二時頃ですご全二時
+    tags:
+    - short
+    - polite
+  - jp: 8時15分ですおさーい
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L09 activity 5: listen to the CD, then say the phrase that matches the book.'
+- id: A6
+  kind: grammar_form
+  book_activity: 6
+  can_do_id: CD_L09_34
+  label: katachi
+  audio:
+  - assets/audio/X_[09-06]_katachi.mp3
+  key_phrases:
+  - ご事に起きます私は、大体ひちじごろを起きます夜は、何時に寝ますか
+  - 10時半に寝ます11時頃寝ます
+  - あさ、何時に起きますか
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ご事に起きます私は、大体ひちじごろを起きます夜は、何時に寝ますか
+    tags:
+    - long
+    - polite
+  - jp: 10時半に寝ます11時頃寝ます
+    tags:
+    - long
+    - polite
+  - jp: あさ、何時に起きますか
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A7
+  kind: speaking
+  book_activity: 7
+  can_do_id: CD_L09_32
+  label: hanasu1
+  audio:
+  - assets/audio/X_[09-07]_hanasu1.mp3
+  key_phrases:
+  - ご事におきます早いですねマイヤさ、上限号します
+  - 何時におきますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: ご事におきます早いですねマイヤさ、上限号します
+    tags:
+    - long
+    - polite
+  - jp: 何時におきますか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 何時におきますか
+  - speaker: learner
+    jp: ご事におきます早いですねマイヤさ、上限号します
+  dialog_listen_audio:
+  - assets/audio/X_[09-07]_hanasu1.mp3
+- id: A8
+  kind: speaking
+  book_activity: 8
+  can_do_id: CD_L09_33
+  label: hanasu2
+  audio:
+  - assets/audio/X_[09-08]_hanasu2.mp3
+  key_phrases:
+  - 二時頃寝ますおそいですね夜はゲームをします
+  - なんてに寝ますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 二時頃寝ますおそいですね夜はゲームをします
+    tags:
+    - long
+    - polite
+  - jp: なんてに寝ますか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: なんてに寝ますか
+  - speaker: learner
+    jp: 二時頃寝ますおそいですね夜はゲームをします
+  dialog_listen_audio:
+  - assets/audio/X_[09-08]_hanasu2.mp3
+- id: A9
+  kind: listening
+  book_activity: 9
+  can_do_id: CD_L09_34
+  label: kiku
+  audio:
+  - assets/audio/X_[09-09]_kiku.mp3
+  key_phrases:
+  - 1日のスケジュールを説明します
+  - 3時から3時半まで、やすみ時間です
+  - 仕事は、マイアサー9時からです
+  - 12時から1時まで、広やすみです
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1日のスケジュールを説明します
+    tags:
+    - long
+    - polite
+  - jp: 3時から3時半まで、やすみ時間です
+    tags:
+    - long
+    - polite
+  - jp: 仕事は、マイアサー9時からです
+    tags:
+    - long
+    - polite
+  - jp: 12時から1時まで、広やすみです
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L09 activity 9: listen to the CD, then say the phrase that matches the book.'
+- id: A10
+  kind: grammar_form
+  book_activity: 10
+  can_do_id: CD_L09_32
+  label: katachi
+  audio:
+  - assets/audio/X_[09-10]_katachi.mp3
+  key_phrases:
+  - 仕事はマイヤサクジからです12時から1時まで、広やすみです3時から3時半まで、休み時間です仕事は6時までです
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 仕事はマイヤサクジからです12時から1時まで、広やすみです3時から3時半まで、休み時間です仕事は6時までです
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A11
+  kind: vocabulary
+  book_activity: 11
+  can_do_id: CD_L09_33
+  label: kotoba1
+  audio:
+  - assets/audio/X_[09-11]_kotoba1.mp3
+  key_phrases:
+  - 呼びえ月曜日びかよびし水曜日び木曜日いい金曜日え土曜日ジ日曜日
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 呼びえ月曜日びかよびし水曜日び木曜日いい金曜日え土曜日ジ日曜日
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A12
+  kind: vocabulary
+  book_activity: 12
+  can_do_id: CD_L09_34
+  label: kotoba2
+  audio:
+  - assets/audio/X_[09-12]_kotoba2.mp3
+  key_phrases:
+  - 月寄びです2何寄びですか
+  - 水寄びです3何寄びですか
+  - 土寄びです4何寄びですか
+  - 2寄びです7何寄びですか
+  - 1何寄びですか
+  - 5何寄びですか
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 月寄びです2何寄びですか
+    tags:
+    - long
+    - polite
+  - jp: 水寄びです3何寄びですか
+    tags:
+    - long
+    - polite
+  - jp: 土寄びです4何寄びですか
+    tags:
+    - long
+    - polite
+  - jp: 2寄びです7何寄びですか
+    tags:
+    - long
+    - polite
+  - jp: 1何寄びですか
+    tags:
+    - short
+    - polite
+  - jp: 5何寄びですか
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
+- id: A13
+  kind: listening
+  book_activity: 13
+  can_do_id: CD_L09_32
+  label: kiku1
+  audio:
+  - assets/audio/X_[09-13]_kiku1.mp3
+  key_phrases:
+  - 1アルちゃんさん、プール、いつ行きますか
+  - うーん、私は、日曜日がいいです
+  - リアムさんは、私も大丈夫です
+  - じゃあ、日曜日にしましょう
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1アルちゃんさん、プール、いつ行きますか
+    tags:
+    - long
+    - polite
+  - jp: うーん、私は、日曜日がいいです
+    tags:
+    - long
+    - polite
+  - jp: リアムさんは、私も大丈夫です
+    tags:
+    - long
+    - polite
+  - jp: じゃあ、日曜日にしましょう
+    tags:
+    - long
+    - casual
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L09 activity 13: listen to the CD, then say the phrase that matches the book.'
+- id: A14
+  kind: listening
+  book_activity: 14
+  can_do_id: CD_L09_33
+  label: kiku2
+  audio:
+  - assets/audio/X_[09-14]_kiku2.mp3
+  key_phrases:
+  - みんなさんご飯いつがいいですか
+  - じゃあ、水曜日にしましょう
+  - 私は、会曜日がいいです
+  - 私は水曜日がいいです
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: みんなさんご飯いつがいいですか
+    tags:
+    - long
+    - polite
+  - jp: じゃあ、水曜日にしましょう
+    tags:
+    - long
+    - casual
+  - jp: 私は、会曜日がいいです
+    tags:
+    - long
+    - polite
+  - jp: 私は水曜日がいいです
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L09 activity 14: listen to the CD, then say the phrase that matches the book.'
+- id: A15
+  kind: listening
+  book_activity: 15
+  can_do_id: CD_L09_34
+  label: kiku3
+  audio:
+  - assets/audio/X_[09-15]_kiku3.mp3
+  key_phrases:
+  - すみませんどう呼びはちょっと私は日曜日がいいですあ、私は日曜日はダメですすみませんじゃあ、金曜日の夜は
+  - 32あさんえがいつがいいですか
+  - 金曜日大丈夫ですじゃあ、金曜日にしましょう
+  - 私はどう呼びがいいです
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: すみませんどう呼びはちょっと私は日曜日がいいですあ、私は日曜日はダメですすみませんじゃあ、金曜日の夜は
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: 32あさんえがいつがいいですか
+    tags:
+    - long
+    - polite
+  - jp: 金曜日大丈夫ですじゃあ、金曜日にしましょう
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: 私はどう呼びがいいです
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L09 activity 15: listen to the CD, then say the phrase that matches the book.'
+- id: A16
+  kind: grammar_form
+  book_activity: 16
+  can_do_id: CD_L09_32
+  label: katachi
+  audio:
+  - assets/audio/X_[09-16]_katachi.mp3
+  key_phrases:
+  - 私はと呼びがいいです
+  - 私は日呼びがいいです
+  - 私は日呼びはダメです
+  - いつがいいですか
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 私はと呼びがいいです
+    tags:
+    - short
+    - polite
+  - jp: 私は日呼びがいいです
+    tags:
+    - short
+    - polite
+  - jp: 私は日呼びはダメです
+    tags:
+    - short
+    - polite
+  - jp: いつがいいですか
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A17
+  kind: speaking
+  book_activity: 17
+  can_do_id: CD_L09_33
+  label: hanasu1
+  audio:
+  - assets/audio/X_[09-17]_hanasu1.mp3
+  key_phrases:
+  - じゃあ、土曜日にしましょう
+  - 映画いつがいいですか
+  - 私は、土曜日がいいです
+  - 私も大丈夫です
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: じゃあ、土曜日にしましょう
+    tags:
+    - long
+    - casual
+  - jp: 映画いつがいいですか
+    tags:
+    - short
+    - polite
+  - jp: 私は、土曜日がいいです
+    tags:
+    - long
+    - polite
+  - jp: 私も大丈夫です
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 映画いつがいいですか
+  - speaker: learner
+    jp: じゃあ、土曜日にしましょう
+  dialog_listen_audio:
+  - assets/audio/X_[09-17]_hanasu1.mp3
+- id: A18
+  kind: speaking
+  book_activity: 18
+  can_do_id: CD_L09_34
+  label: hanasu2
+  audio:
+  - assets/audio/X_[09-18]_hanasu2.mp3
+  key_phrases:
+  - じゃあ土曜日にしましょう
+  - 映画いつがいいですか
+  - 私は土曜日がいいです
+  - 土曜日、大丈夫です
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: じゃあ土曜日にしましょう
+    tags:
+    - long
+    - casual
+  - jp: 映画いつがいいですか
+    tags:
+    - short
+    - polite
+  - jp: 私は土曜日がいいです
+    tags:
+    - short
+    - polite
+  - jp: 土曜日、大丈夫です
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 映画いつがいいですか
+  - speaker: learner
+    jp: じゃあ土曜日にしましょう
+  dialog_listen_audio:
+  - assets/audio/X_[09-18]_hanasu2.mp3
+- id: A19
+  kind: speaking
+  book_activity: 19
+  can_do_id: CD_L09_32
+  label: hanasu3
+  audio:
+  - assets/audio/X_[09-19]_hanasu3.mp3
+  key_phrases:
+  - 私はドヨービがいいですすみませんドヨービはちょっと私は日曜日がいいです日曜日はダメですすみませんじゃあ金曜日の夜は大丈夫ですじゃあ金曜日にしましょう
+  - 映画いつがいいですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 私はドヨービがいいですすみませんドヨービはちょっと私は日曜日がいいです日曜日はダメですすみませんじゃあ金曜日の夜は大丈夫ですじゃあ金曜日にしましょう
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: 映画いつがいいですか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 映画いつがいいですか
+  - speaker: learner
+    jp: 私はドヨービがいいですすみませんドヨービはちょっと私は日曜日がいいです日曜日はダメですすみませんじゃあ金曜日の夜は大丈夫ですじゃあ金曜日にしましょう
+  dialog_listen_audio:
+  - assets/audio/X_[09-19]_hanasu3.mp3
+grammar: []
+vocab:
+- jp: 時間え切るし夜で午前い午後え一時二時三時夜地午時六時一時八時十時十一時十二時南地ジューゴッション三時夜地
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 1今何時ですか9時です2今何時ですか10時半です3今何時ですか430分です4何時ですか朝の8時です5今何時ですか1時です6今何時ですか4の11時です77今何時ですか7今何時ですか5時です8今何時ですか5時3時分です9今何時ですか5時15分です10今何時ですか55時415分です
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 呼びえ月曜日びかよびし水曜日び木曜日いい金曜日え土曜日ジ日曜日
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 月寄びです2何寄びですか
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 水寄びです3何寄びですか
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 土寄びです4何寄びですか
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 2寄びです7何寄びですか
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 1何寄びですか
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 5何寄びですか
+  reading: ''
+  en: ''
+  tags:
+  - L09
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_L09_32
+  prompt_en: 'Demonstrate this can-do in Japanese: Can say what time something starts and ends.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L09_32
+  prompt_en: 'In a new everyday situation, show you can: Can say what time something starts and ends.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L09_33
+  prompt_en: 'Demonstrate this can-do in Japanese: Can ask about daily schedules simply.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L09_33
+  prompt_en: 'In a new everyday situation, show you can: Can ask about daily schedules simply.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L09_34
+  prompt_en: 'Demonstrate this can-do in Japanese: Can understand simple spoken times and schedules.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L09_34
+  prompt_en: 'In a new everyday situation, show you can: Can understand simple spoken times and schedules.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_L09_32
+  partner_jp: では、お願いします。
+  expected:
+  - 時
+  hint_en: 'Situation: Can say what time something starts and ends. Reply using lesson phrases.'
+- can_do_id: CD_L09_32
+  partner_jp: もう一度、お願いします。
+  expected:
+  - 時
+  hint_en: Again — 何時から何時までか言うことができる。
+- can_do_id: CD_L09_33
+  partner_jp: では、お願いします。
+  expected:
+  - 何時
+  hint_en: 'Situation: Can ask about daily schedules simply. Reply using lesson phrases.'
+- can_do_id: CD_L09_33
+  partner_jp: もう一度、お願いします。
+  expected:
+  - 何時
+  hint_en: Again — 毎日のスケジュールについて簡単に質問することができる。
+- can_do_id: CD_L09_32
+  partner_jp: 何時におきますか
+  expected:
+  - ご事におきます早いですねマイヤさ、上限号します
+  - 何時におきますか
+  hint_en: Reply as in the book dialog (activity 7).
+- can_do_id: CD_L09_33
+  partner_jp: なんてに寝ますか
+  expected:
+  - 二時頃寝ますおそいですね夜はゲームをします
+  - なんてに寝ますか
+  hint_en: Reply as in the book dialog (activity 8).
+- can_do_id: CD_L09_33
+  partner_jp: 映画いつがいいですか
+  expected:
+  - じゃあ、土曜日にしましょう
+  - 映画いつがいいですか
+  - 私は、土曜日がいいです
+  - 私も大丈夫です
+  hint_en: Reply as in the book dialog (activity 17).
+- can_do_id: CD_L09_34
+  partner_jp: 映画いつがいいですか
+  expected:
+  - じゃあ土曜日にしましょう
+  - 映画いつがいいですか
+  - 私は土曜日がいいです
+  - 土曜日、大丈夫です
+  hint_en: Reply as in the book dialog (activity 18).
+- can_do_id: CD_L09_32
+  partner_jp: 映画いつがいいですか
+  expected:
+  - 私はドヨービがいいですすみませんドヨービはちょっと私は日曜日がいいです日曜日はダメですすみませんじゃあ金曜日の夜は大丈夫ですじゃあ金曜日にしましょう
+  - 映画いつがいいですか
+  hint_en: Reply as in the book dialog (activity 19).
+- can_do_id: CD_L09_32
+  partner_jp: 時間え切るし夜で午前い午後え一時二時三時夜地午時六時一時八時十時十一時十二時南地ジューゴッション三時夜地。
+  expected:
+  - 時間え切るし夜で午前い午後え一時二時三時夜地午時六時一時八時十時十一時十二時南地ジューゴッション三時夜地
+  - 夜は何時に寝ますか
+  - そうですか
+  - パウロさんも山川さんも夜はやいですね
+  - 時
+  hint_en: Can say what time something starts and ends.
+- can_do_id: CD_L09_33
+  partner_jp: 1今何時ですか9時です2今何時ですか10時半です3今何時ですか430分です4何時ですか朝の8時です5今何時ですか1時です6今何時ですか4の11時です77今何時ですか7今何時ですか5時です8今何時ですか5時3時分です9今何時ですか5時15分です10今何時ですか55時415分です。
+  expected:
+  - 1今何時ですか9時です2今何時ですか10時半です3今何時ですか430分です4何時ですか朝の8時です5今何時ですか1時です6今何時ですか4の11時です77今何時ですか7今何時ですか5時です8今何時ですか5時3時分です9今何時ですか5時15分です10今何時ですか55時415分です
+  - おすいですね夜はゲームをしますへぇぇぇぇぇぇおさを何時におきますか
+  - さん村神さんは何時に寝ますか
+  - 二時頃ですご全二時
+  - 何時
+  hint_en: Can ask about daily schedules simply.
+- can_do_id: CD_L09_34
+  partner_jp: 1おはようございますおはようございますパオロさんも山川さんも毎日早いですねパオロさん、朝何時におきますか。
+  expected:
+  - 1おはようございますおはようございますパオロさんも山川さんも毎日早いですねパオロさん、朝何時におきますか
+  - ご事におきますご事早いですねえ、毎朝上人号します夜は10時半に寝ますそうですか
+  - ご事に起きます私は、大体ひちじごろを起きます夜は、何時に寝ますか
+  - 10時半に寝ます11時頃寝ます
+  hint_en: Can understand simple spoken times and schedules.
+english_notes: 'What time do you wake up each day? What time do you go to bed?
+
+  Can ask and answer questions about when you get up and when you sleep.
+
+  Preparation for the words
+
+  間 Times 】
+
+  What time is it, now?
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen to the times and take notes.
+
+  Listen to the dialog.
+
+  Yamakawa-san, Paulo-san, and Murakami-san work in
+
+  the same place. Murakami-san has arrived at work in the
+
+  morning and sees Yamakawa-san and Paulo-san enjoying
+
+  a coffee.
+
+  What time do the three of them wake up? What time do they go to bed? Take notes.
+
+  Check the words and listen to the dialog again.
+
+  日 every day ｜ ええ yes ｜ 毎
+
+  朝 every morning ｜ ジョギング jogging ｜ し ま す（ す る ） do
+
+  いですね That’s early.｜ 遅
+
+  いですね That’s late.
+
+  Type text here
+
+  Listen to the recording and fill in the blanks.
+
+  What expressions did the speakers use when saying what time they wake up and go to bed? What do you
+
+  think the difference is between に and ごろ?
+
+  Focus on the expressions used and listen to the dialog again.
+
+  強します study Japanese
+
+  きます listen to music
+
+  ます surf the Internet
+
+  Talk about what time you wake up and go to bed.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Ask each other what time you wake up and what time you go to bed. Say if there is anything in particular
+  you do in the morning or
+
+  at night. If you do not know how to say something in Japanese, try to look it up.'
+unlock_requires_mastery: true

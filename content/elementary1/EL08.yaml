@@ -1,0 +1,864 @@
+lesson_id: EL08
+lesson: 8
+book_id: elementary1
+title_en: Have you ever played baseball?
+title_jp: 野球、したことありますか？
+topic_en: Going Out
+pdf_pages:
+- 161
+- 181
+intro_questions:
+- jp: Have you ever played baseball? について、あなたの けいけんは？
+  en: Thinking about "Going Out" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can ask someone out to eat, go shopping, or go to an event
+    while asking about their experience and interest. What do you want to be able
+    to do?'
+can_dos:
+- id: CD_EL08_24
+  can_do_number: 24
+  statement_en: Can ask someone out to eat, go shopping, or go to an event while asking
+    about their experience and interest.
+  statement_jp: ''
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL08_25
+  can_do_number: 25
+  statement_en: Can discuss what to do next and where to go while you are out with
+    someone.
+  statement_jp: ''
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL08_26
+  can_do_number: 26
+  statement_en: Can give your impressions about the event to the person you went with.
+  statement_jp: ''
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_EL08_24
+  label: kiku1
+  audio:
+  - assets/audio/Y_[08-01]_kiku1.mp3
+  key_phrases:
+  - もう行きました
+  - 知り合いを誘っています。
+  - 何に誘いました
+  - 新しいアウトレットモール、行きましたか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: もう行きました
+    tags:
+    - short
+  - jp: 知り合いを誘っています。
+    tags:
+    - long
+    - polite
+  - jp: 何に誘いました
+    tags:
+    - short
+  - jp: 新しいアウトレットモール、行きましたか？
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_EL08_25
+  label: kiku2
+  audio:
+  - assets/audio/Y_[08-02]_kiku2.mp3
+  key_phrases:
+  - もう行きました
+  - 知り合いを誘っています。
+  - 何に誘いました
+  - 新しいアウトレットモール、行きましたか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: もう行きました
+    tags:
+    - short
+  - jp: 知り合いを誘っています。
+    tags:
+    - long
+    - polite
+  - jp: 何に誘いました
+    tags:
+    - short
+  - jp: 新しいアウトレットモール、行きましたか？
+    tags:
+    - long
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL08 activity 2: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL08_26
+  label: kiku3
+  audio:
+  - assets/audio/Y_[08-03]_kiku3.mp3
+  key_phrases:
+  - もう行きました
+  - 知り合いを誘っています。
+  - 何に誘いました
+  - 新しいアウトレットモール、行きましたか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: もう行きました
+    tags:
+    - short
+  - jp: 知り合いを誘っています。
+    tags:
+    - long
+    - polite
+  - jp: 何に誘いました
+    tags:
+    - short
+  - jp: 新しいアウトレットモール、行きましたか？
+    tags:
+    - long
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL08 activity 3: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_EL08_24
+  label: kiku4
+  audio:
+  - assets/audio/Y_[08-04]_kiku4.mp3
+  key_phrases:
+  - もう行きました
+  - 知り合いを誘っています。
+  - 何に誘いました
+  - 新しいアウトレットモール、行きましたか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: もう行きました
+    tags:
+    - short
+  - jp: 知り合いを誘っています。
+    tags:
+    - long
+    - polite
+  - jp: 何に誘いました
+    tags:
+    - short
+  - jp: 新しいアウトレットモール、行きましたか？
+    tags:
+    - long
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL08 activity 4: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_EL08_25
+  label: kiku5
+  audio:
+  - assets/audio/Y_[08-05]_kiku5.mp3
+  key_phrases:
+  - もう行きました
+  - 知り合いを誘っています。
+  - 何に誘いました
+  - 新しいアウトレットモール、行きましたか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: もう行きました
+    tags:
+    - short
+  - jp: 知り合いを誘っています。
+    tags:
+    - long
+    - polite
+  - jp: 何に誘いました
+    tags:
+    - short
+  - jp: 新しいアウトレットモール、行きましたか？
+    tags:
+    - long
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL08 activity 5: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A6
+  kind: listening
+  book_activity: 6
+  can_do_id: CD_EL08_26
+  label: kiku6
+  audio:
+  - assets/audio/Y_[08-06]_kiku6.mp3
+  key_phrases:
+  - もう行きました
+  - 知り合いを誘っています。
+  - 何に誘いました
+  - 新しいアウトレットモール、行きましたか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: もう行きました
+    tags:
+    - short
+  - jp: 知り合いを誘っています。
+    tags:
+    - long
+    - polite
+  - jp: 何に誘いました
+    tags:
+    - short
+  - jp: 新しいアウトレットモール、行きましたか？
+    tags:
+    - long
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL08 activity 6: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A7
+  kind: grammar_form
+  book_activity: 7
+  can_do_id: CD_EL08_24
+  label: katachi1
+  audio:
+  - assets/audio/Y_[08-07]_katachi1.mp3
+  key_phrases:
+  - 新しいアウトレットモール、行きましたか？
+  - いえ、です。
+  - ポートタワー、登りましたか？
+  - いいえ……。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 新しいアウトレットモール、行きましたか？
+    tags:
+    - long
+  - jp: いえ、です。
+    tags:
+    - short
+    - polite
+  - jp: ポートタワー、登りましたか？
+    tags:
+    - long
+  - jp: いいえ……。
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A8
+  kind: grammar_form
+  book_activity: 8
+  can_do_id: CD_EL08_25
+  label: katachi2
+  audio:
+  - assets/audio/Y_[08-08]_katachi2.mp3
+  key_phrases:
+  - 新しいアウトレットモール、行きましたか？
+  - いえ、です。
+  - ポートタワー、登りましたか？
+  - いいえ……。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 新しいアウトレットモール、行きましたか？
+    tags:
+    - long
+  - jp: いえ、です。
+    tags:
+    - short
+    - polite
+  - jp: ポートタワー、登りましたか？
+    tags:
+    - long
+  - jp: いいえ……。
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A9
+  kind: speaking
+  book_activity: 9
+  can_do_id: CD_EL08_26
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[08-09]_hanasu1.mp3
+  key_phrases:
+  - いえ、です。
+  - 新しいアウトレットモール、行きましたか？
+  - ありません。
+  - 市民体育館で試合があります
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 新しいアウトレットモール、行きましたか？
+  - speaker: learner
+    jp: いえ、です。
+  dialog_listen_audio:
+  - assets/audio/Y_[08-09]_hanasu1.mp3
+  phrase_meta:
+  - jp: いえ、です。
+    tags:
+    - short
+    - polite
+  - jp: 新しいアウトレットモール、行きましたか？
+    tags:
+    - long
+  - jp: ありません。
+    tags:
+    - short
+    - polite
+  - jp: 市民体育館で試合があります
+    tags:
+    - long
+    - polite
+- id: A10
+  kind: speaking
+  book_activity: 10
+  can_do_id: CD_EL08_24
+  label: hanasu2-1
+  audio:
+  - assets/audio/Y_[08-10]_hanasu2-1.mp3
+  key_phrases:
+  - いいえ……。
+  - ポートタワー、登りましたか？
+  - ありません。
+  - 市民体育館で試合があります
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: ポートタワー、登りましたか？
+  - speaker: learner
+    jp: いいえ……。
+  dialog_listen_audio:
+  - assets/audio/Y_[08-10]_hanasu2-1.mp3
+  phrase_meta:
+  - jp: いいえ……。
+    tags:
+    - short
+  - jp: ポートタワー、登りましたか？
+    tags:
+    - long
+  - jp: ありません。
+    tags:
+    - short
+    - polite
+  - jp: 市民体育館で試合があります
+    tags:
+    - long
+    - polite
+- id: A11
+  kind: speaking
+  book_activity: 11
+  can_do_id: CD_EL08_25
+  label: hanasu2-2
+  audio:
+  - assets/audio/Y_[08-11]_hanasu2-2.mp3
+  key_phrases:
+  - いいえ、。
+  - 「パームキッチン」っていうアジアレストラン、行ったか？
+  - ありません。
+  - 市民体育館で試合があります
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 「パームキッチン」っていうアジアレストラン、行ったか？
+  - speaker: learner
+    jp: いいえ、。
+  dialog_listen_audio:
+  - assets/audio/Y_[08-11]_hanasu2-2.mp3
+  phrase_meta:
+  - jp: いいえ、。
+    tags:
+    - short
+  - jp: 「パームキッチン」っていうアジアレストラン、行ったか？
+    tags:
+    - long
+  - jp: ありません。
+    tags:
+    - short
+    - polite
+  - jp: 市民体育館で試合があります
+    tags:
+    - long
+    - polite
+- id: A12
+  kind: conversation
+  book_activity: 12
+  can_do_id: CD_EL08_26
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[08-12]_kaiwa.mp3
+  key_phrases:
+  - いいえ、見たです。
+  - プロレスを見たか？
+  - に来ています。
+  - な順番でします
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: プロレスを見たか？
+  - speaker: learner
+    jp: いいえ、見たです。
+  dialog_listen_audio:
+  - assets/audio/Y_[08-12]_kaiwa.mp3
+  phrase_meta:
+  - jp: いいえ、見たです。
+    tags:
+    - short
+    - polite
+  - jp: プロレスを見たか？
+    tags:
+    - short
+  - jp: に来ています。
+    tags:
+    - short
+    - polite
+  - jp: な順番でします
+    tags:
+    - short
+    - polite
+- id: A13
+  kind: grammar_form
+  book_activity: 13
+  can_do_id: CD_EL08_24
+  label: katachi
+  audio:
+  - assets/audio/Y_[08-13]_katachi.mp3
+  key_phrases:
+  - もう行きました
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: もう行きました
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A14
+  kind: speaking
+  book_activity: 14
+  can_do_id: CD_EL08_25
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[08-14]_hanasu1.mp3
+  key_phrases:
+  - え、です。
+  - 野球、した？
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 野球、した？
+  - speaker: learner
+    jp: え、です。
+  dialog_listen_audio:
+  - assets/audio/Y_[08-14]_hanasu1.mp3
+  phrase_meta:
+  - jp: え、です。
+    tags:
+    - short
+    - polite
+  - jp: 野球、した？
+    tags:
+    - short
+- id: A15
+  kind: speaking
+  book_activity: 15
+  can_do_id: CD_EL08_26
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[08-15]_hanasu2.mp3
+  key_phrases:
+  - いいですね。行きましょう。
+  - 市民体育館で試合がありますよ。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 市民体育館で試合がありますよ。
+  - speaker: learner
+    jp: いいですね。行きましょう。
+  dialog_listen_audio:
+  - assets/audio/Y_[08-15]_hanasu2.mp3
+  phrase_meta:
+  - jp: いいですね。行きましょう。
+    tags:
+    - long
+    - polite
+  - jp: 市民体育館で試合がありますよ。
+    tags:
+    - long
+    - polite
+- id: A16
+  kind: listening
+  book_activity: 16
+  can_do_id: CD_EL08_24
+  label: kiku1
+  audio:
+  - assets/audio/Y_[08-16]_kiku1.mp3
+  key_phrases:
+  - 人の人が感想を話しています。
+  - どんな形容詞を使いました
+  - 動物園、どうでしたか？
+  - 楽しかったです。パンダがかわいかったです。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人の人が感想を話しています。
+    tags:
+    - long
+    - polite
+  - jp: どんな形容詞を使いました
+    tags:
+    - long
+  - jp: 動物園、どうでしたか？
+    tags:
+    - long
+  - jp: 楽しかったです。パンダがかわいかったです。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL08 activity 16: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A17
+  kind: listening
+  book_activity: 17
+  can_do_id: CD_EL08_25
+  label: kiku2
+  audio:
+  - assets/audio/Y_[08-17]_kiku2.mp3
+  key_phrases:
+  - 人の人が感想を話しています。
+  - 動物園、どうでしたか？
+  - 楽しかったです。パンダがかわいかったです。
+  - 私はサルがよかったです。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人の人が感想を話しています。
+    tags:
+    - long
+    - polite
+  - jp: 動物園、どうでしたか？
+    tags:
+    - long
+  - jp: 楽しかったです。パンダがかわいかったです。
+    tags:
+    - long
+    - polite
+  - jp: 私はサルがよかったです。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL08 activity 17: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A18
+  kind: listening
+  book_activity: 18
+  can_do_id: CD_EL08_26
+  label: kiku3
+  audio:
+  - assets/audio/Y_[08-18]_kiku3.mp3
+  key_phrases:
+  - 人の人が感想を話しています。
+  - 動物園、どうでしたか？
+  - 楽しかったです。パンダがかわいかったです。
+  - 私はサルがよかったです。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人の人が感想を話しています。
+    tags:
+    - long
+    - polite
+  - jp: 動物園、どうでしたか？
+    tags:
+    - long
+  - jp: 楽しかったです。パンダがかわいかったです。
+    tags:
+    - long
+    - polite
+  - jp: 私はサルがよかったです。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL08 activity 18: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A19
+  kind: listening
+  book_activity: 19
+  can_do_id: CD_EL08_24
+  label: kiku4
+  audio:
+  - assets/audio/Y_[08-19]_kiku4.mp3
+  key_phrases:
+  - 人の人が感想を話しています。
+  - どんな形容詞を使いました
+  - 映画、よかったですね。
+  - 感動しました。本当にすばらしかったです。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人の人が感想を話しています。
+    tags:
+    - long
+    - polite
+  - jp: どんな形容詞を使いました
+    tags:
+    - long
+  - jp: 映画、よかったですね。
+    tags:
+    - long
+    - polite
+  - jp: 感動しました。本当にすばらしかったです。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL08 activity 19: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A20
+  kind: grammar_form
+  book_activity: 20
+  can_do_id: CD_EL08_25
+  label: katachi
+  audio:
+  - assets/audio/Y_[08-20]_katachi.mp3
+  key_phrases:
+  - どんな形容詞を使いました
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: どんな形容詞を使いました
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A21
+  kind: speaking
+  book_activity: 21
+  can_do_id: CD_EL08_26
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[08-21]_hanasu1.mp3
+  key_phrases:
+  - いいですね。ぜひ、行きましょう。
+  - すごくおいしいですよ。
+  - ちといっしょにどこかに行きました。
+  - 楽しかったです
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すごくおいしいですよ。
+  - speaker: learner
+    jp: いいですね。ぜひ、行きましょう。
+  dialog_listen_audio:
+  - assets/audio/Y_[08-21]_hanasu1.mp3
+  phrase_meta:
+  - jp: いいですね。ぜひ、行きましょう。
+    tags:
+    - long
+    - polite
+  - jp: すごくおいしいですよ。
+    tags:
+    - long
+    - polite
+  - jp: ちといっしょにどこかに行きました。
+    tags:
+    - long
+  - jp: 楽しかったです
+    tags:
+    - short
+    - polite
+- id: A22
+  kind: speaking
+  book_activity: 22
+  can_do_id: CD_EL08_24
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[08-22]_hanasu2.mp3
+  key_phrases:
+  - いえ、まだです。
+  - 新しいアウトレットモール、もう行きましたか？
+  - ちといっしょにどこかに行きました。
+  - 楽しかったです
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 新しいアウトレットモール、もう行きましたか？
+  - speaker: learner
+    jp: いえ、まだです。
+  dialog_listen_audio:
+  - assets/audio/Y_[08-22]_hanasu2.mp3
+  phrase_meta:
+  - jp: いえ、まだです。
+    tags:
+    - short
+    - polite
+  - jp: 新しいアウトレットモール、もう行きましたか？
+    tags:
+    - long
+  - jp: ちといっしょにどこかに行きました。
+    tags:
+    - long
+  - jp: 楽しかったです
+    tags:
+    - short
+    - polite
+grammar:
+- point: もう V-ました
+  worksheet_pages:
+  - 25
+  examples: []
+- point: V-た ことがあります
+  worksheet_pages:
+  - 26
+  examples: []
+- point: パンダを見
+  worksheet_pages:
+  - 26
+  examples: []
+- point: パチンコをする →（ ）？
+  worksheet_pages:
+  - 26
+  examples: []
+- point: （ねぼうする → ） 11. （貸
+  worksheet_pages:
+  - 27
+  examples: []
+- point: V-に 行
+  worksheet_pages:
+  - 28
+  examples: []
+- point: コンサートを聞
+  worksheet_pages:
+  - 28
+  examples: []
+- point: いけばなを習
+  worksheet_pages:
+  - 28
+  examples: []
+- point: N の前
+  worksheet_pages:
+  - 29
+  examples: []
+- point: V-たいんですが・・・
+  worksheet_pages:
+  - 29
+  examples: []
+- point: すみません、ちょっと（休
+  worksheet_pages:
+  - 29
+  examples: []
+- point: おすしを（食
+  worksheet_pages:
+  - 29
+  examples: []
+vocab: []
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL08_24
+  prompt_en: 'Demonstrate: Can ask someone out to eat, go shopping, or go to an event
+    while asking about their experience and interest.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL08_25
+  prompt_en: 'Demonstrate: Can discuss what to do next and where to go while you are
+    out with someone.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL08_26
+  prompt_en: 'Demonstrate: Can give your impressions about the event to the person
+    you went with.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL08_24
+  partner_jp: もう行きました。
+  expected: &id001
+  - もう行きました
+  - 知り合いを誘っています。
+  - 何に誘いました
+  - 新しいアウトレットモール、行きましたか？
+  hint_en: Can ask someone out to eat, go shopping, or go to an event while asking
+    about their experience and interest.
+- can_do_id: CD_EL08_24
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can ask someone out to eat, go shopping, or go to an event while
+    asking about th
+- can_do_id: CD_EL08_25
+  partner_jp: もう行きました。
+  expected: &id002
+  - もう行きました
+  - 知り合いを誘っています。
+  - 何に誘いました
+  - 新しいアウトレットモール、行きましたか？
+  hint_en: Can discuss what to do next and where to go while you are out with someone.
+- can_do_id: CD_EL08_25
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can discuss what to do next and where to go while you are out with
+    someone.
+- can_do_id: CD_EL08_26
+  partner_jp: もう行きました。
+  expected: &id003
+  - もう行きました
+  - 知り合いを誘っています。
+  - 何に誘いました
+  - 新しいアウトレットモール、行きましたか？
+  hint_en: Can give your impressions about the event to the person you went with.
+- can_do_id: CD_EL08_26
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can give your impressions about the event to the person you went
+    with.
+english_notes: 'What kind of places do you ask your friend to accompany you to?
+
+  Can ask someone out to eat, go shopping, or go to an event while asking about their
+  experience and interest.
+
+  Listen to the dialogs.
+
+  The six people are each inviting an acquaintance somewhere.
+
+  Where did they invite their acquaintance to go? Choose from a-h.
+
+  What was the answer by the person invited? Write 〇 if the person agrees, and Write
+  × if the person does not agree.
+
+  Check the words and listen to the dialogs again.
+
+  りない not enough
+
+  理（な） impossible
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used to ask about the person’s experience?
+
+  What expression was used to invite someone?
+
+  Focus on the expressions used and listen to the dialogs again.
+
+  Invite a person who is new to town.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Role-play this situation. There is a person who is new to your town. Invite the
+  person to dinner, to go shopping, or to attend an
+
+  event.'
+unlock_requires_mastery: true

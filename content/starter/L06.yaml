@@ -1,0 +1,784 @@
+lesson_id: L06
+lesson: 6
+title_en: I’d like a cheeseburger, please
+title_jp: チーズバーガーをください
+topic_en: Food
+pdf_pages:
+- 159
+- 181
+intro_questions:
+- jp: I’d like a cheeseburger, please について、あなたの けいけんは？
+  en: Thinking about "Food" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can order food and drinks at a restaurant/cafe. What do you want to be able
+    to do?'
+can_dos:
+- id: CD_L06_18
+  can_do_number: 18
+  statement_en: Can order food and drinks at a restaurant/cafe.
+  statement_jp: 飲食店で食べ物や飲み物を注文することができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - ください
+    min_score: 80
+- id: CD_L06_19
+  can_do_number: 19
+  statement_en: Can ask about menu items simply.
+  statement_jp: メニューについて簡単に質問することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_L06_20
+  can_do_number: 20
+  statement_en: Can understand simple questions from staff when ordering.
+  statement_jp: 注文のとき店員の簡単な質問を理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_L06_18
+  label: kiku1
+  audio:
+  - assets/audio/X_[06-01]_kiku1.mp3
+  key_phrases:
+  - 1いらっしゃいますえおうかがいしますほっと高評価お願いしますほっと高評価ですねサイズはSサイズお願いしますこちらでお目仕上がりですか
+  - はい
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1いらっしゃいますえおうかがいしますほっと高評価お願いしますほっと高評価ですねサイズはSサイズお願いしますこちらでお目仕上がりですか
+    tags:
+    - long
+    - polite
+  - jp: はい
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_L06_19
+  label: kiku2
+  audio:
+  - assets/audio/X_[06-02]_kiku2.mp3
+  key_phrases:
+  - にいらっしゃいますえーチーズバーガーとテリアキバーガーとフィッシュバーガーくださいこちらでおめし上がりですか
+  - いえ、テイカーをとでおもち帰りですねありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: にいらっしゃいますえーチーズバーガーとテリアキバーガーとフィッシュバーガーくださいこちらでおめし上がりですか
+    tags:
+    - long
+    - polite
+  - jp: いえ、テイカーをとでおもち帰りですねありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L06 activity 2: listen to the CD, then say the phrase that matches the book.'
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_L06_20
+  label: kiku3
+  audio:
+  - assets/audio/X_[06-03]_kiku3.mp3
+  key_phrases:
+  - さんいらっしゃいますねおうかがしますはいえーとこれくださいチキンバーガーのセットですねドリンクは何になりますか
+  - じゃあウロンちゃんお願いしますこちらでおめし上がりですか
+  - はいここで
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: さんいらっしゃいますねおうかがしますはいえーとこれくださいチキンバーガーのセットですねドリンクは何になりますか
+    tags:
+    - long
+    - polite
+  - jp: じゃあウロンちゃんお願いしますこちらでおめし上がりですか
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: はいここで
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L06 activity 3: listen to the CD, then say the phrase that matches the book.'
+- id: A4
+  kind: grammar_form
+  book_activity: 4
+  can_do_id: CD_L06_18
+  label: katachi
+  audio:
+  - assets/audio/X_[06-04]_katachi.mp3
+  key_phrases:
+  - コットコーヒーをお願いしますSサイズをお願いしますチーズバーガーとテリアキバーガーと一周バーガーくださいこれください
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: コットコーヒーをお願いしますSサイズをお願いしますチーズバーガーとテリアキバーガーと一周バーガーくださいこれください
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A5
+  kind: speaking
+  book_activity: 5
+  can_do_id: CD_L06_19
+  label: hanasu1
+  audio:
+  - assets/audio/X_[06-05]_hanasu1.mp3
+  key_phrases:
+  - いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+  - speaker: learner
+    jp: いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[06-05]_hanasu1.mp3
+- id: A6
+  kind: speaking
+  book_activity: 6
+  can_do_id: CD_L06_20
+  label: hanasu2
+  audio:
+  - assets/audio/X_[06-06]_hanasu2.mp3
+  key_phrases:
+  - はい、ここでありがとうございます
+  - いらっしゃいますえ、おうかがいしますおっと高費お願いますほっと高費ですねこちらでおめしあがりですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: はい、ここでありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: いらっしゃいますえ、おうかがいしますおっと高費お願いますほっと高費ですねこちらでおめしあがりですか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: いらっしゃいますえ、おうかがいしますおっと高費お願いますほっと高費ですねこちらでおめしあがりですか
+  - speaker: learner
+    jp: はい、ここでありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[06-06]_hanasu2.mp3
+- id: A7
+  kind: speaking
+  book_activity: 7
+  can_do_id: CD_L06_18
+  label: hanasu3
+  audio:
+  - assets/audio/X_[06-07]_hanasu3.mp3
+  key_phrases:
+  - いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
+    tags:
+    - long
+    - polite
+    - casual
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
+  - speaker: learner
+    jp: いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[06-07]_hanasu3.mp3
+- id: A8
+  kind: conversation
+  book_activity: 8
+  can_do_id: CD_L06_19
+  label: kaiwa
+  audio:
+  - assets/audio/X_[06-08]_kaiwa.mp3
+  key_phrases:
+  - そう
+  - うどん、どうですか
+  - ここ、いいですか
+  - おいしいです
+  prompt_en: Listen to the conversation, then practice both roles.
+  phrase_meta:
+  - jp: そう
+    tags:
+    - short
+  - jp: うどん、どうですか
+    tags:
+    - short
+    - polite
+  - jp: ここ、いいですか
+    tags:
+    - short
+    - polite
+  - jp: おいしいです
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: ありさん、何にしますか
+  - speaker: learner
+    jp: そう
+  dialog_listen_audio:
+  - assets/audio/X_[06-08]_kaiwa.mp3
+- id: A9
+  kind: grammar_form
+  book_activity: 9
+  can_do_id: CD_L06_20
+  label: katachi
+  audio:
+  - assets/audio/X_[06-09]_katachi.mp3
+  key_phrases:
+  - 私はうどんにします
+  - 私はカレーにします
+  - 何にしますか
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 私はうどんにします
+    tags:
+    - short
+    - polite
+  - jp: 私はカレーにします
+    tags:
+    - short
+    - polite
+  - jp: 何にしますか
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A10
+  kind: speaking
+  book_activity: 10
+  can_do_id: CD_L06_18
+  label: hanasu1
+  audio:
+  - assets/audio/X_[06-10]_hanasu1.mp3
+  key_phrases:
+  - 私は運動にします
+  - 一何にしますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 私は運動にします
+    tags:
+    - short
+    - polite
+  - jp: 一何にしますか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 一何にしますか
+  - speaker: learner
+    jp: 私は運動にします
+  dialog_listen_audio:
+  - assets/audio/X_[06-10]_hanasu1.mp3
+- id: A11
+  kind: speaking
+  book_activity: 11
+  can_do_id: CD_L06_19
+  label: hanasu2
+  audio:
+  - assets/audio/X_[06-11]_hanasu2.mp3
+  key_phrases:
+  - あ、どうぞ
+  - いいですか
+  - ここ
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: あ、どうぞ
+    tags:
+    - short
+  - jp: いいですか
+    tags:
+    - short
+    - polite
+  - jp: ここ
+    tags:
+    - short
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: いいですか
+  - speaker: learner
+    jp: あ、どうぞ
+  dialog_listen_audio:
+  - assets/audio/X_[06-11]_hanasu2.mp3
+- id: A12
+  kind: speaking
+  book_activity: 12
+  can_do_id: CD_L06_20
+  label: hanasu3
+  audio:
+  - assets/audio/X_[06-12]_hanasu3.mp3
+  key_phrases:
+  - おいしいです
+  - 3うどんどうですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: おいしいです
+    tags:
+    - short
+    - polite
+  - jp: 3うどんどうですか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 3うどんどうですか
+  - speaker: learner
+    jp: おいしいです
+  dialog_listen_audio:
+  - assets/audio/X_[06-12]_hanasu3.mp3
+- id: A13
+  kind: vocabulary
+  book_activity: 13
+  can_do_id: CD_L06_18
+  label: kotoba1
+  audio:
+  - assets/audio/X_[06-13]_kotoba1.mp3
+  key_phrases:
+  - いざかやの目にうえさしみビカラーゲシー焼き取りビエダマメいいナマビいるフフロンちゃん
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: いざかやの目にうえさしみビカラーゲシー焼き取りビエダマメいいナマビいるフフロンちゃん
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A14
+  kind: vocabulary
+  book_activity: 14
+  can_do_id: CD_L06_19
+  label: kotoba2
+  audio:
+  - assets/audio/X_[06-14]_kotoba2.mp3
+  key_phrases:
+  - 1やき取りお願いします2名まびいるください3えだまめとさしみください4カラーゲットウールオンジャーお願いします
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1やき取りお願いします2名まびいるください3えだまめとさしみください4カラーゲットウールオンジャーお願いします
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A15
+  kind: conversation
+  book_activity: 15
+  can_do_id: CD_L06_20
+  label: kaiwa
+  audio:
+  - assets/audio/X_[06-15]_kaiwa.mp3
+  key_phrases:
+  - はい、お待ちします
+  - スミマ選はいえっと、名まびるみつとウロンチャーひとつあとをカラーゲーお願いしますはいスミマ選あと、エダマネフたつくださいありがとうございますスミマ選はいお水くださいあと、マヨネーズありますか
+  prompt_en: Listen to the conversation, then practice both roles.
+  phrase_meta:
+  - jp: はい、お待ちします
+    tags:
+    - short
+    - polite
+  - jp: スミマ選はいえっと、名まびるみつとウロンチャーひとつあとをカラーゲーお願いしますはいスミマ選あと、エダマネフたつくださいありがとうございますスミマ選はいお水くださいあと、マヨネーズありますか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: スミマ選はいえっと、名まびるみつとウロンチャーひとつあとをカラーゲーお願いしますはいスミマ選あと、エダマネフたつくださいありがとうございますスミマ選はいお水くださいあと、マヨネーズありますか
+  - speaker: learner
+    jp: はい、お待ちします
+  dialog_listen_audio:
+  - assets/audio/X_[06-15]_kaiwa.mp3
+- id: A16
+  kind: grammar_form
+  book_activity: 16
+  can_do_id: CD_L06_18
+  label: katachi1
+  audio:
+  - assets/audio/X_[06-16]_katachi1.mp3
+  key_phrases:
+  - 名まびる三つとウールオンちゃんひとつおねがいしますえだまめ2つくださいマヨネーズありますか
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 名まびる三つとウールオンちゃんひとつおねがいしますえだまめ2つくださいマヨネーズありますか
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A17
+  kind: grammar_form
+  book_activity: 17
+  can_do_id: CD_L06_19
+  label: katachi2_counting
+  audio:
+  - assets/audio/X_[06-17]_katachi2_counting.mp3
+  key_phrases:
+  - ひとつ二つ三つ四つ一つ三つ七つやつここのついくつ
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: ひとつ二つ三つ四つ一つ三つ七つやつここのついくつ
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A18
+  kind: speaking
+  book_activity: 18
+  can_do_id: CD_L06_20
+  label: hanasu1
+  audio:
+  - assets/audio/X_[06-18]_hanasu1.mp3
+  key_phrases:
+  - 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
+  - speaker: learner
+    jp: 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
+  dialog_listen_audio:
+  - assets/audio/X_[06-18]_hanasu1.mp3
+- id: A19
+  kind: speaking
+  book_activity: 19
+  can_do_id: CD_L06_18
+  label: hanasu2-1
+  audio:
+  - assets/audio/X_[06-19]_hanasu2-1.mp3
+  key_phrases:
+  - はい、思ってしまいます
+  - 2緑ませんはいマヨネイズありますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: はい、思ってしまいます
+    tags:
+    - long
+    - polite
+  - jp: 2緑ませんはいマヨネイズありますか
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 2緑ませんはいマヨネイズありますか
+  - speaker: learner
+    jp: はい、思ってしまいます
+  dialog_listen_audio:
+  - assets/audio/X_[06-19]_hanasu2-1.mp3
+- id: A20
+  kind: speaking
+  book_activity: 20
+  can_do_id: CD_L06_19
+  label: hanasu2-2
+  audio:
+  - assets/audio/X_[06-20]_hanasu2-2.mp3
+  key_phrases:
+  - はい、お持ちします
+  - お水ください
+  - すみません
+  - はい
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: はい、お持ちします
+    tags:
+    - short
+    - polite
+  - jp: お水ください
+    tags:
+    - short
+    - polite
+  - jp: すみません
+    tags:
+    - short
+    - polite
+  - jp: はい
+    tags:
+    - short
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみません
+  - speaker: learner
+    jp: はい、お持ちします
+  dialog_listen_audio:
+  - assets/audio/X_[06-20]_hanasu2-2.mp3
+grammar:
+- point: N、お願
+  worksheet_pages:
+  - 11
+  examples: []
+- point: A： いらっしゃいませ。おうかがいいたします。
+  worksheet_pages:
+  - 11
+  examples: []
+- point: N にします
+  worksheet_pages:
+  - 12
+  examples: []
+- point: A： ステーシーさんは、何
+  worksheet_pages:
+  - 12
+  examples: []
+- point: A： アディさんは、何
+  worksheet_pages:
+  - 12
+  examples: []
+- point: A： マークさんは、何
+  worksheet_pages:
+  - 12
+  examples: []
+- point: N、【number 数
+  worksheet_pages:
+  - 12
+  examples: []
+- point: N（は） ありますか？
+  worksheet_pages:
+  - 13
+  examples: []
+- point: A： すみません、（おしぼり → ）？
+  worksheet_pages:
+  - 13
+  examples: []
+- point: A： すみません、（スプーン → ）？
+  worksheet_pages:
+  - 13
+  examples: []
+- point: A： すみません、（おはし → ）？
+  worksheet_pages:
+  - 13
+  examples: []
+- point: A： すみません、（ケチャップ → ）？
+  worksheet_pages:
+  - 13
+  examples: []
+- point: A： すみません、（取
+  worksheet_pages:
+  - 13
+  examples: []
+vocab:
+- jp: いざかやの目にうえさしみビカラーゲシー焼き取りビエダマメいいナマビいるフフロンちゃん
+  reading: ''
+  en: ''
+  tags:
+  - L06
+- jp: 1やき取りお願いします2名まびいるください3えだまめとさしみください4カラーゲットウールオンジャーお願いします
+  reading: ''
+  en: ''
+  tags:
+  - L06
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_L06_18
+  prompt_en: 'Demonstrate this can-do in Japanese: Can order food and drinks at a restaurant/cafe.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L06_18
+  prompt_en: 'In a new everyday situation, show you can: Can order food and drinks at a restaurant/cafe.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L06_19
+  prompt_en: 'Demonstrate this can-do in Japanese: Can ask about menu items simply.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L06_19
+  prompt_en: 'In a new everyday situation, show you can: Can ask about menu items simply.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L06_20
+  prompt_en: 'Demonstrate this can-do in Japanese: Can understand simple questions from staff when ordering.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L06_20
+  prompt_en: 'In a new everyday situation, show you can: Can understand simple questions from staff when
+    ordering.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_L06_18
+  partner_jp: では、お願いします。
+  expected:
+  - ください
+  hint_en: 'Situation: Can order food and drinks at a restaurant/cafe. Reply using lesson phrases.'
+- can_do_id: CD_L06_18
+  partner_jp: もう一度、お願いします。
+  expected:
+  - ください
+  hint_en: Again — 飲食店で食べ物や飲み物を注文することができる。
+- can_do_id: CD_L06_19
+  partner_jp: いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+  expected:
+  - いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+  hint_en: Reply as in the book dialog (activity 5).
+- can_do_id: CD_L06_20
+  partner_jp: いらっしゃいますえ、おうかがいしますおっと高費お願いますほっと高費ですねこちらでおめしあがりですか
+  expected:
+  - はい、ここでありがとうございます
+  - いらっしゃいますえ、おうかがいしますおっと高費お願いますほっと高費ですねこちらでおめしあがりですか
+  hint_en: Reply as in the book dialog (activity 6).
+- can_do_id: CD_L06_18
+  partner_jp: いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
+  expected:
+  - いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
+  hint_en: Reply as in the book dialog (activity 7).
+- can_do_id: CD_L06_19
+  partner_jp: ありさん、何にしますか
+  expected:
+  - そう
+  - うどん、どうですか
+  - ここ、いいですか
+  - おいしいです
+  hint_en: Reply as in the book dialog (activity 8).
+- can_do_id: CD_L06_18
+  partner_jp: 一何にしますか
+  expected:
+  - 私は運動にします
+  - 一何にしますか
+  hint_en: Reply as in the book dialog (activity 10).
+- can_do_id: CD_L06_19
+  partner_jp: いいですか
+  expected:
+  - あ、どうぞ
+  - いいですか
+  - ここ
+  hint_en: Reply as in the book dialog (activity 11).
+- can_do_id: CD_L06_20
+  partner_jp: 3うどんどうですか
+  expected:
+  - おいしいです
+  - 3うどんどうですか
+  hint_en: Reply as in the book dialog (activity 12).
+- can_do_id: CD_L06_20
+  partner_jp: スミマ選はいえっと、名まびるみつとウロンチャーひとつあとをカラーゲーお願いしますはいスミマ選あと、エダマネフたつくださいありがとうございますスミマ選はいお水くださいあと、マヨネーズありますか
+  expected:
+  - はい、お待ちします
+  - スミマ選はいえっと、名まびるみつとウロンチャーひとつあとをカラーゲーお願いしますはいスミマ選あと、エダマネフたつくださいありがとうございますスミマ選はいお水くださいあと、マヨネーズありますか
+  hint_en: Reply as in the book dialog (activity 15).
+- can_do_id: CD_L06_20
+  partner_jp: 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
+  expected:
+  - 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
+  hint_en: Reply as in the book dialog (activity 18).
+- can_do_id: CD_L06_18
+  partner_jp: 2緑ませんはいマヨネイズありますか
+  expected:
+  - はい、思ってしまいます
+  - 2緑ませんはいマヨネイズありますか
+  hint_en: Reply as in the book dialog (activity 19).
+- can_do_id: CD_L06_19
+  partner_jp: すみません
+  expected:
+  - はい、お持ちします
+  - お水ください
+  - すみません
+  - はい
+  hint_en: Reply as in the book dialog (activity 20).
+- can_do_id: CD_L06_18
+  partner_jp: 1いらっしゃいますえおうかがいしますほっと高評価お願いしますほっと高評価ですねサイズはSサイズお願いしますこちらでお目仕上がりですか。
+  expected:
+  - 1いらっしゃいますえおうかがいしますほっと高評価お願いしますほっと高評価ですねサイズはSサイズお願いしますこちらでお目仕上がりですか
+  - はい
+  - コットコーヒーをお願いしますSサイズをお願いしますチーズバーガーとテリアキバーガーと一周バーガーくださいこれください
+  - いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
+  - ください
+  hint_en: Can order food and drinks at a restaurant/cafe.
+- can_do_id: CD_L06_19
+  partner_jp: にいらっしゃいますえーチーズバーガーとテリアキバーガーとフィッシュバーガーくださいこちらでおめし上がりですか。
+  expected:
+  - にいらっしゃいますえーチーズバーガーとテリアキバーガーとフィッシュバーガーくださいこちらでおめし上がりですか
+  - いえ、テイカーをとでおもち帰りですねありがとうございます
+  - いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+  - そう
+  hint_en: Can ask about menu items simply.
+- can_do_id: CD_L06_20
+  partner_jp: さんいらっしゃいますねおうかがしますはいえーとこれくださいチキンバーガーのセットですねドリンクは何になりますか。
+  expected:
+  - さんいらっしゃいますねおうかがしますはいえーとこれくださいチキンバーガーのセットですねドリンクは何になりますか
+  - じゃあウロンちゃんお願いしますこちらでおめし上がりですか
+  - はいここで
+  - はい、ここでありがとうございます
+  hint_en: Can understand simple questions from staff when ordering.
+english_notes: 'Where do you go when you eat out?
+
+  Can look at a menu in a fast food restaurant and understand what is available.
+
+  Read the menu.
+
+  You are looking at the menu at a hamburger restaurant.
+
+  What food and drink are there?
+
+  ハンバーガー hamburger ｜ ダブル double ｜ チーズ cheese ｜ てりやき teriyaki
+
+  oolong tea
+
+  品 single item ｜ セット set ｜ S
+
+  ／ M
+
+  ／ L
+
+  small / medium / large
+
+  What types of hamburger are there? What is available on the set menu?
+
+  What do you want to order?
+
+  Can order in a fast food restaurant.
+
+  Listen to the dialogs.
+
+  Three customers are ordering at a hamburger restaurant.
+
+  What did they each order? Look at the hamburger restaurant menu in 1 and take notes.
+
+  Listen to the dialogs again.
+
+  Will they eat at the restaurant or have a takeout? Write IN if they are eating in, and OUT if they are
+  taking out.
+
+  Would you like to eat in?
+
+  Check the words and listen to the dialogs again.
+
+  テイクアウトで To takeout, please. ｜ ここで Eat in, please.
+
+  現 Polite expressions used by restaurant or store staff
+
+  りですね That’s to take out, right?｜ 何
+
+  になさいますか？ What would you like?
+
+  Listen to the recording and fill in the blanks.
+
+  S
+
+  What expressions were used to order?
+
+  Focus on the expressions used and listen to the dialogs again.'
+unlock_requires_mastery: true

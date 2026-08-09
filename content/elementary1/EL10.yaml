@@ -1,0 +1,583 @@
+lesson_id: EL10
+lesson: 10
+book_id: elementary1
+title_en: I would like to take a Japanese-language class
+title_jp: 日本語教室に参加したいんですが…
+topic_en: Eating Out
+pdf_pages:
+- 203
+- 222
+intro_questions:
+- jp: I would like to take a Japanese-language class について、あなたの けいけんは？
+  en: Thinking about "Eating Out" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can find and understand information such as the place,
+    date, and time of lessons offered at a local community center, etc. What do you
+    want to be able to do?'
+can_dos:
+- id: CD_EL10_31
+  can_do_number: 31
+  statement_en: Can find and understand information such as the place, date, and time
+    of lessons offered at a local community center, etc.
+  statement_jp: 公民館などの講座の案内を見て、場所や日時などの情報を読み取ることがで
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL10_32
+  can_do_number: 32
+  statement_en: Can ask questions about the lesson you are interested in at a local
+    gov - ernment office and understand the answers.
+  statement_jp: 公民館などの講座の案内を見て、場所や日時などの情報を読み取ることがで
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL10_33
+  can_do_number: 33
+  statement_en: Can ask friends or answer questions about Japanese-language classes
+    in the community.
+  statement_jp: 公民館などの講座の案内を見て、場所や日時などの情報を読み取ることがで
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL10_34
+  can_do_number: 34
+  statement_en: Can answer questions about your experience or your goals in learning
+    Japanese, in order to participate in Japanese-language classes.
+  statement_jp: 公民館などの講座の案内を見て、場所や日時などの情報を読み取ることがで
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_EL10_31
+  label: kiku1
+  audio:
+  - assets/audio/Y_[10-01]_kiku1.mp3
+  key_phrases:
+  - 日本語教室に参加したいんです
+  - 何について話しています
+  - 書道教室に参加してみたいんです
+  - すみません。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 日本語教室に参加したいんです
+    tags:
+    - long
+    - polite
+  - jp: 何について話しています
+    tags:
+    - long
+    - polite
+  - jp: 書道教室に参加してみたいんです
+    tags:
+    - long
+    - polite
+  - jp: すみません。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_EL10_32
+  label: kiku2
+  audio:
+  - assets/audio/Y_[10-02]_kiku2.mp3
+  key_phrases:
+  - 日本語教室に参加したいんです
+  - 何について話しています
+  - すみません。
+  - はい。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 日本語教室に参加したいんです
+    tags:
+    - long
+    - polite
+  - jp: 何について話しています
+    tags:
+    - long
+    - polite
+  - jp: すみません。
+    tags:
+    - short
+    - polite
+  - jp: はい。
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL10 activity 2: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL10_33
+  label: kiku3
+  audio:
+  - assets/audio/Y_[10-03]_kiku3.mp3
+  key_phrases:
+  - 日本語教室に参加したいんです
+  - 何について話しています
+  - すみません。
+  - はい。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 日本語教室に参加したいんです
+    tags:
+    - long
+    - polite
+  - jp: 何について話しています
+    tags:
+    - long
+    - polite
+  - jp: すみません。
+    tags:
+    - short
+    - polite
+  - jp: はい。
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL10 activity 3: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_EL10_34
+  label: kiku4
+  audio:
+  - assets/audio/Y_[10-04]_kiku4.mp3
+  key_phrases:
+  - 日本語教室に参加したいんです
+  - 何について話しています
+  - 書道教室に参加してみたいんです
+  - すみません。私は書道に興味があります。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 日本語教室に参加したいんです
+    tags:
+    - long
+    - polite
+  - jp: 何について話しています
+    tags:
+    - long
+    - polite
+  - jp: 書道教室に参加してみたいんです
+    tags:
+    - long
+    - polite
+  - jp: すみません。私は書道に興味があります。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL10 activity 4: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A5
+  kind: grammar_form
+  book_activity: 5
+  can_do_id: CD_EL10_31
+  label: katachi
+  audio:
+  - assets/audio/Y_[10-05]_katachi.mp3
+  key_phrases:
+  - 日本語教室に参加したいんです
+  - 書道教室に参加してみたいんです
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 日本語教室に参加したいんです
+    tags:
+    - long
+    - polite
+  - jp: 書道教室に参加してみたいんです
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A6
+  kind: conversation
+  book_activity: 6
+  can_do_id: CD_EL10_32
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[10-06]_kaiwa.mp3
+  key_phrases:
+  - 私のクラスは週にです。
+  - 週にありますか？
+  - 日本語教室に参加したいんです
+  - 今度、教室のチラシを持って来
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 週にありますか？
+  - speaker: learner
+    jp: 私のクラスは週にです。
+  dialog_listen_audio:
+  - assets/audio/Y_[10-06]_kaiwa.mp3
+  phrase_meta:
+  - jp: 私のクラスは週にです。
+    tags:
+    - long
+    - polite
+  - jp: 週にありますか？
+    tags:
+    - short
+    - polite
+  - jp: 日本語教室に参加したいんです
+    tags:
+    - long
+    - polite
+  - jp: 今度、教室のチラシを持って来
+    tags:
+    - long
+- id: A7
+  kind: grammar_form
+  book_activity: 7
+  can_do_id: CD_EL10_33
+  label: katachi
+  audio:
+  - assets/audio/Y_[10-07]_katachi.mp3
+  key_phrases:
+  - 週にありますか？
+  - 私のクラスは週にです。
+  - 今度、教室のチラシを持って来
+  - ありがとうございます。じゃあ、お願いします。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 週にありますか？
+    tags:
+    - short
+    - polite
+  - jp: 私のクラスは週にです。
+    tags:
+    - long
+    - polite
+  - jp: 今度、教室のチラシを持って来
+    tags:
+    - long
+  - jp: ありがとうございます。じゃあ、お願いします。
+    tags:
+    - long
+    - polite
+    - casual
+  book_mode: listen_repeat
+- id: A8
+  kind: speaking
+  book_activity: 8
+  can_do_id: CD_EL10_34
+  label: hanasu
+  audio:
+  - assets/audio/Y_[10-08]_hanasu.mp3
+  key_phrases:
+  - ありがとうございます。じゃあ、お願いします。
+  - 今度、教室のチラシを持って来
+  - 日本語教室に参加したいんです
+  - 教科書は自分で買います
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 今度、教室のチラシを持って来
+  - speaker: learner
+    jp: ありがとうございます。じゃあ、お願いします。
+  dialog_listen_audio:
+  - assets/audio/Y_[10-08]_hanasu.mp3
+  phrase_meta:
+  - jp: ありがとうございます。じゃあ、お願いします。
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: 今度、教室のチラシを持って来
+    tags:
+    - long
+  - jp: 日本語教室に参加したいんです
+    tags:
+    - long
+    - polite
+  - jp: 教科書は自分で買います
+    tags:
+    - long
+    - polite
+- id: A9
+  kind: conversation
+  book_activity: 9
+  can_do_id: CD_EL10_31
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[10-09]_kaiwa.mp3
+  key_phrases:
+  - すみません。「ぼご」は、？
+  - 母語は？
+  - 日本語教室に参加したいんです
+  - 少し勉強しました
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 母語は？
+  - speaker: learner
+    jp: すみません。「ぼご」は、？
+  dialog_listen_audio:
+  - assets/audio/Y_[10-09]_kaiwa.mp3
+  phrase_meta:
+  - jp: すみません。「ぼご」は、？
+    tags:
+    - long
+    - polite
+  - jp: 母語は？
+    tags:
+    - short
+  - jp: 日本語教室に参加したいんです
+    tags:
+    - long
+    - polite
+  - jp: 少し勉強しました
+    tags:
+    - short
+- id: A10
+  kind: grammar_form
+  book_activity: 10
+  can_do_id: CD_EL10_32
+  label: katachi
+  audio:
+  - assets/audio/Y_[10-10]_katachi.mp3
+  key_phrases:
+  - 母語は？
+  - すみません。「ぼご」は、？
+  - あ、「母語」は、子どものときからいつも使っていることばです。
+  - 日本語教室に参加したいんです
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 母語は？
+    tags:
+    - short
+  - jp: すみません。「ぼご」は、？
+    tags:
+    - long
+    - polite
+  - jp: あ、「母語」は、子どものときからいつも使っていることばです。
+    tags:
+    - long
+    - polite
+  - jp: 日本語教室に参加したいんです
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A11
+  kind: speaking
+  book_activity: 11
+  can_do_id: CD_EL10_33
+  label: hanasu
+  audio:
+  - assets/audio/Y_[10-11]_hanasu.mp3
+  key_phrases:
+  - はい。
+  - すみません。
+  - 日本語教室に参加したいんです
+  - どこで勉強しました
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみません。
+  - speaker: learner
+    jp: はい。
+  dialog_listen_audio:
+  - assets/audio/Y_[10-11]_hanasu.mp3
+  phrase_meta:
+  - jp: はい。
+    tags:
+    - short
+  - jp: すみません。
+    tags:
+    - short
+    - polite
+  - jp: 日本語教室に参加したいんです
+    tags:
+    - long
+    - polite
+  - jp: どこで勉強しました
+    tags:
+    - short
+grammar:
+- point: V-て みたいんですが・・・
+  worksheet_pages:
+  - 33
+  examples: []
+- point: V-ましょうか？
+  worksheet_pages:
+  - 34
+  examples: []
+- point: N のとき、～／ナ A-なとき／イ A-いとき
+  worksheet_pages:
+  - 35
+  examples: []
+vocab: []
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL10_31
+  prompt_en: 'Demonstrate: Can find and understand information such as the place,
+    date, and time of lessons offered at a local community center, etc.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL10_32
+  prompt_en: 'Demonstrate: Can ask questions about the lesson you are interested in
+    at a local gov - ernment office and understand the answers.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL10_33
+  prompt_en: 'Demonstrate: Can ask friends or answer questions about Japanese-language
+    classes in the community.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL10_34
+  prompt_en: 'Demonstrate: Can answer questions about your experience or your goals
+    in learning Japanese, in order to participate in Japanese-language classes.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL10_31
+  partner_jp: 日本語教室に参加したいんです。
+  expected: &id001
+  - 日本語教室に参加したいんです
+  - 何について話しています
+  - 書道教室に参加してみたいんです
+  - すみません。
+  hint_en: Can find and understand information such as the place, date, and time of
+    lessons offered at a local community center, etc.
+- can_do_id: CD_EL10_31
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can find and understand information such as the place, date, and
+    time of lessons
+- can_do_id: CD_EL10_32
+  partner_jp: 日本語教室に参加したいんです。
+  expected: &id002
+  - 日本語教室に参加したいんです
+  - 何について話しています
+  - すみません。
+  - はい。
+  hint_en: Can ask questions about the lesson you are interested in at a local gov
+    - ernment office and understand the answers.
+- can_do_id: CD_EL10_32
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can ask questions about the lesson you are interested in at a local
+    gov - ernmen
+- can_do_id: CD_EL10_33
+  partner_jp: 日本語教室に参加したいんです。
+  expected: &id003
+  - 日本語教室に参加したいんです
+  - 何について話しています
+  - すみません。
+  - はい。
+  hint_en: Can ask friends or answer questions about Japanese-language classes in
+    the community.
+- can_do_id: CD_EL10_33
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can ask friends or answer questions about Japanese-language classes
+    in the commu
+- can_do_id: CD_EL10_34
+  partner_jp: 日本語教室に参加したいんです。
+  expected: &id004
+  - 日本語教室に参加したいんです
+  - 何について話しています
+  - 書道教室に参加してみたいんです
+  - すみません。私は書道に興味があります。
+  hint_en: Can answer questions about your experience or your goals in learning Japanese,
+    in order to participate in Japanese-language classes.
+- can_do_id: CD_EL10_34
+  partner_jp: もう一度、お願いします。
+  expected: *id004
+  hint_en: Again — Can answer questions about your experience or your goals in learning
+    Japanese, i
+english_notes: 'Have you ever taken any lessons before? What type of lessons did you
+  take?
+
+  Read the following flyer for information about the lessons.
+
+  You are reading a flyer for information about the lessons offered at a local community
+  center.
+
+  What lessons do ①-④ mention?
+
+  Can find and understand information such as the place, date, and time of lessons
+  offered at a local community center, etc.
+
+  Mark where you see the following topics.
+
+  月 every month ｜ 第
+
+  3 the third （第
+
+  ～ the first, the second, etc.）｜ 費
+
+  用 cost ｜ 問
+
+  わせ inquiry
+
+  民館 local community center
+
+  道 Japanese calligraphy ｜ 日
+
+  時 date and time ｜ テ キスト代
+
+  textbook fee （～代
+
+  ～ fee）
+
+  け for non-Japanese residents ｜ 体
+
+  験教室 trial lesson
+
+  気道 aikido
+
+  Which lesson are you interested in?
+
+  Can ask questions about the lesson you are interested in at a local government office
+  and understand the answers.
+
+  Listen to the dialogs.
+
+  The four people who saw lesson information are each asking the person in
+
+  charge about the lesson they are interested in.
+
+  What are the people talking about? Put a check mark where appropriate.
+
+  Listen to the dialogs again. Take notes related to the topics that you checked in
+  (1).
+
+  Check the words and listen to the dialogs again.
+
+  要（な） necessary ｜ 最
+
+  初 at first ｜ あとは after that
+
+  いて い ま す か？ Is there still availability?
+
+  う pay
+
+  味がある be interested in ｜ それとも or ｜ コ ース course ｜ 全
+
+  意する offer
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used by the person to ask about what they want to do?
+
+  Focus on the expressions used and listen to the d'
+unlock_requires_mastery: true

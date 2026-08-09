@@ -1,0 +1,509 @@
+lesson_id: EL07
+lesson: 7
+book_id: elementary1
+title_en: I will be a bit late because I got lost
+title_jp: 道に 迷ってちょっと遅 れます
+topic_en: Going Out
+pdf_pages:
+- 148
+- 160
+intro_questions:
+- jp: I will be a bit late because I got lost について、あなたの けいけんは？
+  en: Thinking about "Going Out" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can ask and understand the time and place to meet. What
+    do you want to be able to do?'
+can_dos:
+- id: CD_EL07_20
+  can_do_number: 20
+  statement_en: Can ask and understand the time and place to meet.
+  statement_jp: 待ち合わせや集合の時間と場所を質問して、 その答えを理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL07_21
+  can_do_number: 21
+  statement_en: Can talk about and decide the time and place to meet.
+  statement_jp: 待ち合わせや集合の時間と場所を質問して、 その答えを理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL07_22
+  can_do_number: 22
+  statement_en: Can read and understand a message saying that the person you are meeting
+    will be late.
+  statement_jp: 待ち合わせや集合の時間と場所を質問して、 その答えを理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL07_23
+  can_do_number: 23
+  statement_en: Can write a message saying that you will be late for the arranged
+    time.
+  statement_jp: 待ち合わせや集合の時間と場所を質問して、 その答えを理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_EL07_20
+  label: kiku1
+  audio:
+  - assets/audio/Y_[07-01]_kiku1.mp3
+  key_phrases:
+  - ピック待ち合わせはどんな場所でします
+  - ちょっと遅れます
+  - 人の人が質問しています。
+  - 何時に行きます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ピック待ち合わせはどんな場所でします
+    tags:
+    - long
+    - polite
+  - jp: ちょっと遅れます
+    tags:
+    - short
+    - polite
+  - jp: 人の人が質問しています。
+    tags:
+    - long
+    - polite
+  - jp: 何時に行きます
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_EL07_21
+  label: kiku2
+  audio:
+  - assets/audio/Y_[07-02]_kiku2.mp3
+  key_phrases:
+  - ピック待ち合わせはどんな場所でします
+  - ちょっと遅れます
+  - 人の人が質問しています。
+  - 何時に行きます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ピック待ち合わせはどんな場所でします
+    tags:
+    - long
+    - polite
+  - jp: ちょっと遅れます
+    tags:
+    - short
+    - polite
+  - jp: 人の人が質問しています。
+    tags:
+    - long
+    - polite
+  - jp: 何時に行きます
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL07 activity 2: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL07_22
+  label: kiku3
+  audio:
+  - assets/audio/Y_[07-03]_kiku3.mp3
+  key_phrases:
+  - ピック待ち合わせはどんな場所でします
+  - ちょっと遅れます
+  - 人の人が質問しています。
+  - 何時に行きます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ピック待ち合わせはどんな場所でします
+    tags:
+    - long
+    - polite
+  - jp: ちょっと遅れます
+    tags:
+    - short
+    - polite
+  - jp: 人の人が質問しています。
+    tags:
+    - long
+    - polite
+  - jp: 何時に行きます
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL07 activity 3: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_EL07_23
+  label: kiku4
+  audio:
+  - assets/audio/Y_[07-04]_kiku4.mp3
+  key_phrases:
+  - ピック待ち合わせはどんな場所でします
+  - ちょっと遅れます
+  - 人の人が質問しています。
+  - 何時に行きます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: ピック待ち合わせはどんな場所でします
+    tags:
+    - long
+    - polite
+  - jp: ちょっと遅れます
+    tags:
+    - short
+    - polite
+  - jp: 人の人が質問しています。
+    tags:
+    - long
+    - polite
+  - jp: 何時に行きます
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL07 activity 4: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A5
+  kind: conversation
+  book_activity: 5
+  can_do_id: CD_EL07_20
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[07-05]_kaiwa.mp3
+  key_phrases:
+  - 6時は？
+  - 明日、何時にしますか？
+  - 道に迷ってちょっと遅れます
+  - どこで待ち合わせすることにしました
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 明日、何時にしますか？
+  - speaker: learner
+    jp: 6時は？
+  dialog_listen_audio:
+  - assets/audio/Y_[07-05]_kaiwa.mp3
+  phrase_meta:
+  - jp: 6時は？
+    tags:
+    - short
+  - jp: 明日、何時にしますか？
+    tags:
+    - long
+    - polite
+  - jp: 道に迷ってちょっと遅れます
+    tags:
+    - long
+    - polite
+  - jp: どこで待ち合わせすることにしました
+    tags:
+    - long
+- id: A6
+  kind: grammar_form
+  book_activity: 6
+  can_do_id: CD_EL07_21
+  label: katachi
+  audio:
+  - assets/audio/Y_[07-06]_katachi.mp3
+  key_phrases:
+  - 明日、何時にしますか？
+  - 6時は？
+  - ちょっと早いです。6時半
+  - どこにしますか？
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 明日、何時にしますか？
+    tags:
+    - long
+    - polite
+  - jp: 6時は？
+    tags:
+    - short
+  - jp: ちょっと早いです。6時半
+    tags:
+    - long
+    - polite
+  - jp: どこにしますか？
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A7
+  kind: speaking
+  book_activity: 7
+  can_do_id: CD_EL07_22
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[07-07]_hanasu1.mp3
+  key_phrases:
+  - どこにしますか？
+  - ちょっと早いです。6時半
+  - 道に迷ってちょっと遅れます
+  - わかりました。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: ちょっと早いです。6時半
+  - speaker: learner
+    jp: どこにしますか？
+  dialog_listen_audio:
+  - assets/audio/Y_[07-07]_hanasu1.mp3
+  phrase_meta:
+  - jp: どこにしますか？
+    tags:
+    - short
+    - polite
+  - jp: ちょっと早いです。6時半
+    tags:
+    - long
+    - polite
+  - jp: 道に迷ってちょっと遅れます
+    tags:
+    - long
+    - polite
+  - jp: わかりました。
+    tags:
+    - short
+- id: A8
+  kind: speaking
+  book_activity: 8
+  can_do_id: CD_EL07_23
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[07-08]_hanasu2.mp3
+  key_phrases:
+  - わかりません。駅の改札？
+  - 駅前の「平和の鳥
+  - 道に迷ってちょっと遅れます
+  - わかりました。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 駅前の「平和の鳥
+  - speaker: learner
+    jp: わかりません。駅の改札？
+  dialog_listen_audio:
+  - assets/audio/Y_[07-08]_hanasu2.mp3
+  phrase_meta:
+  - jp: わかりません。駅の改札？
+    tags:
+    - long
+    - polite
+  - jp: 駅前の「平和の鳥
+    tags:
+    - short
+  - jp: 道に迷ってちょっと遅れます
+    tags:
+    - long
+    - polite
+  - jp: わかりました。
+    tags:
+    - short
+- id: A9
+  kind: speaking
+  book_activity: 9
+  can_do_id: CD_EL07_20
+  label: hanasu3
+  audio:
+  - assets/audio/Y_[07-09]_hanasu3.mp3
+  key_phrases:
+  - 明日は、朝
+  - すみません。明日は何時にどこですか？
+  - 道に迷ってちょっと遅れます
+  - わかりました。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみません。明日は何時にどこですか？
+  - speaker: learner
+    jp: 明日は、朝
+  dialog_listen_audio:
+  - assets/audio/Y_[07-09]_hanasu3.mp3
+  phrase_meta:
+  - jp: 明日は、朝
+    tags:
+    - short
+  - jp: すみません。明日は何時にどこですか？
+    tags:
+    - long
+    - polite
+  - jp: 道に迷ってちょっと遅れます
+    tags:
+    - long
+    - polite
+  - jp: わかりました。
+    tags:
+    - short
+grammar:
+- point: N は どうですか？
+  worksheet_pages:
+  - 22
+  examples: []
+- point: N でも いいですか？
+  worksheet_pages:
+  - 23
+  examples: []
+- point: N で、～／V-て、～ ＜Cause / Reason 原因
+  worksheet_pages:
+  - 24
+  examples: []
+- point: ねぼうしました 4. 台風
+  worksheet_pages:
+  - 24
+  examples: []
+vocab: []
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL07_20
+  prompt_en: 'Demonstrate: Can ask and understand the time and place to meet.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL07_21
+  prompt_en: 'Demonstrate: Can talk about and decide the time and place to meet.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL07_22
+  prompt_en: 'Demonstrate: Can read and understand a message saying that the person
+    you are meeting will be late.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL07_23
+  prompt_en: 'Demonstrate: Can write a message saying that you will be late for the
+    arranged time.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL07_20
+  partner_jp: ピック待ち合わせはどんな場所でします。
+  expected: &id001
+  - ピック待ち合わせはどんな場所でします
+  - ちょっと遅れます
+  - 人の人が質問しています。
+  - 何時に行きます
+  hint_en: Can ask and understand the time and place to meet.
+- can_do_id: CD_EL07_20
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can ask and understand the time and place to meet.
+- can_do_id: CD_EL07_21
+  partner_jp: ピック待ち合わせはどんな場所でします。
+  expected: &id002
+  - ピック待ち合わせはどんな場所でします
+  - ちょっと遅れます
+  - 人の人が質問しています。
+  - 何時に行きます
+  hint_en: Can talk about and decide the time and place to meet.
+- can_do_id: CD_EL07_21
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can talk about and decide the time and place to meet.
+- can_do_id: CD_EL07_22
+  partner_jp: ピック待ち合わせはどんな場所でします。
+  expected: &id003
+  - ピック待ち合わせはどんな場所でします
+  - ちょっと遅れます
+  - 人の人が質問しています。
+  - 何時に行きます
+  hint_en: Can read and understand a message saying that the person you are meeting
+    will be late.
+- can_do_id: CD_EL07_22
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can read and understand a message saying that the person you are
+    meeting will be
+- can_do_id: CD_EL07_23
+  partner_jp: ピック待ち合わせはどんな場所でします。
+  expected: &id004
+  - ピック待ち合わせはどんな場所でします
+  - ちょっと遅れます
+  - 人の人が質問しています。
+  - 何時に行きます
+  hint_en: Can write a message saying that you will be late for the arranged time.
+- can_do_id: CD_EL07_23
+  partner_jp: もう一度、お願いします。
+  expected: *id004
+  hint_en: Again — Can write a message saying that you will be late for the arranged
+    time.
+english_notes: 'What kind of places do you meet with people? Do you arrive right on
+  time at the time you promised?
+
+  Can ask and understand the time and place to meet.
+
+  Listen to the dialogs.
+
+  The four people are each asking questions about the time and place to meet.
+
+  What time are they going? Take notes.
+
+  Listen to the dialogs again. Where are they going? Choose from a-d.
+
+  Check the words and listen to the dialogs again.
+
+  合（する） assemble ｜ では so ｜ 案
+
+  内する show / guide ｜ 待
+
+  わせ meet with
+
+  まる start ｜ ス タッフ staff ｜ 3
+
+  0 分前 30 minutes before （～前
+
+  ～before）
+
+  Can talk about and decide the time and place to meet.
+
+  Listen to the dialog.
+
+  Viet-san, Li-san, and Sato-san are co-workers. They are going out for dinner on
+  their day off.
+
+  First, listen to the dialog without looking at the script. What time and where did
+  they decide to meet?
+
+  Listen to the dialog again. This time, follow along with the script.
+
+  和 peace ｜ 鳥
+
+  bird ｜ 像
+
+  statue
+
+  現This expression is used to ask
+
+  again what the other person
+
+  said if you do not understand
+
+  what they mean.
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used to suggest a time and place to meet?
+
+  What expression was used to make another suggestion?
+
+  Focus on the expressions used and listen to the dialog again.'
+unlock_requires_mastery: true

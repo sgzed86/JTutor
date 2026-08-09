@@ -1,0 +1,524 @@
+lesson_id: EL04
+lesson: 4
+book_id: elementary1
+title_en: It rained heavily yesterday
+title_jp: 昨日はすごい雨でしたね
+topic_en: Seasons and Weather
+pdf_pages:
+- 100
+- 114
+intro_questions:
+- jp: It rained heavily yesterday について、あなたの けいけんは？
+  en: Thinking about "Seasons and Weather" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can exchange greetings while talking about the weather.
+    What do you want to be able to do?'
+can_dos:
+- id: CD_EL04_11
+  can_do_number: 11
+  statement_en: Can exchange greetings while talking about the weather.
+  statement_jp: 天気の話題に触れながら、あいさつをすることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL04_12
+  can_do_number: 12
+  statement_en: Can listen to the weather forecast and mostly understand it.
+  statement_jp: 天気の話題に触れながら、あいさつをすることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL04_13
+  can_do_number: 13
+  statement_en: Can read and understand simple posts about the weather on social me
+    - dia.
+  statement_jp: 天気の話題に触れながら、あいさつをすることができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: vocabulary
+  book_activity: 1
+  can_do_id: CD_EL04_11
+  label: kotoba1
+  audio:
+  - assets/audio/Y_[04-01]_kotoba1.mp3
+  key_phrases:
+  - 朝から暑いです
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 朝から暑いです
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: vocabulary
+  book_activity: 2
+  can_do_id: CD_EL04_12
+  label: kotoba2
+  audio:
+  - assets/audio/Y_[04-02]_kotoba2.mp3
+  key_phrases:
+  - 朝から暑いです
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 朝から暑いです
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL04_13
+  label: kiku1
+  audio:
+  - assets/audio/Y_[04-03]_kiku1.mp3
+  key_phrases:
+  - をしています。
+  - どんな天気ですか。
+  - いつの天気のことを話しています
+  - 本当です
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: をしています。
+    tags:
+    - short
+    - polite
+  - jp: どんな天気ですか。
+    tags:
+    - short
+    - polite
+  - jp: いつの天気のことを話しています
+    tags:
+    - long
+    - polite
+  - jp: 本当です
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_EL04_11
+  label: kiku2
+  audio:
+  - assets/audio/Y_[04-04]_kiku2.mp3
+  key_phrases:
+  - をしています。
+  - どんな天気ですか。
+  - いつの天気のことを話しています
+  - 本当です
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: をしています。
+    tags:
+    - short
+    - polite
+  - jp: どんな天気ですか。
+    tags:
+    - short
+    - polite
+  - jp: いつの天気のことを話しています
+    tags:
+    - long
+    - polite
+  - jp: 本当です
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL04 activity 4: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_EL04_12
+  label: kiku3
+  audio:
+  - assets/audio/Y_[04-05]_kiku3.mp3
+  key_phrases:
+  - をしています。
+  - どんな天気ですか。
+  - いつの天気のことを話しています
+  - 本当です
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: をしています。
+    tags:
+    - short
+    - polite
+  - jp: どんな天気ですか。
+    tags:
+    - short
+    - polite
+  - jp: いつの天気のことを話しています
+    tags:
+    - long
+    - polite
+  - jp: 本当です
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL04 activity 5: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A6
+  kind: listening
+  book_activity: 6
+  can_do_id: CD_EL04_13
+  label: kiku4
+  audio:
+  - assets/audio/Y_[04-06]_kiku4.mp3
+  key_phrases:
+  - をしています。
+  - どんな天気ですか。
+  - いつの天気のことを話しています
+  - 本当です
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: をしています。
+    tags:
+    - short
+    - polite
+  - jp: どんな天気ですか。
+    tags:
+    - short
+    - polite
+  - jp: いつの天気のことを話しています
+    tags:
+    - long
+    - polite
+  - jp: 本当です
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL04 activity 6: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A7
+  kind: grammar_form
+  book_activity: 7
+  can_do_id: CD_EL04_11
+  label: katachi
+  audio:
+  - assets/audio/Y_[04-07]_katachi.mp3
+  key_phrases:
+  - 今日はいい天気です
+  - よく降ります
+  - どんな意味があると思います
+  - 形はどう違います
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 今日はいい天気です
+    tags:
+    - short
+    - polite
+  - jp: よく降ります
+    tags:
+    - short
+    - polite
+  - jp: どんな意味があると思います
+    tags:
+    - long
+    - polite
+  - jp: 形はどう違います
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A8
+  kind: speaking
+  book_activity: 8
+  can_do_id: CD_EL04_12
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[04-08]_hanasu1.mp3
+  key_phrases:
+  - そうですね。いい天気ですね。
+  - おはようございます。今日はいい天気ですね。
+  - 暖かくなりました
+  - 嫌になります
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: おはようございます。今日はいい天気ですね。
+  - speaker: learner
+    jp: そうですね。いい天気ですね。
+  dialog_listen_audio:
+  - assets/audio/Y_[04-08]_hanasu1.mp3
+  phrase_meta:
+  - jp: そうですね。いい天気ですね。
+    tags:
+    - long
+    - polite
+  - jp: おはようございます。今日はいい天気ですね。
+    tags:
+    - long
+    - polite
+  - jp: 暖かくなりました
+    tags:
+    - short
+  - jp: 嫌になります
+    tags:
+    - short
+    - polite
+- id: A9
+  kind: speaking
+  book_activity: 9
+  can_do_id: CD_EL04_13
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[04-09]_hanasu2.mp3
+  key_phrases:
+  - 本当ですね。
+  - だいぶ暖かくなりましたね。
+  - 暖かくなりました
+  - 嫌になります
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: だいぶ暖かくなりましたね。
+  - speaker: learner
+    jp: 本当ですね。
+  dialog_listen_audio:
+  - assets/audio/Y_[04-09]_hanasu2.mp3
+  phrase_meta:
+  - jp: 本当ですね。
+    tags:
+    - short
+    - polite
+  - jp: だいぶ暖かくなりましたね。
+    tags:
+    - long
+  - jp: 暖かくなりました
+    tags:
+    - short
+  - jp: 嫌になります
+    tags:
+    - short
+    - polite
+- id: A10
+  kind: speaking
+  book_activity: 10
+  can_do_id: CD_EL04_11
+  label: hanasu3
+  audio:
+  - assets/audio/Y_[04-10]_hanasu3.mp3
+  key_phrases:
+  - 本当ですね。
+  - 毎日、よく降りますね。
+  - 暖かくなりました
+  - 嫌になります
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 毎日、よく降りますね。
+  - speaker: learner
+    jp: 本当ですね。
+  dialog_listen_audio:
+  - assets/audio/Y_[04-10]_hanasu3.mp3
+  phrase_meta:
+  - jp: 本当ですね。
+    tags:
+    - short
+    - polite
+  - jp: 毎日、よく降りますね。
+    tags:
+    - long
+    - polite
+  - jp: 暖かくなりました
+    tags:
+    - short
+  - jp: 嫌になります
+    tags:
+    - short
+    - polite
+- id: A11
+  kind: listening
+  book_activity: 11
+  can_do_id: CD_EL04_12
+  label: kiku
+  audio:
+  - assets/audio/Y_[04-11]_kiku.mp3
+  key_phrases:
+  - で天気予報を見ています。
+  - 天気はどう変わります
+  - お出かけください
+  - おはようございます。今日はいい天気ですね。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: で天気予報を見ています。
+    tags:
+    - long
+    - polite
+  - jp: 天気はどう変わります
+    tags:
+    - short
+    - polite
+  - jp: お出かけください
+    tags:
+    - short
+    - polite
+  - jp: おはようございます。今日はいい天気ですね。
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL04 activity 11: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A12
+  kind: grammar_form
+  book_activity: 12
+  can_do_id: CD_EL04_13
+  label: katachi
+  audio:
+  - assets/audio/Y_[04-12]_katachi.mp3
+  key_phrases:
+  - 朝から暑いです
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 朝から暑いです
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+grammar:
+- point: わあ、もみじがきれいです（ ）。
+  worksheet_pages:
+  - 14
+  examples: []
+- point: はじめて雪
+  worksheet_pages:
+  - 14
+  examples: []
+- point: Non-past / Past 非
+  worksheet_pages:
+  - 14
+  examples: []
+- point: V-て います ③
+  worksheet_pages:
+  - 15
+  examples: []
+- point: N／ナ A-／イ A-い／V-る でしょう
+  worksheet_pages:
+  - 16
+  examples: []
+vocab:
+- jp: 朝から暑いです
+  reading: ''
+  en: ''
+  tags:
+  - EL04
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL04_11
+  prompt_en: 'Demonstrate: Can exchange greetings while talking about the weather.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL04_12
+  prompt_en: 'Demonstrate: Can listen to the weather forecast and mostly understand
+    it.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL04_13
+  prompt_en: 'Demonstrate: Can read and understand simple posts about the weather
+    on social me - dia.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL04_11
+  partner_jp: 朝から暑いです。
+  expected: &id001
+  - 朝から暑いです
+  - をしています。
+  - どんな天気ですか。
+  - いつの天気のことを話しています
+  hint_en: Can exchange greetings while talking about the weather.
+- can_do_id: CD_EL04_11
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can exchange greetings while talking about the weather.
+- can_do_id: CD_EL04_12
+  partner_jp: 朝から暑いです。
+  expected: &id002
+  - 朝から暑いです
+  - をしています。
+  - どんな天気ですか。
+  - いつの天気のことを話しています
+  hint_en: Can listen to the weather forecast and mostly understand it.
+- can_do_id: CD_EL04_12
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can listen to the weather forecast and mostly understand it.
+- can_do_id: CD_EL04_13
+  partner_jp: をしています。
+  expected: &id003
+  - をしています。
+  - どんな天気ですか。
+  - いつの天気のことを話しています
+  - 本当です
+  hint_en: Can read and understand simple posts about the weather on social me - dia.
+- can_do_id: CD_EL04_13
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can read and understand simple posts about the weather on social
+    me - dia.
+english_notes: 'What is your favorite weather?
+
+  Can exchange greetings while talking about the weather.
+
+  Preparation for the words
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen and choose from a-f.
+
+  Listen to the dialogs.
+
+  Each person is exchanging greetings with a neighbor or acquaintance.
+
+  How is the weather? Choose from a-d.
+
+  a. b. c. d.
+
+  Listen to the dialogs again. Which day’s weather are they talking about? Choose
+  from ア-ウ.
+
+  Check the words and listen to the dialogs again.
+
+  になる be annoying ｜ ゆうべ last night
+
+  当ですね That’s true.
+
+  Listen to the recording and fill in the blanks.
+
+  What do you think is the meaning of ね at the end of a sentence?
+
+  What is the difference between the forms used when talking about the present and
+  the past?
+
+  Focus on the expressions used and listen to the dialogs again.
+
+  Exchange greetings while talking about the weather.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Decide what the weather is like and exchange greetings accordingly.'
+unlock_requires_mastery: true

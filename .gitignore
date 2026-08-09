@@ -1,0 +1,51 @@
+# Local Irodori materials (Japan Foundation copyright — do not redistribute)
+/assets/
+/*.mp3
+/*.zip
+/irodori_starter.pdf
+/Grammar_Worksheets_X.pdf
+/Elementary1.pdf
+/Grammar_Elementary_1.pdf
+/Elementary1.zip
+
+# Scratch / research extracts
+_pdf_sample.txt
+_grammar_sample.txt
+_*.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+dist/
+build/
+
+# Node / Electron
+node_modules/
+apps/desktop/dist/
+apps/desktop/out/
+*.log
+.DS_Store
+Thumbs.db
+
+# App runtime data
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Release / Electron build output
+dist-release/
+dist-electron/
+
+# Env
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp

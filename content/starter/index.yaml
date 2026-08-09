@@ -1,0 +1,122 @@
+book: irodori_starter
+level: A1
+title: Irodori Starter
+lessons:
+- lesson_id: L00
+  title_en: Classroom Japanese
+  topic_en: Getting started
+  can_do_count: 0
+  activity_count: 5
+  audio_count: 5
+- lesson_id: L01
+  title_en: Good morning!
+  topic_en: Starting to Speak Japanese
+  can_do_count: 3
+  activity_count: 35
+  audio_count: 35
+- lesson_id: L02
+  title_en: I'm sorry, I don’t really understand
+  topic_en: Starting to Speak Japanese
+  can_do_count: 3
+  activity_count: 30
+  audio_count: 30
+- lesson_id: L03
+  title_en: Nice to meet you
+  topic_en: About Myself
+  can_do_count: 3
+  activity_count: 11
+  audio_count: 11
+- lesson_id: L04
+  title_en: I live in Tokyo
+  topic_en: About Myself
+  can_do_count: 3
+  activity_count: 24
+  audio_count: 24
+- lesson_id: L05
+  title_en: I like udon
+  topic_en: Food
+  can_do_count: 3
+  activity_count: 35
+  audio_count: 35
+- lesson_id: L06
+  title_en: I’d like a cheeseburger, please
+  topic_en: Food
+  can_do_count: 3
+  activity_count: 20
+  audio_count: 20
+- lesson_id: L07
+  title_en: There are four rooms
+  topic_en: Homes and Workplaces
+  can_do_count: 3
+  activity_count: 28
+  audio_count: 28
+- lesson_id: L08
+  title_en: Where is Yamada-san?
+  topic_en: Homes and Workplaces
+  can_do_count: 3
+  activity_count: 25
+  audio_count: 25
+- lesson_id: L09
+  title_en: Lunch is from noon to 1 o'clock
+  topic_en: Daily Life
+  can_do_count: 3
+  activity_count: 19
+  audio_count: 19
+- lesson_id: L10
+  title_en: Please lend me the stapler
+  topic_en: Daily Life
+  can_do_count: 3
+  activity_count: 31
+  audio_count: 31
+- lesson_id: L11
+  title_en: What kind of manga do you like?
+  topic_en: What I Like to Do
+  can_do_count: 3
+  activity_count: 24
+  audio_count: 24
+- lesson_id: L12
+  title_en: Do you want to go for a drink together?
+  topic_en: What I Like to Do
+  can_do_count: 3
+  activity_count: 21
+  audio_count: 21
+- lesson_id: L13
+  title_en: Does this bus go to the airport?
+  topic_en: Walking around Town
+  can_do_count: 3
+  activity_count: 33
+  audio_count: 33
+- lesson_id: L14
+  title_en: It's a big building, isn't it
+  topic_en: Walking around Town
+  can_do_count: 3
+  activity_count: 30
+  audio_count: 30
+- lesson_id: L15
+  title_en: I need some batteries
+  topic_en: At Stores
+  can_do_count: 3
+  activity_count: 31
+  audio_count: 31
+- lesson_id: L16
+  title_en: How much is this?
+  topic_en: At Stores
+  can_do_count: 3
+  activity_count: 33
+  audio_count: 33
+- lesson_id: L17
+  title_en: I went to see a movie
+  topic_en: Holidays
+  can_do_count: 3
+  activity_count: 14
+  audio_count: 14
+- lesson_id: L18
+  title_en: I want to go to a hot spring
+  topic_en: Holidays
+  can_do_count: 3
+  activity_count: 16
+  audio_count: 16
+assets:
+  pdf: assets/irodori_starter.pdf
+  grammar_pdf: assets/Grammar_Worksheets_X.pdf
+  audio_dir: assets/audio

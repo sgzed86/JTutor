@@ -1,0 +1,877 @@
+lesson_id: L01
+lesson: 1
+title_en: Good morning!
+title_jp: おはようございます
+topic_en: Starting to Speak Japanese
+pdf_pages:
+- 44
+- 61
+intro_questions:
+- jp: あなたの 国では、会ったとき、何と いいますか？
+  en: In your language, what do you say when you meet someone?
+- jp: 朝と 夜で、あいさつは ちがいますか？
+  en: Do your greetings change between morning and evening?
+can_dos:
+- id: CD_L01_01
+  can_do_number: 1
+  statement_en: Can exchange greetings when you meet someone.
+  statement_jp: 人に会ったとき、あいさつをすることができる。
+  activity_hint: '1'
+  rubric:
+    must_include:
+    - おはよう
+    - こんにちは
+    min_score: 80
+- id: CD_L01_02
+  can_do_number: 2
+  statement_en: Can exchange greetings when parting from someone.
+  statement_jp: 人と別れるとき、あいさつをすることができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - じゃあ
+    - 失礼
+    - お疲れ
+    min_score: 80
+- id: CD_L01_03
+  can_do_number: 3
+  statement_en: Can thank someone or apologize.
+  statement_jp: 人にお礼を言ったり、謝ったりすることができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - ありがとう
+    - すみません
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_L01_01
+  label: kiku
+  audio:
+  - assets/audio/X_[01-01]_kiku.mp3
+  key_phrases:
+  - おはよう
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  book_section_jp: Can-do 1 — 人に会ったときのあいさつ。まず 聞いて、言いましょう。
+  book_section_en: 'Can-do 1: Greetings when you meet someone. Listen and repeat, then choose from pictures.'
+  book_mode: listen_repeat
+  phrase_meta:
+  - jp: おはよう
+    tags:
+    - short
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_L01_02
+  label: kiku1
+  audio:
+  - assets/audio/X_[01-02]_kiku1.mp3
+  key_phrases:
+  - こんにちは
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: 'Book ① (01-02): morning — which greeting do you hear? Say it.'
+  book_mode: listen_select
+  phrase_meta:
+  - jp: こんにちは
+    tags:
+    - short
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_L01_03
+  label: kiku2
+  audio:
+  - assets/audio/X_[01-03]_kiku2.mp3
+  key_phrases:
+  - おはようございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: 'Book ② (01-03): afternoon — say the greeting.'
+  book_mode: listen_select
+  phrase_meta:
+  - jp: おはようございます
+    tags:
+    - short
+    - polite
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_L01_01
+  label: kiku3
+  audio:
+  - assets/audio/X_[01-04]_kiku3.mp3
+  key_phrases:
+  - こんばんは
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: 'Book ③ (01-04): evening — say the greeting.'
+  book_mode: listen_select
+  phrase_meta:
+  - jp: こんばんは
+    tags:
+    - short
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_L01_02
+  label: kiku4
+  audio:
+  - assets/audio/X_[01-05]_kiku4.mp3
+  key_phrases:
+  - おはよう
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: 'Book ④ (01-05): morning (casual) — say the greeting.'
+  book_mode: listen_select
+  phrase_meta:
+  - jp: おはよう
+    tags:
+    - short
+- id: A6
+  kind: speaking
+  book_activity: 6
+  can_do_id: CD_L01_03
+  label: hanasu1-1
+  audio:
+  - assets/audio/X_[01-06]_hanasu1-1.mp3
+  key_phrases:
+  - おはようございます
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_section_jp: 2. 人と会ったときに、あいさつをしましょう。
+  book_section_en: 'Section 2: Greet people when you meet them — morning, afternoon, evening dialogs.'
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: おはようございます
+  - speaker: learner
+    jp: おはよう
+  dialog_listen_audio:
+  - assets/audio/X_[01-06]_hanasu1-1.mp3
+  - assets/audio/X_[01-07]_hanasu1-2.mp3
+  phrase_meta:
+  - jp: おはようございます
+    tags:
+    - short
+    - polite
+- id: A7
+  kind: speaking
+  book_activity: 7
+  can_do_id: CD_L01_01
+  label: hanasu1-2
+  audio:
+  - assets/audio/X_[01-07]_hanasu1-2.mp3
+  key_phrases:
+  - おはよう
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_skip: true
+  phrase_meta:
+  - jp: おはよう
+    tags:
+    - short
+- id: A8
+  kind: speaking
+  book_activity: 8
+  can_do_id: CD_L01_02
+  label: hanasu2
+  audio:
+  - assets/audio/X_[01-08]_hanasu2.mp3
+  key_phrases:
+  - こんにちは
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: こんにちは
+  - speaker: learner
+    jp: こんにちは
+  dialog_listen_audio:
+  - assets/audio/X_[01-08]_hanasu2.mp3
+  phrase_meta:
+  - jp: こんにちは
+    tags:
+    - short
+- id: A9
+  kind: speaking
+  book_activity: 9
+  can_do_id: CD_L01_03
+  label: hanasu3
+  audio:
+  - assets/audio/X_[01-09]_hanasu3.mp3
+  key_phrases:
+  - こんばんは
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: こんばんは
+  - speaker: learner
+    jp: こんばんは
+  dialog_listen_audio:
+  - assets/audio/X_[01-09]_hanasu3.mp3
+  phrase_meta:
+  - jp: こんばんは
+    tags:
+    - short
+- id: A10
+  kind: listening
+  book_activity: 10
+  can_do_id: CD_L01_01
+  label: kiku1
+  audio:
+  - assets/audio/X_[01-10]_kiku1.mp3
+  key_phrases:
+  - じゃあ、また
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  book_section_jp: Can-do 2 — 人と別れるときのあいさつ。
+  book_section_en: 'Can-do 2: Greetings when you part — listen and match, then practice.'
+  picture_hint_en: 'Goodbye ① (01-10): say the phrase you hear.'
+  book_mode: listen_select
+  phrase_meta:
+  - jp: じゃあ、また
+    tags:
+    - short
+    - casual
+- id: A11
+  kind: listening
+  book_activity: 11
+  can_do_id: CD_L01_02
+  label: kiku2
+  audio:
+  - assets/audio/X_[01-11]_kiku2.mp3
+  key_phrases:
+  - 失礼します
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: 'Goodbye ② (01-11): say the phrase.'
+  book_mode: listen_select
+  phrase_meta:
+  - jp: 失礼します
+    tags:
+    - short
+    - polite
+- id: A12
+  kind: listening
+  book_activity: 12
+  can_do_id: CD_L01_03
+  label: kiku3
+  audio:
+  - assets/audio/X_[01-12]_kiku3.mp3
+  key_phrases:
+  - お先に失礼します
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: 'Goodbye ③ (01-12): say the phrase.'
+  book_mode: listen_select
+  phrase_meta:
+  - jp: お先に失礼します
+    tags:
+    - short
+    - polite
+- id: A13
+  kind: listening
+  book_activity: 13
+  can_do_id: CD_L01_01
+  label: kiku4
+  audio:
+  - assets/audio/X_[01-13]_kiku4.mp3
+  key_phrases:
+  - おやすみなさい
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: 'Goodbye ④ (01-13): say the phrase.'
+  book_mode: listen_select
+  phrase_meta:
+  - jp: おやすみなさい
+    tags:
+    - short
+    - casual
+- id: A14
+  kind: speaking
+  book_activity: 14
+  can_do_id: CD_L01_02
+  label: hanasu1-1
+  audio:
+  - assets/audio/X_[01-14]_hanasu1-1.mp3
+  key_phrases:
+  - お先に失礼します
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: お先に失礼します
+  - speaker: learner
+    jp: 失礼します
+  dialog_listen_audio:
+  - assets/audio/X_[01-14]_hanasu1-1.mp3
+  phrase_meta:
+  - jp: お先に失礼します
+    tags:
+    - short
+    - polite
+- id: A15
+  kind: speaking
+  book_activity: 15
+  can_do_id: CD_L01_03
+  label: hanasu1-2
+  audio:
+  - assets/audio/X_[01-15]_hanasu1-2.mp3
+  key_phrases:
+  - 失礼します
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 失礼します
+  - speaker: learner
+    jp: 失礼します
+  dialog_listen_audio:
+  - assets/audio/X_[01-15]_hanasu1-2.mp3
+  phrase_meta:
+  - jp: 失礼します
+    tags:
+    - short
+    - polite
+- id: A16
+  kind: speaking
+  book_activity: 16
+  can_do_id: CD_L01_01
+  label: hanasu2
+  audio:
+  - assets/audio/X_[01-16]_hanasu2.mp3
+  key_phrases:
+  - お疲れさまでした
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: お疲れさまでした
+  - speaker: learner
+    jp: お疲れさま
+  dialog_listen_audio:
+  - assets/audio/X_[01-16]_hanasu2.mp3
+  phrase_meta:
+  - jp: お疲れさまでした
+    tags:
+    - short
+- id: A17
+  kind: speaking
+  book_activity: 17
+  can_do_id: CD_L01_02
+  label: hanasu3
+  audio:
+  - assets/audio/X_[01-17]_hanasu3.mp3
+  key_phrases:
+  - おやすみ
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: おやすみなさい
+  - speaker: learner
+    jp: おやすみ
+  dialog_listen_audio:
+  - assets/audio/X_[01-17]_hanasu3.mp3
+  phrase_meta:
+  - jp: おやすみ
+    tags:
+    - short
+    - casual
+- id: A18
+  kind: listening
+  book_activity: 18
+  can_do_id: CD_L01_03
+  label: kiku1
+  audio:
+  - assets/audio/X_[01-18]_kiku1.mp3
+  key_phrases:
+  - ありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  book_section_jp: Can-do 3 — お礼と 謝り方。
+  book_section_en: 'Can-do 3: Thank someone or apologize.'
+  book_mode: listen_repeat
+  phrase_meta:
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+- id: A19
+  kind: listening
+  book_activity: 19
+  can_do_id: CD_L01_01
+  label: kiku2
+  audio:
+  - assets/audio/X_[01-19]_kiku2.mp3
+  key_phrases:
+  - すみません
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: Thanks / sorry — listen and say the phrase (01-19).
+  book_mode: listen_select
+  phrase_meta:
+  - jp: すみません
+    tags:
+    - short
+    - polite
+- id: A20
+  kind: listening
+  book_activity: 20
+  can_do_id: CD_L01_02
+  label: kiku3
+  audio:
+  - assets/audio/X_[01-20]_kiku3.mp3
+  key_phrases:
+  - ありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: Say the thanks phrase (01-20).
+  book_mode: listen_select
+  phrase_meta:
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+- id: A21
+  kind: listening
+  book_activity: 21
+  can_do_id: CD_L01_03
+  label: kiku4
+  audio:
+  - assets/audio/X_[01-21]_kiku4.mp3
+  key_phrases:
+  - どうも
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: Short thanks どうも (01-21).
+  book_mode: listen_select
+  phrase_meta:
+  - jp: どうも
+    tags:
+    - short
+    - casual
+- id: A22
+  kind: listening
+  book_activity: 22
+  can_do_id: CD_L01_01
+  label: kiku5
+  audio:
+  - assets/audio/X_[01-22]_kiku5.mp3
+  key_phrases:
+  - どうもありがとう
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: Say どうもありがとう (01-22).
+  book_mode: listen_select
+  phrase_meta:
+  - jp: どうもありがとう
+    tags:
+    - short
+    - casual
+- id: A23
+  kind: listening
+  book_activity: 23
+  can_do_id: CD_L01_02
+  label: kiku6
+  audio:
+  - assets/audio/X_[01-23]_kiku6.mp3
+  key_phrases:
+  - すみません
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: Apology すみません (01-23).
+  book_mode: listen_select
+  phrase_meta:
+  - jp: すみません
+    tags:
+    - short
+    - polite
+- id: A24
+  kind: listening
+  book_activity: 24
+  can_do_id: CD_L01_03
+  label: kiku7
+  audio:
+  - assets/audio/X_[01-24]_kiku7.mp3
+  key_phrases:
+  - ごめん
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: Casual ごめん (01-24).
+  book_mode: listen_select
+  phrase_meta:
+  - jp: ごめん
+    tags:
+    - short
+    - casual
+- id: A25
+  kind: listening
+  book_activity: 25
+  can_do_id: CD_L01_01
+  label: kiku8
+  audio:
+  - assets/audio/X_[01-25]_kiku8.mp3
+  key_phrases:
+  - すみません
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  picture_hint_en: Apology in context (01-25).
+  book_mode: listen_select
+  phrase_meta:
+  - jp: すみません
+    tags:
+    - short
+    - polite
+- id: A26
+  kind: speaking
+  book_activity: 26
+  can_do_id: CD_L01_02
+  label: hanasu1-1
+  audio:
+  - assets/audio/X_[01-26]_hanasu1-1.mp3
+  key_phrases:
+  - ありがとうございます
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: どうぞ
+  - speaker: learner
+    jp: ありがとうございます
+  dialog_listen_audio:
+  - assets/audio/X_[01-26]_hanasu1-1.mp3
+  phrase_meta:
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+- id: A27
+  kind: speaking
+  book_activity: 27
+  can_do_id: CD_L01_03
+  label: hanasu1-2
+  audio:
+  - assets/audio/X_[01-27]_hanasu1-2.mp3
+  key_phrases:
+  - すみません
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: あ、すみません
+  - speaker: learner
+    jp: すみません
+  dialog_listen_audio:
+  - assets/audio/X_[01-27]_hanasu1-2.mp3
+  phrase_meta:
+  - jp: すみません
+    tags:
+    - short
+    - polite
+- id: A28
+  kind: speaking
+  book_activity: 28
+  can_do_id: CD_L01_01
+  label: hanasu1-3
+  audio:
+  - assets/audio/X_[01-28]_hanasu1-3.mp3
+  key_phrases:
+  - ありがとうございます
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: ありがとうございます
+  - speaker: learner
+    jp: どうも
+  dialog_listen_audio:
+  - assets/audio/X_[01-28]_hanasu1-3.mp3
+  phrase_meta:
+  - jp: ありがとうございます
+    tags:
+    - short
+    - polite
+- id: A29
+  kind: speaking
+  book_activity: 29
+  can_do_id: CD_L01_02
+  label: hanasu2
+  audio:
+  - assets/audio/X_[01-29]_hanasu2.mp3
+  key_phrases:
+  - すみません
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみません
+  - speaker: learner
+    jp: いいえ
+  dialog_listen_audio:
+  - assets/audio/X_[01-29]_hanasu2.mp3
+  phrase_meta:
+  - jp: すみません
+    tags:
+    - short
+    - polite
+- id: A30
+  kind: script
+  book_activity: 30
+  can_do_id: null
+  label: hiragana1
+  audio:
+  - assets/audio/X_[01-30]_hiragana1.mp3
+  key_phrases: []
+  prompt_en: Practice hiragana with the book audio (X_[01-30]_hiragana1.mp3).
+- id: A31
+  kind: script
+  book_activity: 31
+  can_do_id: null
+  label: hiragana2
+  audio:
+  - assets/audio/X_[01-31]_hiragana2.mp3
+  key_phrases: []
+  prompt_en: Practice hiragana with the book audio (X_[01-31]_hiragana2.mp3).
+- id: A32
+  kind: script
+  book_activity: 32
+  can_do_id: null
+  label: hiragana3
+  audio:
+  - assets/audio/X_[01-32]_hiragana3.mp3
+  key_phrases: []
+  prompt_en: Practice hiragana with the book audio (X_[01-32]_hiragana3.mp3).
+- id: A33
+  kind: script
+  book_activity: 33
+  can_do_id: null
+  label: hiragana4
+  audio:
+  - assets/audio/X_[01-33]_hiragana4.mp3
+  key_phrases: []
+  prompt_en: Practice hiragana with the book audio (X_[01-33]_hiragana4.mp3).
+- id: A34
+  kind: script
+  book_activity: 34
+  can_do_id: null
+  label: hiragana_nobasu
+  audio:
+  - assets/audio/X_[01-34]_hiragana_nobasu.mp3
+  key_phrases: []
+  prompt_en: Practice hiragana with the book audio (X_[01-34]_hiragana_nobasu.mp3).
+- id: A35
+  kind: script
+  book_activity: 35
+  can_do_id: null
+  label: hiragana_tsumaru
+  audio:
+  - assets/audio/X_[01-35]_hiragana_tsumaru.mp3
+  key_phrases: []
+  prompt_en: Practice hiragana with the book audio (X_[01-35]_hiragana_tsumaru.mp3).
+grammar: []
+vocab: []
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_L01_01
+  prompt_en: 'Demonstrate this can-do in Japanese: Can exchange greetings when you meet someone.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L01_01
+  prompt_en: 'In a new everyday situation, show you can: Can exchange greetings when you meet someone.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L01_02
+  prompt_en: 'Demonstrate this can-do in Japanese: Can exchange greetings when parting from someone.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L01_02
+  prompt_en: 'In a new everyday situation, show you can: Can exchange greetings when parting from someone.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L01_03
+  prompt_en: 'Demonstrate this can-do in Japanese: Can thank someone or apologize.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L01_03
+  prompt_en: 'In a new everyday situation, show you can: Can thank someone or apologize.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_L01_01
+  partner_jp: おはよう！
+  expected:
+  - おはよう
+  - おはようございます
+  hint_en: A coworker greets you in the morning. Greet them back.
+- can_do_id: CD_L01_01
+  partner_jp: こんにちは。
+  expected:
+  - こんにちは
+  hint_en: Someone says hello in the afternoon. Reply with a greeting.
+- can_do_id: CD_L01_01
+  partner_jp: こんばんは。
+  expected:
+  - こんばんは
+  hint_en: Evening greeting — respond in kind.
+- can_do_id: CD_L01_02
+  partner_jp: じゃあ、また。
+  expected:
+  - じゃあ、また
+  - じゃあまた
+  hint_en: Your classmate is leaving. Say goodbye the same way.
+- can_do_id: CD_L01_02
+  partner_jp: お先に失礼します。
+  expected:
+  - お先に失礼します
+  - 失礼します
+  hint_en: A senior colleague is leaving the office. Reply appropriately.
+- can_do_id: CD_L01_02
+  partner_jp: お疲れさまでした。
+  expected:
+  - お疲れさまでした
+  - お疲れ
+  hint_en: Work is over for the day. Reply to their closing phrase.
+- can_do_id: CD_L01_03
+  partner_jp: どうぞ。
+  expected:
+  - ありがとう
+  - ありがとうございます
+  - どうも
+  hint_en: Someone offers you something. Thank them.
+- can_do_id: CD_L01_03
+  partner_jp: あ、すみません！
+  expected:
+  - すみません
+  - ごめん
+  hint_en: You bumped into someone. Apologize.
+- can_do_id: CD_L01_03
+  partner_jp: ありがとうございます。
+  expected:
+  - どうも
+  - いいえ
+  - どういたしまして
+  hint_en: They thanked you. Give a short polite reply.
+- can_do_id: CD_L01_03
+  partner_jp: おはようございます
+  expected:
+  - おはよう
+  - おはようございます
+  hint_en: Reply as in the book dialog (activity 6).
+- can_do_id: CD_L01_02
+  partner_jp: こんにちは
+  expected:
+  - こんにちは
+  hint_en: Reply as in the book dialog (activity 8).
+- can_do_id: CD_L01_03
+  partner_jp: こんばんは
+  expected:
+  - こんばんは
+  hint_en: Reply as in the book dialog (activity 9).
+- can_do_id: CD_L01_02
+  partner_jp: お先に失礼します
+  expected:
+  - 失礼します
+  - お先に失礼します
+  hint_en: Reply as in the book dialog (activity 14).
+- can_do_id: CD_L01_03
+  partner_jp: 失礼します
+  expected:
+  - 失礼します
+  hint_en: Reply as in the book dialog (activity 15).
+- can_do_id: CD_L01_01
+  partner_jp: お疲れさまでした
+  expected:
+  - お疲れさま
+  - お疲れさまでした
+  hint_en: Reply as in the book dialog (activity 16).
+- can_do_id: CD_L01_02
+  partner_jp: おやすみなさい
+  expected:
+  - おやすみ
+  hint_en: Reply as in the book dialog (activity 17).
+- can_do_id: CD_L01_02
+  partner_jp: どうぞ
+  expected:
+  - ありがとうございます
+  hint_en: Reply as in the book dialog (activity 26).
+- can_do_id: CD_L01_03
+  partner_jp: あ、すみません
+  expected:
+  - すみません
+  hint_en: Reply as in the book dialog (activity 27).
+- can_do_id: CD_L01_01
+  partner_jp: ありがとうございます
+  expected:
+  - どうも
+  - ありがとうございます
+  hint_en: Reply as in the book dialog (activity 28).
+- can_do_id: CD_L01_02
+  partner_jp: すみません
+  expected:
+  - いいえ
+  - すみません
+  hint_en: Reply as in the book dialog (activity 29).
+english_notes: 'In your language, what do you say when you meet someone or when you leave? Does it depend
+  on the time or who
+
+  you’re speaking to?
+
+  Can exchange greetings when you meet someone.
+
+  Listen to the dialogs.
+
+  The people are each greeting someone they have met.
+
+  Listen and repeat.
+
+  Ohayoo (gozaimasu).
+
+  Konbanwa.
+
+  Konnichiwa.
+
+  What greetings are being used in ①–④? Choose from (1) a–c.
+
+  Listen to dialogs ② and ④ again. Which do you think is more polite, おはようございます (Ohayoogozaimasu) or おはよう
+  (Ohayoo) ?
+
+  Greet people when you meet them.
+
+  Ohayoo gozaimasu.
+
+  Ohayoo.
+
+  Konnichiwa.
+
+  Konbanwa.
+
+  Ohayoo gozaimasu.
+
+  Ohayoo.
+
+  Konnichiwa.
+
+  Konbanwa.
+
+  のあいさつ Morning greetings
+
+  のあいさつ Afternoon greetings
+
+  のあいさつ Evening greetings
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Practice using the illustrations from 1 (2).
+
+  Freely think up a time and situation, and say a greeting.
+
+  Can say goodbye when leaving.
+
+  Listen to the dialogs.
+
+  The people are each saying goodbye when they are leaving.
+
+  What goodbyes are being used in ①–④? Match the goodbyes given in a–g with ア–コ.
+
+  Jaa, mata.
+
+  Otsukaresama deshita.
+
+  Shitsureeshimasu.
+
+  Otsukaresama.
+
+  Osaki ni shitsureeshimasu.
+
+  Oyasuminasai.
+
+  Oyasumi.'
+unlock_requires_mastery: true

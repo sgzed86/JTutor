@@ -1,0 +1,644 @@
+lesson_id: EL03
+lesson: 3
+book_id: elementary1
+title_en: It gets very cold in winter
+title_jp: 冬 はとても寒くなります
+topic_en: Seasons and Weather
+pdf_pages:
+- 81
+- 99
+intro_questions:
+- jp: It gets very cold in winter について、あなたの けいけんは？
+  en: Thinking about "Seasons and Weather" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can watch a short video about the four seasons in Japan
+    and under - stand seasonal characteristics. What do you want to be able to do?'
+can_dos:
+- id: CD_EL03_08
+  can_do_number: 8
+  statement_en: Can watch a short video about the four seasons in Japan and under
+    - stand seasonal characteristics.
+  statement_jp: 日本の四季についての短い動画を見て、季節の特徴を理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL03_09
+  can_do_number: 9
+  statement_en: Can talk in simple terms about the seasonal characteristics of your
+    own country.
+  statement_jp: 日本の四季についての短い動画を見て、季節の特徴を理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL03_10
+  can_do_number: 10
+  statement_en: Can talk in simple terms about your favorite season and the reason.
+  statement_jp: 日本の四季についての短い動画を見て、季節の特徴を理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: vocabulary
+  book_activity: 1
+  can_do_id: CD_EL03_08
+  label: kotoba1
+  audio:
+  - assets/audio/Y_[03-01]_kotoba1.mp3
+  key_phrases:
+  - 冬はとても寒くなります
+  - 春は桜の花が咲きます
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 冬はとても寒くなります
+    tags:
+    - long
+    - polite
+  - jp: 春は桜の花が咲きます
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: vocabulary
+  book_activity: 2
+  can_do_id: CD_EL03_09
+  label: kotoba2
+  audio:
+  - assets/audio/Y_[03-02]_kotoba2.mp3
+  key_phrases:
+  - 冬はとても寒くなります
+  - 春は桜の花が咲きます
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 冬はとても寒くなります
+    tags:
+    - long
+    - polite
+  - jp: 春は桜の花が咲きます
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_EL03_10
+  label: kiku
+  audio:
+  - assets/audio/Y_[03-03]_kiku.mp3
+  key_phrases:
+  - はとても寒くなります
+  - 日本を紹介する映像を見ています。
+  - 冬はとても寒くなります
+  - ジョーイさんの国には、どんな季節がありますか？
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: はとても寒くなります
+    tags:
+    - short
+    - polite
+  - jp: 日本を紹介する映像を見ています。
+    tags:
+    - long
+    - polite
+  - jp: 冬はとても寒くなります
+    tags:
+    - long
+    - polite
+  - jp: ジョーイさんの国には、どんな季節がありますか？
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A4
+  kind: grammar_form
+  book_activity: 4
+  can_do_id: CD_EL03_08
+  label: katachi
+  audio:
+  - assets/audio/Y_[03-04]_katachi.mp3
+  key_phrases:
+  - 冬はとても寒くなります
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 冬はとても寒くなります
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_EL03_09
+  label: kiku1
+  audio:
+  - assets/audio/Y_[03-05]_kiku1.mp3
+  key_phrases:
+  - はとても寒くなります
+  - 人の人が話しています。
+  - のどれですか。
+  - それぞれどんな特徴があります
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: はとても寒くなります
+    tags:
+    - short
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: のどれですか。
+    tags:
+    - short
+    - polite
+  - jp: それぞれどんな特徴があります
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL03 activity 5: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A6
+  kind: listening
+  book_activity: 6
+  can_do_id: CD_EL03_10
+  label: kiku2
+  audio:
+  - assets/audio/Y_[03-06]_kiku2.mp3
+  key_phrases:
+  - はとても寒くなります
+  - 人の人が話しています。
+  - のどれですか。
+  - それぞれどんな特徴があります
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: はとても寒くなります
+    tags:
+    - short
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: のどれですか。
+    tags:
+    - short
+    - polite
+  - jp: それぞれどんな特徴があります
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL03 activity 6: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A7
+  kind: listening
+  book_activity: 7
+  can_do_id: CD_EL03_08
+  label: kiku3
+  audio:
+  - assets/audio/Y_[03-07]_kiku3.mp3
+  key_phrases:
+  - はとても寒くなります
+  - 人の人が話しています。
+  - のどれですか。
+  - それぞれどんな特徴があります
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: はとても寒くなります
+    tags:
+    - short
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: のどれですか。
+    tags:
+    - short
+    - polite
+  - jp: それぞれどんな特徴があります
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL03 activity 7: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A8
+  kind: listening
+  book_activity: 8
+  can_do_id: CD_EL03_09
+  label: kiku4
+  audio:
+  - assets/audio/Y_[03-08]_kiku4.mp3
+  key_phrases:
+  - はとても寒くなります
+  - 人の人が話しています。
+  - のどれですか。
+  - それぞれどんな特徴があります
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: はとても寒くなります
+    tags:
+    - short
+    - polite
+  - jp: 人の人が話しています。
+    tags:
+    - long
+    - polite
+  - jp: のどれですか。
+    tags:
+    - short
+    - polite
+  - jp: それぞれどんな特徴があります
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL03 activity 8: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A9
+  kind: speaking
+  book_activity: 9
+  can_do_id: CD_EL03_10
+  label: hanasu1
+  audio:
+  - assets/audio/Y_[03-09]_hanasu1.mp3
+  key_phrases:
+  - 秋が好きです。
+  - 好きな季節はいつですか？
+  - 冬はとても寒くなります
+  - とても暑いです
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 好きな季節はいつですか？
+  - speaker: learner
+    jp: 秋が好きです。
+  dialog_listen_audio:
+  - assets/audio/Y_[03-09]_hanasu1.mp3
+  phrase_meta:
+  - jp: 秋が好きです。
+    tags:
+    - short
+    - polite
+  - jp: 好きな季節はいつですか？
+    tags:
+    - long
+    - polite
+  - jp: 冬はとても寒くなります
+    tags:
+    - long
+    - polite
+  - jp: とても暑いです
+    tags:
+    - short
+    - polite
+- id: A10
+  kind: speaking
+  book_activity: 10
+  can_do_id: CD_EL03_08
+  label: hanasu2
+  audio:
+  - assets/audio/Y_[03-10]_hanasu2.mp3
+  key_phrases:
+  - どうしてですか？
+  - 秋が好きです）
+  - 冬はとても寒くなります
+  - とても暑いです
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 秋が好きです）
+  - speaker: learner
+    jp: どうしてですか？
+  dialog_listen_audio:
+  - assets/audio/Y_[03-10]_hanasu2.mp3
+  phrase_meta:
+  - jp: どうしてですか？
+    tags:
+    - short
+    - polite
+  - jp: 秋が好きです）
+    tags:
+    - short
+    - polite
+  - jp: 冬はとても寒くなります
+    tags:
+    - long
+    - polite
+  - jp: とても暑いです
+    tags:
+    - short
+    - polite
+- id: A11
+  kind: speaking
+  book_activity: 11
+  can_do_id: CD_EL03_09
+  label: hanasu3
+  audio:
+  - assets/audio/Y_[03-11]_hanasu3.mp3
+  key_phrases:
+  - 一年中夏です。ずっと暑いです。
+  - ジョーイさんの国には、どんな季節がありますか？
+  - 冬はとても寒くなります
+  - とても暑いです
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: ジョーイさんの国には、どんな季節がありますか？
+  - speaker: learner
+    jp: 一年中夏です。ずっと暑いです。
+  dialog_listen_audio:
+  - assets/audio/Y_[03-11]_hanasu3.mp3
+  phrase_meta:
+  - jp: 一年中夏です。ずっと暑いです。
+    tags:
+    - long
+    - polite
+  - jp: ジョーイさんの国には、どんな季節がありますか？
+    tags:
+    - long
+    - polite
+  - jp: 冬はとても寒くなります
+    tags:
+    - long
+    - polite
+  - jp: とても暑いです
+    tags:
+    - short
+    - polite
+- id: A12
+  kind: conversation
+  book_activity: 12
+  can_do_id: CD_EL03_10
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[03-12]_kaiwa.mp3
+  key_phrases:
+  - タムさんの国には、どんな季節がありますか？
+  - そうですか。
+  - はとても寒くなります
+  - 好きな季節について話しています。
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: そうですか。
+  - speaker: learner
+    jp: タムさんの国には、どんな季節がありますか？
+  dialog_listen_audio:
+  - assets/audio/Y_[03-12]_kaiwa.mp3
+  phrase_meta:
+  - jp: タムさんの国には、どんな季節がありますか？
+    tags:
+    - long
+    - polite
+  - jp: そうですか。
+    tags:
+    - short
+    - polite
+  - jp: はとても寒くなります
+    tags:
+    - short
+    - polite
+  - jp: 好きな季節について話しています。
+    tags:
+    - long
+    - polite
+- id: A13
+  kind: grammar_form
+  book_activity: 13
+  can_do_id: CD_EL03_08
+  label: katachi
+  audio:
+  - assets/audio/Y_[03-13]_katachi.mp3
+  key_phrases:
+  - 好きな季節はいつですか？
+  - 秋が好きです。
+  - 秋が好きです）
+  - どうしてですか？
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 好きな季節はいつですか？
+    tags:
+    - long
+    - polite
+  - jp: 秋が好きです。
+    tags:
+    - short
+    - polite
+  - jp: 秋が好きです）
+    tags:
+    - short
+    - polite
+  - jp: どうしてですか？
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A14
+  kind: speaking
+  book_activity: 14
+  can_do_id: CD_EL03_09
+  label: hanasu
+  audio:
+  - assets/audio/Y_[03-14]_hanasu.mp3
+  key_phrases:
+  - そうですか。
+  - 雨季と乾季があります。
+  - 冬はとても寒くなります
+  - 好きな季節はいつですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 雨季と乾季があります。
+  - speaker: learner
+    jp: そうですか。
+  dialog_listen_audio:
+  - assets/audio/Y_[03-14]_hanasu.mp3
+  phrase_meta:
+  - jp: そうですか。
+    tags:
+    - short
+    - polite
+  - jp: 雨季と乾季があります。
+    tags:
+    - long
+    - polite
+  - jp: 冬はとても寒くなります
+    tags:
+    - long
+    - polite
+  - jp: 好きな季節はいつですか
+    tags:
+    - long
+    - polite
+grammar:
+- point: N に／ナ A-に／イ A-く なります
+  worksheet_pages:
+  - 10
+  examples: []
+- point: せみが鳴
+  worksheet_pages:
+  - 10
+  examples: []
+- point: もみじで、山
+  worksheet_pages:
+  - 10
+  examples: []
+- point: いちばん ナ A-です／イ A-です
+  worksheet_pages:
+  - 10
+  examples: []
+- point: イ A-のが 好
+  worksheet_pages:
+  - 11
+  examples: []
+- point: ナ A-です／イ A-です から
+  worksheet_pages:
+  - 12
+  examples: []
+- point: N1 や N2
+  worksheet_pages:
+  - 13
+  examples: []
+- point: とか （N2 とか）
+  worksheet_pages:
+  - 13
+  examples: []
+vocab:
+- jp: 冬はとても寒くなります
+  reading: ''
+  en: ''
+  tags:
+  - EL03
+- jp: 春は桜の花が咲きます
+  reading: ''
+  en: ''
+  tags:
+  - EL03
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL03_08
+  prompt_en: 'Demonstrate: Can watch a short video about the four seasons in Japan
+    and under - stand seasonal characteristics.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL03_09
+  prompt_en: 'Demonstrate: Can talk in simple terms about the seasonal characteristics
+    of your own country.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL03_10
+  prompt_en: 'Demonstrate: Can talk in simple terms about your favorite season and
+    the reason.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL03_08
+  partner_jp: 冬はとても寒くなります。
+  expected: &id001
+  - 冬はとても寒くなります
+  - 春は桜の花が咲きます
+  - はとても寒くなります
+  - 人の人が話しています。
+  hint_en: Can watch a short video about the four seasons in Japan and under - stand
+    seasonal characteristics.
+- can_do_id: CD_EL03_08
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can watch a short video about the four seasons in Japan and under
+    - stand season
+- can_do_id: CD_EL03_09
+  partner_jp: 冬はとても寒くなります。
+  expected: &id002
+  - 冬はとても寒くなります
+  - 春は桜の花が咲きます
+  - はとても寒くなります
+  - 人の人が話しています。
+  hint_en: Can talk in simple terms about the seasonal characteristics of your own
+    country.
+- can_do_id: CD_EL03_09
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can talk in simple terms about the seasonal characteristics of
+    your own country.
+- can_do_id: CD_EL03_10
+  partner_jp: はとても寒くなります。
+  expected: &id003
+  - はとても寒くなります
+  - 日本を紹介する映像を見ています。
+  - 冬はとても寒くなります
+  - ジョーイさんの国には、どんな季節がありますか？
+  hint_en: Can talk in simple terms about your favorite season and the reason.
+- can_do_id: CD_EL03_10
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can talk in simple terms about your favorite season and the reason.
+english_notes: 'What are the seasons like in your country?
+
+  Can watch a short video about the four seasons in Japan and understand seasonal
+  characteristics.
+
+  Preparation for the words
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen and choose from a-j.
+
+  Listen to the recording.
+
+  You are watching a video that introduces Japan.
+
+  Choose the characteristics of each season in Japan from a-j of 1 .
+
+  Check the words and listen to the narration again.
+
+  たくさん many / much ｜ 学
+
+  校 school
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used to describe the changes?
+
+  Focus on the expressions used and listen to the narration again.
+
+  Can talk in simple terms about the seasonal characteristics of your own country.
+
+  Listen to the dialogs.
+
+  The four people are each talking about the seasons and climate of their countries.
+
+  What is the season of each country? Choose from a-d.
+
+  a. b. c. d.
+
+  Listen to the dialogs again.What are the seasonal characteristics of each person’s
+  country? Choose from ア-キ.
+
+  Check the words and listen to the dialogs again.
+
+  じ same ｜ 40 度
+
+  40 degrees （～度
+
+  ～ degree(s)）｜ マイナス minus ｜ 短
+
+  い short'
+unlock_requires_mastery: true

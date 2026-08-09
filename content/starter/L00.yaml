@@ -1,0 +1,57 @@
+lesson_id: L00
+lesson: 0
+title_en: Classroom Japanese
+title_jp: 教室の日本語
+topic_en: Getting started
+pdf_pages: []
+can_dos: []
+activities:
+- id: A1
+  kind: classroom
+  book_activity: 1
+  can_do_id: null
+  label: kyoshitsu1
+  audio:
+  - assets/audio/X_[00-01]_kyoshitsu1.mp3
+  key_phrases: []
+  prompt_en: Listen to classroom Japanese used by the teacher.
+- id: A2
+  kind: classroom
+  book_activity: 2
+  can_do_id: null
+  label: kyoshitsu2
+  audio:
+  - assets/audio/X_[00-02]_kyoshitsu2.mp3
+  key_phrases: []
+  prompt_en: Listen to classroom Japanese used by the teacher.
+- id: A3
+  kind: classroom
+  book_activity: 3
+  can_do_id: null
+  label: kyoshitsu3
+  audio:
+  - assets/audio/X_[00-03]_kyoshitsu3.mp3
+  key_phrases: []
+  prompt_en: Listen to classroom Japanese used by the teacher.
+- id: A4
+  kind: classroom
+  book_activity: 4
+  can_do_id: null
+  label: kyoshitsu4
+  audio:
+  - assets/audio/X_[00-04]_kyoshitsu4.mp3
+  key_phrases: []
+  prompt_en: Listen to classroom Japanese used by the teacher.
+- id: A5
+  kind: classroom
+  book_activity: 5
+  can_do_id: null
+  label: kyoshitsu5
+  audio:
+  - assets/audio/X_[00-05]_kyoshitsu5.mp3
+  key_phrases: []
+  prompt_en: Listen to classroom Japanese used by the teacher.
+grammar: []
+vocab: []
+quiz_bank: []
+unlock_requires_mastery: false

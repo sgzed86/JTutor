@@ -1,0 +1,4 @@
+# Intermediate scrape outputs (large); YAML lessons are the committed curriculum.
+pdf_extract.json
+grammar_extract.json
+_*.txt

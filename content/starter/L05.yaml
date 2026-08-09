@@ -1,0 +1,1261 @@
+lesson_id: L05
+lesson: 5
+title_en: I like udon
+title_jp: うどんが好きです
+topic_en: Food
+pdf_pages:
+- 124
+- 158
+intro_questions:
+- jp: I like udon について、あなたの けいけんは？
+  en: Thinking about "Food" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can say what foods you like and don''t like. What do you want to be able to
+    do?'
+can_dos:
+- id: CD_L05_15
+  can_do_number: 15
+  statement_en: Can say what foods you like and don't like.
+  statement_jp: 好きな食べ物・嫌いな食べ物を言うことができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - 好き
+    min_score: 80
+- id: CD_L05_16
+  can_do_number: 16
+  statement_en: Can ask what foods someone likes.
+  statement_jp: 好きな食べ物について質問することができる。
+  activity_hint: '1'
+  rubric:
+    must_include:
+    - 好き
+    min_score: 80
+- id: CD_L05_17
+  can_do_number: 17
+  statement_en: Can talk simply about favorite foods.
+  statement_jp: 好きな食べ物について簡単に話すことができる。
+  activity_hint: ''
+  rubric:
+    must_include:
+    - 好き
+    min_score: 80
+activities:
+- id: A1
+  kind: listening
+  book_activity: 1
+  can_do_id: CD_L05_15
+  label: kiku1
+  audio:
+  - assets/audio/X_[05-01]_kiku1.mp3
+  key_phrases:
+  - 1カムラさん、魚、好きですか
+  - はい、好きです
+  - 肉も好きです
+  - 肉は
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1カムラさん、魚、好きですか
+    tags:
+    - long
+    - polite
+  - jp: はい、好きです
+    tags:
+    - short
+    - polite
+  - jp: 肉も好きです
+    tags:
+    - short
+    - polite
+  - jp: 肉は
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A2
+  kind: listening
+  book_activity: 2
+  can_do_id: CD_L05_16
+  label: kiku2
+  audio:
+  - assets/audio/X_[05-02]_kiku2.mp3
+  key_phrases:
+  - 2マリさんは魚好きですか
+  - はい好きです肉は肉は好きじゃないです
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 2マリさんは魚好きですか
+    tags:
+    - long
+    - polite
+  - jp: はい好きです肉は肉は好きじゃないです
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L05 activity 2: listen to the CD, then say the phrase that matches the book.'
+- id: A3
+  kind: listening
+  book_activity: 3
+  can_do_id: CD_L05_17
+  label: kiku3
+  audio:
+  - assets/audio/X_[05-03]_kiku3.mp3
+  key_phrases:
+  - 魚は好きじゃないです
+  - 肉と野菜が好きです
+  - さあ、ルイスさんは
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 魚は好きじゃないです
+    tags:
+    - short
+    - polite
+  - jp: 肉と野菜が好きです
+    tags:
+    - short
+    - polite
+  - jp: さあ、ルイスさんは
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L05 activity 3: listen to the CD, then say the phrase that matches the book.'
+- id: A4
+  kind: listening
+  book_activity: 4
+  can_do_id: CD_L05_15
+  label: kiku4
+  audio:
+  - assets/audio/X_[05-04]_kiku4.mp3
+  key_phrases:
+  - 4ささきさんは私はさかなが好きです野菜も好きです肉は肉は好きじゃないです
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 4ささきさんは私はさかなが好きです野菜も好きです肉は肉は好きじゃないです
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L05 activity 4: listen to the CD, then say the phrase that matches the book.'
+- id: A5
+  kind: grammar_form
+  book_activity: 5
+  can_do_id: CD_L05_16
+  label: katachi
+  audio:
+  - assets/audio/X_[05-05]_katachi.mp3
+  key_phrases:
+  - 私は魚は好きじゃないです
+  - 肉は好きじゃないです
+  - 肉と野菜が好きです
+  - 私は魚が好きです
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 私は魚は好きじゃないです
+    tags:
+    - long
+    - polite
+  - jp: 肉は好きじゃないです
+    tags:
+    - short
+    - polite
+  - jp: 肉と野菜が好きです
+    tags:
+    - short
+    - polite
+  - jp: 私は魚が好きです
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A6
+  kind: speaking
+  book_activity: 6
+  can_do_id: CD_L05_17
+  label: hanasu1
+  audio:
+  - assets/audio/X_[05-06]_hanasu1.mp3
+  key_phrases:
+  - はい好きです肉は肉も好きです
+  - さかな好きですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: はい好きです肉は肉も好きです
+    tags:
+    - long
+    - polite
+  - jp: さかな好きですか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: さかな好きですか
+  - speaker: learner
+    jp: はい好きです肉は肉も好きです
+  dialog_listen_audio:
+  - assets/audio/X_[05-06]_hanasu1.mp3
+- id: A7
+  kind: speaking
+  book_activity: 7
+  can_do_id: CD_L05_15
+  label: hanasu2
+  audio:
+  - assets/audio/X_[05-07]_hanasu2.mp3
+  key_phrases:
+  - はい好きです肉は肉は好きじゃないです
+  - さかな好きですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: はい好きです肉は肉は好きじゃないです
+    tags:
+    - long
+    - polite
+  - jp: さかな好きですか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: さかな好きですか
+  - speaker: learner
+    jp: はい好きです肉は肉は好きじゃないです
+  dialog_listen_audio:
+  - assets/audio/X_[05-07]_hanasu2.mp3
+- id: A8
+  kind: speaking
+  book_activity: 8
+  can_do_id: CD_L05_16
+  label: hanasu3
+  audio:
+  - assets/audio/X_[05-08]_hanasu3.mp3
+  key_phrases:
+  - 肉が好きです
+  - さかなは好きじゃないです
+  - さかな好きですか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 肉が好きです
+    tags:
+    - short
+    - polite
+  - jp: さかなは好きじゃないです
+    tags:
+    - long
+    - polite
+  - jp: さかな好きですか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: さかな好きですか
+  - speaker: learner
+    jp: 肉が好きです
+  dialog_listen_audio:
+  - assets/audio/X_[05-08]_hanasu3.mp3
+- id: A9
+  kind: vocabulary
+  book_activity: 9
+  can_do_id: CD_L05_17
+  label: kotoba1
+  audio:
+  - assets/audio/X_[05-09]_kotoba1.mp3
+  key_phrases:
+  - 日本の食べ物えさしみビスシシテンプラビギュードンいい彼フラーメンジうどんいいそうばいいなっとジうねぼしけバサビ
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 日本の食べ物えさしみビスシシテンプラビギュードンいい彼フラーメンジうどんいいそうばいいなっとジうねぼしけバサビ
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A10
+  kind: vocabulary
+  book_activity: 10
+  can_do_id: CD_L05_15
+  label: kotoba2
+  audio:
+  - assets/audio/X_[05-10]_kotoba2.mp3
+  key_phrases:
+  - 1テンプラが好きです2そばが好きです3なっとが好きです4カレートラーメンが好きです562272
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1テンプラが好きです2そばが好きです3なっとが好きです4カレートラーメンが好きです562272
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A11
+  kind: listening
+  book_activity: 11
+  can_do_id: CD_L05_16
+  label: kiku1
+  audio:
+  - assets/audio/X_[05-11]_kiku1.mp3
+  key_phrases:
+  - 一日本の食べ物、何が好きですか
+  - 私は、うどんが好きです
+  - そばの好きです
+  - そばは
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 一日本の食べ物、何が好きですか
+    tags:
+    - long
+    - polite
+  - jp: 私は、うどんが好きです
+    tags:
+    - long
+    - polite
+  - jp: そばの好きです
+    tags:
+    - short
+    - polite
+  - jp: そばは
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L05 activity 11: listen to the CD, then say the phrase that matches the book.'
+- id: A12
+  kind: listening
+  book_activity: 12
+  can_do_id: CD_L05_17
+  label: kiku2
+  audio:
+  - assets/audio/X_[05-12]_kiku2.mp3
+  key_phrases:
+  - えっと、テンプラが好きです
+  - 日本の食べ物何が好き
+  - 旅道も彼も好きです
+  - へぇ
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: えっと、テンプラが好きです
+    tags:
+    - long
+    - polite
+  - jp: 日本の食べ物何が好き
+    tags:
+    - short
+  - jp: 旅道も彼も好きです
+    tags:
+    - short
+    - polite
+  - jp: へぇ
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L05 activity 12: listen to the CD, then say the phrase that matches the book.'
+- id: A13
+  kind: listening
+  book_activity: 13
+  can_do_id: CD_L05_15
+  label: kiku3
+  audio:
+  - assets/audio/X_[05-13]_kiku3.mp3
+  key_phrases:
+  - 私はナッドを好きですそうですか
+  - 日本の食べ物何が好きですか
+  - あ、うめぼしはちょっと
+  - うめぼしは
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 私はナッドを好きですそうですか
+    tags:
+    - long
+    - polite
+  - jp: 日本の食べ物何が好きですか
+    tags:
+    - long
+    - polite
+  - jp: あ、うめぼしはちょっと
+    tags:
+    - long
+  - jp: うめぼしは
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L05 activity 13: listen to the CD, then say the phrase that matches the book.'
+- id: A14
+  kind: listening
+  book_activity: 14
+  can_do_id: CD_L05_16
+  label: kiku4
+  audio:
+  - assets/audio/X_[05-14]_kiku4.mp3
+  key_phrases:
+  - 4日本の食べ物何が好きですか
+  - 素晴らしいわさびは大丈夫ですか
+  - わさびはちょっと
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 4日本の食べ物何が好きですか
+    tags:
+    - long
+    - polite
+  - jp: 素晴らしいわさびは大丈夫ですか
+    tags:
+    - long
+    - polite
+  - jp: わさびはちょっと
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L05 activity 14: listen to the CD, then say the phrase that matches the book.'
+- id: A15
+  kind: grammar_form
+  book_activity: 15
+  can_do_id: CD_L05_17
+  label: katachi
+  audio:
+  - assets/audio/X_[05-15]_katachi.mp3
+  key_phrases:
+  - 日本の食べ物、何が好きですか
+  - 私は、うどんが好きです
+  - わさびは大丈夫ですか
+  - わさびはちょっと
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 日本の食べ物、何が好きですか
+    tags:
+    - long
+    - polite
+  - jp: 私は、うどんが好きです
+    tags:
+    - long
+    - polite
+  - jp: わさびは大丈夫ですか
+    tags:
+    - short
+    - polite
+  - jp: わさびはちょっと
+    tags:
+    - short
+  book_mode: listen_repeat
+- id: A16
+  kind: speaking
+  book_activity: 16
+  can_do_id: CD_L05_15
+  label: hanasu1
+  audio:
+  - assets/audio/X_[05-16]_hanasu1.mp3
+  key_phrases:
+  - なとも好きです
+  - 日本の食べ物何が好きですか
+  - すしが好きです
+  - なとは
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: なとも好きです
+    tags:
+    - short
+    - polite
+  - jp: 日本の食べ物何が好きですか
+    tags:
+    - long
+    - polite
+  - jp: すしが好きです
+    tags:
+    - short
+    - polite
+  - jp: なとは
+    tags:
+    - short
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 日本の食べ物何が好きですか
+  - speaker: learner
+    jp: なとも好きです
+  dialog_listen_audio:
+  - assets/audio/X_[05-16]_hanasu1.mp3
+- id: A17
+  kind: speaking
+  book_activity: 17
+  can_do_id: CD_L05_16
+  label: hanasu2
+  audio:
+  - assets/audio/X_[05-17]_hanasu2.mp3
+  key_phrases:
+  - なとはちょっと
+  - 日本の食べ物、何が好きですか
+  - すしが好きです
+  - なとは
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: なとはちょっと
+    tags:
+    - short
+  - jp: 日本の食べ物、何が好きですか
+    tags:
+    - long
+    - polite
+  - jp: すしが好きです
+    tags:
+    - short
+    - polite
+  - jp: なとは
+    tags:
+    - short
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 日本の食べ物、何が好きですか
+  - speaker: learner
+    jp: なとはちょっと
+  dialog_listen_audio:
+  - assets/audio/X_[05-17]_hanasu2.mp3
+- id: A18
+  kind: vocabulary
+  book_activity: 18
+  can_do_id: CD_L05_17
+  label: kotoba1
+  audio:
+  - assets/audio/X_[05-18]_kotoba1.mp3
+  key_phrases:
+  - 飲み物えコーヒービコーチャシお茶ビ水ビジュースフコーナジビールHお酒
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 飲み物えコーヒービコーチャシお茶ビ水ビジュースフコーナジビールHお酒
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A19
+  kind: vocabulary
+  book_activity: 19
+  can_do_id: CD_L05_15
+  label: kotoba2
+  audio:
+  - assets/audio/X_[05-19]_kotoba2.mp3
+  key_phrases:
+  - 6コーチャー好きですか
+  - 4コーナ好きですか
+  - 1高費好きですか
+  - 2お酒好きですか
+  - 3お茶好きですか
+  - 5b好きですか
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 6コーチャー好きですか
+    tags:
+    - long
+    - polite
+  - jp: 4コーナ好きですか
+    tags:
+    - short
+    - polite
+  - jp: 1高費好きですか
+    tags:
+    - short
+    - polite
+  - jp: 2お酒好きですか
+    tags:
+    - short
+    - polite
+  - jp: 3お茶好きですか
+    tags:
+    - short
+    - polite
+  - jp: 5b好きですか
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
+- id: A20
+  kind: listening
+  book_activity: 20
+  can_do_id: CD_L05_16
+  label: kiku1
+  audio:
+  - assets/audio/X_[05-20]_kiku1.mp3
+  key_phrases:
+  - 1セシルさん、お茶飲みますか
+  - あ、はい、お願いしますはい、どうぞありがとうございます
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 1セシルさん、お茶飲みますか
+    tags:
+    - long
+    - polite
+  - jp: あ、はい、お願いしますはい、どうぞありがとうございます
+    tags:
+    - long
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L05 activity 20: listen to the CD, then say the phrase that matches the book.'
+- id: A21
+  kind: listening
+  book_activity: 21
+  can_do_id: CD_L05_17
+  label: kiku2
+  audio:
+  - assets/audio/X_[05-21]_kiku2.mp3
+  key_phrases:
+  - いいえ、結構ですあ、そうありがとうございます
+  - にらさんおさけなむ
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: いいえ、結構ですあ、そうありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: にらさんおさけなむ
+    tags:
+    - short
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L05 activity 21: listen to the CD, then say the phrase that matches the book.'
+- id: A22
+  kind: listening
+  book_activity: 22
+  can_do_id: CD_L05_15
+  label: kiku3
+  audio:
+  - assets/audio/X_[05-22]_kiku3.mp3
+  key_phrases:
+  - はい、コーヒー、ありがとうございます
+  - じゃあ、コーヒーお願いします
+  - さんいりやさなにいのむ
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: はい、コーヒー、ありがとうございます
+    tags:
+    - long
+    - polite
+  - jp: じゃあ、コーヒーお願いします
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: さんいりやさなにいのむ
+    tags:
+    - long
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L05 activity 22: listen to the CD, then say the phrase that matches the book.'
+- id: A23
+  kind: listening
+  book_activity: 23
+  can_do_id: CD_L05_16
+  label: kiku4
+  audio:
+  - assets/audio/X_[05-23]_kiku4.mp3
+  key_phrases:
+  - 4ルシアさん、何の見ますか
+  - じゃあ、ビールをお願いします
+  - ビールね
+  - あ、どうも
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 4ルシアさん、何の見ますか
+    tags:
+    - long
+    - polite
+  - jp: じゃあ、ビールをお願いします
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: ビールね
+    tags:
+    - short
+  - jp: あ、どうも
+    tags:
+    - short
+    - casual
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'L05 activity 23: listen to the CD, then say the phrase that matches the book.'
+- id: A24
+  kind: grammar_form
+  book_activity: 24
+  can_do_id: CD_L05_17
+  label: katachi1
+  audio:
+  - assets/audio/X_[05-24]_katachi1.mp3
+  key_phrases:
+  - お茶飲みますかお酒飲む何飲みますか何飲む
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: お茶飲みますかお酒飲む何飲みますか何飲む
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A25
+  kind: grammar_form
+  book_activity: 25
+  can_do_id: CD_L05_15
+  label: katachi2
+  audio:
+  - assets/audio/X_[05-25]_katachi2.mp3
+  key_phrases:
+  - お茶飲みますかはいお願いしますいいえけっこうです
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: お茶飲みますかはいお願いしますいいえけっこうです
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A26
+  kind: grammar_form
+  book_activity: 26
+  can_do_id: CD_L05_16
+  label: katachi3
+  audio:
+  - assets/audio/X_[05-26]_katachi3.mp3
+  key_phrases:
+  - じゃあビールお願いします
+  - 飲みますか
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: じゃあビールお願いします
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: 飲みますか
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A27
+  kind: speaking
+  book_activity: 27
+  can_do_id: CD_L05_17
+  label: hanasu1-1
+  audio:
+  - assets/audio/X_[05-27]_hanasu1-1.mp3
+  key_phrases:
+  - はい、お願いします
+  - 1お茶飲みますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: はい、お願いします
+    tags:
+    - short
+    - polite
+  - jp: 1お茶飲みますか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 1お茶飲みますか
+  - speaker: learner
+    jp: はい、お願いします
+  dialog_listen_audio:
+  - assets/audio/X_[05-27]_hanasu1-1.mp3
+- id: A28
+  kind: speaking
+  book_activity: 28
+  can_do_id: CD_L05_15
+  label: hanasu1-2
+  audio:
+  - assets/audio/X_[05-28]_hanasu1-2.mp3
+  key_phrases:
+  - いや、結構です
+  - お茶飲みますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: いや、結構です
+    tags:
+    - short
+    - polite
+  - jp: お茶飲みますか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: お茶飲みますか
+  - speaker: learner
+    jp: いや、結構です
+  dialog_listen_audio:
+  - assets/audio/X_[05-28]_hanasu1-2.mp3
+- id: A29
+  kind: speaking
+  book_activity: 29
+  can_do_id: CD_L05_16
+  label: hanasu2
+  audio:
+  - assets/audio/X_[05-29]_hanasu2.mp3
+  key_phrases:
+  - じゃあ、コーヒーお願いします
+  - 何の見ますか
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: じゃあ、コーヒーお願いします
+    tags:
+    - long
+    - polite
+    - casual
+  - jp: 何の見ますか
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 何の見ますか
+  - speaker: learner
+    jp: じゃあ、コーヒーお願いします
+  dialog_listen_audio:
+  - assets/audio/X_[05-29]_hanasu2.mp3
+- id: A30
+  kind: vocabulary
+  book_activity: 30
+  can_do_id: CD_L05_17
+  label: kotoba1
+  audio:
+  - assets/audio/X_[05-30]_kotoba1.mp3
+  key_phrases:
+  - 朝ご飯えご飯ビパンしたまごビよぐるといいシリアルフくだもんのジサラーHミソシールイスープジェ牛乳ケトマトジュースエルオレンジジュースMリンゴジューススリース水フクルムGフターカージャリントムフ
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 朝ご飯えご飯ビパンしたまごビよぐるといいシリアルフくだもんのジサラーHミソシールイスープジェ牛乳ケトマトジュースエルオレンジジュースMリンゴジューススリース水フクルムGフターカージャリントムフ
+    tags:
+    - long
+  book_mode: listen_repeat
+- id: A31
+  kind: vocabulary
+  book_activity: 31
+  can_do_id: CD_L05_15
+  label: kotoba2
+  audio:
+  - assets/audio/X_[05-31]_kotoba2.mp3
+  key_phrases:
+  - 1朝ご飯はパンデス2朝ご飯はご飯と見そう知るです3朝ご飯はシリアルとくだものです4朝ご飯はさらだと要グルトです5朝ご飯は牛乳を飲みます6朝ご飯はパンと玉子です2朝ご飯はパンと玉子です
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 1朝ご飯はパンデス2朝ご飯はご飯と見そう知るです3朝ご飯はシリアルとくだものです4朝ご飯はさらだと要グルトです5朝ご飯は牛乳を飲みます6朝ご飯はパンと玉子です2朝ご飯はパンと玉子です
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A32
+  kind: conversation
+  book_activity: 32
+  can_do_id: CD_L05_16
+  label: kaiwa
+  audio:
+  - assets/audio/X_[05-32]_kaiwa.mp3
+  key_phrases:
+  - えぇー
+  - えっと、私はパンと卵と勇武でよく食べます
+  - 私も食べないです
+  - 私は朝ご飯はあまり食べません
+  prompt_en: Listen to the conversation, then practice both roles.
+  phrase_meta:
+  - jp: えぇー
+    tags:
+    - short
+  - jp: えっと、私はパンと卵と勇武でよく食べます
+    tags:
+    - long
+    - polite
+  - jp: 私も食べないです
+    tags:
+    - short
+    - polite
+  - jp: 私は朝ご飯はあまり食べません
+    tags:
+    - long
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: はさご飯いつも何食べますか
+  - speaker: learner
+    jp: えぇー
+  dialog_listen_audio:
+  - assets/audio/X_[05-32]_kaiwa.mp3
+- id: A33
+  kind: grammar_form
+  book_activity: 33
+  can_do_id: CD_L05_17
+  label: katachi1
+  audio:
+  - assets/audio/X_[05-33]_katachi1.mp3
+  key_phrases:
+  - 私は朝ご飯はあまり食べません
+  - 朝ご飯いつも何食べますか
+  - 私はシリアルを食べます
+  - 私も食べないです
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 私は朝ご飯はあまり食べません
+    tags:
+    - long
+    - polite
+  - jp: 朝ご飯いつも何食べますか
+    tags:
+    - long
+    - polite
+  - jp: 私はシリアルを食べます
+    tags:
+    - long
+    - polite
+  - jp: 私も食べないです
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A34
+  kind: grammar_form
+  book_activity: 34
+  can_do_id: CD_L05_15
+  label: katachi2
+  audio:
+  - assets/audio/X_[05-34]_katachi2.mp3
+  key_phrases:
+  - 朝ご飯いつも何食べますか私はパンと単語と用言れとをよく食べます朝ご飯はあまり食べません
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 朝ご飯いつも何食べますか私はパンと単語と用言れとをよく食べます朝ご飯はあまり食べません
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A35
+  kind: speaking
+  book_activity: 35
+  can_do_id: CD_L05_16
+  label: hanasu
+  audio:
+  - assets/audio/X_[05-35]_hanasu.mp3
+  key_phrases:
+  - 朝ご飯はあまり食べません
+  - 朝ご飯いつも何食べますか
+  - シリアルをよく食べます
+  - パンと卵を食べます
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  phrase_meta:
+  - jp: 朝ご飯はあまり食べません
+    tags:
+    - long
+    - polite
+  - jp: 朝ご飯いつも何食べますか
+    tags:
+    - long
+    - polite
+  - jp: シリアルをよく食べます
+    tags:
+    - long
+    - polite
+  - jp: パンと卵を食べます
+    tags:
+    - short
+    - polite
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 朝ご飯いつも何食べますか
+  - speaker: learner
+    jp: 朝ご飯はあまり食べません
+  dialog_listen_audio:
+  - assets/audio/X_[05-35]_hanasu.mp3
+grammar:
+- point: N が 好
+  worksheet_pages:
+  - 7
+  examples: []
+- point: N は ちょっと・・・
+  worksheet_pages:
+  - 8
+  examples: []
+- point: A： すし、好
+  worksheet_pages:
+  - 8
+  examples: []
+- point: V-ますか？ （マス-form マス形
+  worksheet_pages:
+  - 8
+  examples: []
+- point: N を V-ます
+  worksheet_pages:
+  - 9
+  examples: []
+- point: （N は） V ません
+  worksheet_pages:
+  - 9
+  examples: []
+- point: パンは食
+  worksheet_pages:
+  - 9
+  examples: []
+- point: スープを飲
+  worksheet_pages:
+  - 9
+  examples: []
+- point: パンとサラダを食
+  worksheet_pages:
+  - 9
+  examples: []
+- point: いつも／よく V-ます ＜Frequency 頻度
+  worksheet_pages:
+  - 10
+  examples: []
+vocab:
+- jp: 日本の食べ物えさしみビスシシテンプラビギュードンいい彼フラーメンジうどんいいそうばいいなっとジうねぼしけバサビ
+  reading: ''
+  en: ''
+  tags:
+  - L05
+- jp: 1テンプラが好きです2そばが好きです3なっとが好きです4カレートラーメンが好きです562272
+  reading: ''
+  en: ''
+  tags:
+  - L05
+- jp: 飲み物えコーヒービコーチャシお茶ビ水ビジュースフコーナジビールHお酒
+  reading: ''
+  en: ''
+  tags:
+  - L05
+- jp: 6コーチャー好きですか
+  reading: ''
+  en: ''
+  tags:
+  - L05
+- jp: 4コーナ好きですか
+  reading: ''
+  en: ''
+  tags:
+  - L05
+- jp: 1高費好きですか
+  reading: ''
+  en: ''
+  tags:
+  - L05
+- jp: 2お酒好きですか
+  reading: ''
+  en: ''
+  tags:
+  - L05
+- jp: 3お茶好きですか
+  reading: ''
+  en: ''
+  tags:
+  - L05
+- jp: 5b好きですか
+  reading: ''
+  en: ''
+  tags:
+  - L05
+- jp: 朝ご飯えご飯ビパンしたまごビよぐるといいシリアルフくだもんのジサラーHミソシールイスープジェ牛乳ケトマトジュースエルオレンジジュースMリンゴジューススリース水フクルムGフターカージャリントムフ
+  reading: ''
+  en: ''
+  tags:
+  - L05
+- jp: 1朝ご飯はパンデス2朝ご飯はご飯と見そう知るです3朝ご飯はシリアルとくだものです4朝ご飯はさらだと要グルトです5朝ご飯は牛乳を飲みます6朝ご飯はパンと玉子です2朝ご飯はパンと玉子です
+  reading: ''
+  en: ''
+  tags:
+  - L05
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_L05_15
+  prompt_en: 'Demonstrate this can-do in Japanese: Can say what foods you like and don''t like.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L05_15
+  prompt_en: 'In a new everyday situation, show you can: Can say what foods you like and don''t like.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L05_16
+  prompt_en: 'Demonstrate this can-do in Japanese: Can ask what foods someone likes.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L05_16
+  prompt_en: 'In a new everyday situation, show you can: Can ask what foods someone likes.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L05_17
+  prompt_en: 'Demonstrate this can-do in Japanese: Can talk simply about favorite foods.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_L05_17
+  prompt_en: 'In a new everyday situation, show you can: Can talk simply about favorite foods.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_L05_15
+  partner_jp: では、お願いします。
+  expected:
+  - 好き
+  hint_en: 'Situation: Can say what foods you like and don''t like. Reply using lesson phrases.'
+- can_do_id: CD_L05_15
+  partner_jp: もう一度、お願いします。
+  expected:
+  - 好き
+  hint_en: Again — 好きな食べ物・嫌いな食べ物を言うことができる。
+- can_do_id: CD_L05_16
+  partner_jp: では、お願いします。
+  expected:
+  - 好き
+  hint_en: 'Situation: Can ask what foods someone likes. Reply using lesson phrases.'
+- can_do_id: CD_L05_16
+  partner_jp: もう一度、お願いします。
+  expected:
+  - 好き
+  hint_en: Again — 好きな食べ物について質問することができる。
+- can_do_id: CD_L05_17
+  partner_jp: では、お願いします。
+  expected:
+  - 好き
+  hint_en: 'Situation: Can talk simply about favorite foods. Reply using lesson phrases.'
+- can_do_id: CD_L05_17
+  partner_jp: もう一度、お願いします。
+  expected:
+  - 好き
+  hint_en: Again — 好きな食べ物について簡単に話すことができる。
+- can_do_id: CD_L05_17
+  partner_jp: さかな好きですか
+  expected:
+  - はい好きです肉は肉も好きです
+  - さかな好きですか
+  hint_en: Reply as in the book dialog (activity 6).
+- can_do_id: CD_L05_15
+  partner_jp: さかな好きですか
+  expected:
+  - はい好きです肉は肉は好きじゃないです
+  - さかな好きですか
+  hint_en: Reply as in the book dialog (activity 7).
+- can_do_id: CD_L05_16
+  partner_jp: さかな好きですか
+  expected:
+  - 肉が好きです
+  - さかなは好きじゃないです
+  - さかな好きですか
+  hint_en: Reply as in the book dialog (activity 8).
+- can_do_id: CD_L05_15
+  partner_jp: 日本の食べ物何が好きですか
+  expected:
+  - なとも好きです
+  - 日本の食べ物何が好きですか
+  - すしが好きです
+  - なとは
+  hint_en: Reply as in the book dialog (activity 16).
+- can_do_id: CD_L05_16
+  partner_jp: 日本の食べ物、何が好きですか
+  expected:
+  - なとはちょっと
+  - 日本の食べ物、何が好きですか
+  - すしが好きです
+  - なとは
+  hint_en: Reply as in the book dialog (activity 17).
+- can_do_id: CD_L05_17
+  partner_jp: 1お茶飲みますか
+  expected:
+  - はい、お願いします
+  - 1お茶飲みますか
+  hint_en: Reply as in the book dialog (activity 27).
+- can_do_id: CD_L05_15
+  partner_jp: お茶飲みますか
+  expected:
+  - いや、結構です
+  - お茶飲みますか
+  hint_en: Reply as in the book dialog (activity 28).
+- can_do_id: CD_L05_16
+  partner_jp: 何の見ますか
+  expected:
+  - じゃあ、コーヒーお願いします
+  - 何の見ますか
+  hint_en: Reply as in the book dialog (activity 29).
+- can_do_id: CD_L05_16
+  partner_jp: はさご飯いつも何食べますか
+  expected:
+  - えぇー
+  - えっと、私はパンと卵と勇武でよく食べます
+  - 私も食べないです
+  - 私は朝ご飯はあまり食べません
+  hint_en: Reply as in the book dialog (activity 32).
+- can_do_id: CD_L05_16
+  partner_jp: 朝ご飯いつも何食べますか
+  expected:
+  - 朝ご飯はあまり食べません
+  - 朝ご飯いつも何食べますか
+  - シリアルをよく食べます
+  - パンと卵を食べます
+  hint_en: Reply as in the book dialog (activity 35).
+- can_do_id: CD_L05_15
+  partner_jp: 1カムラさん、魚、好きですか。
+  expected:
+  - 1カムラさん、魚、好きですか
+  - はい、好きです
+  - 肉も好きです
+  - 肉は
+  - 好き
+  hint_en: Can say what foods you like and don't like.
+- can_do_id: CD_L05_16
+  partner_jp: 2マリさんは魚好きですか。
+  expected:
+  - 2マリさんは魚好きですか
+  - はい好きです肉は肉は好きじゃないです
+  - 私は魚は好きじゃないです
+  - 肉は好きじゃないです
+  - 好き
+  hint_en: Can ask what foods someone likes.
+- can_do_id: CD_L05_17
+  partner_jp: 魚は好きじゃないです。
+  expected:
+  - 魚は好きじゃないです
+  - 肉と野菜が好きです
+  - さあ、ルイスさんは
+  - はい好きです肉は肉も好きです
+  - 好き
+  hint_en: Can talk simply about favorite foods.
+english_notes: 'What foods do you like? What foods do you dislike?
+
+  Can answer questions about foods you like and dislike.
+
+  Listen to the dialog.
+
+  Khamlar-san, Mali-san, Luis-san, and Sasaki-san are talking while eating
+
+  lunch in the company cafeteria.
+
+  Write 〇 by the foods they like, and × by the foods they dislike. Write “—” if it is not mentioned.
+
+  Do you like it?
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used to say what the speakers like?
+
+  What expression was used to say what the speakers don’t like?
+
+  Focus on the expressions used and listen to the dialog again.
+
+  Talk about foods that you like and dislike.
+
+  Listen to the dialogs.
+
+  Shadow the dialogs.
+
+  Ask each other whether you like or dislike different foods.
+
+  Can ask and answer questions about Japanese food you like or dislike.
+
+  Preparation for the words
+
+  Japanese food 】
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen and choose from a–k.'
+unlock_requires_mastery: true

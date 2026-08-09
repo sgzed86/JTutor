@@ -1,0 +1,573 @@
+lesson_id: EL06
+lesson: 6
+book_id: elementary1
+title_en: Please tell me how to get to the post office
+title_jp: 郵便局はどう行ったらいいですか ？
+topic_en: Towns and Neighborhoods
+pdf_pages:
+- 131
+- 147
+intro_questions:
+- jp: Please tell me how to get to the post office について、あなたの けいけんは？
+  en: Thinking about "Towns and Neighborhoods" — what is your experience?
+- jp: この レッスンで、何が できるように なりたいですか？
+  en: 'This lesson aims at: Can ask and understand directions. What do you want to
+    be able to do?'
+can_dos:
+- id: CD_EL06_17
+  can_do_number: 17
+  statement_en: Can ask and understand directions.
+  statement_jp: ほかの人に道をたずねて、その答えを理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL06_18
+  can_do_number: 18
+  statement_en: Can ask and understand directions on the phone.
+  statement_jp: ほかの人に道をたずねて、その答えを理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+- id: CD_EL06_19
+  can_do_number: 19
+  statement_en: Can give directions to the destination by car when, for example, some
+    - one gives you a ride.
+  statement_jp: ほかの人に道をたずねて、その答えを理解することができる。
+  activity_hint: ''
+  rubric:
+    must_include: []
+    min_score: 80
+activities:
+- id: A1
+  kind: vocabulary
+  book_activity: 1
+  can_do_id: CD_EL06_17
+  label: kotoba1-1
+  audio:
+  - assets/audio/Y_[06-01]_kotoba1-1.mp3
+  key_phrases:
+  - 聞かれたりしたことがあります
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 聞かれたりしたことがあります
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A2
+  kind: vocabulary
+  book_activity: 2
+  can_do_id: CD_EL06_18
+  label: kotoba1-2
+  audio:
+  - assets/audio/Y_[06-02]_kotoba1-2.mp3
+  key_phrases:
+  - 聞かれたりしたことがあります
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 聞かれたりしたことがあります
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A3
+  kind: vocabulary
+  book_activity: 3
+  can_do_id: CD_EL06_19
+  label: kotoba2-1
+  audio:
+  - assets/audio/Y_[06-03]_kotoba2-1.mp3
+  key_phrases:
+  - 聞かれたりしたことがあります
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 聞かれたりしたことがあります
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A4
+  kind: vocabulary
+  book_activity: 4
+  can_do_id: CD_EL06_17
+  label: kotoba2-2
+  audio:
+  - assets/audio/Y_[06-04]_kotoba2-2.mp3
+  key_phrases:
+  - 人に道を聞いています。
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: 人に道を聞いています。
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A5
+  kind: listening
+  book_activity: 5
+  can_do_id: CD_EL06_18
+  label: kiku1
+  audio:
+  - assets/audio/Y_[06-05]_kiku1.mp3
+  key_phrases:
+  - 人に道を聞いています。
+  - 行ったらいいですか？
+  - つ目です。
+  - 科学博物館です。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人に道を聞いています。
+    tags:
+    - long
+    - polite
+  - jp: 行ったらいいですか？
+    tags:
+    - short
+    - polite
+  - jp: つ目です。
+    tags:
+    - short
+    - polite
+  - jp: 科学博物館です。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A6
+  kind: listening
+  book_activity: 6
+  can_do_id: CD_EL06_19
+  label: kiku2
+  audio:
+  - assets/audio/Y_[06-06]_kiku2.mp3
+  key_phrases:
+  - 人に道を聞いています。
+  - すみません。バス停はどこですか？
+  - 次の角を右に曲がってください。
+  - 次の角を右ですね。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人に道を聞いています。
+    tags:
+    - long
+    - polite
+  - jp: すみません。バス停はどこですか？
+    tags:
+    - long
+    - polite
+  - jp: 次の角を右に曲がってください。
+    tags:
+    - long
+    - polite
+  - jp: 次の角を右ですね。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL06 activity 6: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A7
+  kind: listening
+  book_activity: 7
+  can_do_id: CD_EL06_17
+  label: kiku3
+  audio:
+  - assets/audio/Y_[06-07]_kiku3.mp3
+  key_phrases:
+  - 人に道を聞いています。
+  - すみません。バス停はどこですか？
+  - 次の角を右に曲がってください。
+  - 次の角を右ですね。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人に道を聞いています。
+    tags:
+    - long
+    - polite
+  - jp: すみません。バス停はどこですか？
+    tags:
+    - long
+    - polite
+  - jp: 次の角を右に曲がってください。
+    tags:
+    - long
+    - polite
+  - jp: 次の角を右ですね。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL06 activity 7: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A8
+  kind: listening
+  book_activity: 8
+  can_do_id: CD_EL06_18
+  label: kiku4
+  audio:
+  - assets/audio/Y_[06-08]_kiku4.mp3
+  key_phrases:
+  - 人に道を聞いています。
+  - 行ったらいいですか？
+  - つ目です。
+  - 科学博物館です。
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 人に道を聞いています。
+    tags:
+    - long
+    - polite
+  - jp: 行ったらいいですか？
+    tags:
+    - short
+    - polite
+  - jp: つ目です。
+    tags:
+    - short
+    - polite
+  - jp: 科学博物館です。
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL06 activity 8: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A9
+  kind: grammar_form
+  book_activity: 9
+  can_do_id: CD_EL06_19
+  label: katachi
+  audio:
+  - assets/audio/Y_[06-09]_katachi.mp3
+  key_phrases:
+  - 行ったらいいですか？
+  - つ目です。
+  - 科学博物館です。
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 行ったらいいですか？
+    tags:
+    - short
+    - polite
+  - jp: つ目です。
+    tags:
+    - short
+    - polite
+  - jp: 科学博物館です。
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A10
+  kind: vocabulary
+  book_activity: 10
+  can_do_id: CD_EL06_17
+  label: kotoba1
+  audio:
+  - assets/audio/Y_[06-10]_kotoba1.mp3
+  key_phrases:
+  - そちらに行きたいんです
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: そちらに行きたいんです
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A11
+  kind: vocabulary
+  book_activity: 11
+  can_do_id: CD_EL06_18
+  label: kotoba2
+  audio:
+  - assets/audio/Y_[06-11]_kotoba2.mp3
+  key_phrases:
+  - そちらに行きたいんです
+  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  phrase_meta:
+  - jp: そちらに行きたいんです
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat
+- id: A12
+  kind: listening
+  book_activity: 12
+  can_do_id: CD_EL06_19
+  label: kiku
+  audio:
+  - assets/audio/Y_[06-12]_kiku.mp3
+  key_phrases:
+  - 駅にいます。
+  - の店への行き方聞いています。
+  - 店はどこにあります
+  - お待ちしております
+  prompt_en: Listen to the audio and check understanding for this can-do.
+  phrase_meta:
+  - jp: 駅にいます。
+    tags:
+    - short
+    - polite
+  - jp: の店への行き方聞いています。
+    tags:
+    - long
+    - polite
+  - jp: 店はどこにあります
+    tags:
+    - short
+    - polite
+  - jp: お待ちしております
+    tags:
+    - short
+    - polite
+  book_mode: listen_select
+  picture_has_image: true
+  picture_hint_en: 'EL06 activity 12: listen to the CD, then say the phrase that matches
+    the book.'
+- id: A13
+  kind: conversation
+  book_activity: 13
+  can_do_id: CD_EL06_17
+  label: kaiwa
+  audio:
+  - assets/audio/Y_[06-13]_kaiwa.mp3
+  key_phrases:
+  - 次の角を右に曲がってください。
+  - すみません。バス停はどこですか？
+  - ローさんの家はどこですか。
+  - 小島町です。
+  prompt_en: Listen to the conversation, then practice both roles.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: すみません。バス停はどこですか？
+  - speaker: learner
+    jp: 次の角を右に曲がってください。
+  dialog_listen_audio:
+  - assets/audio/Y_[06-13]_kaiwa.mp3
+  phrase_meta:
+  - jp: 次の角を右に曲がってください。
+    tags:
+    - long
+    - polite
+  - jp: すみません。バス停はどこですか？
+    tags:
+    - long
+    - polite
+  - jp: ローさんの家はどこですか。
+    tags:
+    - long
+    - polite
+  - jp: 小島町です。
+    tags:
+    - short
+    - polite
+- id: A14
+  kind: grammar_form
+  book_activity: 14
+  can_do_id: CD_EL06_18
+  label: katachi
+  audio:
+  - assets/audio/Y_[06-14]_katachi.mp3
+  key_phrases:
+  - 行ったらいいですか？
+  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  phrase_meta:
+  - jp: 行ったらいいですか？
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat
+- id: A15
+  kind: speaking
+  book_activity: 15
+  can_do_id: CD_EL06_19
+  label: hanasu
+  audio:
+  - assets/audio/Y_[06-15]_hanasu.mp3
+  key_phrases:
+  - はい。
+  - 次の角を右ですね。
+  - 家はどの辺ですか？
+  - 小島高校の近くです。
+  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  book_mode: dialog
+  dialog_script:
+  - speaker: partner
+    jp: 次の角を右ですね。
+  - speaker: learner
+    jp: はい。
+  dialog_listen_audio:
+  - assets/audio/Y_[06-15]_hanasu.mp3
+  phrase_meta:
+  - jp: はい。
+    tags:
+    - short
+  - jp: 次の角を右ですね。
+    tags:
+    - short
+    - polite
+  - jp: 家はどの辺ですか？
+    tags:
+    - short
+    - polite
+  - jp: 小島高校の近くです。
+    tags:
+    - short
+    - polite
+grammar:
+- point: N に 行
+  worksheet_pages:
+  - 19
+  examples: []
+- point: V-て、～
+  worksheet_pages:
+  - 20
+  examples: []
+- point: N1 じゃなくて、N2
+  worksheet_pages:
+  - 21
+  examples: []
+- point: A： ここをまっすぐ行
+  worksheet_pages:
+  - 21
+  examples: []
+- point: A： コンビニは、駅
+  worksheet_pages:
+  - 21
+  examples: []
+- point: A： あのう、すみません。須賀
+  worksheet_pages:
+  - 21
+  examples: []
+vocab:
+- jp: 聞かれたりしたことがあります
+  reading: ''
+  en: ''
+  tags:
+  - EL06
+- jp: 人に道を聞いています。
+  reading: ''
+  en: ''
+  tags:
+  - EL06
+- jp: そちらに行きたいんです
+  reading: ''
+  en: ''
+  tags:
+  - EL06
+quiz_bank:
+- type: roleplay
+  can_do_id: CD_EL06_17
+  prompt_en: 'Demonstrate: Can ask and understand directions.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL06_18
+  prompt_en: 'Demonstrate: Can ask and understand directions on the phone.'
+  spoken_required: true
+- type: roleplay
+  can_do_id: CD_EL06_19
+  prompt_en: 'Demonstrate: Can give directions to the destination by car when, for
+    example, some - one gives you a ride.'
+  spoken_required: true
+quiz_scenarios:
+- can_do_id: CD_EL06_17
+  partner_jp: 聞かれたりしたことがあります。
+  expected: &id001
+  - 聞かれたりしたことがあります
+  - 人に道を聞いています。
+  - すみません。バス停はどこですか？
+  - 次の角を右に曲がってください。
+  hint_en: Can ask and understand directions.
+- can_do_id: CD_EL06_17
+  partner_jp: もう一度、お願いします。
+  expected: *id001
+  hint_en: Again — Can ask and understand directions.
+- can_do_id: CD_EL06_18
+  partner_jp: 聞かれたりしたことがあります。
+  expected: &id002
+  - 聞かれたりしたことがあります
+  - 人に道を聞いています。
+  - 行ったらいいですか？
+  - つ目です。
+  hint_en: Can ask and understand directions on the phone.
+- can_do_id: CD_EL06_18
+  partner_jp: もう一度、お願いします。
+  expected: *id002
+  hint_en: Again — Can ask and understand directions on the phone.
+- can_do_id: CD_EL06_19
+  partner_jp: 聞かれたりしたことがあります。
+  expected: &id003
+  - 聞かれたりしたことがあります
+  - 人に道を聞いています。
+  - すみません。バス停はどこですか？
+  - 次の角を右に曲がってください。
+  hint_en: Can give directions to the destination by car when, for example, some -
+    one gives you a ride.
+- can_do_id: CD_EL06_19
+  partner_jp: もう一度、お願いします。
+  expected: *id003
+  hint_en: Again — Can give directions to the destination by car when, for example,
+    some - one give
+english_notes: 'Have you asked someone for directions or been asked for directions?
+
+  Can ask and understand directions.
+
+  Preparation for the words
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen and choose from a-f.
+
+  Listen while looking at the illustrations.
+
+  Listen and repeat the words.
+
+  Listen and choose from a-h.
+
+  f. 1
+
+  h. 3
+
+  g. 2
+
+  Listen to the dialogs.
+
+  Each person does not know how to get to their destination and is asking someone
+  for directions.
+
+  Where are ①-④ located? Choose from a - d on the map.
+
+  Check the words and listen to the dialogs again.
+
+  ずっと without turning ｜ 市
+
+  立 municipal ｜ すぐ just ｜ 曲
+
+  がったところ after turning
+
+  a
+
+  b
+
+  c
+
+  d
+
+  Listen to the recording and fill in the blanks.
+
+  What expression was used to ask for directions?
+
+  What expression was used to give directions?
+
+  What expression was used to correct the other person?
+
+  Focus on the expressions used and listen to the dialogs again.'
+unlock_requires_mastery: true
