@@ -95,8 +95,11 @@ export const api = {
     }),
   audioUrl: (relPath: string) =>
     `${API}/media/audio?path=${encodeURIComponent(relPath)}`,
-  pdfUrl: (which: "starter" | "grammar" = "starter") =>
-    `${API}/media/pdf?which=${which}`,
+  pdfUrl: (which: "textbook" | "grammar" = "textbook", book?: string) => {
+    const q = new URLSearchParams({ which });
+    if (book) q.set("book", book);
+    return `${API}/media/pdf?${q.toString()}`;
+  },
   speak: async (text: string) => {
     const r = await fetch(`${API}/voice/speak`, {
       method: "POST",

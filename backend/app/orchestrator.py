@@ -10,16 +10,47 @@ from sqlalchemy.orm import Session
 from backend.app import lesson_flow as flow
 from backend.app import ollama_client
 from backend.app import srs_service
-from backend.app.book_modes import auto_advance_substeps, flow_substeps, speech_substeps, substep_at
+from backend.app.book_modes import flow_substeps, speech_substeps, substep_at
 from backend.app.config import settings
 from backend.app.curriculum_loader import load_lesson, list_lessons
 from backend.app.db import CanDoProgress, ChatSession, LessonProgress
 from backend.app.free_response import acknowledge_intro, intro_questions, intro_step
+from backend.app.lesson_access import locked_response
 from backend.app.lesson_progress import lesson_progress_snapshot
 from backend.app.lesson_unlock import is_lesson_unlocked, next_lesson_id
 from backend.app.logging_setup import log_event
-from backend.app.phrase_grade import grade_phrases, hybrid_grade, normalize_jp_for_grade, quiz_grade
+from backend.app.phrase_grade import grade_phrases, normalize_jp_for_grade, quiz_grade
 from backend.app.self_check import save_self_check, self_check_step, self_check_summary
+
+
+def _apply_mastery_gate(grade: dict) -> dict:
+    score = float(grade.get("score") or 0)
+    grade["passed"] = bool(grade.get("passed")) and score >= settings.mastery_min_score
+    return grade
+
+
+def _outstanding_can_dos(db: Session, lesson: dict) -> list[dict]:
+    pending: list[dict] = []
+    for c in lesson.get("can_dos") or []:
+        row = db.get(CanDoProgress, c["id"])
+        if not row or not row.mastered:
+            pending.append(c)
+    return pending
+
+
+def _announce_can_do_retry(db: Session, session: ChatSession, lesson: dict, messages: list[dict]) -> None:
+    pending = _outstanding_can_dos(db, lesson)
+    labels = [c.get("statement_en") or c.get("id") or "" for c in pending[:4]]
+    en_list = "; ".join(labels) if labels else "see Progress map"
+    jp = "まだ Can-do が ぜんぶ クリア ではありません。もういちど れんしゅう しましょう。"
+    en = f"Not all Can-do checks are mastered yet ({len(pending)} remaining). Still need: {en_list}"
+    _append_tutor(
+        messages,
+        jp,
+        en,
+        {"phase": "quiz", "help": True, "expect_speech": False, "play_audio": []},
+        session.state,
+    )
 
 
 def _activity_by_id(lesson: dict, activity_id: str | None) -> dict | None:
@@ -326,7 +357,7 @@ async def llm_refine_grade(
         base["jp_feedback"] = flow.feedback_pass_short() if base.get("passed") else flow.feedback_retry(
             base.get("gaps") or []
         )
-        return base
+        return _apply_mastery_gate(base)
 
 
 def apply_can_do_result(db: Session, lesson_id: str, can_do_id: str, grade: dict) -> CanDoProgress:
@@ -509,10 +540,9 @@ def _next_book_track(session: ChatSession, lesson: dict) -> bool:
 
 
 async def start_or_resume(db: Session, lesson_id: str) -> dict:
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
-    lp = db.get(LessonProgress, lesson_id)
-    if lp and not is_lesson_unlocked(db, lesson_id):
-        return {"error": "Lesson locked. Master previous can-dos first.", "locked": True}
     session = await ensure_session(db, lesson_id)
     messages = _msgs(session)
     _sync_book_substep(session, messages)
@@ -545,6 +575,8 @@ async def start_or_resume(db: Session, lesson_id: str) -> dict:
 
 
 async def advance(db: Session, lesson_id: str) -> dict:
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
     session = await ensure_session(db, lesson_id)
     messages = _msgs(session)
@@ -597,6 +629,7 @@ async def advance(db: Session, lesson_id: str) -> dict:
                 _append_tutor(messages, jp, en, step, session.state)
             else:
                 session.quiz_index = 0
+                _announce_can_do_retry(db, session, lesson, messages)
                 step = _prompt_can_do_quiz(db, session, lesson, messages, 0)
         else:
             step = _prompt_can_do_quiz(db, session, lesson, messages, session.quiz_index)
@@ -624,6 +657,8 @@ async def user_message(
     *,
     spoken: bool = False,
 ) -> dict:
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
     session = await ensure_session(db, lesson_id)
     messages = _msgs(session)
@@ -770,10 +805,11 @@ async def user_message(
             scenario = _quiz_scenario(db, lesson, cd["id"])
             must = (cd.get("rubric") or {}).get("must_include") or []
             expected = list((scenario or {}).get("expected") or must)
+            mastery_th = float(settings.mastery_min_score)
             if scenario:
-                base = quiz_grade(text, expected, spoken)
+                base = quiz_grade(text, expected, spoken, pass_threshold=mastery_th)
             else:
-                base = hybrid_grade(text, must, spoken)
+                base = grade_phrases(text, must, spoken=spoken, pass_threshold=mastery_th)
             grade = await llm_refine_grade(text, cd, base, scenario)
             apply_can_do_result(db, lesson_id, cd["id"], grade)
             srs_service.enqueue_from_gaps(db, lesson_id, cd["id"], grade.get("gaps") or [], text)
@@ -814,6 +850,8 @@ async def answer_question(
     spoken: bool = False,
 ) -> dict:
     """Answer a learner question without advancing the lesson."""
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
     session = await ensure_session(db, lesson_id)
     messages = _msgs(session)
@@ -927,6 +965,8 @@ async def submit_self_check(
     comment: str = "",
 ) -> dict:
     """Store soft self-check and continue lesson flow. Does not affect unlock."""
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
     session = await ensure_session(db, lesson_id)
     messages = _msgs(session)
@@ -960,6 +1000,8 @@ async def submit_self_check(
 
 
 async def reset_lesson(db: Session, lesson_id: str) -> dict:
+    if block := locked_response(db, lesson_id):
+        return block
     log_event("orchestrator", "reset", lesson_id=lesson_id)
     db.query(ChatSession).filter(ChatSession.lesson_id == lesson_id).delete()
     db.commit()
@@ -968,6 +1010,8 @@ async def reset_lesson(db: Session, lesson_id: str) -> dict:
 
 async def jump_to_can_do_quiz(db: Session, lesson_id: str, *, reset_can_do: bool = False) -> dict:
     """Skip book/grammar and open the first Can-do role-play (for testing)."""
+    if block := locked_response(db, lesson_id):
+        return block
     lesson = load_lesson(lesson_id)
     can_dos = lesson.get("can_dos") or []
     if not can_dos:
@@ -981,10 +1025,17 @@ async def jump_to_can_do_quiz(db: Session, lesson_id: str, *, reset_can_do: bool
         db.commit()
 
     session = await ensure_session(db, lesson_id)
-    messages: list[dict] = []
+    messages = _msgs(session)
     session.state = "can_do_quiz"
     session.activity_id = None
     session.quiz_index = 0
+    _append_tutor(
+        messages,
+        "Can-do テストに いきます。",
+        "Jumped to Can-do quiz (book steps skipped).",
+        {"phase": "quiz", "help": True, "expect_speech": False, "play_audio": []},
+        session.state,
+    )
     step = _prompt_can_do_quiz(db, session, lesson, messages, 0)
     _save_msgs(session, messages)
     db.commit()

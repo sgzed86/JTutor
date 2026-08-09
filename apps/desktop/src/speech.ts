@@ -47,17 +47,25 @@ function playBlob(blob: Blob): Promise<void> {
   });
 }
 
-function browserSpeak(text: string): Promise<void> {
+function browserSpeak(text: string, timeoutMs = 8000): Promise<void> {
   return new Promise((resolve) => {
     if (!("speechSynthesis" in window)) {
       resolve();
       return;
     }
+    const done = () => resolve();
+    const timer = window.setTimeout(done, timeoutMs);
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
     u.lang = /[\u3040-\u30ff\u4e00-\u9fff]/.test(text) ? "ja-JP" : "en-US";
-    u.onend = () => resolve();
-    u.onerror = () => resolve();
+    u.onend = () => {
+      window.clearTimeout(timer);
+      done();
+    };
+    u.onerror = () => {
+      window.clearTimeout(timer);
+      done();
+    };
     window.speechSynthesis.speak(u);
   });
 }

@@ -248,6 +248,7 @@ export default function Tutor() {
   }, [session?.messages, busy, runPipeline]);
 
   async function manualAdvance() {
+    recordingModeRef.current = null;
     stopListening();
     setBusy(true);
     try {
@@ -473,17 +474,21 @@ export default function Tutor() {
           <button className="btn" disabled={busy || speaking} onClick={manualAdvance}>
             Skip / next step
           </button>
-          <button className="btn" disabled={busy || speaking} onClick={() => jumpToCanDoQuiz(false)}>
-            Jump to Can-do quiz
-          </button>
-          <button
-            className="btn"
-            disabled={busy || speaking}
-            onClick={() => jumpToCanDoQuiz(true)}
-            title="Also clears Can-do pass counts for this lesson"
-          >
-            Can-do (reset progress)
-          </button>
+          {import.meta.env.DEV && (
+            <>
+              <button className="btn" disabled={busy || speaking} onClick={() => jumpToCanDoQuiz(false)}>
+                Jump to Can-do quiz
+              </button>
+              <button
+                className="btn"
+                disabled={busy || speaking}
+                onClick={() => jumpToCanDoQuiz(true)}
+                title="Also clears Can-do pass counts for this lesson"
+              >
+                Can-do (reset progress)
+              </button>
+            </>
+          )}
           <button className="btn" disabled={busy || speaking} onClick={resetConversation}>
             Restart lesson
           </button>

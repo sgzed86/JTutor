@@ -1068,6 +1068,8 @@ def main() -> None:
 
     index = {
         "book": "irodori_starter",
+        "book_id": "starter",
+        "book_title": "Irodori Starter (A1)",
         "level": "A1",
         "title": "Irodori Starter",
         "lessons": index_lessons,

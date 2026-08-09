@@ -30,7 +30,11 @@ app = FastAPI(title="Jtutor", version="0.1.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://127.0.0.1:5173",
+        "http://localhost:5173",
+        "http://127.0.0.1:8765",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -85,6 +89,9 @@ async def log_requests(request, call_next):
 def _startup() -> None:
     init_db()
     get_logger("app").info("api ready host=%s port=%s", settings.host, settings.port)
+    import threading
+
+    threading.Thread(target=lambda: __import__("backend.app.whisper_service", fromlist=["warm_whisper"]).warm_whisper(), daemon=True).start()
 
 
 def main() -> None:

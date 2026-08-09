@@ -37,7 +37,9 @@ def _grammar_for_lesson(lesson_id: str) -> list[dict]:
 
 def book_tracks(lesson: dict) -> list[dict]:
     """One Irodori activity per step (book order)."""
-    skip = {"classroom", "script"}
+    skip = {"script"}
+    if lesson.get("lesson_id") != "L00":
+        skip.add("classroom")
     acts = [
         a
         for a in (lesson.get("activities") or [])

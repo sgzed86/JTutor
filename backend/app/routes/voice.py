@@ -82,10 +82,10 @@ async def set_speaker(body: SetSpeakerIn):
 
 
 @router.post("/transcribe")
-async def transcribe(file: UploadFile = File(...)):
+def transcribe(file: UploadFile = File(...)):
     suffix = Path(file.filename or "audio.webm").suffix or ".webm"
     with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
-        data = await file.read()
+        data = file.file.read()
         tmp.write(data)
         tmp_path = Path(tmp.name)
     try:
@@ -112,4 +112,5 @@ def voice_settings():
         "default_speaker_id": settings.selected_speaker_id,
         "whisper_model": settings.whisper_model,
         "whisper_device": settings.whisper_device,
+        "voice_speed_scale": voicevox_client.get_speed_scale(),
     }
