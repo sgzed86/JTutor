@@ -13,11 +13,23 @@ export type SubStep =
   | "listen"
   | "shadow"
   | "repeat"
+  | "fill"
+  | "choose"
+  | "note"
+  | "read"
+  | "read_check"
   | "select"
   | "partner"
   | "learner"
   | "swap_learner"
   | "swap_partner"
+  | "vocab_say"
+  | "pronounce"
+  | "trace"
+  | "reflect"
+  | "kanji_study"
+  | "kanji_read"
+  | "kanji_type"
   | "reply"
   | "free_answer"
   | "rate";
@@ -25,9 +37,18 @@ export type SubStep =
 export type BookMode =
   | "listen_repeat"
   | "listen_repeat_all"
+  | "listen_fill"
+  | "listen_choose"
   | "listen_select"
+  | "note_take"
+  | "reading"
   | "dialog"
   | "shadow_dialog"
+  | "pronunciation"
+  | "vocab_drill"
+  | "kana_trace"
+  | "culture_read"
+  | "kanji_words"
   | "repeat"
   | "intro_chat"
   | "self_check";
@@ -59,6 +80,7 @@ export type Step = {
   substep_total?: number;
   substep_label_en?: string | null;
   expects_speech?: boolean;
+  expects_text?: boolean;
   auto_advance?: boolean;
   graded?: boolean;
   activity_index?: number;
@@ -78,7 +100,38 @@ export type Step = {
   partner_jp?: string;
   expected_phrases?: string[];
   say_target_jp?: string | null;
+  /** Practice steps: Yuki speaks this target before the mic opens. */
+  model_before_speech?: boolean;
+  /**
+   * After a missed spoken answer: show Hear CD / Hear Yuki / Try again
+   * instead of auto-replaying the recording.
+   */
+  offer_retry_help?: boolean;
+  /** Book CD paths available on demand when offer_retry_help is set (not auto-played). */
+  retry_audio?: string[];
   say_alternates_jp?: string[];
+  /** Cloze prompt with ＿ placeholders (answers stay on the server). */
+  blank_prompt_jp?: string | null;
+  blank_count?: number;
+  blank_index?: number | null;
+  blank_total?: number | null;
+  choices?: { id: string; label_jp?: string | null; label_en?: string | null }[];
+  choose_multi?: boolean;
+  gloss_en?: string | null;
+  passage_jp?: string | null;
+  passage_en?: string | null;
+  culture_notes_en?: string | null;
+  expects_notes?: boolean;
+  note_prompt_en?: string | null;
+  kanji_items?: { kanji?: string | null; reading?: string | null; gloss_en?: string | null }[];
+  kanji_sentences?: string[];
+  kanji_prompt?: {
+    kanji?: string | null;
+    reading?: string | null;
+    gloss_en?: string | null;
+    index?: number | null;
+    total?: number | null;
+  } | null;
   picture_hint_en?: string | null;
   instruction_en?: string | null;
   up_next_en?: string | null;
@@ -135,6 +188,7 @@ export type Activity = {
   dialog_script?: DialogLine[];
   audio?: string[];
   book_section_en?: string;
+  pdf_page?: number | null;
 };
 
 export type DiffRun = { text: string; match: boolean };
@@ -202,6 +256,15 @@ export type TutorPayload = {
   self_check: { can_do_id: string; statement_en?: string; statement_jp?: string } | null;
   self_checks: SelfCheckSummary[];
   next_lesson_id: string | null;
+  /** Lesson textbook page range from the curriculum, e.g. [101, 123]. */
+  pdf_pages?: number[];
+  /** Best page to open right now (interpolated within the lesson range). */
+  book_page?: number | null;
+  lesson_meta?: {
+    english_notes?: string;
+    portfolio_prompts?: string[];
+    pdf_pages?: number[];
+  };
 };
 
 export type LessonSummary = {
@@ -274,6 +337,7 @@ export type Transcript = {
 };
 
 export type UserSettings = {
+  prefs_version?: number;
   voice: {
     speaker_id: number | null;
     speed: number;

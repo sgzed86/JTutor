@@ -11,13 +11,12 @@ intro_questions:
 - jp: I will bring meat and vegetables について、あなたの けいけんは？
   en: Thinking about "Shopping and Cooking" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can discuss who will bring which item when, for example,
-    having a bar - becue. What do you want to be able to do?'
+  en: 'This lesson aims at: Can discuss who will bring which item when, for example, having a bar - becue.
+    What do you want to be able to do?'
 can_dos:
 - id: CD_EL11_35
   can_do_number: 35
-  statement_en: Can discuss who will bring which item when, for example, having a
-    bar - becue.
+  statement_en: Can discuss who will bring which item when, for example, having a bar - becue.
   statement_jp: バーベキューなどをするとき、だれが何を準備するか話し合うことができる。
   activity_hint: ''
   rubric:
@@ -33,8 +32,8 @@ can_dos:
     min_score: 80
 - id: CD_EL11_37
   can_do_number: 37
-  statement_en: Can ask store staff about the ingredients and expiration dates of
-    food and understand the answers.
+  statement_en: Can ask store staff about the ingredients and expiration dates of food and understand
+    the answers.
   statement_jp: バーベキューなどをするとき、だれが何を準備するか話し合うことができる。
   activity_hint: ''
   rubric:
@@ -42,8 +41,7 @@ can_dos:
     min_score: 80
 - id: CD_EL11_38
   can_do_number: 38
-  statement_en: Can read food labels to check if the food contains something you cannot
-    eat.
+  statement_en: Can read food labels to check if the food contains something you cannot eat.
   statement_jp: バーベキューなどをするとき、だれが何を準備するか話し合うことができる。
   activity_hint: ''
   rubric:
@@ -75,7 +73,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -101,7 +99,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A3
   kind: listening
   book_activity: 3
@@ -114,7 +112,7 @@ activities:
   - の準備について話しています。
   - だれが何を持って行きます
   - 行きます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Listen and type brief notes (who / what / where).
   phrase_meta:
   - jp: 肉と野菜は私が買って行きます
     tags:
@@ -132,7 +130,12 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: note_take
+  note_keywords:
+  - 肉と野菜は私が買って行きます
+  - の準備について話しています。
+  - だれが何を持って行きます
+  - 行きます
 - id: A4
   kind: listening
   book_activity: 4
@@ -145,7 +148,7 @@ activities:
   - の準備について話しています。
   - だれが何を持って行きます
   - 来週のバーベキューです
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL11 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 肉と野菜は私が買って行きます
     tags:
@@ -163,10 +166,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 4: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL11 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: の準備について話しています。
+  - id: b
+    label_jp: 来週のバーベキューです
+  - id: c
+    label_jp: 私はいいです。
+  - id: d
+    label_jp: 塩いいです。
+  - id: e
+    label_jp: 肉と野菜は私が買って行きます
+  - id: f
+    label_jp: だれが何を持って行きます
+  - id: g
+    label_jp: すみません。このお刺身、明日までもちますか？
+  - id: h
+    label_jp: このピザ、エビが入ってますか？
+  correct_ids:
+  - a
+  - b
+  - e
+  - f
+  choose_mode: all
 - id: A5
   kind: listening
   book_activity: 5
@@ -179,7 +204,7 @@ activities:
   - の準備について話しています。
   - だれが何を持って行きます
   - 来週のバーベキューです
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL11 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 肉と野菜は私が買って行きます
     tags:
@@ -197,10 +222,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 5: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL11 activity 5: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: の準備について話しています。
+  - id: b
+    label_jp: 私はいいです。
+  - id: c
+    label_jp: 肉と野菜は私が買って行きます
+  - id: d
+    label_jp: あ、じゃあ、だいじょうぶです。いただきます！
+  - id: e
+    label_jp: だれが何を持って行きます
+  - id: f
+    label_jp: 来週のバーベキューです
+  - id: g
+    label_jp: すみません。このお刺身、明日までもちますか？
+  - id: h
+    label_jp: エビ、入ってるよ。
+  correct_ids:
+  - a
+  - c
+  - e
+  - f
+  choose_mode: all
 - id: A6
   kind: listening
   book_activity: 6
@@ -213,7 +260,7 @@ activities:
   - の準備について話しています。
   - だれが何を持って行きます
   - 行きます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL11 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 肉と野菜は私が買って行きます
     tags:
@@ -231,10 +278,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 6: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL11 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: エビ、入ってるよ。
+  - id: b
+    label_jp: 私はいいです。
+  - id: c
+    label_jp: だれが何を持って行きます
+  - id: d
+    label_jp: ぐらいもちます。
+  - id: e
+    label_jp: の準備について話しています。
+  - id: f
+    label_jp: さあ、どうぞ。
+  - id: g
+    label_jp: 肉と野菜は私が買って行きます
+  - id: h
+    label_jp: 行きます
+  correct_ids:
+  - c
+  - e
+  - g
+  - h
+  choose_mode: all
 - id: A7
   kind: grammar_form
   book_activity: 7
@@ -245,7 +314,7 @@ activities:
   key_phrases:
   - 肉と野菜は私が買って行きます
   - 行きます
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 肉と野菜は私が買って行きます
     tags:
@@ -255,7 +324,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A8
   kind: speaking
   book_activity: 8
@@ -398,7 +467,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A12
   kind: speaking
   book_activity: 12
@@ -525,7 +594,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A16
   kind: vocabulary
   book_activity: 16
@@ -541,7 +610,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A17
   kind: listening
   book_activity: 17
@@ -554,7 +623,7 @@ activities:
   - 材料や消費期限などを質問しています。
   - 何について質問しています
   - 答えはどうですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL11 activity 17: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 肉と野菜は私が買って行きます
     tags:
@@ -572,10 +641,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 17: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL11 activity 17: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 肉と野菜は私が買って行きます
+  - id: b
+    label_jp: お茶
+  - id: c
+    label_jp: チョコレートケーキチーズケーキ、がいいですか？
+  - id: d
+    label_jp: すみません。このラーメン、ハラルですか？
+  - id: e
+    label_jp: よかったら、ピザ、どう？
+  - id: f
+    label_jp: 何について質問しています
+  - id: g
+    label_jp: 答えはどうですか。
+  - id: h
+    label_jp: 材料や消費期限などを質問しています。
+  correct_ids:
+  - a
+  - f
+  - g
+  - h
+  choose_mode: all
 - id: A18
   kind: listening
   book_activity: 18
@@ -588,7 +679,7 @@ activities:
   - 材料や消費期限などを質問しています。
   - 何について質問しています
   - 答えはどうですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL11 activity 18: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 肉と野菜は私が買って行きます
     tags:
@@ -606,10 +697,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 18: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL11 activity 18: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 焼き鳥も買いますか？塩たれ、がいいですか？
+  - id: b
+    label_jp: 材料や消費期限などを質問しています。
+  - id: c
+    label_jp: 肉と野菜は私が買って行きます
+  - id: d
+    label_jp: いいです。
+  - id: e
+    label_jp: 答えはどうですか。
+  - id: f
+    label_jp: の準備について話しています。
+  - id: g
+    label_jp: だれが何を持って行きます
+  - id: h
+    label_jp: 何について質問しています
+  correct_ids:
+  - b
+  - c
+  - e
+  - h
+  choose_mode: all
 - id: A19
   kind: listening
   book_activity: 19
@@ -622,7 +735,7 @@ activities:
   - 材料や消費期限などを質問しています。
   - 何について質問しています
   - 答えはどうですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL11 activity 19: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 肉と野菜は私が買って行きます
     tags:
@@ -640,10 +753,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 19: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL11 activity 19: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 何について質問しています
+  - id: b
+    label_jp: チョコレートケーキチーズケーキ、がいいですか？
+  - id: c
+    label_jp: 答えはどうですか。
+  - id: d
+    label_jp: 材料や消費期限などを質問しています。
+  - id: e
+    label_jp: このピザ、エビが入ってますか？
+  - id: f
+    label_jp: 肉と野菜は私が買って行きます
+  - id: g
+    label_jp: あ、お刺身は、今日中に食べてください。
+  - id: h
+    label_jp: 私はいいです。
+  correct_ids:
+  - a
+  - c
+  - d
+  - f
+  choose_mode: all
 - id: A20
   kind: listening
   book_activity: 20
@@ -656,7 +791,7 @@ activities:
   - 材料や消費期限などを質問しています。
   - 何について質問しています
   - 答えはどうですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL11 activity 20: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 肉と野菜は私が買って行きます
     tags:
@@ -674,10 +809,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 20: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL11 activity 20: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: あのう、この料理、卵を使ってますか？
+  - id: b
+    label_jp: 私はいいです。
+  - id: c
+    label_jp: 材料や消費期限などを質問しています。
+  - id: d
+    label_jp: 友だちの家でパーティーをします。
+  - id: e
+    label_jp: 何について質問しています
+  - id: f
+    label_jp: 肉と野菜は私が買って行きます
+  - id: g
+    label_jp: 答えはどうですか。
+  - id: h
+    label_jp: エビ、入ってるよ。
+  correct_ids:
+  - c
+  - e
+  - f
+  - g
+  choose_mode: all
 - id: A21
   kind: grammar_form
   book_activity: 21
@@ -687,13 +844,13 @@ activities:
   - assets/audio/Y_[11-21]_katachi.mp3
   key_phrases:
   - 肉と野菜は私が買って行きます
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 肉と野菜は私が買って行きます
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A22
   kind: speaking
   book_activity: 22
@@ -883,6 +1040,110 @@ activities:
     tags:
     - short
     - polite
+- id: KANJI
+  kind: kanji
+  book_activity: 26.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 飲み物
+  - 牛肉
+  - お茶
+  - 豚肉
+  - お酒
+  - 皿
+  - 材料
+  - 売る
+  - 野菜
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 239
+  kanji_items: &id005
+  - kanji: 飲み物
+    reading: のみもの
+    gloss_en: drink
+  - kanji: 牛肉
+    reading: ぎゅうにく
+    gloss_en: beef
+  - kanji: お茶
+    reading: ちゃ
+    gloss_en: tea
+  - kanji: 豚肉
+    reading: ぶたにく
+    gloss_en: pork
+  - kanji: お酒
+    reading: さけ
+    gloss_en: alcohol / sake
+  - kanji: 皿
+    reading: さら
+    gloss_en: plate
+  - kanji: 材料
+    reading: ざいりょう
+    gloss_en: ingredients
+  - kanji: 売る
+    reading: うる
+    gloss_en: to sell
+  - kanji: 野菜
+    reading: やさい
+    gloss_en: vegetables
+  kanji_sentences: &id006
+  - この料理、豚肉入ってますか？
+  - Ａ：飲み物は何にしますか？Ｂ：お茶をお願いします。
+  - 私は、おはしとお皿を持って行きます。
+  - Ａ：材料は何ですか？Ｂ：牛肉と野菜を使います。
+  - お酒は、あそこで売ってますよ。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 27
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Do you have parties with people sometimes? At that time, what do you eat and drink?
+
+    Can discuss who will bring which item when, for example, having a barbecue.
+
+    Preparation for the words
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a-n.
+
+    Listen to the dialog.
+
+    The four people are co-workers. They have decided to have a barbecue on their day off. They are talking
+    about how they will prepare for
+
+    the barbecue.
+
+    Who will bring which item? Take notes.
+
+    Check the words and listen to the dialog again.
+
+    備 preparation ｜ 飲
+
+    beverage ｜ デザート dessert ｜ 焼
+
+    く grill
+
+    Listen to the recording and fill in the blanks.
+
+    What expression was used before 行
+
+    Focus on the expressions used and listen to the dialog again.
+
+    Discuss what to bring for a barbecue or other activity and who will bring each item.
+
+    Listen to the dialogs.
+
+    Shadow the dialogs.
+
+    Practice using the words from'
+  picture_has_image: false
 grammar:
 - point: A： ケーキを（ 持
   worksheet_pages:
@@ -927,23 +1188,20 @@ vocab:
 quiz_bank:
 - type: roleplay
   can_do_id: CD_EL11_35
-  prompt_en: 'Demonstrate: Can discuss who will bring which item when, for example,
-    having a bar - becue.'
+  prompt_en: 'Demonstrate: Can discuss who will bring which item when, for example, having a bar - becue.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL11_36
-  prompt_en: 'Demonstrate: Can discuss what to buy when, for example, having a house
-    party.'
+  prompt_en: 'Demonstrate: Can discuss what to buy when, for example, having a house party.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL11_37
-  prompt_en: 'Demonstrate: Can ask store staff about the ingredients and expiration
-    dates of food and understand the answers.'
+  prompt_en: 'Demonstrate: Can ask store staff about the ingredients and expiration dates of food and
+    understand the answers.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL11_38
-  prompt_en: 'Demonstrate: Can read food labels to check if the food contains something
-    you cannot eat.'
+  prompt_en: 'Demonstrate: Can read food labels to check if the food contains something you cannot eat.'
   spoken_required: true
 quiz_scenarios:
 - can_do_id: CD_EL11_35
@@ -953,13 +1211,11 @@ quiz_scenarios:
   - の準備について話しています。
   - だれが何を持って行きます
   - 来週のバーベキューです
-  hint_en: Can discuss who will bring which item when, for example, having a bar -
-    becue.
+  hint_en: Can discuss who will bring which item when, for example, having a bar - becue.
 - can_do_id: CD_EL11_35
   partner_jp: もう一度、お願いします。
   expected: *id001
-  hint_en: Again — Can discuss who will bring which item when, for example, having
-    a bar - becue.
+  hint_en: Again — Can discuss who will bring which item when, for example, having a bar - becue.
 - can_do_id: CD_EL11_36
   partner_jp: 肉と野菜は私が買って行きます。
   expected: &id002
@@ -979,13 +1235,11 @@ quiz_scenarios:
   - の準備について話しています。
   - だれが何を持って行きます
   - 行きます
-  hint_en: Can ask store staff about the ingredients and expiration dates of food
-    and understand the answers.
+  hint_en: Can ask store staff about the ingredients and expiration dates of food and understand the answers.
 - can_do_id: CD_EL11_37
   partner_jp: もう一度、お願いします。
   expected: *id003
-  hint_en: Again — Can ask store staff about the ingredients and expiration dates
-    of food and under
+  hint_en: Again — Can ask store staff about the ingredients and expiration dates of food and under
 - can_do_id: CD_EL11_38
   partner_jp: 肉と野菜は私が買って行きます。
   expected: &id004
@@ -993,15 +1247,12 @@ quiz_scenarios:
   - の準備について話しています。
   - だれが何を持って行きます
   - 来週のバーベキューです
-  hint_en: Can read food labels to check if the food contains something you cannot
-    eat.
+  hint_en: Can read food labels to check if the food contains something you cannot eat.
 - can_do_id: CD_EL11_38
   partner_jp: もう一度、お願いします。
   expected: *id004
-  hint_en: Again — Can read food labels to check if the food contains something you
-    cannot eat.
-english_notes: 'Do you have parties with people sometimes? At that time, what do you
-  eat and drink?
+  hint_en: Again — Can read food labels to check if the food contains something you cannot eat.
+english_notes: 'Do you have parties with people sometimes? At that time, what do you eat and drink?
 
   Can discuss who will bring which item when, for example, having a barbecue.
 
@@ -1015,8 +1266,8 @@ english_notes: 'Do you have parties with people sometimes? At that time, what do
 
   Listen to the dialog.
 
-  The four people are co-workers. They have decided to have a barbecue on their day
-  off. They are talking about how they will prepare for
+  The four people are co-workers. They have decided to have a barbecue on their day off. They are talking
+  about how they will prepare for
 
   the barbecue.
 
@@ -1044,6 +1295,10 @@ english_notes: 'Do you have parties with people sometimes? At that time, what do
 
   Practice using the words from 1 .
 
-  Role-play this situation with three or more people. You are having a barbecue with
-  friends. Freely talk about who will bring what.'
+  Role-play this situation with three or more people. You are having a barbecue with friends. Freely talk
+  about who will bring what.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 239
+  items: *id005
+  sentences: *id006

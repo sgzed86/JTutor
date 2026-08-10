@@ -11,14 +11,13 @@ intro_questions:
 - jp: I would like to take a Japanese-language class について、あなたの けいけんは？
   en: Thinking about "Eating Out" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can find and understand information such as the place,
-    date, and time of lessons offered at a local community center, etc. What do you
-    want to be able to do?'
+  en: 'This lesson aims at: Can find and understand information such as the place, date, and time of lessons
+    offered at a local community center, etc. What do you want to be able to do?'
 can_dos:
 - id: CD_EL10_31
   can_do_number: 31
-  statement_en: Can find and understand information such as the place, date, and time
-    of lessons offered at a local community center, etc.
+  statement_en: Can find and understand information such as the place, date, and time of lessons offered
+    at a local community center, etc.
   statement_jp: 公民館などの講座の案内を見て、場所や日時などの情報を読み取ることがで
   activity_hint: ''
   rubric:
@@ -26,8 +25,8 @@ can_dos:
     min_score: 80
 - id: CD_EL10_32
   can_do_number: 32
-  statement_en: Can ask questions about the lesson you are interested in at a local
-    gov - ernment office and understand the answers.
+  statement_en: Can ask questions about the lesson you are interested in at a local gov - ernment office
+    and understand the answers.
   statement_jp: 公民館などの講座の案内を見て、場所や日時などの情報を読み取ることがで
   activity_hint: ''
   rubric:
@@ -35,8 +34,7 @@ can_dos:
     min_score: 80
 - id: CD_EL10_33
   can_do_number: 33
-  statement_en: Can ask friends or answer questions about Japanese-language classes
-    in the community.
+  statement_en: Can ask friends or answer questions about Japanese-language classes in the community.
   statement_jp: 公民館などの講座の案内を見て、場所や日時などの情報を読み取ることがで
   activity_hint: ''
   rubric:
@@ -44,8 +42,8 @@ can_dos:
     min_score: 80
 - id: CD_EL10_34
   can_do_number: 34
-  statement_en: Can answer questions about your experience or your goals in learning
-    Japanese, in order to participate in Japanese-language classes.
+  statement_en: Can answer questions about your experience or your goals in learning Japanese, in order
+    to participate in Japanese-language classes.
   statement_jp: 公民館などの講座の案内を見て、場所や日時などの情報を読み取ることがで
   activity_hint: ''
   rubric:
@@ -64,7 +62,7 @@ activities:
   - 何について話しています
   - 書道教室に参加してみたいんです
   - すみません。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Listen and type brief notes (who / what / where).
   phrase_meta:
   - jp: 日本語教室に参加したいんです
     tags:
@@ -82,7 +80,12 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: note_take
+  note_keywords:
+  - 日本語教室に参加したいんです
+  - 何について話しています
+  - 書道教室に参加してみたいんです
+  - すみません。
 - id: A2
   kind: listening
   book_activity: 2
@@ -95,7 +98,7 @@ activities:
   - 何について話しています
   - すみません。
   - はい。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL10 activity 2: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 日本語教室に参加したいんです
     tags:
@@ -112,10 +115,32 @@ activities:
   - jp: はい。
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL10 activity 2: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL10 activity 2: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: あ、「母語」は、子どものときからいつも使っていることばです。
+  - id: b
+    label_jp: はい。
+  - id: c
+    label_jp: 日本語教室に参加したいんです
+  - id: d
+    label_jp: 教科書は自分で買います
+  - id: e
+    label_jp: 私のクラスは週にです。
+  - id: f
+    label_jp: すみません。
+  - id: g
+    label_jp: 何について話しています
+  - id: h
+    label_jp: すみません。「ぼご」は、？
+  correct_ids:
+  - b
+  - c
+  - f
+  - g
+  choose_mode: all
 - id: A3
   kind: listening
   book_activity: 3
@@ -128,7 +153,7 @@ activities:
   - 何について話しています
   - すみません。
   - はい。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL10 activity 3: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 日本語教室に参加したいんです
     tags:
@@ -145,10 +170,32 @@ activities:
   - jp: はい。
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL10 activity 3: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL10 activity 3: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: すみません。
+  - id: b
+    label_jp: 日本語教室に参加したいんです
+  - id: c
+    label_jp: すみません。「ぼご」は、？
+  - id: d
+    label_jp: はい。
+  - id: e
+    label_jp: 週にありますか？
+  - id: f
+    label_jp: 何について話しています
+  - id: g
+    label_jp: 教科書は自分で買います
+  - id: h
+    label_jp: すみません。私は書道に興味があります。
+  correct_ids:
+  - a
+  - b
+  - d
+  - f
+  choose_mode: all
 - id: A4
   kind: listening
   book_activity: 4
@@ -161,7 +208,7 @@ activities:
   - 何について話しています
   - 書道教室に参加してみたいんです
   - すみません。私は書道に興味があります。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL10 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 日本語教室に参加したいんです
     tags:
@@ -179,10 +226,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL10 activity 4: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL10 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 私のクラスは週にです。
+  - id: b
+    label_jp: 何について話しています
+  - id: c
+    label_jp: あ、「母語」は、子どものときからいつも使っていることばです。
+  - id: d
+    label_jp: 母語は？
+  - id: e
+    label_jp: 日本語教室に参加したいんです
+  - id: f
+    label_jp: 書道教室に参加してみたいんです
+  - id: g
+    label_jp: 少し勉強しました
+  - id: h
+    label_jp: すみません。私は書道に興味があります。
+  correct_ids:
+  - b
+  - e
+  - f
+  - h
+  choose_mode: all
 - id: A5
   kind: grammar_form
   book_activity: 5
@@ -193,7 +262,7 @@ activities:
   key_phrases:
   - 日本語教室に参加したいんです
   - 書道教室に参加してみたいんです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 日本語教室に参加したいんです
     tags:
@@ -203,7 +272,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A6
   kind: conversation
   book_activity: 6
@@ -271,7 +340,7 @@ activities:
     - long
     - polite
     - casual
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A8
   kind: speaking
   book_activity: 8
@@ -358,7 +427,7 @@ activities:
   - すみません。「ぼご」は、？
   - あ、「母語」は、子どものときからいつも使っていることばです。
   - 日本語教室に参加したいんです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 母語は？
     tags:
@@ -375,7 +444,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A11
   kind: speaking
   book_activity: 11
@@ -412,6 +481,115 @@ activities:
   - jp: どこで勉強しました
     tags:
     - short
+- id: KANJI
+  kind: kanji
+  book_activity: 11.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 午前
+  - 全部
+  - 午後
+  - 回
+  - 教科書
+  - 参加する
+  - 教室
+  - 用意する
+  - 先生
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 217
+  kanji_items: &id005
+  - kanji: 午前
+    reading: ごぜん
+    gloss_en: morning (a.m.)
+  - kanji: 全部
+    reading: ぜんぶ
+    gloss_en: all / everything
+  - kanji: 午後
+    reading: ごご
+    gloss_en: afternoon (p.m.)
+  - kanji: 回
+    reading: かい
+    gloss_en: times (counter)
+  - kanji: 教科書
+    reading: きょうかしょ
+    gloss_en: textbook
+  - kanji: 参加する
+    reading: さんかする
+    gloss_en: to participate
+  - kanji: 教室
+    reading: きょうしつ
+    gloss_en: classroom
+  - kanji: 用意する
+    reading: よういする
+    gloss_en: to prepare
+  - kanji: 先生
+    reading: せんせい
+    gloss_en: teacher
+  kanji_sentences: &id006
+  - 全部で5回のコースです。
+  - 道具は、こちらで用意します。
+  - 午前のクラスと午後のクラスがあります。
+  - A：教科書は、いくらですか？B：先生に聞いてみてください。
+  - 料理教室に参加したいんですが……。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 12
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Have you ever taken any lessons before? What type of lessons did you take?
+
+    Read the following flyer for information about the lessons.
+
+    You are reading a flyer for information about the lessons offered at a local community center.
+
+    What lessons do ①-④ mention?
+
+    Can find and understand information such as the place, date, and time of lessons offered at a local
+    community center, etc.
+
+    Mark where you see the following topics.
+
+    月 every month ｜ 第
+
+    3 the third （第
+
+    ～ the first, the second, etc.）｜ 費
+
+    用 cost ｜ 問
+
+    わせ inquiry
+
+    民館 local community center
+
+    道 Japanese calligraphy ｜ 日
+
+    時 date and time ｜ テ キスト代
+
+    textbook fee （～代
+
+    ～ fee）
+
+    け for non-Japanese residents ｜ 体
+
+    験教室 trial lesson
+
+    気道 aikido
+
+    Which lesson are you interested in?
+
+    Can ask questions about the lesson you are interested in at a local government office and understand
+    the answers.
+
+    Listen to the dialogs.
+
+    The four people who saw lesson information are each a'
+  picture_has_image: false
 grammar:
 - point: V-て みたいんですが・・・
   worksheet_pages:
@@ -429,23 +607,23 @@ vocab: []
 quiz_bank:
 - type: roleplay
   can_do_id: CD_EL10_31
-  prompt_en: 'Demonstrate: Can find and understand information such as the place,
-    date, and time of lessons offered at a local community center, etc.'
+  prompt_en: 'Demonstrate: Can find and understand information such as the place, date, and time of lessons
+    offered at a local community center, etc.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL10_32
-  prompt_en: 'Demonstrate: Can ask questions about the lesson you are interested in
-    at a local gov - ernment office and understand the answers.'
+  prompt_en: 'Demonstrate: Can ask questions about the lesson you are interested in at a local gov - ernment
+    office and understand the answers.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL10_33
-  prompt_en: 'Demonstrate: Can ask friends or answer questions about Japanese-language
-    classes in the community.'
+  prompt_en: 'Demonstrate: Can ask friends or answer questions about Japanese-language classes in the
+    community.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL10_34
-  prompt_en: 'Demonstrate: Can answer questions about your experience or your goals
-    in learning Japanese, in order to participate in Japanese-language classes.'
+  prompt_en: 'Demonstrate: Can answer questions about your experience or your goals in learning Japanese,
+    in order to participate in Japanese-language classes.'
   spoken_required: true
 quiz_scenarios:
 - can_do_id: CD_EL10_31
@@ -455,13 +633,12 @@ quiz_scenarios:
   - 何について話しています
   - 書道教室に参加してみたいんです
   - すみません。
-  hint_en: Can find and understand information such as the place, date, and time of
-    lessons offered at a local community center, etc.
+  hint_en: Can find and understand information such as the place, date, and time of lessons offered at
+    a local community center, etc.
 - can_do_id: CD_EL10_31
   partner_jp: もう一度、お願いします。
   expected: *id001
-  hint_en: Again — Can find and understand information such as the place, date, and
-    time of lessons
+  hint_en: Again — Can find and understand information such as the place, date, and time of lessons
 - can_do_id: CD_EL10_32
   partner_jp: 日本語教室に参加したいんです。
   expected: &id002
@@ -469,13 +646,12 @@ quiz_scenarios:
   - 何について話しています
   - すみません。
   - はい。
-  hint_en: Can ask questions about the lesson you are interested in at a local gov
-    - ernment office and understand the answers.
+  hint_en: Can ask questions about the lesson you are interested in at a local gov - ernment office and
+    understand the answers.
 - can_do_id: CD_EL10_32
   partner_jp: もう一度、お願いします。
   expected: *id002
-  hint_en: Again — Can ask questions about the lesson you are interested in at a local
-    gov - ernmen
+  hint_en: Again — Can ask questions about the lesson you are interested in at a local gov - ernmen
 - can_do_id: CD_EL10_33
   partner_jp: 日本語教室に参加したいんです。
   expected: &id003
@@ -483,13 +659,11 @@ quiz_scenarios:
   - 何について話しています
   - すみません。
   - はい。
-  hint_en: Can ask friends or answer questions about Japanese-language classes in
-    the community.
+  hint_en: Can ask friends or answer questions about Japanese-language classes in the community.
 - can_do_id: CD_EL10_33
   partner_jp: もう一度、お願いします。
   expected: *id003
-  hint_en: Again — Can ask friends or answer questions about Japanese-language classes
-    in the commu
+  hint_en: Again — Can ask friends or answer questions about Japanese-language classes in the commu
 - can_do_id: CD_EL10_34
   partner_jp: 日本語教室に参加したいんです。
   expected: &id004
@@ -497,25 +671,22 @@ quiz_scenarios:
   - 何について話しています
   - 書道教室に参加してみたいんです
   - すみません。私は書道に興味があります。
-  hint_en: Can answer questions about your experience or your goals in learning Japanese,
-    in order to participate in Japanese-language classes.
+  hint_en: Can answer questions about your experience or your goals in learning Japanese, in order to
+    participate in Japanese-language classes.
 - can_do_id: CD_EL10_34
   partner_jp: もう一度、お願いします。
   expected: *id004
-  hint_en: Again — Can answer questions about your experience or your goals in learning
-    Japanese, i
-english_notes: 'Have you ever taken any lessons before? What type of lessons did you
-  take?
+  hint_en: Again — Can answer questions about your experience or your goals in learning Japanese, i
+english_notes: 'Have you ever taken any lessons before? What type of lessons did you take?
 
   Read the following flyer for information about the lessons.
 
-  You are reading a flyer for information about the lessons offered at a local community
-  center.
+  You are reading a flyer for information about the lessons offered at a local community center.
 
   What lessons do ①-④ mention?
 
-  Can find and understand information such as the place, date, and time of lessons
-  offered at a local community center, etc.
+  Can find and understand information such as the place, date, and time of lessons offered at a local
+  community center, etc.
 
   Mark where you see the following topics.
 
@@ -547,8 +718,8 @@ english_notes: 'Have you ever taken any lessons before? What type of lessons did
 
   Which lesson are you interested in?
 
-  Can ask questions about the lesson you are interested in at a local government office
-  and understand the answers.
+  Can ask questions about the lesson you are interested in at a local government office and understand
+  the answers.
 
   Listen to the dialogs.
 
@@ -558,8 +729,7 @@ english_notes: 'Have you ever taken any lessons before? What type of lessons did
 
   What are the people talking about? Put a check mark where appropriate.
 
-  Listen to the dialogs again. Take notes related to the topics that you checked in
-  (1).
+  Listen to the dialogs again. Take notes related to the topics that you checked in (1).
 
   Check the words and listen to the dialogs again.
 
@@ -581,3 +751,7 @@ english_notes: 'Have you ever taken any lessons before? What type of lessons did
 
   Focus on the expressions used and listen to the d'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 217
+  items: *id005
+  sentences: *id006

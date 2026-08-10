@@ -13,9 +13,16 @@ type Props = {
   onProgressChanged: () => void;
   contextOpen: boolean;
   onToggleContext: () => void;
+  onContextOpenChange?: (open: boolean) => void;
 };
 
-export function TutorPage({ onLessonChange, onProgressChanged, contextOpen, onToggleContext }: Props) {
+export function TutorPage({
+  onLessonChange,
+  onProgressChanged,
+  contextOpen,
+  onToggleContext,
+  onContextOpenChange,
+}: Props) {
   const { lessonId = "L01" } = useParams();
   const navigate = useNavigate();
   const { settings } = useSettings();
@@ -28,20 +35,41 @@ export function TutorPage({ onLessonChange, onProgressChanged, contextOpen, onTo
     if (payload?.state === "lesson_complete") onProgressChanged();
   }, [onProgressChanged, payload?.state]);
 
-  // Space is push-to-talk whenever the step wants speech.
+  // Book lives on the main stage — keep the helper drawer closed on phase changes
+  // so the page stays wide. Learners can still open Ask Yuki manually.
+  useEffect(() => {
+    if (!payload || !onContextOpenChange) return;
+    const bookOnStage =
+      Boolean(payload.book_page ?? payload.pdf_pages?.[0]) &&
+      (payload.state === "book" || payload.state === "grammar" || payload.state === "lesson_intro");
+    if (bookOnStage) onContextOpenChange(false);
+  }, [payload?.lesson_id, payload?.state, onContextOpenChange]);
+
+  // Space: tap to start/stop in toggle mode; press-and-hold in hold mode.
   useEffect(() => {
     const isTypingTarget = (target: EventTarget | null) =>
       target instanceof HTMLElement && ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName);
+    const hold = settings.lessons.mic_mode === "hold";
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.code !== "Space" || e.repeat || isTypingTarget(e.target)) return;
-      if (phase.kind !== "awaiting_speech") return;
-      e.preventDefault();
-      actions.startRecording("answer");
+      if (hold) {
+        if (phase.kind !== "awaiting_speech") return;
+        e.preventDefault();
+        actions.startRecording("answer");
+        return;
+      }
+      if (phase.kind === "awaiting_speech") {
+        e.preventDefault();
+        actions.startRecording("answer");
+      } else if (phase.kind === "recording") {
+        e.preventDefault();
+        actions.stopRecording();
+      }
     };
     const onKeyUp = (e: KeyboardEvent) => {
+      if (!hold) return;
       if (e.code !== "Space" || isTypingTarget(e.target)) return;
-      if (settings.lessons.mic_mode !== "hold") return;
       if (phase.kind === "recording") {
         e.preventDefault();
         actions.stopRecording();
@@ -83,9 +111,12 @@ export function TutorPage({ onLessonChange, onProgressChanged, contextOpen, onTo
             reduceMotion={settings.appearance.reduce_motion}
             lastGrade={session.lastGrade}
             lastRecordingUrl={session.lastRecordingUrl}
+            textSubmitDisabled={phase.kind === "grading"}
             onReplayTutor={actions.replayTutorLine}
             onReplayBook={actions.replayBookAudio}
             onPlayTarget={speak}
+            onTryAgain={actions.tryAgainAfterMiss}
+            onSubmitText={(text) => void actions.sendAnswer(text, false)}
           />
         ) : phase.kind === "blocked" ? (
           <div className="stage__placeholder">

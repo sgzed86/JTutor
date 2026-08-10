@@ -11,13 +11,12 @@ intro_questions:
 - jp: It will probably end in about ten minutes について、あなたの けいけんは？
   en: Thinking about "At Work" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can tell your supervisor what is going on when you have
-    a problem at work. What do you want to be able to do?'
+  en: 'This lesson aims at: Can tell your supervisor what is going on when you have a problem at work.
+    What do you want to be able to do?'
 can_dos:
 - id: CD_EL13_43
   can_do_number: 43
-  statement_en: Can tell your supervisor what is going on when you have a problem
-    at work.
+  statement_en: Can tell your supervisor what is going on when you have a problem at work.
   statement_jp: 職場で困ったことがあったとき、上司などに状況を伝えることができる。
   activity_hint: ''
   rubric:
@@ -33,8 +32,7 @@ can_dos:
     min_score: 80
 - id: CD_EL13_45
   can_do_number: 45
-  statement_en: Can ask about and understand, for example, how to use a machine at
-    work.
+  statement_en: Can ask about and understand, for example, how to use a machine at work.
   statement_jp: 職場で困ったことがあったとき、上司などに状況を伝えることができる。
   activity_hint: ''
   rubric:
@@ -42,8 +40,7 @@ can_dos:
     min_score: 80
 - id: CD_EL13_46
   can_do_number: 46
-  statement_en: Can listen to and understand explanations and instructions on tasks
-    at work.
+  statement_en: Can listen to and understand explanations and instructions on tasks at work.
   statement_jp: 職場で困ったことがあったとき、上司などに状況を伝えることができる。
   activity_hint: ''
   rubric:
@@ -101,7 +98,7 @@ activities:
   - 分ぐらいで終わりそうです
   - あのう、トイレットペーパーがなくなったんですが……。
   - あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL13 activity 2: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 困ったことは何ですか。
     tags:
@@ -119,10 +116,32 @@ activities:
     tags:
     - long
     - casual
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL13 activity 2: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL13 activity 2: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: どう？だいじょうぶ？
+  - id: b
+    label_jp: あのう、トイレットペーパーがなくなったんですが……。
+  - id: c
+    label_jp: （コピー機
+  - id: d
+    label_jp: じゃあ、管理室に連絡してください。
+  - id: e
+    label_jp: 仕事はどうですか。
+  - id: f
+    label_jp: 分ぐらいで終わりそうです
+  - id: g
+    label_jp: 困ったことは何ですか。
+  - id: h
+    label_jp: あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+  correct_ids:
+  - b
+  - f
+  - g
+  - h
+  choose_mode: all
 - id: A3
   kind: listening
   book_activity: 3
@@ -135,7 +154,7 @@ activities:
   - 分ぐらいで終わりそうです
   - あのう、トイレットペーパーがなくなったんですが……。
   - あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL13 activity 3: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 困ったことは何ですか。
     tags:
@@ -153,10 +172,32 @@ activities:
     tags:
     - long
     - casual
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL13 activity 3: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL13 activity 3: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 分ぐらいで終わりそうです
+  - id: b
+    label_jp: あのう、トイレットペーパーがなくなったんですが……。
+  - id: c
+    label_jp: 終わりました
+  - id: d
+    label_jp: じゃあ、管理室に連絡してください。
+  - id: e
+    label_jp: いえ、ありません。
+  - id: f
+    label_jp: 困ったことは何ですか。
+  - id: g
+    label_jp: あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+  - id: h
+    label_jp: 、ないです。
+  correct_ids:
+  - a
+  - b
+  - f
+  - g
+  choose_mode: all
 - id: A4
   kind: listening
   book_activity: 4
@@ -169,7 +210,7 @@ activities:
   - 分ぐらいで終わりそうです
   - どんな形ですか。
   - あのう、トイレットペーパーがなくなったんですが……。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL13 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 困ったことは何ですか。
     tags:
@@ -187,10 +228,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL13 activity 4: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL13 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: あのう、すみません、会議室の電気がつかないんですが……。
+  - id: b
+    label_jp: どんな形ですか。
+  - id: c
+    label_jp: あ、まだです。
+  - id: d
+    label_jp: 困ったことは何ですか。
+  - id: e
+    label_jp: あのう、トイレットペーパーがなくなったんですが……。
+  - id: f
+    label_jp: 分ぐらいで終わりそうです
+  - id: g
+    label_jp: 、ないです。
+  - id: h
+    label_jp: もう終わりました
+  correct_ids:
+  - b
+  - d
+  - e
+  - f
+  choose_mode: all
 - id: A5
   kind: grammar_form
   book_activity: 5
@@ -201,7 +264,7 @@ activities:
   key_phrases:
   - 分ぐらいで終わりそうです
   - どんな形ですか。
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 分ぐらいで終わりそうです
     tags:
@@ -211,7 +274,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A6
   kind: speaking
   book_activity: 6
@@ -261,7 +324,7 @@ activities:
   - 仕事はどうですか。
   - やり方がわかりません
   - もう終わりました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL13 activity 7: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 分ぐらいで終わりそうです
     tags:
@@ -278,10 +341,32 @@ activities:
   - jp: もう終わりました
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL13 activity 7: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL13 activity 7: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: もう終わりました
+  - id: b
+    label_jp: 分ぐらいで終わりそうです
+  - id: c
+    label_jp: あのう、すみません、会議室の電気がつかないんですが……。
+  - id: d
+    label_jp: 仕事はどうですか。
+  - id: e
+    label_jp: 終わりました
+  - id: f
+    label_jp: そう。わからないこと、ある？
+  - id: g
+    label_jp: やり方がわかりません
+  - id: h
+    label_jp: （コピー機
+  correct_ids:
+  - a
+  - b
+  - d
+  - g
+  choose_mode: all
 - id: A8
   kind: listening
   book_activity: 8
@@ -294,7 +379,7 @@ activities:
   - 仕事はどうですか。
   - やり方がわかりません
   - もう終わりました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL13 activity 8: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 分ぐらいで終わりそうです
     tags:
@@ -311,10 +396,32 @@ activities:
   - jp: もう終わりました
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL13 activity 8: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL13 activity 8: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: もう終わりました
+  - id: b
+    label_jp: あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+  - id: c
+    label_jp: やり方がわかりません
+  - id: d
+    label_jp: 仕事はどうですか。
+  - id: e
+    label_jp: はい、だいじょうぶです。
+  - id: f
+    label_jp: パソコンが動かないんですが……。
+  - id: g
+    label_jp: 分ぐらいで終わりそうです
+  - id: h
+    label_jp: （コピー機
+  correct_ids:
+  - a
+  - c
+  - d
+  - g
+  choose_mode: all
 - id: A9
   kind: listening
   book_activity: 9
@@ -327,7 +434,7 @@ activities:
   - 仕事はどうですか。
   - やり方がわかりません
   - もう終わりました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL13 activity 9: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 分ぐらいで終わりそうです
     tags:
@@ -344,10 +451,32 @@ activities:
   - jp: もう終わりました
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL13 activity 9: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL13 activity 9: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: すみません、コーヒーマシーンから変な音がするんですが……。
+  - id: b
+    label_jp: 分ぐらいで終わりそうです
+  - id: c
+    label_jp: やり方がわかりません
+  - id: d
+    label_jp: 仕事はどうですか。
+  - id: e
+    label_jp: 、ないです。
+  - id: f
+    label_jp: わかりました。
+  - id: g
+    label_jp: もう終わりました
+  - id: h
+    label_jp: ピー機の使い方を教えてもらっています。
+  correct_ids:
+  - b
+  - c
+  - d
+  - g
+  choose_mode: all
 - id: A10
   kind: listening
   book_activity: 10
@@ -360,7 +489,7 @@ activities:
   - 仕事はどうですか。
   - やり方がわかりません
   - もう終わりました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL13 activity 10: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 分ぐらいで終わりそうです
     tags:
@@ -377,10 +506,32 @@ activities:
   - jp: もう終わりました
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL13 activity 10: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL13 activity 10: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 困ったことは何ですか。
+  - id: b
+    label_jp: あのう、トイレットペーパーがなくなったんですが……。
+  - id: c
+    label_jp: 分ぐらいで終わりそうです
+  - id: d
+    label_jp: もう終わりました
+  - id: e
+    label_jp: 仕事はどうですか。
+  - id: f
+    label_jp: やり方がわかりません
+  - id: g
+    label_jp: 会議の準備をします。
+  - id: h
+    label_jp: 終わりました
+  correct_ids:
+  - c
+  - d
+  - e
+  - f
+  choose_mode: all
 - id: A11
   kind: grammar_form
   book_activity: 11
@@ -393,7 +544,7 @@ activities:
   - あと1
   - 分ぐらいで終わりそうです
   - 終わりました
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: どのぐらいかかりですか？
     tags:
@@ -409,7 +560,7 @@ activities:
   - jp: 終わりました
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A12
   kind: speaking
   book_activity: 12
@@ -643,7 +794,7 @@ activities:
   - 、ないです。
   - 分ぐらいで終わりそうです
   - どう答えていました
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: （コピー機
     tags:
@@ -659,7 +810,7 @@ activities:
   - jp: どう答えていました
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A19
   kind: speaking
   book_activity: 19
@@ -708,7 +859,7 @@ activities:
   - 指示を聞いています。
   - に戻します。
   - 資料はどこに戻します
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL13 activity 20: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 分ぐらいで終わりそうです
     tags:
@@ -726,10 +877,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL13 activity 20: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL13 activity 20: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: あ、まだです。
+  - id: b
+    label_jp: 分ぐらいで終わりそうです
+  - id: c
+    label_jp: 西村さんは何をします
+  - id: d
+    label_jp: 資料はどこに戻します
+  - id: e
+    label_jp: 指示を聞いています。
+  - id: f
+    label_jp: どう？だいじょうぶ？
+  - id: g
+    label_jp: 終わりました
+  - id: h
+    label_jp: に戻します。
+  correct_ids:
+  - b
+  - d
+  - e
+  - h
+  choose_mode: all
 - id: A21
   kind: listening
   book_activity: 21
@@ -742,7 +915,7 @@ activities:
   - どう並べます
   - もう終わりましたか？
   - あ、まだです。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL13 activity 21: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 分ぐらいで終わりそうです
     tags:
@@ -759,10 +932,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL13 activity 21: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL13 activity 21: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 終わりました
+  - id: b
+    label_jp: 、ないです。
+  - id: c
+    label_jp: あ、まだです。
+  - id: d
+    label_jp: 資料はどこに戻します
+  - id: e
+    label_jp: 分ぐらいで終わりそうです
+  - id: f
+    label_jp: どう並べます
+  - id: g
+    label_jp: もう終わりましたか？
+  - id: h
+    label_jp: 指示を聞いています。
+  correct_ids:
+  - c
+  - e
+  - f
+  - g
+  choose_mode: all
 - id: A22
   kind: listening
   book_activity: 22
@@ -775,7 +970,7 @@ activities:
   - 会議の準備をします。
   - アリさんは何をします
   - 西村さんは何をします
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL13 activity 22: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 分ぐらいで終わりそうです
     tags:
@@ -793,10 +988,139 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL13 activity 22: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL13 activity 22: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 分ぐらいで終わりそうです
+  - id: b
+    label_jp: アリさんは何をします
+  - id: c
+    label_jp: じゃあ、管理室に連絡してください。
+  - id: d
+    label_jp: あ、そう？じゃあ、倉庫にあるから、取って来てくれる？
+  - id: e
+    label_jp: 会議の準備をします。
+  - id: f
+    label_jp: に戻します。
+  - id: g
+    label_jp: 西村さんは何をします
+  - id: h
+    label_jp: 本当？じゃあ、業者に電話してくれる？
+  correct_ids:
+  - a
+  - b
+  - e
+  - g
+  choose_mode: all
+- id: KANJI
+  kind: kanji
+  book_activity: 22.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - コピー機
+  - 悪い
+  - 数字
+  - 動く
+  - 電気
+  - 使う
+  - 音
+  - 終わる
+  - 机
+  - お願いします
+  - 都合
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 283
+  kanji_items: &id006
+  - kanji: コピー機
+    reading: き
+    gloss_en: copy machine
+  - kanji: 悪い
+    reading: わるい
+    gloss_en: bad
+  - kanji: 数字
+    reading: すうじ
+    gloss_en: number
+  - kanji: 動く
+    reading: うごく
+    gloss_en: to move / work (machine)
+  - kanji: 電気
+    reading: でんき
+    gloss_en: electricity / light
+  - kanji: 使う
+    reading: つかう
+    gloss_en: to use
+  - kanji: 音
+    reading: おと
+    gloss_en: sound
+  - kanji: 終わる
+    reading: おわる
+    gloss_en: to end / finish
+  - kanji: 机
+    reading: つくえ
+    gloss_en: desk
+  - kanji: お願いします
+    reading: おねがいします
+    gloss_en: please (request)
+  - kanji: 都合
+    reading: つごう
+    gloss_en: convenience / circumstances
+  kanji_sentences: &id007
+  - 電気がつかないんですが……。
+  - この机を使ってください。
+  - ここに原稿をセットして、枚数を数字で入れてください。
+  - コピー機が動かないんですが……。
+  - Ａ：終わりました。Ｂ：じゃあ、次はこれをお願いします。
+  - すみません。明日は、都合が悪いです。
+  - パソコンから変な音がするんですが……。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 23
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'What kind of work are you good at? What kind of work are you not good at?
+
+    Can tell your supervisor what is going on when you have a problem at work.
+
+    Listen to the dialogs.
+
+    There was a problem at work.
+
+    What kind of problem? Choose from a-d.
+
+    Listen to the dialogs again. What kind of instructions did each person receive? Choose from ア-エ.
+
+    Check the words and listen to the dialogs again.
+
+    コ ー ヒー マ シ ーン coffeemaker ｜ パソコン personal computer ｜ とりあえず tentatively
+
+    Listen to the recording and fill in the blanks.
+
+    What expression was used to explain the problem?
+
+    What form was used before ～んですが?
+
+    Focus on the expressions used and listen to the dialogs again.
+
+    Report the problem.
+
+    Listen to the dialog.
+
+    Shadow the dialog.
+
+    Have a practice conversation using the contents of 1 .
+
+    Role-play this situation. Think about a problem that could actually occur and talk about it.
+
+    Can briefly answer when asked about the s'
+  picture_has_image: false
 grammar:
 - point: ～んですが
   worksheet_pages:
@@ -882,8 +1206,7 @@ vocab: []
 quiz_bank:
 - type: roleplay
   can_do_id: CD_EL13_43
-  prompt_en: 'Demonstrate: Can tell your supervisor what is going on when you have
-    a problem at work.'
+  prompt_en: 'Demonstrate: Can tell your supervisor what is going on when you have a problem at work.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL13_44
@@ -891,13 +1214,11 @@ quiz_bank:
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL13_45
-  prompt_en: 'Demonstrate: Can ask about and understand, for example, how to use a
-    machine at work.'
+  prompt_en: 'Demonstrate: Can ask about and understand, for example, how to use a machine at work.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL13_46
-  prompt_en: 'Demonstrate: Can listen to and understand explanations and instructions
-    on tasks at work.'
+  prompt_en: 'Demonstrate: Can listen to and understand explanations and instructions on tasks at work.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL13_47
@@ -915,8 +1236,7 @@ quiz_scenarios:
 - can_do_id: CD_EL13_43
   partner_jp: もう一度、お願いします。
   expected: *id001
-  hint_en: Again — Can tell your supervisor what is going on when you have a problem
-    at work.
+  hint_en: Again — Can tell your supervisor what is going on when you have a problem at work.
 - can_do_id: CD_EL13_44
   partner_jp: 困ったことは何ですか。
   expected: &id002
@@ -940,8 +1260,7 @@ quiz_scenarios:
 - can_do_id: CD_EL13_45
   partner_jp: もう一度、お願いします。
   expected: *id003
-  hint_en: Again — Can ask about and understand, for example, how to use a machine
-    at work.
+  hint_en: Again — Can ask about and understand, for example, how to use a machine at work.
 - can_do_id: CD_EL13_46
   partner_jp: 困ったことは何ですか。
   expected: &id004
@@ -949,13 +1268,11 @@ quiz_scenarios:
   - 分ぐらいで終わりそうです
   - どんな形ですか。
   - あのう、トイレットペーパーがなくなったんですが……。
-  hint_en: Can listen to and understand explanations and instructions on tasks at
-    work.
+  hint_en: Can listen to and understand explanations and instructions on tasks at work.
 - can_do_id: CD_EL13_46
   partner_jp: もう一度、お願いします。
   expected: *id004
-  hint_en: Again — Can listen to and understand explanations and instructions on tasks
-    at work.
+  hint_en: Again — Can listen to and understand explanations and instructions on tasks at work.
 - can_do_id: CD_EL13_47
   partner_jp: 分ぐらいで終わりそうです。
   expected: &id005
@@ -968,8 +1285,7 @@ quiz_scenarios:
   partner_jp: もう一度、お願いします。
   expected: *id005
   hint_en: Again — Can read and understand a simple email for work.
-english_notes: 'What kind of work are you good at? What kind of work are you not good
-  at?
+english_notes: 'What kind of work are you good at? What kind of work are you not good at?
 
   Can tell your supervisor what is going on when you have a problem at work.
 
@@ -979,8 +1295,7 @@ english_notes: 'What kind of work are you good at? What kind of work are you not
 
   What kind of problem? Choose from a-d.
 
-  Listen to the dialogs again. What kind of instructions did each person receive?
-  Choose from ア-エ.
+  Listen to the dialogs again. What kind of instructions did each person receive? Choose from ア-エ.
 
   Check the words and listen to the dialogs again.
 
@@ -1002,8 +1317,7 @@ english_notes: 'What kind of work are you good at? What kind of work are you not
 
   Have a practice conversation using the contents of 1 .
 
-  Role-play this situation. Think about a problem that could actually occur and talk
-  about it.
+  Role-play this situation. Think about a problem that could actually occur and talk about it.
 
   Can briefly answer when asked about the status of work.
 
@@ -1017,3 +1331,7 @@ english_notes: 'What kind of work are you good at? What kind of work are you not
 
   で きる finish'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 283
+  items: *id006
+  sentences: *id007

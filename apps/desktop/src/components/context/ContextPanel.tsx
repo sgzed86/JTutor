@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { TutorPayload } from "../../api/types";
+import { shouldShowBookOnStage } from "../stage/BookPage";
 import { AskYukiTab } from "./AskYukiTab";
 import { NotesTab } from "./NotesTab";
 import { ScriptTab } from "./ScriptTab";
@@ -32,9 +33,15 @@ export function ContextPanel({
   onSpeak: (text: string) => void;
 }) {
   const [tab, setTab] = useState<Tab>("ask");
+  const bookOnStage = shouldShowBookOnStage(payload);
+
+  // Reset to Ask when the lesson changes.
+  useEffect(() => {
+    setTab("ask");
+  }, [payload?.lesson_id]);
 
   return (
-    <aside className="context" aria-label="Lesson context">
+    <aside className="context" aria-label="Lesson helpers" data-book-on-stage={bookOnStage ? "1" : "0"}>
       <div className="tabs" role="tablist">
         {TABS.map((t) => (
           <button

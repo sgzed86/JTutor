@@ -28,6 +28,7 @@ export type TutorPhase =
   | { kind: "speaking"; line: string }
   | { kind: "playing_audio"; index: number; total: number; path: string }
   | { kind: "awaiting_speech"; target: string | null }
+  | { kind: "awaiting_text"; prompt: string | null; blankCount: number }
   | { kind: "recording"; startedAt: number }
   | { kind: "transcribing" }
   | { kind: "grading" }
@@ -43,6 +44,7 @@ export type PrimaryAction =
   | { id: "skip_audio"; label: "Skip audio" }
   | { id: "record"; label: string }
   | { id: "stop_recording"; label: "Stop" }
+  | { id: "submit_text"; label: "Check answers" }
   | { id: "cancel"; label: "Cancel" }
   | { id: "next"; label: "Next" }
   | { id: "rate"; label: "Rate yourself" }
@@ -89,6 +91,13 @@ export function phaseFor(input: {
   if (expectsSpeech(payload.step)) {
     return { kind: "awaiting_speech", target: payload.step?.say_target_jp ?? null };
   }
+  if (expectsText(payload.step)) {
+    return {
+      kind: "awaiting_text",
+      prompt: payload.step?.blank_prompt_jp ?? null,
+      blankCount: payload.step?.blank_count ?? 1,
+    };
+  }
   return { kind: "idle_can_continue" };
 }
 
@@ -98,12 +107,21 @@ export function expectsSpeech(step: Step | null | undefined): boolean {
   return Boolean(step.expects_speech ?? step.expect_speech);
 }
 
+export function expectsText(step: Step | null | undefined): boolean {
+  if (!step) return false;
+  if (Boolean(step.expects_text) || Boolean(step.expects_notes)) return true;
+  return ["fill", "choose", "note", "read_check", "kanji_type"].includes(step.book_substep || "");
+}
+
 export function autoAdvances(step: Step | null | undefined): boolean {
   if (!step) return false;
   return Boolean(step.auto_advance ?? step.auto_advance_after_audio);
 }
 
-export function presentationFor(phase: TutorPhase, opts: { micMode: "hold" | "toggle"; lastGrade?: Grade | null }): PhasePresentation {
+export function presentationFor(
+  phase: TutorPhase,
+  opts: { micMode: "hold" | "toggle"; lastGrade?: Grade | null; retryChoicePending?: boolean },
+): PhasePresentation {
   switch (phase.kind) {
     case "loading":
       return { mood: "idle", status: "Opening the lesson…", primary: { id: "next", label: "Next" }, busy: true, showSpinner: true };
@@ -118,10 +136,27 @@ export function presentationFor(phase: TutorPhase, opts: { micMode: "hold" | "to
         showSpinner: false,
       };
     case "awaiting_speech":
+      if (opts.retryChoicePending) {
+        return {
+          mood: "encouraging",
+          status: "What next?",
+          primary: { id: "record", label: "Try again" },
+          busy: false,
+          showSpinner: false,
+        };
+      }
       return {
         mood: "listening",
         status: "Your turn",
-        primary: { id: "record", label: opts.micMode === "hold" ? "Hold to speak" : "Start speaking" },
+        primary: { id: "record", label: opts.micMode === "hold" ? "Hold to speak" : "Tap to speak" },
+        busy: false,
+        showSpinner: false,
+      };
+    case "awaiting_text":
+      return {
+        mood: "listening",
+        status: "Fill in the blanks",
+        primary: { id: "submit_text", label: "Check answers" },
         busy: false,
         showSpinner: false,
       };

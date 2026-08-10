@@ -11,8 +11,7 @@ intro_questions:
 - jp: Please tell me how to get to the post office について、あなたの けいけんは？
   en: Thinking about "Towns and Neighborhoods" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can ask and understand directions. What do you want to
-    be able to do?'
+  en: 'This lesson aims at: Can ask and understand directions. What do you want to be able to do?'
 can_dos:
 - id: CD_EL06_17
   can_do_number: 17
@@ -32,8 +31,8 @@ can_dos:
     min_score: 80
 - id: CD_EL06_19
   can_do_number: 19
-  statement_en: Can give directions to the destination by car when, for example, some
-    - one gives you a ride.
+  statement_en: Can give directions to the destination by car when, for example, some - one gives you
+    a ride.
   statement_jp: ほかの人に道をたずねて、その答えを理解することができる。
   activity_hint: ''
   rubric:
@@ -55,7 +54,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -71,7 +70,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A3
   kind: vocabulary
   book_activity: 3
@@ -87,7 +86,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A4
   kind: vocabulary
   book_activity: 4
@@ -103,7 +102,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A5
   kind: listening
   book_activity: 5
@@ -147,7 +146,7 @@ activities:
   - すみません。バス停はどこですか？
   - 次の角を右に曲がってください。
   - 次の角を右ですね。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL06 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 人に道を聞いています。
     tags:
@@ -165,10 +164,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL06 activity 6: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL06 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: はい。
+  - id: b
+    label_jp: すみません。バス停はどこですか？
+  - id: c
+    label_jp: 科学博物館です。
+  - id: d
+    label_jp: 次の角を右に曲がってください。
+  - id: e
+    label_jp: 次の角を右ですね。
+  - id: f
+    label_jp: の店への行き方聞いています。
+  - id: g
+    label_jp: 聞かれたりしたことがあります
+  - id: h
+    label_jp: 人に道を聞いています。
+  correct_ids:
+  - b
+  - d
+  - e
+  - h
+  choose_mode: all
 - id: A7
   kind: listening
   book_activity: 7
@@ -181,7 +202,7 @@ activities:
   - すみません。バス停はどこですか？
   - 次の角を右に曲がってください。
   - 次の角を右ですね。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL06 activity 7: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 人に道を聞いています。
     tags:
@@ -199,10 +220,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL06 activity 7: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL06 activity 7: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 人に道を聞いています。
+  - id: b
+    label_jp: 聞かれたりしたことがあります
+  - id: c
+    label_jp: 店はどこにあります
+  - id: d
+    label_jp: つ目です。
+  - id: e
+    label_jp: すみません。バス停はどこですか？
+  - id: f
+    label_jp: 次の角を右ですね。
+  - id: g
+    label_jp: お待ちしております
+  - id: h
+    label_jp: 次の角を右に曲がってください。
+  correct_ids:
+  - a
+  - e
+  - f
+  - h
+  choose_mode: all
 - id: A8
   kind: listening
   book_activity: 8
@@ -215,7 +258,7 @@ activities:
   - 行ったらいいですか？
   - つ目です。
   - 科学博物館です。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL06 activity 8: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 人に道を聞いています。
     tags:
@@ -233,10 +276,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL06 activity 8: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL06 activity 8: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 科学博物館です。
+  - id: b
+    label_jp: お待ちしております
+  - id: c
+    label_jp: 聞かれたりしたことがあります
+  - id: d
+    label_jp: つ目です。
+  - id: e
+    label_jp: 次の角を右に曲がってください。
+  - id: f
+    label_jp: すみません。バス停はどこですか？
+  - id: g
+    label_jp: 人に道を聞いています。
+  - id: h
+    label_jp: 行ったらいいですか？
+  correct_ids:
+  - a
+  - d
+  - g
+  - h
+  choose_mode: all
 - id: A9
   kind: grammar_form
   book_activity: 9
@@ -262,7 +327,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A10
   kind: vocabulary
   book_activity: 10
@@ -278,7 +343,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A11
   kind: vocabulary
   book_activity: 11
@@ -294,7 +359,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A12
   kind: listening
   book_activity: 12
@@ -307,7 +372,7 @@ activities:
   - の店への行き方聞いています。
   - 店はどこにあります
   - お待ちしております
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL06 activity 12: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 駅にいます。
     tags:
@@ -325,10 +390,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL06 activity 12: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL06 activity 12: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 行ったらいいですか？
+  - id: b
+    label_jp: 次の角を右ですね。
+  - id: c
+    label_jp: 店はどこにあります
+  - id: d
+    label_jp: の店への行き方聞いています。
+  - id: e
+    label_jp: 聞かれたりしたことがあります
+  - id: f
+    label_jp: お待ちしております
+  - id: g
+    label_jp: そちらに行きたいんです
+  - id: h
+    label_jp: 駅にいます。
+  correct_ids:
+  - c
+  - d
+  - f
+  - h
+  choose_mode: all
 - id: A13
   kind: conversation
   book_activity: 13
@@ -382,7 +469,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A15
   kind: speaking
   book_activity: 15
@@ -420,6 +507,127 @@ activities:
     tags:
     - short
     - polite
+- id: KANJI
+  kind: kanji
+  book_activity: 15.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 道
+  - 右
+  - 公園
+  - 左
+  - 銀行
+  - 近く
+  - お寺
+  - 車
+  - 神社
+  - 送る
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 143
+  kanji_items: &id004
+  - kanji: 道
+    reading: みち
+    gloss_en: road / way
+  - kanji: 右
+    reading: みぎ
+    gloss_en: right
+  - kanji: 公園
+    reading: こうえん
+    gloss_en: park
+  - kanji: 左
+    reading: ひだり
+    gloss_en: left
+  - kanji: 銀行
+    reading: ぎんこう
+    gloss_en: bank
+  - kanji: 近く
+    reading: ちかく
+    gloss_en: near / nearby
+  - kanji: お寺
+    reading: てら
+    gloss_en: temple
+  - kanji: 車
+    reading: くるま
+    gloss_en: car
+  - kanji: 神社
+    reading: じんじゃ
+    gloss_en: shrine
+  - kanji: 送る
+    reading: おくる
+    gloss_en: to send / see off
+  kanji_sentences: &id005
+  - Ａ：銀行はどこですか？Ｂ：この道をまっすぐ行ってください。
+  - 次の信号を左に曲がってください。
+  - 2つ目の角を右に曲がってください。
+  - Ａ：車で送りますよ。家はどの辺ですか？Ｂ：公園の近くです。
+  - 神社の隣にお寺があります。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 16
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Have you asked someone for directions or been asked for directions?
+
+    Can ask and understand directions.
+
+    Preparation for the words
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a-f.
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a-h.
+
+    f. 1
+
+    h. 3
+
+    g. 2
+
+    Listen to the dialogs.
+
+    Each person does not know how to get to their destination and is asking someone for directions.
+
+    Where are ①-④ located? Choose from a - d on the map.
+
+    Check the words and listen to the dialogs again.
+
+    ずっと without turning ｜ 市
+
+    立 municipal ｜ すぐ just ｜ 曲
+
+    がったところ after turning
+
+    a
+
+    b
+
+    c
+
+    d
+
+    Listen to the recording and fill in the blanks.
+
+    What expression was used to ask for directions?
+
+    What expression was used to give directions?
+
+    What expression was used to correct the other person?
+
+    Focus on the expressions used and listen to the dialogs again'
+  picture_has_image: false
 grammar:
 - point: N に 行
   worksheet_pages:
@@ -472,8 +680,8 @@ quiz_bank:
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL06_19
-  prompt_en: 'Demonstrate: Can give directions to the destination by car when, for
-    example, some - one gives you a ride.'
+  prompt_en: 'Demonstrate: Can give directions to the destination by car when, for example, some - one
+    gives you a ride.'
   spoken_required: true
 quiz_scenarios:
 - can_do_id: CD_EL06_17
@@ -507,13 +715,11 @@ quiz_scenarios:
   - 人に道を聞いています。
   - すみません。バス停はどこですか？
   - 次の角を右に曲がってください。
-  hint_en: Can give directions to the destination by car when, for example, some -
-    one gives you a ride.
+  hint_en: Can give directions to the destination by car when, for example, some - one gives you a ride.
 - can_do_id: CD_EL06_19
   partner_jp: もう一度、お願いします。
   expected: *id003
-  hint_en: Again — Can give directions to the destination by car when, for example,
-    some - one give
+  hint_en: Again — Can give directions to the destination by car when, for example, some - one give
 english_notes: 'Have you asked someone for directions or been asked for directions?
 
   Can ask and understand directions.
@@ -540,8 +746,7 @@ english_notes: 'Have you asked someone for directions or been asked for directio
 
   Listen to the dialogs.
 
-  Each person does not know how to get to their destination and is asking someone
-  for directions.
+  Each person does not know how to get to their destination and is asking someone for directions.
 
   Where are ①-④ located? Choose from a - d on the map.
 
@@ -571,3 +776,7 @@ english_notes: 'Have you asked someone for directions or been asked for directio
 
   Focus on the expressions used and listen to the dialogs again.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 143
+  items: *id004
+  sentences: *id005

@@ -49,7 +49,7 @@ activities:
   key_phrases:
   - 1いらっしゃいますえおうかがいしますほっと高評価お願いしますほっと高評価ですねサイズはSサイズお願いしますこちらでお目仕上がりですか
   - はい
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Listen and type brief notes (who / what / where).
   phrase_meta:
   - jp: 1いらっしゃいますえおうかがいしますほっと高評価お願いしますほっと高評価ですねサイズはSサイズお願いしますこちらでお目仕上がりですか
     tags:
@@ -58,7 +58,9 @@ activities:
   - jp: はい
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: note_take
+  note_keywords:
+  - はい
 - id: A2
   kind: listening
   book_activity: 2
@@ -69,7 +71,7 @@ activities:
   key_phrases:
   - にいらっしゃいますえーチーズバーガーとテリアキバーガーとフィッシュバーガーくださいこちらでおめし上がりですか
   - いえ、テイカーをとでおもち帰りですねありがとうございます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L06 activity 2: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: にいらっしゃいますえーチーズバーガーとテリアキバーガーとフィッシュバーガーくださいこちらでおめし上がりですか
     tags:
@@ -79,9 +81,19 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L06 activity 2: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: はい、お待ちします
+  - id: b
+    label_jp: いえ、テイカーをとでおもち帰りですねありがとうございます
+  - id: c
+    label_jp: 2緑ませんはいマヨネイズありますか
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A3
   kind: listening
   book_activity: 3
@@ -93,7 +105,7 @@ activities:
   - さんいらっしゃいますねおうかがしますはいえーとこれくださいチキンバーガーのセットですねドリンクは何になりますか
   - じゃあウロンちゃんお願いしますこちらでおめし上がりですか
   - はいここで
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L06 activity 3: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: さんいらっしゃいますねおうかがしますはいえーとこれくださいチキンバーガーのセットですねドリンクは何になりますか
     tags:
@@ -107,9 +119,24 @@ activities:
   - jp: はいここで
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L06 activity 3: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: じゃあウロンちゃんお願いしますこちらでおめし上がりですか
+  - id: b
+    label_jp: ここ、いいですか
+  - id: c
+    label_jp: はいここで
+  - id: d
+    label_jp: はい、ここでありがとうございます
+  - id: e
+    label_jp: ここ
+  correct_ids:
+  - a
+  - c
+  choose_mode: all
 - id: A4
   kind: grammar_form
   book_activity: 4
@@ -118,14 +145,17 @@ activities:
   audio:
   - assets/audio/X_[06-04]_katachi.mp3
   key_phrases:
-  - コットコーヒーをお願いしますSサイズをお願いしますチーズバーガーとテリアキバーガーと一周バーガーくださいこれください
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - ホットコーヒー、(3)何を注文したいですか。
+  - Sサイズ、(3)何を注文したいですか。
+  - チーズバーガーと、てりやきバーガーと、フィッシュバーガー、(3)何を注文したいですか。
+  - これ、(3)何を注文したいですか。
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: コットコーヒーをお願いしますSサイズをお願いしますチーズバーガーとテリアキバーガーと一周バーガーくださいこれください
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A5
   kind: speaking
   book_activity: 5
@@ -249,7 +279,7 @@ activities:
   - 私はうどんにします
   - 私はカレーにします
   - 何にしますか
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: 私はうどんにします
     tags:
@@ -263,7 +293,21 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: 何＿か？
+    answers:
+    - にします
+    full_jp: 何にしますか？
+  - prompt_jp: 私は、うどん＿。
+    answers:
+    - にします
+    full_jp: 私は、うどんにします。
+  - prompt_jp: 私は、カレー＿。
+    answers:
+    - にします
+    full_jp: 私は、カレーにします。
+  fill_pdf_page: 165
 - id: A10
   kind: speaking
   book_activity: 10
@@ -365,7 +409,7 @@ activities:
   - jp: いざかやの目にうえさしみビカラーゲシー焼き取りビエダマメいいナマビいるフフロンちゃん
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A14
   kind: vocabulary
   book_activity: 14
@@ -381,7 +425,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A15
   kind: conversation
   book_activity: 15
@@ -440,7 +484,7 @@ activities:
   - jp: ひとつ二つ三つ四つ一つ三つ七つやつここのついくつ
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A18
   kind: speaking
   book_activity: 18
@@ -529,6 +573,86 @@ activities:
     jp: はい、お持ちします
   dialog_listen_audio:
   - assets/audio/X_[06-20]_hanasu2-2.mp3
+- id: KANJI
+  kind: kanji
+  book_activity: 20.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 魚
+  - 肉
+  - 好き
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 174
+  kanji_items: &id001
+  - kanji: 魚
+    reading: さかな
+    gloss_en: fish
+  - kanji: 肉
+    reading: にく
+    gloss_en: meat
+  - kanji: 好き
+    reading: さかなにくすきな
+    gloss_en: like
+  kanji_sentences: &id002
+  - Ａ：何
+  - Ａ：魚、どうですか？
+  - ビールが好きです。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 21
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Where do you go when you eat out?
+
+    Can look at a menu in a fast food restaurant and understand what is available.
+
+    Read the menu.
+
+    You are looking at the menu at a hamburger restaurant.
+
+    What food and drink are there?
+
+    ハンバーガー hamburger ｜ ダブル double ｜ チーズ cheese ｜ てりやき teriyaki
+
+    oolong tea
+
+    品 single item ｜ セット set ｜ S
+
+    ／ M
+
+    ／ L
+
+    small / medium / large
+
+    What types of hamburger are there? What is available on the set menu?
+
+    What do you want to order?
+
+    Can order in a fast food restaurant.
+
+    Listen to the dialogs.
+
+    Three customers are ordering at a hamburger restaurant.
+
+    What did they each order? Look at the hamburger restaurant menu in 1 and take notes.
+
+    Listen to the dialogs again.
+
+    Will they eat at the restaurant or have a takeout? Write IN if they are eating in, and OUT if they
+    are taking out.
+
+    Would you like to eat in?
+
+    Check the words and listen to the dialogs again.
+
+    テイクアウトで To takeout, please. ｜ ここで Eat in'
+  picture_has_image: false
 grammar:
 - point: N、お願
   worksheet_pages:
@@ -782,3 +906,7 @@ english_notes: 'Where do you go when you eat out?
 
   Focus on the expressions used and listen to the dialogs again.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 174
+  items: *id001
+  sentences: *id002

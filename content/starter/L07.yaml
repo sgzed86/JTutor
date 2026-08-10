@@ -54,7 +54,7 @@ activities:
   - jp: 日本の家え現感ビお風呂しトイレビ海団いい部屋フベランダバルコニジダイドコロキッチンHにははい今リビングジェ1回K2回
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -70,7 +70,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A3
   kind: listening
   book_activity: 3
@@ -99,7 +99,7 @@ activities:
   - 2回に、体3の部屋があります
   - ここは管理にしつです
   - ここに、回団があります
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 1回に、手上がよっつあります
     tags:
@@ -117,7 +117,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A5
   kind: vocabulary
   book_activity: 5
@@ -132,7 +132,7 @@ activities:
   - jp: カデンカグえやこんビレゾーコし電子レンジリ水判期いいトースターフベッドジフトンHテーブルイスジェセンタッキケテレビエルY5
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A6
   kind: vocabulary
   book_activity: 6
@@ -148,7 +148,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A7
   kind: listening
   book_activity: 7
@@ -161,7 +161,7 @@ activities:
   - あトースターはありますそうですか
   - 水半気はありますか
   - はいここです分かりました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L07 activity 7: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 一これレーズオーコですみんなで使ってくださいはいあの、電子レンジはありますかありますここですすみませんトースターはありますか
     tags:
@@ -179,9 +179,29 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L07 activity 7: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ここは管理にしつです
+  - id: b
+    label_jp: あ、ベッドはないです
+  - id: c
+    label_jp: 水半気はありますか
+  - id: d
+    label_jp: 電子連治はないです
+  - id: e
+    label_jp: 1回に、手上がよっつあります
+  - id: f
+    label_jp: はいここです分かりました
+  - id: g
+    label_jp: あトースターはありますそうですか
+  correct_ids:
+  - c
+  - f
+  - g
+  choose_mode: all
 - id: A8
   kind: listening
   book_activity: 8
@@ -194,7 +214,7 @@ activities:
   - ここに、ふとんがありますよ
   - しよう、くどにあります
   - あ、ベッドはないです
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L07 activity 8: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: ここは、ソンさんの部屋です
     tags:
@@ -213,9 +233,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L07 activity 8: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 長花に住んでいます
+  - id: b
+    label_jp: はい
+  - id: c
+    label_jp: しよう、くどにあります
+  - id: d
+    label_jp: ここに、ふとんがありますよ
+  - id: e
+    label_jp: あります通スターはありますか
+  - id: f
+    label_jp: あ、ベッドはないです
+  - id: g
+    label_jp: あまり静かじゃないです
+  - id: h
+    label_jp: ここは、ソンさんの部屋です
+  correct_ids:
+  - c
+  - d
+  - f
+  - h
+  choose_mode: all
 - id: A9
   kind: grammar_form
   book_activity: 9
@@ -228,7 +271,7 @@ activities:
   - 通スターはありませんベッドは
   - ベッドはないですテレビは
   - 電子連治はありますか
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: あります通スターはありますか
     tags:
@@ -246,7 +289,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A10
   kind: speaking
   book_activity: 10
@@ -349,7 +392,7 @@ activities:
   - jp: どんなへ
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A14
   kind: vocabulary
   book_activity: 14
@@ -365,7 +408,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A15
   kind: listening
   book_activity: 15
@@ -378,7 +421,7 @@ activities:
   - 家はどうですか
   - そうですか
   - 長花に住んでいます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L07 activity 15: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 1大都さんはどこに住んでいますか
     tags:
@@ -396,9 +439,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L07 activity 15: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: さんあなたのうちは会社の近く
+  - id: b
+    label_jp: そうですか
+  - id: c
+    label_jp: 家はどうですか
+  - id: d
+    label_jp: え、広くないですそうですか
+  - id: e
+    label_jp: 長花に住んでいます
+  - id: f
+    label_jp: でも、とても静かです近くに声がありますそうですか
+  - id: g
+    label_jp: はい言えばどう
+  - id: h
+    label_jp: 1大都さんはどこに住んでいますか
+  correct_ids:
+  - b
+  - c
+  - e
+  - h
+  choose_mode: all
 - id: A16
   kind: listening
   book_activity: 16
@@ -410,7 +476,7 @@ activities:
   - みってやさんはどこに住んでいますか
   - シンマチですいえはどうですか
   - とても綺麗ですいいですね
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L07 activity 16: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: みってやさんはどこに住んでいますか
     tags:
@@ -424,9 +490,29 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L07 activity 16: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: シンマチですいえはどうですか
+  - id: b
+    label_jp: とても綺麗ですいいですね
+  - id: c
+    label_jp: 広いですか
+  - id: d
+    label_jp: 静かですか
+  - id: e
+    label_jp: みってやさんはどこに住んでいますか
+  - id: f
+    label_jp: 電子連治はありますか
+  - id: g
+    label_jp: あ、ベッドはないです
+  correct_ids:
+  - a
+  - b
+  - e
+  choose_mode: all
 - id: A17
   kind: listening
   book_activity: 17
@@ -438,7 +524,7 @@ activities:
   - さんあなたのうちは会社の近く
   - はい言えばどう
   - 静かですそう
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L07 activity 17: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: さんあなたのうちは会社の近く
     tags:
@@ -450,9 +536,29 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L07 activity 17: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 静かですそう
+  - id: b
+    label_jp: はい言えばどう
+  - id: c
+    label_jp: 長花に住んでいます
+  - id: d
+    label_jp: 静かですか
+  - id: e
+    label_jp: はいここです分かりました
+  - id: f
+    label_jp: しよう、くどにあります
+  - id: g
+    label_jp: さんあなたのうちは会社の近く
+  correct_ids:
+  - a
+  - b
+  - g
+  choose_mode: all
 - id: A18
   kind: listening
   book_activity: 18
@@ -465,7 +571,7 @@ activities:
   - 4NODEMOさんの家は、見なみく
   - 家はどう
   - はい
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L07 activity 18: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: ちょっとふろいですでも広いですん
     tags:
@@ -480,9 +586,29 @@ activities:
   - jp: はい
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L07 activity 18: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: アパートは静かですか
+  - id: b
+    label_jp: 家はどう
+  - id: c
+    label_jp: あります通スターはありますか
+  - id: d
+    label_jp: さんあなたのうちは会社の近く
+  - id: e
+    label_jp: はい
+  - id: f
+    label_jp: ちょっとふろいですでも広いですん
+  - id: g
+    label_jp: 1大都さんはどこに住んでいますか
+  correct_ids:
+  - b
+  - e
+  - f
+  choose_mode: all
 - id: A19
   kind: grammar_form
   book_activity: 19
@@ -493,7 +619,7 @@ activities:
   key_phrases:
   - ちょっとせまいですちょっとふるいですでも広いですとても綺麗ですしずかです
   - 言えばどうですか
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: ちょっとせまいですちょっとふるいですでも広いですとても綺麗ですしずかです
     tags:
@@ -503,7 +629,12 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: ちょっ＿せまいですちょっとふるいですでも広いですとても綺麗ですしずかです。
+    answers:
+    - と
+    full_jp: ちょっとせまいですちょっとふるいですでも広いですとても綺麗ですしずかです
 - id: A20
   kind: speaking
   book_activity: 20
@@ -586,7 +717,7 @@ activities:
   - 一ビサルさんはどこに住んでいますか会社の両に住んでいます広いですか
   - でも、とても静かです近くに声がありますそうですか
   - え、広くないですそうですか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L07 activity 22: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 一ビサルさんはどこに住んでいますか会社の両に住んでいます広いですか
     tags:
@@ -600,9 +731,29 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L07 activity 22: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: でも、とても静かです近くに声がありますそうですか
+  - id: b
+    label_jp: しよう、くどにあります
+  - id: c
+    label_jp: 一ビサルさんはどこに住んでいますか会社の両に住んでいます広いですか
+  - id: d
+    label_jp: あ、ベッドはないです
+  - id: e
+    label_jp: え、広くないですそうですか
+  - id: f
+    label_jp: 1回に、手上がよっつあります
+  - id: g
+    label_jp: 通スターはありませんベッドは
+  correct_ids:
+  - a
+  - c
+  - e
+  choose_mode: all
 - id: A23
   kind: listening
   book_activity: 23
@@ -615,7 +766,7 @@ activities:
   - 綺麗ですか
   - そうですか
   - 静かですか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L07 activity 23: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: にオルニさんは私は、きたまちのアパートに住んでいます
     tags:
@@ -633,9 +784,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L07 activity 23: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: にオルニさんは私は、きたまちのアパートに住んでいます
+  - id: b
+    label_jp: そうですか
+  - id: c
+    label_jp: 死ん間ちです言えばどうですか
+  - id: d
+    label_jp: ここは、ソンさんの部屋です
+  - id: e
+    label_jp: いや、静かじゃないですそうですか
+  - id: f
+    label_jp: 綺麗ですか
+  - id: g
+    label_jp: 静かですか
+  - id: h
+    label_jp: あります
+  correct_ids:
+  - a
+  - b
+  - f
+  - g
+  choose_mode: all
 - id: A24
   kind: listening
   book_activity: 24
@@ -648,7 +822,7 @@ activities:
   - いやー、新しくないですとても古いですそうですか
   - さん前田さんはマンションですか
   - 地獄にお手輩があります大手輩もとても古いですへぇ
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L07 activity 24: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: うちは行っこだってすごいですねでも大きくないですそうですか
     tags:
@@ -666,9 +840,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L07 activity 24: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 1大都さんはどこに住んでいますか
+  - id: b
+    label_jp: とても綺麗ですいいですね
+  - id: c
+    label_jp: さん前田さんはマンションですか
+  - id: d
+    label_jp: うちは行っこだってすごいですねでも大きくないですそうですか
+  - id: e
+    label_jp: あります通スターはありますか
+  - id: f
+    label_jp: いやー、新しくないですとても古いですそうですか
+  - id: g
+    label_jp: 地獄にお手輩があります大手輩もとても古いですへぇ
+  - id: h
+    label_jp: 綺麗ですか
+  correct_ids:
+  - c
+  - d
+  - f
+  - g
+  choose_mode: all
 - id: A25
   kind: grammar_form
   book_activity: 25
@@ -681,7 +878,7 @@ activities:
   - アパートは静かですか
   - 言えば大きくないです
   - いや、新しくないです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: あまり静かじゃないです
     tags:
@@ -699,7 +896,21 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: いえ、＿です。
+    answers:
+    - いや、新しくない
+    full_jp: いえ、いや、新しくないです。
+  - prompt_jp: あまり＿です。
+    answers:
+    - 静かじゃない
+    full_jp: あまり静かじゃないです。
+  - prompt_jp: いえ、＿です。
+    answers:
+    - いや、新しくない
+    full_jp: いえ、いや、新しくないです。
+  fill_pdf_page: 195
 - id: A26
   kind: speaking
   book_activity: 26
@@ -814,6 +1025,88 @@ activities:
     jp: 近くに学校があります
   dialog_listen_audio:
   - assets/audio/X_[07-28]_hanasu3.mp3
+- id: KANJI
+  kind: kanji
+  book_activity: 28.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 家
+  - 新しい
+  - 広い
+  - 古い
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 204
+  kanji_items: &id001
+  - kanji: 家
+    reading: いえ
+    gloss_en: house / home
+  - kanji: 新しい
+    reading: いえあたらしい
+    gloss_en: new
+  - kanji: 広い
+    reading: ひろい
+    gloss_en: spacious / wide
+  - kanji: 古い
+    reading: ひろいふるい
+    gloss_en: old
+  kanji_sentences: &id002
+  - Ａ：家はどうですか？
+  - Ａ：寮
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 29
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'What kind of house do you live in at the moment?
+
+    Can listen to simple explanations when being shown around a house and understand the layout.
+
+    Preparation for the words
+
+    Japanese houses 】
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a–k.
+
+    Listen to the dialog.
+
+    Nakagawa-san is showing Son-san and Thanh-san around
+
+    the company dorm where they are going to live.
+
+    In what order are they shown the rooms inside the dorm? Write down the order in the blanks.
+
+    Check the words and listen to the dialog again.
+
+    food
+
+    ってくだ さい Please come in. （入
+
+    る come in）
+
+    いでください Please take them off. （脱
+
+    ぐ take off）
+
+    話になります I’ll be in your care. (polite expression used when meeting someone who will look after you)
+
+    Listen to the recording and fill in the blanks.
+
+    What expression was used when showing them the rooms?
+
+    What expression was used when talking about the facilities?
+
+    Focu'
+  picture_has_image: false
 grammar:
 - point: つあります」
   worksheet_pages:
@@ -1062,3 +1355,7 @@ english_notes: 'What kind of house do you live in at the moment?
 
   Listen and choose from a–l.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 204
+  items: *id001
+  sentences: *id002

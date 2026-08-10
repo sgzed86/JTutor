@@ -79,7 +79,34 @@ activities:
   - jp: いもうと
     tags:
     - short
-  book_mode: listen_repeat_all
+  book_mode: vocab_drill
+  picture_has_image: false
+  glosses_en:
+    ちち: father (one's own)
+    はは: mother (one's own)
+    あに: older brother (one's own)
+    あね: older sister (one's own)
+    おとうと: younger brother
+    いもうと: younger sister
+    おっと: husband
+    つま: wife
+    こども: child / children
+- id: A1_PRON
+  kind: pronunciation
+  book_activity: 1.1
+  can_do_id: CD_L04_12
+  label: hatsuwon
+  audio:
+  - assets/audio/X_[04-01]_kotoba1.mp3
+  key_phrases:
+  - ちち
+  - はは
+  - あに
+  - あね
+  - おとうと
+  - いもうと
+  book_mode: pronunciation
+  prompt_en: Pronunciation — say each word clearly (watch long vowels and mora).
   picture_has_image: false
 - id: A2
   kind: vocabulary
@@ -124,7 +151,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat_all
+  book_mode: vocab_drill
   picture_has_image: false
 - id: A3
   kind: listening
@@ -138,7 +165,7 @@ activities:
   - つまです
   - ヒマルです
   - よろしくお願いします
-  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
+  prompt_en: Listen and type brief notes (who / what / where).
   phrase_meta:
   - jp: こんにちは
     tags:
@@ -155,8 +182,13 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat_all
+  book_mode: note_take
   picture_has_image: false
+  note_keywords:
+  - こんにちは
+  - つまです
+  - ヒマルです
+  - よろしくお願いします
 - id: A4
   kind: listening
   book_activity: 4
@@ -271,7 +303,7 @@ activities:
   - 夫と子どもです
   - いもうととおとうとです
   - 紹介します
-  prompt_en: Listen to the CD, then say each line one at a time (3 lines).
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: 夫と子どもです
     tags:
@@ -285,7 +317,24 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: 呉さん、夫＿子どもです。
+    answers:
+    - と
+    full_jp: 夫と子どもです
+  - prompt_jp: バトさん。＿。妹と弟です。
+    answers:
+    - 紹介します
+    answer_alts:
+    - しょうかいします
+    full_jp: 紹介します
+  - prompt_jp: 妹＿弟です。
+    answers:
+    - と
+    full_jp: いもうととおとうとです
+    answer_alts:
+    - 妹と弟です
   picture_has_image: false
 - id: A8
   kind: conversation
@@ -344,7 +393,7 @@ activities:
   - どこに住んでいますか
   - 赤羽に住んでいます
   - 家族はフィリピンに住んでいます
-  prompt_en: Listen to the CD, then say each line one at a time (6 lines).
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: 何歳ですか
     tags:
@@ -370,8 +419,38 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
   picture_has_image: false
+  blanks:
+  - prompt_jp: ＿ですか？／＿ですか？
+    answers:
+    - 何歳
+    - いくつ
+    full_jp: 何歳ですか？／いくつですか？
+  - prompt_jp: 4＿です。
+    answers:
+    - 歳
+    full_jp: 4歳です。
+  - prompt_jp: ミロさんは、＿？
+    answers:
+    - 何歳
+    full_jp: ミロさんは、何歳？
+    answer_alts:
+    - 何歳ですか
+    - なんさい
+  - prompt_jp: 25＿です。
+    answers:
+    - 歳
+    full_jp: 25歳です。
+  - prompt_jp: ＿住んでいますか？
+    answers:
+    - どこに
+    full_jp: どこに住んでいますか？
+  - prompt_jp: 家族は、フィリピン＿住んでいます。
+    answers:
+    - に
+    full_jp: 家族は、フィリピンに住んでいます。
+  fill_pdf_page: 107
 - id: A10
   kind: grammar_form
   book_activity: 10
@@ -787,7 +866,7 @@ activities:
   - 私の母です
   - あねの子どもです
   - ペットのジョンです
-  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: これ誰ですか
     tags:
@@ -805,8 +884,31 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
   picture_has_image: false
+  fill_pdf_page: 111
+  blanks:
+  - prompt_jp: これ、＿ですか？
+    answers:
+    - だれの
+    answer_alts:
+    - 誰の
+    - だれ
+    full_jp: これ、だれのですか？
+  - prompt_jp: ＿母です。
+    answers:
+    - 私の
+    full_jp: 私の母です。
+  - prompt_jp: ＿子どもです。
+    answers:
+    - 姉の
+    answer_alts:
+    - あねの
+    full_jp: 姉の子どもです。
+  - prompt_jp: ペット＿ジョンです。
+    answers:
+    - の
+    full_jp: ペットのジョンです。
 - id: A23
   kind: speaking
   book_activity: 23
@@ -884,6 +986,86 @@ activities:
     jp: あねの子どもです
   dialog_listen_audio:
   - assets/audio/X_[04-24]_hanasu2.mp3
+  picture_has_image: false
+- id: KANJI
+  kind: kanji
+  book_activity: 24.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 父
+  - 母
+  - 子ども
+  - 日本
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 117
+  kanji_items: &id001
+  - kanji: 父
+    reading: ちち
+    gloss_en: father
+  - kanji: 母
+    reading: はは
+    gloss_en: mother
+  - kanji: 子ども
+    reading: ちちははども
+    gloss_en: child / children
+  - kanji: 日本
+    reading: にほん
+    gloss_en: Japan
+  kanji_sentences: &id002
+  - 父と母です。
+  - 私
+  - 日本に住
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 25
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Preparation for the words
+
+    族 My family 】
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a–i.
+
+    Do you have photos of your family, friends, or pets? Have you shown them to other people?
+
+    Can listen to a family being introduced and understand who is who.
+
+    Listen to the dialogs.
+
+    Family members being introduced.
+
+    Who is being introduced? Take notes in the blank space.
+
+    で In the street
+
+    Himal-san is in town and has met Shimoyama-sensee, his Japanese teacher.
+
+    話 2 スーパーで In the supermarket
+
+    Wu-san is in the local supermarket and has met Inoue-san, her colleague.
+
+    で In a factory office
+
+    Lina-san is going to work in Ookawa-san’s factory. Ookawa-san introduces his family, who also work
+    there.
+
+    場で At an event
+
+    Bat-san has met his colleague Ishida-san at a work open day event. Ishida-san is with her family.
+
+    Check the words and listen to the dialogs again.
+
+    生 〜sensee'
   picture_has_image: false
 grammar:
 - point: N1 と N2
@@ -1213,3 +1395,7 @@ english_notes: 'Preparation for the words
   Focus on the expressions used and listen to 会話 2 and 会話 4 again.'
 unlock_requires_mastery: true
 schema_version: 1
+kanji_words:
+  pdf_page: 117
+  items: *id001
+  sentences: *id002

@@ -54,7 +54,18 @@ activities:
   - jp: 1月2月3月4月5月6月7月8月9月10月11月12月7月
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: reading
+  passage_en: Complete this activity with the book audio.
+  choices:
+  - id: a
+    label_jp: 1月2月3月4月5月6月7月8月9月10月11月12月7月
+  - id: b
+    label_jp: どこですか
+  - id: c
+    label_jp: 今週の金曜日、ミルクさんの身合に行きますか
+  correct_ids:
+  - a
+  choose_mode: any
 - id: A2
   kind: yomu
   book_activity: 2
@@ -69,7 +80,18 @@ activities:
   - jp: ついたちふつかみっかよっかいつかむいかなのかよおかここのかトーカ11日12日13日14日15日16日17日18日10日あつか21日22日23日24日25日26日27日28日29日30日31日何日
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: reading
+  passage_en: Complete this activity with the book audio.
+  choices:
+  - id: a
+    label_jp: うちやまさんは、行きますか
+  - id: b
+    label_jp: まやさん、横下にコーデュパーティーがありますね
+  - id: c
+    label_jp: ついたちふつかみっかよっかいつかむいかなのかよおかここのかトーカ11日12日13日14日15日16日17日18日10日あつか21日22日23日24日25日26日27日28日29日30日31日何日
+  correct_ids:
+  - c
+  choose_mode: any
 - id: A3
   kind: vocabulary
   book_activity: 3
@@ -84,7 +106,7 @@ activities:
   - jp: カレンダーえ今日ビ明日シ朝ってビ今週いい来週
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A4
   kind: vocabulary
   book_activity: 4
@@ -100,7 +122,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A5
   kind: listening
   book_activity: 5
@@ -144,7 +166,7 @@ activities:
   - そうですか
   - 2うちやまさん、来週、夏松りがありますね
   - いいえ、行きますね
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L12 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: うちやまさんは、行きますか
     tags:
@@ -162,9 +184,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L12 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: よん子侍一緒に飲みに行きませんか
+  - id: b
+    label_jp: そうですか
+  - id: c
+    label_jp: 横に、コールバーティがありますね
+  - id: d
+    label_jp: いいえ、行きますね
+  - id: e
+    label_jp: まやさん、横下にコーデュパーティーがありますね
+  - id: f
+    label_jp: うちやまさんは、行きますか
+  - id: g
+    label_jp: 2うちやまさん、来週、夏松りがありますね
+  - id: h
+    label_jp: いいえ、行きませんそうですか
+  correct_ids:
+  - b
+  - d
+  - f
+  - g
+  choose_mode: all
 - id: A7
   kind: listening
   book_activity: 7
@@ -177,7 +222,7 @@ activities:
   - どこでありますか
   - まやさん、横下にコーデュパーティーがありますね
   - えぇ、そうですか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L12 activity 7: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: まやさんは行きますか
     tags:
@@ -195,9 +240,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L12 activity 7: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 一緒に行きませんか
+  - id: b
+    label_jp: みんなで一緒に焼き肉を食べに行きませんか
+  - id: c
+    label_jp: まやさんは行きますか
+  - id: d
+    label_jp: マーフィルさんも、上手にさんも行きますよ
+  - id: e
+    label_jp: えぇ、そうですか
+  - id: f
+    label_jp: 2うちやまさん、来週、夏松りがありますね
+  - id: g
+    label_jp: どこでありますか
+  - id: h
+    label_jp: まやさん、横下にコーデュパーティーがありますね
+  correct_ids:
+  - c
+  - e
+  - g
+  - h
+  choose_mode: all
 - id: A8
   kind: listening
   book_activity: 8
@@ -207,15 +275,25 @@ activities:
   - assets/audio/X_[12-08]_kiku4.mp3
   key_phrases:
   - 4アントによさん今週の金曜日見る子さんの体の試合に行きますかもちろん行きます私も行きます楽しみですねそうですね
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L12 activity 8: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 4アントによさん今週の金曜日見る子さんの体の試合に行きますかもちろん行きます私も行きます楽しみですねそうですね
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L12 activity 8: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 一時半からです一時半大丈夫ですじゃあ一緒に行きましょう
+  - id: b
+    label_jp: えぇ、そうですか
+  - id: c
+    label_jp: 4アントによさん今週の金曜日見る子さんの体の試合に行きますかもちろん行きます私も行きます楽しみですねそうですね
+  correct_ids:
+  - c
+  choose_mode: any
 - id: A9
   kind: listening
   book_activity: 9
@@ -228,7 +306,7 @@ activities:
   - そうですか、残念です
   - おぉ、私は行きます
   - ごっ
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L12 activity 9: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 業さん、明日のボーネン会に行きますか
     tags:
@@ -245,9 +323,32 @@ activities:
   - jp: ごっ
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L12 activity 9: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: おぉ、私は行きます
+  - id: b
+    label_jp: にそりゃさん、みんなで一緒に焼きに行こう旅に行きませんか
+  - id: c
+    label_jp: いいですね、いつですか
+  - id: d
+    label_jp: どこですか
+  - id: e
+    label_jp: そうですか、残念です
+  - id: f
+    label_jp: 日曜日にサクラコを演でタイフェスティバルがありますねガウインさんは行きますか
+  - id: g
+    label_jp: ごっ
+  - id: h
+    label_jp: 業さん、明日のボーネン会に行きますか
+  correct_ids:
+  - a
+  - e
+  - g
+  - h
+  choose_mode: all
 - id: A10
   kind: grammar_form
   book_activity: 10
@@ -278,7 +379,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A11
   kind: grammar_form
   book_activity: 11
@@ -299,7 +400,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A12
   kind: speaking
   book_activity: 12
@@ -368,7 +469,7 @@ activities:
   - どこですか
   - 一今週、みんなでハイキングに行きます
   - あさってですか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L12 activity 14: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: ありなさんも一緒に行きませんか
     tags:
@@ -386,9 +487,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L12 activity 14: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 今週の金曜日、ミルクさんの身合に行きますか
+  - id: b
+    label_jp: ありなさんも一緒に行きませんか
+  - id: c
+    label_jp: まやさん、横下にコーデュパーティーがありますね
+  - id: d
+    label_jp: どこでありますか
+  - id: e
+    label_jp: 一今週、みんなでハイキングに行きます
+  - id: f
+    label_jp: どこですか
+  - id: g
+    label_jp: 重要化ですすみません重要化はちょっとじゃあまた今度行きましょう
+  - id: h
+    label_jp: あさってですか
+  correct_ids:
+  - b
+  - e
+  - f
+  - h
+  choose_mode: all
 - id: A15
   kind: listening
   book_activity: 15
@@ -401,7 +525,7 @@ activities:
   - 重要化です来週の会曜日ですね、会曜日はちょっと、住みませんそうですか
   - マーフィルさんも、上手にさんも行きますよ
   - いいですね、いつですか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L12 activity 15: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: にそりゃさん、みんなで一緒に焼きに行こう旅に行きませんか
     tags:
@@ -420,9 +544,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L12 activity 15: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 重要化です来週の会曜日ですね、会曜日はちょっと、住みませんそうですか
+  - id: b
+    label_jp: 1ガウインさん、日曜日に、サクラコウェンデ台フェスキバルがありますね
+  - id: c
+    label_jp: みんなで一緒に焼き肉を食べに行きませんか
+  - id: d
+    label_jp: にそりゃさん、みんなで一緒に焼きに行こう旅に行きませんか
+  - id: e
+    label_jp: 2うちやまさん、来週、夏松りがありますね
+  - id: f
+    label_jp: マーフィルさんも、上手にさんも行きますよ
+  - id: g
+    label_jp: いいですね、いつですか
+  - id: h
+    label_jp: いいですね何の映画ですか
+  correct_ids:
+  - a
+  - d
+  - f
+  - g
+  choose_mode: all
 - id: A16
   kind: listening
   book_activity: 16
@@ -435,7 +582,7 @@ activities:
   - 一時半からです一時半大丈夫ですじゃあ一緒に行きましょう
   - 男は辛いようですうーん何時からですか
   - いいですね何の映画ですか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L12 activity 16: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: さんあにたさん明日の夜、サクラプラザで映画があります一緒に見に行きませんか
     tags:
@@ -454,9 +601,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L12 activity 16: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 一緒にみに行きませんか
+  - id: b
+    label_jp: じゃあ、行きましょう
+  - id: c
+    label_jp: いいですね何の映画ですか
+  - id: d
+    label_jp: 一時半からです一時半大丈夫ですじゃあ一緒に行きましょう
+  - id: e
+    label_jp: さんあにたさん明日の夜、サクラプラザで映画があります一緒に見に行きませんか
+  - id: f
+    label_jp: うちやまさんは、行きますか
+  - id: g
+    label_jp: じゃあ行きましょう
+  - id: h
+    label_jp: 男は辛いようですうーん何時からですか
+  correct_ids:
+  - c
+  - d
+  - e
+  - h
+  choose_mode: all
 - id: A17
   kind: listening
   book_activity: 17
@@ -469,7 +639,7 @@ activities:
   - いつですか
   - そうですか
   - 今日はダメです
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L12 activity 17: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: よん子侍一緒に飲みに行きませんか
     tags:
@@ -487,9 +657,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L12 activity 17: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: みんなで一緒に焼き肉を食べに行きませんか
+  - id: b
+    label_jp: よん子侍一緒に飲みに行きませんか
+  - id: c
+    label_jp: 今日はダメです
+  - id: d
+    label_jp: そうですか
+  - id: e
+    label_jp: 一緒に飲みに行きませんか
+  - id: f
+    label_jp: まやさんは行きますか
+  - id: g
+    label_jp: じゃあ、また今度行きましょう
+  - id: h
+    label_jp: いつですか
+  correct_ids:
+  - b
+  - c
+  - d
+  - h
+  choose_mode: all
 - id: A18
   kind: grammar_form
   book_activity: 18
@@ -502,7 +695,7 @@ activities:
   - じゃあ、また今度行きましょう
   - 一緒に行きませんか
   - じゃあ、行きましょう
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 今週、みんなでハイキングに行きます
     tags:
@@ -520,7 +713,7 @@ activities:
     tags:
     - short
     - casual
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A19
   kind: grammar_form
   book_activity: 19
@@ -533,7 +726,7 @@ activities:
   - 明日の夜、サクラプラザで映画があります
   - 一緒に飲みに行きませんか
   - 一緒にみに行きませんか
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: みんなで一緒に焼き肉を食べに行きませんか
     tags:
@@ -551,7 +744,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A20
   kind: speaking
   book_activity: 20
@@ -624,6 +817,109 @@ activities:
     jp: 重要化ですすみません重要化はちょっとじゃあまた今度行きましょう
   dialog_listen_audio:
   - assets/audio/X_[12-21]_hanasu2.mp3
+- id: KANJI
+  kind: kanji
+  book_activity: 21.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 年
+  - 月
+  - 日
+  - 今日
+  - 今週
+  - 今度
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 327
+  kanji_items: &id001
+  - kanji: 年
+    reading: ねん
+    gloss_en: year
+  - kanji: 月
+    reading: がつ
+    gloss_en: Monday / month
+  - kanji: 日
+    reading: にち
+    gloss_en: Sunday / day / sun
+  - kanji: 今日
+    reading: ねんがつにちきょう
+    gloss_en: today
+  - kanji: 今週
+    reading: ねんがつにちきょうこんしゅう
+    gloss_en: this week
+  - kanji: 今度
+    reading: ねんがつにちきょうこんしゅうこんど
+    gloss_en: next time / this time
+  kanji_sentences: &id002
+  - 今週、みんなで映
+  - また、今度行
+  - 今日は、2021年12月31日です。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 22
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'What festivals or events take place in your neighborhood? Who do you go with?
+
+    Can read an event notice and find the important information, such as the date, time, and place.
+
+    Read the event information.
+
+    You are looking at information about local events posted
+
+    on the bulletin board in your Japanese class.
+
+    What kind of events do you think ①–④ are?
+
+    Mark where you see the following information.
+
+    祭り summer festival ｜ 交
+
+    流 exchange ｜ バーベキュー barbecue ｜ フェスティバル festival
+
+    場 venue ｜ 場
+
+    所 place ｜ 日
+
+    時 date and time
+
+    場 square ｜ ホール hall ｜ 駐
+
+    車場 parking lot
+
+    場料 entry fee ｜ 〜円
+
+    〜yen ｜ 入
+
+    場無料 free entry
+
+    Check how to say dates.
+
+    Listen and repeat.
+
+    Months 】
+
+    Dates 】
+
+    Look at the event information ①–④ and read the dates.
+
+    Can ask and answer questions about whether you are going to an event, etc.
+
+    Preparation for the words
+
+    【カレンダー Calendar 】
+
+    Listen while looking at the calendar.
+
+    Listen and repeat.
+
+    Listen and identify the d'
+  picture_has_image: false
 grammar:
 - point: アントニオさんは、赤羽
   worksheet_pages:
@@ -833,3 +1129,7 @@ english_notes: 'What festivals or events take place in your neighborhood? Who do
 
   When is it?'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 327
+  items: *id001
+  sentences: *id002

@@ -18,6 +18,9 @@ class TutorStep(BaseModel):
     play_audio: list[str] = Field(default_factory=list)
     instruction_en: str | None = None
     say_target_jp: str | None = None
+    # When true, the client TTS-models `say_target_jp` after coach/CD audio
+    # before opening the mic (practice steps). Leave false for Can-do quizzes.
+    model_before_speech: bool = False
     help: bool = False
 
 

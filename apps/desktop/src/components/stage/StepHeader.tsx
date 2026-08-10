@@ -18,6 +18,7 @@ export function StepHeader({ model }: { model: TutorStageModel }) {
           {model.modeTitle}
         </span>
         {model.stepLabel && <span className="pill">{model.stepLabel}</span>}
+        {model.bookPageLabel && <span className="pill">{model.bookPageLabel}</span>}
       </div>
 
       {model.segmentLabel && <p className="step-header__segment">{model.segmentLabel}</p>}

@@ -11,8 +11,8 @@ intro_questions:
 - jp: This is a personal amulet my older brother gave me について、あなたの けいけんは？
   en: Thinking about "Visiting People" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can exchange basic greetings when you visit someone’s
-    house. What do you want to be able to do?'
+  en: 'This lesson aims at: Can exchange basic greetings when you visit someone’s house. What do you want
+    to be able to do?'
 can_dos:
 - id: CD_EL17_61
   can_do_number: 61
@@ -32,8 +32,7 @@ can_dos:
     min_score: 80
 - id: CD_EL17_63
   can_do_number: 63
-  statement_en: Can talk about your belongings, for example, where you bought it or
-    who gave it to you.
+  statement_en: Can talk about your belongings, for example, where you bought it or who gave it to you.
   statement_jp: ほかの人の家を訪問したとき、基本的なあいさつをすることができる。
   activity_hint: ''
   rubric:
@@ -41,8 +40,7 @@ can_dos:
     min_score: 80
 - id: CD_EL17_64
   can_do_number: 64
-  statement_en: Can write a simple email to thank someone who, for example, invited
-    you to their house.
+  statement_en: Can write a simple email to thank someone who, for example, invited you to their house.
   statement_jp: ほかの人の家を訪問したとき、基本的なあいさつをすることができる。
   activity_hint: ''
   rubric:
@@ -220,7 +218,20 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
+- id: A5_PRON
+  kind: pronunciation
+  book_activity: 5.1
+  can_do_id: CD_EL17_61
+  label: hatsuwon
+  audio:
+  - assets/audio/Y_[17-05]_kotoba1.mp3
+  key_phrases:
+  - 兄がくれたお守りです
+  - お土産です
+  book_mode: pronunciation
+  prompt_en: Pronunciation — say each word clearly (watch long vowels and mora).
+  picture_has_image: false
 - id: A6
   kind: vocabulary
   book_activity: 6
@@ -241,7 +252,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A7
   kind: listening
   book_activity: 7
@@ -285,7 +296,7 @@ activities:
   - 分の国のお土産やお菓子を渡しています。
   - 渡したものは何ですか。
   - どんなものですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL17 activity 8: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 兄がくれたお守りです
     tags:
@@ -303,10 +314,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL17 activity 8: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL17 activity 8: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ごめんください。
+  - id: b
+    label_jp: これは、魔よけです。壁にかけると、悪いものが入って来ません。
+  - id: c
+    label_jp: 兄がくれたお守りです
+  - id: d
+    label_jp: あ、どうも。これ、何
+  - id: e
+    label_jp: どんなものですか。
+  - id: f
+    label_jp: 分の国のお土産やお菓子を渡しています。
+  - id: g
+    label_jp: 渡したものは何ですか。
+  - id: h
+    label_jp: 人の人が話しています。
+  correct_ids:
+  - c
+  - e
+  - f
+  - g
+  choose_mode: all
 - id: A9
   kind: listening
   book_activity: 9
@@ -319,7 +352,7 @@ activities:
   - 分の国のお土産やお菓子を渡しています。
   - 渡したものは何ですか。
   - どんなものですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL17 activity 9: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 兄がくれたお守りです
     tags:
@@ -337,10 +370,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL17 activity 9: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL17 activity 9: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: どんなものですか。
+  - id: b
+    label_jp: 分の国のお土産やお菓子を渡しています。
+  - id: c
+    label_jp: あ、ありがとうございます。
+  - id: d
+    label_jp: 兄がくれたお守りです
+  - id: e
+    label_jp: お土産です
+  - id: f
+    label_jp: 渡したものは何ですか。
+  - id: g
+    label_jp: 魚から作ります
+  - id: h
+    label_jp: あのう、これ、どうぞ。
+  correct_ids:
+  - a
+  - b
+  - d
+  - f
+  choose_mode: all
 - id: A10
   kind: listening
   book_activity: 10
@@ -353,7 +408,7 @@ activities:
   - 分の国のお土産やお菓子を渡しています。
   - 渡したものは何ですか。
   - どんなものですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL17 activity 10: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 兄がくれたお守りです
     tags:
@@ -371,10 +426,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL17 activity 10: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL17 activity 10: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: あのう、これ、どうぞ。
+  - id: b
+    label_jp: お土産です
+  - id: c
+    label_jp: 分の国のお土産やお菓子を渡しています。
+  - id: d
+    label_jp: どんなものですか。
+  - id: e
+    label_jp: ごめんください。
+  - id: f
+    label_jp: ありがとう。今度、使ってみるね。
+  - id: g
+    label_jp: 渡したものは何ですか。
+  - id: h
+    label_jp: 兄がくれたお守りです
+  correct_ids:
+  - c
+  - d
+  - g
+  - h
+  choose_mode: all
 - id: A11
   kind: grammar_form
   book_activity: 11
@@ -384,13 +461,13 @@ activities:
   - assets/audio/Y_[17-11]_katachi.mp3
   key_phrases:
   - 兄がくれたお守りです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 兄がくれたお守りです
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A12
   kind: speaking
   book_activity: 12
@@ -441,7 +518,7 @@ activities:
   - 友だちにもらったんです
   - 人の人が話しています。
   - 何について話しています
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL17 activity 13: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 兄がくれたお守りです
     tags:
@@ -459,10 +536,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL17 activity 13: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL17 activity 13: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 兄がくれたお守りです
+  - id: b
+    label_jp: 友だちにもらったんです
+  - id: c
+    label_jp: 何について話しています
+  - id: d
+    label_jp: ナンプラーです。タイ料理に使う調味料です。魚から作ります。
+  - id: e
+    label_jp: 魚から作ります
+  - id: f
+    label_jp: 人の人が話しています。
+  - id: g
+    label_jp: いろいろなものにかけると、おいしいですよ。
+  - id: h
+    label_jp: あ、ありがとうございます。
+  correct_ids:
+  - a
+  - b
+  - c
+  - f
+  choose_mode: all
 - id: A14
   kind: listening
   book_activity: 14
@@ -475,7 +574,7 @@ activities:
   - 友だちにもらったんです
   - 人の人が話しています。
   - 何について話しています
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL17 activity 14: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 兄がくれたお守りです
     tags:
@@ -493,10 +592,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL17 activity 14: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL17 activity 14: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 友だちにもらったんです
+  - id: b
+    label_jp: これ、お土産です。
+  - id: c
+    label_jp: あ、どうも。これ、何
+  - id: d
+    label_jp: 何について話しています
+  - id: e
+    label_jp: 兄がくれたお守りです
+  - id: f
+    label_jp: 人の人が話しています。
+  - id: g
+    label_jp: そうなんですか。
+  - id: h
+    label_jp: お守りです
+  correct_ids:
+  - a
+  - d
+  - e
+  - f
+  choose_mode: all
 - id: A15
   kind: listening
   book_activity: 15
@@ -509,7 +630,7 @@ activities:
   - 友だちにもらったんです
   - 人の人が話しています。
   - 何について話しています
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL17 activity 15: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 兄がくれたお守りです
     tags:
@@ -527,10 +648,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL17 activity 15: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL17 activity 15: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 何について話しています
+  - id: b
+    label_jp: 人の人が話しています。
+  - id: c
+    label_jp: ネパールから持って来た飾りです。
+  - id: d
+    label_jp: 福田さんの家を訪問しました
+  - id: e
+    label_jp: お母さんが作ったの？
+  - id: f
+    label_jp: 兄がくれたお守りです
+  - id: g
+    label_jp: あ、どうも。これ、何
+  - id: h
+    label_jp: 友だちにもらったんです
+  correct_ids:
+  - a
+  - b
+  - f
+  - h
+  choose_mode: all
 - id: A16
   kind: listening
   book_activity: 16
@@ -543,7 +686,7 @@ activities:
   - 友だちにもらったんです
   - 人の人が話しています。
   - 何について話しています
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL17 activity 16: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 兄がくれたお守りです
     tags:
@@ -561,10 +704,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL17 activity 16: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL17 activity 16: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 人の人が話しています。
+  - id: b
+    label_jp: 何について話しています
+  - id: c
+    label_jp: 友だちにもらったんです
+  - id: d
+    label_jp: 分の国のお土産やお菓子を渡しています。
+  - id: e
+    label_jp: 兄がくれたお守りです
+  - id: f
+    label_jp: あのう、これ、どうぞ。
+  - id: g
+    label_jp: へー。
+  - id: h
+    label_jp: ネパールから持って来た飾りです。
+  correct_ids:
+  - a
+  - b
+  - c
+  - e
+  choose_mode: all
 - id: A17
   kind: grammar_form
   book_activity: 17
@@ -593,7 +758,7 @@ activities:
   - jp: お兄さんは、今
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A18
   kind: grammar_form
   book_activity: 18
@@ -603,13 +768,13 @@ activities:
   - assets/audio/Y_[17-18]_katachi2-1.mp3
   key_phrases:
   - 兄がくれたお守りです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 兄がくれたお守りです
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A19
   kind: grammar_form
   book_activity: 19
@@ -619,13 +784,13 @@ activities:
   - assets/audio/Y_[17-19]_katachi2-2.mp3
   key_phrases:
   - 兄がくれたお守りです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 兄がくれたお守りです
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A20
   kind: speaking
   book_activity: 20
@@ -722,6 +887,126 @@ activities:
     tags:
     - short
     - polite
+- id: KANJI
+  kind: kanji
+  book_activity: 22.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - お父さん
+  - 弟
+  - お母さん
+  - 妹
+  - 兄
+  - 夫
+  - お兄さん
+  - 妻
+  - 姉
+  - 両親
+  - お姉さん
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 371
+  kanji_items: &id005
+  - kanji: お父さん
+    reading: おとうさん
+    gloss_en: father
+  - kanji: 弟
+    reading: おとうと
+    gloss_en: younger brother
+  - kanji: お母さん
+    reading: おかあさん
+    gloss_en: mother
+  - kanji: 妹
+    reading: いもうと
+    gloss_en: younger sister
+  - kanji: 兄
+    reading: あに
+    gloss_en: older brother
+  - kanji: 夫
+    reading: おっと
+    gloss_en: husband
+  - kanji: お兄さん
+    reading: おにいさん
+    gloss_en: older brother (polite)
+  - kanji: 妻
+    reading: つま
+    gloss_en: wife
+  - kanji: 姉
+    reading: あね
+    gloss_en: older sister
+  - kanji: 両親
+    reading: りょうしん
+    gloss_en: parents
+  - kanji: お姉さん
+    reading: おねえさん
+    gloss_en: older sister (polite)
+  kanji_sentences: &id006
+  - 夫にプレゼントをもらいました。
+  - お兄さんはお元気ですか？
+  - 国から、弟と妹が遊びに来ました。
+  - 両親は、兄といっしょに住んでいます。
+  - Ａ：このお菓子、姉が作ったんです。Ｂ：お姉さん、すごいですね。
+  - お父さん、お母さんによろしくお伝えください。
+  - いつも妻がお世話になっています。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 23
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'What will you bring as a gift to Japan?
+
+    Can exchange basic greetings when you visit someone’s house.
+
+    Listen to the dialog.
+
+    Toan-san was invited to visit Fukuda-san’s house.
+
+    First, listen to the dialog without looking at the script.
+
+    Which of Fukuda-san’s family members were there?
+
+    What did Toan-san bring as a gift?
+
+    After offering the gift, what did Toan-san ask Fukuda-san?
+
+    Listen to the dialog again. This time, follow along with the script.
+
+    関で At the front door
+
+    間で In the living room
+
+    Thank you for everything you do.
+
+    This phrase is used to express
+
+    words of appreciation to your or
+
+    your family’s acquaintances.
+
+    こちらこそ Same here.
+
+    This phrase is used to return a
+
+    greeting or words of appreciation to
+
+    the other person.
+
+    関で At the entrance
+
+    をくず す sit at ease
+
+    にする make yourself at home ｜ 遊
+
+    る come see me
+
+    Which expressions are used by a guest and which by a host? Draw a circle where appropriate. When are
+    t'
+  picture_has_image: false
 grammar: []
 vocab:
 - jp: 兄がくれたお守りです
@@ -745,13 +1030,13 @@ quiz_bank:
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL17_63
-  prompt_en: 'Demonstrate: Can talk about your belongings, for example, where you
-    bought it or who gave it to you.'
+  prompt_en: 'Demonstrate: Can talk about your belongings, for example, where you bought it or who gave
+    it to you.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL17_64
-  prompt_en: 'Demonstrate: Can write a simple email to thank someone who, for example,
-    invited you to their house.'
+  prompt_en: 'Demonstrate: Can write a simple email to thank someone who, for example, invited you to
+    their house.'
   spoken_required: true
 quiz_scenarios:
 - can_do_id: CD_EL17_61
@@ -785,13 +1070,11 @@ quiz_scenarios:
   - これ、お土産です。
   - 兄がくれたお守りです
   - ごめんください。
-  hint_en: Can talk about your belongings, for example, where you bought it or who
-    gave it to you.
+  hint_en: Can talk about your belongings, for example, where you bought it or who gave it to you.
 - can_do_id: CD_EL17_63
   partner_jp: もう一度、お願いします。
   expected: *id003
-  hint_en: 'Again — Can talk about your belongings, for example, where you bought
-    it or who gave it '
+  hint_en: 'Again — Can talk about your belongings, for example, where you bought it or who gave it '
 - can_do_id: CD_EL17_64
   partner_jp: へー。
   expected: &id004
@@ -799,13 +1082,11 @@ quiz_scenarios:
   - ネパールから持って来た飾りです。
   - 兄がくれたお守りです
   - ごめんください。
-  hint_en: Can write a simple email to thank someone who, for example, invited you
-    to their house.
+  hint_en: Can write a simple email to thank someone who, for example, invited you to their house.
 - can_do_id: CD_EL17_64
   partner_jp: もう一度、お願いします。
   expected: *id004
-  hint_en: Again — Can write a simple email to thank someone who, for example, invited
-    you to their
+  hint_en: Again — Can write a simple email to thank someone who, for example, invited you to their
 english_notes: 'What will you bring as a gift to Japan?
 
   Can exchange basic greetings when you visit someone’s house.
@@ -852,8 +1133,8 @@ english_notes: 'What will you bring as a gift to Japan?
 
   る come see me
 
-  Which expressions are used by a guest and which by a host? Draw a circle where appropriate.
-  When are these
+  Which expressions are used by a guest and which by a host? Draw a circle where appropriate. When are
+  these
 
   expressions used?
 
@@ -873,6 +1154,9 @@ english_notes: 'What will you bring as a gift to Japan?
 
   Shadow the dialogs.
 
-  Role-play this situation. One person plays the guest, and the other person plays
-  the host.'
+  Role-play this situation. One person plays the guest, and the other person plays the host.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 371
+  items: *id005
+  sentences: *id006

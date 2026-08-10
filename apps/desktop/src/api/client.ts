@@ -247,10 +247,32 @@ export const api = {
     const suffix = token ? `&token=${encodeURIComponent(token)}` : "";
     return `${apiBaseSync()}/media/audio?path=${encodeURIComponent(relPath)}${suffix}`;
   },
-  pdfUrl: (which: "textbook" | "grammar" = "textbook") => {
+  pdfUrl: (
+    which: "textbook" | "grammar" = "textbook",
+    opts?: { bookId?: string | null; page?: number | null },
+  ) => {
     const token = resolved?.token;
-    const suffix = token ? `&token=${encodeURIComponent(token)}` : "";
-    return `${apiBaseSync()}/media/pdf?which=${which}${suffix}`;
+    const params = new URLSearchParams({ which });
+    if (opts?.bookId) params.set("book", opts.bookId);
+    if (token) params.set("token", token);
+    const page = opts?.page && opts.page > 0 ? Math.floor(opts.page) : null;
+    const hash = page ? `#page=${page}` : "";
+    return `${apiBaseSync()}/media/pdf?${params.toString()}${hash}`;
+  },
+  pdfPageUrl: (
+    which: "textbook" | "grammar" = "textbook",
+    opts?: { bookId?: string | null; page?: number | null; scale?: number },
+  ) => {
+    const token = resolved?.token;
+    const page = opts?.page && opts.page > 0 ? Math.floor(opts.page) : 1;
+    const params = new URLSearchParams({
+      which,
+      page: String(page),
+      scale: String(opts?.scale ?? 1.6),
+    });
+    if (opts?.bookId) params.set("book", opts.bookId);
+    if (token) params.set("token", token);
+    return `${apiBaseSync()}/media/pdf-page?${params.toString()}`;
   },
 };
 

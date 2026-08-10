@@ -84,7 +84,7 @@ activities:
   - えーっと、行け袋に帰ものに行きます
   - そうですか
   - 水判器が帰たいです
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L18 activity 2: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 2タンダーさん、今度の休み、何をしますか
     tags:
@@ -102,9 +102,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L18 activity 2: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ロテンブロに入りました
+  - id: b
+    label_jp: いや、どこにも行きますね
+  - id: c
+    label_jp: そうですか
+  - id: d
+    label_jp: 水判器が帰たいです
+  - id: e
+    label_jp: でも、ちょっと高かったです
+  - id: f
+    label_jp: 2タンダーさん、今度の休み、何をしますか
+  - id: g
+    label_jp: えーっと、行け袋に帰ものに行きます
+  - id: h
+    label_jp: 行けぼくろに買い物に行きます
+  correct_ids:
+  - c
+  - d
+  - f
+  - g
+  choose_mode: all
 - id: A3
   kind: listening
   book_activity: 3
@@ -117,7 +140,7 @@ activities:
   - そうですか
   - いや、どこにも行きますね
   - うちでゆっくりしたいです
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L18 activity 3: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 3クリスさんは来週の連休、どこか行きますか
     tags:
@@ -135,9 +158,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L18 activity 3: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: そうですか
+  - id: b
+    label_jp: いや、どこにも行きますね
+  - id: c
+    label_jp: そうですねー雪が見たいですあと、音声に入りたいですそうですか
+  - id: d
+    label_jp: 3クリスさんは来週の連休、どこか行きますか
+  - id: e
+    label_jp: エジーにおさんはどうしますか
+  - id: f
+    label_jp: 今度の休み、何をしますか
+  - id: g
+    label_jp: うちでゆっくりしたいです
+  - id: h
+    label_jp: あ、アニメの、君の名前の人じゃですか
+  correct_ids:
+  - a
+  - b
+  - d
+  - g
+  choose_mode: all
 - id: A4
   kind: listening
   book_activity: 4
@@ -150,7 +196,7 @@ activities:
   - 42回りさん、ゴール電ウイクの予定は
   - まだわかりません
   - いいですね
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L18 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: でも、どこか両方したいです
     tags:
@@ -167,9 +213,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L18 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: でも、どこか両方したいです
+  - id: b
+    label_jp: シンソン、シューマツ、何をしましたか
+  - id: c
+    label_jp: 42回りさん、ゴール電ウイクの予定は
+  - id: d
+    label_jp: また音声に行きたいです
+  - id: e
+    label_jp: 一...もうすぐ夏休みですね
+  - id: f
+    label_jp: いいですね
+  - id: g
+    label_jp: まだわかりません
+  - id: h
+    label_jp: いや、どこにも行きますね
+  correct_ids:
+  - a
+  - c
+  - f
+  - g
+  choose_mode: all
 - id: A5
   kind: grammar_form
   book_activity: 5
@@ -182,7 +251,7 @@ activities:
   - 生け袋に帰ものに行きます
   - どこかで行こうしたいです
   - 今度の休み、何をしますか
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 友達が広島に住んでいます
     tags:
@@ -200,7 +269,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A6
   kind: grammar_form
   book_activity: 6
@@ -371,7 +440,7 @@ activities:
   - あと、不自産に乗りたいです
   - あと、音線に入りたいです
   - すが人者にいきたいです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: あと、ドラヤキが食べたいです
     tags:
@@ -389,7 +458,25 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: あ＿、ドラヤキが食べたいです。
+    answers:
+    - と
+    full_jp: あと、ドラヤキが食べたいです
+  - prompt_jp: あ＿、不自産に乗りたいです。
+    answers:
+    - と
+    full_jp: あと、不自産に乗りたいです
+  - prompt_jp: あ＿、音線に入りたいです。
+    answers:
+    - と
+    full_jp: あと、音線に入りたいです
+  - prompt_jp: すが人者にいきたい＿。
+    answers:
+    - です
+    answer_alts: []
+    full_jp: すが人者にいきたいです
 - id: A12
   kind: grammar_form
   book_activity: 12
@@ -399,13 +486,13 @@ activities:
   - assets/audio/X_[18-12]_katachi.mp3
   key_phrases:
   - 京都へいきたいです新宿のすが人者にいきたいです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 京都へいきたいです新宿のすが人者にいきたいです
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A13
   kind: speaking
   book_activity: 13
@@ -482,7 +569,7 @@ activities:
   - それに、ケシキも綺麗でした
   - でも、ちょっと高かったです
   - ロテンブロに入りました
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: それから、音線の近くで、鳥のテンプラを食べました
     tags:
@@ -497,7 +584,17 @@ activities:
   - jp: ロテンブロに入りました
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: それに、ケシキも綺麗＿。
+    answers:
+    - でした
+    answer_alts: []
+    full_jp: それに、ケシキも綺麗でした
+  - prompt_jp: でも、ちょっ＿高かったです。
+    answers:
+    - と
+    full_jp: でも、ちょっと高かったです
 - id: A16
   kind: speaking
   book_activity: 16
@@ -533,6 +630,93 @@ activities:
     jp: また音声に行きたいです
   dialog_listen_audio:
   - assets/audio/X_[18-16]_hanasu.mp3
+- id: KANJI
+  kind: kanji
+  book_activity: 16.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 温泉
+  - 予定
+  - 来週
+  - 会います
+  - 入ります
+  - 旅行します
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 492
+  kanji_items: &id001
+  - kanji: 温泉
+    reading: おんせん
+    gloss_en: hot spring
+  - kanji: 予定
+    reading: おんせんよてい
+    gloss_en: plans / schedule
+  - kanji: 来週
+    reading: おんせんよていらいしゅう
+    gloss_en: next week
+  - kanji: 会います
+    reading: おんせんよていらいしゅうあいます
+    gloss_en: to meet
+  - kanji: 入ります
+    reading: はいります
+    gloss_en: to enter
+  - kanji: 旅行します
+    reading: りょこうします
+    gloss_en: to travel
+  kanji_sentences: &id002
+  - 温泉に入りたいです。
+  - ゴールデンウィークに、家
+  - 商
+  - 来週の連
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 17
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Can ask and answer questions about what you want to do on your days off.
+
+    Where would you like to go in Japan? What would you like to do?
+
+    Listen to the dialogs.
+
+    Four people are each talking about their plans for their holidays.
+
+    What do they want to do? Choose from a-d.
+
+    Listen to the recordings and fill in the blanks.
+
+    What expressions did the speakers use when talking about what they want to do?
+
+    What do you think どこか means?
+
+    Focus on the expressions used and listen to the dialogs again.
+
+    Check the words and listen to the dialogs again.
+
+    休み summer vacation ｜ 連
+
+    休 holiday period ｜ どこか somewhere
+
+    定 plans
+
+    Talk about what you want to do during your holiday.
+
+    Listen to the dialogs.
+
+    Shadow the dialogs.
+
+    Ask each other what you want to do during your holiday. If you do not know how to say something in
+    Japanese, try to look it up.
+
+    Can give a simple answer when asked about what you want to do in Japan.
+
+    Lis'
+  picture_has_image: false
 grammar:
 - point: V-たいです
   worksheet_pages:
@@ -759,3 +943,7 @@ english_notes: 'Can ask and answer questions about what you want to do on your d
 
   a'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 492
+  items: *id001
+  sentences: *id002

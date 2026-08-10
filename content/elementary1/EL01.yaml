@@ -11,13 +11,12 @@ intro_questions:
 - jp: I work in a restaurant について、あなたの けいけんは？
   en: Thinking about "About Me Now" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can exchange greetings with a person you are meeting for
-    the first time in a long time. What do you want to be able to do?'
+  en: 'This lesson aims at: Can exchange greetings with a person you are meeting for the first time in
+    a long time. What do you want to be able to do?'
 can_dos:
 - id: CD_EL01_01
   can_do_number: 1
-  statement_en: Can exchange greetings with a person you are meeting for the first
-    time in a long time.
+  statement_en: Can exchange greetings with a person you are meeting for the first time in a long time.
   statement_jp: 久しぶりに会った人とあいさつをすることができる。
   activity_hint: ''
   rubric:
@@ -25,8 +24,7 @@ can_dos:
     min_score: 80
 - id: CD_EL01_02
   can_do_number: 2
-  statement_en: Can talk in simple terms about how you have been recently when asked
-    by a close person.
+  statement_en: Can talk in simple terms about how you have been recently when asked by a close person.
   statement_jp: 久しぶりに会った人とあいさつをすることができる。
   activity_hint: ''
   rubric:
@@ -267,7 +265,7 @@ activities:
   - 自分のことを話しています。
   - 日本に来てどのぐらいですか。
   - いつ来ました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL01 activity 7: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -284,10 +282,32 @@ activities:
   - jp: いつ来ました
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL01 activity 7: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL01 activity 7: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ちょうど半年です。
+  - id: b
+    label_jp: 自分のことを話しています。
+  - id: c
+    label_jp: いつ来ました
+  - id: d
+    label_jp: はい。おかげさまで。
+  - id: e
+    label_jp: うん。元気。
+  - id: f
+    label_jp: 日本に来てどのぐらいですか。
+  - id: g
+    label_jp: レストランで働いています
+  - id: h
+    label_jp: 人の人が話しています。
+  correct_ids:
+  - b
+  - c
+  - f
+  - g
+  choose_mode: all
 - id: A8
   kind: listening
   book_activity: 8
@@ -300,7 +320,7 @@ activities:
   - 自分のことを話しています。
   - 日本に来てどのぐらいですか。
   - いつ来ました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL01 activity 8: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -317,10 +337,32 @@ activities:
   - jp: いつ来ました
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL01 activity 8: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL01 activity 8: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: いつ来ました
+  - id: b
+    label_jp: 自分のことを話しています。
+  - id: c
+    label_jp: 日本に来てどのぐらいですか。
+  - id: d
+    label_jp: レストランで働いています
+  - id: e
+    label_jp: ちょうど半年です。
+  - id: f
+    label_jp: 日本に来て、どのぐらいですか？
+  - id: g
+    label_jp: 人の人が話しています。
+  - id: h
+    label_jp: で働いています
+  correct_ids:
+  - a
+  - b
+  - c
+  - d
+  choose_mode: all
 - id: A9
   kind: listening
   book_activity: 9
@@ -333,7 +375,7 @@ activities:
   - 自分のことを話しています。
   - 日本に来てどのぐらいですか。
   - いつ来ました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL01 activity 9: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -350,10 +392,32 @@ activities:
   - jp: いつ来ました
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL01 activity 9: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL01 activity 9: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: いつ来ました
+  - id: b
+    label_jp: 仕事はどうですか？
+  - id: c
+    label_jp: の前はどう違います
+  - id: d
+    label_jp: 日本に来てどのぐらいですか。
+  - id: e
+    label_jp: レストランで働いています
+  - id: f
+    label_jp: ちょうど半年です。
+  - id: g
+    label_jp: そうですか。日本の生活に、もう慣れましたか？
+  - id: h
+    label_jp: 自分のことを話しています。
+  correct_ids:
+  - a
+  - d
+  - e
+  - h
+  choose_mode: all
 - id: A10
   kind: grammar_form
   book_activity: 10
@@ -364,7 +428,7 @@ activities:
   key_phrases:
   - レストランで働いています
   - の前はどう違います
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -374,7 +438,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A11
   kind: grammar_form
   book_activity: 11
@@ -385,7 +449,7 @@ activities:
   key_phrases:
   - レストランで働いています
   - の前はどう違います
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -395,7 +459,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A12
   kind: grammar_form
   book_activity: 12
@@ -408,7 +472,7 @@ activities:
   - 年になります。
   - に来ました。
   - そうですか。
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -425,7 +489,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A13
   kind: grammar_form
   book_activity: 13
@@ -438,7 +502,7 @@ activities:
   - 年になります。
   - に来ました。
   - そうですか。
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -455,7 +519,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A14
   kind: speaking
   book_activity: 14
@@ -545,7 +609,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A17
   kind: vocabulary
   book_activity: 17
@@ -561,7 +625,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A18
   kind: listening
   book_activity: 18
@@ -574,7 +638,7 @@ activities:
   - 人の人が話しています。
   - 日本で何をしています
   - 仕事や生活はどうですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL01 activity 18: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -592,10 +656,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL01 activity 18: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL01 activity 18: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 仕事や生活はどうですか。
+  - id: b
+    label_jp: はい、なんとか。
+  - id: c
+    label_jp: 人の人が話しています。
+  - id: d
+    label_jp: ちょうど半年です。
+  - id: e
+    label_jp: レストランで働いています
+  - id: f
+    label_jp: 日本に来てどのぐらいですか。
+  - id: g
+    label_jp: そうですか。日本の生活に、もう慣れましたか？
+  - id: h
+    label_jp: 日本で何をしています
+  correct_ids:
+  - a
+  - c
+  - e
+  - h
+  choose_mode: all
 - id: A19
   kind: listening
   book_activity: 19
@@ -608,7 +694,7 @@ activities:
   - 人の人が話しています。
   - 日本で何をしています
   - 仕事や生活はどうですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL01 activity 19: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -626,10 +712,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL01 activity 19: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL01 activity 19: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: レストランで働いています
+  - id: b
+    label_jp: あ、お久しぶりです。
+  - id: c
+    label_jp: 自分のことを話しています。
+  - id: d
+    label_jp: 人の人が話しています。
+  - id: e
+    label_jp: 日本に来て、どのぐらいですか？
+  - id: f
+    label_jp: 仕事や生活はどうですか。
+  - id: g
+    label_jp: に来ました。
+  - id: h
+    label_jp: 日本で何をしています
+  correct_ids:
+  - a
+  - d
+  - f
+  - h
+  choose_mode: all
 - id: A20
   kind: listening
   book_activity: 20
@@ -642,7 +750,7 @@ activities:
   - 人の人が話しています。
   - 日本で何をしています
   - 仕事や生活はどうですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL01 activity 20: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -660,10 +768,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL01 activity 20: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL01 activity 20: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 自分のことを話しています。
+  - id: b
+    label_jp: 日本で何をしています
+  - id: c
+    label_jp: うん。元気。
+  - id: d
+    label_jp: 日本に来て、どのぐらいですか？
+  - id: e
+    label_jp: 人の人が話しています。
+  - id: f
+    label_jp: そうですか。日本に慣れましたか？
+  - id: g
+    label_jp: レストランで働いています
+  - id: h
+    label_jp: 仕事や生活はどうですか。
+  correct_ids:
+  - b
+  - e
+  - g
+  - h
+  choose_mode: all
 - id: A21
   kind: listening
   book_activity: 21
@@ -676,7 +806,7 @@ activities:
   - 人の人が話しています。
   - 日本で何をしています
   - 仕事や生活はどうですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL01 activity 21: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -694,10 +824,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL01 activity 21: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL01 activity 21: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: そうですか。日本の生活に、もう慣れましたか？
+  - id: b
+    label_jp: あ、お久しぶりです。
+  - id: c
+    label_jp: いつ来ました
+  - id: d
+    label_jp: 仕事や生活はどうですか。
+  - id: e
+    label_jp: レストランで働いています
+  - id: f
+    label_jp: 日本で何をしています
+  - id: g
+    label_jp: で働いています
+  - id: h
+    label_jp: 人の人が話しています。
+  correct_ids:
+  - d
+  - e
+  - f
+  - h
+  choose_mode: all
 - id: A22
   kind: listening
   book_activity: 22
@@ -710,7 +862,7 @@ activities:
   - 人の人が話しています。
   - 日本で何をしています
   - 仕事や生活はどうですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL01 activity 22: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -728,10 +880,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL01 activity 22: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL01 activity 22: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 日本で何をしています
+  - id: b
+    label_jp: はい。おかげさまで。
+  - id: c
+    label_jp: お元気ですか？
+  - id: d
+    label_jp: はい。
+  - id: e
+    label_jp: 仕事や生活はどうですか。
+  - id: f
+    label_jp: レストランで働いています
+  - id: g
+    label_jp: 人の人が話しています。
+  - id: h
+    label_jp: で働いています
+  correct_ids:
+  - a
+  - e
+  - f
+  - g
+  choose_mode: all
 - id: A23
   kind: listening
   book_activity: 23
@@ -744,7 +918,7 @@ activities:
   - 人の人が話しています。
   - 日本で何をしています
   - 仕事や生活はどうですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL01 activity 23: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -762,10 +936,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL01 activity 23: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL01 activity 23: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 仕事や生活はどうですか。
+  - id: b
+    label_jp: はい。
+  - id: c
+    label_jp: 人の人が話しています。
+  - id: d
+    label_jp: あ、久しぶり。
+  - id: e
+    label_jp: いつ来ました
+  - id: f
+    label_jp: レストランで働いています
+  - id: g
+    label_jp: お元気ですか？
+  - id: h
+    label_jp: 日本で何をしています
+  correct_ids:
+  - a
+  - c
+  - f
+  - h
+  choose_mode: all
 - id: A24
   kind: grammar_form
   book_activity: 24
@@ -776,7 +972,7 @@ activities:
   key_phrases:
   - レストランで働いています
   - 仕事はどうですか？
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: レストランで働いています
     tags:
@@ -786,7 +982,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A25
   kind: speaking
   book_activity: 25
@@ -899,6 +1095,104 @@ activities:
     tags:
     - short
     - polite
+- id: KANJI
+  kind: kanji
+  book_activity: 27.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 学生
+  - 仕事
+  - 学校
+  - 元気
+  - 生活
+  - 忙しい
+  - 去年
+  - 働く
+  - 先週
+  - 作る
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 55
+  kanji_items: &id004
+  - kanji: 学生
+    reading: がくせい
+    gloss_en: student
+  - kanji: 仕事
+    reading: しごと
+    gloss_en: work / job
+  - kanji: 学校
+    reading: がっこう
+    gloss_en: school
+  - kanji: 元気
+    reading: げんき
+    gloss_en: fine / healthy / energetic
+  - kanji: 生活
+    reading: せいかつ
+    gloss_en: life / daily life
+  - kanji: 忙しい
+    reading: いそがしい
+    gloss_en: busy
+  - kanji: 去年
+    reading: きょねん
+    gloss_en: last year
+  - kanji: 働く
+    reading: はたらく
+    gloss_en: to work
+  - kanji: 先週
+    reading: せんしゅう
+    gloss_en: last week
+  - kanji: 作る
+    reading: つくる
+    gloss_en: to make / grow
+  kanji_sentences: &id005
+  - お元気ですか？
+  - 去年、日本に来ました。
+  - 日本の生活に、もう慣れましたか？
+  - Ａ：働いていますか？Ｂ：いいえ、学生です。今は、日本語学校に通っています。
+  - 野菜を作っています。
+  - 介護の仕事をしています。
+  - 先週は、とても忙しかったです。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 28
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Is there a job you want to do when you go to Japan?
+
+    Can exchange greetings with a person you are meeting for the first time in a long time.
+
+    Listen to the dialogs.
+
+    Two people who are meeting for the first time in a long time are exchanging greetings with each other.
+
+    First, listen to the dialogs without looking at the script. What do you think are the relationships
+    of these two people shown in the
+
+    illustrations from ①-③? Choose from a-c.
+
+    だち friends b. 先
+
+    輩 senior and junior colleagues c. 知
+
+    い acquaintances
+
+    Listen to the dialogs again. This time, follow along with the script.
+
+    Listen to the dialogs again. Which expression did the woman use, a or b?
+
+    With what kind of people would you use a? With what kind of people would you use b?
+
+    Focus on the expressions used and listen to the dialogs again.
+
+    Practice greetings when you are meeting someone for the first time in a long time.
+
+    Listen to the dialo'
+  picture_has_image: false
 grammar:
 - point: おはよう！ →（ ）！
   worksheet_pages:
@@ -937,13 +1231,13 @@ vocab:
 quiz_bank:
 - type: roleplay
   can_do_id: CD_EL01_01
-  prompt_en: 'Demonstrate: Can exchange greetings with a person you are meeting for
-    the first time in a long time.'
+  prompt_en: 'Demonstrate: Can exchange greetings with a person you are meeting for the first time in
+    a long time.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL01_02
-  prompt_en: 'Demonstrate: Can talk in simple terms about how you have been recently
-    when asked by a close person.'
+  prompt_en: 'Demonstrate: Can talk in simple terms about how you have been recently when asked by a close
+    person.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL01_03
@@ -957,13 +1251,11 @@ quiz_scenarios:
   - あ、お久しぶりです。
   - したい仕事があります
   - で働いています
-  hint_en: Can exchange greetings with a person you are meeting for the first time
-    in a long time.
+  hint_en: Can exchange greetings with a person you are meeting for the first time in a long time.
 - can_do_id: CD_EL01_01
   partner_jp: もう一度、お願いします。
   expected: *id001
-  hint_en: Again — Can exchange greetings with a person you are meeting for the first
-    time in a lon
+  hint_en: Again — Can exchange greetings with a person you are meeting for the first time in a lon
 - can_do_id: CD_EL01_02
   partner_jp: はい。おかげさまで。
   expected: &id002
@@ -971,13 +1263,11 @@ quiz_scenarios:
   - お元気ですか？
   - したい仕事があります
   - で働いています
-  hint_en: Can talk in simple terms about how you have been recently when asked by
-    a close person.
+  hint_en: Can talk in simple terms about how you have been recently when asked by a close person.
 - can_do_id: CD_EL01_02
   partner_jp: もう一度、お願いします。
   expected: *id002
-  hint_en: 'Again — Can talk in simple terms about how you have been recently when
-    asked by a close '
+  hint_en: 'Again — Can talk in simple terms about how you have been recently when asked by a close '
 - can_do_id: CD_EL01_03
   partner_jp: お久しぶりです。
   expected: &id003
@@ -992,16 +1282,14 @@ quiz_scenarios:
   hint_en: Again — Can talk in simple terms about your work in Japan.
 english_notes: 'Is there a job you want to do when you go to Japan?
 
-  Can exchange greetings with a person you are meeting for the first time in a long
-  time.
+  Can exchange greetings with a person you are meeting for the first time in a long time.
 
   Listen to the dialogs.
 
-  Two people who are meeting for the first time in a long time are exchanging greetings
-  with each other.
+  Two people who are meeting for the first time in a long time are exchanging greetings with each other.
 
-  First, listen to the dialogs without looking at the script. What do you think are
-  the relationships of these two people shown in the
+  First, listen to the dialogs without looking at the script. What do you think are the relationships
+  of these two people shown in the
 
   illustrations from ①-③? Choose from a-c.
 
@@ -1015,8 +1303,7 @@ english_notes: 'Is there a job you want to do when you go to Japan?
 
   Listen to the dialogs again. Which expression did the woman use, a or b?
 
-  With what kind of people would you use a? With what kind of people would you use
-  b?
+  With what kind of people would you use a? With what kind of people would you use b?
 
   Focus on the expressions used and listen to the dialogs again.
 
@@ -1026,25 +1313,27 @@ english_notes: 'Is there a job you want to do when you go to Japan?
 
   Shadow the dialogs.
 
-  Decide who you are meeting with for the first time in a long time, such as a friend,
-  senior colleague, teacher, and acquaintance. Ex-
+  Decide who you are meeting with for the first time in a long time, such as a friend, senior colleague,
+  teacher, and acquaintance. Ex-
 
   change greetings with each other.
 
-  Can talk in simple terms about how you have been recently when asked by a close
-  person.
+  Can talk in simple terms about how you have been recently when asked by a close person.
 
   Listen to the dialogs.
 
   The four people are each talking about themselves.
 
-  How long has each person been in Japan? When did they come to Japan? Choose from
-  a-d.
+  How long has each person been in Japan? When did they come to Japan? Choose from a-d.
 
-  Listen to the dialogs again. Has each person gotten used to living in Japan? Draw
-  a circle by the people who have gotten used to
+  Listen to the dialogs again. Has each person gotten used to living in Japan? Draw a circle by the people
+  who have gotten used to
 
   living in Japan.
 
   Check the word'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 55
+  items: *id004
+  sentences: *id005

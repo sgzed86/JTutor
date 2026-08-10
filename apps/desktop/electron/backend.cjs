@@ -120,6 +120,8 @@ class BackendSupervisor {
     this.logPath = path.join(this.logDir, "backend.log");
     this.pidPath = path.join(userDataPath, "backend.pid");
     fs.mkdirSync(this.logDir, { recursive: true });
+    // Always use Electron userData for progress so desktop launches and
+    // packaged installs share one DB (not the repo ./data copy used by plain uvicorn).
     this.dataDir = path.join(userDataPath, "data");
     fs.mkdirSync(this.dataDir, { recursive: true });
   }

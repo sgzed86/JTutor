@@ -24,7 +24,7 @@ export default function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [setupOpen, setSetupOpen] = useState(false);
   const [welcomeOpen, setWelcomeOpen] = useState(false);
-  const [contextOpen, setContextOpen] = useState(true);
+  const [contextOpen, setContextOpen] = useState(false);
   const [railOpen, setRailOpen] = useState(true);
   const [activeLesson, setActiveLesson] = useState<string>("");
   const [lessonProgress] = useState<ProgressSnapshot | null>(null);
@@ -238,6 +238,7 @@ export default function App() {
               onProgressChanged={onProgressChanged}
               contextOpen={contextOpen}
               onToggleContext={() => setContextOpen((v) => !v)}
+              onContextOpenChange={setContextOpen}
             />
           }
         />

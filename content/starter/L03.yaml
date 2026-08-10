@@ -180,7 +180,7 @@ activities:
   - タイから来ました
   - 私はマルシアです
   - ブラジルから来ました
-  prompt_en: Listen to the CD, then say each line one at a time (5 lines).
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: はじめまして
     tags:
@@ -199,8 +199,27 @@ activities:
   - jp: ブラジルから来ました
     tags:
     - short
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: はじめまして。トン＿。
+    answers:
+    - です
+    full_jp: はじめまして。トンです。
+  - prompt_jp: タイ＿。
+    answers:
+    - から来ました
+    full_jp: タイから来ました。
+  - prompt_jp: 私＿マルシア＿。
+    answers:
+    - は
+    - です
+    full_jp: 私はマルシアです。
+  - prompt_jp: ブラジル＿。
+    answers:
+    - から来ました
+    full_jp: ブラジルから来ました。
   picture_has_image: false
+  fill_pdf_page: 82
 - id: A6
   kind: speaking
   book_activity: 6
@@ -285,7 +304,7 @@ activities:
   - ちゃんです
   - ご出身は？
   - ベトナムです
-  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: お名前は？
     tags:
@@ -345,7 +364,7 @@ activities:
   - 私もベトナムです
   - ケマラさんも、ベトナムからですか
   - ベトナムじゃないです
-  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: ご出身は、ベトナムです
     tags:
@@ -400,6 +419,82 @@ activities:
     - short
     - polite
   book_mode: listen_repeat_all
+  picture_has_image: false
+- id: KANJI
+  kind: kanji
+  book_activity: 11.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 名前
+  - 国
+  - 私
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 93
+  kanji_items: &id001
+  - kanji: 名前
+    reading: なまえ
+    gloss_en: name
+  - kanji: 国
+    reading: くに
+    gloss_en: country
+  - kanji: 私
+    reading: わたし
+    gloss_en: I / me
+  kanji_sentences: &id002
+  - お名前は？
+  - お国は？
+  - 私は、アクバルです。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 12
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'What do you say when you are introducing yourself to someone you are meeting for
+    the first time?
+
+    Can give a simple self-introduction, for example by saying your name and country / hometown.
+
+    Listen to the dialog.
+
+    Four people are joining a local Japanese class and introducing themselves.
+
+    Choose the names and nationalities (countries) of the people ①–④ from below.
+
+    前 Name
+
+    Country
+
+    Check the words and listen to the dialog again.
+
+    る come）｜ 私
+
+    I / myself
+
+    はじめまして Hello. (said when meeting someone for the first time)
+
+    いします Nice to meet you.
+
+    Listen to the recording and fill in the blanks.
+
+    What expression was used when the speakers said their names?
+
+    What expression was used when the speakers said their countries / hometowns?
+
+    Focus on the expressions used and listen to the dialog again.
+
+    Introduce yourself.
+
+    Listen to the dialog.
+
+    Shadow the dialog.
+
+    Talk as if you are introducing yourself at work or in a Ja'
   picture_has_image: false
 grammar:
 - point: N です
@@ -646,3 +741,7 @@ english_notes: 'What do you say when you are introducing yourself to someone you
   Can write your name and country on a name tag, etc.'
 unlock_requires_mastery: true
 schema_version: 1
+kanji_words:
+  pdf_page: 93
+  items: *id001
+  sentences: *id002

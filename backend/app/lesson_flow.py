@@ -3,13 +3,18 @@
 from __future__ import annotations
 
 import json
+import re
 
 from backend.app.book_modes import (
     book_mode,
+    fill_blank_index,
     flow_substeps,
+    kanji_type_index,
+    pronounce_phrase_index,
     repeat_phrase_index,
     spec_for,
     substep_at,
+    vocab_phrase_index,
 )
 from backend.app.books import content_dir_for_lesson
 from backend.app.curriculum_loader import load_lesson
@@ -113,7 +118,7 @@ def book_tracks(lesson: dict) -> list[dict]:
         for a in (lesson.get("activities") or [])
         if a.get("kind") not in skip and not a.get("book_skip")
     ]
-    acts.sort(key=lambda x: int(x.get("book_activity") or 0))
+    acts.sort(key=lambda x: float(x.get("book_activity") or 0))
     return acts
 
 
@@ -143,6 +148,159 @@ def _phrases(activity: dict | None) -> list[str]:
     if not activity:
         return []
     return [p for p in (activity.get("key_phrases") or []) if p]
+
+
+def _blanks(activity: dict | None) -> list[dict]:
+    if not activity:
+        return []
+    out: list[dict] = []
+    for item in activity.get("blanks") or []:
+        if isinstance(item, dict) and (item.get("prompt_jp") or "").strip():
+            out.append(item)
+    return out
+
+
+def _choices_public(activity: dict | None) -> list[dict]:
+    out: list[dict] = []
+    for c in (activity or {}).get("choices") or []:
+        if not isinstance(c, dict):
+            continue
+        cid = str(c.get("id") or "").strip()
+        if not cid:
+            continue
+        item = {"id": cid}
+        if c.get("label_jp"):
+            item["label_jp"] = c["label_jp"]
+        if c.get("label_en"):
+            item["label_en"] = c["label_en"]
+        out.append(item)
+    return out
+
+
+def _correct_ids(activity: dict | None) -> list[str]:
+    return [str(x).strip() for x in ((activity or {}).get("correct_ids") or []) if str(x).strip()]
+
+
+def parse_choice_ids(text: str) -> set[str]:
+    parts = re.split(r"[,|、/\s]+", (text or "").strip())
+    return {p.strip().lower() for p in parts if p.strip()}
+
+
+def grade_choice_answer(text: str, activity: dict) -> dict:
+    """Grade listen_choose / reading MCQ. `text` is comma-separated choice ids."""
+    want = {x.lower() for x in _correct_ids(activity)}
+    got = parse_choice_ids(text)
+    mode = (activity.get("choose_mode") or ("all" if len(want) > 1 else "any")).lower()
+    if not want:
+        # No key — accept any non-empty selection.
+        passed = bool(got)
+    elif mode == "any":
+        passed = bool(got & want)
+    else:
+        passed = got == want
+    score = 100.0 if passed else (50.0 if got & want else 0.0)
+    return {
+        "passed": passed,
+        "score": score,
+        "similarity": score,
+        "hits": sorted(got & want),
+        "spoken": False,
+        "feedback_jp": "よくできました。" if passed else "もういちど きいて、えらんでください。",
+        "feedback_en": "Good!" if passed else "Listen again and choose carefully.",
+        "best_match": ",".join(sorted(want)) if want else None,
+    }
+
+
+def grade_note_answer(text: str, activity: dict) -> dict:
+    """Soft-grade notes: pass if non-empty; bonus if keywords appear."""
+    body = (text or "").strip()
+    keywords = [str(k).strip() for k in (activity.get("note_keywords") or []) if str(k).strip()]
+    hits = [k for k in keywords if k and k in body]
+    passed = len(body) >= 2
+    score = 100.0 if hits else (80.0 if passed else 0.0)
+    return {
+        "passed": passed,
+        "score": score,
+        "similarity": score,
+        "hits": hits,
+        "spoken": False,
+        "feedback_jp": "いい メモです。" if passed else "メモを かいてください。",
+        "feedback_en": "Nice notes." if passed else "Type a short note about what you heard.",
+        "best_match": hits[0] if hits else None,
+    }
+
+
+def _kanji_items(activity: dict | None) -> list[dict]:
+    out: list[dict] = []
+    for item in (activity or {}).get("kanji_items") or []:
+        if isinstance(item, dict) and (item.get("kanji") or "").strip():
+            out.append(item)
+    return out
+
+
+def grade_kanji_type(text: str, item: dict) -> dict:
+    """Accept the kanji headword, or its reading as a soft alternative."""
+    from backend.app.phrase_grade import grade_phrases, current_policy
+
+    kanji = (item.get("kanji") or "").strip()
+    reading = (item.get("reading") or "").strip()
+    expected = [x for x in (kanji, reading) if x]
+    grade = grade_phrases(text, expected, spoken=False, policy=current_policy())
+    if not grade.get("passed") and reading and reading.replace(" ", "") in (text or "").replace(" ", ""):
+        grade = {
+            **grade,
+            "passed": True,
+            "score": 85.0,
+            "feedback_jp": "読みは だいじょうぶ。できれば 漢字で かいてみましょう。",
+            "feedback_en": "Reading is fine — try typing the kanji with your IME next time.",
+            "best_match": reading,
+        }
+    elif grade.get("passed") and kanji and kanji in (text or ""):
+        grade = {
+            **grade,
+            "feedback_jp": "よくできました。",
+            "feedback_en": "Nice — that's the kanji.",
+        }
+    return grade
+
+
+def _blank_slot_count(prompt_jp: str) -> int:
+    return max(len(re.findall(r"＿+", prompt_jp or "")), 1)
+
+
+def _fill_prompt(prompt_jp: str, fills: list[str]) -> str:
+    parts = re.split(r"＿+", prompt_jp or "")
+    out = parts[0] if parts else ""
+    for i in range(len(parts) - 1):
+        out += (fills[i] if i < len(fills) else "").strip()
+        out += parts[i + 1] if i + 1 < len(parts) else ""
+    return out
+
+
+def expected_for_blank(blank: dict) -> list[str]:
+    """Accepted answers for a cloze item (never sent to the client)."""
+    out: list[str] = []
+    full = (blank.get("full_jp") or "").strip()
+    if full:
+        out.append(full)
+    answers = [str(a).strip() for a in (blank.get("answers") or []) if str(a).strip()]
+    prompt = (blank.get("prompt_jp") or "").strip()
+    if prompt and answers:
+        filled = _fill_prompt(prompt, answers).strip()
+        if filled and filled not in out:
+            out.append(filled)
+    if answers:
+        joined = "".join(answers)
+        if joined and joined not in out:
+            out.append(joined)
+        for a in answers:
+            if a not in out:
+                out.append(a)
+    for alt in blank.get("answer_alts") or []:
+        s = str(alt).strip()
+        if s and s not in out:
+            out.append(s)
+    return out
 
 
 def _lesson_num(lesson_id: str) -> str:
@@ -211,6 +369,7 @@ def _step_base(activity: dict, substep: str, quiz_index: int, lesson: dict | Non
         "substep_index": quiz_index if 0 <= quiz_index < len(subs) else None,
         "substep_total": len(subs),
         "expects_speech": bool(spec and spec.expects_speech),
+        "expects_text": bool(spec and getattr(spec, "expects_text", False)),
         "auto_advance": bool(spec and spec.auto_advances),
         "graded": bool(spec and spec.graded),
         "substep_label_en": spec.label_en if spec else None,
@@ -272,12 +431,20 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
             return jp, en, step
         if mode == "vocab_drill":
             jp = "ことばを ききましょう。CDを きいてください。"
-            en = "Vocabulary — listen to the CD, then say each word in Japanese."
+            en = activity.get("prompt_en") or "Vocabulary — listen to the CD, then say each word in Japanese."
             up_next = f"Next say: {phrases[0]}" if phrases else None
         elif mode == "pronunciation":
             jp = "はつおんに ちゅういして ききましょう。CDを きいてください。"
-            en = "Pronunciation — listen for rhythm and long vowels, then repeat carefully."
+            en = activity.get("prompt_en") or "Pronunciation — listen for rhythm and long vowels, then repeat carefully."
             up_next = f"Next pronounce: {phrases[0]}" if phrases else None
+        elif mode == "listen_choose":
+            jp = "きいて、えらびましょう。CDを きいてください。"
+            en = activity.get("prompt_en") or "Listen to the CD, then choose what you heard."
+            up_next = "Next: tap the matching choice(s)."
+        elif mode == "note_take":
+            jp = "きいて、メモを かきましょう。CDを きいてください。"
+            en = activity.get("prompt_en") or "Listen, then type brief notes about what you heard."
+            up_next = "Next: type your notes."
         elif mode == "listen_repeat_all":
             jp = "聞いて、言いましょう。CDを きいてください。"
             n = len(phrases)
@@ -287,6 +454,18 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
                     "Listen to the CD, then repeat each phrase.")
             )
             up_next = f"Next you will say each line, starting with: {phrases[0]}" if phrases else None
+        elif mode == "listen_fill":
+            blanks = _blanks(activity)
+            jp = "聞いて、空欄に 書きましょう。CDを きいてください。"
+            n = len(blanks)
+            en = (
+                activity.get("prompt_en")
+                or "Listen to the recording and fill in the blanks."
+            )
+            first = (blanks[0].get("prompt_jp") if blanks else "") or ""
+            up_next = f"Next: type the missing words ({n} lines)." if n else None
+            if first:
+                up_next = f"Next fill in: {first}"
         elif mode == "listen_repeat":
             jp = "聞いて、言いましょう。CDを きいてください。"
             en = "Listen and repeat — play the CD, then say the phrase."
@@ -307,27 +486,180 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
                 "auto_advance_after_audio": True,
                 "instruction_en": "Listen to the book CD first",
                 "picture_hint_en": activity.get("picture_hint_en"),
-                "say_target_jp": phrases[0] if phrases else None,
-                "say_alternates_jp": phrases[1:4] if mode != "listen_repeat_all" else [],
+                "say_target_jp": phrases[0] if phrases and mode != "listen_fill" else None,
+                "say_alternates_jp": phrases[1:4] if mode not in ("listen_repeat_all", "listen_fill") else [],
                 "up_next_en": up_next,
-                "phrase_total": len(phrases) if mode == "listen_repeat_all" else None,
+                "phrase_total": len(phrases) if mode == "listen_repeat_all" else (
+                    len(_blanks(activity)) if mode == "listen_fill" else None
+                ),
             }
         )
         return jp, en, step
 
     if sub == "reflect":
-        notes = (lesson.get("english_notes") or activity.get("culture_notes_en") or "").strip()
+        notes = (
+            (activity.get("culture_notes_en") or "")
+            or (lesson.get("english_notes") or "")
+            or ""
+        ).strip()
         jp = "文化について かんがえましょう。"
-        en = notes[:400] or "Read the culture notes in your book. No grade — tap Skip when ready."
+        en = (notes[:500] if notes else "") or "Read the culture notes in your book. No grade — tap Next when ready."
         step = _step_base(activity, sub, quiz_index)
         step.update(
             {
                 "play_audio": [],
                 "expect_speech": False,
-                "auto_advance_after_audio": True,
-                "instruction_en": en,
+                "auto_advance_after_audio": False,
+                "auto_advance": False,
+                "instruction_en": "Life and culture — read the note, then continue.",
                 "book_mode": "culture_read",
                 "culture_card": True,
+                "culture_notes_en": notes[:1200] if notes else None,
+                "passage_en": notes[:1200] if notes else None,
+            }
+        )
+        return jp, en, step
+
+    if sub == "read":
+        passage_jp = (activity.get("passage_jp") or "").strip()
+        passage_en = (activity.get("passage_en") or activity.get("prompt_en") or "").strip()
+        jp = "よみましょう。"
+        en = passage_en or "Read the passage in your book, then continue."
+        step = _step_base(activity, sub, quiz_index, lesson)
+        step.update(
+            {
+                "play_audio": [],
+                "expect_speech": False,
+                "auto_advance": False,
+                "instruction_en": "Read carefully",
+                "book_mode": "reading",
+                "passage_jp": passage_jp or None,
+                "passage_en": passage_en or None,
+                "culture_notes_en": None,
+            }
+        )
+        return jp, en, step
+
+    if sub in ("choose", "read_check"):
+        choices = _choices_public(activity)
+        multi = (activity.get("choose_mode") or ("all" if len(_correct_ids(activity)) > 1 else "any")) == "all"
+        jp = "えらんでください。" if sub == "choose" else "しつもんに こたえてください。"
+        en = (
+            activity.get("prompt_en")
+            or ("Choose every matching option." if multi else "Choose the best option.")
+        )
+        step = _step_base(activity, sub, quiz_index, lesson)
+        step.update(
+            {
+                "play_audio": [],
+                "expect_speech": False,
+                "expects_speech": False,
+                "expects_text": True,
+                "auto_advance_after_audio": False,
+                "instruction_en": en,
+                "choices": choices,
+                "choose_multi": multi,
+                "passage_jp": activity.get("passage_jp"),
+                "passage_en": activity.get("passage_en"),
+                # Never expose correct_ids / note_keywords answers.
+                "say_target_jp": None,
+                "model_before_speech": False,
+            }
+        )
+        return jp, en, step
+
+    if sub == "note":
+        jp = "メモを かいてください。"
+        en = activity.get("prompt_en") or "Type brief notes about what you heard (who / what / where)."
+        step = _step_base(activity, sub, quiz_index, lesson)
+        step.update(
+            {
+                "play_audio": [],
+                "expect_speech": False,
+                "expects_speech": False,
+                "expects_text": True,
+                "auto_advance_after_audio": False,
+                "instruction_en": en,
+                "note_prompt_en": en,
+                "expects_notes": True,
+                "say_target_jp": None,
+            }
+        )
+        return jp, en, step
+
+    if sub == "kanji_study":
+        items = _kanji_items(activity)
+        jp = "漢字のことばを みましょう。"
+        en = "Kanji words — check each character and its reading, then continue."
+        step = _step_base(activity, sub, quiz_index, lesson)
+        step.update(
+            {
+                "play_audio": [],
+                "expect_speech": False,
+                "auto_advance": False,
+                "instruction_en": en,
+                "book_mode": "kanji_words",
+                "kanji_items": [
+                    {
+                        "kanji": it.get("kanji"),
+                        "reading": it.get("reading"),
+                        "gloss_en": it.get("gloss_en"),
+                    }
+                    for it in items
+                ],
+                "pdf_page": activity.get("pdf_page"),
+            }
+        )
+        return jp, en, step
+
+    if sub == "kanji_read":
+        sentences = [s for s in (activity.get("kanji_sentences") or []) if str(s).strip()]
+        jp = "漢字に ちゅういして よみましょう。"
+        en = "Read these lines and pay attention to the new kanji."
+        step = _step_base(activity, sub, quiz_index, lesson)
+        step.update(
+            {
+                "play_audio": [],
+                "expect_speech": False,
+                "auto_advance": False,
+                "instruction_en": en,
+                "book_mode": "kanji_words",
+                "kanji_sentences": sentences,
+                "passage_jp": "\n".join(f"{i + 1}. {s}" for i, s in enumerate(sentences)) or None,
+            }
+        )
+        return jp, en, step
+
+    if sub == "kanji_type":
+        items = _kanji_items(activity)
+        idx = kanji_type_index(activity, quiz_index)
+        item = items[min(idx, len(items) - 1)] if (idx is not None and items) else (items[0] if items else {})
+        kanji = (item.get("kanji") or "").strip()
+        reading = (item.get("reading") or "").strip()
+        gloss = (item.get("gloss_en") or "").strip()
+        total = len(items) or 1
+        n = (idx + 1) if idx is not None else 1
+        jp = "キーボードで にゅうりょく してください。"
+        en = f"Type this word ({n}/{total})" + (f" — {gloss}" if gloss else "")
+        step = _step_base(activity, sub, quiz_index, lesson)
+        step.update(
+            {
+                "play_audio": [],
+                "expect_speech": False,
+                "expects_speech": False,
+                "expects_text": True,
+                "auto_advance": False,
+                "instruction_en": en,
+                "book_mode": "kanji_words",
+                "kanji_prompt": {
+                    "kanji": kanji or None,
+                    "reading": reading or None,
+                    "gloss_en": gloss or None,
+                    "index": idx,
+                    "total": total,
+                },
+                # Hint with reading; do not require revealing answer key beyond that.
+                "say_target_jp": None,
             }
         )
         return jp, en, step
@@ -349,27 +681,43 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
         return jp, en, step
 
     if sub == "pronounce":
-        target = phrases[0] if phrases else ""
-        jp = f"はつおんを たしかに いってください。{target}" if target else "はつおんを たしかに いってください。"
+        p_idx = pronounce_phrase_index(activity, quiz_index)
+        if p_idx is not None and phrases:
+            target = phrases[min(p_idx, len(phrases) - 1)]
+        else:
+            target = phrases[0] if phrases else ""
+        jp = "はつおんを たしかに いってください。"
         en = f"Pronunciation — say clearly (watch long vowels): {target}" if target else "Say the phrase clearly."
         step = _step_base(activity, sub, quiz_index)
         step.update(
             {
-                "play_audio": audio[:1],
+                "play_audio": [],
                 "expect_speech": True,
                 "auto_advance_after_audio": False,
                 "instruction_en": "Focus on mora and long vowels",
                 "say_target_jp": target or None,
-                "say_alternates_jp": phrases[1:3],
+                "say_alternates_jp": [],
                 "book_mode": "pronunciation",
+                "model_before_speech": True,
+                "phrase_index": p_idx,
+                "phrase_total": len(phrases) if phrases else None,
             }
         )
         return jp, en, step
 
     if sub == "vocab_say":
-        target = phrases[0] if phrases else ""
-        gloss = (activity.get("vocab_gloss_en") or activity.get("gloss_en") or "").strip()
-        jp = f"ことばを いってください。{target}" if target else "ことばを いってください。"
+        p_idx = vocab_phrase_index(activity, quiz_index)
+        if p_idx is not None and phrases:
+            target = phrases[min(p_idx, len(phrases) - 1)]
+        else:
+            target = phrases[0] if phrases else ""
+        gloss_map = activity.get("glosses_en") or {}
+        gloss = (
+            (gloss_map.get(target) if isinstance(gloss_map, dict) else None)
+            or (activity.get("vocab_gloss_en") or activity.get("gloss_en") or "")
+        )
+        gloss = str(gloss or "").strip()
+        jp = "ことばを いってください。"
         en = f"Say the vocabulary word in Japanese{f' ({gloss})' if gloss else ''}: {target}"
         step = _step_base(activity, sub, quiz_index)
         step.update(
@@ -381,6 +729,9 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
                 "say_target_jp": target or None,
                 "gloss_en": gloss or None,
                 "book_mode": "vocab_drill",
+                "model_before_speech": True,
+                "phrase_index": p_idx,
+                "phrase_total": len(phrases) if phrases else None,
             }
         )
         return jp, en, step
@@ -424,7 +775,8 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
             target = phrases[0] if phrases else ""
             en = f"Listen and repeat — say: {target}" if target else "Repeat the phrase from the CD."
             alts = phrases[1:4]
-        jp = f"言いましょう。{target}" if target else "言いましょう。"
+        # Keep the coach line short; the client TTS-models `say_target_jp` clearly.
+        jp = "言いましょう。"
         step = _step_base(activity, sub, quiz_index, lesson)
         step.update(
             {
@@ -436,6 +788,7 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
                 "say_alternates_jp": alts,
                 "phrase_index": p_idx,
                 "phrase_total": len(phrases) if p_idx is not None else None,
+                "model_before_speech": True,
             }
         )
         return jp, en, step
@@ -454,6 +807,7 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
                 "picture_hint_en": activity.get("picture_hint_en"),
                 "say_target_jp": target or None,
                 "say_alternates_jp": phrases[1:4],
+                "model_before_speech": True,
             }
         )
         return jp, en, step
@@ -481,9 +835,43 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
                 "book_line_color": "yellow" if is_tutor else "orange",
                 "instruction_en": en,
                 "say_target_jp": text if not is_tutor else None,
+                "model_before_speech": not is_tutor,
             }
         )
-        jp = text if is_tutor else (f"あなたの セリフです。{text}" if text else "あなたの セリフを いってください。")
+        # Tutor speaks the partner line itself; learner hears a clean model of their line.
+        jp = text if is_tutor else "あなたの セリフです。"
+        return jp, en, step
+
+    if sub == "fill":
+        blanks = _blanks(activity)
+        b_idx = fill_blank_index(activity, quiz_index)
+        blank = blanks[min(b_idx, len(blanks) - 1)] if (b_idx is not None and blanks) else (
+            blanks[0] if blanks else {}
+        )
+        prompt = (blank.get("prompt_jp") or "").strip()
+        slots = _blank_slot_count(prompt)
+        total = len(blanks) or 1
+        index_1 = (b_idx + 1) if b_idx is not None else 1
+        jp = "空欄に ことばを 書いてください。"
+        en = f"Fill in the blank ({index_1}/{total}) — type what you heard."
+        step = _step_base(activity, sub, quiz_index, lesson)
+        step.update(
+            {
+                "play_audio": [],
+                "expect_speech": False,
+                "expects_speech": False,
+                "expects_text": True,
+                "auto_advance_after_audio": False,
+                "instruction_en": "Listen again if you need to, then type the missing word(s).",
+                "blank_prompt_jp": prompt or None,
+                "blank_count": slots,
+                "blank_index": b_idx,
+                "blank_total": total,
+                # Do not expose answers / full_jp to the client.
+                "say_target_jp": None,
+                "model_before_speech": False,
+            }
+        )
         return jp, en, step
 
     step = _step_base(activity, "repeat", quiz_index, lesson)
@@ -513,6 +901,14 @@ def expected_phrases_for_substep(activity: dict, quiz_index: int) -> list[str]:
                 out.append(p)
         return out or phrases
     if sub in ("pronounce", "vocab_say", "select"):
+        if sub == "vocab_say":
+            p_idx = vocab_phrase_index(activity, quiz_index)
+            if p_idx is not None and phrases:
+                return [phrases[min(p_idx, len(phrases) - 1)]]
+        if sub == "pronounce":
+            p_idx = pronounce_phrase_index(activity, quiz_index)
+            if p_idx is not None and phrases:
+                return [phrases[min(p_idx, len(phrases) - 1)]]
         return phrases[:4] if phrases else []
     if sub == "repeat":
         p_idx = repeat_phrase_index(activity, quiz_index)
@@ -523,6 +919,13 @@ def expected_phrases_for_substep(activity: dict, quiz_index: int) -> list[str]:
             if book_mode(activity) != "listen_repeat_all":
                 return [target] + [p for p in phrases if p != target]
             return [target]
+    if sub == "fill":
+        blanks = _blanks(activity)
+        b_idx = fill_blank_index(activity, quiz_index)
+        if b_idx is not None and blanks:
+            blank = blanks[min(b_idx, len(blanks) - 1)]
+            return expected_for_blank(blank)
+        return expected_for_blank(blanks[0]) if blanks else phrases
     return phrases
 
 
@@ -572,7 +975,8 @@ def grammar_item(point: dict, index: int, total: int) -> tuple[str, str, dict]:
     prompt_jp = (point.get("prompt_jp") or "").strip()
 
     if target:
-        jp = prompt_jp or f"ぶんぽう {index + 1}。つぎを いってください。{target}"
+        # Short coach line; client TTS-models `say_target_jp` before the mic opens.
+        jp = prompt_jp or f"ぶんぽう {index + 1}。つぎを いってください。"
         en = prompt_en or f"Say this example: {target}"
         if target not in en:
             en = f"{en} Say: {target}"
@@ -606,6 +1010,7 @@ def grammar_item(point: dict, index: int, total: int) -> tuple[str, str, dict]:
         "say_target_jp": target,
         "say_alternates_jp": expected[1:4],
         "book_substep": "grammar_say" if target else "grammar_read",
+        "model_before_speech": bool(target),
     }
     return jp, en, step
 
@@ -663,6 +1068,15 @@ def feedback_retry(phrases: list[str]) -> str:
     if phrases:
         return f"もういちど。{'、'.join(phrases[:2])} いってください。"
     return "もういちど いってください。"
+
+
+def feedback_retry_choice() -> str:
+    """Spoken after a miss — do not model the target; the UI offers recovery choices."""
+    return "ちょっとちがいます。どうしますか？"
+
+
+def feedback_retry_choice_en() -> str:
+    return "Not quite — hear the recording, hear Yuki say it, or try again."
 
 
 def lesson_complete_script() -> tuple[str, str]:

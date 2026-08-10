@@ -122,7 +122,7 @@ describe("presentationFor", () => {
       "Hold to speak",
     );
     expect(presentationFor({ kind: "awaiting_speech", target: null }, { micMode: "toggle" }).primary.label).toBe(
-      "Start speaking",
+      "Tap to speak",
     );
   });
 });

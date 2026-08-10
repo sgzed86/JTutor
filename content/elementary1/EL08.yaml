@@ -11,14 +11,13 @@ intro_questions:
 - jp: Have you ever played baseball? について、あなたの けいけんは？
   en: Thinking about "Going Out" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can ask someone out to eat, go shopping, or go to an event
-    while asking about their experience and interest. What do you want to be able
-    to do?'
+  en: 'This lesson aims at: Can ask someone out to eat, go shopping, or go to an event while asking about
+    their experience and interest. What do you want to be able to do?'
 can_dos:
 - id: CD_EL08_24
   can_do_number: 24
-  statement_en: Can ask someone out to eat, go shopping, or go to an event while asking
-    about their experience and interest.
+  statement_en: Can ask someone out to eat, go shopping, or go to an event while asking about their experience
+    and interest.
   statement_jp: ''
   activity_hint: ''
   rubric:
@@ -26,8 +25,7 @@ can_dos:
     min_score: 80
 - id: CD_EL08_25
   can_do_number: 25
-  statement_en: Can discuss what to do next and where to go while you are out with
-    someone.
+  statement_en: Can discuss what to do next and where to go while you are out with someone.
   statement_jp: ''
   activity_hint: ''
   rubric:
@@ -82,7 +80,7 @@ activities:
   - 知り合いを誘っています。
   - 何に誘いました
   - 新しいアウトレットモール、行きましたか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL08 activity 2: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: もう行きました
     tags:
@@ -97,10 +95,32 @@ activities:
   - jp: 新しいアウトレットモール、行きましたか？
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL08 activity 2: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL08 activity 2: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 新しいアウトレットモール、行きましたか？
+  - id: b
+    label_jp: いいえ……。
+  - id: c
+    label_jp: 何に誘いました
+  - id: d
+    label_jp: いいですね。行きましょう。
+  - id: e
+    label_jp: ありません。
+  - id: f
+    label_jp: 私はサルがよかったです。
+  - id: g
+    label_jp: 知り合いを誘っています。
+  - id: h
+    label_jp: もう行きました
+  correct_ids:
+  - a
+  - c
+  - g
+  - h
+  choose_mode: all
 - id: A3
   kind: listening
   book_activity: 3
@@ -113,7 +133,7 @@ activities:
   - 知り合いを誘っています。
   - 何に誘いました
   - 新しいアウトレットモール、行きましたか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL08 activity 3: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: もう行きました
     tags:
@@ -128,10 +148,32 @@ activities:
   - jp: 新しいアウトレットモール、行きましたか？
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL08 activity 3: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL08 activity 3: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 何に誘いました
+  - id: b
+    label_jp: 動物園、どうでしたか？
+  - id: c
+    label_jp: いえ、まだです。
+  - id: d
+    label_jp: 新しいアウトレットモール、もう行きましたか？
+  - id: e
+    label_jp: 新しいアウトレットモール、行きましたか？
+  - id: f
+    label_jp: プロレスを見たか？
+  - id: g
+    label_jp: もう行きました
+  - id: h
+    label_jp: 知り合いを誘っています。
+  correct_ids:
+  - a
+  - e
+  - g
+  - h
+  choose_mode: all
 - id: A4
   kind: listening
   book_activity: 4
@@ -144,7 +186,7 @@ activities:
   - 知り合いを誘っています。
   - 何に誘いました
   - 新しいアウトレットモール、行きましたか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL08 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: もう行きました
     tags:
@@ -159,10 +201,32 @@ activities:
   - jp: 新しいアウトレットモール、行きましたか？
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL08 activity 4: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL08 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ありません。
+  - id: b
+    label_jp: 何に誘いました
+  - id: c
+    label_jp: プロレスを見たか？
+  - id: d
+    label_jp: 知り合いを誘っています。
+  - id: e
+    label_jp: もう行きました
+  - id: f
+    label_jp: な順番でします
+  - id: g
+    label_jp: 新しいアウトレットモール、行きましたか？
+  - id: h
+    label_jp: いいえ、。
+  correct_ids:
+  - b
+  - d
+  - e
+  - g
+  choose_mode: all
 - id: A5
   kind: listening
   book_activity: 5
@@ -175,7 +239,7 @@ activities:
   - 知り合いを誘っています。
   - 何に誘いました
   - 新しいアウトレットモール、行きましたか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL08 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: もう行きました
     tags:
@@ -190,10 +254,32 @@ activities:
   - jp: 新しいアウトレットモール、行きましたか？
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL08 activity 5: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL08 activity 5: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ちといっしょにどこかに行きました。
+  - id: b
+    label_jp: 市民体育館で試合がありますよ。
+  - id: c
+    label_jp: 楽しかったです。パンダがかわいかったです。
+  - id: d
+    label_jp: 知り合いを誘っています。
+  - id: e
+    label_jp: 市民体育館で試合があります
+  - id: f
+    label_jp: 何に誘いました
+  - id: g
+    label_jp: もう行きました
+  - id: h
+    label_jp: 新しいアウトレットモール、行きましたか？
+  correct_ids:
+  - d
+  - f
+  - g
+  - h
+  choose_mode: all
 - id: A6
   kind: listening
   book_activity: 6
@@ -206,7 +292,7 @@ activities:
   - 知り合いを誘っています。
   - 何に誘いました
   - 新しいアウトレットモール、行きましたか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL08 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: もう行きました
     tags:
@@ -221,10 +307,32 @@ activities:
   - jp: 新しいアウトレットモール、行きましたか？
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL08 activity 6: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL08 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 新しいアウトレットモール、行きましたか？
+  - id: b
+    label_jp: 動物園、どうでしたか？
+  - id: c
+    label_jp: もう行きました
+  - id: d
+    label_jp: 「パームキッチン」っていうアジアレストラン、行ったか？
+  - id: e
+    label_jp: 楽しかったです
+  - id: f
+    label_jp: 知り合いを誘っています。
+  - id: g
+    label_jp: 何に誘いました
+  - id: h
+    label_jp: どんな形容詞を使いました
+  correct_ids:
+  - a
+  - c
+  - f
+  - g
+  choose_mode: all
 - id: A7
   kind: grammar_form
   book_activity: 7
@@ -252,7 +360,7 @@ activities:
   - jp: いいえ……。
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A8
   kind: grammar_form
   book_activity: 8
@@ -280,7 +388,7 @@ activities:
   - jp: いいえ……。
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A9
   kind: speaking
   book_activity: 9
@@ -441,7 +549,7 @@ activities:
   - jp: もう行きました
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A14
   kind: speaking
   book_activity: 14
@@ -509,7 +617,7 @@ activities:
   - どんな形容詞を使いました
   - 動物園、どうでしたか？
   - 楽しかったです。パンダがかわいかったです。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL08 activity 16: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 人の人が感想を話しています。
     tags:
@@ -525,10 +633,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL08 activity 16: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL08 activity 16: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 楽しかったです。パンダがかわいかったです。
+  - id: b
+    label_jp: 動物園、どうでしたか？
+  - id: c
+    label_jp: 人の人が感想を話しています。
+  - id: d
+    label_jp: どんな形容詞を使いました
+  - id: e
+    label_jp: ちといっしょにどこかに行きました。
+  - id: f
+    label_jp: いいえ、。
+  - id: g
+    label_jp: 市民体育館で試合がありますよ。
+  - id: h
+    label_jp: 楽しかったです
+  correct_ids:
+  - a
+  - b
+  - c
+  - d
+  choose_mode: all
 - id: A17
   kind: listening
   book_activity: 17
@@ -541,7 +671,7 @@ activities:
   - 動物園、どうでしたか？
   - 楽しかったです。パンダがかわいかったです。
   - 私はサルがよかったです。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL08 activity 17: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 人の人が感想を話しています。
     tags:
@@ -558,10 +688,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL08 activity 17: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL08 activity 17: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 私はサルがよかったです。
+  - id: b
+    label_jp: 楽しかったです。パンダがかわいかったです。
+  - id: c
+    label_jp: 人の人が感想を話しています。
+  - id: d
+    label_jp: どんな形容詞を使いました
+  - id: e
+    label_jp: 動物園、どうでしたか？
+  - id: f
+    label_jp: 新しいアウトレットモール、行きましたか？
+  - id: g
+    label_jp: え、です。
+  - id: h
+    label_jp: いえ、です。
+  correct_ids:
+  - a
+  - b
+  - c
+  - e
+  choose_mode: all
 - id: A18
   kind: listening
   book_activity: 18
@@ -574,7 +726,7 @@ activities:
   - 動物園、どうでしたか？
   - 楽しかったです。パンダがかわいかったです。
   - 私はサルがよかったです。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL08 activity 18: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 人の人が感想を話しています。
     tags:
@@ -591,10 +743,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL08 activity 18: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL08 activity 18: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: いえ、です。
+  - id: b
+    label_jp: 私はサルがよかったです。
+  - id: c
+    label_jp: 楽しかったです。パンダがかわいかったです。
+  - id: d
+    label_jp: 人の人が感想を話しています。
+  - id: e
+    label_jp: いいえ、。
+  - id: f
+    label_jp: ポートタワー、登りましたか？
+  - id: g
+    label_jp: 知り合いを誘っています。
+  - id: h
+    label_jp: 動物園、どうでしたか？
+  correct_ids:
+  - b
+  - c
+  - d
+  - h
+  choose_mode: all
 - id: A19
   kind: listening
   book_activity: 19
@@ -607,7 +781,7 @@ activities:
   - どんな形容詞を使いました
   - 映画、よかったですね。
   - 感動しました。本当にすばらしかったです。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL08 activity 19: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 人の人が感想を話しています。
     tags:
@@ -624,10 +798,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL08 activity 19: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL08 activity 19: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 映画、よかったですね。
+  - id: b
+    label_jp: 感動しました。本当にすばらしかったです。
+  - id: c
+    label_jp: どんな形容詞を使いました
+  - id: d
+    label_jp: 市民体育館で試合があります
+  - id: e
+    label_jp: プロレスを見たか？
+  - id: f
+    label_jp: いいえ、。
+  - id: g
+    label_jp: いいえ、見たです。
+  - id: h
+    label_jp: 人の人が感想を話しています。
+  correct_ids:
+  - a
+  - b
+  - c
+  - h
+  choose_mode: all
 - id: A20
   kind: grammar_form
   book_activity: 20
@@ -642,7 +838,7 @@ activities:
   - jp: どんな形容詞を使いました
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A21
   kind: speaking
   book_activity: 21
@@ -716,6 +912,104 @@ activities:
     tags:
     - short
     - polite
+- id: KANJI
+  kind: kanji
+  book_activity: 22.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - お金
+  - 試合
+  - 食事
+  - 楽しい
+  - 難しい
+  - 博物館
+  - 動物園
+  - 登る
+  - 店
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 175
+  kanji_items: &id004
+  - kanji: お金
+    reading: かね
+    gloss_en: money
+  - kanji: 試合
+    reading: しあい
+    gloss_en: match / game
+  - kanji: 食事
+    reading: しょくじ
+    gloss_en: meal
+  - kanji: 楽しい
+    reading: たのしい
+    gloss_en: fun / enjoyable
+  - kanji: 難しい
+    reading: むずかしい
+    gloss_en: difficult
+  - kanji: 博物館
+    reading: はくぶつかん
+    gloss_en: museum
+  - kanji: 動物園
+    reading: どうぶつえん
+    gloss_en: zoo
+  - kanji: 登る
+    reading: のぼる
+    gloss_en: to climb
+  - kanji: 店
+    reading: てん
+    gloss_en: shop / store
+  kanji_sentences: &id005
+  - 富士山に登ったことがありますか？
+  - 博物館と動物園に行きました。とても楽しかったです。
+  - 昨日、映画を見ました。ちょっと難しかったです。
+  - スポーツ店で、Tシャツを買いました。
+  - プロレスの試合を見に行きました。
+  - 食事の前に、ATMでお金をおろしたいんですが……。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 23
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'What kind of places do you ask your friend to accompany you to?
+
+    Can ask someone out to eat, go shopping, or go to an event while asking about their experience and
+    interest.
+
+    Listen to the dialogs.
+
+    The six people are each inviting an acquaintance somewhere.
+
+    Where did they invite their acquaintance to go? Choose from a-h.
+
+    What was the answer by the person invited? Write 〇 if the person agrees, and Write × if the person
+    does not agree.
+
+    Check the words and listen to the dialogs again.
+
+    りない not enough
+
+    理（な） impossible
+
+    Listen to the recording and fill in the blanks.
+
+    What expression was used to ask about the person’s experience?
+
+    What expression was used to invite someone?
+
+    Focus on the expressions used and listen to the dialogs again.
+
+    Invite a person who is new to town.
+
+    Listen to the dialogs.
+
+    Shadow the dialogs.
+
+    Role-play this situation. There is a person who is new to your town. Invite the person'
+  picture_has_image: false
 grammar:
 - point: もう V-ました
   worksheet_pages:
@@ -769,18 +1063,16 @@ vocab: []
 quiz_bank:
 - type: roleplay
   can_do_id: CD_EL08_24
-  prompt_en: 'Demonstrate: Can ask someone out to eat, go shopping, or go to an event
-    while asking about their experience and interest.'
+  prompt_en: 'Demonstrate: Can ask someone out to eat, go shopping, or go to an event while asking about
+    their experience and interest.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL08_25
-  prompt_en: 'Demonstrate: Can discuss what to do next and where to go while you are
-    out with someone.'
+  prompt_en: 'Demonstrate: Can discuss what to do next and where to go while you are out with someone.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL08_26
-  prompt_en: 'Demonstrate: Can give your impressions about the event to the person
-    you went with.'
+  prompt_en: 'Demonstrate: Can give your impressions about the event to the person you went with.'
   spoken_required: true
 quiz_scenarios:
 - can_do_id: CD_EL08_24
@@ -790,13 +1082,12 @@ quiz_scenarios:
   - 知り合いを誘っています。
   - 何に誘いました
   - 新しいアウトレットモール、行きましたか？
-  hint_en: Can ask someone out to eat, go shopping, or go to an event while asking
-    about their experience and interest.
+  hint_en: Can ask someone out to eat, go shopping, or go to an event while asking about their experience
+    and interest.
 - can_do_id: CD_EL08_24
   partner_jp: もう一度、お願いします。
   expected: *id001
-  hint_en: Again — Can ask someone out to eat, go shopping, or go to an event while
-    asking about th
+  hint_en: Again — Can ask someone out to eat, go shopping, or go to an event while asking about th
 - can_do_id: CD_EL08_25
   partner_jp: もう行きました。
   expected: &id002
@@ -808,8 +1099,7 @@ quiz_scenarios:
 - can_do_id: CD_EL08_25
   partner_jp: もう一度、お願いします。
   expected: *id002
-  hint_en: Again — Can discuss what to do next and where to go while you are out with
-    someone.
+  hint_en: Again — Can discuss what to do next and where to go while you are out with someone.
 - can_do_id: CD_EL08_26
   partner_jp: もう行きました。
   expected: &id003
@@ -821,12 +1111,10 @@ quiz_scenarios:
 - can_do_id: CD_EL08_26
   partner_jp: もう一度、お願いします。
   expected: *id003
-  hint_en: Again — Can give your impressions about the event to the person you went
-    with.
+  hint_en: Again — Can give your impressions about the event to the person you went with.
 english_notes: 'What kind of places do you ask your friend to accompany you to?
 
-  Can ask someone out to eat, go shopping, or go to an event while asking about their
-  experience and interest.
+  Can ask someone out to eat, go shopping, or go to an event while asking about their experience and interest.
 
   Listen to the dialogs.
 
@@ -834,8 +1122,8 @@ english_notes: 'What kind of places do you ask your friend to accompany you to?
 
   Where did they invite their acquaintance to go? Choose from a-h.
 
-  What was the answer by the person invited? Write 〇 if the person agrees, and Write
-  × if the person does not agree.
+  What was the answer by the person invited? Write 〇 if the person agrees, and Write × if the person does
+  not agree.
 
   Check the words and listen to the dialogs again.
 
@@ -857,8 +1145,12 @@ english_notes: 'What kind of places do you ask your friend to accompany you to?
 
   Shadow the dialogs.
 
-  Role-play this situation. There is a person who is new to your town. Invite the
-  person to dinner, to go shopping, or to attend an
+  Role-play this situation. There is a person who is new to your town. Invite the person to dinner, to
+  go shopping, or to attend an
 
   event.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 175
+  items: *id004
+  sentences: *id005

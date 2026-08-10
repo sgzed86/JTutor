@@ -11,8 +11,8 @@ intro_questions:
 - jp: It rained heavily yesterday について、あなたの けいけんは？
   en: Thinking about "Seasons and Weather" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can exchange greetings while talking about the weather.
-    What do you want to be able to do?'
+  en: 'This lesson aims at: Can exchange greetings while talking about the weather. What do you want to
+    be able to do?'
 can_dos:
 - id: CD_EL04_11
   can_do_number: 11
@@ -32,8 +32,7 @@ can_dos:
     min_score: 80
 - id: CD_EL04_13
   can_do_number: 13
-  statement_en: Can read and understand simple posts about the weather on social me
-    - dia.
+  statement_en: Can read and understand simple posts about the weather on social me - dia.
   statement_jp: 天気の話題に触れながら、あいさつをすることができる。
   activity_hint: ''
   rubric:
@@ -55,7 +54,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -71,7 +70,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A3
   kind: listening
   book_activity: 3
@@ -115,7 +114,7 @@ activities:
   - どんな天気ですか。
   - いつの天気のことを話しています
   - 本当です
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL04 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: をしています。
     tags:
@@ -133,10 +132,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL04 activity 4: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL04 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: どんな天気ですか。
+  - id: b
+    label_jp: だいぶ暖かくなりましたね。
+  - id: c
+    label_jp: よく降ります
+  - id: d
+    label_jp: おはようございます。今日はいい天気ですね。
+  - id: e
+    label_jp: いつの天気のことを話しています
+  - id: f
+    label_jp: をしています。
+  - id: g
+    label_jp: で天気予報を見ています。
+  - id: h
+    label_jp: 本当です
+  correct_ids:
+  - a
+  - e
+  - f
+  - h
+  choose_mode: all
 - id: A5
   kind: listening
   book_activity: 5
@@ -149,7 +170,7 @@ activities:
   - どんな天気ですか。
   - いつの天気のことを話しています
   - 本当です
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL04 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: をしています。
     tags:
@@ -167,10 +188,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL04 activity 5: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL04 activity 5: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: どんな天気ですか。
+  - id: b
+    label_jp: をしています。
+  - id: c
+    label_jp: お出かけください
+  - id: d
+    label_jp: いつの天気のことを話しています
+  - id: e
+    label_jp: 朝から暑いです
+  - id: f
+    label_jp: どんな意味があると思います
+  - id: g
+    label_jp: 本当です
+  - id: h
+    label_jp: 今日はいい天気です
+  correct_ids:
+  - a
+  - b
+  - d
+  - g
+  choose_mode: all
 - id: A6
   kind: listening
   book_activity: 6
@@ -183,7 +226,7 @@ activities:
   - どんな天気ですか。
   - いつの天気のことを話しています
   - 本当です
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL04 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: をしています。
     tags:
@@ -201,10 +244,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL04 activity 6: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL04 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 本当です
+  - id: b
+    label_jp: お出かけください
+  - id: c
+    label_jp: で天気予報を見ています。
+  - id: d
+    label_jp: だいぶ暖かくなりましたね。
+  - id: e
+    label_jp: 朝から暑いです
+  - id: f
+    label_jp: どんな天気ですか。
+  - id: g
+    label_jp: をしています。
+  - id: h
+    label_jp: いつの天気のことを話しています
+  correct_ids:
+  - a
+  - f
+  - g
+  - h
+  choose_mode: all
 - id: A7
   kind: grammar_form
   book_activity: 7
@@ -217,7 +282,7 @@ activities:
   - よく降ります
   - どんな意味があると思います
   - 形はどう違います
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 今日はいい天気です
     tags:
@@ -235,7 +300,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A8
   kind: speaking
   book_activity: 8
@@ -358,7 +423,7 @@ activities:
   - 天気はどう変わります
   - お出かけください
   - おはようございます。今日はいい天気ですね。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL04 activity 11: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: で天気予報を見ています。
     tags:
@@ -376,10 +441,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL04 activity 11: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL04 activity 11: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 形はどう違います
+  - id: b
+    label_jp: 暖かくなりました
+  - id: c
+    label_jp: 本当です
+  - id: d
+    label_jp: 天気はどう変わります
+  - id: e
+    label_jp: で天気予報を見ています。
+  - id: f
+    label_jp: 毎日、よく降りますね。
+  - id: g
+    label_jp: お出かけください
+  - id: h
+    label_jp: おはようございます。今日はいい天気ですね。
+  correct_ids:
+  - d
+  - e
+  - g
+  - h
+  choose_mode: all
 - id: A12
   kind: grammar_form
   book_activity: 12
@@ -389,13 +476,120 @@ activities:
   - assets/audio/Y_[04-12]_katachi.mp3
   key_phrases:
   - 朝から暑いです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 朝から暑いです
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
+- id: KANJI
+  kind: kanji
+  book_activity: 12.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 天気
+  - 今
+  - 晴れ
+  - 昨日
+  - 雨
+  - 明日
+  - 雪
+  - 毎日
+  - 風
+  - 強い
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 110
+  kanji_items: &id004
+  - kanji: 天気
+    reading: てんき
+    gloss_en: weather
+  - kanji: 今
+    reading: いま
+    gloss_en: now
+  - kanji: 晴れ
+    reading: はれ
+    gloss_en: clear / sunny
+  - kanji: 昨日
+    reading: きのう
+    gloss_en: yesterday
+  - kanji: 雨
+    reading: あめ
+    gloss_en: rain
+  - kanji: 明日
+    reading: あした
+    gloss_en: tomorrow
+  - kanji: 雪
+    reading: ゆき
+    gloss_en: snow
+  - kanji: 毎日
+    reading: まいにち
+    gloss_en: every day
+  - kanji: 風
+    reading: かぜ
+    gloss_en: wind
+  - kanji: 強い
+    reading: つよい
+    gloss_en: strong
+  kanji_sentences: &id005
+  - 毎日、雨がよく降ります。
+  - 今日はいい天気ですね。
+  - 昨日は風が強かったです。
+  - 明日は雪が降るでしょう。
+  - 朝は晴れでした。でも、今はくもっています。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 13
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'What is your favorite weather?
+
+    Can exchange greetings while talking about the weather.
+
+    Preparation for the words
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a-f.
+
+    Listen to the dialogs.
+
+    Each person is exchanging greetings with a neighbor or acquaintance.
+
+    How is the weather? Choose from a-d.
+
+    a. b. c. d.
+
+    Listen to the dialogs again. Which day’s weather are they talking about? Choose from ア-ウ.
+
+    Check the words and listen to the dialogs again.
+
+    になる be annoying ｜ ゆうべ last night
+
+    当ですね That’s true.
+
+    Listen to the recording and fill in the blanks.
+
+    What do you think is the meaning of ね at the end of a sentence?
+
+    What is the difference between the forms used when talking about the present and the past?
+
+    Focus on the expressions used and listen to the dialogs again.
+
+    Exchange greetings while talking about the weather.
+
+    Listen to the dialogs.
+
+    Shadow the dial'
+  picture_has_image: false
 grammar:
 - point: わあ、もみじがきれいです（ ）。
   worksheet_pages:
@@ -430,13 +624,11 @@ quiz_bank:
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL04_12
-  prompt_en: 'Demonstrate: Can listen to the weather forecast and mostly understand
-    it.'
+  prompt_en: 'Demonstrate: Can listen to the weather forecast and mostly understand it.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL04_13
-  prompt_en: 'Demonstrate: Can read and understand simple posts about the weather
-    on social me - dia.'
+  prompt_en: 'Demonstrate: Can read and understand simple posts about the weather on social me - dia.'
   spoken_required: true
 quiz_scenarios:
 - can_do_id: CD_EL04_11
@@ -474,8 +666,7 @@ quiz_scenarios:
 - can_do_id: CD_EL04_13
   partner_jp: もう一度、お願いします。
   expected: *id003
-  hint_en: Again — Can read and understand simple posts about the weather on social
-    me - dia.
+  hint_en: Again — Can read and understand simple posts about the weather on social me - dia.
 english_notes: 'What is your favorite weather?
 
   Can exchange greetings while talking about the weather.
@@ -496,8 +687,7 @@ english_notes: 'What is your favorite weather?
 
   a. b. c. d.
 
-  Listen to the dialogs again. Which day’s weather are they talking about? Choose
-  from ア-ウ.
+  Listen to the dialogs again. Which day’s weather are they talking about? Choose from ア-ウ.
 
   Check the words and listen to the dialogs again.
 
@@ -509,8 +699,7 @@ english_notes: 'What is your favorite weather?
 
   What do you think is the meaning of ね at the end of a sentence?
 
-  What is the difference between the forms used when talking about the present and
-  the past?
+  What is the difference between the forms used when talking about the present and the past?
 
   Focus on the expressions used and listen to the dialogs again.
 
@@ -522,3 +711,7 @@ english_notes: 'What is your favorite weather?
 
   Decide what the weather is like and exchange greetings accordingly.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 110
+  items: *id004
+  sentences: *id005

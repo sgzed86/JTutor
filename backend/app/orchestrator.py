@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 
 from backend.app import lesson_flow as flow
 from backend.app import ollama_client, srs_service
-from backend.app.book_modes import flow_substeps, speech_substeps, substep_at
+from backend.app.book_modes import flow_substeps, graded_substeps, kanji_type_index, substep_at
 from backend.app.config import settings
 from backend.app.curriculum_loader import load_lesson
 from backend.app.db import CanDoProgress, ChatSession, LessonProgress
@@ -210,6 +210,20 @@ def slice_messages_for_payload(
     return tail, total, offset, assistant_total
 
 
+def _public_activity(activity: dict | None) -> dict | None:
+    """Strip answer keys before sending activity metadata to the client."""
+    if not activity:
+        return None
+    public = dict(activity)
+    public.pop("correct_ids", None)
+    public.pop("note_keywords", None)
+    if public.get("blanks"):
+        public["blanks"] = [
+            {"prompt_jp": b.get("prompt_jp")} for b in public["blanks"] if isinstance(b, dict)
+        ]
+    return public
+
+
 def _payload(
     session: ChatSession,
     lesson: dict,
@@ -245,6 +259,20 @@ def _payload(
     tail, message_total, message_offset, assistant_total = slice_messages_for_payload(
         messages, settings.tutor_message_window
     )
+    pdf_pages: list[int] = []
+    for raw in lesson.get("pdf_pages") or []:
+        try:
+            pdf_pages.append(int(raw))
+        except (TypeError, ValueError):
+            continue
+    book_page = _estimate_book_page(lesson, session, resolved, pdf_pages)
+    public_activity = _public_activity(activity)
+    # Never leak cloze answers / MCQ keys on the step either.
+    public_step = dict(resolved or {})
+    public_step.pop("correct_ids", None)
+    public_step.pop("note_keywords", None)
+    if "blanks" in public_step:
+        public_step.pop("blanks", None)
     return {
         "kind": kind,
         "session_id": session.id,
@@ -253,7 +281,7 @@ def _payload(
         "book_id": lesson.get("book_id"),
         "state": session.state,
         "activity_id": session.activity_id,
-        "activity": activity,
+        "activity": public_activity,
         "messages": tail,
         "message_total": message_total,
         "message_offset": message_offset,
@@ -263,11 +291,14 @@ def _payload(
         "can_dos": can_dos,
         "quiz_index": session.quiz_index,
         **phase_payload_fields(session),
-        "step": resolved,
+        "step": public_step,
         "lesson_meta": {
             "english_notes": (lesson.get("english_notes") or "")[:1200],
             "portfolio_prompts": list(lesson.get("portfolio_prompts") or [])[:8],
+            "pdf_pages": pdf_pages,
         },
+        "pdf_pages": pdf_pages,
+        "book_page": book_page,
         "hint_en": last.get("hint_en"),
         "progress": lesson_progress_snapshot(lesson, session),
         "segments": flow.lesson_segments(lesson),
@@ -282,6 +313,43 @@ def _payload(
         if session.state == "lesson_complete"
         else None,
     }
+
+
+def _estimate_book_page(
+    lesson: dict,
+    session: ChatSession,
+    step: dict | None,
+    pdf_pages: list[int],
+) -> int | None:
+    """Best page to open in the textbook/worksheet for the current place."""
+    if session.state == "grammar":
+        grammar = flow._grammar_for_lesson(lesson["lesson_id"])
+        idx = (step or {}).get("grammar_index") or session.phase_index or 0
+        if grammar:
+            point = grammar[min(int(idx), len(grammar) - 1)]
+            pages = point.get("worksheet_pages") or []
+            for p in pages:
+                try:
+                    return int(p)
+                except (TypeError, ValueError):
+                    continue
+
+    from backend.app.book_pages import resolve_activity_page
+
+    activities = [a for a in (lesson.get("activities") or []) if a]
+    activity = None
+    idx = (step or {}).get("activity_index")
+    if idx is not None and activities:
+        try:
+            activity = activities[int(idx)]
+        except (IndexError, TypeError, ValueError):
+            activity = None
+    if activity is None and session.activity_id:
+        activity = next((a for a in activities if a.get("id") == session.activity_id), None)
+    if activity is None:
+        activity = flow.track_by_id(lesson, session.activity_id)
+
+    return resolve_activity_page(lesson, activity, pdf_pages)
 
 
 def _lesson_phrase_bank(lesson: dict) -> list[str]:
@@ -778,7 +846,7 @@ async def user_message(
 
     if session.state == "book" and activity:
         sub = substep_at(activity, session.quiz_index)
-        if sub not in speech_substeps():
+        if sub not in graded_substeps():
             jp = "この ステップは きく だけです。Skip か CDの あと つづけてください。"
             en = "This step is listen-only — wait for CD / tutor, or tap Skip."
             step = flow.book_step(activity, lesson, session.quiz_index)[2]
@@ -788,7 +856,17 @@ async def user_message(
             return _payload(session, lesson, messages, step, db=db)
 
         must = flow.expected_phrases_for_substep(activity, session.quiz_index)
-        grade = grade_phrases(text, must, spoken=spoken, policy=current_policy())
+        if sub in ("choose", "read_check"):
+            grade = flow.grade_choice_answer(text, activity)
+        elif sub == "note":
+            grade = flow.grade_note_answer(text, activity)
+        elif sub == "kanji_type":
+            items = flow._kanji_items(activity)
+            idx = kanji_type_index(activity, session.quiz_index)
+            item = items[min(idx, len(items) - 1)] if (idx is not None and items) else (items[0] if items else {})
+            grade = flow.grade_kanji_type(text, item)
+        else:
+            grade = grade_phrases(text, must, spoken=spoken, policy=current_policy())
         log_event(
             "orchestrator",
             "grade",
@@ -796,13 +874,13 @@ async def user_message(
             passed=grade.get("passed"),
             score=grade.get("score"),
             similarity=grade.get("similarity"),
-            must=must,
+            must=must if sub not in ("choose", "read_check", "note") else activity.get("correct_ids"),
             hits=grade.get("hits"),
             quiz_index=session.quiz_index,
             book_substep=sub,
         )
         if grade.get("passed"):
-            reply = flow.feedback_pass_short()
+            reply = flow.feedback_pass_short() if sub != "note" else (grade.get("feedback_jp") or flow.feedback_pass_short())
             _append_tutor(
                 messages,
                 reply,
@@ -822,12 +900,29 @@ async def user_message(
         reply = grade.get("feedback_jp") or flow.feedback_retry(must)
         step = flow.book_step(activity, lesson, session.quiz_index)[2]
         retry = dict(step)
-        retry["play_audio"] = list(activity.get("audio") or [])[:1]
-        retry["expect_speech"] = True
+        # Replay CD on speech retries; typed blanks/choices keep the input UI.
+        if sub in ("fill", "choose", "note", "read_check", "kanji_type"):
+            retry["play_audio"] = []
+            retry["expect_speech"] = False
+            retry["expects_speech"] = False
+            retry["expects_text"] = True
+            en = grade.get("feedback_en") or "Try again."
+        else:
+            # Speech miss: do not auto-replay CD or model the phrase — offer choices.
+            book_tracks = [a for a in (activity.get("audio") or []) if a][:1]
+            retry["play_audio"] = []
+            retry["retry_audio"] = book_tracks
+            retry["expect_speech"] = True
+            retry["expects_speech"] = True
+            retry["model_before_speech"] = False
+            retry["offer_retry_help"] = True
+            retry["say_target_jp"] = retry.get("say_target_jp") or (must[0] if must else None)
+            reply = flow.feedback_retry_choice()
+            en = grade.get("feedback_en") or flow.feedback_retry_choice_en()
         _append_tutor(
             messages,
             reply,
-            grade.get("feedback_en") or "Try again.",
+            en,
             retry,
             session.state,
         )
@@ -871,6 +966,14 @@ async def user_message(
                     "play_audio": [],
                     "audio": [],
                 }
+            step = dict(step)
+            step["play_audio"] = []
+            step["model_before_speech"] = False
+            step["offer_retry_help"] = True
+            if expected:
+                step["say_target_jp"] = step.get("say_target_jp") or expected[0]
+            reply = flow.feedback_retry_choice()
+            en = flow.feedback_retry_choice_en()
             _append_tutor(messages, reply, en, step, session.state)
             _save_msgs(session, messages)
             db.commit()
@@ -929,15 +1032,25 @@ async def user_message(
             if grade.get("passed"):
                 reply = grade.get("jp_feedback") or flow.feedback_pass_short()
             else:
-                reply = grade.get("jp_feedback") or flow.feedback_retry(retry_phrases)
+                reply = flow.feedback_retry_choice()
             if grade.get("passed"):
                 step = flow.quiz_step(cd, scenario, expect_speech=False)
             else:
                 step = flow.quiz_step(cd, scenario, expect_speech=True)
+                step = dict(step)
+                step["play_audio"] = []
+                step["model_before_speech"] = False
+                step["offer_retry_help"] = True
+                if retry_phrases:
+                    step["say_target_jp"] = step.get("say_target_jp") or retry_phrases[0]
             _append_tutor(
                 messages,
                 reply,
-                f"Can-do score {grade.get('score')}%",
+                (
+                    f"Can-do score {grade.get('score')}%"
+                    if grade.get("passed")
+                    else flow.feedback_retry_choice_en()
+                ),
                 step,
                 session.state,
             )

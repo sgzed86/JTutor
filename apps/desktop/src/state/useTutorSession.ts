@@ -38,10 +38,21 @@ function assistantLines(payload: TutorPayload, alreadySpoken: number): Message[]
   return assistants.slice(alreadySpoken);
 }
 
+function shouldModelTarget(step: Step | null | undefined): boolean {
+  const target = step?.say_target_jp?.trim();
+  return Boolean(expectsSpeech(step) && step?.model_before_speech && target);
+}
+
 function jobsFor(step: Step | null | undefined, lines: Message[]): AudioJob[] {
   const jobs: AudioJob[] = lines.map((m) => ({ kind: "tts" as const, text: m.content }));
   const tracks = step?.play_audio || [];
   for (const path of tracks) jobs.push({ kind: "book", path });
+  // Clear isolated model of the phrase the learner should say (after coach/CD).
+  const target = step?.say_target_jp?.trim();
+  if (shouldModelTarget(step) && target) {
+    const alreadySpoken = lines.some((m) => m.content.trim() === target);
+    if (!alreadySpoken) jobs.push({ kind: "tts", text: target });
+  }
   return jobs;
 }
 
@@ -53,6 +64,7 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
   const [asking, setAsking] = useState(false);
   const [lastGrade, setLastGrade] = useState<Grade | null>(null);
   const [lastRecordingUrl, setLastRecordingUrl] = useState<string | null>(null);
+  const [retryChoicePending, setRetryChoicePending] = useState(false);
   const [blocked, setBlocked] = useState<{ reason: BlockedReason; message: string } | null>(null);
   const [notices, setNotices] = useState<Notice[]>([]);
   const [pendingAdvance, setPendingAdvance] = useState<{ startedAt: number; delayMs: number } | null>(null);
@@ -111,7 +123,12 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
 
   const applyPayload = useCallback((next: TutorPayload) => {
     setPayload(next);
-    if (next.grade) setLastGrade(next.grade);
+    if (next.grade) {
+      setLastGrade(next.grade);
+      setRetryChoicePending(Boolean(next.step?.offer_retry_help) && next.grade.passed === false);
+    } else if (!next.step?.offer_retry_help) {
+      setRetryChoicePending(false);
+    }
     return next;
   }, []);
 
@@ -308,6 +325,7 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
     setLoading(true);
     setBlocked(null);
     setLastGrade(null);
+    setRetryChoicePending(false);
     spokenCountRef.current = 0;
     (async () => {
       try {
@@ -341,7 +359,9 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
     const step = payload.step;
     const newLines = assistantLines(payload, spokenCountRef.current);
     const total = payload.messages.filter((m) => m.role === "assistant").length;
-    if (!newLines.length && !(step?.play_audio || []).length) return;
+    const hasBook = (step?.play_audio || []).length > 0;
+    const needsModel = shouldModelTarget(step);
+    if (!newLines.length && !hasBook && !needsModel) return;
     spokenCountRef.current = total;
 
     let cancelled = false;
@@ -365,7 +385,17 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
         }, delay);
         return;
       }
-      if (expectsSpeech(step) && settingsRef.current.lessons.auto_start_recording) {
+      // Auto-open the mic only in tap/toggle mode (hold is press-and-hold).
+      // After a miss, wait for Hear CD / Hear Yuki / Try again — don't jump the mic open.
+      const lessons = settingsRef.current.lessons;
+      const waitingOnRetryChoice =
+        Boolean(step?.offer_retry_help) && payload.grade?.passed === false;
+      if (
+        expectsSpeech(step) &&
+        lessons.auto_start_recording &&
+        lessons.mic_mode === "toggle" &&
+        !waitingOnRetryChoice
+      ) {
         startRecording("answer");
       }
     })();
@@ -398,9 +428,21 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
   );
 
   const presentation = useMemo(
-    () => presentationFor(phase, { micMode: settings.lessons.mic_mode, lastGrade }),
-    [lastGrade, phase, settings.lessons.mic_mode],
+    () =>
+      presentationFor(phase, {
+        micMode: settings.lessons.mic_mode,
+        lastGrade,
+        retryChoicePending,
+      }),
+    [lastGrade, phase, retryChoicePending, settings.lessons.mic_mode],
   );
+
+  const tryAgainAfterMiss = useCallback(() => {
+    setRetryChoicePending(false);
+    if (expectsSpeech(payload?.step)) {
+      startRecording("answer");
+    }
+  }, [payload?.step, startRecording]);
 
   const runPrimaryAction = useCallback(() => {
     switch (presentation.primary.id) {
@@ -409,7 +451,14 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
         audio.cancel();
         return;
       case "record":
+        if (retryChoicePending) {
+          tryAgainAfterMiss();
+          return;
+        }
         startRecording("answer");
+        return;
+      case "submit_text":
+        window.dispatchEvent(new Event("jtutor-check-blanks"));
         return;
       case "stop_recording":
         recorder.stop();
@@ -423,7 +472,16 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
       default:
         void advance();
     }
-  }, [advance, audio, cancelInFlight, presentation.primary.id, recorder, startRecording]);
+  }, [
+    advance,
+    audio,
+    cancelInFlight,
+    presentation.primary.id,
+    recorder,
+    retryChoicePending,
+    startRecording,
+    tryAgainAfterMiss,
+  ]);
 
   const replayTutorLine = useCallback(() => {
     const last = payload?.lesson_messages.filter((m) => m.role === "assistant").slice(-1) ?? [];
@@ -431,9 +489,28 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
   }, [audio, payload?.lesson_messages]);
 
   const replayBookAudio = useCallback(() => {
-    const tracks = payload?.step?.play_audio || [];
+    const step = payload?.step;
+    const tracks =
+      (step?.retry_audio && step.retry_audio.length > 0
+        ? step.retry_audio
+        : step?.play_audio && step.play_audio.length > 0
+          ? step.play_audio
+          : payload?.activity?.audio) || [];
     if (tracks.length) void audio.play(tracks.map((path) => ({ kind: "book" as const, path })));
-  }, [audio, payload?.step?.play_audio]);
+  }, [audio, payload?.activity?.audio, payload?.step]);
+
+  const playTargetPhrase = useCallback(
+    (text?: string | null) => {
+      const target =
+        (text || "").trim() ||
+        lastGrade?.best_match ||
+        payload?.step?.say_target_jp ||
+        payload?.step?.expected_phrases?.[0] ||
+        "";
+      if (target) void audio.play([{ kind: "tts", text: target }]);
+    },
+    [audio, lastGrade?.best_match, payload?.step?.expected_phrases, payload?.step?.say_target_jp],
+  );
 
   return {
     payload,
@@ -444,6 +521,7 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
     pushNotice,
     lastGrade,
     lastRecordingUrl,
+    retryChoicePending,
     asking,
     pendingAdvance,
     recorder,
@@ -462,6 +540,8 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
       jumpToCanDo,
       replayTutorLine,
       replayBookAudio,
+      playTargetPhrase,
+      tryAgainAfterMiss,
       cancelPendingAdvance: clearPendingAdvance,
       cancelInFlight,
     },

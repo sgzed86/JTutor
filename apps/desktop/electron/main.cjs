@@ -54,10 +54,14 @@ function createMainWindow(baseUrl) {
     },
   });
 
+  const useViteDev =
+    !app.isPackaged && (process.env.JTUTOR_DEV === "1" || Boolean(process.env.VITE_DEV_SERVER_URL));
   const devUrl = process.env.VITE_DEV_SERVER_URL || "http://127.0.0.1:5173";
-  const target = app.isPackaged ? `${baseUrl}/` : devUrl;
+  // Packaged builds and the desktop shortcut load the UI from the supervised
+  // backend. Vite + detach DevTools are only for `npm run dev`.
+  const target = useViteDev ? devUrl : `${baseUrl}/`;
   win.loadURL(target);
-  if (!app.isPackaged) win.webContents.openDevTools({ mode: "detach" });
+  if (useViteDev) win.webContents.openDevTools({ mode: "detach" });
 
   win.once("ready-to-show", () => {
     win.show();

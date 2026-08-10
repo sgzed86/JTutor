@@ -54,7 +54,7 @@ activities:
   - jp: ノリモノエ電車ビパスシタクシD地下鉄いい機構機F運ね
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -70,7 +70,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A3
   kind: listening
   book_activity: 3
@@ -107,15 +107,25 @@ activities:
   - assets/audio/X_[13-04]_kiku2.mp3
   key_phrases:
   - 2あのーすみませんこのバスは市民病院に行きますかこのバスは行きません市民病院は23番のバスです23番ですねわかりました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 2あのーすみませんこのバスは市民病院に行きますかこのバスは行きません市民病院は23番のバスです23番ですねわかりました
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ごっ...あの...この電車は東新宿に行きますか
+  - id: b
+    label_jp: そうですか
+  - id: c
+    label_jp: 2あのーすみませんこのバスは市民病院に行きますかこのバスは行きません市民病院は23番のバスです23番ですねわかりました
+  correct_ids:
+  - c
+  choose_mode: any
 - id: A5
   kind: listening
   book_activity: 5
@@ -127,7 +137,7 @@ activities:
   - 3すみませんこの電車は大阪駅に行きますか大阪駅は反対側です7番線え
   - 7番線ですか
   - 7番線ですありがとうございます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 3すみませんこの電車は大阪駅に行きますか大阪駅は反対側です7番線え
     tags:
@@ -141,9 +151,29 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 5: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 1すみませんおやしよう一番までどうやって行きますか
+  - id: b
+    label_jp: ここは先山審と審ですか
+  - id: c
+    label_jp: 7番線ですありがとうございます
+  - id: d
+    label_jp: 10分ぐらいです
+  - id: e
+    label_jp: 3すみませんこの電車は大阪駅に行きますか大阪駅は反対側です7番線え
+  - id: f
+    label_jp: いや、みなみ裏たです
+  - id: g
+    label_jp: 7番線ですか
+  correct_ids:
+  - c
+  - e
+  - g
+  choose_mode: all
 - id: A6
   kind: listening
   book_activity: 6
@@ -154,7 +184,7 @@ activities:
   key_phrases:
   - 4すみませんこの船はクロシマに行きますか
   - いいえクロシマはこの先ご番のりばですあ、わかりました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 4すみませんこの船はクロシマに行きますか
     tags:
@@ -164,9 +194,24 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 1すみませんここはどこですか
+  - id: b
+    label_jp: すみませんこのバスは空港に行きますか
+  - id: c
+    label_jp: ごっ...あの...この電車は東新宿に行きますか
+  - id: d
+    label_jp: いいえクロシマはこの先ご番のりばですあ、わかりました
+  - id: e
+    label_jp: 4すみませんこの船はクロシマに行きますか
+  correct_ids:
+  - d
+  - e
+  choose_mode: all
 - id: A7
   kind: listening
   book_activity: 7
@@ -179,7 +224,7 @@ activities:
   - 回速ですから、確定に乗ってください
   - あ、これは東新宿には止まりますね
   - 確定来て下です
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 7: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: ごっ...あの...この電車は東新宿に行きますか
     tags:
@@ -197,9 +242,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 7: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 確定来て下です
+  - id: b
+    label_jp: 一時間半かかります
+  - id: c
+    label_jp: 7番線ですありがとうございます
+  - id: d
+    label_jp: 回速ですから、確定に乗ってください
+  - id: e
+    label_jp: 7番線ですか
+  - id: f
+    label_jp: あ、これは東新宿には止まりますね
+  - id: g
+    label_jp: がません
+  - id: h
+    label_jp: ごっ...あの...この電車は東新宿に行きますか
+  correct_ids:
+  - a
+  - d
+  - f
+  - h
+  choose_mode: all
 - id: A8
   kind: grammar_form
   book_activity: 8
@@ -225,7 +293,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A9
   kind: speaking
   book_activity: 9
@@ -298,7 +366,7 @@ activities:
   key_phrases:
   - 1さき山シントシンさき山シントシンですすみませんここはさき山シントシンですか
   - はい、そうですありがとうございます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 11: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 1さき山シントシンさき山シントシンですすみませんここはさき山シントシンですか
     tags:
@@ -308,9 +376,24 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 11: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 1さき山シントシンさき山シントシンですすみませんここはさき山シントシンですか
+  - id: b
+    label_jp: はい、そうですありがとうございます
+  - id: c
+    label_jp: 次は、裏たですか
+  - id: d
+    label_jp: 2すみませんし悪勝までどうやっていきますか
+  - id: e
+    label_jp: は、家から会社まで何できますか
+  correct_ids:
+  - a
+  - b
+  choose_mode: all
 - id: A12
   kind: listening
   book_activity: 12
@@ -321,7 +404,7 @@ activities:
   key_phrases:
   - 2黒場ねー黒場ねです住みませんここはどこですか
   - ああ、黒場ねですありがとうございます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 12: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 2黒場ねー黒場ねです住みませんここはどこですか
     tags:
@@ -331,9 +414,24 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 12: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ノリモノエ電車ビパスシタクシD地下鉄いい機構機F運ね
+  - id: b
+    label_jp: 7番線ですか
+  - id: c
+    label_jp: いいえクロシマはこの先ご番のりばですあ、わかりました
+  - id: d
+    label_jp: ああ、黒場ねですありがとうございます
+  - id: e
+    label_jp: 2黒場ねー黒場ねです住みませんここはどこですか
+  correct_ids:
+  - d
+  - e
+  choose_mode: all
 - id: A13
   kind: listening
   book_activity: 13
@@ -344,7 +442,7 @@ activities:
   key_phrases:
   - 3中転本宮ですお忘れ物の内容を追うりくださいすみません今どこですか
   - 本宮です集点ですよありがとうございました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 13: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 3中転本宮ですお忘れ物の内容を追うりくださいすみません今どこですか
     tags:
@@ -354,9 +452,24 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 13: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: いいえいきませんかく生きて下に乗ってくださいありがとうございます
+  - id: b
+    label_jp: 3中転本宮ですお忘れ物の内容を追うりくださいすみません今どこですか
+  - id: c
+    label_jp: あの、次はどこですか
+  - id: d
+    label_jp: 本宮です集点ですよありがとうございました
+  - id: e
+    label_jp: あ、これは東新宿には止まりますね
+  correct_ids:
+  - b
+  - d
+  choose_mode: all
 - id: A14
   kind: listening
   book_activity: 14
@@ -369,7 +482,7 @@ activities:
   - 次は、さわぐち、さわぐちです
   - ありがとうございます
   - さわぐちです
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 14: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: あの、次はどこですか
     tags:
@@ -387,9 +500,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 14: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 1すみませんおやしよう一番までどうやって行きますか
+  - id: b
+    label_jp: ありがとうございます
+  - id: c
+    label_jp: あの、次はどこですか
+  - id: d
+    label_jp: この風には苦労島に行きますか
+  - id: e
+    label_jp: このバスは空港に行きますか
+  - id: f
+    label_jp: さわぐちです
+  - id: g
+    label_jp: 4徳井さんは
+  - id: h
+    label_jp: 次は、さわぐち、さわぐちです
+  correct_ids:
+  - b
+  - c
+  - f
+  - h
+  choose_mode: all
 - id: A15
   kind: listening
   book_activity: 15
@@ -399,15 +535,25 @@ activities:
   - assets/audio/X_[13-15]_kiku5.mp3
   key_phrases:
   - がません
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 15: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: がません
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 15: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: がません
+  - id: b
+    label_jp: 家から会社まで、何できますか
+  - id: c
+    label_jp: さん住みません桜もールまでどうやって行きますか
+  correct_ids:
+  - a
+  choose_mode: any
 - id: A16
   kind: grammar_form
   book_activity: 16
@@ -438,7 +584,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A17
   kind: speaking
   book_activity: 17
@@ -547,7 +693,7 @@ activities:
   - jp: 時間の長さえ一時間ビ一時間半し二時間ビ10点20点30点40点50点1.2.1.2.3.4.4.4.5.6.6.7.5.8.5.8.5.9.5
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A21
   kind: vocabulary
   book_activity: 21
@@ -563,7 +709,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A22
   kind: listening
   book_activity: 22
@@ -575,7 +721,7 @@ activities:
   - バイクできますへぇーどのぐらいかかりますか
   - 一ヨギさんは家から会社までどうやってきますか
   - 10分ぐらいですそうですか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 22: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: バイクできますへぇーどのぐらいかかりますか
     tags:
@@ -589,9 +735,29 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 22: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 10分ぐらいですそうですか
+  - id: b
+    label_jp: はい、そうです
+  - id: c
+    label_jp: がません
+  - id: d
+    label_jp: はい、そうですありがとうございます
+  - id: e
+    label_jp: バイクできますへぇーどのぐらいかかりますか
+  - id: f
+    label_jp: 時々、歩いてきます1時間ぐらいかかりますうーん、お出すね
+  - id: g
+    label_jp: 一ヨギさんは家から会社までどうやってきますか
+  correct_ids:
+  - a
+  - e
+  - g
+  choose_mode: all
 - id: A23
   kind: listening
   book_activity: 23
@@ -604,7 +770,7 @@ activities:
   - 私は電車です
   - 2片山さんは
   - 大変ですね
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 23: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 一時間半かかります
     tags:
@@ -621,9 +787,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 23: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 1すみませんここはどこですか
+  - id: b
+    label_jp: 4すみませんこの船はクロシマに行きますか
+  - id: c
+    label_jp: 大変ですね
+  - id: d
+    label_jp: 2片山さんは
+  - id: e
+    label_jp: 一時間半かかります
+  - id: f
+    label_jp: 私は電車です
+  - id: g
+    label_jp: ここは先山審と審ですか
+  - id: h
+    label_jp: ここはどこですか
+  correct_ids:
+  - c
+  - d
+  - e
+  - f
+  choose_mode: all
 - id: A24
   kind: listening
   book_activity: 24
@@ -636,7 +825,7 @@ activities:
   - どのぐらいかかりますか
   - そうですか
   - 私は自転車できます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 24: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: は、家から会社まで何できますか
     tags:
@@ -654,9 +843,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 24: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 確定来て下です
+  - id: b
+    label_jp: 私は自転車できます
+  - id: c
+    label_jp: は、家から会社まで何できますか
+  - id: d
+    label_jp: この風には苦労島に行きますか
+  - id: e
+    label_jp: 2すみません次はうらたですか
+  - id: f
+    label_jp: どのぐらいかかりますか
+  - id: g
+    label_jp: 1すみませんこのバスは空港に行きますか
+  - id: h
+    label_jp: そうですか
+  correct_ids:
+  - b
+  - c
+  - f
+  - h
+  choose_mode: all
 - id: A25
   kind: listening
   book_activity: 25
@@ -668,7 +880,7 @@ activities:
   - バスできます15本ぐらいですそうですか
   - 時々、歩いてきます1時間ぐらいかかりますうーん、お出すね
   - 4徳井さんは
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 25: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: バスできます15本ぐらいですそうですか
     tags:
@@ -681,9 +893,29 @@ activities:
   - jp: 4徳井さんは
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 25: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 4徳井さんは
+  - id: b
+    label_jp: 時々、歩いてきます1時間ぐらいかかりますうーん、お出すね
+  - id: c
+    label_jp: 3すみませんこの電車は大阪駅に行きますか大阪駅は反対側です7番線え
+  - id: d
+    label_jp: 1すみませんこのバスは空港に行きますか
+  - id: e
+    label_jp: 7番線ですありがとうございます
+  - id: f
+    label_jp: バスできます15本ぐらいですそうですか
+  - id: g
+    label_jp: ああ、黒場ねですありがとうございます
+  correct_ids:
+  - a
+  - b
+  - f
+  choose_mode: all
 - id: A26
   kind: grammar_form
   book_activity: 26
@@ -787,7 +1019,7 @@ activities:
   key_phrases:
   - 1すみませんおやしよう一番までどうやって行きますか
   - はい、おやしよう一番ですねここから新民なといけまで電車に乗ります新民なといけからマリンしていまでバスに乗りますマリンしていから歩いてご分暮らいいですありがとうございます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 30: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 1すみませんおやしよう一番までどうやって行きますか
     tags:
@@ -797,9 +1029,19 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 30: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 1すみませんおやしよう一番までどうやって行きますか
+  - id: b
+    label_jp: すみませんこのバスは空港に行きますか
+  - id: c
+    label_jp: 1さき山シントシンさき山シントシンですすみませんここはさき山シントシンですか
+  correct_ids:
+  - a
+  choose_mode: any
 - id: A31
   kind: listening
   book_activity: 31
@@ -810,7 +1052,7 @@ activities:
   key_phrases:
   - し悪勝はここから12番のバスに乗りますバスセンターでバスをおりますご番のバスに乗り返いますし悪勝は集点ですわかりました
   - 2すみませんし悪勝までどうやっていきますか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 31: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: し悪勝はここから12番のバスに乗りますバスセンターでバスをおりますご番のバスに乗り返いますし悪勝は集点ですわかりました
     tags:
@@ -820,9 +1062,19 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 31: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 10分ぐらいです
+  - id: b
+    label_jp: ごっ...あの...この電車は東新宿に行きますか
+  - id: c
+    label_jp: 2すみませんし悪勝までどうやっていきますか
+  correct_ids:
+  - c
+  choose_mode: any
 - id: A32
   kind: listening
   book_activity: 32
@@ -834,7 +1086,7 @@ activities:
   - さん住みません桜もールまでどうやって行きますか
   - えっと、モミジへ力、桜へ来まで南北線に乗ります桜へ来て、途在線に乗り返します新桜へ来ております新桜へ来からバスがありますありがとうございます
   - 桜もールですか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L13 activity 32: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: さん住みません桜もールまでどうやって行きますか
     tags:
@@ -848,9 +1100,24 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L13 activity 32: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 3中転本宮ですお忘れ物の内容を追うりくださいすみません今どこですか
+  - id: b
+    label_jp: 桜もールですか
+  - id: c
+    label_jp: 10分ぐらいです
+  - id: d
+    label_jp: 回速ですから、確定に乗ってください
+  - id: e
+    label_jp: さん住みません桜もールまでどうやって行きますか
+  correct_ids:
+  - b
+  - e
+  choose_mode: all
 - id: A33
   kind: grammar_form
   book_activity: 33
@@ -867,6 +1134,106 @@ activities:
     - long
     - polite
   book_mode: listen_repeat
+- id: KANJI
+  kind: kanji
+  book_activity: 33.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 東
+  - 南
+  - 来ます
+  - 行きます
+  - 乗ります
+  - 北
+  - 会社
+  - 西
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 357
+  kanji_items: &id001
+  - kanji: 東
+    reading: ひがし
+    gloss_en: east
+  - kanji: 南
+    reading: みなみ
+    gloss_en: south
+  - kanji: 来ます
+    reading: ひがしみなみきます
+    gloss_en: to come
+  - kanji: 行きます
+    reading: いきます
+    gloss_en: to go
+  - kanji: 乗ります
+    reading: ります
+    gloss_en: to ride / board
+  - kanji: 北
+    reading: きた
+    gloss_en: north
+  - kanji: 会社
+    reading: きたかいしゃ
+    gloss_en: company
+  - kanji: 西
+    reading: にし
+    gloss_en: west
+  kanji_sentences: &id002
+  - 会社まで、何
+  - マリンシティまで、どうやって行きますか？
+  - 西口
+  - 東新
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 34
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'What types of transport do you have in your country? What transport do you use often?
+
+    Can ask whether a train or bus is going to where you want to go and understand the answer.
+
+    Preparation for the words
+
+    Types of transport 】
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a–f.
+
+    I will take 〜 .
+
+    Listen to the dialogs.
+
+    Five people are each asking where a form of transport is going.
+
+    Is the transport going to the places in ①-⑤? If it is, write 〇, and if it isn’t, write ×.
+
+    Listen to ②–⑤ again. Which bus / track / pier / train do they need? Write the numbers in the blanks.
+
+    Write a check mark next to the correct answer in ⑤.
+
+    Check the words and listen to the dialogs again.
+
+    対側 opposite side ｜ 先
+
+    ahead ｜ 次
+
+    next
+
+    まりません It does not stop there. （止
+
+    まる stop）
+
+    る take）
+
+    Listen to the recording and fill in the blanks.
+
+    What expression was used when checking whether'
+  picture_has_image: false
 grammar:
 - point: このバスは、大阪
   worksheet_pages:
@@ -1121,3 +1488,7 @@ english_notes: 'What types of transport do you have in your country? What transp
 
   Use local transport and place names.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 357
+  items: *id001
+  sentences: *id002

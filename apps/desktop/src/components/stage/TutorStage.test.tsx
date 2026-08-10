@@ -97,6 +97,34 @@ describe("TutorStage", () => {
     expect(screen.getByText("よう")).toBeInTheDocument();
   });
 
+  it("offers CD, Yuki, or try-again after a spoken miss", () => {
+    const onHearBook = vi.fn();
+    const onTryAgain = vi.fn();
+    const onPlayTarget = vi.fn();
+    renderStage(
+      {
+        book_substep: "repeat",
+        expects_speech: true,
+        say_target_jp: "おはよう",
+        offer_retry_help: true,
+        retry_audio: ["assets/audio/x.mp3"],
+      },
+      {
+        lastGrade: { passed: false, score: 40, best_match: "おはよう", feedback_en: "Not quite." },
+        onReplayBook: onHearBook,
+        onTryAgain,
+        onPlayTarget,
+      },
+    );
+    expect(screen.getByText("What next?")).toBeInTheDocument();
+    screen.getByRole("button", { name: /hear the recording/i }).click();
+    expect(onHearBook).toHaveBeenCalled();
+    screen.getByRole("button", { name: /hear yuki say it/i }).click();
+    expect(onPlayTarget).toHaveBeenCalledWith("おはよう");
+    screen.getByRole("button", { name: /^try again$/i }).click();
+    expect(onTryAgain).toHaveBeenCalled();
+  });
+
   it("keeps a single instruction line rather than repeating it", () => {
     renderStage({ book_substep: "listen", instruction_en: "Listen to the book CD." });
     expect(screen.getAllByText("Listen to the book CD.")).toHaveLength(1);

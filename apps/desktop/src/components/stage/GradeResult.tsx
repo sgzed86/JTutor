@@ -3,17 +3,25 @@ import type { Grade } from "../../api/types";
 
 /**
  * The grader already computed `hits`, `gaps`, `best_match`, the transcript and a
- * character-level diff; the old UI showed only a rounded percentage. Space is
- * reserved so a result appearing never reflows the stage.
+ * character-level diff. After a miss on speech, recovery is a choice — not an
+ * automatic CD replay.
  */
 export function GradeResult({
   grade,
   recordingUrl,
+  offerRetryHelp,
+  hasBookRecording,
   onHearTarget,
+  onHearBook,
+  onTryAgain,
 }: {
   grade: Grade | null;
   recordingUrl: string | null;
+  offerRetryHelp?: boolean;
+  hasBookRecording?: boolean;
   onHearTarget: () => void;
+  onHearBook?: () => void;
+  onTryAgain?: () => void;
 }) {
   const playbackRef = useRef<HTMLAudioElement | null>(null);
 
@@ -23,6 +31,7 @@ export function GradeResult({
 
   const score = Math.round(grade.score ?? grade.similarity ?? 0);
   const passed = grade.passed === true;
+  const showChoices = !passed && Boolean(offerRetryHelp);
 
   const playRecording = () => {
     if (!recordingUrl) return;
@@ -55,19 +64,43 @@ export function GradeResult({
         </p>
       )}
 
-      <div className="grade__actions">
-        <button type="button" className="btn btn--ghost btn--icon" onClick={onHearTarget}>
-          <span aria-hidden>🔊</span> Hear it again
-        </button>
-        <button
-          type="button"
-          className="btn btn--ghost btn--icon"
-          onClick={playRecording}
-          disabled={!recordingUrl}
-        >
-          <span aria-hidden>🎙</span> Hear me
-        </button>
-      </div>
+      {showChoices ? (
+        <div className="grade__retry" role="group" aria-label="What next?">
+          <p className="grade__retry-label">What next?</p>
+          <div className="grade__actions">
+            {hasBookRecording && onHearBook && (
+              <button type="button" className="btn btn--ghost btn--icon" onClick={onHearBook}>
+                Hear the recording
+              </button>
+            )}
+            <button type="button" className="btn btn--ghost btn--icon" onClick={onHearTarget}>
+              Hear Yuki say it
+            </button>
+            <button type="button" className="btn btn--primary btn--icon" onClick={onTryAgain}>
+              Try again
+            </button>
+          </div>
+          {recordingUrl && (
+            <button type="button" className="btn btn--ghost btn--icon" onClick={playRecording}>
+              Hear me
+            </button>
+          )}
+        </div>
+      ) : (
+        <div className="grade__actions">
+          <button type="button" className="btn btn--ghost btn--icon" onClick={onHearTarget}>
+            Hear it again
+          </button>
+          <button
+            type="button"
+            className="btn btn--ghost btn--icon"
+            onClick={playRecording}
+            disabled={!recordingUrl}
+          >
+            Hear me
+          </button>
+        </div>
+      )}
     </div>
   );
 }

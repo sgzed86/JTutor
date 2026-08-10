@@ -4,7 +4,18 @@ import type { Message, Step, TutorPayload } from "../api/types";
 import { PHASE_LABEL, modeInfo, substepLabel } from "./stepLabels";
 
 export type TutorLineColor = "yellow" | "orange" | null;
-export type FocusVariant = "none" | "say" | "listen-preview" | "shadow" | "picture";
+export type FocusVariant =
+  | "none"
+  | "say"
+  | "listen-preview"
+  | "shadow"
+  | "picture"
+  | "fill"
+  | "choose"
+  | "note"
+  | "passage"
+  | "kanji_study"
+  | "kanji_type";
 
 export type TutorStageModel = {
   activityLabel: string;
@@ -22,8 +33,26 @@ export type TutorStageModel = {
   sayAlternates: string[];
   lineColor: TutorLineColor;
   pictureHint: string | null;
+  blankPromptJp: string | null;
+  blankCount: number;
+  blankIndex: number | null;
+  blankTotal: number | null;
+  choices: { id: string; label_jp?: string | null; label_en?: string | null }[];
+  chooseMulti: boolean;
+  glossEn: string | null;
+  passageJp: string | null;
+  passageEn: string | null;
+  kanjiItems: { kanji: string; reading?: string | null; gloss_en?: string | null }[];
+  kanjiPrompt: {
+    kanji?: string | null;
+    reading?: string | null;
+    gloss_en?: string | null;
+    index?: number | null;
+    total?: number | null;
+  } | null;
   substeps: string[];
   substepIndex: number | null;
+  bookPageLabel: string | null;
 };
 
 function lastAssistant(messages: Message[], pick: (m: Message) => string | undefined): string {
@@ -80,6 +109,17 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
   let tutorBubbleEn = hintEn;
 
   const expects = Boolean(step.expects_speech ?? step.expect_speech);
+  const blankPromptJp = step.blank_prompt_jp ?? null;
+  const blankCount = Math.max(step.blank_count ?? 1, 1);
+  const choices = step.choices ?? [];
+  const chooseMulti = Boolean(step.choose_multi);
+  const glossEn = step.gloss_en ?? null;
+  const passageJp = step.passage_jp ?? null;
+  const passageEn = step.passage_en ?? step.culture_notes_en ?? null;
+  const kanjiItems = (step.kanji_items ?? [])
+    .filter((it): it is { kanji: string; reading?: string | null; gloss_en?: string | null } => Boolean(it?.kanji))
+    .map((it) => ({ kanji: it.kanji as string, reading: it.reading, gloss_en: it.gloss_en }));
+  const kanjiPrompt = step.kanji_prompt ?? null;
 
   if (!sayTargetJp && phrases.length && (substep === "repeat" || substep === "select" || substep === "reply")) {
     sayTargetJp = phrases[0];
@@ -96,10 +136,53 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     focus = "shadow";
     instructionEn = instructionEn || "Shadow now — speak quietly along with the CD. Not graded.";
   } else if (substep === "listen") {
-    focus = sayTargetJp ? "listen-preview" : pictureHint ? "picture" : "none";
-    sayLabel = sayTargetJp ? "After the CD, you will say" : "While you listen";
-    instructionEn = instructionEn || step.up_next_en || "Listen to the book CD.";
+    if (mode === "listen_fill" || mode === "listen_choose" || mode === "note_take") {
+      focus = "none";
+      instructionEn = instructionEn || step.up_next_en || "Listen to the book CD.";
+    } else {
+      focus = sayTargetJp ? "listen-preview" : pictureHint ? "picture" : "none";
+      sayLabel = sayTargetJp ? "After the CD, you will say" : "While you listen";
+      instructionEn = instructionEn || step.up_next_en || "Listen to the book CD.";
+    }
     tutorBubbleEn = step.up_next_en ?? "";
+  } else if (substep === "fill") {
+    focus = "fill";
+    sayLabel =
+      step.blank_total && step.blank_index != null
+        ? `Blank ${(step.blank_index ?? 0) + 1} of ${step.blank_total}`
+        : "Fill in";
+    instructionEn =
+      instructionEn || "Type the missing word(s). Replay the CD if you need another listen.";
+  } else if (substep === "choose" || substep === "read_check") {
+    focus = "choose";
+    sayLabel = chooseMulti ? "Select all that apply" : "Choose one";
+    instructionEn = instructionEn || "Tap your answer, then check.";
+  } else if (substep === "note") {
+    focus = "note";
+    sayLabel = "Your notes";
+    instructionEn = instructionEn || "Type brief notes about what you heard.";
+  } else if (substep === "kanji_study") {
+    focus = "kanji_study";
+    sayLabel = "Kanji words";
+    instructionEn = instructionEn || "Check each kanji and reading, then continue.";
+  } else if (substep === "kanji_read") {
+    focus = "passage";
+    sayLabel = "Read with care";
+    instructionEn = instructionEn || "Read the example lines, noticing the new kanji.";
+  } else if (substep === "kanji_type") {
+    focus = "kanji_type";
+    const kp = step.kanji_prompt;
+    sayLabel =
+      kp?.total && kp.index != null ? `Type ${(kp.index ?? 0) + 1} of ${kp.total}` : "Type the kanji";
+    instructionEn = instructionEn || "Type the word with your keyboard / IME.";
+  } else if (substep === "read" || substep === "reflect") {
+    focus = passageJp || passageEn ? "passage" : "none";
+    sayLabel = substep === "reflect" ? "Life & culture" : "Read";
+    instructionEn =
+      instructionEn ||
+      (substep === "reflect"
+        ? "Read the culture note, then continue."
+        : "Read the passage, then continue.");
   } else if (state === "intro_chat") {
     focus = "none";
     instructionEn = instructionEn || "Warm-up — answer freely in any language.";
@@ -119,6 +202,10 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     if (substep === "select") {
       sayLabel = "Say the phrase";
       instructionEn = instructionEn || pictureHint || "Match the picture in your book.";
+    } else if (substep === "vocab_say") {
+      sayLabel = glossEn ? `Say this (${glossEn})` : "Say this word";
+    } else if (substep === "pronounce") {
+      sayLabel = "Pronounce clearly";
     } else if (substep === "learner" || substep === "swap_learner") {
       sayLabel = "Your line (orange in the book)";
       lineColor = "orange";
@@ -141,6 +228,14 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
   // gloss must add something rather than repeat it.
   if (tutorBubbleEn.trim() === instructionEn.trim()) tutorBubbleEn = "";
 
+  const bookPage = payload.book_page ?? payload.pdf_pages?.[0] ?? null;
+  const bookPageLabel =
+    bookPage != null
+      ? state === "grammar"
+        ? `Worksheet p. ${bookPage}`
+        : `Book p. ${bookPage}`
+      : null;
+
   return {
     activityLabel,
     stepLabel,
@@ -157,7 +252,19 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     sayAlternates,
     lineColor,
     pictureHint,
+    blankPromptJp,
+    blankCount,
+    blankIndex: step.blank_index ?? null,
+    blankTotal: step.blank_total ?? null,
+    choices,
+    chooseMulti,
+    glossEn,
+    passageJp,
+    passageEn,
+    kanjiItems,
+    kanjiPrompt,
     substeps: step.substeps ?? [],
     substepIndex: step.substep_index ?? null,
+    bookPageLabel,
   };
 }

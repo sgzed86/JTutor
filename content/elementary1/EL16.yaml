@@ -11,13 +11,12 @@ intro_questions:
 - jp: I try not to eat too much について、あなたの けいけんは？
   en: Thinking about "Health" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can give advice when someone is feeling unwell, or listen
-    to and under - stand the advice. What do you want to be able to do?'
+  en: 'This lesson aims at: Can give advice when someone is feeling unwell, or listen to and under - stand
+    the advice. What do you want to be able to do?'
 can_dos:
 - id: CD_EL16_57
   can_do_number: 57
-  statement_en: Can give advice when someone is feeling unwell, or listen to and under
-    - stand the advice.
+  statement_en: Can give advice when someone is feeling unwell, or listen to and under - stand the advice.
   statement_jp: 体調が悪いときの対処法をアドバイスしたり、アドバイスを聞いて理解したり
   activity_hint: ''
   rubric:
@@ -33,8 +32,8 @@ can_dos:
     min_score: 80
 - id: CD_EL16_59
   can_do_number: 59
-  statement_en: Can look at news about an epidemic illness and more or less understand
-    the contents, such as its name, symptoms, and prevention methods.
+  statement_en: Can look at news about an epidemic illness and more or less understand the contents, such
+    as its name, symptoms, and prevention methods.
   statement_jp: 体調が悪いときの対処法をアドバイスしたり、アドバイスを聞いて理解したり
   activity_hint: ''
   rubric:
@@ -42,8 +41,8 @@ can_dos:
     min_score: 80
 - id: CD_EL16_60
   can_do_number: 60
-  statement_en: Can look at a poster about an illness at a hospital and understand
-    the symptoms, prevention methods, etc.
+  statement_en: Can look at a poster about an illness at a hospital and understand the symptoms, prevention
+    methods, etc.
   statement_jp: 体調が悪いときの対処法をアドバイスしたり、アドバイスを聞いて理解したり
   activity_hint: ''
   rubric:
@@ -65,7 +64,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -81,7 +80,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A3
   kind: listening
   book_activity: 3
@@ -124,7 +123,7 @@ activities:
   - イスを聞いています。
   - どのように体の調子が悪いですか。
   - プーピンさん、どうしたんですか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL16 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 食べすぎないようにしています
     tags:
@@ -142,10 +141,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL16 activity 4: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL16 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: イスを聞いています。
+  - id: b
+    label_jp: のために気をつけていることがあります
+  - id: c
+    label_jp: プーピンさん、どうしたんですか？
+  - id: d
+    label_jp: どのように体の調子が悪いですか。
+  - id: e
+    label_jp: 食べすぎないようにしています
+  - id: f
+    label_jp: へー、ヨガ。
+  - id: g
+    label_jp: 最近よく眠れなくて、体がだるい。
+  - id: h
+    label_jp: そうですか。試してみます。
+  correct_ids:
+  - a
+  - c
+  - d
+  - e
+  choose_mode: all
 - id: A5
   kind: listening
   book_activity: 5
@@ -158,7 +179,7 @@ activities:
   - イスを聞いています。
   - どのように体の調子が悪いですか。
   - プーピンさん、どうしたんですか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL16 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 食べすぎないようにしています
     tags:
@@ -176,10 +197,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL16 activity 5: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL16 activity 5: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 食べすぎないようにしています
+  - id: b
+    label_jp: プーピンさん、どうしたんですか？
+  - id: c
+    label_jp: イスを聞いています。
+  - id: d
+    label_jp: 最近、何か運動してますか？
+  - id: e
+    label_jp: そうですか。
+  - id: f
+    label_jp: へー、ヨガ。
+  - id: g
+    label_jp: ホセさん、つらそうだね。
+  - id: h
+    label_jp: どのように体の調子が悪いですか。
+  correct_ids:
+  - a
+  - b
+  - c
+  - h
+  choose_mode: all
 - id: A6
   kind: listening
   book_activity: 6
@@ -192,7 +235,7 @@ activities:
   - イスを聞いています。
   - どのように体の調子が悪いですか。
   - どうしたか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL16 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 食べすぎないようにしています
     tags:
@@ -209,10 +252,32 @@ activities:
   - jp: どうしたか？
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL16 activity 6: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL16 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: どのように体の調子が悪いですか。
+  - id: b
+    label_jp: 最近、何か運動してますか？
+  - id: c
+    label_jp: どうしたか？
+  - id: d
+    label_jp: 食べすぎないようにしています
+  - id: e
+    label_jp: はい、昨日、飲みすぎました。ちょっと二日酔いなんです……。
+  - id: f
+    label_jp: イスを聞いています。
+  - id: g
+    label_jp: どんな症状が出ます
+  - id: h
+    label_jp: プーピンさん、どうしたんですか？
+  correct_ids:
+  - a
+  - c
+  - d
+  - f
+  choose_mode: all
 - id: A7
   kind: grammar_form
   book_activity: 7
@@ -225,7 +290,7 @@ activities:
   - 最近よく眠れなくて、体がだるい。
   - 食べすぎないようにしています
   - どう違うと思います
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: どうしたか？
     tags:
@@ -241,7 +306,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A8
   kind: speaking
   book_activity: 8
@@ -331,7 +396,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A11
   kind: vocabulary
   book_activity: 11
@@ -347,7 +412,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A12
   kind: listening
   book_activity: 12
@@ -360,7 +425,7 @@ activities:
   - 最近、何か運動してますか？
   - そうですねえ、ジョギングしたり、ときどき家でヨガをしたりしてます。
   - へー、ヨガ。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL16 activity 12: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 食べすぎないようにしています
     tags:
@@ -377,10 +442,32 @@ activities:
   - jp: へー、ヨガ。
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL16 activity 12: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL16 activity 12: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: そうですねえ、ジョギングしたり、ときどき家でヨガをしたりしてます。
+  - id: b
+    label_jp: へー、ヨガ。
+  - id: c
+    label_jp: 食べすぎないようにしています
+  - id: d
+    label_jp: はい、昨日、飲みすぎました。ちょっと二日酔いなんです……。
+  - id: e
+    label_jp: どうしたか？
+  - id: f
+    label_jp: そうですか。試してみます。
+  - id: g
+    label_jp: そうですか。
+  - id: h
+    label_jp: 最近、何か運動してますか？
+  correct_ids:
+  - a
+  - b
+  - c
+  - h
+  choose_mode: all
 - id: A13
   kind: listening
   book_activity: 13
@@ -393,7 +480,7 @@ activities:
   - 最近、何か運動してますか？
   - そうですねえ、ジョギングしたり、ときどき家でヨガをしたりしてます。
   - へー、ヨガ。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL16 activity 13: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 食べすぎないようにしています
     tags:
@@ -410,10 +497,32 @@ activities:
   - jp: へー、ヨガ。
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL16 activity 13: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL16 activity 13: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: そうですねえ、ジョギングしたり、ときどき家でヨガをしたりしてます。
+  - id: b
+    label_jp: イスを聞いています。
+  - id: c
+    label_jp: どうしたか？
+  - id: d
+    label_jp: 最近、何か運動してますか？
+  - id: e
+    label_jp: そうですか。試してみます。
+  - id: f
+    label_jp: 食べすぎないようにしています
+  - id: g
+    label_jp: ホセさん、つらそうだね。
+  - id: h
+    label_jp: へー、ヨガ。
+  correct_ids:
+  - a
+  - d
+  - f
+  - h
+  choose_mode: all
 - id: A14
   kind: listening
   book_activity: 14
@@ -426,7 +535,7 @@ activities:
   - 最近、何か運動してますか？
   - そうですねえ、ジョギングしたり、ときどき家でヨガをしたりしてます。
   - へー、ヨガ。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL16 activity 14: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 食べすぎないようにしています
     tags:
@@ -443,10 +552,32 @@ activities:
   - jp: へー、ヨガ。
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL16 activity 14: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL16 activity 14: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: そうですか。
+  - id: b
+    label_jp: イスを聞いています。
+  - id: c
+    label_jp: 食べすぎないようにしています
+  - id: d
+    label_jp: それはいけませんね。
+  - id: e
+    label_jp: どうしたか？
+  - id: f
+    label_jp: 最近、何か運動してますか？
+  - id: g
+    label_jp: へー、ヨガ。
+  - id: h
+    label_jp: そうですねえ、ジョギングしたり、ときどき家でヨガをしたりしてます。
+  correct_ids:
+  - c
+  - f
+  - g
+  - h
+  choose_mode: all
 - id: A15
   kind: listening
   book_activity: 15
@@ -459,7 +590,7 @@ activities:
   - 最近、何か運動してますか？
   - そうですねえ、ジョギングしたり、ときどき家でヨガをしたりしてます。
   - へー、ヨガ。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL16 activity 15: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 食べすぎないようにしています
     tags:
@@ -476,10 +607,32 @@ activities:
   - jp: へー、ヨガ。
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL16 activity 15: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL16 activity 15: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: それはいけませんね。
+  - id: b
+    label_jp: えー。
+  - id: c
+    label_jp: ホセさん、つらそうだね。
+  - id: d
+    label_jp: 食べすぎないようにしています
+  - id: e
+    label_jp: そうですねえ、ジョギングしたり、ときどき家でヨガをしたりしてます。
+  - id: f
+    label_jp: へー、ヨガ。
+  - id: g
+    label_jp: 最近、何か運動してますか？
+  - id: h
+    label_jp: プーピンさん、どうしたんですか？
+  correct_ids:
+  - d
+  - e
+  - f
+  - g
+  choose_mode: all
 - id: A16
   kind: grammar_form
   book_activity: 16
@@ -489,13 +642,13 @@ activities:
   - assets/audio/Y_[16-16]_katachi.mp3
   key_phrases:
   - 食べすぎないようにしています
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 食べすぎないようにしています
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A17
   kind: speaking
   book_activity: 17
@@ -605,7 +758,7 @@ activities:
   - どんな病気ですか。
   - どんな意味だと思います
   - どんな症状が出ます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL16 activity 20: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 食べすぎないようにしています
     tags:
@@ -623,10 +776,147 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL16 activity 20: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL16 activity 20: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: プーピンさん、どうしたんですか？
+  - id: b
+    label_jp: 酒井さんは、二日酔いのときは、どうしていますか？
+  - id: c
+    label_jp: どんな意味だと思います
+  - id: d
+    label_jp: どんな病気ですか。
+  - id: e
+    label_jp: それはいけませんね。
+  - id: f
+    label_jp: 食べすぎないようにしています
+  - id: g
+    label_jp: どんな症状が出ます
+  - id: h
+    label_jp: どう違うと思います
+  correct_ids:
+  - c
+  - d
+  - f
+  - g
+  choose_mode: all
+- id: KANJI
+  kind: kanji
+  book_activity: 20.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 体
+  - 足
+  - 顔
+  - 手
+  - 目
+  - 起きる
+  - 耳
+  - 歩く
+  - 口
+  - 走る
+  - 頭
+  - 運動する
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 352
+  kanji_items: &id005
+  - kanji: 体
+    reading: からだ
+    gloss_en: body
+  - kanji: 足
+    reading: あし
+    gloss_en: foot / leg
+  - kanji: 顔
+    reading: かお
+    gloss_en: face
+  - kanji: 手
+    reading: て
+    gloss_en: hand
+  - kanji: 目
+    reading: め
+    gloss_en: eye
+  - kanji: 起きる
+    reading: おきる
+    gloss_en: to get up / wake up
+  - kanji: 耳
+    reading: みみ
+    gloss_en: ear
+  - kanji: 歩く
+    reading: あるく
+    gloss_en: to walk
+  - kanji: 口
+    reading: くち
+    gloss_en: mouth
+  - kanji: 走る
+    reading: はしる
+    gloss_en: to run
+  - kanji: 頭
+    reading: あたま
+    gloss_en: head
+  - kanji: 運動する
+    reading: うんどうする
+    gloss_en: to exercise
+  kanji_sentences: &id006
+  - 足をくじきました。
+  - この病院は、耳や鼻の病気のときに行きます。
+  - 朝起きたときから、体がだるくて、頭が痛いんです。
+  - のどを見ますね。口を開けてください。
+  - 歩いたり、走ったり、できるだけ運動するようにしています。
+  - 眠いときは、顔を洗うといいですよ。
+  - 石けんでよく手を洗ってください。
+  - スマホを見すぎて、目が悪くなりました。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 21
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Is there anything you do daily for your health? What kind of things are you mindful
+    of?
+
+    Can give advice when someone is feeling unwell, or listen to and understand the advice.
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a-p.
+
+    Preparation for the words
+
+    Listen to the dialogs.
+
+    The four people are feeling unwell and are listening to advice from someone.
+
+    What are their health problems? Choose from a-f.
+
+    Listen to the dialogs again. What was the advice? Choose from ア-カ.
+
+    Check the words and listen to the dialogs again.
+
+    近 recently ｜ ぬるい warm ｜ 試
+
+    す try ｜ けっこう quite
+
+    それはいけませんね That is not good. ｜ どうしていますか？ How do you deal with it?
+
+    Listen to the recording and fill in the blanks.
+
+    What was said to the person who looks unwell?
+
+    What expression was used to give advice?
+
+    What is the difference between 飲
+
+    Focus on the expressions used and listen to the dialogs'
+  picture_has_image: false
 grammar:
 - point: V-ると いいです（よ）
   worksheet_pages:
@@ -670,23 +960,22 @@ vocab:
 quiz_bank:
 - type: roleplay
   can_do_id: CD_EL16_57
-  prompt_en: 'Demonstrate: Can give advice when someone is feeling unwell, or listen
-    to and under - stand the advice.'
+  prompt_en: 'Demonstrate: Can give advice when someone is feeling unwell, or listen to and under - stand
+    the advice.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL16_58
-  prompt_en: 'Demonstrate: Can talk about what you are mindful of to maintain your
-    health.'
+  prompt_en: 'Demonstrate: Can talk about what you are mindful of to maintain your health.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL16_59
-  prompt_en: 'Demonstrate: Can look at news about an epidemic illness and more or
-    less understand the contents, such as its name, symptoms, and prevention methods.'
+  prompt_en: 'Demonstrate: Can look at news about an epidemic illness and more or less understand the
+    contents, such as its name, symptoms, and prevention methods.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL16_60
-  prompt_en: 'Demonstrate: Can look at a poster about an illness at a hospital and
-    understand the symptoms, prevention methods, etc.'
+  prompt_en: 'Demonstrate: Can look at a poster about an illness at a hospital and understand the symptoms,
+    prevention methods, etc.'
   spoken_required: true
 quiz_scenarios:
 - can_do_id: CD_EL16_57
@@ -696,13 +985,11 @@ quiz_scenarios:
   - 食べすぎないようにしています
   - イスを聞いています。
   - どのように体の調子が悪いですか。
-  hint_en: Can give advice when someone is feeling unwell, or listen to and under
-    - stand the advice.
+  hint_en: Can give advice when someone is feeling unwell, or listen to and under - stand the advice.
 - can_do_id: CD_EL16_57
   partner_jp: もう一度、お願いします。
   expected: *id001
-  hint_en: Again — Can give advice when someone is feeling unwell, or listen to and
-    under - stand t
+  hint_en: Again — Can give advice when someone is feeling unwell, or listen to and under - stand t
 - can_do_id: CD_EL16_58
   partner_jp: のために気をつけていることがあります。
   expected: &id002
@@ -722,13 +1009,12 @@ quiz_scenarios:
   - イスを聞いています。
   - どのように体の調子が悪いですか。
   - どうしたか？
-  hint_en: Can look at news about an epidemic illness and more or less understand
-    the contents, such as its name, symptoms, and prevention methods.
+  hint_en: Can look at news about an epidemic illness and more or less understand the contents, such as
+    its name, symptoms, and prevention methods.
 - can_do_id: CD_EL16_59
   partner_jp: もう一度、お願いします。
   expected: *id003
-  hint_en: Again — Can look at news about an epidemic illness and more or less understand
-    the conte
+  hint_en: Again — Can look at news about an epidemic illness and more or less understand the conte
 - can_do_id: CD_EL16_60
   partner_jp: 食べすぎないようにしています。
   expected: &id004
@@ -736,18 +1022,15 @@ quiz_scenarios:
   - イスを聞いています。
   - どのように体の調子が悪いですか。
   - プーピンさん、どうしたんですか？
-  hint_en: Can look at a poster about an illness at a hospital and understand the
-    symptoms, prevention methods, etc.
+  hint_en: Can look at a poster about an illness at a hospital and understand the symptoms, prevention
+    methods, etc.
 - can_do_id: CD_EL16_60
   partner_jp: もう一度、お願いします。
   expected: *id004
-  hint_en: Again — Can look at a poster about an illness at a hospital and understand
-    the symptoms,
-english_notes: 'Is there anything you do daily for your health? What kind of things
-  are you mindful of?
+  hint_en: Again — Can look at a poster about an illness at a hospital and understand the symptoms,
+english_notes: 'Is there anything you do daily for your health? What kind of things are you mindful of?
 
-  Can give advice when someone is feeling unwell, or listen to and understand the
-  advice.
+  Can give advice when someone is feeling unwell, or listen to and understand the advice.
 
   Listen while looking at the illustrations.
 
@@ -783,3 +1066,7 @@ english_notes: 'Is there anything you do daily for your health? What kind of thi
 
   Focus on the expressions used and listen to the dialogs again.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 352
+  items: *id005
+  sentences: *id006

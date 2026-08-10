@@ -11,13 +11,12 @@ intro_questions:
 - jp: It gets very cold in winter について、あなたの けいけんは？
   en: Thinking about "Seasons and Weather" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can watch a short video about the four seasons in Japan
-    and under - stand seasonal characteristics. What do you want to be able to do?'
+  en: 'This lesson aims at: Can watch a short video about the four seasons in Japan and under - stand
+    seasonal characteristics. What do you want to be able to do?'
 can_dos:
 - id: CD_EL03_08
   can_do_number: 8
-  statement_en: Can watch a short video about the four seasons in Japan and under
-    - stand seasonal characteristics.
+  statement_en: Can watch a short video about the four seasons in Japan and under - stand seasonal characteristics.
   statement_jp: 日本の四季についての短い動画を見て、季節の特徴を理解することができる。
   activity_hint: ''
   rubric:
@@ -25,8 +24,7 @@ can_dos:
     min_score: 80
 - id: CD_EL03_09
   can_do_number: 9
-  statement_en: Can talk in simple terms about the seasonal characteristics of your
-    own country.
+  statement_en: Can talk in simple terms about the seasonal characteristics of your own country.
   statement_jp: 日本の四季についての短い動画を見て、季節の特徴を理解することができる。
   activity_hint: ''
   rubric:
@@ -61,7 +59,20 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
+- id: A1_PRON
+  kind: pronunciation
+  book_activity: 1.1
+  can_do_id: CD_EL03_08
+  label: hatsuwon
+  audio:
+  - assets/audio/Y_[03-01]_kotoba1.mp3
+  key_phrases:
+  - 冬はとても寒くなります
+  - 春は桜の花が咲きます
+  book_mode: pronunciation
+  prompt_en: Pronunciation — say each word clearly (watch long vowels and mora).
+  picture_has_image: false
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -82,7 +93,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A3
   kind: listening
   book_activity: 3
@@ -123,13 +134,13 @@ activities:
   - assets/audio/Y_[03-04]_katachi.mp3
   key_phrases:
   - 冬はとても寒くなります
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 冬はとても寒くなります
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A5
   kind: listening
   book_activity: 5
@@ -142,7 +153,7 @@ activities:
   - 人の人が話しています。
   - のどれですか。
   - それぞれどんな特徴があります
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL03 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: はとても寒くなります
     tags:
@@ -160,10 +171,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL03 activity 5: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL03 activity 5: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: のどれですか。
+  - id: b
+    label_jp: 人の人が話しています。
+  - id: c
+    label_jp: 好きな季節はいつですか
+  - id: d
+    label_jp: それぞれどんな特徴があります
+  - id: e
+    label_jp: 好きな季節はいつですか？
+  - id: f
+    label_jp: ジョーイさんの国には、どんな季節がありますか？
+  - id: g
+    label_jp: 好きな季節について話しています。
+  - id: h
+    label_jp: はとても寒くなります
+  correct_ids:
+  - a
+  - b
+  - d
+  - h
+  choose_mode: all
 - id: A6
   kind: listening
   book_activity: 6
@@ -176,7 +209,7 @@ activities:
   - 人の人が話しています。
   - のどれですか。
   - それぞれどんな特徴があります
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL03 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: はとても寒くなります
     tags:
@@ -194,10 +227,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL03 activity 6: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL03 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: それぞれどんな特徴があります
+  - id: b
+    label_jp: 一年中夏です。ずっと暑いです。
+  - id: c
+    label_jp: 秋が好きです。
+  - id: d
+    label_jp: どうしてですか？
+  - id: e
+    label_jp: 人の人が話しています。
+  - id: f
+    label_jp: 雨季と乾季があります。
+  - id: g
+    label_jp: のどれですか。
+  - id: h
+    label_jp: はとても寒くなります
+  correct_ids:
+  - a
+  - e
+  - g
+  - h
+  choose_mode: all
 - id: A7
   kind: listening
   book_activity: 7
@@ -210,7 +265,7 @@ activities:
   - 人の人が話しています。
   - のどれですか。
   - それぞれどんな特徴があります
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL03 activity 7: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: はとても寒くなります
     tags:
@@ -228,10 +283,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL03 activity 7: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL03 activity 7: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: とても暑いです
+  - id: b
+    label_jp: どうしてですか？
+  - id: c
+    label_jp: はとても寒くなります
+  - id: d
+    label_jp: それぞれどんな特徴があります
+  - id: e
+    label_jp: 人の人が話しています。
+  - id: f
+    label_jp: 好きな季節はいつですか
+  - id: g
+    label_jp: 好きな季節はいつですか？
+  - id: h
+    label_jp: のどれですか。
+  correct_ids:
+  - c
+  - d
+  - e
+  - h
+  choose_mode: all
 - id: A8
   kind: listening
   book_activity: 8
@@ -244,7 +321,7 @@ activities:
   - 人の人が話しています。
   - のどれですか。
   - それぞれどんな特徴があります
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL03 activity 8: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: はとても寒くなります
     tags:
@@ -262,10 +339,32 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL03 activity 8: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL03 activity 8: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: はとても寒くなります
+  - id: b
+    label_jp: のどれですか。
+  - id: c
+    label_jp: 一年中夏です。ずっと暑いです。
+  - id: d
+    label_jp: 冬はとても寒くなります
+  - id: e
+    label_jp: 人の人が話しています。
+  - id: f
+    label_jp: それぞれどんな特徴があります
+  - id: g
+    label_jp: 日本を紹介する映像を見ています。
+  - id: h
+    label_jp: そうですか。
+  correct_ids:
+  - a
+  - b
+  - e
+  - f
+  choose_mode: all
 - id: A9
   kind: speaking
   book_activity: 9
@@ -448,7 +547,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A14
   kind: speaking
   book_activity: 14
@@ -487,6 +586,106 @@ activities:
     tags:
     - long
     - polite
+- id: KANJI
+  kind: kanji
+  book_activity: 14.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 季節
+  - 花
+  - 春
+  - 同じ
+  - 夏
+  - 暑い
+  - 秋
+  - 寒い
+  - 冬
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 92
+  kanji_items: &id004
+  - kanji: 季節
+    reading: きせつ
+    gloss_en: season
+  - kanji: 花
+    reading: はな
+    gloss_en: flower
+  - kanji: 春
+    reading: はる
+    gloss_en: spring
+  - kanji: 同じ
+    reading: おなじ
+    gloss_en: same
+  - kanji: 夏
+    reading: なつ
+    gloss_en: summer
+  - kanji: 暑い
+    reading: あつい
+    gloss_en: hot (weather)
+  - kanji: 秋
+    reading: あき
+    gloss_en: autumn
+  - kanji: 寒い
+    reading: さむい
+    gloss_en: cold (weather)
+  - kanji: 冬
+    reading: ふゆ
+    gloss_en: winter
+  kanji_sentences: &id005
+  - 秋は、果物がおいしいです。
+  - 春は、いろいろな花が咲きます。
+  - 私は、暑いのが大好きですから、夏が好きです。
+  - Ａ：バチカさんの国には、どんな季節がありますか？Ｂ：日本と同じです。でも、冬がとても寒いです。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 15
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'What are the seasons like in your country?
+
+    Can watch a short video about the four seasons in Japan and understand seasonal characteristics.
+
+    Preparation for the words
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a-j.
+
+    Listen to the recording.
+
+    You are watching a video that introduces Japan.
+
+    Choose the characteristics of each season in Japan from a-j of 1 .
+
+    Check the words and listen to the narration again.
+
+    たくさん many / much ｜ 学
+
+    校 school
+
+    Listen to the recording and fill in the blanks.
+
+    What expression was used to describe the changes?
+
+    Focus on the expressions used and listen to the narration again.
+
+    Can talk in simple terms about the seasonal characteristics of your own country.
+
+    Listen to the dialogs.
+
+    The four people are each talking about the seasons and climate of their countries.
+
+    What is the season of each country? Choose from a-d.
+
+    a. b. c. d'
+  picture_has_image: false
 grammar:
 - point: N に／ナ A-に／イ A-く なります
   worksheet_pages:
@@ -534,18 +733,16 @@ vocab:
 quiz_bank:
 - type: roleplay
   can_do_id: CD_EL03_08
-  prompt_en: 'Demonstrate: Can watch a short video about the four seasons in Japan
-    and under - stand seasonal characteristics.'
+  prompt_en: 'Demonstrate: Can watch a short video about the four seasons in Japan and under - stand seasonal
+    characteristics.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL03_09
-  prompt_en: 'Demonstrate: Can talk in simple terms about the seasonal characteristics
-    of your own country.'
+  prompt_en: 'Demonstrate: Can talk in simple terms about the seasonal characteristics of your own country.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL03_10
-  prompt_en: 'Demonstrate: Can talk in simple terms about your favorite season and
-    the reason.'
+  prompt_en: 'Demonstrate: Can talk in simple terms about your favorite season and the reason.'
   spoken_required: true
 quiz_scenarios:
 - can_do_id: CD_EL03_08
@@ -555,13 +752,11 @@ quiz_scenarios:
   - 春は桜の花が咲きます
   - はとても寒くなります
   - 人の人が話しています。
-  hint_en: Can watch a short video about the four seasons in Japan and under - stand
-    seasonal characteristics.
+  hint_en: Can watch a short video about the four seasons in Japan and under - stand seasonal characteristics.
 - can_do_id: CD_EL03_08
   partner_jp: もう一度、お願いします。
   expected: *id001
-  hint_en: Again — Can watch a short video about the four seasons in Japan and under
-    - stand season
+  hint_en: Again — Can watch a short video about the four seasons in Japan and under - stand season
 - can_do_id: CD_EL03_09
   partner_jp: 冬はとても寒くなります。
   expected: &id002
@@ -569,13 +764,11 @@ quiz_scenarios:
   - 春は桜の花が咲きます
   - はとても寒くなります
   - 人の人が話しています。
-  hint_en: Can talk in simple terms about the seasonal characteristics of your own
-    country.
+  hint_en: Can talk in simple terms about the seasonal characteristics of your own country.
 - can_do_id: CD_EL03_09
   partner_jp: もう一度、お願いします。
   expected: *id002
-  hint_en: Again — Can talk in simple terms about the seasonal characteristics of
-    your own country.
+  hint_en: Again — Can talk in simple terms about the seasonal characteristics of your own country.
 - can_do_id: CD_EL03_10
   partner_jp: はとても寒くなります。
   expected: &id003
@@ -590,8 +783,7 @@ quiz_scenarios:
   hint_en: Again — Can talk in simple terms about your favorite season and the reason.
 english_notes: 'What are the seasons like in your country?
 
-  Can watch a short video about the four seasons in Japan and understand seasonal
-  characteristics.
+  Can watch a short video about the four seasons in Japan and understand seasonal characteristics.
 
   Preparation for the words
 
@@ -629,8 +821,8 @@ english_notes: 'What are the seasons like in your country?
 
   a. b. c. d.
 
-  Listen to the dialogs again.What are the seasonal characteristics of each person’s
-  country? Choose from ア-キ.
+  Listen to the dialogs again.What are the seasonal characteristics of each person’s country? Choose from
+  ア-キ.
 
   Check the words and listen to the dialogs again.
 
@@ -642,3 +834,7 @@ english_notes: 'What are the seasons like in your country?
 
   い short'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 92
+  items: *id004
+  sentences: *id005

@@ -11,8 +11,8 @@ intro_questions:
 - jp: How about giving something as a gift? について、あなたの けいけんは？
   en: Thinking about "Visiting People" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can say congratulations for a birthday, wedding, etc.
-    What do you want to be able to do?'
+  en: 'This lesson aims at: Can say congratulations for a birthday, wedding, etc. What do you want to
+    be able to do?'
 can_dos:
 - id: CD_EL18_65
   can_do_number: 65
@@ -40,8 +40,7 @@ can_dos:
     min_score: 80
 - id: CD_EL18_68
   can_do_number: 68
-  statement_en: Can read and understand a post on social media that your friend wrote
-    on their birthday.
+  statement_en: Can read and understand a post on social media that your friend wrote on their birthday.
   statement_jp: 誕生日や結婚などのお祝いを言うことができる。
   activity_hint: ''
   rubric:
@@ -99,7 +98,7 @@ activities:
   - 何のお祝いですか。
   - 子どもは男の子ですか
   - 女の子ですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL18 activity 2: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 人の人にお祝いを言っています。
     tags:
@@ -117,10 +116,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL18 activity 2: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL18 activity 2: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 女の子ですか。
+  - id: b
+    label_jp: お子さんが生まれたそうですね。
+  - id: c
+    label_jp: 人の人にお祝いを言っています。
+  - id: d
+    label_jp: 何のお祝いですか。
+  - id: e
+    label_jp: そうですか。名前は決めましたか？
+  - id: f
+    label_jp: どんな意味ですか。
+  - id: g
+    label_jp: 子どもは男の子ですか
+  - id: h
+    label_jp: もうすぐ国に帰ります。
+  correct_ids:
+  - a
+  - c
+  - d
+  - g
+  choose_mode: all
 - id: A3
   kind: listening
   book_activity: 3
@@ -133,7 +154,7 @@ activities:
   - 何のお祝いですか。
   - 子どもは男の子ですか
   - 女の子ですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL18 activity 3: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 人の人にお祝いを言っています。
     tags:
@@ -151,10 +172,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL18 activity 3: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL18 activity 3: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 何のお祝いですか。
+  - id: b
+    label_jp: え、あ、ありがとう。
+  - id: c
+    label_jp: 開けてみてください。
+  - id: d
+    label_jp: どんな意味だと思います
+  - id: e
+    label_jp: 子どもは男の子ですか
+  - id: f
+    label_jp: 女の子ですか。
+  - id: g
+    label_jp: お子さんが生まれたそうですね。
+  - id: h
+    label_jp: 人の人にお祝いを言っています。
+  correct_ids:
+  - a
+  - e
+  - f
+  - h
+  choose_mode: all
 - id: A4
   kind: listening
   book_activity: 4
@@ -167,7 +210,7 @@ activities:
   - 何のお祝いですか。
   - 子どもは男の子ですか
   - 女の子ですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL18 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 人の人にお祝いを言っています。
     tags:
@@ -185,10 +228,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL18 activity 4: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL18 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: どんな意味ですか。
+  - id: b
+    label_jp: 女の子ですか。
+  - id: c
+    label_jp: 何のお祝いですか。
+  - id: d
+    label_jp: アナさんの送別会を開いています。
+  - id: e
+    label_jp: 人の人にお祝いを言っています。
+  - id: f
+    label_jp: 女の子
+  - id: g
+    label_jp: おめでとうございます。男の子ですか？女の子ですか？
+  - id: h
+    label_jp: 子どもは男の子ですか
+  correct_ids:
+  - b
+  - c
+  - e
+  - h
+  choose_mode: all
 - id: A5
   kind: grammar_form
   book_activity: 5
@@ -198,13 +263,13 @@ activities:
   - assets/audio/Y_[18-05]_katachi.mp3
   key_phrases:
   - どんな意味だと思います
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: どんな意味だと思います
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A6
   kind: speaking
   book_activity: 6
@@ -294,7 +359,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A9
   kind: vocabulary
   book_activity: 9
@@ -310,7 +375,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A10
   kind: conversation
   book_activity: 10
@@ -358,7 +423,7 @@ activities:
   key_phrases:
   - どんな意味ですか。
   - とどう違うと思います
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: どんな意味ですか。
     tags:
@@ -368,7 +433,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A12
   kind: speaking
   book_activity: 12
@@ -469,6 +534,129 @@ activities:
     tags:
     - short
     - polite
+- id: KANJI
+  kind: kanji
+  book_activity: 14.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 男の子
+  - 幸せ
+  - 女の子
+  - 生まれる
+  - お祝い
+  - 思う
+  - 誕生日
+  - 選ぶ
+  - 結婚
+  - 合格する
+  - 時計
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 395
+  kanji_items: &id006
+  - kanji: 男の子
+    reading: おとこのこ
+    gloss_en: boy
+  - kanji: 幸せ
+    reading: しあわせ
+    gloss_en: happy / happiness
+  - kanji: 女の子
+    reading: おんなのこ
+    gloss_en: girl
+  - kanji: 生まれる
+    reading: うまれる
+    gloss_en: to be born
+  - kanji: お祝い
+    reading: おいわい
+    gloss_en: celebration / congratulations
+  - kanji: 思う
+    reading: おもう
+    gloss_en: to think
+  - kanji: 誕生日
+    reading: たんじょうび
+    gloss_en: birthday
+  - kanji: 選ぶ
+    reading: えらぶ
+    gloss_en: to choose
+  - kanji: 結婚
+    reading: けっこん
+    gloss_en: marriage
+  - kanji: 合格する
+    reading: ごうかくする
+    gloss_en: to pass (an exam)
+  - kanji: 時計
+    reading: とけい
+    gloss_en: clock / watch
+  kanji_sentences: &id007
+  - JLPTに合格しました。
+  - ご結婚おめでとうございます。お幸せに。
+  - 誕生日プレゼントは、私が選んでもいいですか？
+  - お祝いには、時計がいいと思います。
+  - お子さんが生まれたそうですね。男の子ですか？女の子ですか？
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 15
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'When do you give gifts to someone?
+
+    Can say congratulations for a birthday, wedding, etc.
+
+    Listen to the dialogs.
+
+    The four people are each being congratulated.
+
+    What is the occasion? Choose from a-d.
+
+    Listen to the dialogs again and answer the questions.
+
+    Is the baby a boy or a girl? What is the name?
+
+    What is the person’s spouse like?
+
+    Did the woman receive a birthday gift?
+
+    What will the man receive from the woman?
+
+    Check the words and listen to the dialogs again.
+
+    boy ｜ 女
+
+    girl ｜ 決
+
+    める decide ｜ 考
+
+    える think ｜ 私
+
+    手 spouse ｜ お祝
+
+    い gift ｜ ごちそうする treat a meal ｜ きっと surely ｜ あげる give
+
+    しみですね That sounds exciting. ｜ お幸
+
+    せに Wish you all the happiness.
+
+    Listen to the recording and fill in the blanks.
+
+    J
+
+    LPT 、合
+
+    What do you think is the meaning of そうです?
+
+    What expression was used to congratulate someone?
+
+    Focus on the expressions used and listen to the dialogs again.
+
+    Say words of congratulations.
+
+    Listen to the dialogs'
+  picture_has_image: false
 grammar:
 - point: キムさんもパーティーに来
   worksheet_pages:
@@ -516,18 +704,16 @@ quiz_bank:
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL18_67
-  prompt_en: 'Demonstrate: Can thank someone and offer comments when someone gives
-    you a gift.'
+  prompt_en: 'Demonstrate: Can thank someone and offer comments when someone gives you a gift.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL18_68
-  prompt_en: 'Demonstrate: Can read and understand a post on social media that your
-    friend wrote on their birthday.'
+  prompt_en: 'Demonstrate: Can read and understand a post on social media that your friend wrote on their
+    birthday.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL18_69
-  prompt_en: 'Demonstrate: Can write a message of congratulations or goodbye on a
-    card.'
+  prompt_en: 'Demonstrate: Can write a message of congratulations or goodbye on a card.'
   spoken_required: true
 quiz_scenarios:
 - can_do_id: CD_EL18_65
@@ -573,13 +759,11 @@ quiz_scenarios:
   - 何のお祝いですか。
   - 子どもは男の子ですか
   - 女の子ですか。
-  hint_en: Can read and understand a post on social media that your friend wrote on
-    their birthday.
+  hint_en: Can read and understand a post on social media that your friend wrote on their birthday.
 - can_do_id: CD_EL18_68
   partner_jp: もう一度、お願いします。
   expected: *id004
-  hint_en: Again — Can read and understand a post on social media that your friend
-    wrote on their b
+  hint_en: Again — Can read and understand a post on social media that your friend wrote on their b
 - can_do_id: CD_EL18_69
   partner_jp: どんな意味だと思います。
   expected: &id005
@@ -650,8 +834,12 @@ english_notes: 'When do you give gifts to someone?
 
   Have a practice conversation using the contents of 1 .
 
-  Role-play this situation. Freely think up any occasion and offer suitable words
-  of congratulations. After that, freely carry on a
+  Role-play this situation. Freely think up any occasion and offer suitable words of congratulations.
+  After that, freely carry on a
 
   conversation. If you do not know what to say in Japanese, try to look it up.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 395
+  items: *id006
+  sentences: *id007

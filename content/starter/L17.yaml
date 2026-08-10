@@ -74,7 +74,7 @@ activities:
   key_phrases:
   - 日曜日は地務で運動しましたへへへ
   - 2てださん日曜日は何をしましたか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L17 activity 2: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 日曜日は地務で運動しましたへへへ
     tags:
@@ -82,9 +82,24 @@ activities:
   - jp: 2てださん日曜日は何をしましたか
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L17 activity 2: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ああああ
+  - id: b
+    label_jp: 昨日は、桜もあるに帰物に行きました
+  - id: c
+    label_jp: 2てださん日曜日は何をしましたか
+  - id: d
+    label_jp: 休みはどうでしたか
+  - id: e
+    label_jp: 日曜日は地務で運動しましたへへへ
+  correct_ids:
+  - c
+  - e
+  choose_mode: all
 - id: A3
   kind: listening
   book_activity: 3
@@ -95,7 +110,7 @@ activities:
   key_phrases:
   - オーテストラのコンサートに行きましたうん、いいですね
   - さあそうさあ集末は何をしましたか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L17 activity 3: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: オーテストラのコンサートに行きましたうん、いいですね
     tags:
@@ -104,9 +119,24 @@ activities:
   - jp: さあそうさあ集末は何をしましたか
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L17 activity 3: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ご事らを見ました
+  - id: b
+    label_jp: 私はどこにも生きませんでした
+  - id: c
+    label_jp: とても良かったです楽しかったです
+  - id: d
+    label_jp: オーテストラのコンサートに行きましたうん、いいですね
+  - id: e
+    label_jp: さあそうさあ集末は何をしましたか
+  correct_ids:
+  - d
+  - e
+  choose_mode: all
 - id: A4
   kind: listening
   book_activity: 4
@@ -119,7 +149,7 @@ activities:
   - そうですか
   - 4マイさん、昨日の休みは何をしましたか
   - 復興会いました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L17 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 昨日は、桜もあるに帰物に行きました
     tags:
@@ -134,9 +164,32 @@ activities:
   - jp: 復興会いました
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L17 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 日曜日は、ヒルマで寝ました
+  - id: b
+    label_jp: 昨日は、桜もあるに帰物に行きました
+  - id: c
+    label_jp: そうですか
+  - id: d
+    label_jp: じむで運動しました
+  - id: e
+    label_jp: 復興会いました
+  - id: f
+    label_jp: 4マイさん、昨日の休みは何をしましたか
+  - id: g
+    label_jp: 6アンドレアさん週末は何をしましたか
+  - id: h
+    label_jp: 映画を見に行きました
+  correct_ids:
+  - b
+  - c
+  - e
+  - f
+  choose_mode: all
 - id: A5
   kind: listening
   book_activity: 5
@@ -149,7 +202,7 @@ activities:
   - ごっ...ルディさん、どにちは何をしましたか
   - 日曜日は、ヒルマで寝ました
   - ああああ
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L17 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: どうよびは友達と、農民に行きました
     tags:
@@ -163,9 +216,32 @@ activities:
   - jp: ああああ
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L17 activity 5: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 私は私は私は私は私は友達と中央公園の国際フェスティバルに行きましたえぇ
+  - id: b
+    label_jp: 何もしませんでした家でゆっくりしましたそうですか
+  - id: c
+    label_jp: 日曜日は、ヒルマで寝ました
+  - id: d
+    label_jp: どうよびは友達と、農民に行きました
+  - id: e
+    label_jp: ごっ...ルディさん、どにちは何をしましたか
+  - id: f
+    label_jp: とても良かったです楽しかったです
+  - id: g
+    label_jp: ああああ
+  - id: h
+    label_jp: やすみはどうでしたか
+  correct_ids:
+  - c
+  - d
+  - e
+  - g
+  choose_mode: all
 - id: A6
   kind: listening
   book_activity: 6
@@ -177,7 +253,7 @@ activities:
   - 何もしませんでした家でゆっくりしましたそうですか
   - あネットで家族と話しましたあ、いいですね
   - 6アンドレアさん週末は何をしましたか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L17 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 何もしませんでした家でゆっくりしましたそうですか
     tags:
@@ -190,9 +266,29 @@ activities:
   - jp: 6アンドレアさん週末は何をしましたか
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L17 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 日曜日は、ヒルマで寝ました
+  - id: b
+    label_jp: 国際フェスティバルに行きました
+  - id: c
+    label_jp: 休みはどうでしたか
+  - id: d
+    label_jp: 日曜日は地務で運動しましたへへへ
+  - id: e
+    label_jp: 6アンドレアさん週末は何をしましたか
+  - id: f
+    label_jp: 何もしませんでした家でゆっくりしましたそうですか
+  - id: g
+    label_jp: あネットで家族と話しましたあ、いいですね
+  correct_ids:
+  - e
+  - f
+  - g
+  choose_mode: all
 - id: A7
   kind: grammar_form
   book_activity: 7
@@ -212,7 +308,7 @@ activities:
   - jp: 休みは何をしましたか
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A8
   kind: speaking
   book_activity: 8
@@ -313,7 +409,7 @@ activities:
   key_phrases:
   - ゴジラは面白かったですかまーまーでした1日中、そうじと選択をしました大変でした国際フェスティバルはどうでしたか
   - とても良かったです楽しかったです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: ゴジラは面白かったですかまーまーでした1日中、そうじと選択をしました大変でした国際フェスティバルはどうでしたか
     tags:
@@ -323,7 +419,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A12
   kind: grammar_form
   book_activity: 12
@@ -334,7 +430,7 @@ activities:
   key_phrases:
   - 私はどこにも生きませんでした
   - どこに生きましたか
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 私はどこにも生きませんでした
     tags:
@@ -343,7 +439,7 @@ activities:
   - jp: どこに生きましたか
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A13
   kind: speaking
   book_activity: 13
@@ -415,6 +511,105 @@ activities:
     jp: 映画を見に行きました
   dialog_listen_audio:
   - assets/audio/X_[17-14]_hanasu2.mp3
+- id: KANJI
+  kind: kanji
+  book_activity: 14.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 千
+  - 百
+  - 円
+  - 万
+  - 休み
+  - 映画
+  - 日本語
+  - 勉強します
+  - 買います
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 469
+  kanji_items: &id001
+  - kanji: 千
+    reading: せん
+    gloss_en: thousand
+  - kanji: 百
+    reading: ひゃく
+    gloss_en: hundred
+  - kanji: 円
+    reading: えん
+    gloss_en: yen
+  - kanji: 万
+    reading: まん
+    gloss_en: ten thousand
+  - kanji: 休み
+    reading: せんひゃくえんまんやすみ
+    gloss_en: holiday / day off
+  - kanji: 映画
+    reading: せんひゃくえんまんやすみえいが
+    gloss_en: movie
+  - kanji: 日本語
+    reading: せんひゃくえんまんやすみえいがにほんご
+    gloss_en: Japanese language
+  - kanji: 勉強します
+    reading: べんきょうします
+    gloss_en: to study
+  - kanji: 買います
+    reading: かいます
+    gloss_en: to buy
+  kanji_sentences: &id002
+  - Ａ：休みは、何
+  - アイスクリームを買いました。百円でした。
+  - たくさん日本語を勉強しました。
+  - この家
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 15
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Can give a simple answer when asked what you did on your day off.
+
+    What did you do on your recent day off?
+
+    Listen to the dialogs.
+
+    Six people are each talking about what they did on their day off.
+
+    What did they do? Choose from a–h.
+
+    What did you do on your day off?
+
+    Check the words and listen to the dialogs again.
+
+    末 weekend ｜ オーケストラ orchestra ｜ 昨
+
+    日 yesterday
+
+    Saturday and Sunday ｜ ネットで online
+
+    Listen to the recording and fill in the blanks.
+
+    What expressions were used when talking about things the speaker did in the past?
+
+    What expression was used when talking about things the speaker did not do in the past?
+
+    Focus on the expressions used and listen to the dialogs again.
+
+    Talk about what you did during your day off.
+
+    Listen to the dialogs.
+
+    Shadow the dialogs.
+
+    Practice using the words from 1 .
+
+    Ask each other what you did during your day off. If you do not know how to say something in Japanese,
+    try t'
+  picture_has_image: false
 grammar:
 - point: V-ました
   worksheet_pages:
@@ -616,3 +811,7 @@ english_notes: 'Can give a simple answer when asked what you did on your day off
 
   First, listen to the dialog without looking at the script. What did they do? Choose from a–e.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 469
+  items: *id001
+  sentences: *id002

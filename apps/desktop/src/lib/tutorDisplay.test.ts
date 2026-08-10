@@ -84,4 +84,11 @@ describe("buildTutorStageModel", () => {
     const model = buildTutorStageModel(payload({ book_substep: "repeat", expects_speech: true }));
     expect(typeof model.instructionEn).toBe("string");
   });
+
+  it("surfaces the current book page for the learner", () => {
+    const model = buildTutorStageModel(
+      payload({ book_substep: "listen" }, { book_page: 101, pdf_pages: [101, 123] }),
+    );
+    expect(model.bookPageLabel).toBe("Book p. 101");
+  });
 });

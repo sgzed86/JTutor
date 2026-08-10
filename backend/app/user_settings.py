@@ -60,8 +60,10 @@ class AppearanceSettings(BaseModel):
 class LessonSettings(BaseModel):
     auto_advance: AutoAdvance = "after_audio"
     auto_advance_delay_ms: int = Field(default=1200, ge=0, le=3000)
+    # After Yuki models the line, open the mic (toggle mode). Hold mode ignores this.
     auto_start_recording: bool = True
-    mic_mode: MicMode = "hold"
+    # "toggle" = tap to speak, stop on silence or Stop. "hold" = press-and-hold fallback.
+    mic_mode: MicMode = "toggle"
     auto_stop_on_silence: bool = True
     silence_ms: int = Field(default=1200, ge=400, le=4000)
     max_recording_ms: int = Field(default=15000, ge=3000, le=60000)
@@ -85,6 +87,9 @@ class AdvancedSettings(BaseModel):
 
 
 class UserSettings(BaseModel):
+    # Missing from older saved JSON → treated as 0 so speech-UX migration runs.
+    # Fresh defaults set this to CURRENT_PREFS_VERSION in `_defaults()`.
+    prefs_version: int = 0
     voice: VoiceSettings = Field(default_factory=VoiceSettings)
     audio: AudioSettings = Field(default_factory=AudioSettings)
     appearance: AppearanceSettings = Field(default_factory=AppearanceSettings)
@@ -97,11 +102,13 @@ class UserSettings(BaseModel):
         return STRICTNESS_THRESHOLDS[self.lessons.grading_strictness]
 
 
+CURRENT_PREFS_VERSION = 3
+
 _cache: UserSettings | None = None
 
 
 def _defaults() -> UserSettings:
-    s = UserSettings()
+    s = UserSettings(prefs_version=CURRENT_PREFS_VERSION)
     strictness = (env_settings.grading_strictness or "standard").lower()
     if strictness in STRICTNESS_THRESHOLDS:
         s.lessons.grading_strictness = strictness  # type: ignore[assignment]
@@ -125,6 +132,16 @@ def load() -> UserSettings:
                 value = UserSettings.model_validate(json.loads(row.value))
     except Exception as exc:  # noqa: BLE001 - fall back to defaults, never fail startup
         _log.warning("could not load user settings: %s", exc)
+    if value.prefs_version < CURRENT_PREFS_VERSION:
+        # Prefer tap-to-speak + silence stop; hold remains available in Settings.
+        value.lessons.mic_mode = "toggle"
+        value.lessons.auto_stop_on_silence = True
+        value.lessons.auto_start_recording = True
+        value.prefs_version = CURRENT_PREFS_VERSION
+        try:
+            save(value)
+        except Exception as exc:  # noqa: BLE001
+            _log.warning("could not migrate speech prefs: %s", exc)
     _cache = value
     return value
 

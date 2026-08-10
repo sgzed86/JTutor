@@ -11,8 +11,8 @@ intro_questions:
 - jp: I have a fever, and my throat is sore について、あなたの けいけんは？
   en: Thinking about "Health" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can explain in simple terms your symptoms at the hospital.
-    What do you want to be able to do?'
+  en: 'This lesson aims at: Can explain in simple terms your symptoms at the hospital. What do you want
+    to be able to do?'
 can_dos:
 - id: CD_EL15_52
   can_do_number: 52
@@ -32,8 +32,8 @@ can_dos:
     min_score: 80
 - id: CD_EL15_54
   can_do_number: 54
-  statement_en: Can fill out the necessary information on a questionnaire form at
-    the hospital reception desk.
+  statement_en: Can fill out the necessary information on a questionnaire form at the hospital reception
+    desk.
   statement_jp: 病院で、自分の症状を簡単に伝えることができる。
   activity_hint: ''
   rubric:
@@ -41,8 +41,7 @@ can_dos:
     min_score: 80
 - id: CD_EL15_55
   can_do_number: 55
-  statement_en: Can listen to instructions about medicine and understand directions
-    for use and precautions.
+  statement_en: Can listen to instructions about medicine and understand directions for use and precautions.
   statement_jp: 病院で、自分の症状を簡単に伝えることができる。
   activity_hint: ''
   rubric:
@@ -50,8 +49,7 @@ can_dos:
     min_score: 80
 - id: CD_EL15_56
   can_do_number: 56
-  statement_en: Can read instructions about medicine and understand directions for
-    use and dosage.
+  statement_en: Can read instructions about medicine and understand directions for use and dosage.
   statement_jp: 病院で、自分の症状を簡単に伝えることができる。
   activity_hint: ''
   rubric:
@@ -83,7 +81,20 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
+- id: A1_PRON
+  kind: pronunciation
+  book_activity: 1.1
+  can_do_id: CD_EL15_52
+  label: hatsuwon
+  audio:
+  - assets/audio/Y_[15-01]_kotoba1.mp3
+  key_phrases:
+  - どんな症状ですか。
+  - いつからですか。
+  book_mode: pronunciation
+  prompt_en: Pronunciation — say each word clearly (watch long vowels and mora).
+  picture_has_image: false
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -109,7 +120,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A3
   kind: listening
   book_activity: 3
@@ -122,7 +133,7 @@ activities:
   - どんな症状ですか。
   - いつからですか。
   - 今日はどうしました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Listen and type brief notes (who / what / where).
   phrase_meta:
   - jp: 熱があってのどが痛いんです
     tags:
@@ -139,7 +150,12 @@ activities:
   - jp: 今日はどうしました
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: note_take
+  note_keywords:
+  - 熱があってのどが痛いんです
+  - どんな症状ですか。
+  - いつからですか。
+  - 今日はどうしました
 - id: A4
   kind: listening
   book_activity: 4
@@ -152,7 +168,7 @@ activities:
   - どんな症状ですか。
   - いつからですか。
   - 今日はどうしましたか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL15 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 熱があってのどが痛いんです
     tags:
@@ -169,10 +185,32 @@ activities:
   - jp: 今日はどうしましたか？
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL15 activity 4: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL15 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: おとといからです。
+  - id: b
+    label_jp: いつからですか。
+  - id: c
+    label_jp: どんな症状ですか。
+  - id: d
+    label_jp: 今日はどうしましたか？
+  - id: e
+    label_jp: 熱があってのどが痛いんです
+  - id: f
+    label_jp: 近所の病院に来ました
+  - id: g
+    label_jp: ています。
+  - id: h
+    label_jp: 薬といっしょに飲んでください。
+  correct_ids:
+  - b
+  - c
+  - d
+  - e
+  choose_mode: all
 - id: A5
   kind: listening
   book_activity: 5
@@ -185,7 +223,7 @@ activities:
   - どんな症状ですか。
   - いつからですか。
   - 今日はどうしましたか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL15 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 熱があってのどが痛いんです
     tags:
@@ -202,10 +240,32 @@ activities:
   - jp: 今日はどうしましたか？
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL15 activity 5: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL15 activity 5: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 今日はどうしました
+  - id: b
+    label_jp: お薬です。
+  - id: c
+    label_jp: いつからですか。
+  - id: d
+    label_jp: これを受付に出してください。
+  - id: e
+    label_jp: 熱があってのどが痛いんです
+  - id: f
+    label_jp: 医者はどんな指示をしました
+  - id: g
+    label_jp: どんな症状ですか。
+  - id: h
+    label_jp: 今日はどうしましたか？
+  correct_ids:
+  - c
+  - e
+  - g
+  - h
+  choose_mode: all
 - id: A6
   kind: listening
   book_activity: 6
@@ -218,7 +278,7 @@ activities:
   - どんな症状ですか。
   - いつからですか。
   - 今日はどうしました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL15 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 熱があってのどが痛いんです
     tags:
@@ -235,10 +295,32 @@ activities:
   - jp: 今日はどうしました
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL15 activity 6: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL15 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 薬といっしょに飲んでください。
+  - id: b
+    label_jp: 熱があってのどが痛いんです
+  - id: c
+    label_jp: どんな症状ですか。
+  - id: d
+    label_jp: いつからですか。
+  - id: e
+    label_jp: 今日はどうしました
+  - id: f
+    label_jp: これを受付に出してください。
+  - id: g
+    label_jp: 今日はどうしましたか？
+  - id: h
+    label_jp: 医者はどんな指示をしました
+  correct_ids:
+  - b
+  - c
+  - d
+  - e
+  choose_mode: all
 - id: A7
   kind: grammar_form
   book_activity: 7
@@ -249,7 +331,7 @@ activities:
   key_phrases:
   - 熱があってのどが痛いんです
   - 今日はどうしました
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 熱があってのどが痛いんです
     tags:
@@ -258,7 +340,7 @@ activities:
   - jp: 今日はどうしました
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A8
   kind: speaking
   book_activity: 8
@@ -452,7 +534,7 @@ activities:
   - 円になります。
   - こちらは診察券です。
   - これを受付に出してください。
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 熱があってのどが痛いんです
     tags:
@@ -470,7 +552,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A14
   kind: listening
   book_activity: 14
@@ -483,7 +565,7 @@ activities:
   - 熱を下げるお薬です
   - ています。
   - 何の薬ですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL15 activity 14: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 熱があってのどが痛いんです
     tags:
@@ -501,10 +583,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL15 activity 14: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL15 activity 14: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 熱があってのどが痛いんです
+  - id: b
+    label_jp: 近所の病院に来ました
+  - id: c
+    label_jp: 飲んでください。
+  - id: d
+    label_jp: ています。
+  - id: e
+    label_jp: 熱を下げるお薬です
+  - id: f
+    label_jp: 何の薬ですか。
+  - id: g
+    label_jp: 円になります。
+  - id: h
+    label_jp: 受付で何をもらいました
+  correct_ids:
+  - a
+  - d
+  - e
+  - f
+  choose_mode: all
 - id: A15
   kind: listening
   book_activity: 15
@@ -517,7 +621,7 @@ activities:
   - 熱を下げるお薬です
   - ています。
   - 何の薬ですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL15 activity 15: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 熱があってのどが痛いんです
     tags:
@@ -535,10 +639,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL15 activity 15: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL15 activity 15: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 何の薬ですか。
+  - id: b
+    label_jp: 熱があってのどが痛いんです
+  - id: c
+    label_jp: 近所の病院に来ました
+  - id: d
+    label_jp: これを受付に出してください。
+  - id: e
+    label_jp: おとといからです。
+  - id: f
+    label_jp: 円になります。
+  - id: g
+    label_jp: ています。
+  - id: h
+    label_jp: 熱を下げるお薬です
+  correct_ids:
+  - a
+  - b
+  - g
+  - h
+  choose_mode: all
 - id: A16
   kind: listening
   book_activity: 16
@@ -551,7 +677,7 @@ activities:
   - 熱を下げるお薬です
   - ています。
   - 何の薬ですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL15 activity 16: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 熱があってのどが痛いんです
     tags:
@@ -569,10 +695,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL15 activity 16: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL15 activity 16: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 熱があってのどが痛いんです
+  - id: b
+    label_jp: 医者はどんな指示をしました
+  - id: c
+    label_jp: こちらは診察券です。
+  - id: d
+    label_jp: 熱を下げるお薬です
+  - id: e
+    label_jp: これを受付に出してください。
+  - id: f
+    label_jp: お腹が痛くて、吐き気がするんです。
+  - id: g
+    label_jp: ています。
+  - id: h
+    label_jp: 何の薬ですか。
+  correct_ids:
+  - a
+  - d
+  - g
+  - h
+  choose_mode: all
 - id: A17
   kind: listening
   book_activity: 17
@@ -585,7 +733,7 @@ activities:
   - 熱を下げるお薬です
   - ています。
   - 何の薬ですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL15 activity 17: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 熱があってのどが痛いんです
     tags:
@@ -603,10 +751,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL15 activity 17: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL15 activity 17: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: いつからですか。
+  - id: b
+    label_jp: ています。
+  - id: c
+    label_jp: 熱があってのどが痛いんです
+  - id: d
+    label_jp: 熱を下げるお薬です
+  - id: e
+    label_jp: 薬といっしょに飲んでください。
+  - id: f
+    label_jp: おとといからです。
+  - id: g
+    label_jp: 何の薬ですか。
+  - id: h
+    label_jp: 昨日から38度の熱があって、のどがすごく痛いんです。
+  correct_ids:
+  - b
+  - c
+  - d
+  - g
+  choose_mode: all
 - id: A18
   kind: grammar_form
   book_activity: 18
@@ -619,7 +789,7 @@ activities:
   - お薬です。
   - 薬といっしょに飲んでください。
   - 飲んでください。
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 熱があってのどが痛いんです
     tags:
@@ -637,7 +807,125 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
+- id: KANJI
+  kind: kanji
+  book_activity: 18.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 熱
+  - 才
+  - 薬
+  - 痛い
+  - 病院
+  - 眠い
+  - 病気
+  - 寝る
+  - 医者
+  - 記入する
+  - 住所
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 329
+  kanji_items: &id006
+  - kanji: 熱
+    reading: ねつ
+    gloss_en: fever / heat
+  - kanji: 才
+    reading: さい
+    gloss_en: years old (counter)
+  - kanji: 薬
+    reading: くすり
+    gloss_en: medicine
+  - kanji: 痛い
+    reading: いたい
+    gloss_en: painful / hurt
+  - kanji: 病院
+    reading: びょういん
+    gloss_en: hospital
+  - kanji: 眠い
+    reading: ねむい
+    gloss_en: sleepy
+  - kanji: 病気
+    reading: びょうき
+    gloss_en: illness
+  - kanji: 寝る
+    reading: ねる
+    gloss_en: to sleep
+  - kanji: 医者
+    reading: いしゃ
+    gloss_en: doctor
+  - kanji: 記入する
+    reading: きにゅうする
+    gloss_en: to fill in (a form)
+  - kanji: 住所
+    reading: じゅうしょ
+    gloss_en: address
+  kanji_sentences: &id007
+  - お腹が痛くて、病院に行きました。
+  - 昨日の夜から、熱があるんです。
+  - 私は、40才のとき、医者になりました。
+  - 今までに、大きな病気にかかったことはありません。
+  - 問診票に、名前と住所、生年月日を記入してください。
+  - この薬は、飲むと眠くなります。寝る前に飲んでください。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 19
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Have you recently visited a doctor? For what symptom did you see a doctor?
+
+    Can explain in simple terms your symptoms at the hospital.
+
+    Preparation for the words
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a-j.
+
+    Listen to the dialogs.
+
+    The four people are each talking to a doctor at the hospital.
+
+    What are the symptoms? Choose from a-j of 1 .
+
+    Listen to the dialogs again. When did the symptoms start? Take notes.
+
+    Check the words and listen to the dialogs again.
+
+    おととい the day before yesterday ｜ 転
+
+    る take an x-ray
+
+    週間 one week （～週
+
+    間 ～ week(s)）｜ 花
+
+    粉症 pollen allergy
+
+    Listen to the recording and fill in the blanks.
+
+    What expression was used to describe the symptoms?
+
+    Focus on the expressions used and listen to the dialogs again.
+
+    Describe the symptoms to a doctor.
+
+    Listen to the dialogs.
+
+    Shadow the dialogs.
+
+    Practice using the words from 1 .
+
+    Role-play this s'
+  picture_has_image: false
 grammar:
 - point: V-んです ②
   worksheet_pages:
@@ -702,18 +990,18 @@ quiz_bank:
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL15_54
-  prompt_en: 'Demonstrate: Can fill out the necessary information on a questionnaire
-    form at the hospital reception desk.'
+  prompt_en: 'Demonstrate: Can fill out the necessary information on a questionnaire form at the hospital
+    reception desk.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL15_55
-  prompt_en: 'Demonstrate: Can listen to instructions about medicine and understand
-    directions for use and precautions.'
+  prompt_en: 'Demonstrate: Can listen to instructions about medicine and understand directions for use
+    and precautions.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL15_56
-  prompt_en: 'Demonstrate: Can read instructions about medicine and understand directions
-    for use and dosage.'
+  prompt_en: 'Demonstrate: Can read instructions about medicine and understand directions for use and
+    dosage.'
   spoken_required: true
 quiz_scenarios:
 - can_do_id: CD_EL15_52
@@ -747,13 +1035,11 @@ quiz_scenarios:
   - どんな症状ですか。
   - いつからですか。
   - 今日はどうしました
-  hint_en: Can fill out the necessary information on a questionnaire form at the hospital
-    reception desk.
+  hint_en: Can fill out the necessary information on a questionnaire form at the hospital reception desk.
 - can_do_id: CD_EL15_54
   partner_jp: もう一度、お願いします。
   expected: *id003
-  hint_en: Again — Can fill out the necessary information on a questionnaire form
-    at the hospital r
+  hint_en: Again — Can fill out the necessary information on a questionnaire form at the hospital r
 - can_do_id: CD_EL15_55
   partner_jp: 熱があってのどが痛いんです。
   expected: &id004
@@ -761,13 +1047,11 @@ quiz_scenarios:
   - どんな症状ですか。
   - いつからですか。
   - 今日はどうしましたか？
-  hint_en: Can listen to instructions about medicine and understand directions for
-    use and precautions.
+  hint_en: Can listen to instructions about medicine and understand directions for use and precautions.
 - can_do_id: CD_EL15_55
   partner_jp: もう一度、お願いします。
   expected: *id004
-  hint_en: 'Again — Can listen to instructions about medicine and understand directions
-    for use and '
+  hint_en: 'Again — Can listen to instructions about medicine and understand directions for use and '
 - can_do_id: CD_EL15_56
   partner_jp: 熱があってのどが痛いんです。
   expected: &id005
@@ -775,15 +1059,12 @@ quiz_scenarios:
   - どんな症状ですか。
   - いつからですか。
   - 今日はどうしましたか？
-  hint_en: Can read instructions about medicine and understand directions for use
-    and dosage.
+  hint_en: Can read instructions about medicine and understand directions for use and dosage.
 - can_do_id: CD_EL15_56
   partner_jp: もう一度、お願いします。
   expected: *id005
-  hint_en: Again — Can read instructions about medicine and understand directions
-    for use and dosag
-english_notes: 'Have you recently visited a doctor? For what symptom did you see a
-  doctor?
+  hint_en: Again — Can read instructions about medicine and understand directions for use and dosag
+english_notes: 'Have you recently visited a doctor? For what symptom did you see a doctor?
 
   Can explain in simple terms your symptoms at the hospital.
 
@@ -829,8 +1110,12 @@ english_notes: 'Have you recently visited a doctor? For what symptom did you see
 
   Practice using the words from 1 .
 
-  Role-play this situation. One person plays the part of the doctor and asks questions.
-  The other person plays the part of the patient
+  Role-play this situation. One person plays the part of the doctor and asks questions. The other person
+  plays the part of the patient
 
   and describes the symptoms.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 329
+  items: *id006
+  sentences: *id007

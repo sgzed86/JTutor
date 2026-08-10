@@ -53,7 +53,7 @@ activities:
   - jp: 会社の部屋えこういう質ビ食動し旧と質り会いう質いいきつんじょえそうこ
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -69,7 +69,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A3
   kind: listening
   book_activity: 3
@@ -96,7 +96,7 @@ activities:
   key_phrases:
   - ここでお茶を入れます
   - ここは旧頭出です
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: ここでお茶を入れます
     tags:
@@ -106,9 +106,24 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 2住みませんガムテープはどこですか
+  - id: b
+    label_jp: ここは旧頭出です
+  - id: c
+    label_jp: 一あのー、乗りはどこにありますか
+  - id: d
+    label_jp: ここでお茶を入れます
+  - id: e
+    label_jp: 1ここは男性の公室ですここで機械います分かりました
+  correct_ids:
+  - b
+  - d
+  choose_mode: all
 - id: A5
   kind: listening
   book_activity: 5
@@ -119,7 +134,7 @@ activities:
   key_phrases:
   - ここで打ち合わせをします
   - 3ここは回復室です
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: ここで打ち合わせをします
     tags:
@@ -129,9 +144,24 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 5: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 会社の部屋えこういう質ビ食動し旧と質り会いう質いいきつんじょえそうこ
+  - id: b
+    label_jp: ごっ
+  - id: c
+    label_jp: 3ここは回復室です
+  - id: d
+    label_jp: ここで打ち合わせをします
+  - id: e
+    label_jp: ああ、恋月にいるよ
+  correct_ids:
+  - c
+  - d
+  choose_mode: all
 - id: A6
   kind: listening
   book_activity: 6
@@ -141,16 +171,26 @@ activities:
   - assets/audio/X_[08-06]_kiku4.mp3
   key_phrases:
   - よんえっとここは食動ですここでご飯を食べますはいおいしいですよ
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: よんえっとここは食動ですここでご飯を食べますはいおいしいですよ
     tags:
     - long
     - polite
     - casual
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ここでご飯を食べます
+  - id: b
+    label_jp: よんえっとここは食動ですここでご飯を食べますはいおいしいですよ
+  - id: c
+    label_jp: いないですね
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A7
   kind: grammar_form
   book_activity: 7
@@ -163,7 +203,7 @@ activities:
   - ここは男性の交易室です
   - ここでお茶を入れます
   - ここでご飯を食べます
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: ここで打ち合わせをします
     tags:
@@ -181,7 +221,17 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: ここは会議室です。ここ＿打ち合わせをします。
+    answers:
+    - で
+    full_jp: ここは会議室です。ここで打ち合わせをします。
+  - prompt_jp: ここは食堂です。ここ＿ご飯を食べます。
+    answers:
+    - で
+    full_jp: ここは食堂です。ここでご飯を食べます。
+  fill_pdf_page: 217
 - id: A8
   kind: listening
   book_activity: 8
@@ -192,7 +242,7 @@ activities:
   key_phrases:
   - 1すみません山田さんはどこにいますか
   - 食度にいますわかりましたありがとうございました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 8: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 1すみません山田さんはどこにいますか
     tags:
@@ -202,9 +252,24 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 8: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 姿勢は、いませんね
+  - id: b
+    label_jp: 1すみません山田さんはどこにいますか
+  - id: c
+    label_jp: さんあのーすみませんファックスはどこにありますか
+  - id: d
+    label_jp: 食度にいますわかりましたありがとうございました
+  - id: e
+    label_jp: ここは旧頭出です
+  correct_ids:
+  - b
+  - d
+  choose_mode: all
 - id: A9
   kind: listening
   book_activity: 9
@@ -217,7 +282,7 @@ activities:
   - ああ、恋月にいるよ
   - 2あの、すみません
   - 長いさん
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 9: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 長いさんはどこですか
     tags:
@@ -234,9 +299,32 @@ activities:
   - jp: 長いさん
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 9: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 長いさん
+  - id: b
+    label_jp: 会社の部屋えこういう質ビ食動し旧と質り会いう質いいきつんじょえそうこ
+  - id: c
+    label_jp: ああ、恋月にいるよ
+  - id: d
+    label_jp: 2あの、すみません
+  - id: e
+    label_jp: えーと、いないですねそうですか、分かりました
+  - id: f
+    label_jp: 4あマンダさんいますか
+  - id: g
+    label_jp: 長いさんはどこですか
+  - id: h
+    label_jp: 通じさんは、あれ
+  correct_ids:
+  - a
+  - c
+  - d
+  - g
+  choose_mode: all
 - id: A10
   kind: listening
   book_activity: 10
@@ -249,7 +337,7 @@ activities:
   - じゃあ、探してみます
   - 通じさんは、あれ
   - 多分、そうです
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 10: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 通じさんはいますか
     tags:
@@ -267,9 +355,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 10: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 1すみませんやまださんはどこにいますか
+  - id: b
+    label_jp: 多分、そうです
+  - id: c
+    label_jp: すみませんはさみはどこにやりますか
+  - id: d
+    label_jp: 通じさんはいますか
+  - id: e
+    label_jp: 通じさんは、あれ
+  - id: f
+    label_jp: ここは男性の交易室です
+  - id: g
+    label_jp: じゃあ、探してみます
+  - id: h
+    label_jp: ああああああそうかコピーキのよくあわかりましたありがとうございました
+  correct_ids:
+  - b
+  - d
+  - e
+  - g
+  choose_mode: all
 - id: A11
   kind: listening
   book_activity: 11
@@ -280,7 +391,7 @@ activities:
   key_phrases:
   - えーと、いないですねそうですか、分かりました
   - 4あマンダさんいますか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 11: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: えーと、いないですねそうですか、分かりました
     tags:
@@ -290,9 +401,24 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 11: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 4あマンダさんいますか
+  - id: b
+    label_jp: そこにやります作への上ですありがとうございます
+  - id: c
+    label_jp: いないですね
+  - id: d
+    label_jp: ここは旧頭出です
+  - id: e
+    label_jp: えーと、いないですねそうですか、分かりました
+  correct_ids:
+  - a
+  - e
+  choose_mode: all
 - id: A12
   kind: grammar_form
   book_activity: 12
@@ -305,7 +431,7 @@ activities:
   - 海域出にいるよ土地さんはいますか
   - いませんねあまんださんいますか
   - いないですね
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 山田さんはどこにいますか食道にいます長いさんはどこですか
     tags:
@@ -323,7 +449,7 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A13
   kind: speaking
   book_activity: 13
@@ -403,7 +529,7 @@ activities:
   - jp: 1avしたcなかvよこ
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A16
   kind: vocabulary
   book_activity: 16
@@ -419,7 +545,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A17
   kind: listening
   book_activity: 17
@@ -432,7 +558,7 @@ activities:
   - ひきらしの中にあります
   - は、すみません
   - はい、どうぞ
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 17: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 一あのー、乗りはどこにありますか
     tags:
@@ -449,9 +575,32 @@ activities:
   - jp: はい、どうぞ
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 17: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: あ、そこにあります
+  - id: b
+    label_jp: 一あのー、乗りはどこにありますか
+  - id: c
+    label_jp: 3ここは回復室です
+  - id: d
+    label_jp: は、すみません
+  - id: e
+    label_jp: はい、どうぞ
+  - id: f
+    label_jp: 1中です上です3横です4下です
+  - id: g
+    label_jp: ひきらしの中にあります
+  - id: h
+    label_jp: 食度にいますわかりましたありがとうございました
+  correct_ids:
+  - b
+  - d
+  - e
+  - g
+  choose_mode: all
 - id: A18
   kind: listening
   book_activity: 18
@@ -463,7 +612,7 @@ activities:
   - 2住みませんガムテープはどこですか
   - あそこです箱の中あ、わかりました
   - ガムテープ
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 18: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 2住みませんガムテープはどこですか
     tags:
@@ -476,9 +625,29 @@ activities:
   - jp: ガムテープ
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 18: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 作業のした...あ、ありました
+  - id: b
+    label_jp: はい、どうぞ
+  - id: c
+    label_jp: コピーキの横
+  - id: d
+    label_jp: 2住みませんガムテープはどこですか
+  - id: e
+    label_jp: ガムテープ
+  - id: f
+    label_jp: あそこです箱の中あ、わかりました
+  - id: g
+    label_jp: ひきらしの中にあります
+  correct_ids:
+  - d
+  - e
+  - f
+  choose_mode: all
 - id: A19
   kind: listening
   book_activity: 19
@@ -489,7 +658,7 @@ activities:
   key_phrases:
   - さんあのーすみませんファックスはどこにありますか
   - ああああああそうかコピーキのよくあわかりましたありがとうございました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 19: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: さんあのーすみませんファックスはどこにありますか
     tags:
@@ -498,9 +667,24 @@ activities:
   - jp: ああああああそうかコピーキのよくあわかりましたありがとうございました
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 19: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ああああああそうかコピーキのよくあわかりましたありがとうございました
+  - id: b
+    label_jp: えーと、ゴミバクは...おぉ、そこそこ、え
+  - id: c
+    label_jp: あ、ありがとうございます
+  - id: d
+    label_jp: はい、どうぞ
+  - id: e
+    label_jp: さんあのーすみませんファックスはどこにありますか
+  correct_ids:
+  - a
+  - e
+  choose_mode: all
 - id: A20
   kind: listening
   book_activity: 20
@@ -513,7 +697,7 @@ activities:
   - あ、ありがとうございます
   - あ、そこにあります
   - 作業上です
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 20: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: よんはさみありますか
     tags:
@@ -531,9 +715,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 20: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 作への下
+  - id: b
+    label_jp: 作業のした...あ、ありました
+  - id: c
+    label_jp: あ、ありがとうございます
+  - id: d
+    label_jp: あ、そこにあります
+  - id: e
+    label_jp: 多分、そうです
+  - id: f
+    label_jp: 作への上です
+  - id: g
+    label_jp: 作業上です
+  - id: h
+    label_jp: よんはさみありますか
+  correct_ids:
+  - c
+  - d
+  - g
+  - h
+  choose_mode: all
 - id: A21
   kind: listening
   book_activity: 21
@@ -545,7 +752,7 @@ activities:
   - えーと、ゴミバクは...おぉ、そこそこ、え
   - 作業のした...あ、ありました
   - ごっ
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L08 activity 21: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: えーと、ゴミバクは...おぉ、そこそこ、え
     tags:
@@ -556,9 +763,29 @@ activities:
   - jp: ごっ
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L08 activity 21: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: えーと、ゴミバクは...おぉ、そこそこ、え
+  - id: b
+    label_jp: ここでお茶を入れます
+  - id: c
+    label_jp: ガムテープ
+  - id: d
+    label_jp: ひきらしの中にあります
+  - id: e
+    label_jp: ごっ
+  - id: f
+    label_jp: 作業のした...あ、ありました
+  - id: g
+    label_jp: いないですね
+  correct_ids:
+  - a
+  - e
+  - f
+  choose_mode: all
 - id: A22
   kind: grammar_form
   book_activity: 22
@@ -587,7 +814,7 @@ activities:
   - コピーキの横
   - 作への上です
   - 作への下
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 引き出しの中にあります
     tags:
@@ -603,7 +830,7 @@ activities:
   - jp: 作への下
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A24
   kind: speaking
   book_activity: 24
@@ -660,6 +887,82 @@ activities:
     jp: あそこです箱の中にありますありがとうございます
   dialog_listen_audio:
   - assets/audio/X_[08-25]_hanasu2.mp3
+- id: KANJI
+  kind: kanji
+  book_activity: 25.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 上
+  - 下
+  - 中
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 231
+  kanji_items: &id001
+  - kanji: 上
+    reading: うえ
+    gloss_en: above / on
+  - kanji: 下
+    reading: した
+    gloss_en: below / under
+  - kanji: 中
+    reading: なか
+    gloss_en: inside
+  kanji_sentences: &id002
+  - Ａ：はさみは、どこにありますか？
+  - のりは、引
+  - ごみ箱
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 26
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Have you ever worked for a company? What rooms and facilities did your company have?
+
+    Can listen to a simple explanation when being shown around a room at work and understand what room
+    it is.
+
+    Preparation for the words
+
+    屋 Company rooms 】
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a–f.
+
+    Listen to the dialog.
+
+    You are being shown around the rooms at your first workplace.
+
+    Which room is being introduced? Choose from 1 a–f.
+
+    Listen to the dialog again. What do people do in each room? Choose from ア–エ.
+
+    Check the word and listen to the dialog again.
+
+    性 men
+
+    Listen to the recording and fill in the blanks.
+
+    What do you think で means?
+
+    Focus on the expression used and listen to the dialog again.
+
+    Can ask and answer questions about where someone is.
+
+    Listen to the dialogs.
+
+    The people are each looking for someone at work.
+
+    Where are the people in ①–④? Choose fro'
+  picture_has_image: false
 grammar:
 - point: A： アンさん、いますか？
   worksheet_pages:
@@ -898,3 +1201,7 @@ english_notes: 'Have you ever worked for a company? What rooms and facilities di
 
   う used when sharing information with someone）'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 231
+  items: *id001
+  sentences: *id002

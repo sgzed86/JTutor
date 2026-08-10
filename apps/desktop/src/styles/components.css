@@ -413,6 +413,84 @@
   min-height: 0;
 }
 
+/* Book + coach: page is the primary reading surface; tutor stays actionable. */
+.stage[data-layout="bookwork"] {
+  display: grid;
+  grid-template-columns: minmax(360px, 1.15fr) minmax(300px, 0.85fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas:
+    "head head"
+    "book coach";
+  gap: var(--sp-3) var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+}
+.stage[data-layout="bookwork"] .stage__head {
+  grid-area: head;
+  min-width: 0;
+}
+.stage[data-layout="bookwork"] .stage__book {
+  grid-area: book;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: color-mix(in srgb, var(--surface-sunken) 88%, #1a1a1a);
+  overflow: hidden;
+}
+.stage[data-layout="bookwork"] .stage__coach-wrap {
+  grid-area: coach;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.stage__coach {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  min-height: 0;
+  flex: 1;
+}
+.stage[data-layout="bookwork"] .stage__coach {
+  overflow-y: auto;
+  padding-right: var(--sp-1);
+}
+.stage[data-layout="bookwork"] .instruction {
+  font-size: var(--fs-md);
+  min-height: 0;
+  max-width: none;
+}
+.stage[data-layout="bookwork"] .presence {
+  grid-template-columns: 108px 1fr;
+  gap: var(--sp-3);
+}
+.stage[data-layout="bookwork"] .avatar__caption { display: none; }
+.stage[data-layout="bookwork"] .focus-card {
+  margin-top: 0;
+}
+.stage[data-layout="bookwork"] .focus-card__jp {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+}
+.stage[data-layout="coach"] .stage__coach {
+  flex: 1;
+  min-height: 0;
+}
+.stage[data-layout="coach"] .stage__coach > .focus-card {
+  margin-top: auto;
+}
+
+@media (max-width: 1100px) {
+  .stage[data-layout="bookwork"] {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(220px, 42vh) minmax(0, 1fr);
+    grid-template-areas:
+      "head"
+      "book"
+      "coach";
+  }
+}
+
 .step-header {
   display: flex;
   flex-direction: column;
@@ -456,12 +534,85 @@
   align-items: start;
   min-height: 0;
 }
-/* The focus card sits in the optical centre of the stage rather than floating
-   under the avatar with dead space beneath it. */
-.stage > .focus-card { margin-top: auto; }
-.stage > .grade { margin-top: 0; }
 @media (max-width: 760px) {
   .presence { grid-template-columns: 1fr; }
+}
+
+/* Book page viewer (stage + optional panel) */
+.book-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+.book-page__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-2) var(--sp-3);
+  border-bottom: 1px solid var(--border);
+  flex: none;
+}
+.book-page__meta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.book-page__title {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+}
+.book-page__sub {
+  font-size: var(--fs-xs);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.book-page__scroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--sp-3);
+  background:
+    radial-gradient(ellipse at top, color-mix(in srgb, var(--accent) 8%, transparent), transparent 55%),
+    var(--surface-sunken);
+}
+.book-page--stage .book-page__scroll {
+  padding: var(--sp-3) var(--sp-4);
+}
+.book-page__image {
+  display: block;
+  width: 100%;
+  max-width: 920px;
+  height: auto;
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-2, 0 8px 28px rgba(0, 0, 0, 0.35));
+  background: #fff;
+}
+.book-page--stage .book-page__image {
+  max-width: min(100%, 980px);
+}
+.book-page__loading {
+  position: absolute;
+  margin: var(--sp-3);
+  font-size: var(--fs-xs);
+}
+.book-page__scroll { position: relative; }
+.book-page__fallback {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.book-page--empty {
+  padding: var(--sp-4);
+  justify-content: center;
 }
 
 .avatar {
@@ -610,8 +761,125 @@
 .focus-card[data-variant="listen-preview"] { border-style: dashed; opacity: 0.94; }
 .focus-card[data-variant="shadow"] { border-style: dashed; border-color: var(--teal); background: var(--teal-soft); }
 .focus-card[data-variant="picture"] { border-color: var(--teal); background: var(--teal-soft); text-align: left; }
+.focus-card[data-variant="fill"] { text-align: left; border-color: var(--ink); }
+.focus-card[data-variant="choose"],
+.focus-card[data-variant="note"],
+.focus-card[data-variant="passage"] { text-align: left; }
+.focus-card__passage {
+  white-space: pre-wrap;
+  max-height: 14rem;
+  overflow: auto;
+  line-height: 1.55;
+}
 .focus-card[data-line="orange"] { border-color: var(--book-orange); background: var(--book-orange-soft); }
 .focus-card[data-line="yellow"] { border-color: var(--book-yellow); background: var(--book-yellow-soft); }
+
+.blank-fill { display: grid; gap: 0.75rem; }
+.blank-fill__prompt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0;
+  font-size: var(--fs-xl);
+  line-height: 1.7;
+  margin: 0;
+}
+.blank-fill__input {
+  display: inline-block;
+  min-width: 2.5ch;
+  margin: 0 0.2rem;
+  padding: 0.15rem 0.35rem;
+  border: none;
+  border-bottom: 2px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: center;
+}
+.blank-fill__input:focus {
+  outline: none;
+  border-bottom-color: var(--teal);
+  background: var(--teal-soft);
+}
+.blank-fill__actions { display: flex; gap: 0.5rem; }
+
+.choice-list { display: grid; gap: 0.5rem; }
+.choice-list__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+}
+.choice-list__item.is-active {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+}
+.choice-list__id {
+  flex: 0 0 auto;
+  min-width: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.choice-list__label { flex: 1; font-size: var(--fs-lg); }
+
+.note-form { display: grid; gap: 0.75rem; }
+.note-form__input {
+  width: 100%;
+  min-height: 6rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  resize: vertical;
+}
+
+.focus-card[data-variant="kanji-study"],
+.focus-card[data-variant="kanji-type"] { text-align: left; }
+
+.kanji-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
+  gap: 0.6rem;
+}
+.kanji-card {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.7rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: center;
+}
+.kanji-card:hover { border-color: var(--teal); background: var(--teal-soft); }
+.kanji-card__kanji { font-size: 1.75rem; line-height: 1.2; }
+.kanji-card__reading { font-size: var(--fs-sm); color: var(--text-muted); }
+.kanji-card__gloss { font-size: 0.75rem; color: var(--text-muted); }
+
+.kanji-type__prompt { display: grid; gap: 0.25rem; margin-bottom: 0.5rem; }
+.kanji-type__reading { font-size: var(--fs-xl); margin: 0; }
+.kanji-type__input {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: var(--fs-xl);
+  text-align: center;
+}
 
 .focus-card__head {
   display: flex;
@@ -671,6 +939,18 @@
   text-underline-offset: 4px;
 }
 .grade__actions { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+.grade__retry {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-top: var(--sp-1);
+}
+.grade__retry-label {
+  margin: 0;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text);
+}
 
 .stage__placeholder {
   flex: 1;

@@ -90,7 +90,7 @@ def progress_overview(db: Session = Depends(get_db)):
             cds = lesson.get("can_dos") or []
             lesson_can_map[lid] = cds
             all_can_do_ids.extend(c["id"] for c in cds if c.get("id"))
-        except FileNotFoundError:
+        except Exception:  # noqa: BLE001 - keep the rail alive if one lesson YAML fails validation
             lesson_can_map[lid] = []
     cp_rows = {
         r.can_do_id: r

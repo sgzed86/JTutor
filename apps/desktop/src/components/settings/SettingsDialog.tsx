@@ -296,25 +296,31 @@ export function SettingsDialog({
                   onChange={(auto_advance_delay_ms) => void update({ lessons: { auto_advance_delay_ms } })}
                 />
               </SettingRow>
-              <SettingRow name="Start recording automatically" hint="When a step wants you to speak.">
+              <SettingRow
+                name="Microphone"
+                hint="Tap to speak is the default. Hold to speak is available if you prefer push-to-talk."
+              >
+                <Segmented
+                  label="Microphone"
+                  value={settings.lessons.mic_mode}
+                  options={[
+                    { value: "toggle", label: "Tap to speak" },
+                    { value: "hold", label: "Hold to speak" },
+                  ]}
+                  onChange={(mic_mode) => void update({ lessons: { mic_mode } })}
+                />
+              </SettingRow>
+              <SettingRow
+                name="Start mic automatically"
+                hint="After Yuki models the line (tap-to-speak mode only)."
+              >
                 <Toggle
                   label="Auto-start recording"
                   checked={settings.lessons.auto_start_recording}
                   onChange={(auto_start_recording) => void update({ lessons: { auto_start_recording } })}
                 />
               </SettingRow>
-              <SettingRow name="Microphone button">
-                <Segmented
-                  label="Microphone button"
-                  value={settings.lessons.mic_mode}
-                  options={[
-                    { value: "hold", label: "Hold" },
-                    { value: "toggle", label: "Toggle" },
-                  ]}
-                  onChange={(mic_mode) => void update({ lessons: { mic_mode } })}
-                />
-              </SettingRow>
-              <SettingRow name="Stop when I go quiet">
+              <SettingRow name="Stop when I go quiet" hint="Recommended with tap to speak.">
                 <Toggle
                   label="Auto-stop on silence"
                   checked={settings.lessons.auto_stop_on_silence}

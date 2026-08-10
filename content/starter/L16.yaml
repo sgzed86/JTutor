@@ -55,7 +55,7 @@ activities:
   - jp: 年端え1b5円c10円d50円e100円f500円g1000円h2000円i5000円g1万円
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -70,7 +70,7 @@ activities:
   - jp: チャック200300400500600700800900200200200200200200
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A3
   kind: vocabulary
   book_activity: 3
@@ -85,7 +85,7 @@ activities:
   - jp: 200円300円400円500円600円700円800円900円
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A4
   kind: vocabulary
   book_activity: 4
@@ -95,7 +95,7 @@ activities:
   - assets/audio/X_[16-04]_kotoba2_number2.mp3
   key_phrases: []
   prompt_en: Learn the vocabulary with the audio, then say each item aloud.
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A5
   kind: vocabulary
   book_activity: 5
@@ -110,7 +110,7 @@ activities:
   - jp: 1000円2000円3000円4000円5000円6000円7000円8000円9000円1万円
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A6
   kind: vocabulary
   book_activity: 6
@@ -126,7 +126,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A7
   kind: listening
   book_activity: 7
@@ -153,7 +153,7 @@ activities:
   key_phrases:
   - 2すみませんこれいくらですか
   - これ
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 8: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 2すみませんこれいくらですか
     tags:
@@ -162,9 +162,24 @@ activities:
   - jp: これ
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 8: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: よろしくお願いします
+  - id: b
+    label_jp: 2すみませんこれいくらですか
+  - id: c
+    label_jp: ありがとうございます
+  - id: d
+    label_jp: これ
+  - id: e
+    label_jp: これは24円ですじゃあそれくださいこのおかしいいくらですか
+  correct_ids:
+  - b
+  - d
+  choose_mode: all
 - id: A9
   kind: listening
   book_activity: 9
@@ -176,7 +191,7 @@ activities:
   - 3すみませんこれいくらですか
   - これですか
   - えっと、2cm円です
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 9: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 3すみませんこれいくらですか
     tags:
@@ -190,9 +205,29 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 9: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 1こちら頭目ますか
+  - id: b
+    label_jp: 3すみませんこれいくらですか
+  - id: c
+    label_jp: これですか
+  - id: d
+    label_jp: えっと、2cm円です
+  - id: e
+    label_jp: ありがとうございます
+  - id: f
+    label_jp: 2スプーンはいくつをつけしますか2つお願いします
+  - id: g
+    label_jp: 3あのこれいくらですか
+  correct_ids:
+  - b
+  - c
+  - d
+  choose_mode: all
 - id: A10
   kind: listening
   book_activity: 10
@@ -202,15 +237,25 @@ activities:
   - assets/audio/X_[16-10]_kiku4.mp3
   key_phrases:
   - 4あのー緑ませんこれいくらですかはいこれですねえっと3万4千ご100円です
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 10: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 4あのー緑ませんこれいくらですかはいこれですねえっと3万4千ご100円です
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 10: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: はい、この気をつと集まり10個ね
+  - id: b
+    label_jp: 4あのー緑ませんこれいくらですかはいこれですねえっと3万4千ご100円です
+  - id: c
+    label_jp: ありがとうございます
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A11
   kind: listening
   book_activity: 11
@@ -221,7 +266,7 @@ activities:
   key_phrases:
   - 1すみませんそのカレンダー行くのですか
   - あこれは2,40円ですじゃあそれください
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 11: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 1すみませんそのカレンダー行くのですか
     tags:
@@ -232,9 +277,24 @@ activities:
     - long
     - polite
     - casual
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 11: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 1すみませんそのカレンダー行くのですか
+  - id: b
+    label_jp: あこれは2,40円ですじゃあそれください
+  - id: c
+    label_jp: チョコレートケーキとチーズケーキ、ニコズつをお願いします
+  - id: d
+    label_jp: 2すみませんこれいくらですか
+  - id: e
+    label_jp: これは24円ですじゃあそれくださいこのおかしいいくらですか
+  correct_ids:
+  - a
+  - b
+  choose_mode: all
 - id: A12
   kind: listening
   book_activity: 12
@@ -246,7 +306,7 @@ activities:
   - このおかしいいくらですか
   - じゃあこれもお願いします
   - 20030円です
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 12: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: このおかしいいくらですか
     tags:
@@ -261,9 +321,24 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 12: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 1個2個3個4個5個6個7個8個9個10個5個5個5個5個5個5個5個5個5個
+  - id: b
+    label_jp: このおかしいいくらですか
+  - id: c
+    label_jp: じゃあこれもお願いします
+  - id: d
+    label_jp: これ
+  - id: e
+    label_jp: はい、ありがとうございます
+  correct_ids:
+  - b
+  - c
+  choose_mode: all
 - id: A13
   kind: listening
   book_activity: 13
@@ -274,7 +349,7 @@ activities:
   key_phrases:
   - あ、そのままねきねこはえっとはせはピックインですそうですかじゃあいいです
   - 3あのこれいくらですか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 13: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: あ、そのままねきねこはえっとはせはピックインですそうですかじゃあいいです
     tags:
@@ -285,9 +360,24 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 13: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 3あのこれいくらですか
+  - id: b
+    label_jp: 1個2個3個4個5個6個7個8個9個10個5個5個5個5個5個5個5個5個5個
+  - id: c
+    label_jp: このおかしいいくらですか
+  - id: d
+    label_jp: はい
+  - id: e
+    label_jp: あ、そのままねきねこはえっとはせはピックインですそうですかじゃあいいです
+  correct_ids:
+  - a
+  - e
+  choose_mode: all
 - id: A14
   kind: listening
   book_activity: 14
@@ -297,16 +387,26 @@ activities:
   - assets/audio/X_[16-14]_kiku4.mp3
   key_phrases:
   - 4すみませんあのTシャツイクラですかああれは1990円ですじゃああれください
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 14: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 4すみませんあのTシャツイクラですかああれは1990円ですじゃああれください
     tags:
     - long
     - polite
     - casual
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 14: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ありがとうございます
+  - id: b
+    label_jp: 4すみませんあのTシャツイクラですかああれは1990円ですじゃああれください
+  - id: c
+    label_jp: いらっしゃいませ頼縦やつくださいはい、ありがとうございました
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A15
   kind: grammar_form
   book_activity: 15
@@ -340,7 +440,7 @@ activities:
     - long
     - polite
     - casual
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A16
   kind: speaking
   book_activity: 16
@@ -398,15 +498,25 @@ activities:
   - assets/audio/X_[16-18]_kiku1.mp3
   key_phrases:
   - 1いらっしゃいます大焼きやつくださいはい大焼きやつありがとうございます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 18: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 1いらっしゃいます大焼きやつくださいはい大焼きやつありがとうございます
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 18: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: さん、フクロアどうしますか
+  - id: b
+    label_jp: 1いらっしゃいます大焼きやつくださいはい大焼きやつありがとうございます
+  - id: c
+    label_jp: いらっしゃいませ頼縦やつくださいはい、ありがとうございました
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A19
   kind: listening
   book_activity: 19
@@ -418,7 +528,7 @@ activities:
   - えっと、この気をつと集まり10個をください
   - はい、この気をつと集まり10個ね
   - はい、いらっしゃい
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 19: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: えっと、この気をつと集まり10個をください
     tags:
@@ -430,9 +540,29 @@ activities:
   - jp: はい、いらっしゃい
     tags:
     - short
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 19: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: はい、この気をつと集まり10個ね
+  - id: b
+    label_jp: えっと、この気をつと集まり10個をください
+  - id: c
+    label_jp: これですか
+  - id: d
+    label_jp: はい、いらっしゃい
+  - id: e
+    label_jp: 大丈夫です
+  - id: f
+    label_jp: さん、フクロアどうしますか
+  - id: g
+    label_jp: はいお願いします
+  correct_ids:
+  - a
+  - b
+  - d
+  choose_mode: all
 - id: A20
   kind: listening
   book_activity: 20
@@ -442,15 +572,25 @@ activities:
   - assets/audio/X_[16-20]_kiku3.mp3
   key_phrases:
   - 3いらっしゃいますえこの引き肉200gくださいはい200gですね
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 20: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 3いらっしゃいますえこの引き肉200gくださいはい200gですね
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 20: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 3いらっしゃいますえこの引き肉200gくださいはい200gですね
+  - id: b
+    label_jp: これは24円ですじゃあそれくださいこのおかしいいくらですか
+  - id: c
+    label_jp: あ、そのままねきねこはえっとはせはピックインですそうですかじゃあいいです
+  correct_ids:
+  - a
+  choose_mode: any
 - id: A21
   kind: listening
   book_activity: 21
@@ -460,15 +600,25 @@ activities:
   - assets/audio/X_[16-21]_kiku4.mp3
   key_phrases:
   - よんいらっしゃいませチョコレートケーキとチーズケーチニコズツをお願いしますはい、ニコズツですねかしこわりました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 21: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: よんいらっしゃいませチョコレートケーキとチーズケーチニコズツをお願いしますはい、ニコズツですねかしこわりました
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 21: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: よんいらっしゃいませチョコレートケーキとチーズケーチニコズツをお願いしますはい、ニコズツですねかしこわりました
+  - id: b
+    label_jp: よろしくお願いします
+  - id: c
+    label_jp: 大丈夫です
+  correct_ids:
+  - a
+  choose_mode: any
 - id: A22
   kind: listening
   book_activity: 22
@@ -478,15 +628,25 @@ activities:
   - assets/audio/X_[16-22]_kiku5.mp3
   key_phrases:
   - ごいらっしゃいませえーっと、コンブ2つタラコ1つうめー見つくださいはいコンブが2つタラコが1つうめが3つですね
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L16 activity 22: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: ごいらっしゃいませえーっと、コンブ2つタラコ1つうめー見つくださいはいコンブが2つタラコが1つうめが3つですね
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L16 activity 22: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: ごいらっしゃいませえーっと、コンブ2つタラコ1つうめー見つくださいはいコンブが2つタラコが1つうめが3つですね
+  - id: b
+    label_jp: さん、フクロアどうしますか
+  - id: c
+    label_jp: 1いらっしゃいます大焼きやつくださいはい大焼きやつありがとうございます
+  correct_ids:
+  - a
+  choose_mode: any
 - id: A23
   kind: grammar_form
   book_activity: 23
@@ -517,7 +677,7 @@ activities:
   - jp: 1個2個3個4個5個6個7個8個9個10個5個5個5個5個5個5個5個5個5個
     tags:
     - long
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A25
   kind: speaking
   book_activity: 25
@@ -758,6 +918,127 @@ activities:
     jp: 4おかいけ125円になります水果でお願いしますありがとうございました
   dialog_listen_audio:
   - assets/audio/X_[16-33]_hanasu4.mp3
+- id: KANJI
+  kind: kanji
+  book_activity: 33.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 一
+  - 六
+  - 二
+  - 七
+  - 三
+  - 八
+  - 四
+  - 九
+  - 五
+  - 十
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 442
+  kanji_items: &id001
+  - kanji: 一
+    reading: いち
+    gloss_en: one
+  - kanji: 六
+    reading: ろく
+    gloss_en: six
+  - kanji: 二
+    reading: に
+    gloss_en: two
+  - kanji: 七
+    reading: なな
+    gloss_en: seven
+  - kanji: 三
+    reading: さん
+    gloss_en: three
+  - kanji: 八
+    reading: はち
+    gloss_en: eight
+  - kanji: 四
+    reading: よん
+    gloss_en: four
+  - kanji: 九
+    reading: きゅう
+    gloss_en: nine
+  - kanji: 五
+    reading: ご
+    gloss_en: five
+  - kanji: 十
+    reading: じゅう
+    gloss_en: ten
+  kanji_sentences: &id002
+  - 一月
+  - 六時
+  - 十円
+  - 五階
+  - 三個
+  - 四枚
+  - 二割
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 34
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'Can listen to and understand the price of a product.
+
+    What kind of stores do you often go to?
+
+    Preparation for the words
+
+    段 Prices 】
+
+    Money
+
+    Listen.
+
+    Listen and repeat the words.
+
+    字 Numbers（100 ～10,000） 値
+
+    段 Prices
+
+    Listen.
+
+    Listen and repeat the words.
+
+    Listen and choose from a–h below.
+
+    字 Number
+
+    〜 yen
+
+    字 Number
+
+    〜 yen
+
+    Listen to the dialogs.
+
+    The speakers are shopping in different stores, and are each asking about the price.
+
+    How much are the items? Take note of the prices.
+
+    At a food stall At a vegetable seller’s
+
+    At a flea market At a second-hand store
+
+    Listen to the dialogs again.
+
+    How much is this?
+
+    Can ask store staff the price of something and understand the answer.
+
+    Listen to the dialogs.
+
+    Four people are each shopping at a souvenir store.
+
+    How much are items ①–④? Take note of the prices.'
+  picture_has_image: false
 grammar:
 - point: 【これ／それ／あれ】 （は） いくらですか？
   worksheet_pages:
@@ -1004,3 +1285,7 @@ english_notes: 'Can listen to and understand the price of a product.
 
   How much are items ①–④? Take note of the prices.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 442
+  items: *id001
+  sentences: *id002

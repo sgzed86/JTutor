@@ -11,8 +11,8 @@ intro_questions:
 - jp: It is very lively and convenient について、あなたの けいけんは？
   en: Thinking about "Towns and Neighborhoods" — what is your experience?
 - jp: この レッスンで、何が できるように なりたいですか？
-  en: 'This lesson aims at: Can talk in simple terms about your impressions of your
-    town. What do you want to be able to do?'
+  en: 'This lesson aims at: Can talk in simple terms about your impressions of your town. What do you
+    want to be able to do?'
 can_dos:
 - id: CD_EL05_14
   can_do_number: 14
@@ -24,8 +24,7 @@ can_dos:
     min_score: 80
 - id: CD_EL05_15
   can_do_number: 15
-  statement_en: Can ask questions about recommended places around town and under -
-    stand the answers.
+  statement_en: Can ask questions about recommended places around town and under - stand the answers.
   statement_jp: 住 んでいる町の 感 想を簡単に話 すことが できる。
   activity_hint: ''
   rubric:
@@ -33,8 +32,7 @@ can_dos:
     min_score: 80
 - id: CD_EL05_16
   can_do_number: 16
-  statement_en: Can look at a town map and get information about famous spots, stores,
-    etc.
+  statement_en: Can look at a town map and get information about famous spots, stores, etc.
   statement_jp: 住 んでいる町の 感 想を簡単に話 すことが できる。
   activity_hint: ''
   rubric:
@@ -66,7 +64,20 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
+- id: A1_PRON
+  kind: pronunciation
+  book_activity: 1.1
+  can_do_id: CD_EL05_14
+  label: hatsuwon
+  audio:
+  - assets/audio/Y_[05-01]_kotoba1.mp3
+  key_phrases:
+  - とてもにぎやかで便利です
+  - 人の人が話しています。
+  book_mode: pronunciation
+  prompt_en: Pronunciation — say each word clearly (watch long vowels and mora).
+  picture_has_image: false
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -92,7 +103,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: vocab_drill
 - id: A3
   kind: listening
   book_activity: 3
@@ -135,7 +146,7 @@ activities:
   - 人の人が話しています。
   - この町はどうだと言っています
   - この町には慣れましたか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL05 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: とてもにぎやかで便利です
     tags:
@@ -152,10 +163,32 @@ activities:
   - jp: この町には慣れましたか？
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL05 activity 4: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL05 activity 4: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: この町には慣れましたか？
+  - id: b
+    label_jp: とてもにぎやかで便利です
+  - id: c
+    label_jp: はい。おかげさまで。
+  - id: d
+    label_jp: 人の人が話しています。
+  - id: e
+    label_jp: この町はどうだと言っています
+  - id: f
+    label_jp: どんな関係ですか。
+  - id: g
+    label_jp: どうですか？この町は。
+  - id: h
+    label_jp: どこですか。
+  correct_ids:
+  - a
+  - b
+  - d
+  - e
+  choose_mode: all
 - id: A5
   kind: listening
   book_activity: 5
@@ -168,7 +201,7 @@ activities:
   - 人の人が話しています。
   - この町はどうだと言っています
   - この町には慣れましたか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL05 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: とてもにぎやかで便利です
     tags:
@@ -185,10 +218,32 @@ activities:
   - jp: この町には慣れましたか？
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL05 activity 5: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL05 activity 5: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: どうですか？この町は。
+  - id: b
+    label_jp: 人の人が話しています。
+  - id: c
+    label_jp: とてもにぎやかで便利です
+  - id: d
+    label_jp: どこですか。
+  - id: e
+    label_jp: 人の人が職場の人に質問しています。
+  - id: f
+    label_jp: この町はどうだと言っています
+  - id: g
+    label_jp: この町には慣れましたか？
+  - id: h
+    label_jp: どんなところですか。
+  correct_ids:
+  - b
+  - c
+  - f
+  - g
+  choose_mode: all
 - id: A6
   kind: listening
   book_activity: 6
@@ -201,7 +256,7 @@ activities:
   - 人の人が話しています。
   - この町はどうだと言っています
   - この町には慣れましたか？
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL05 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: とてもにぎやかで便利です
     tags:
@@ -218,10 +273,32 @@ activities:
   - jp: この町には慣れましたか？
     tags:
     - long
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL05 activity 6: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL05 activity 6: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: とてもにぎやかで便利です
+  - id: b
+    label_jp: どんなところですか。
+  - id: c
+    label_jp: どうですか？この町は。
+  - id: d
+    label_jp: 人の人が話しています。
+  - id: e
+    label_jp: 人の人が職場の人に質問しています。
+  - id: f
+    label_jp: この町はどうだと言っています
+  - id: g
+    label_jp: この町には慣れましたか？
+  - id: h
+    label_jp: どんな関係ですか。
+  correct_ids:
+  - a
+  - d
+  - f
+  - g
+  choose_mode: all
 - id: A7
   kind: grammar_form
   book_activity: 7
@@ -231,13 +308,13 @@ activities:
   - assets/audio/Y_[05-07]_katachi.mp3
   key_phrases:
   - とてもにぎやかで便利です
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: とてもにぎやかで便利です
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
 - id: A8
   kind: speaking
   book_activity: 8
@@ -314,7 +391,7 @@ activities:
   - 人の人が職場の人に質問しています。
   - どこですか。
   - どんなところですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL05 activity 10: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: とてもにぎやかで便利です
     tags:
@@ -332,10 +409,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL05 activity 10: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL05 activity 10: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: 人の人が職場の人に質問しています。
+  - id: b
+    label_jp: どんなところですか。
+  - id: c
+    label_jp: どんな関係ですか。
+  - id: d
+    label_jp: どこですか。
+  - id: e
+    label_jp: この町はどうだと言っています
+  - id: f
+    label_jp: そうですねえ……。とてもにぎやかで、便利です。
+  - id: g
+    label_jp: 人の人が話しています。
+  - id: h
+    label_jp: とてもにぎやかで便利です
+  correct_ids:
+  - a
+  - b
+  - d
+  - h
+  choose_mode: all
 - id: A11
   kind: listening
   book_activity: 11
@@ -348,7 +447,7 @@ activities:
   - 人の人が職場の人に質問しています。
   - どこですか。
   - どんなところですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL05 activity 11: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: とてもにぎやかで便利です
     tags:
@@ -366,10 +465,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL05 activity 11: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL05 activity 11: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: この町には慣れましたか？
+  - id: b
+    label_jp: どんなところですか。
+  - id: c
+    label_jp: この町はどうだと言っています
+  - id: d
+    label_jp: どこですか。
+  - id: e
+    label_jp: とてもにぎやかで便利です
+  - id: f
+    label_jp: どうですか？この町は。
+  - id: g
+    label_jp: 人の人が職場の人に質問しています。
+  - id: h
+    label_jp: 人の人が話しています。
+  correct_ids:
+  - b
+  - d
+  - e
+  - g
+  choose_mode: all
 - id: A12
   kind: listening
   book_activity: 12
@@ -382,7 +503,7 @@ activities:
   - 人の人が職場の人に質問しています。
   - どこですか。
   - どんなところですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL05 activity 12: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: とてもにぎやかで便利です
     tags:
@@ -400,10 +521,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL05 activity 12: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL05 activity 12: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: とてもにぎやかで便利です
+  - id: b
+    label_jp: はい。おかげさまで。
+  - id: c
+    label_jp: 人の人が話しています。
+  - id: d
+    label_jp: そうですねえ……。とてもにぎやかで、便利です。
+  - id: e
+    label_jp: どこですか。
+  - id: f
+    label_jp: どんなところですか。
+  - id: g
+    label_jp: 人の人が職場の人に質問しています。
+  - id: h
+    label_jp: どんな関係ですか。
+  correct_ids:
+  - a
+  - e
+  - f
+  - g
+  choose_mode: all
 - id: A13
   kind: listening
   book_activity: 13
@@ -416,7 +559,7 @@ activities:
   - 人の人が職場の人に質問しています。
   - どこですか。
   - どんなところですか。
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'EL05 activity 13: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: とてもにぎやかで便利です
     tags:
@@ -434,10 +577,32 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL05 activity 13: listen to the CD, then say the phrase that matches
-    the book.'
+  picture_hint_en: 'EL05 activity 13: listen to the CD, then say the phrase that matches the book.'
+  choices:
+  - id: a
+    label_jp: この町はどうだと言っています
+  - id: b
+    label_jp: 人の人が職場の人に質問しています。
+  - id: c
+    label_jp: どんなところですか。
+  - id: d
+    label_jp: 人の人が話しています。
+  - id: e
+    label_jp: どんな関係ですか。
+  - id: f
+    label_jp: そうですねえ……。とてもにぎやかで、便利です。
+  - id: g
+    label_jp: とてもにぎやかで便利です
+  - id: h
+    label_jp: どこですか。
+  correct_ids:
+  - b
+  - c
+  - g
+  - h
+  choose_mode: all
 - id: A14
   kind: grammar_form
   book_activity: 14
@@ -448,7 +613,7 @@ activities:
   key_phrases:
   - とてもにぎやかで便利です
   - どんな関係ですか。
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: とてもにぎやかで便利です
     tags:
@@ -458,7 +623,114 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
+- id: KANJI
+  kind: kanji
+  book_activity: 14.5
+  label: kanji_kotoba
+  audio: []
+  key_phrases:
+  - 町
+  - 静か
+  - 店
+  - 有名
+  - 食堂
+  - 多い
+  - 便利
+  - 少ない
+  - 不便
+  - 遠い
+  book_mode: kanji_words
+  prompt_en: Kanji words — check meanings, read the example lines, then type each word.
+  pdf_page: 126
+  kanji_items: &id004
+  - kanji: 町
+    reading: まち
+    gloss_en: town
+  - kanji: 静か
+    reading: しずか
+    gloss_en: quiet
+  - kanji: 店
+    reading: みせ
+    gloss_en: shop / store
+  - kanji: 有名
+    reading: ゆうめい
+    gloss_en: famous
+  - kanji: 食堂
+    reading: しょくどう
+    gloss_en: cafeteria / dining hall
+  - kanji: 多い
+    reading: おおい
+    gloss_en: many / much
+  - kanji: 便利
+    reading: べんり
+    gloss_en: convenient
+  - kanji: 少ない
+    reading: すくない
+    gloss_en: few / little
+  - kanji: 不便
+    reading: ふべん
+    gloss_en: inconvenient
+  - kanji: 遠い
+    reading: とおい
+    gloss_en: far
+  kanji_sentences: &id005
+  - この食堂は有名です。
+  - この町には、慣れましたか？
+  - 店が多くて、便利なところです。
+  - バスが少なくて、ちょっと不便です。
+  - たちばな公園は、遠いけど、静かでいいですよ。
+  picture_has_image: false
+- id: CULTURE
+  kind: culture
+  book_activity: 15
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'What is it like where you live?
+
+    Can talk in simple terms about your impressions of your town.
+
+    Preparation for the words
+
+    Listen while looking at the illustrations.
+
+    Listen and repeat the words.
+
+    Listen and choose from a-k.
+
+    Listen to the dialogs.
+
+    The four people are talking about the town they each live in now.
+
+    What is the town like? Choose from a-k of 1 .
+
+    Check the words and listen to the dialogs again.
+
+    かに certainly ｜ 住
+
+    みやすい comfortable ｜ 店
+
+    store / restaurant
+
+    Listen to the recording and fill in the blanks.
+
+    What expression was used to connect the adjectives?
+
+    Focus on the expressions used and listen to the dialogs again.
+
+    Talk about the town you live in.
+
+    Listen to the dialogs.
+
+    Shadow the dialogs.
+
+    Practice using the words from 1 .
+
+    Freely talk about the town you live in.'
+  picture_has_image: false
 grammar:
 - point: N で、～／ナ A-で、～／イ A-くて、～
   worksheet_pages:
@@ -507,18 +779,16 @@ vocab:
 quiz_bank:
 - type: roleplay
   can_do_id: CD_EL05_14
-  prompt_en: 'Demonstrate: Can talk in simple terms about your impressions of your
-    town.'
+  prompt_en: 'Demonstrate: Can talk in simple terms about your impressions of your town.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL05_15
-  prompt_en: 'Demonstrate: Can ask questions about recommended places around town
-    and under - stand the answers.'
+  prompt_en: 'Demonstrate: Can ask questions about recommended places around town and under - stand the
+    answers.'
   spoken_required: true
 - type: roleplay
   can_do_id: CD_EL05_16
-  prompt_en: 'Demonstrate: Can look at a town map and get information about famous
-    spots, stores, etc.'
+  prompt_en: 'Demonstrate: Can look at a town map and get information about famous spots, stores, etc.'
   spoken_required: true
 quiz_scenarios:
 - can_do_id: CD_EL05_14
@@ -540,13 +810,11 @@ quiz_scenarios:
   - 人の人が話しています。
   - この町はどうだと言っています
   - この町には慣れましたか？
-  hint_en: Can ask questions about recommended places around town and under - stand
-    the answers.
+  hint_en: Can ask questions about recommended places around town and under - stand the answers.
 - can_do_id: CD_EL05_15
   partner_jp: もう一度、お願いします。
   expected: *id002
-  hint_en: Again — Can ask questions about recommended places around town and under
-    - stand the ans
+  hint_en: Again — Can ask questions about recommended places around town and under - stand the ans
 - can_do_id: CD_EL05_16
   partner_jp: とてもにぎやかで便利です。
   expected: &id003
@@ -554,13 +822,11 @@ quiz_scenarios:
   - 人の人が話しています。
   - この町はどうだと言っています
   - この町には慣れましたか？
-  hint_en: Can look at a town map and get information about famous spots, stores,
-    etc.
+  hint_en: Can look at a town map and get information about famous spots, stores, etc.
 - can_do_id: CD_EL05_16
   partner_jp: もう一度、お願いします。
   expected: *id003
-  hint_en: Again — Can look at a town map and get information about famous spots,
-    stores, etc.
+  hint_en: Again — Can look at a town map and get information about famous spots, stores, etc.
 english_notes: 'What is it like where you live?
 
   Can talk in simple terms about your impressions of your town.
@@ -603,3 +869,7 @@ english_notes: 'What is it like where you live?
 
   Freely talk about the town you live in.'
 unlock_requires_mastery: true
+kanji_words:
+  pdf_page: 126
+  items: *id004
+  sentences: *id005

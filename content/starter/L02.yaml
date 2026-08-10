@@ -75,7 +75,7 @@ activities:
   key_phrases:
   - もう少し、ゆっくり言ってください
   - もうすこし、ゆっくり言ってください
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 2: look at the book illustration, listen to the CD, then say the matching phrase.'
   phrase_meta:
   - jp: もう少し、ゆっくり言ってください
     tags:
@@ -85,10 +85,25 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 2: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: はい、すこしできます
+  - id: b
+    label_jp: もう少し、ゆっくり言ってください
+  - id: c
+    label_jp: これは日本語で何と言いますか
+  - id: d
+    label_jp: わかりません
+  - id: e
+    label_jp: もうすこし、ゆっくり言ってください
+  correct_ids:
+  - b
+  - e
+  choose_mode: all
 - id: A3
   kind: listening
   book_activity: 3
@@ -100,7 +115,7 @@ activities:
   - もういちど、お願いします
   - もう一度、お願いします
   - もう一度お願いします
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 3: look at the book illustration, listen to the CD, then say the matching phrase.'
   phrase_meta:
   - jp: もういちど、お願いします
     tags:
@@ -114,10 +129,30 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 3: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: 日本語、できますか
+  - id: b
+    label_jp: いち
+  - id: c
+    label_jp: もういちど、お願いします
+  - id: d
+    label_jp: もう少し、ゆっくり言ってください
+  - id: e
+    label_jp: もう一度、お願いします
+  - id: f
+    label_jp: はち
+  - id: g
+    label_jp: もう一度お願いします
+  correct_ids:
+  - c
+  - e
+  - g
+  choose_mode: all
 - id: A4
   kind: listening
   book_activity: 4
@@ -229,16 +264,26 @@ activities:
   - assets/audio/X_[02-07]_kiku1.mp3
   key_phrases:
   - 日本語、できますか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 7: look at the book illustration, listen to the CD, then say the matching phrase.'
   phrase_meta:
   - jp: 日本語、できますか
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 7: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: ゼロ
+  - id: b
+    label_jp: 日本語、できますか
+  - id: c
+    label_jp: 英語、わかりますか
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A8
   kind: listening
   book_activity: 8
@@ -249,7 +294,7 @@ activities:
   key_phrases:
   - 日本語、わかりますか
   - 英語、わかりますか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 8: look at the book illustration, listen to the CD, then say the matching phrase.'
   phrase_meta:
   - jp: 日本語、わかりますか
     tags:
@@ -259,10 +304,25 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 8: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: これは、日本語で何ですか
+  - id: b
+    label_jp: 英語、わかりますか
+  - id: c
+    label_jp: もうすこし、ゆっくり言ってください
+  - id: d
+    label_jp: はい、少しできます
+  - id: e
+    label_jp: 日本語、わかりますか
+  correct_ids:
+  - b
+  - e
+  choose_mode: all
 - id: A9
   kind: listening
   book_activity: 9
@@ -272,16 +332,26 @@ activities:
   - assets/audio/X_[02-09]_kiku3.mp3
   key_phrases:
   - 中国語、できますか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 9: look at the book illustration, listen to the CD, then say the matching phrase.'
   phrase_meta:
   - jp: 中国語、できますか
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 9: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: はい、できます
+  - id: b
+    label_jp: 中国語、できますか
+  - id: c
+    label_jp: なな
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A10
   kind: listening
   book_activity: 10
@@ -291,16 +361,27 @@ activities:
   - assets/audio/X_[02-10]_kiku4.mp3
   key_phrases:
   - インドネシア語、わかりますか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 10: look at the book illustration, listen to the CD, then say the matching
+    phrase.'
   phrase_meta:
   - jp: インドネシア語、わかりますか
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 10: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: すみません、わかりません
+  - id: b
+    label_jp: インドネシア語、わかりますか
+  - id: c
+    label_jp: じゅう
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A11
   kind: speaking
   book_activity: 11
@@ -443,7 +524,8 @@ activities:
   key_phrases:
   - これは日本語で何ですか
   - これは、日本語で何ですか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 15: look at the book illustration, listen to the CD, then say the matching
+    phrase.'
   phrase_meta:
   - jp: これは日本語で何ですか
     tags:
@@ -453,10 +535,25 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 15: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: すみません、わかりません
+  - id: b
+    label_jp: これは、日本語で何ですか
+  - id: c
+    label_jp: これは日本語で何ですか
+  - id: d
+    label_jp: もういちど、お願いします
+  - id: e
+    label_jp: よん
+  correct_ids:
+  - b
+  - c
+  choose_mode: all
 - id: A16
   kind: listening
   book_activity: 16
@@ -467,7 +564,8 @@ activities:
   key_phrases:
   - これは日本語で何と言いますか
   - これは、日本語で何と言いますか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 16: look at the book illustration, listen to the CD, then say the matching
+    phrase.'
   phrase_meta:
   - jp: これは日本語で何と言いますか
     tags:
@@ -477,10 +575,25 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 16: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: すこしできます
+  - id: b
+    label_jp: これは日本語で何と言いますか
+  - id: c
+    label_jp: ろく
+  - id: d
+    label_jp: これは、日本語で何と言いますか
+  - id: e
+    label_jp: きゅう
+  correct_ids:
+  - b
+  - d
+  choose_mode: all
 - id: A17
   kind: listening
   book_activity: 17
@@ -491,7 +604,8 @@ activities:
   key_phrases:
   - もう少し、ゆっくり言ってください
   - もうすこし、ゆっくり言ってください
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 17: look at the book illustration, listen to the CD, then say the matching
+    phrase.'
   phrase_meta:
   - jp: もう少し、ゆっくり言ってください
     tags:
@@ -501,10 +615,25 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 17: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: もうすこし、ゆっくり言ってください
+  - id: b
+    label_jp: もう少し、ゆっくり言ってください
+  - id: c
+    label_jp: ゼロ
+  - id: d
+    label_jp: なな
+  - id: e
+    label_jp: これは、日本語で何ですか
+  correct_ids:
+  - a
+  - b
+  choose_mode: all
 - id: A18
   kind: listening
   book_activity: 18
@@ -516,7 +645,8 @@ activities:
   - もういちど、お願いします
   - もう一度、お願いします
   - もう一度お願いします
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 18: look at the book illustration, listen to the CD, then say the matching
+    phrase.'
   phrase_meta:
   - jp: もういちど、お願いします
     tags:
@@ -530,10 +660,30 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 18: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: いち
+  - id: b
+    label_jp: もういちど、お願いします
+  - id: c
+    label_jp: さん
+  - id: d
+    label_jp: じゅう
+  - id: e
+    label_jp: もう一度、お願いします
+  - id: f
+    label_jp: なな
+  - id: g
+    label_jp: もう一度お願いします
+  correct_ids:
+  - b
+  - e
+  - g
+  choose_mode: all
 - id: A19
   kind: listening
   book_activity: 19
@@ -544,7 +694,8 @@ activities:
   key_phrases:
   - もう少し、ゆっくり言ってください
   - もうすこし、ゆっくり言ってください
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 19: look at the book illustration, listen to the CD, then say the matching
+    phrase.'
   phrase_meta:
   - jp: もう少し、ゆっくり言ってください
     tags:
@@ -554,10 +705,25 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 19: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: これは、日本語で何と言いますか
+  - id: b
+    label_jp: もう少し、ゆっくり言ってください
+  - id: c
+    label_jp: もうすこし、ゆっくり言ってください
+  - id: d
+    label_jp: 日本語、できますか
+  - id: e
+    label_jp: すみません、わかりません
+  correct_ids:
+  - b
+  - c
+  choose_mode: all
 - id: A20
   kind: listening
   book_activity: 20
@@ -569,7 +735,8 @@ activities:
   - もういちど、お願いします
   - もう一度、お願いします
   - もう一度お願いします
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'L02 activity 20: look at the book illustration, listen to the CD, then say the matching
+    phrase.'
   phrase_meta:
   - jp: もういちど、お願いします
     tags:
@@ -583,10 +750,30 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_choose
   picture_has_image: true
   picture_hint_en: 'L02 activity 20: look at the book illustration, listen to the CD, then say the matching
     phrase.'
+  choices:
+  - id: a
+    label_jp: に
+  - id: b
+    label_jp: もう一度お願いします
+  - id: c
+    label_jp: もう一度、お願いします
+  - id: d
+    label_jp: すみません、わかりません
+  - id: e
+    label_jp: これは、日本語で何と言いますか
+  - id: f
+    label_jp: これは、日本語で何ですか
+  - id: g
+    label_jp: もういちど、お願いします
+  correct_ids:
+  - b
+  - c
+  - g
+  choose_mode: all
 - id: A21
   kind: speaking
   book_activity: 21
@@ -721,6 +908,63 @@ activities:
   - assets/audio/X_[02-30]_katakana_tsumaru.mp3
   key_phrases: []
   prompt_en: Practice katakana with the book audio (X_[02-30]_katakana_tsumaru.mp3).
+- id: CULTURE
+  kind: culture
+  book_activity: 31
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'What should you do if you don’t understand what someone has said? What should you
+    do when you don’t know how to
+
+    say something in Japanese?
+
+    Can ask someone to say something again if you don’t really understand.
+
+    Listen to the dialogs.
+
+    Three people are each talking to a Japanese person but do not understand what the Japanese person
+    is saying.
+
+    What expression did each speaker use when they did not understand the Japanese? Match the words given
+    in a–c with ア-ウ.
+
+    Moo ichido, onegaishimasu.
+
+    Moo sukoshi, yukkuri itte kudasai.
+
+    Yoku wakarimasen.
+
+    Check the words and listen to the dialogs again.
+
+    留カード residence card ｜ ここ here ｜ 名
+
+    前 name ｜ 部
+
+    屋 room
+
+    zairyuu kaado koko namae heya
+
+    わかりました I understand.
+
+    wakarimashita
+
+    Look at the illustrations and listen to the dialogs again. What do you think a–c mean in (1)?
+
+    Check how to say the numbers.
+
+    いましょう。 Listen and repeat.
+
+    字 Numbers （0 ～ 10）】
+
+    0 ゼロ zero
+
+    1 いち ichi
+
+    2 に'
+  picture_has_image: false
 grammar: []
 vocab: []
 quiz_bank:

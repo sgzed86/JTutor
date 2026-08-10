@@ -15,13 +15,18 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 BookMode = Literal[
     "listen_repeat",
     "listen_repeat_all",
+    "listen_fill",
+    "listen_choose",
     "listen_select",
+    "note_take",
+    "reading",
     "dialog",
     "shadow_dialog",
     "pronunciation",
     "vocab_drill",
     "kana_trace",
     "culture_read",
+    "kanji_words",
     "repeat",
 ]
 
@@ -41,10 +46,35 @@ class DialogLine(Base):
     jp: str
 
 
+class BlankItem(Base):
+    """One cloze line for listen_fill (＿ marks each blank). Answers stay server-side."""
+
+    prompt_jp: str
+    # One accepted fill per ＿, in order. Extra strings in a slot can be listed via
+    # answer_alts, or put alternatives as additional BlankItems.
+    answers: list[str] = Field(default_factory=list)
+    # Optional full sentence / key phrase also accepted (e.g. learner types everything).
+    full_jp: str | None = None
+    # Extra accepted variants for the whole item (not shown to the client).
+    answer_alts: list[str] = Field(default_factory=list)
+
+
+class ChoiceItem(Base):
+    id: str
+    label_jp: str | None = None
+    label_en: str | None = None
+
+
+class KanjiItem(Base):
+    kanji: str
+    reading: str | None = None
+    gloss_en: str | None = None
+
+
 class Activity(Base):
     id: str
     kind: str
-    book_activity: int | None = None
+    book_activity: int | float | None = None
     can_do_id: str | None = None
     label: str | None = None
     audio: list[str] = Field(default_factory=list)
@@ -60,7 +90,24 @@ class Activity(Base):
     book_section_jp: str | None = None
     book_section_en: str | None = None
     book_scene_en: str | None = None
+    # Optional override when CD-track → page matching is wrong or unavailable.
+    pdf_page: int | None = None
     phrase_meta: list[PhraseMeta] = Field(default_factory=list)
+    # Curated cloze lines for book_mode: listen_fill
+    blanks: list[BlankItem] = Field(default_factory=list)
+    # Multiple-choice options (labels only sent to client; correct_ids stay server-side).
+    choices: list[ChoiceItem] = Field(default_factory=list)
+    correct_ids: list[str] = Field(default_factory=list)
+    choose_mode: Literal["any", "all"] | None = None
+    glosses_en: dict[str, str] = Field(default_factory=dict)
+    vocab_gloss_en: str | None = None
+    gloss_en: str | None = None
+    culture_notes_en: str | None = None
+    passage_jp: str | None = None
+    passage_en: str | None = None
+    note_keywords: list[str] = Field(default_factory=list)
+    kanji_items: list[KanjiItem] = Field(default_factory=list)
+    kanji_sentences: list[str] = Field(default_factory=list)
     notes_en: str | None = None
     estimated_seconds: int | None = None
 

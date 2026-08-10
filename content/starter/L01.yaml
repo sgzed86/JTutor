@@ -70,13 +70,23 @@ activities:
   - assets/audio/X_[01-02]_kiku1.mp3
   key_phrases:
   - こんにちは
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'Book ① (01-02): morning — which greeting do you hear? Say it.'
   picture_hint_en: 'Book ① (01-02): morning — which greeting do you hear? Say it.'
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: こんにちは
     tags:
     - short
+  choices:
+  - id: a
+    label_jp: おやすみなさい
+  - id: b
+    label_jp: おはようございます
+  - id: c
+    label_jp: こんにちは
+  correct_ids:
+  - c
+  choose_mode: any
 - id: A3
   kind: listening
   book_activity: 3
@@ -86,14 +96,24 @@ activities:
   - assets/audio/X_[01-03]_kiku2.mp3
   key_phrases:
   - おはようございます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'Book ② (01-03): afternoon — say the greeting.'
   picture_hint_en: 'Book ② (01-03): afternoon — say the greeting.'
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: おはようございます
     tags:
     - short
     - polite
+  choices:
+  - id: a
+    label_jp: 失礼します
+  - id: b
+    label_jp: おはよう
+  - id: c
+    label_jp: おはようございます
+  correct_ids:
+  - c
+  choose_mode: any
 - id: A4
   kind: listening
   book_activity: 4
@@ -103,13 +123,23 @@ activities:
   - assets/audio/X_[01-04]_kiku3.mp3
   key_phrases:
   - こんばんは
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'Book ③ (01-04): evening — say the greeting.'
   picture_hint_en: 'Book ③ (01-04): evening — say the greeting.'
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: こんばんは
     tags:
     - short
+  choices:
+  - id: a
+    label_jp: ごめん
+  - id: b
+    label_jp: こんばんは
+  - id: c
+    label_jp: おはようございます
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A5
   kind: listening
   book_activity: 5
@@ -119,13 +149,23 @@ activities:
   - assets/audio/X_[01-05]_kiku4.mp3
   key_phrases:
   - おはよう
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'Book ④ (01-05): morning (casual) — say the greeting.'
   picture_hint_en: 'Book ④ (01-05): morning (casual) — say the greeting.'
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: おはよう
     tags:
     - short
+  choices:
+  - id: a
+    label_jp: 失礼します
+  - id: b
+    label_jp: おやすみ
+  - id: c
+    label_jp: おはよう
+  correct_ids:
+  - c
+  choose_mode: any
 - id: A6
   kind: speaking
   book_activity: 6
@@ -220,16 +260,26 @@ activities:
   - assets/audio/X_[01-10]_kiku1.mp3
   key_phrases:
   - じゃあ、また
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'Goodbye ① (01-10): say the phrase you hear.'
   book_section_jp: Can-do 2 — 人と別れるときのあいさつ。
   book_section_en: 'Can-do 2: Greetings when you part — listen and match, then practice.'
   picture_hint_en: 'Goodbye ① (01-10): say the phrase you hear.'
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: じゃあ、また
     tags:
     - short
     - casual
+  choices:
+  - id: a
+    label_jp: 失礼します
+  - id: b
+    label_jp: じゃあ、また
+  - id: c
+    label_jp: こんばんは
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A11
   kind: listening
   book_activity: 11
@@ -239,14 +289,24 @@ activities:
   - assets/audio/X_[01-11]_kiku2.mp3
   key_phrases:
   - 失礼します
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'Goodbye ② (01-11): say the phrase.'
   picture_hint_en: 'Goodbye ② (01-11): say the phrase.'
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: 失礼します
     tags:
     - short
     - polite
+  choices:
+  - id: a
+    label_jp: お先に失礼します
+  - id: b
+    label_jp: ごめん
+  - id: c
+    label_jp: 失礼します
+  correct_ids:
+  - c
+  choose_mode: any
 - id: A12
   kind: listening
   book_activity: 12
@@ -256,14 +316,24 @@ activities:
   - assets/audio/X_[01-12]_kiku3.mp3
   key_phrases:
   - お先に失礼します
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'Goodbye ③ (01-12): say the phrase.'
   picture_hint_en: 'Goodbye ③ (01-12): say the phrase.'
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: お先に失礼します
     tags:
     - short
     - polite
+  choices:
+  - id: a
+    label_jp: こんばんは
+  - id: b
+    label_jp: お先に失礼します
+  - id: c
+    label_jp: おやすみなさい
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A13
   kind: listening
   book_activity: 13
@@ -273,14 +343,24 @@ activities:
   - assets/audio/X_[01-13]_kiku4.mp3
   key_phrases:
   - おやすみなさい
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: 'Goodbye ④ (01-13): say the phrase.'
   picture_hint_en: 'Goodbye ④ (01-13): say the phrase.'
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: おやすみなさい
     tags:
     - short
     - casual
+  choices:
+  - id: a
+    label_jp: ごめん
+  - id: b
+    label_jp: おやすみなさい
+  - id: c
+    label_jp: どうも
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A14
   kind: speaking
   book_activity: 14
@@ -399,14 +479,24 @@ activities:
   - assets/audio/X_[01-19]_kiku2.mp3
   key_phrases:
   - すみません
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Thanks / sorry — listen and say the phrase (01-19).
   picture_hint_en: Thanks / sorry — listen and say the phrase (01-19).
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: すみません
     tags:
     - short
     - polite
+  choices:
+  - id: a
+    label_jp: すみません
+  - id: b
+    label_jp: どうも
+  - id: c
+    label_jp: おはよう
+  correct_ids:
+  - a
+  choose_mode: any
 - id: A20
   kind: listening
   book_activity: 20
@@ -416,14 +506,24 @@ activities:
   - assets/audio/X_[01-20]_kiku3.mp3
   key_phrases:
   - ありがとうございます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Say the thanks phrase (01-20).
   picture_hint_en: Say the thanks phrase (01-20).
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: ありがとうございます
     tags:
     - short
     - polite
+  choices:
+  - id: a
+    label_jp: どうもありがとう
+  - id: b
+    label_jp: おはよう
+  - id: c
+    label_jp: ありがとうございます
+  correct_ids:
+  - c
+  choose_mode: any
 - id: A21
   kind: listening
   book_activity: 21
@@ -433,14 +533,24 @@ activities:
   - assets/audio/X_[01-21]_kiku4.mp3
   key_phrases:
   - どうも
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Short thanks どうも (01-21).
   picture_hint_en: Short thanks どうも (01-21).
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: どうも
     tags:
     - short
     - casual
+  choices:
+  - id: a
+    label_jp: どうも
+  - id: b
+    label_jp: すみません
+  - id: c
+    label_jp: こんばんは
+  correct_ids:
+  - a
+  choose_mode: any
 - id: A22
   kind: listening
   book_activity: 22
@@ -450,14 +560,24 @@ activities:
   - assets/audio/X_[01-22]_kiku5.mp3
   key_phrases:
   - どうもありがとう
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Say どうもありがとう (01-22).
   picture_hint_en: Say どうもありがとう (01-22).
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: どうもありがとう
     tags:
     - short
     - casual
+  choices:
+  - id: a
+    label_jp: すみません
+  - id: b
+    label_jp: どうもありがとう
+  - id: c
+    label_jp: どうも
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A23
   kind: listening
   book_activity: 23
@@ -467,14 +587,24 @@ activities:
   - assets/audio/X_[01-23]_kiku6.mp3
   key_phrases:
   - すみません
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Apology すみません (01-23).
   picture_hint_en: Apology すみません (01-23).
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: すみません
     tags:
     - short
     - polite
+  choices:
+  - id: a
+    label_jp: ありがとうございます
+  - id: b
+    label_jp: すみません
+  - id: c
+    label_jp: こんばんは
+  correct_ids:
+  - b
+  choose_mode: any
 - id: A24
   kind: listening
   book_activity: 24
@@ -484,14 +614,24 @@ activities:
   - assets/audio/X_[01-24]_kiku7.mp3
   key_phrases:
   - ごめん
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Casual ごめん (01-24).
   picture_hint_en: Casual ごめん (01-24).
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: ごめん
     tags:
     - short
     - casual
+  choices:
+  - id: a
+    label_jp: ごめん
+  - id: b
+    label_jp: じゃあ、また
+  - id: c
+    label_jp: お先に失礼します
+  correct_ids:
+  - a
+  choose_mode: any
 - id: A25
   kind: listening
   book_activity: 25
@@ -501,14 +641,24 @@ activities:
   - assets/audio/X_[01-25]_kiku8.mp3
   key_phrases:
   - すみません
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Apology in context (01-25).
   picture_hint_en: Apology in context (01-25).
-  book_mode: listen_select
+  book_mode: listen_choose
   phrase_meta:
   - jp: すみません
     tags:
     - short
     - polite
+  choices:
+  - id: a
+    label_jp: こんにちは
+  - id: b
+    label_jp: ありがとうございます
+  - id: c
+    label_jp: すみません
+  correct_ids:
+  - c
+  choose_mode: any
 - id: A26
   kind: speaking
   book_activity: 26
@@ -655,6 +805,76 @@ activities:
   - assets/audio/X_[01-35]_hiragana_tsumaru.mp3
   key_phrases: []
   prompt_en: Practice hiragana with the book audio (X_[01-35]_hiragana_tsumaru.mp3).
+- id: CULTURE
+  kind: culture
+  book_activity: 36
+  label: seikatsu_bunka
+  audio: []
+  key_phrases: []
+  book_mode: culture_read
+  prompt_en: Life and culture — read the note, then continue.
+  culture_notes_en: 'In your language, what do you say when you meet someone or when you leave? Does it
+    depend on the time or who
+
+    you’re speaking to?
+
+    Can exchange greetings when you meet someone.
+
+    Listen to the dialogs.
+
+    The people are each greeting someone they have met.
+
+    Listen and repeat.
+
+    Ohayoo (gozaimasu).
+
+    Konbanwa.
+
+    Konnichiwa.
+
+    What greetings are being used in ①–④? Choose from (1) a–c.
+
+    Listen to dialogs ② and ④ again. Which do you think is more polite, おはようございます (Ohayoogozaimasu) or
+    おはよう (Ohayoo) ?
+
+    Greet people when you meet them.
+
+    Ohayoo gozaimasu.
+
+    Ohayoo.
+
+    Konnichiwa.
+
+    Konbanwa.
+
+    Ohayoo gozaimasu.
+
+    Ohayoo.
+
+    Konnichiwa.
+
+    Konbanwa.
+
+    のあいさつ Morning greetings
+
+    のあいさつ Afternoon greetings
+
+    のあいさつ Evening greetings
+
+    Listen to the dialogs.
+
+    Shadow the dialogs.
+
+    Practice using the illustrations from 1 (2).
+
+    Freely think up a time and situation, and say a greeting.
+
+    Can say goodbye when leaving.
+
+    Listen to the dialogs.
+
+    The people ar'
+  picture_has_image: false
 grammar: []
 vocab: []
 quiz_bank:

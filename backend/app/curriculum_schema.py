@@ -12,7 +12,8 @@ class ActivityModel(BaseModel):
 
     id: str
     kind: str = "activity"
-    book_activity: int | None = None
+    # Fractional values (e.g. 11.5) place inserted sections before an integer slot.
+    book_activity: int | float | None = None
     key_phrases: list[str] = Field(default_factory=list)
 
 

@@ -2,6 +2,7 @@ import { createContext, useContext } from "react";
 import type { DeepPartial, UserSettings } from "../api/types";
 
 export const DEFAULT_SETTINGS: UserSettings = {
+  prefs_version: 3,
   voice: { speaker_id: null, speed: 1, pitch: 0, fallback_to_system_voice: true },
   audio: {
     input_device_id: null,
@@ -16,7 +17,7 @@ export const DEFAULT_SETTINGS: UserSettings = {
     auto_advance: "after_audio",
     auto_advance_delay_ms: 1200,
     auto_start_recording: true,
-    mic_mode: "hold",
+    mic_mode: "toggle",
     auto_stop_on_silence: true,
     silence_ms: 1200,
     max_recording_ms: 15000,
