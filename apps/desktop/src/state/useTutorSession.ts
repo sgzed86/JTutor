@@ -249,7 +249,14 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
       setTranscribing(true);
       let text = "";
       try {
-        const transcript = await api.transcribe(result.blob, "ja", controller.signal);
+        const hint =
+          result.purpose === "answer"
+            ? payload?.step?.say_target_jp ||
+              payload?.step?.expected_phrases?.[0] ||
+              payload?.activity?.key_phrases?.[0] ||
+              ""
+            : "";
+        const transcript = await api.transcribe(result.blob, "ja", controller.signal, hint);
         text = (transcript.text || "").trim();
       } catch (err) {
         reportError(err, "Speech recognition");
@@ -269,7 +276,7 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
         await sendAnswer(text, true);
       }
     },
-    [ask, lastRecordingUrl, pushNotice, reportError, sendAnswer],
+    [ask, lastRecordingUrl, payload, pushNotice, reportError, sendAnswer],
   );
 
   const recorder = useRecorder({

@@ -112,10 +112,16 @@ class TranscriptionService:
         }
 
     # ---- transcription ---------------------------------------------------
-    def _transcribe_sync(self, path: Path, language: str | None) -> Transcript:
+    def _transcribe_sync(
+        self, path: Path, language: str | None, initial_prompt: str | None = None
+    ) -> Transcript:
         self._load_sync()
         assert self._model is not None
-        segments, info = self._model.transcribe(str(path), language=language)
+        kwargs: dict = {"language": language}
+        # Bias orthography toward the target line (は vs わ) without requiring it.
+        if initial_prompt and initial_prompt.strip():
+            kwargs["initial_prompt"] = initial_prompt.strip()[:200]
+        segments, info = self._model.transcribe(str(path), **kwargs)
         parts: list[str] = []
         raw: list[dict] = []
         logprobs: list[float] = []
@@ -135,9 +141,17 @@ class TranscriptionService:
             no_speech_prob=(max(no_speech) if no_speech else None),
         )
 
-    async def transcribe(self, path: Path, *, language: str | None = "ja") -> Transcript:
+    async def transcribe(
+        self,
+        path: Path,
+        *,
+        language: str | None = "ja",
+        initial_prompt: str | None = None,
+    ) -> Transcript:
         loop = asyncio.get_running_loop()
-        return await loop.run_in_executor(self._pool, self._transcribe_sync, path, language)
+        return await loop.run_in_executor(
+            self._pool, self._transcribe_sync, path, language, initial_prompt
+        )
 
     def shutdown(self) -> None:
         self._pool.shutdown(wait=False, cancel_futures=True)

@@ -106,6 +106,18 @@ def test_diff_marks_missing_runs():
     assert any(not r["match"] for r in runs)
 
 
+def test_ha_wa_feedback_for_mother():
+    g = grade_phrases("わわ", ["はは"], spoken=True)
+    assert g["passed"] is False
+    assert "ha" in (g["feedback_en"] or "").lower()
+    assert "wa" in (g["feedback_en"] or "").lower()
+
+
+def test_mother_haha_still_passes():
+    g = grade_phrases("はは", ["はは"], spoken=True)
+    assert g["passed"] is True
+
+
 def test_grade_reports_the_transcript_back():
     g = grade_phrases("おはよ", ["おはよう"], spoken=True)
     assert g["transcript"] == "おはよ"

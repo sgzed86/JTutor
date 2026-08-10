@@ -21,10 +21,12 @@ export function useProgress() {
   }, [refresh]);
 
   const lessons: LessonSummary[] = overview?.lessons ?? [];
+  const resume = overview?.resume ?? null;
   const current =
-    lessons.find((l) => l.unlocked && !l.mastered && (l.can_dos?.length ?? 0) > 0) ??
-    lessons.find((l) => l.unlocked && !l.mastered) ??
+    (resume?.lesson_id && lessons.find((l) => l.lesson_id === resume.lesson_id)) ||
+    lessons.find((l) => l.unlocked && !l.mastered && (l.can_dos?.length ?? 0) > 0) ||
+    lessons.find((l) => l.unlocked && !l.mastered) ||
     lessons[0];
 
-  return { overview, lessons, current, loading, refresh };
+  return { overview, lessons, current, resume, loading, refresh };
 }

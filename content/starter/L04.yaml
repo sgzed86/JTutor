@@ -50,13 +50,37 @@ activities:
   audio:
   - assets/audio/X_[04-01]_kotoba1.mp3
   key_phrases:
-  - 私の家族えちちビ母しあねいいあねいいおとうとうえいもとうジおっとHつまはい子供
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - ちち
+  - はは
+  - あに
+  - あね
+  - おとうと
+  - いもうと
+  - おっと
+  - つま
+  - こども
+  prompt_en: Listen to the CD, then say each word one at a time (9 words).
   phrase_meta:
-  - jp: 私の家族えちちビ母しあねいいあねいいおとうとうえいもとうジおっとHつまはい子供
+  - jp: ちち
     tags:
-    - long
-  book_mode: listen_repeat
+    - short
+  - jp: はは
+    tags:
+    - short
+  - jp: あに
+    tags:
+    - short
+  - jp: あね
+    tags:
+    - short
+  - jp: おとうと
+    tags:
+    - short
+  - jp: いもうと
+    tags:
+    - short
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -65,14 +89,43 @@ activities:
   audio:
   - assets/audio/X_[04-02]_kotoba2.mp3
   key_phrases:
-  - 1土です2あねです3おとうとうです4あにです5つまです6いもおとうです7子どもです8おとうです9母です
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - ちちです
+  - ははです
+  - あにです
+  - あねです
+  - おとうとです
+  - いもうとです
+  - おっとです
+  - つまです
+  - こどもです
+  prompt_en: Listen to the CD, then say each word one at a time (9 words).
   phrase_meta:
-  - jp: 1土です2あねです3おとうとうです4あにです5つまです6いもおとうです7子どもです8おとうです9母です
+  - jp: ちちです
     tags:
-    - long
+    - short
     - polite
-  book_mode: listen_repeat
+  - jp: ははです
+    tags:
+    - short
+    - polite
+  - jp: あにです
+    tags:
+    - short
+    - polite
+  - jp: あねです
+    tags:
+    - short
+    - polite
+  - jp: おとうとです
+    tags:
+    - short
+    - polite
+  - jp: いもうとです
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A3
   kind: listening
   book_activity: 3
@@ -81,27 +134,29 @@ activities:
   audio:
   - assets/audio/X_[04-03]_kiku1.mp3
   key_phrases:
+  - こんにちは
+  - つまです
+  - ヒマルです
   - よろしくお願いします
-  - えっと、つまです
-  - 死ぬやま先生
-  - ひまるさん
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
+  - jp: こんにちは
+    tags:
+    - short
+  - jp: つまです
+    tags:
+    - short
+    - polite
+  - jp: ヒマルです
+    tags:
+    - short
+    - polite
   - jp: よろしくお願いします
     tags:
     - short
     - polite
-  - jp: えっと、つまです
-    tags:
-    - short
-    - polite
-  - jp: 死ぬやま先生
-    tags:
-    - short
-  - jp: ひまるさん
-    tags:
-    - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A4
   kind: listening
   book_activity: 4
@@ -110,20 +165,25 @@ activities:
   audio:
   - assets/audio/X_[04-04]_kiku2.mp3
   key_phrases:
-  - あ、ごさん、あ、二乗へさん、こんにちは、こんにちは、ごさん、おっとと子供です
-  - こんにちは、こんにちは
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  - こんにちは
+  - 夫と子どもです
+  - おっとと子どもです
+  prompt_en: Listen to the CD, then say each line one at a time (3 lines).
   phrase_meta:
-  - jp: あ、ごさん、あ、二乗へさん、こんにちは、こんにちは、ごさん、おっとと子供です
+  - jp: こんにちは
     tags:
-    - long
+    - short
+  - jp: 夫と子どもです
+    tags:
+    - short
     - polite
-  - jp: こんにちは、こんにちは
+  - jp: おっとと子どもです
     tags:
-    - long
-  book_mode: listen_select
+    - short
+    - polite
+  book_mode: listen_repeat_all
   picture_has_image: true
-  picture_hint_en: 'L04 activity 4: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: 'L04 activity 4: listen, then say each line one at a time.'
 - id: A5
   kind: listening
   book_activity: 5
@@ -132,30 +192,41 @@ activities:
   audio:
   - assets/audio/X_[04-05]_kiku3.mp3
   key_phrases:
-  - リナさん、どうぞ喜しく
-  - エットを紹介します
-  - 始めまして、リナです
-  - 喜しくお願いします
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  - 紹介します
+  - リナです
+  - ちちです
+  - ははです
+  - あにです
+  - よろしくお願いします
+  prompt_en: Listen to the CD, then say each line one at a time (6 lines).
   phrase_meta:
-  - jp: リナさん、どうぞ喜しく
-    tags:
-    - long
-  - jp: エットを紹介します
+  - jp: 紹介します
     tags:
     - short
     - polite
-  - jp: 始めまして、リナです
+  - jp: リナです
     tags:
     - short
     - polite
-  - jp: 喜しくお願いします
+  - jp: ちちです
     tags:
     - short
     - polite
-  book_mode: listen_select
+  - jp: ははです
+    tags:
+    - short
+    - polite
+  - jp: あにです
+    tags:
+    - short
+    - polite
+  - jp: よろしくお願いします
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
   picture_has_image: true
-  picture_hint_en: 'L04 activity 5: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: 'L04 activity 5: listen, then say each line one at a time.'
 - id: A6
   kind: listening
   book_activity: 6
@@ -164,17 +235,21 @@ activities:
   audio:
   - assets/audio/X_[04-06]_kiku4.mp3
   key_phrases:
-  - あ、始めまして、バートです
-  - イモートとお父とです
+  - 紹介します
+  - いもうととおとうとです
+  - バトです
   - よろしくお願いします
-  - お、いいしださん
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
-  - jp: あ、始めまして、バートです
+  - jp: 紹介します
+    tags:
+    - short
+    - polite
+  - jp: いもうととおとうとです
     tags:
     - long
     - polite
-  - jp: イモートとお父とです
+  - jp: バトです
     tags:
     - short
     - polite
@@ -182,12 +257,9 @@ activities:
     tags:
     - short
     - polite
-  - jp: お、いいしださん
-    tags:
-    - short
-  book_mode: listen_select
+  book_mode: listen_repeat_all
   picture_has_image: true
-  picture_hint_en: 'L04 activity 6: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: 'L04 activity 6: listen, then say each line one at a time.'
 - id: A7
   kind: grammar_form
   book_activity: 7
@@ -196,28 +268,25 @@ activities:
   audio:
   - assets/audio/X_[04-07]_katachi.mp3
   key_phrases:
-  - ごさん、おっとと子どもです
-  - いのお姉さん、こんにちは
-  - バトさん、紹介します
-  - いもおととおとです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - 夫と子どもです
+  - いもうととおとうとです
+  - 紹介します
+  prompt_en: Listen to the CD, then say each line one at a time (3 lines).
   phrase_meta:
-  - jp: ごさん、おっとと子どもです
-    tags:
-    - long
-    - polite
-  - jp: いのお姉さん、こんにちは
-    tags:
-    - long
-  - jp: バトさん、紹介します
+  - jp: 夫と子どもです
     tags:
     - short
     - polite
-  - jp: いもおととおとです
+  - jp: いもうととおとうとです
+    tags:
+    - long
+    - polite
+  - jp: 紹介します
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A8
   kind: conversation
   book_activity: 8
@@ -226,36 +295,41 @@ activities:
   audio:
   - assets/audio/X_[04-08]_kaiwa.mp3
   key_phrases:
-  - 家族はフィリピンに住んでいますそうですか
-  - みろですフィリピンからきましたよろしくお願いしますみろさん、うちの家族ですつまと子供もそれから、ちちですみろさ、やらしく、夜をしく、あの、お名前は
-  - シーン一ですシーン一、なんサイですか
-  - 25歳ですそうどこに住んでいますか
-  prompt_en: Listen to the conversation, then practice both roles.
+  - ミロです
+  - フィリピンから来ました
+  - よろしくお願いします
+  - 何歳ですか
+  - 25歳です
+  - どこに住んでいますか
+  - 赤羽に住んでいます
+  - 家族はフィリピンに住んでいます
+  prompt_en: Listen to the CD, then say each line one at a time (8 lines).
   phrase_meta:
-  - jp: 家族はフィリピンに住んでいますそうですか
+  - jp: ミロです
+    tags:
+    - short
+    - polite
+  - jp: フィリピンから来ました
     tags:
     - long
-    - polite
-  - jp: みろですフィリピンからきましたよろしくお願いしますみろさん、うちの家族ですつまと子供もそれから、ちちですみろさ、やらしく、夜をしく、あの、お名前は
+  - jp: よろしくお願いします
     tags:
-    - long
+    - short
     - polite
-  - jp: シーン一ですシーン一、なんサイですか
+  - jp: 何歳ですか
     tags:
-    - long
+    - short
     - polite
-  - jp: 25歳ですそうどこに住んでいますか
+  - jp: 25歳です
     tags:
-    - long
+    - short
     - polite
-  book_mode: dialog
-  dialog_script:
-  - speaker: partner
-    jp: シーン一ですシーン一、なんサイですか
-  - speaker: learner
-    jp: 家族はフィリピンに住んでいますそうですか
-  dialog_listen_audio:
-  - assets/audio/X_[04-08]_kaiwa.mp3
+  - jp: どこに住んでいますか
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A9
   kind: grammar_form
   book_activity: 9
@@ -264,29 +338,40 @@ activities:
   audio:
   - assets/audio/X_[04-09]_katachi1.mp3
   key_phrases:
-  - 家族は、ピリピンに住んでいます
-  - 25歳ですどこに住んでいますか
-  - より歳ですミロさんは何歳
-  - 赤場でですご家族は
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - 何歳ですか
+  - いくつですか
+  - 25歳です
+  - どこに住んでいますか
+  - 赤羽に住んでいます
+  - 家族はフィリピンに住んでいます
+  prompt_en: Listen to the CD, then say each line one at a time (6 lines).
   phrase_meta:
-  - jp: 家族は、ピリピンに住んでいます
-    tags:
-    - long
-    - polite
-  - jp: 25歳ですどこに住んでいますか
-    tags:
-    - long
-    - polite
-  - jp: より歳ですミロさんは何歳
-    tags:
-    - long
-    - polite
-  - jp: 赤場でですご家族は
+  - jp: 何歳ですか
     tags:
     - short
     - polite
-  book_mode: listen_repeat
+  - jp: いくつですか
+    tags:
+    - short
+    - polite
+  - jp: 25歳です
+    tags:
+    - short
+    - polite
+  - jp: どこに住んでいますか
+    tags:
+    - short
+    - polite
+  - jp: 赤羽に住んでいます
+    tags:
+    - short
+    - polite
+  - jp: 家族はフィリピンに住んでいます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A10
   kind: grammar_form
   book_activity: 10
@@ -294,9 +379,49 @@ activities:
   label: katachi2_number1
   audio:
   - assets/audio/X_[04-10]_katachi2_number1.mp3
-  key_phrases: []
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
-  book_mode: listen_repeat
+  key_phrases:
+  - いち
+  - に
+  - さん
+  - よん
+  - ご
+  - ろく
+  - なな
+  - はち
+  - きゅう
+  - じゅう
+  - じゅういち
+  - じゅうに
+  - じゅうさん
+  - じゅうよん
+  - じゅうご
+  - じゅうろく
+  - じゅうなな
+  - じゅうはち
+  - じゅうきゅう
+  - にじゅう
+  prompt_en: Listen to the CD, then say each word one at a time (20 words).
+  phrase_meta:
+  - jp: いち
+    tags:
+    - short
+  - jp: に
+    tags:
+    - short
+  - jp: さん
+    tags:
+    - short
+  - jp: よん
+    tags:
+    - short
+  - jp: ご
+    tags:
+    - short
+  - jp: ろく
+    tags:
+    - short
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A11
   kind: grammar_form
   book_activity: 11
@@ -305,13 +430,43 @@ activities:
   audio:
   - assets/audio/X_[04-11]_katachi2_age1.mp3
   key_phrases:
-  - 一歳参細4歳6歳9歳10歳12歳13歳14歳15歳16歳17歳12歳19歳2歳
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - 1歳
+  - 3歳
+  - 4歳
+  - 6歳
+  - 9歳
+  - 10歳
+  - 12歳
+  - 13歳
+  - 14歳
+  - 15歳
+  - 16歳
+  - 17歳
+  - 18歳
+  - 19歳
+  - 20歳
+  prompt_en: Listen to the CD, then say each word one at a time (15 words).
   phrase_meta:
-  - jp: 一歳参細4歳6歳9歳10歳12歳13歳14歳15歳16歳17歳12歳19歳2歳
+  - jp: 1歳
     tags:
-    - long
-  book_mode: listen_repeat
+    - short
+  - jp: 3歳
+    tags:
+    - short
+  - jp: 4歳
+    tags:
+    - short
+  - jp: 6歳
+    tags:
+    - short
+  - jp: 9歳
+    tags:
+    - short
+  - jp: 10歳
+    tags:
+    - short
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A12
   kind: grammar_form
   book_activity: 12
@@ -319,9 +474,36 @@ activities:
   label: katachi2_number2
   audio:
   - assets/audio/X_[04-12]_katachi2_number2.mp3
-  key_phrases: []
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
-  book_mode: listen_repeat
+  key_phrases:
+  - '30'
+  - '40'
+  - '50'
+  - '60'
+  - '70'
+  - '80'
+  - '90'
+  prompt_en: Listen to the CD, then say each word one at a time (7 words).
+  book_mode: listen_repeat_all
+  phrase_meta:
+  - jp: '30'
+    tags:
+    - short
+  - jp: '40'
+    tags:
+    - short
+  - jp: '50'
+    tags:
+    - short
+  - jp: '60'
+    tags:
+    - short
+  - jp: '70'
+    tags:
+    - short
+  - jp: '80'
+    tags:
+    - short
+  picture_has_image: false
 - id: A13
   kind: grammar_form
   book_activity: 13
@@ -330,13 +512,35 @@ activities:
   audio:
   - assets/audio/X_[04-13]_katachi2_age2.mp3
   key_phrases:
-  - 30歳40歳50歳60歳70歳80歳90歳
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - 30歳
+  - 40歳
+  - 50歳
+  - 60歳
+  - 70歳
+  - 80歳
+  - 90歳
+  prompt_en: Listen to the CD, then say each word one at a time (7 words).
   phrase_meta:
-  - jp: 30歳40歳50歳60歳70歳80歳90歳
+  - jp: 30歳
     tags:
-    - long
-  book_mode: listen_repeat
+    - short
+  - jp: 40歳
+    tags:
+    - short
+  - jp: 50歳
+    tags:
+    - short
+  - jp: 60歳
+    tags:
+    - short
+  - jp: 70歳
+    tags:
+    - short
+  - jp: 80歳
+    tags:
+    - short
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A14
   kind: grammar_form
   book_activity: 14
@@ -344,9 +548,23 @@ activities:
   label: katachi2_example
   audio:
   - assets/audio/X_[04-14]_katachi2_example.mp3
-  key_phrases: []
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
-  book_mode: listen_repeat
+  key_phrases:
+  - 25歳
+  - 95歳
+  - 99歳
+  prompt_en: Listen to the CD, then say each word one at a time (3 words).
+  phrase_meta:
+  - jp: 25歳
+    tags:
+    - short
+  - jp: 95歳
+    tags:
+    - short
+  - jp: 99歳
+    tags:
+    - short
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A15
   kind: speaking
   book_activity: 15
@@ -355,30 +573,28 @@ activities:
   audio:
   - assets/audio/X_[04-15]_hanasu.mp3
   key_phrases:
+  - はじめまして
+  - ミロです
+  - フィリピンから来ました
   - よろしくお願いします
-  - ピリピンから来ました
-  - 始めまして、みろです
-  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
+  - jp: はじめまして
+    tags:
+    - short
+  - jp: ミロです
+    tags:
+    - short
+    - polite
+  - jp: フィリピンから来ました
+    tags:
+    - long
   - jp: よろしくお願いします
     tags:
     - short
     - polite
-  - jp: ピリピンから来ました
-    tags:
-    - short
-  - jp: 始めまして、みろです
-    tags:
-    - short
-    - polite
-  book_mode: dialog
-  dialog_script:
-  - speaker: partner
-    jp: 始めまして、みろです
-  - speaker: learner
-    jp: よろしくお願いします
-  dialog_listen_audio:
-  - assets/audio/X_[04-15]_hanasu.mp3
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A16
   kind: speaking
   book_activity: 16
@@ -388,25 +604,26 @@ activities:
   - assets/audio/X_[04-16]_hanasu1.mp3
   key_phrases:
   - 25歳です
-  - 1ミロさんは何歳ですか
-  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  - ミロさんは何歳ですか
+  prompt_en: Listen, then practice the short question and answer.
   phrase_meta:
   - jp: 25歳です
     tags:
     - short
     - polite
-  - jp: 1ミロさんは何歳ですか
+  - jp: ミロさんは何歳ですか
     tags:
-    - long
+    - short
     - polite
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 1ミロさんは何歳ですか
+    jp: ミロさんは何歳ですか
   - speaker: learner
     jp: 25歳です
   dialog_listen_audio:
   - assets/audio/X_[04-16]_hanasu1.mp3
+  picture_has_image: false
 - id: A17
   kind: speaking
   book_activity: 17
@@ -415,21 +632,27 @@ activities:
   audio:
   - assets/audio/X_[04-17]_hanasu2.mp3
   key_phrases:
-  - 2どこに住んでいますか赤場ねに住んでいますそうですか
-  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  - 赤羽に住んでいます
+  - どこに住んでいますか
+  prompt_en: Listen, then practice the short question and answer.
   phrase_meta:
-  - jp: 2どこに住んでいますか赤場ねに住んでいますそうですか
+  - jp: 赤羽に住んでいます
     tags:
-    - long
+    - short
+    - polite
+  - jp: どこに住んでいますか
+    tags:
+    - short
     - polite
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 2どこに住んでいますか赤場ねに住んでいますそうですか
+    jp: どこに住んでいますか
   - speaker: learner
-    jp: 2どこに住んでいますか赤場ねに住んでいますそうですか
+    jp: 赤羽に住んでいます
   dialog_listen_audio:
   - assets/audio/X_[04-17]_hanasu2.mp3
+  picture_has_image: false
 - id: A18
   kind: listening
   book_activity: 18
@@ -438,21 +661,26 @@ activities:
   audio:
   - assets/audio/X_[04-18]_kiku1.mp3
   key_phrases:
-  - 私の母ですブラジルに住んでいますへへへそうですか
-  - 一これ誰ですか
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  - これ誰ですか
+  - 私の母です
+  - ブラジルに住んでいます
+  prompt_en: Listen to the CD, then say each line one at a time (3 lines).
   phrase_meta:
-  - jp: 私の母ですブラジルに住んでいますへへへそうですか
-    tags:
-    - long
-    - polite
-  - jp: 一これ誰ですか
+  - jp: これ誰ですか
     tags:
     - short
     - polite
-  book_mode: listen_select
+  - jp: 私の母です
+    tags:
+    - short
+    - polite
+  - jp: ブラジルに住んでいます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat_all
   picture_has_image: true
-  picture_hint_en: 'L04 activity 18: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: 'L04 activity 18: listen, then say each line one at a time.'
 - id: A19
   kind: listening
   book_activity: 19
@@ -461,26 +689,31 @@ activities:
   audio:
   - assets/audio/X_[04-19]_kiku2.mp3
   key_phrases:
-  - あねの子どもです可愛いですねいくつですか
-  - にこれ誰ですか
-  - 参細です
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  - これ誰ですか
+  - あねの子どもです
+  - かわいいですね
+  - 3歳です
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
-  - jp: あねの子どもです可愛いですねいくつですか
-    tags:
-    - long
-    - polite
-  - jp: にこれ誰ですか
+  - jp: これ誰ですか
     tags:
     - short
     - polite
-  - jp: 参細です
+  - jp: あねの子どもです
     tags:
     - short
     - polite
-  book_mode: listen_select
+  - jp: かわいいですね
+    tags:
+    - short
+    - polite
+  - jp: 3歳です
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
   picture_has_image: true
-  picture_hint_en: 'L04 activity 19: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: 'L04 activity 19: listen, then say each line one at a time.'
 - id: A20
   kind: listening
   book_activity: 20
@@ -489,25 +722,31 @@ activities:
   audio:
   - assets/audio/X_[04-20]_kiku3.mp3
   key_phrases:
-  - 可愛いですねありがとうペットの上ですへぇなんサイですか
-  - 16サイです16サイおじいさんです
-  - さんあ、いいの
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  - かわいいですね
+  - ペットのジョンです
+  - 何歳ですか
+  - 16歳です
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
-  - jp: 可愛いですねありがとうペットの上ですへぇなんサイですか
-    tags:
-    - long
-    - polite
-  - jp: 16サイです16サイおじいさんです
-    tags:
-    - long
-    - polite
-  - jp: さんあ、いいの
+  - jp: かわいいですね
     tags:
     - short
-  book_mode: listen_select
+    - polite
+  - jp: ペットのジョンです
+    tags:
+    - short
+    - polite
+  - jp: 何歳ですか
+    tags:
+    - short
+    - polite
+  - jp: 16歳です
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
   picture_has_image: true
-  picture_hint_en: 'L04 activity 20: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: 'L04 activity 20: listen, then say each line one at a time.'
 - id: A21
   kind: listening
   book_activity: 21
@@ -516,31 +755,26 @@ activities:
   audio:
   - assets/audio/X_[04-21]_kiku4.mp3
   key_phrases:
-  - ああああああ友達ですそうですか
-  - 日本に住んでますか
-  - 4これ誰ですか
-  - はい東京に住んでいます
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  - これ誰ですか
+  - 友達です
+  - 東京に住んでいます
+  prompt_en: Listen to the CD, then say each line one at a time (3 lines).
   phrase_meta:
-  - jp: ああああああ友達ですそうですか
-    tags:
-    - long
-    - polite
-  - jp: 日本に住んでますか
+  - jp: これ誰ですか
     tags:
     - short
     - polite
-  - jp: 4これ誰ですか
+  - jp: 友達です
     tags:
     - short
     - polite
-  - jp: はい東京に住んでいます
+  - jp: 東京に住んでいます
     tags:
-    - long
+    - short
     - polite
-  book_mode: listen_select
+  book_mode: listen_repeat_all
   picture_has_image: true
-  picture_hint_en: 'L04 activity 21: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: 'L04 activity 21: listen, then say each line one at a time.'
 - id: A22
   kind: grammar_form
   book_activity: 22
@@ -549,14 +783,30 @@ activities:
   audio:
   - assets/audio/X_[04-22]_katachi.mp3
   key_phrases:
-  - これ誰ですか私の母です雨の子供です可愛いですねペットのジョンです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - これ誰ですか
+  - 私の母です
+  - あねの子どもです
+  - ペットのジョンです
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
-  - jp: これ誰ですか私の母です雨の子供です可愛いですねペットのジョンです
+  - jp: これ誰ですか
     tags:
-    - long
+    - short
     - polite
-  book_mode: listen_repeat
+  - jp: 私の母です
+    tags:
+    - short
+    - polite
+  - jp: あねの子どもです
+    tags:
+    - short
+    - polite
+  - jp: ペットのジョンです
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A23
   kind: speaking
   book_activity: 23
@@ -565,17 +815,13 @@ activities:
   audio:
   - assets/audio/X_[04-23]_hanasu1.mp3
   key_phrases:
-  - 東京に住んでいます
-  - 友達ですそうですか
+  - 友達です
   - これ誰ですか
   - どこに住んでいますか
-  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  - 東京に住んでいます
+  prompt_en: Listen, then practice the short question and answer.
   phrase_meta:
-  - jp: 東京に住んでいます
-    tags:
-    - short
-    - polite
-  - jp: 友達ですそうですか
+  - jp: 友達です
     tags:
     - short
     - polite
@@ -587,14 +833,19 @@ activities:
     tags:
     - short
     - polite
+  - jp: 東京に住んでいます
+    tags:
+    - short
+    - polite
   book_mode: dialog
   dialog_script:
   - speaker: partner
     jp: これ誰ですか
   - speaker: learner
-    jp: 東京に住んでいます
+    jp: 友達です
   dialog_listen_audio:
   - assets/audio/X_[04-23]_hanasu1.mp3
+  picture_has_image: false
 - id: A24
   kind: speaking
   book_activity: 24
@@ -603,19 +854,15 @@ activities:
   audio:
   - assets/audio/X_[04-24]_hanasu2.mp3
   key_phrases:
-  - 3歳です
-  - あねの子供ですそうですか
+  - あねの子どもです
   - これ誰ですか
   - 何歳ですか
-  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  - 3歳です
+  prompt_en: Listen, then practice the short question and answer.
   phrase_meta:
-  - jp: 3歳です
+  - jp: あねの子どもです
     tags:
     - short
-    - polite
-  - jp: あねの子供ですそうですか
-    tags:
-    - long
     - polite
   - jp: これ誰ですか
     tags:
@@ -625,46 +872,165 @@ activities:
     tags:
     - short
     - polite
+  - jp: 3歳です
+    tags:
+    - short
+    - polite
   book_mode: dialog
   dialog_script:
   - speaker: partner
     jp: これ誰ですか
   - speaker: learner
-    jp: 3歳です
+    jp: あねの子どもです
   dialog_listen_audio:
   - assets/audio/X_[04-24]_hanasu2.mp3
+  picture_has_image: false
 grammar:
 - point: N1 と N2
+  pattern_en: A and B (と)
+  prompt_jp: ふたりを しょうかいしてください。れい：夫と子どもです。
+  prompt_en: Introduce two people with と — say 夫と子どもです.
   worksheet_pages:
   - 5
-  examples: []
-- point: A： おいくつですか？
+  examples:
+  - jp: 夫と子どもです
+  - jp: いもうととおとうとです
+  - jp: おっとと子どもです
+- point: 何歳ですか
+  pattern_en: Ask someone's age
+  prompt_jp: 年を きいてください。何歳ですか。
+  prompt_en: Ask how old someone is.
   worksheet_pages:
   - 5
-  examples: []
-- point: A： これ、だれですか？
+  examples:
+  - jp: 何歳ですか
+  - jp: いくつですか
+  - jp: おいくつですか
+- point: 【place】に住んでいます
+  pattern_en: live in + place
+  prompt_jp: どこに すんでいますか。れい：東京に住んでいます。
+  prompt_en: Say where someone lives with に住んでいます.
   worksheet_pages:
   - 5
-  examples: []
-- point: A： あ、かわいいですね。
+  examples:
+  - jp: 東京に住んでいます
+  - jp: 赤羽に住んでいます
+  - jp: フィリピンに住んでいます
+- point: これ誰ですか
+  pattern_en: Who is this? (photo)
+  prompt_jp: しゃしんを みて きいてください。これ誰ですか。
+  prompt_en: Ask who is in a photo.
   worksheet_pages:
   - 5
-  examples: []
-- point: A： バトさんは、どこに住
-  worksheet_pages:
-  - 6
-  examples: []
+  examples:
+  - jp: これ誰ですか
+  - jp: これ、だれですか
 - point: N1 の N2
+  pattern_en: my / someone's + noun
+  prompt_jp: だれの かぞくですか。れい：私の母です。
+  prompt_en: Say who someone is with の — like 私の母です.
   worksheet_pages:
   - 6
-  examples: []
+  examples:
+  - jp: 私の母です
+  - jp: あねの子どもです
+  - jp: ペットのジョンです
+- point: かわいいですね
+  pattern_en: react to a photo
+  prompt_jp: かわいい とき いってください。
+  prompt_en: React to a cute photo.
+  worksheet_pages:
+  - 5
+  examples:
+  - jp: かわいいですね
+  - jp: そうですか
 vocab:
-- jp: 私の家族えちちビ母しあねいいあねいいおとうとうえいもとうジおっとHつまはい子供
+- jp: ちち
   reading: ''
   en: ''
   tags:
   - L04
-- jp: 1土です2あねです3おとうとうです4あにです5つまです6いもおとうです7子どもです8おとうです9母です
+- jp: はは
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: あに
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: あね
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: おとうと
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: いもうと
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: おっと
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: つま
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: こども
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: ちちです
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: ははです
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: あにです
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: あねです
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: おとうとです
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: いもうとです
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: おっとです
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: つまです
+  reading: ''
+  en: ''
+  tags:
+  - L04
+- jp: こどもです
   reading: ''
   en: ''
   tags:
@@ -734,73 +1100,59 @@ quiz_scenarios:
   - 誰
   - だれ
   hint_en: Again — 写真を見ながら簡単な質問をしたり答えたりすることができる。
-- can_do_id: CD_L04_13
-  partner_jp: シーン一ですシーン一、なんサイですか
-  expected:
-  - 家族はフィリピンに住んでいますそうですか
-  - みろですフィリピンからきましたよろしくお願いしますみろさん、うちの家族ですつまと子供もそれから、ちちですみろさ、やらしく、夜をしく、あの、お名前は
-  - シーン一ですシーン一、なんサイですか
-  - 25歳ですそうどこに住んでいますか
-  hint_en: Reply as in the book dialog (activity 8).
-- can_do_id: CD_L04_14
-  partner_jp: 始めまして、みろです
-  expected:
-  - よろしくお願いします
-  - ピリピンから来ました
-  - 始めまして、みろです
-  hint_en: Reply as in the book dialog (activity 15).
 - can_do_id: CD_L04_12
-  partner_jp: 1ミロさんは何歳ですか
+  partner_jp: ミロさんは何歳ですか
   expected:
   - 25歳です
-  - 1ミロさんは何歳ですか
+  - ミロさんは何歳ですか
   hint_en: Reply as in the book dialog (activity 16).
 - can_do_id: CD_L04_13
-  partner_jp: 2どこに住んでいますか赤場ねに住んでいますそうですか
+  partner_jp: どこに住んでいますか
   expected:
-  - 2どこに住んでいますか赤場ねに住んでいますそうですか
+  - 赤羽に住んでいます
+  - どこに住んでいますか
   hint_en: Reply as in the book dialog (activity 17).
 - can_do_id: CD_L04_13
   partner_jp: これ誰ですか
   expected:
-  - 東京に住んでいます
-  - 友達ですそうですか
+  - 友達です
   - これ誰ですか
   - どこに住んでいますか
+  - 東京に住んでいます
   hint_en: Reply as in the book dialog (activity 23).
 - can_do_id: CD_L04_14
   partner_jp: これ誰ですか
   expected:
-  - 3歳です
-  - あねの子供ですそうですか
+  - あねの子どもです
   - これ誰ですか
   - 何歳ですか
+  - 3歳です
   hint_en: Reply as in the book dialog (activity 24).
 - can_do_id: CD_L04_12
-  partner_jp: 私の家族えちちビ母しあねいいあねいいおとうとうえいもとうジおっとHつまはい子供。
+  partner_jp: ちち。
   expected:
-  - 私の家族えちちビ母しあねいいあねいいおとうとうえいもとうジおっとHつまはい子供
-  - あ、ごさん、あ、二乗へさん、こんにちは、こんにちは、ごさん、おっとと子供です
-  - こんにちは、こんにちは
-  - ごさん、おっとと子どもです
+  - ちち
+  - はは
+  - あに
+  - あね
   - 家族
   hint_en: Can listen to a family being introduced and understand who is who.
 - can_do_id: CD_L04_13
-  partner_jp: 1土です2あねです3おとうとうです4あにです5つまです6いもおとうです7子どもです8おとうです9母です。
+  partner_jp: ちちです。
   expected:
-  - 1土です2あねです3おとうとうです4あにです5つまです6いもおとうです7子どもです8おとうです9母です
-  - リナさん、どうぞ喜しく
-  - エットを紹介します
-  - 始めまして、リナです
+  - ちちです
+  - ははです
+  - あにです
+  - あねです
   - 住んで
   hint_en: Can ask and answer about where you live, age, etc.
 - can_do_id: CD_L04_14
-  partner_jp: よろしくお願いします。
+  partner_jp: こんにちは。
   expected:
+  - こんにちは
+  - つまです
+  - ヒマルです
   - よろしくお願いします
-  - えっと、つまです
-  - 死ぬやま先生
-  - ひまるさん
   - 誰
   - だれ
   hint_en: Can ask simple questions about a photo (who someone is, etc.).
@@ -860,3 +1212,4 @@ english_notes: 'Preparation for the words
 
   Focus on the expressions used and listen to 会話 2 and 会話 4 again.'
 unlock_requires_mastery: true
+schema_version: 1

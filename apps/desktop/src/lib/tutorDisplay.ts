@@ -104,8 +104,16 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     focus = "none";
     instructionEn = instructionEn || "Warm-up — answer freely in any language.";
   } else if (state === "grammar") {
-    focus = "none";
-    instructionEn = step.instruction_en || instructionEn || "Say an example aloud, or continue.";
+    if (sayTargetJp) {
+      focus = "say";
+      sayLabel = "Say this line";
+      instructionEn =
+        step.instruction_en || instructionEn || "Grammar drill — say the Japanese line below.";
+    } else {
+      focus = "none";
+      instructionEn =
+        step.instruction_en || instructionEn || "Look at this pattern in your worksheet, then continue.";
+    }
   } else if (expects) {
     focus = sayTargetJp || sayAlternates.length ? "say" : "none";
     if (substep === "select") {

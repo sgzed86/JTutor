@@ -51,23 +51,28 @@ activities:
   audio:
   - assets/audio/X_[03-01]_kiku1.mp3
   key_phrases:
+  - はじめまして
+  - トンです
+  - タイから来ました
   - よろしくお願いします
-  - 1始めまして、トンです
-  - 体からきました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
+  - jp: はじめまして
+    tags:
+    - short
+  - jp: トンです
+    tags:
+    - short
+    - polite
+  - jp: タイから来ました
+    tags:
+    - short
   - jp: よろしくお願いします
     tags:
     - short
     - polite
-  - jp: 1始めまして、トンです
-    tags:
-    - long
-    - polite
-  - jp: 体からきました
-    tags:
-    - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A2
   kind: listening
   book_activity: 2
@@ -76,25 +81,29 @@ activities:
   audio:
   - assets/audio/X_[03-02]_kiku2.mp3
   key_phrases:
+  - はじめまして
+  - ヤミンです
+  - ミャンマーから来ました
   - どうぞよろしくお願いします
-  - 2初めましてやみんです
-  - やんまわからきました
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
+  - jp: はじめまして
+    tags:
+    - short
+  - jp: ヤミンです
+    tags:
+    - short
+    - polite
+  - jp: ミャンマーから来ました
+    tags:
+    - long
   - jp: どうぞよろしくお願いします
     tags:
     - long
     - polite
-  - jp: 2初めましてやみんです
-    tags:
-    - long
-    - polite
-  - jp: やんまわからきました
-    tags:
-    - short
-  book_mode: listen_select
+  book_mode: listen_repeat_all
   picture_has_image: true
-  picture_hint_en: 'L03 activity 2: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: 'L03 activity 2: listen, then say each line of the self-intro.'
 - id: A3
   kind: listening
   book_activity: 3
@@ -103,16 +112,29 @@ activities:
   audio:
   - assets/audio/X_[03-03]_kiku3.mp3
   key_phrases:
-  - 3初めまして私はマルシアですブラジルからきましたよろしくお願いします
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  - はじめまして
+  - 私はマルシアです
+  - ブラジルから来ました
+  - よろしくお願いします
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
-  - jp: 3初めまして私はマルシアですブラジルからきましたよろしくお願いします
+  - jp: はじめまして
     tags:
-    - long
+    - short
+  - jp: 私はマルシアです
+    tags:
+    - short
     - polite
-  book_mode: listen_select
+  - jp: ブラジルから来ました
+    tags:
+    - short
+  - jp: よろしくお願いします
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
   picture_has_image: true
-  picture_hint_en: 'L03 activity 3: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: 'L03 activity 3: listen, then say each line of the self-intro.'
 - id: A4
   kind: listening
   book_activity: 4
@@ -121,16 +143,30 @@ activities:
   audio:
   - assets/audio/X_[03-04]_kiku4.mp3
   key_phrases:
-  - 4パクですパクソン人です韓国から来ましたどうぞよろしくお願いします
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  - パクです
+  - 韓国人です
+  - 韓国から来ました
+  - どうぞよろしくお願いします
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
-  - jp: 4パクですパクソン人です韓国から来ましたどうぞよろしくお願いします
+  - jp: パクです
+    tags:
+    - short
+    - polite
+  - jp: 韓国人です
+    tags:
+    - short
+    - polite
+  - jp: 韓国から来ました
+    tags:
+    - short
+  - jp: どうぞよろしくお願いします
     tags:
     - long
     - polite
-  book_mode: listen_select
+  book_mode: listen_repeat_all
   picture_has_image: true
-  picture_hint_en: 'L03 activity 4: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: 'L03 activity 4: listen, then say each line of the self-intro.'
 - id: A5
   kind: grammar_form
   book_activity: 5
@@ -139,27 +175,32 @@ activities:
   audio:
   - assets/audio/X_[03-05]_katachi.mp3
   key_phrases:
-  - ブラジルからきました
-  - 初めまして、トンです
+  - はじめまして
+  - トンです
+  - タイから来ました
   - 私はマルシアです
-  - 体からきました
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - ブラジルから来ました
+  prompt_en: Listen to the CD, then say each line one at a time (5 lines).
   phrase_meta:
-  - jp: ブラジルからきました
+  - jp: はじめまして
     tags:
     - short
-  - jp: 初めまして、トンです
+  - jp: トンです
     tags:
     - short
     - polite
+  - jp: タイから来ました
+    tags:
+    - short
   - jp: 私はマルシアです
     tags:
     - short
     - polite
-  - jp: 体からきました
+  - jp: ブラジルから来ました
     tags:
     - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A6
   kind: speaking
   book_activity: 6
@@ -168,21 +209,28 @@ activities:
   audio:
   - assets/audio/X_[03-06]_hanasu.mp3
   key_phrases:
-  - 始めましてトンです体から来ましたどうぞよろしくお願いします
-  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  - はじめまして
+  - トンです
+  - タイから来ました
+  - どうぞよろしくお願いします
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
-  - jp: 始めましてトンです体から来ましたどうぞよろしくお願いします
+  - jp: はじめまして
+    tags:
+    - short
+  - jp: トンです
+    tags:
+    - short
+    - polite
+  - jp: タイから来ました
+    tags:
+    - short
+  - jp: どうぞよろしくお願いします
     tags:
     - long
     - polite
-  book_mode: dialog
-  dialog_script:
-  - speaker: partner
-    jp: 始めましてトンです体から来ましたどうぞよろしくお願いします
-  - speaker: learner
-    jp: 始めましてトンです体から来ましたどうぞよろしくお願いします
-  dialog_listen_audio:
-  - assets/audio/X_[03-06]_hanasu.mp3
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A7
   kind: conversation
   book_activity: 7
@@ -191,36 +239,40 @@ activities:
   audio:
   - assets/audio/X_[03-07]_kaiwa.mp3
   key_phrases:
-  - 同じ会社です
-  - けまらさんも、ベトナムからですか
-  - みんなは、みんなさんは、友達ですか
   - ベトナムのどちらからですか
-  prompt_en: Listen to the conversation, then practice both roles.
+  - ハノイです
+  - ケマラさんも、ベトナムからですか
+  - ベトナムじゃないです
+  - みなさんは、友だちですか
+  - 同じ会社です
+  prompt_en: Listen to the CD, then say each line one at a time (6 lines).
   phrase_meta:
-  - jp: 同じ会社です
-    tags:
-    - short
-    - polite
-  - jp: けまらさんも、ベトナムからですか
-    tags:
-    - long
-    - polite
-  - jp: みんなは、みんなさんは、友達ですか
-    tags:
-    - long
-    - polite
   - jp: ベトナムのどちらからですか
     tags:
     - long
     - polite
-  book_mode: dialog
-  dialog_script:
-  - speaker: partner
-    jp: ベトナムのどちらからですか
-  - speaker: learner
-    jp: 同じ会社です
-  dialog_listen_audio:
-  - assets/audio/X_[03-07]_kaiwa.mp3
+  - jp: ハノイです
+    tags:
+    - short
+    - polite
+  - jp: ケマラさんも、ベトナムからですか
+    tags:
+    - long
+    - polite
+  - jp: ベトナムじゃないです
+    tags:
+    - short
+    - polite
+  - jp: みなさんは、友だちですか
+    tags:
+    - long
+    - polite
+  - jp: 同じ会社です
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A8
   kind: grammar_form
   book_activity: 8
@@ -229,14 +281,28 @@ activities:
   audio:
   - assets/audio/X_[03-08]_katachi1.mp3
   key_phrases:
-  - お名前はちゃんですご視聴はベトナムです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - お名前は？
+  - ちゃんです
+  - ご出身は？
+  - ベトナムです
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
-  - jp: お名前はちゃんですご視聴はベトナムです
+  - jp: お名前は？
     tags:
-    - long
+    - short
+  - jp: ちゃんです
+    tags:
+    - short
     - polite
-  book_mode: listen_repeat
+  - jp: ご出身は？
+    tags:
+    - short
+  - jp: ベトナムです
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A9
   kind: grammar_form
   book_activity: 9
@@ -245,14 +311,28 @@ activities:
   audio:
   - assets/audio/X_[03-09]_katachi2.mp3
   key_phrases:
-  - ケマラさんもベトナムからですかいいえみなさんは友達ですかはい
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - ケマラさんも、ベトナムからですか
+  - いいえ
+  - みなさんは、友だちですか
+  - はい
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
-  - jp: ケマラさんもベトナムからですかいいえみなさんは友達ですかはい
+  - jp: ケマラさんも、ベトナムからですか
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  - jp: いいえ
+    tags:
+    - short
+  - jp: みなさんは、友だちですか
+    tags:
+    - long
+    - polite
+  - jp: はい
+    tags:
+    - short
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A10
   kind: grammar_form
   book_activity: 10
@@ -261,12 +341,21 @@ activities:
   audio:
   - assets/audio/X_[03-10]_katachi3.mp3
   key_phrases:
-  - ちゃんさん、ご出身はベトナムですはいさんは私もベトナムですけまらさんもベトナムからですか
+  - ご出身は、ベトナムです
+  - 私もベトナムです
+  - ケマラさんも、ベトナムからですか
   - ベトナムじゃないです
-  - いいえ
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the CD, then say each line one at a time (4 lines).
   phrase_meta:
-  - jp: ちゃんさん、ご出身はベトナムですはいさんは私もベトナムですけまらさんもベトナムからですか
+  - jp: ご出身は、ベトナムです
+    tags:
+    - long
+    - polite
+  - jp: 私もベトナムです
+    tags:
+    - short
+    - polite
+  - jp: ケマラさんも、ベトナムからですか
     tags:
     - long
     - polite
@@ -274,10 +363,8 @@ activities:
     tags:
     - short
     - polite
-  - jp: いいえ
-    tags:
-    - short
-  book_mode: listen_repeat
+  book_mode: listen_repeat_all
+  picture_has_image: false
 - id: A11
   kind: speaking
   book_activity: 11
@@ -286,74 +373,120 @@ activities:
   audio:
   - assets/audio/X_[03-11]_hanasu.mp3
   key_phrases:
-  - お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
-  prompt_en: Practice speaking along with the model audio, then say it yourself.
+  - お名前は？
+  - ちゃんです
+  - ベトナムのどちらからですか
+  - ハノイです
+  - ベトナムじゃないです
+  prompt_en: Listen to the CD, then say each line one at a time (5 lines).
   phrase_meta:
-  - jp: お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
+  - jp: お名前は？
+    tags:
+    - short
+  - jp: ちゃんです
+    tags:
+    - short
+    - polite
+  - jp: ベトナムのどちらからですか
     tags:
     - long
     - polite
-  book_mode: dialog
-  dialog_script:
-  - speaker: partner
-    jp: お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
-  - speaker: learner
-    jp: お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
-  dialog_listen_audio:
-  - assets/audio/X_[03-11]_hanasu.mp3
+  - jp: ハノイです
+    tags:
+    - short
+    - polite
+  - jp: ベトナムじゃないです
+    tags:
+    - short
+    - polite
+  book_mode: listen_repeat_all
+  picture_has_image: false
 grammar:
 - point: N です
+  pattern_en: Name + です
+  prompt_jp: 名前を いってください。れい：トンです。
+  prompt_en: Say a name with です — like the worksheet example.
   worksheet_pages:
   - 2
-  examples: []
-- point: は N2 です
+  examples:
+  - jp: トンです
+    en: I'm Ton.
+  - jp: パクです
+    en: I'm Pak.
+  - jp: 私はマルシアです
+    en: I'm Marcia.
+- point: 【place】から来ました
+  pattern_en: Country + から来ました
+  prompt_jp: どこから きましたか。れい：タイから来ました。
+  prompt_en: Say where someone is from using から来ました.
   worksheet_pages:
   - 2
-  examples: []
-- point: A： はじめまして。マルシア（ ）。
-  worksheet_pages:
-  - 2
-  examples: []
-- point: A： こんにちは。田中
-  worksheet_pages:
-  - 2
-  examples: []
-- point: はじめまして。（自分
-  worksheet_pages:
-  - 2
-  examples: []
-- point: N は？
+  examples:
+  - jp: タイから来ました
+    en: I came from Thailand.
+  - jp: ブラジルから来ました
+    en: I came from Brazil.
+  - jp: ミャンマーから来ました
+    en: I came from Myanmar.
+  - jp: 韓国から来ました
+    en: I came from Korea.
+- point: お名前は？
+  pattern_en: Ask someone's name
+  prompt_jp: 名前を きいてください。お名前は？
+  prompt_en: Ask someone's name.
   worksheet_pages:
   - 3
-  examples: []
-- point: A： こんにちは、金子
+  examples:
+  - jp: お名前は？
+    en: What's your name?
+  - jp: お名前は
+    en: What's your name?
+- point: ご出身は？
+  pattern_en: Ask where someone is from
+  prompt_jp: 出身を きいてください。ご出身は？
+  prompt_en: Ask where they are from.
   worksheet_pages:
   - 3
-  examples: []
-- point: A： トンさんは、（タイからです → ）？
+  examples:
+  - jp: ご出身は？
+    en: Where are you from?
+  - jp: ご出身は
+    en: Where are you from?
+- point: S か？
+  pattern_en: Yes/no question with か
+  prompt_jp: か をつけて しつもんに してください。れい：タイからですか。
+  prompt_en: Make a yes/no question with か — say one of the lines below.
   worksheet_pages:
   - 3
-  examples: []
+  examples:
+  - jp: タイからですか
+    en: Are you from Thailand?
+  - jp: 友だちですか
+    en: Are you friends?
+  - jp: トンさんですか
+    en: Are you Ton?
 - point: N も
+  pattern_en: も = also / too
+  prompt_jp: も をつかって いってください。
+  prompt_en: Use も (also). Say that Kemara is also from Vietnam — or that you are too.
   worksheet_pages:
   - 4
-  examples: []
+  examples:
+  - jp: ケマラさんも、ベトナムからですか
+    en: Is Kemara also from Vietnam?
+  - jp: 私もベトナムです
+    en: I'm also from Vietnam.
 - point: N じゃないです
+  pattern_en: じゃないです = is not
+  prompt_jp: ちがうとき いってください。れい：ベトナムじゃないです。
+  prompt_en: Say that something is NOT true with じゃないです.
   worksheet_pages:
   - 4
-  examples: []
-- point: A： ジェインさんは、ミャンマーからですか？
-  worksheet_pages:
-  - 4
-  examples: []
-- point: A： トンさんは、ベトナムからですか？
-  worksheet_pages:
-  - 4
-  examples: []
-- point: A： はじめまして。アニカです。
-  worksheet_pages:
-  - 4
-  examples: []
+  examples:
+  - jp: ベトナムじゃないです
+    en: I'm not from Vietnam.
+  - jp: タイじゃないです
+    en: I'm not from Thailand.
 vocab: []
 quiz_bank:
 - type: roleplay
@@ -419,50 +552,33 @@ quiz_scenarios:
   expected:
   - よろしく
   hint_en: Again — 初めて会った人に簡単な定型表現を使うことができる。
-- can_do_id: CD_L03_09
-  partner_jp: 始めましてトンです体から来ましたどうぞよろしくお願いします
-  expected:
-  - 始めましてトンです体から来ましたどうぞよろしくお願いします
-  hint_en: Reply as in the book dialog (activity 6).
 - can_do_id: CD_L03_07
-  partner_jp: ベトナムのどちらからですか
+  partner_jp: はじめまして。
   expected:
-  - 同じ会社です
-  - けまらさんも、ベトナムからですか
-  - みんなは、みんなさんは、友達ですか
-  - ベトナムのどちらからですか
-  hint_en: Reply as in the book dialog (activity 7).
-- can_do_id: CD_L03_08
-  partner_jp: お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
-  expected:
-  - お名前はちゃんですご視聖はベトナムからきましたベトナムのどちらからですかはのいですそうですかケマラさんをベトナムからですかいいえベトナムじゃないです私は看望地だからきました
-  hint_en: Reply as in the book dialog (activity 11).
-- can_do_id: CD_L03_07
-  partner_jp: よろしくお願いします。
-  expected:
+  - はじめまして
+  - トンです
+  - タイから来ました
   - よろしくお願いします
-  - 1始めまして、トンです
-  - 体からきました
-  - 4パクですパクソン人です韓国から来ましたどうぞよろしくお願いします
   - です
   - から来ました
   hint_en: Can give a simple self-introduction (name, country/hometown).
 - can_do_id: CD_L03_08
-  partner_jp: どうぞよろしくお願いします。
+  partner_jp: はじめまして。
   expected:
+  - はじめまして
+  - ヤミンです
+  - ミャンマーから来ました
   - どうぞよろしくお願いします
-  - 2初めましてやみんです
-  - やんまわからきました
-  - ブラジルからきました
   - お名前
   - どこ
   hint_en: Can ask someone's name and where they are from.
 - can_do_id: CD_L03_09
-  partner_jp: 3初めまして私はマルシアですブラジルからきましたよろしくお願いします。
+  partner_jp: はじめまして。
   expected:
-  - 3初めまして私はマルシアですブラジルからきましたよろしくお願いします
-  - 始めましてトンです体から来ましたどうぞよろしくお願いします
-  - ケマラさんもベトナムからですかいいえみなさんは友達ですかはい
+  - はじめまして
+  - 私はマルシアです
+  - ブラジルから来ました
+  - よろしくお願いします
   - よろしく
   hint_en: Can use simple set phrases when meeting someone for the first time.
 english_notes: 'What do you say when you are introducing yourself to someone you are meeting for the first
@@ -529,3 +645,4 @@ english_notes: 'What do you say when you are introducing yourself to someone you
 
   Can write your name and country on a name tag, etc.'
 unlock_requires_mastery: true
+schema_version: 1

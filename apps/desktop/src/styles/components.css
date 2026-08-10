@@ -478,7 +478,58 @@
   box-shadow: var(--shadow-2);
   aspect-ratio: 3 / 4;
 }
-.avatar__svg { display: block; width: 100%; height: 100%; }
+.avatar__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.avatar__photo--mouth,
+.avatar__photo--blink,
+.avatar__photo--fade-out {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.avatar__photo--mouth {
+  /* Only swap the mouth region so the face doesn't jump between frames. */
+  -webkit-mask-image: radial-gradient(
+    ellipse 36% 22% at 50% 57%,
+    #000 0%,
+    #000 55%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 36% 22% at 50% 57%,
+    #000 0%,
+    #000 55%,
+    transparent 78%
+  );
+  transition: opacity 40ms linear;
+  z-index: 1;
+}
+.avatar__photo--blink {
+  transition: opacity 80ms ease;
+  z-index: 2;
+}
+.avatar__photo--fade-out {
+  animation: avatar-fade-out 0.3s ease forwards;
+  z-index: 1;
+}
+@keyframes avatar-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.avatar[data-alive="1"] .avatar__frame {
+  animation: avatar-breathe 3.8s ease-in-out infinite;
+}
+@keyframes avatar-breathe {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
 .avatar__ring {
   position: absolute;
   inset: 0;
@@ -486,12 +537,28 @@
   pointer-events: none;
   box-shadow: inset 0 0 0 2px transparent;
   transition: box-shadow var(--dur-base) var(--ease);
+  z-index: 3;
 }
 .avatar[data-mood="speaking"] .avatar__ring { box-shadow: inset 0 0 0 2px var(--accent); }
 .avatar[data-mood="listening"] .avatar__ring { box-shadow: inset 0 0 0 2px var(--teal); }
 .avatar[data-mood="thinking"] .avatar__ring { box-shadow: inset 0 0 0 2px var(--border-strong); }
 .avatar[data-mood="celebrating"] .avatar__ring { box-shadow: inset 0 0 0 2px var(--success); }
 .avatar[data-mood="encouraging"] .avatar__ring { box-shadow: inset 0 0 0 2px var(--warning); }
+.avatar[data-mood="celebrating"] .avatar__frame {
+  animation: avatar-celebrate 0.75s var(--ease);
+}
+@keyframes avatar-celebrate {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .avatar[data-mood="celebrating"] .avatar__frame,
+  .avatar[data-alive="1"] .avatar__frame { animation: none; }
+  .avatar__photo--mouth,
+  .avatar__photo--blink { transition: none; }
+  .avatar__photo--fade-out { animation: none; opacity: 0; }
+}
 
 .avatar__caption {
   display: flex;
@@ -888,6 +955,62 @@
   gap: var(--sp-2);
   padding: var(--sp-3) var(--sp-5);
   border-top: 1px solid var(--border);
+}
+
+.welcome-back {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+.welcome-back__lead {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: var(--lh-body);
+}
+.welcome-back__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding: var(--sp-4);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  background: var(--surface-sunken);
+}
+.welcome-back__id {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.welcome-back__title {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+.welcome-back__book { font-size: var(--fs-xs); }
+.welcome-back__phase {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.welcome-back__bar {
+  margin-top: var(--sp-2);
+  height: 4px;
+  border-radius: var(--r-full);
+  background: color-mix(in srgb, var(--border) 80%, transparent);
+  overflow: hidden;
+}
+.welcome-back__bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--teal, #5bb8a8), var(--accent));
+}
+.page-loading {
+  display: grid;
+  place-items: center;
+  min-height: 40vh;
+  padding: var(--sp-8);
 }
 
 .settings-layout {

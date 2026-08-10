@@ -282,11 +282,11 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
             jp = "聞いて、言いましょう。CDを きいてください。"
             n = len(phrases)
             en = (
-                f"Listen to the CD (0–10), then repeat each number ({n} in all)."
-                if n
-                else "Listen to the CD, then repeat each phrase."
+                activity.get("prompt_en")
+                or (f"Listen to the CD, then say each line one at a time ({n} lines)." if n else
+                    "Listen to the CD, then repeat each phrase.")
             )
-            up_next = f"Next you will say each number, starting with: {phrases[0]}" if phrases else None
+            up_next = f"Next you will say each line, starting with: {phrases[0]}" if phrases else None
         elif mode == "listen_repeat":
             jp = "聞いて、言いましょう。CDを きいてください。"
             en = "Listen and repeat — play the CD, then say the phrase."
@@ -526,14 +526,27 @@ def expected_phrases_for_substep(activity: dict, quiz_index: int) -> list[str]:
     return phrases
 
 
+def _grammar_examples(point: dict) -> list[str]:
+    expected: list[str] = []
+    for ex in point.get("examples") or []:
+        if isinstance(ex, dict) and ex.get("jp"):
+            expected.append(str(ex["jp"]).strip())
+        elif isinstance(ex, str) and ex.strip():
+            expected.append(ex.strip())
+    return [e for e in expected if e]
+
+
 def grammar_intro(lesson_id: str) -> tuple[str, str, dict]:
     pts = _grammar_for_lesson(lesson_id)
     if not pts:
         jp = "この れっすんに ぶんぽうシートは ありません。Can-do テストに いきます。"
         en = "No grammar worksheet for this lesson — moving to Can-do checks."
     else:
-        jp = f"ぶんぽうの れんしゅう です。{len(pts)} こ あります。"
-        en = f"Grammar worksheet — {len(pts)} items. Say the pattern or an example aloud."
+        jp = f"ぶんぽうの れんしゅう です。{len(pts)} こ あります。つぎの ぶんを いってください。"
+        en = (
+            f"Grammar practice — {len(pts)} short drills. "
+            "Say the Japanese line shown for each one (open your grammar worksheet if you like)."
+        )
     step = {
         "phase": "grammar",
         "play_audio": [],
@@ -544,38 +557,55 @@ def grammar_intro(lesson_id: str) -> tuple[str, str, dict]:
         "auto_advance": False,
         "graded": False,
         "grammar_count": len(pts),
+        "instruction_en": en,
     }
     return jp, en, step
 
 
 def grammar_item(point: dict, index: int, total: int) -> tuple[str, str, dict]:
-    p = (point.get("point") or "")[:40]
-    examples = point.get("examples") or []
-    expected: list[str] = []
-    for ex in examples:
-        if isinstance(ex, dict) and ex.get("jp"):
-            expected.append(str(ex["jp"]))
-        elif isinstance(ex, str) and ex.strip():
-            expected.append(ex.strip())
-    jp = f"ぶんぽう {index + 1}。{p}。れいを いってみてください。"
-    en = f"Grammar {index + 1}/{total}: {point.get('point')}"
+    """One clear speakable drill — never ask the learner to recite a pattern label."""
+    expected = _grammar_examples(point)
+    target = expected[0] if expected else None
+    pattern = (point.get("point") or "").strip()
+    pattern_en = (point.get("pattern_en") or pattern).strip()
+    prompt_en = (point.get("prompt_en") or "").strip()
+    prompt_jp = (point.get("prompt_jp") or "").strip()
+
+    if target:
+        jp = prompt_jp or f"ぶんぽう {index + 1}。つぎを いってください。{target}"
+        en = prompt_en or f"Say this example: {target}"
+        if target not in en:
+            en = f"{en} Say: {target}"
+        instruction = prompt_en or f"Grammar {index + 1}/{total} ({pattern_en}) — say the line below."
+    else:
+        # Fallback for uncurated extracts: explain the pattern, allow Skip/Next.
+        jp = f"ぶんぽう {index + 1}。{pattern}。ワークシートを みてください。"
+        en = (
+            f"Grammar {index + 1}/{total}: {pattern_en}. "
+            "Look at this pattern in your grammar worksheet, then tap Next."
+        )
+        instruction = en
+
     step = {
         "phase": "grammar",
         "play_audio": [],
         "audio": [],
-        "expect_speech": True,
-        "expects_speech": True,
+        "expect_speech": bool(target),
+        "expects_speech": bool(target),
         "auto_advance_after_audio": False,
         "auto_advance": False,
-        "graded": False,
+        "graded": bool(target),
         "grammar_index": index,
         "grammar_total": total,
-        "grammar_point": point.get("point"),
+        "grammar_point": pattern,
+        "grammar_pattern_en": pattern_en,
         "substep_index": index,
         "substep_total": total,
-        "instruction_en": f"Grammar {index + 1} of {total} — say an example aloud",
+        "instruction_en": instruction,
         "expected_phrases": expected,
-        "say_target_jp": expected[0] if expected else None,
+        "say_target_jp": target,
+        "say_alternates_jp": expected[1:4],
+        "book_substep": "grammar_say" if target else "grammar_read",
     }
     return jp, en, step
 

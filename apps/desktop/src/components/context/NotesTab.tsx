@@ -31,6 +31,12 @@ export function NotesTab({ payload }: { payload: TutorPayload | null }) {
         {grammar.map((g, i) => (
           <div className="note-item" key={i} style={{ marginBottom: "var(--sp-2)" }}>
             <span className="note-item__title jp">{g.point}</span>
+            {g.pattern_en && <span className="muted">{g.pattern_en}</span>}
+            {g.prompt_en && (
+              <span className="muted" style={{ fontSize: "var(--fs-xs)" }}>
+                {g.prompt_en}
+              </span>
+            )}
           </div>
         ))}
       </section>

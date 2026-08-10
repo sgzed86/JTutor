@@ -42,7 +42,11 @@
       {
         "from": "content",
         "to": "content",
-        "filter": ["**/*", "!**/pdf_extract.json", "!**/grammar_extract.json"]
+        "filter": [
+          "**/*",
+          "!**/pdf_extract.json",
+          "!**/grammar_extract.json"
+        ]
       },
       {
         "from": "apps/desktop/dist",
@@ -54,15 +58,21 @@
       }
     ],
     "win": {
-      "target": ["nsis"],
+      "target": [
+        "nsis"
+      ],
       "signAndEditExecutable": false
     },
     "mac": {
-      "target": ["dmg"],
+      "target": [
+        "dmg"
+      ],
       "category": "public.app-category.education"
     },
     "linux": {
-      "target": ["AppImage"],
+      "target": [
+        "AppImage"
+      ],
       "category": "Education"
     },
     "nsis": {
@@ -75,8 +85,8 @@
   },
   "devDependencies": {
     "concurrently": "^9.1.0",
-    "electron": "^33.2.0",
-    "electron-builder": "^25.1.8",
+    "electron": "^43.3.0",
+    "electron-builder": "^26.15.3",
     "wait-on": "^8.0.1"
   }
 }

@@ -18,19 +18,85 @@ def _jp_len(s: str) -> int:
     return len(_JP_RE.findall(s))
 
 
+# Common Whisper glitches on Irodori Starter classroom audio.
+_WHISPER_FIXES: tuple[tuple[str, str], ...] = (
+    (r"^(\d{1,2})(?=[\u3040-\u30ff\u4e00-\u9fff])", ""),  # leading track digits
+    ("ご視聴", "ご出身"),
+    ("ご視聖", "ご出身"),
+    ("ご主信", "ご出身"),
+    ("体から", "タイから"),
+    ("やんまわ", "ミャンマー"),
+    ("パクソン人", "韓国人"),
+    ("増えです", "ハノイです"),
+    ("はのい", "ハノイ"),
+    ("貢猛地", "カンボジア"),
+    ("看望地", "カンボジア"),
+    ("始めまして", "はじめまして"),
+    ("初めまして", "はじめまして"),
+    # L04 family / age / home
+    ("ピリピン", "フィリピン"),
+    ("喜しく", "よろしく"),
+    ("赤場", "赤羽"),
+    ("参細", "3歳"),
+    ("死ぬやま", "下山"),
+    ("二乗へ", "井上"),
+    ("イモート", "いもうと"),
+    ("お父と", "おとうと"),
+    ("ペットの上", "ペットのジョン"),
+    ("雨の子供", "あねの子ども"),
+)
+
+
+def cleanup_transcript(text: str) -> str:
+    """Normalize Whisper text before phrase picking."""
+    s = _norm(text)
+    if not s:
+        return ""
+    for pat, repl in _WHISPER_FIXES:
+        s = re.sub(pat, repl, s)
+    # Break run-on intros after clause endings / before set greetings.
+    s = re.sub(r"(です)(?=[\u3040-\u30ff\u4e00-\u9fff])", r"\1。", s)
+    s = re.sub(r"(ました)(?=[\u3040-\u30ff\u4e00-\u9fff])", r"\1。", s)
+    s = re.sub(r"(?<![。])(はじめまして)", r"。\1", s)
+    s = re.sub(r"(?<![。])(どうぞ?よろしくお願いします)", r"。\1", s)
+    s = re.sub(r"。+", "。", s).strip("。")
+    return s
+
+
 def split_sentences(text: str) -> list[str]:
-    text = _norm(text)
+    text = cleanup_transcript(text)
     if not text:
         return []
     parts = re.split(r"(?<=[。！？!?])", text)
     out: list[str] = []
     for p in parts:
         p = p.strip("。！？!?、，,. ")
+        # Drop leftover bare track numbers / tiny fragments
+        if re.fullmatch(r"\d{1,2}", p):
+            continue
         if _jp_len(p) >= 2:
             out.append(p)
     if not out and _jp_len(text) >= 2:
         out = [text]
-    return out
+    # Prefer speakable chunks: split still-too-long intros on です／ました
+    refined: list[str] = []
+    for p in out:
+        if _jp_len(p) <= 28:
+            refined.append(p)
+            continue
+        chunks = re.split(r"(?<=です)|(?<=ました)|(?<=ます)", p)
+        buf = ""
+        for ch in chunks:
+            ch = ch.strip("。 ")
+            if not ch:
+                continue
+            buf += ch
+            if _jp_len(buf) >= 6 and re.search(r"(です|ました|ます|ください)$", buf):
+                refined.append(buf)
+                buf = ""
+        if buf and _jp_len(buf) >= 2:
+            refined.append(buf)
+    return refined or out
 
 
 def _score_phrase(s: str, kind: str) -> float:

@@ -21,6 +21,23 @@ _SENTENCE_END = re.compile(r"(?<=[。！？!?…])\s*")
 
 MAX_SYNTH_CHARS = 300
 
+# VOICEVOX often reads lexical は as the topic particle /wa/. Katakana ハ
+# forces /ha/. Apply longer / overlapping forms first so 「わたしははは」 keeps
+# the particle /wa/ and only mother becomes /haha/.
+_HA_READING_FIXES: tuple[tuple[str, str], ...] = (
+    ("ははは", "はハハ"),  # particle は + mother はは
+    ("はは", "ハハ"),  # mother — otherwise "wawa"
+    ("はち", "ハチ"),  # eight — bare/compound forms otherwise "wachi"
+)
+
+
+def force_lexical_ha(text: str) -> str:
+    """Rewrite lexical は so VOICEVOX says /ha/, not particle /wa/."""
+    out = text or ""
+    for src, dst in _HA_READING_FIXES:
+        out = out.replace(src, dst)
+    return out
+
 
 def speakable_text(raw: str, *, drop_latin_when_jp: bool = True) -> str:
     """Strip markup and English glosses so the engine speaks the tutor line."""
@@ -33,7 +50,7 @@ def speakable_text(raw: str, *, drop_latin_when_jp: bool = True) -> str:
         # VOICEVOX spells out long Latin runs letter by letter; drop them when
         # there is Japanese to say instead.
         text = _WS.sub(" ", _LATIN_RUN.sub(" ", text)).strip()
-    return text
+    return force_lexical_ha(text)
 
 
 def has_japanese(text: str) -> bool:

@@ -168,7 +168,14 @@ export type SelfCheckSummary = {
   self_comment?: string | null;
 };
 
-export type GrammarPoint = { point: string; worksheet_pages?: unknown[] };
+export type GrammarPoint = {
+  point: string;
+  worksheet_pages?: unknown[];
+  pattern_en?: string;
+  prompt_en?: string;
+  prompt_jp?: string;
+  examples?: Array<string | { jp: string; en?: string }>;
+};
 export type VocabItem = { jp?: string; en?: string };
 
 export type TutorPayload = {
@@ -207,10 +214,24 @@ export type LessonSummary = {
   can_dos: CanDo[];
 };
 
+export type ResumeHint = {
+  lesson_id: string;
+  title_en?: string;
+  title_jp?: string;
+  phase?: string;
+  phase_label?: string;
+  phase_hint?: string;
+  percent?: number;
+  has_session?: boolean;
+  activity_id?: string | null;
+  updated_at?: string | null;
+};
+
 export type ProgressOverview = {
   book_id?: string;
   book_title?: string;
   lessons: LessonSummary[];
+  resume?: ResumeHint | null;
 };
 
 export type ServiceState = { ok: boolean; required: boolean };

@@ -296,6 +296,8 @@ def _lesson_phrase_bank(lesson: dict) -> list[str]:
 
 
 async def ensure_session(db: Session, lesson_id: str) -> ChatSession:
+    from datetime import datetime
+
     session = (
         db.query(ChatSession)
         .filter(ChatSession.lesson_id == lesson_id)
@@ -303,6 +305,12 @@ async def ensure_session(db: Session, lesson_id: str) -> ChatSession:
         .first()
     )
     if session:
+        session.updated_at = datetime.utcnow()
+        lp = db.get(LessonProgress, lesson_id)
+        if lp:
+            lp.current_activity_id = session.activity_id
+            lp.updated_at = datetime.utcnow()
+        db.commit()
         return session
     tracks = flow.book_tracks(load_lesson(lesson_id))
     first_id = tracks[0]["id"] if tracks else None
@@ -316,6 +324,12 @@ async def ensure_session(db: Session, lesson_id: str) -> ChatSession:
         messages_json="[]",
     )
     db.add(session)
+    lp = db.get(LessonProgress, lesson_id)
+    if lp is None:
+        lp = LessonProgress(lesson_id=lesson_id, unlocked=True)
+        db.add(lp)
+    lp.current_activity_id = first_id
+    lp.updated_at = datetime.utcnow()
     db.commit()
     db.refresh(session)
     return session
@@ -825,14 +839,8 @@ async def user_message(
         pts = flow._grammar_for_lesson(lesson_id)
         idx = min(session.quiz_index, max(len(pts) - 1, 0)) if pts else 0
         point = pts[idx] if pts else {}
-        expected: list[str] = []
-        for ex in point.get("examples") or []:
-            if isinstance(ex, dict) and ex.get("jp"):
-                expected.append(str(ex["jp"]))
-            elif isinstance(ex, str) and ex.strip():
-                expected.append(ex.strip())
-        if not expected and point.get("point"):
-            expected = [str(point["point"])[:80]]
+        # Grade only against speakable examples — never against pattern labels like "N です".
+        expected = flow._grammar_examples(point)
         grade = None
         policy = current_policy()
         if expected:
@@ -844,12 +852,13 @@ async def user_message(
                 else grade.get("feedback_jp") or flow.feedback_retry(expected)
             )
             en = grade.get("feedback_en") or (
-                "Nice — next grammar point." if passed else "Try again or tap Next."
+                "Nice — next grammar drill." if passed else f"Try saying: {expected[0]}"
             )
         else:
-            passed = len(text.strip()) >= 4
+            # Uncurated point with no examples: accept any short Japanese attempt.
+            passed = len(text.strip()) >= 2
             reply = flow.feedback_pass_short() if passed else flow.feedback_retry([])
-            en = "Nice — next grammar point." if passed else "Say a little more, or tap Next."
+            en = "Nice — next." if passed else "Say a short Japanese example, or tap Next."
 
         if not passed:
             if pts:

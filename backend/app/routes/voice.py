@@ -111,6 +111,7 @@ def set_speed(body: SetSpeedIn):
 async def transcribe(
     file: UploadFile = File(...),  # noqa: B008 - FastAPI dependency marker
     language: str = Form("ja"),
+    hint: str = Form(""),
 ):
     suffix = Path(file.filename or "audio.webm").suffix or ".webm"
     with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
@@ -119,7 +120,9 @@ async def transcribe(
         tmp_path = Path(tmp.name)
     try:
         result = await transcription_service.transcribe(
-            tmp_path, language=None if language in ("", "auto") else language
+            tmp_path,
+            language=None if language in ("", "auto") else language,
+            initial_prompt=hint or None,
         )
     except Exception as e:  # noqa: BLE001 - reported as a typed problem envelope
         log_event("voice", "transcribe_error", error=str(e), bytes=len(data))

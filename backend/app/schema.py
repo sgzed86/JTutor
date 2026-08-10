@@ -94,9 +94,19 @@ class QuizScenario(Base):
     hint_en: str | None = None
 
 
+class GrammarExample(Base):
+    jp: str
+    en: str | None = None
+
+
 class GrammarPoint(Base):
     point: str
     worksheet_pages: list[Any] = Field(default_factory=list)
+    # Optional speakable drill fields (curated lessons).
+    pattern_en: str | None = None
+    prompt_en: str | None = None
+    prompt_jp: str | None = None
+    examples: list[GrammarExample | str] = Field(default_factory=list)
 
 
 class VocabItem(Base):

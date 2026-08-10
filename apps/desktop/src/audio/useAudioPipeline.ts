@@ -75,8 +75,9 @@ export function useAudioPipeline(options: Options): AudioPipeline {
       const source = ctx.createMediaElementSource(elementRef.current);
       const gain = ctx.createGain();
       const analyser = ctx.createAnalyser();
-      analyser.fftSize = 512;
-      analyser.smoothingTimeConstant = 0.7;
+      // Faster meter for lip-sync; avatar does its own syllable smoothing.
+      analyser.fftSize = 1024;
+      analyser.smoothingTimeConstant = 0.35;
       source.connect(gain);
       gain.connect(analyser);
       analyser.connect(ctx.destination);
@@ -91,20 +92,35 @@ export function useAudioPipeline(options: Options): AudioPipeline {
 
   const startMeter = useCallback(() => {
     if (rafRef.current !== null) return;
-    const buffer = new Uint8Array(256);
+    const time = new Uint8Array(1024);
+    const freq = new Uint8Array(512);
     const tick = () => {
       const analyser = analyserRef.current;
-      if (!analyser) {
+      const ctx = ctxRef.current;
+      if (!analyser || !ctx) {
         rafRef.current = null;
         return;
       }
-      analyser.getByteTimeDomainData(buffer);
+      analyser.getByteTimeDomainData(time);
+      analyser.getByteFrequencyData(freq);
+
+      // Broadband RMS (keeps waveform meters honest).
       let sum = 0;
-      for (let i = 0; i < buffer.length; i += 1) {
-        const v = (buffer[i] - 128) / 128;
+      for (let i = 0; i < time.length; i += 1) {
+        const v = (time[i] - 128) / 128;
         sum += v * v;
       }
-      setLevel(Math.min(1, Math.sqrt(sum / buffer.length) * 3));
+      const rms = Math.sqrt(sum / time.length);
+
+      // Speech-band energy (~300Hz–3kHz) tracks vowels / mouth opening better.
+      const binHz = ctx.sampleRate / analyser.fftSize;
+      const lo = Math.max(1, Math.floor(300 / binHz));
+      const hi = Math.min(freq.length - 1, Math.ceil(3000 / binHz));
+      let speech = 0;
+      for (let i = lo; i <= hi; i += 1) speech += freq[i];
+      speech = speech / ((hi - lo + 1) * 255);
+
+      setLevel(Math.min(1, Math.max(rms * 2.8, speech * 1.8)));
       rafRef.current = requestAnimationFrame(tick);
     };
     rafRef.current = requestAnimationFrame(tick);

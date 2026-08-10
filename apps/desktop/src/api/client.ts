@@ -223,10 +223,16 @@ export const api = {
     return r.blob();
   },
 
-  transcribe: async (blob: Blob, language = "ja", signal?: AbortSignal): Promise<Transcript> => {
+  transcribe: async (
+    blob: Blob,
+    language = "ja",
+    signal?: AbortSignal,
+    hint?: string,
+  ): Promise<Transcript> => {
     const form = new FormData();
     form.append("file", blob, "speech.webm");
     form.append("language", language);
+    if (hint?.trim()) form.append("hint", hint.trim().slice(0, 200));
     return request<Transcript>("/voice/transcribe", {
       method: "POST",
       body: form,

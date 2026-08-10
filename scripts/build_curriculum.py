@@ -19,6 +19,7 @@ AUDIO_INDEX = STARTER / "audio_index.json"
 AUDIO_TRANSCRIPTS = STARTER / "audio_transcripts.json"
 PDF_EXTRACT = STARTER / "pdf_extract.json"
 SCRIPT_EXTRACT = STARTER / "script_extract.json"
+GRAMMAR_EXTRACT = STARTER / "grammar_extract.json"
 
 # Curated English can-dos from Irodori Starter TOC (fallback / merge)
 CURATED_CANDOS: dict[int, list[tuple[int, str, str, list[str]]]] = {
@@ -568,6 +569,424 @@ def apply_l02_phrases(activities: list[dict]) -> None:
             a["key_phrases"] = list(L02_PHRASE_BY_ACTIVITY[n])
 
 
+# L03 self-intro (CD 03-XX). One short line per graded step (listen_repeat_all).
+# Order matches the spoken intro: greeting → name → origin → closing.
+L03_PHRASE_BY_ACTIVITY: dict[int, list[str]] = {
+    1: ["はじめまして", "トンです", "タイから来ました", "よろしくお願いします"],
+    2: ["はじめまして", "ヤミンです", "ミャンマーから来ました", "どうぞよろしくお願いします"],
+    3: ["はじめまして", "私はマルシアです", "ブラジルから来ました", "よろしくお願いします"],
+    4: ["パクです", "韓国人です", "韓国から来ました", "どうぞよろしくお願いします"],
+    5: ["はじめまして", "トンです", "タイから来ました", "私はマルシアです", "ブラジルから来ました"],
+    6: ["はじめまして", "トンです", "タイから来ました", "どうぞよろしくお願いします"],
+    7: [
+        "ベトナムのどちらからですか",
+        "ハノイです",
+        "ケマラさんも、ベトナムからですか",
+        "ベトナムじゃないです",
+        "みなさんは、友だちですか",
+        "同じ会社です",
+    ],
+    8: ["お名前は？", "ちゃんです", "ご出身は？", "ベトナムです"],
+    9: ["ケマラさんも、ベトナムからですか", "いいえ", "みなさんは、友だちですか", "はい"],
+    10: ["ご出身は、ベトナムです", "私もベトナムです", "ケマラさんも、ベトナムからですか", "ベトナムじゃないです"],
+    11: ["お名前は？", "ちゃんです", "ベトナムのどちらからですか", "ハノイです", "ベトナムじゃないです"],
+}
+
+# Short Q/A only — full self-intros use listen_repeat_all (one line at a time).
+L03_DIALOG_BY_ACTIVITY: dict[int, tuple[str, str]] = {}
+
+# Activities that drill every key_phrase in order after one CD listen.
+L03_LISTEN_REPEAT_ALL: set[int] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+
+# Curated grammar drills from the L3 worksheet (speakable lines, not PDF scraps).
+L03_GRAMMAR: list[dict] = [
+    {
+        "point": "N です",
+        "pattern_en": "Name + です",
+        "prompt_jp": "名前を いってください。れい：トンです。",
+        "prompt_en": "Say a name with です — like the worksheet example.",
+        "worksheet_pages": [2],
+        "examples": [
+            {"jp": "トンです", "en": "I'm Ton."},
+            {"jp": "パクです", "en": "I'm Pak."},
+            {"jp": "私はマルシアです", "en": "I'm Marcia."},
+        ],
+    },
+    {
+        "point": "【place】から来ました",
+        "pattern_en": "Country + から来ました",
+        "prompt_jp": "どこから きましたか。れい：タイから来ました。",
+        "prompt_en": "Say where someone is from using から来ました.",
+        "worksheet_pages": [2],
+        "examples": [
+            {"jp": "タイから来ました", "en": "I came from Thailand."},
+            {"jp": "ブラジルから来ました", "en": "I came from Brazil."},
+            {"jp": "ミャンマーから来ました", "en": "I came from Myanmar."},
+            {"jp": "韓国から来ました", "en": "I came from Korea."},
+        ],
+    },
+    {
+        "point": "お名前は？",
+        "pattern_en": "Ask someone's name",
+        "prompt_jp": "名前を きいてください。お名前は？",
+        "prompt_en": "Ask someone's name.",
+        "worksheet_pages": [3],
+        "examples": [
+            {"jp": "お名前は？", "en": "What's your name?"},
+            {"jp": "お名前は", "en": "What's your name?"},
+        ],
+    },
+    {
+        "point": "ご出身は？",
+        "pattern_en": "Ask where someone is from",
+        "prompt_jp": "出身を きいてください。ご出身は？",
+        "prompt_en": "Ask where they are from.",
+        "worksheet_pages": [3],
+        "examples": [
+            {"jp": "ご出身は？", "en": "Where are you from?"},
+            {"jp": "ご出身は", "en": "Where are you from?"},
+        ],
+    },
+    {
+        "point": "S か？",
+        "pattern_en": "Yes/no question with か",
+        "prompt_jp": "か をつけて しつもんに してください。れい：タイからですか。",
+        "prompt_en": "Make a yes/no question with か — say one of the lines below.",
+        "worksheet_pages": [3],
+        "examples": [
+            {"jp": "タイからですか", "en": "Are you from Thailand?"},
+            {"jp": "友だちですか", "en": "Are you friends?"},
+            {"jp": "トンさんですか", "en": "Are you Ton?"},
+        ],
+    },
+    {
+        "point": "N も",
+        "pattern_en": "も = also / too",
+        "prompt_jp": "も をつかって いってください。",
+        "prompt_en": "Use も (also). Say that Kemara is also from Vietnam — or that you are too.",
+        "worksheet_pages": [4],
+        "examples": [
+            {"jp": "ケマラさんも、ベトナムからですか", "en": "Is Kemara also from Vietnam?"},
+            {"jp": "私もベトナムです", "en": "I'm also from Vietnam."},
+        ],
+    },
+    {
+        "point": "N じゃないです",
+        "pattern_en": "じゃないです = is not",
+        "prompt_jp": "ちがうとき いってください。れい：ベトナムじゃないです。",
+        "prompt_en": "Say that something is NOT true with じゃないです.",
+        "worksheet_pages": [4],
+        "examples": [
+            {"jp": "ベトナムじゃないです", "en": "I'm not from Vietnam."},
+            {"jp": "タイじゃないです", "en": "I'm not from Thailand."},
+        ],
+    },
+]
+
+
+def apply_l03_phrases(activities: list[dict]) -> None:
+    for a in activities:
+        n = int(a.get("book_activity") or 0)
+        if n in L03_PHRASE_BY_ACTIVITY:
+            a["key_phrases"] = list(L03_PHRASE_BY_ACTIVITY[n])
+            attach_phrase_meta(a)
+
+
+# ---------------------------------------------------------------------------
+# L04 — family / age / where you live (CD 04-XX)
+# Whisper mashed vocab lists and dialogs; book PDF used for correct lines.
+# ---------------------------------------------------------------------------
+L04_FAMILY: list[str] = [
+    "ちち",
+    "はは",
+    "あに",
+    "あね",
+    "おとうと",
+    "いもうと",
+    "おっと",
+    "つま",
+    "こども",
+]
+L04_NUMBERS_1_20: list[str] = [
+    "いち",
+    "に",
+    "さん",
+    "よん",
+    "ご",
+    "ろく",
+    "なな",
+    "はち",
+    "きゅう",
+    "じゅう",
+    "じゅういち",
+    "じゅうに",
+    "じゅうさん",
+    "じゅうよん",
+    "じゅうご",
+    "じゅうろく",
+    "じゅうなな",
+    "じゅうはち",
+    "じゅうきゅう",
+    "にじゅう",
+]
+L04_AGES_SMALL: list[str] = [
+    "1歳",
+    "3歳",
+    "4歳",
+    "6歳",
+    "9歳",
+    "10歳",
+    "12歳",
+    "13歳",
+    "14歳",
+    "15歳",
+    "16歳",
+    "17歳",
+    "18歳",
+    "19歳",
+    "20歳",
+]
+L04_TENS: list[str] = ["30", "40", "50", "60", "70", "80", "90"]
+L04_AGES_TENS: list[str] = ["30歳", "40歳", "50歳", "60歳", "70歳", "80歳", "90歳"]
+
+L04_PHRASE_BY_ACTIVITY: dict[int, list[str]] = {
+    1: list(L04_FAMILY),
+    2: [f"{w}です" for w in L04_FAMILY],
+    # 04-03 street: Himal + Shimoyama-sensei
+    3: ["こんにちは", "つまです", "ヒマルです", "よろしくお願いします"],
+    # 04-04 supermarket: Wu + Inoue (夫と子ども)
+    4: ["こんにちは", "夫と子どもです", "おっとと子どもです"],
+    # 04-05 factory: Lina + Ookawa family
+    5: ["紹介します", "リナです", "ちちです", "ははです", "あにです", "よろしくお願いします"],
+    # 04-06 event: Bat + Ishida (妹と弟)
+    6: ["紹介します", "いもうととおとうとです", "バトです", "よろしくお願いします"],
+    7: ["夫と子どもです", "いもうととおとうとです", "紹介します"],
+    # 04-08 conversation highlights (one line at a time)
+    8: [
+        "ミロです",
+        "フィリピンから来ました",
+        "よろしくお願いします",
+        "何歳ですか",
+        "25歳です",
+        "どこに住んでいますか",
+        "赤羽に住んでいます",
+        "家族はフィリピンに住んでいます",
+    ],
+    9: [
+        "何歳ですか",
+        "いくつですか",
+        "25歳です",
+        "どこに住んでいますか",
+        "赤羽に住んでいます",
+        "家族はフィリピンに住んでいます",
+    ],
+    10: list(L04_NUMBERS_1_20),
+    11: list(L04_AGES_SMALL),
+    12: list(L04_TENS),
+    13: list(L04_AGES_TENS),
+    14: ["25歳", "95歳", "99歳"],
+    15: ["はじめまして", "ミロです", "フィリピンから来ました", "よろしくお願いします"],
+    16: ["ミロさんは何歳ですか", "25歳です"],
+    17: ["どこに住んでいますか", "赤羽に住んでいます"],
+    # Photo talk
+    18: ["これ誰ですか", "私の母です", "ブラジルに住んでいます"],
+    19: ["これ誰ですか", "あねの子どもです", "かわいいですね", "3歳です"],
+    20: ["かわいいですね", "ペットのジョンです", "何歳ですか", "16歳です"],
+    21: ["これ誰ですか", "友達です", "東京に住んでいます"],
+    22: ["これ誰ですか", "私の母です", "あねの子どもです", "ペットのジョンです"],
+    23: ["これ誰ですか", "友達です", "どこに住んでいますか", "東京に住んでいます"],
+    24: ["これ誰ですか", "あねの子どもです", "何歳ですか", "3歳です"],
+}
+
+L04_DIALOG_BY_ACTIVITY: dict[int, tuple[str, str]] = {
+    16: ("ミロさんは何歳ですか", "25歳です"),
+    17: ("どこに住んでいますか", "赤羽に住んでいます"),
+    23: ("これ誰ですか", "友達です"),
+    24: ("これ誰ですか", "あねの子どもです"),
+}
+
+L04_LISTEN_REPEAT_ALL: set[int] = {
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    18,
+    19,
+    20,
+    21,
+    22,
+}
+
+L04_GRAMMAR: list[dict] = [
+    {
+        "point": "N1 と N2",
+        "pattern_en": "A and B (と)",
+        "prompt_jp": "ふたりを しょうかいしてください。れい：夫と子どもです。",
+        "prompt_en": "Introduce two people with と — say 夫と子どもです.",
+        "worksheet_pages": [5],
+        "examples": [
+            {"jp": "夫と子どもです"},
+            {"jp": "いもうととおとうとです"},
+            {"jp": "おっとと子どもです"},
+        ],
+    },
+    {
+        "point": "何歳ですか",
+        "pattern_en": "Ask someone's age",
+        "prompt_jp": "年を きいてください。何歳ですか。",
+        "prompt_en": "Ask how old someone is.",
+        "worksheet_pages": [5],
+        "examples": [
+            {"jp": "何歳ですか"},
+            {"jp": "いくつですか"},
+            {"jp": "おいくつですか"},
+        ],
+    },
+    {
+        "point": "【place】に住んでいます",
+        "pattern_en": "live in + place",
+        "prompt_jp": "どこに すんでいますか。れい：東京に住んでいます。",
+        "prompt_en": "Say where someone lives with に住んでいます.",
+        "worksheet_pages": [5],
+        "examples": [
+            {"jp": "東京に住んでいます"},
+            {"jp": "赤羽に住んでいます"},
+            {"jp": "フィリピンに住んでいます"},
+        ],
+    },
+    {
+        "point": "これ誰ですか",
+        "pattern_en": "Who is this? (photo)",
+        "prompt_jp": "しゃしんを みて きいてください。これ誰ですか。",
+        "prompt_en": "Ask who is in a photo.",
+        "worksheet_pages": [5],
+        "examples": [
+            {"jp": "これ誰ですか"},
+            {"jp": "これ、だれですか"},
+        ],
+    },
+    {
+        "point": "N1 の N2",
+        "pattern_en": "my / someone's + noun",
+        "prompt_jp": "だれの かぞくですか。れい：私の母です。",
+        "prompt_en": "Say who someone is with の — like 私の母です.",
+        "worksheet_pages": [6],
+        "examples": [
+            {"jp": "私の母です"},
+            {"jp": "あねの子どもです"},
+            {"jp": "ペットのジョンです"},
+        ],
+    },
+    {
+        "point": "かわいいですね",
+        "pattern_en": "react to a photo",
+        "prompt_jp": "かわいい とき いってください。",
+        "prompt_en": "React to a cute photo.",
+        "worksheet_pages": [5],
+        "examples": [
+            {"jp": "かわいいですね"},
+            {"jp": "そうですか"},
+        ],
+    },
+]
+
+
+def apply_l04_phrases(activities: list[dict]) -> None:
+    for a in activities:
+        n = int(a.get("book_activity") or 0)
+        if n in L04_PHRASE_BY_ACTIVITY:
+            a["key_phrases"] = list(L04_PHRASE_BY_ACTIVITY[n])
+            attach_phrase_meta(a)
+
+
+def apply_l04_book_flow_overrides(activities: list[dict]) -> None:
+    """L04: vocab/numbers/ages one-by-one; short dialogs for Q&A."""
+    for a in activities:
+        n = int(a.get("book_activity") or 0)
+        if n in L04_DIALOG_BY_ACTIVITY:
+            partner, learner = L04_DIALOG_BY_ACTIVITY[n]
+            a["book_mode"] = "dialog"
+            a["dialog_script"] = _dialog(partner, learner)
+            audio = list(a.get("audio") or [])
+            if audio:
+                a["dialog_listen_audio"] = audio[:2]
+            phrases = list(a.get("key_phrases") or [])
+            ordered = [learner, partner, *[p for p in phrases if p not in (learner, partner)]]
+            a["key_phrases"] = ordered
+            a["picture_has_image"] = False
+            a.pop("picture_hint_en", None)
+            a["prompt_en"] = "Listen, then practice the short question and answer."
+            attach_phrase_meta(a)
+            continue
+        if n in L04_LISTEN_REPEAT_ALL:
+            a["book_mode"] = "listen_repeat_all"
+            a.pop("dialog_script", None)
+            a.pop("dialog_listen_audio", None)
+            phrases = list(a.get("key_phrases") or [])
+            a["picture_has_image"] = n in (4, 5, 6, 18, 19, 20, 21)
+            if a["picture_has_image"]:
+                a["picture_hint_en"] = (
+                    f"L04 activity {n}: listen, then say each line one at a time."
+                )
+            else:
+                a.pop("picture_hint_en", None)
+            label = "words" if n in (1, 2, 10, 11, 12, 13, 14) else "lines"
+            a["prompt_en"] = (
+                f"Listen to the CD, then say each {label[:-1] if label.endswith('s') else label} "
+                f"one at a time ({len(phrases)} {label})."
+            )
+            attach_phrase_meta(a)
+
+
+def apply_l03_book_flow_overrides(activities: list[dict]) -> None:
+    """L03: one graded line at a time for intros; short dialogs only when needed."""
+    for a in activities:
+        n = int(a.get("book_activity") or 0)
+        if n in L03_DIALOG_BY_ACTIVITY:
+            partner, learner = L03_DIALOG_BY_ACTIVITY[n]
+            a["book_mode"] = "dialog"
+            a["dialog_script"] = _dialog(partner, learner)
+            audio = list(a.get("audio") or [])
+            if audio:
+                a["dialog_listen_audio"] = audio[:2]
+            phrases = list(a.get("key_phrases") or [])
+            if learner not in phrases:
+                phrases = [learner, *phrases]
+            a["key_phrases"] = phrases
+            a["picture_has_image"] = False
+            a.pop("picture_hint_en", None)
+            attach_phrase_meta(a)
+            continue
+        if n in L03_LISTEN_REPEAT_ALL:
+            a["book_mode"] = "listen_repeat_all"
+            a.pop("dialog_script", None)
+            a.pop("dialog_listen_audio", None)
+            phrases = list(a.get("key_phrases") or [])
+            a["picture_has_image"] = n in (2, 3, 4)
+            if a["picture_has_image"]:
+                a["picture_hint_en"] = (
+                    f"L03 activity {n}: listen, then say each line of the self-intro."
+                )
+            else:
+                a.pop("picture_hint_en", None)
+            a["prompt_en"] = (
+                f"Listen to the CD, then say each line one at a time "
+                f"({len(phrases)} lines)."
+            )
+            attach_phrase_meta(a)
+
+
 def apply_l02_book_flow_overrides(activities: list[dict]) -> None:
     """L02 fixes: numbers drill + dialog scripts aligned to official MP3s."""
     for a in activities:
@@ -1096,6 +1515,19 @@ def main() -> None:
                 apply_l02_phrases(activities)
                 apply_generic_book_flow(n, activities)
                 apply_l02_book_flow_overrides(activities)
+            elif n == 3:
+                # Prefer curated book lines — Whisper run-ons are unusable as say-targets.
+                if transcripts:
+                    apply_phrases_from_transcripts(n, activities, transcripts)
+                apply_l03_phrases(activities)
+                apply_generic_book_flow(n, activities)
+                apply_l03_book_flow_overrides(activities)
+            elif n == 4:
+                if transcripts:
+                    apply_phrases_from_transcripts(n, activities, transcripts)
+                apply_l04_phrases(activities)
+                apply_generic_book_flow(n, activities)
+                apply_l04_book_flow_overrides(activities)
             elif scripts.get(lid):
                 apply_phrases_from_scripts(n, activities, scripts[lid])
             elif transcripts:
@@ -1110,15 +1542,20 @@ def main() -> None:
             quiz_scenarios = build_quiz_scenarios(n, can_dos)
             quiz_scenarios = enrich_quiz_scenarios(n, activities, can_dos, quiz_scenarios)
             quiz_scenarios = enrich_quiz_from_activities(n, can_dos, activities, quiz_scenarios)
-            g = grammar.get("lessons", {}).get(lid, {})
-            grammar_points = [
-                {
-                    "point": p["point"],
-                    "worksheet_pages": [p["page"]],
-                    "examples": [],
-                }
-                for p in g.get("points", [])
-            ]
+            if n == 3:
+                grammar_points = [dict(p) for p in L03_GRAMMAR]
+            elif n == 4:
+                grammar_points = [dict(p) for p in L04_GRAMMAR]
+            else:
+                g = grammar.get("lessons", {}).get(lid, {})
+                grammar_points = [
+                    {
+                        "point": p["point"],
+                        "worksheet_pages": [p["page"]],
+                        "examples": [],
+                    }
+                    for p in g.get("points", [])
+                ]
             vocab = []
             for a in activities:
                 if a["kind"] == "vocabulary":

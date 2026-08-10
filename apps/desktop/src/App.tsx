@@ -5,6 +5,7 @@ import { LeftRail } from "./components/rail/LeftRail";
 import { ServiceIndicator } from "./components/shell/ServiceIndicator";
 import { SettingsDialog } from "./components/settings/SettingsDialog";
 import { SetupWizard } from "./components/onboarding/SetupWizard";
+import { WelcomeBack } from "./components/onboarding/WelcomeBack";
 import { ProgressPage } from "./pages/ProgressPage";
 import { SrsPage } from "./pages/SrsPage";
 import { TutorPage } from "./pages/TutorPage";
@@ -12,17 +13,20 @@ import { useHealth } from "./state/useHealth";
 import { useProgress } from "./state/useProgress";
 import type { BookInfo, ProgressSnapshot } from "./api/types";
 
+const WELCOME_KEY = "jtutor.welcomeShown";
+
 export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { lessons, current, refresh } = useProgress();
+  const { lessons, current, resume, loading, refresh } = useProgress();
   const { health, reachable, backendState, refresh: refreshHealth } = useHealth();
 
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [setupOpen, setSetupOpen] = useState(false);
+  const [welcomeOpen, setWelcomeOpen] = useState(false);
   const [contextOpen, setContextOpen] = useState(true);
   const [railOpen, setRailOpen] = useState(true);
-  const [activeLesson, setActiveLesson] = useState<string>("L01");
+  const [activeLesson, setActiveLesson] = useState<string>("");
   const [lessonProgress] = useState<ProgressSnapshot | null>(null);
   const [books, setBooks] = useState<BookInfo[]>([]);
   const [activeBook, setActiveBook] = useState("starter");
@@ -58,6 +62,30 @@ export default function App() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // After progress loads: resume the right lesson and show welcome-back once per launch.
+  useEffect(() => {
+    if (loading) return;
+    const resumeId = resume?.lesson_id ?? current?.lesson_id;
+    if (!resumeId) return;
+
+    if (!activeLesson) setActiveLesson(resumeId);
+
+    const onHome = location.pathname === "/" || location.pathname === "";
+    const stuckOnDefault =
+      location.pathname === "/tutor/L01" &&
+      resumeId !== "L01" &&
+      !sessionStorage.getItem(WELCOME_KEY);
+
+    if (onHome || stuckOnDefault) {
+      navigate(`/tutor/${resumeId}`, { replace: true });
+    }
+
+    if (!sessionStorage.getItem(WELCOME_KEY) && resume) {
+      sessionStorage.setItem(WELCOME_KEY, "1");
+      setWelcomeOpen(true);
+    }
+  }, [loading, resume, current, activeLesson, location.pathname, navigate]);
+
   const onProgressChanged = useCallback(() => {
     void refresh();
     api.srsStats().then(setSrs).catch(() => undefined);
@@ -68,15 +96,21 @@ export default function App() {
       await api.setBook(bookId).catch(() => undefined);
       setActiveBook(bookId);
       setBookTitle(books.find((b) => b.id === bookId)?.title ?? "Irodori");
+      sessionStorage.removeItem(WELCOME_KEY);
       const overview = await api.progress().catch(() => null);
-      const first = overview?.lessons.find((l) => l.unlocked);
       await refresh();
-      if (first) navigate(`/tutor/${first.lesson_id}`);
+      const nextId =
+        overview?.resume?.lesson_id ?? overview?.lessons.find((l) => l.unlocked)?.lesson_id;
+      if (nextId) {
+        setActiveLesson(nextId);
+        navigate(`/tutor/${nextId}`);
+        if (overview?.resume) setWelcomeOpen(true);
+      }
     },
     [books, navigate, refresh],
   );
 
-  const defaultLesson = current?.lesson_id ?? "L01";
+  const defaultLesson = resume?.lesson_id ?? current?.lesson_id ?? "L01";
   const currentSummary = useMemo(
     () => lessons.find((l) => l.lesson_id === activeLesson) ?? current,
     [activeLesson, current, lessons],
@@ -84,6 +118,14 @@ export default function App() {
 
   const railProgress: ProgressSnapshot | null = useMemo(() => {
     if (lessonProgress) return lessonProgress;
+    if (resume && resume.lesson_id === activeLesson && resume.percent != null) {
+      return {
+        fraction: (resume.percent ?? 0) / 100,
+        percent: resume.percent ?? 0,
+        phase: resume.phase ?? "book",
+        label: resume.phase_label ?? "In progress",
+      };
+    }
     if (!currentSummary) return null;
     const total = (currentSummary.can_dos ?? []).length;
     const done = (currentSummary.can_dos ?? []).filter((c) => c.mastered).length;
@@ -91,11 +133,27 @@ export default function App() {
       fraction: total ? done / total : 0,
       percent: total ? Math.round((done / total) * 100) : 0,
       phase: currentSummary.mastered ? "lesson_complete" : "book",
-      label: currentSummary.mastered ? "Lesson complete" : total ? `${done}/${total} can-dos` : "In progress",
+      label: currentSummary.mastered
+        ? "Lesson complete"
+        : total
+          ? `${done}/${total} can-dos`
+          : "In progress",
     };
-  }, [currentSummary, lessonProgress]);
+  }, [currentSummary, lessonProgress, resume, activeLesson]);
 
   const showTransport = location.pathname.startsWith("/tutor");
+
+  const goContinue = () => {
+    const id = resume?.lesson_id ?? defaultLesson;
+    setWelcomeOpen(false);
+    setActiveLesson(id);
+    navigate(`/tutor/${id}`);
+  };
+
+  const goBrowse = () => {
+    setWelcomeOpen(false);
+    navigate("/progress");
+  };
 
   return (
     <div
@@ -146,18 +204,32 @@ export default function App() {
 
       <LeftRail
         lessons={lessons}
-        currentLessonId={activeLesson}
+        currentLessonId={activeLesson || defaultLesson}
         lessonProgress={railProgress}
         srs={srs}
         books={books}
         activeBook={activeBook}
-        onSelectLesson={(id) => navigate(`/tutor/${id}`)}
+        onSelectLesson={(id) => {
+          setActiveLesson(id);
+          navigate(`/tutor/${id}`);
+        }}
         onSelectBook={(id) => void selectBook(id)}
         onReview={() => navigate("/srs")}
       />
 
       <Routes>
-        <Route path="/" element={<Navigate to={`/tutor/${defaultLesson}`} replace />} />
+        <Route
+          path="/"
+          element={
+            loading ? (
+              <div className="page-loading" aria-busy="true">
+                <p className="muted">Loading your place…</p>
+              </div>
+            ) : (
+              <Navigate to={`/tutor/${defaultLesson}`} replace />
+            )
+          }
+        />
         <Route
           path="/tutor/:lessonId"
           element={
@@ -171,7 +243,18 @@ export default function App() {
         />
         <Route path="/srs" element={<SrsPage />} />
         <Route path="/progress" element={<ProgressPage lessons={lessons} bookTitle={bookTitle} />} />
-        <Route path="*" element={<Navigate to={`/tutor/${defaultLesson}`} replace />} />
+        <Route
+          path="*"
+          element={
+            loading ? (
+              <div className="page-loading" aria-busy="true">
+                <p className="muted">Loading your place…</p>
+              </div>
+            ) : (
+              <Navigate to={`/tutor/${defaultLesson}`} replace />
+            )
+          }
+        />
       </Routes>
 
       <SettingsDialog open={settingsOpen} onClose={() => setSettingsOpen(false)} health={health} />
@@ -181,6 +264,15 @@ export default function App() {
         onClose={() => setSetupOpen(false)}
         onRefresh={refreshHealth}
       />
+      {resume && (
+        <WelcomeBack
+          open={welcomeOpen}
+          resume={resume}
+          bookTitle={bookTitle}
+          onContinue={goContinue}
+          onBrowse={goBrowse}
+        />
+      )}
     </div>
   );
 }

@@ -221,10 +221,35 @@ def _soft_pass(
     return shared / len(e) >= 0.7
 
 
-def _feedback(passed: bool, score: float, best: str | None, expected: list[str]) -> tuple[str, str]:
+def _ha_wa_confusion(user_text: str, expected: str) -> bool:
+    """True when the learner likely said /wa/ where the target needs /ha/ (は)."""
+    u = normalize_jp_for_grade(user_text)
+    e = normalize_jp_for_grade(expected)
+    if not u or not e:
+        return False
+    if "はは" in e and "わわ" in u:
+        return True
+    if "はち" in e and "わち" in u:
+        return True
+    # Same shape, only は/わ differ (e.g. は vs わ on a short vocab item).
+    return len(u) == len(e) and "わ" in u and "は" in e and u.replace("わ", "は") == e
+
+
+def _feedback(
+    passed: bool,
+    score: float,
+    best: str | None,
+    expected: list[str],
+    *,
+    user_text: str = "",
+) -> tuple[str, str]:
     if passed:
         return ("よくできました。", "Nice — that matches the target phrase.")
     target = best or (expected[0] if expected else "")
+    if target and user_text and _ha_wa_confusion(user_text, target):
+        jp = f"ここは「は」＝ha です（wa ではありません）。もういちど：{target}"
+        en = f"That は is ha (not wa). Try again: {target}"
+        return jp, en
     if score >= 45:
         jp = f"ちかいです。もういちど：{target}" if target else "ちかいです。もういちど。"
         en = f"Close ({score:.0f}%). Try again: {target}" if target else f"Close ({score:.0f}%). Try again."
@@ -279,7 +304,7 @@ def grade_phrases(
         has_jp = bool(re.search(r"[\u3040-\u30ff\u4e00-\u9fff]", user_text or ""))
         passed = has_jp and len((user_text or "").strip()) >= 2
         score = 80.0 if passed else 30.0
-        jp, en = _feedback(passed, score, None, [])
+        jp, en = _feedback(passed, score, None, [], user_text=user_text)
         return {
             "passed": passed,
             "score": score,
@@ -338,7 +363,7 @@ def grade_phrases(
     if passed and hits:
         score = max(score, pass_threshold)
     gaps = [] if passed else [best_phrase]
-    jp, en = _feedback(passed, score, best_phrase, candidates)
+    jp, en = _feedback(passed, score, best_phrase, candidates, user_text=user_text)
     return {
         "passed": passed,
         "score": score,
