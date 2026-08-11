@@ -6,6 +6,7 @@ import json
 import re
 
 from backend.app.book_modes import (
+    activity_key_phrases,
     book_mode,
     fill_blank_index,
     flow_substeps,
@@ -145,9 +146,7 @@ def track_index(lesson: dict, activity_id: str | None) -> int:
 
 
 def _phrases(activity: dict | None) -> list[str]:
-    if not activity:
-        return []
-    return [p for p in (activity.get("key_phrases") or []) if p]
+    return activity_key_phrases(activity)
 
 
 def _blanks(activity: dict | None) -> list[dict]:
@@ -333,23 +332,30 @@ def _dialog_lines(activity: dict) -> list[dict]:
 
 
 def _dialog_line(activity: dict, substep: str) -> dict | None:
+    """Pick the dialog line for this substep.
+
+    Book roles are fixed in the YAML: ``partner`` = yellow, ``learner`` = orange.
+    On ``swap_*``, performers exchange lines, but ``book_speaker`` stays the
+    original book role so yellow/orange colors never flip with the speakers.
+    """
     lines = _dialog_lines(activity)
     if not lines:
         return None
     swap = substep.startswith("swap_")
+    # Substep name is who performs now (partner/learner), not book color.
     want = "partner" if "partner" in substep else "learner"
-    pool = (
-        lines
-        if not swap
-        else [
-            {**ln, "speaker": "learner" if ln.get("speaker") == "partner" else "partner"}
-            for ln in lines
-        ]
-    )
+    pool: list[dict] = []
+    for ln in lines:
+        book_speaker = ln.get("speaker") or "partner"
+        performer = (
+            ("learner" if book_speaker == "partner" else "partner") if swap else book_speaker
+        )
+        pool.append({**ln, "speaker": performer, "book_speaker": book_speaker})
     for ln in pool:
         if ln.get("speaker") == want:
             return ln
-    return lines[0] if lines else None
+    first = lines[0]
+    return {**first, "book_speaker": first.get("speaker") or "partner"}
 
 
 def _step_base(activity: dict, substep: str, quiz_index: int, lesson: dict | None = None) -> dict:
@@ -398,23 +404,12 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
     phrases = _phrases(activity)
     audio = list(activity.get("dialog_listen_audio") or activity.get("audio") or [])
 
+    # Life & culture is always the quiet reflect card (including resumed listen slots).
+    if sub == "listen" and book_mode(activity) == "culture_read":
+        sub = "reflect"
+
     if sub == "listen":
         mode = book_mode(activity)
-        if mode == "culture_read":
-            jp = "文化の メモを よみましょう。CDを きいてください。"
-            en = "Life and culture — listen, then read the notes in your book."
-            step = _step_base(activity, sub, quiz_index)
-            step.update(
-                {
-                    "play_audio": audio[:2],
-                    "expect_speech": False,
-                    "auto_advance_after_audio": True,
-                    "instruction_en": "Culture notes (listen)",
-                    "book_mode": "culture_read",
-                    "culture_notes_en": (lesson.get("english_notes") or "")[:600],
-                }
-            )
-            return jp, en, step
         if mode == "kana_trace":
             jp = "ききましょう。CDを きいて、もじを なぞって れんしゅう してください。"
             en = "Listen to the CD and trace the characters in your book. No speaking grade."
@@ -502,8 +497,9 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
             or (lesson.get("english_notes") or "")
             or ""
         ).strip()
-        jp = "文化について かんがえましょう。"
-        en = (notes[:500] if notes else "") or "Read the culture notes in your book. No grade — tap Next when ready."
+        # Quiet step: student reads in the book / on-screen; Yuki does not speak this.
+        jp = ""
+        en = "Life and culture — read this on your own when you like, then tap Next."
         step = _step_base(activity, sub, quiz_index)
         step.update(
             {
@@ -511,7 +507,7 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
                 "expect_speech": False,
                 "auto_advance_after_audio": False,
                 "auto_advance": False,
-                "instruction_en": "Life and culture — read the note, then continue.",
+                "instruction_en": en,
                 "book_mode": "culture_read",
                 "culture_card": True,
                 "culture_notes_en": notes[:1200] if notes else None,
@@ -543,6 +539,7 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
     if sub in ("choose", "read_check"):
         choices = _choices_public(activity)
         multi = (activity.get("choose_mode") or ("all" if len(_correct_ids(activity)) > 1 else "any")) == "all"
+        expected_n = len(_correct_ids(activity)) or (1 if choices else 0)
         jp = "えらんでください。" if sub == "choose" else "しつもんに こたえてください。"
         en = (
             activity.get("prompt_en")
@@ -559,6 +556,7 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
                 "instruction_en": en,
                 "choices": choices,
                 "choose_multi": multi,
+                "choose_expected": expected_n or None,
                 "passage_jp": activity.get("passage_jp"),
                 "passage_en": activity.get("passage_en"),
                 # Never expose correct_ids / note_keywords answers.
@@ -614,8 +612,18 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
 
     if sub == "kanji_read":
         sentences = [s for s in (activity.get("kanji_sentences") or []) if str(s).strip()]
-        jp = "漢字に ちゅういして よみましょう。"
-        en = "Read these lines and pay attention to the new kanji."
+        focus_words = [
+            str(it.get("kanji") or "").strip()
+            for it in _kanji_items(activity)
+            if str(it.get("kanji") or "").strip()
+        ]
+        # Match the book prompt (blank = underline in the textbook).
+        jp = "＿＿＿＿の漢字に注意して読みましょう。"
+        en = "Read the following and pay careful attention to the kanji with ____."
+        circled = "①②③④⑤⑥⑦⑧⑨⑩"
+        numbered = [
+            f"{circled[i] if i < len(circled) else f'{i + 1}.'} {s}" for i, s in enumerate(sentences)
+        ]
         step = _step_base(activity, sub, quiz_index, lesson)
         step.update(
             {
@@ -625,7 +633,8 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
                 "instruction_en": en,
                 "book_mode": "kanji_words",
                 "kanji_sentences": sentences,
-                "passage_jp": "\n".join(f"{i + 1}. {s}" for i, s in enumerate(sentences)) or None,
+                "kanji_focus_words": focus_words,
+                "passage_jp": "\n".join(numbered) or None,
             }
         )
         return jp, en, step
@@ -816,14 +825,22 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
         line = _dialog_line(activity, sub)
         text = (line or {}).get("jp") or (phrases[0] if phrases else "")
         is_tutor = sub in ("partner", "swap_partner")
+        # Yellow/orange follow the book line, not who is speaking this pass.
+        book_speaker = (line or {}).get("book_speaker") or (line or {}).get("speaker") or "partner"
+        line_color = "yellow" if book_speaker == "partner" else "orange"
+        # Keep Yuki's yellow question on screen while the learner answers (conversation).
+        yellow_text = ""
+        if sub == "learner":
+            yellow_line = _dialog_line(activity, "partner")
+            yellow_text = (yellow_line or {}).get("jp") or ""
         if sub == "swap_learner":
-            en = "Roles swapped — you speak first (orange line in the book)."
+            en = "Roles swapped — you speak first (yellow line in the book)."
         elif sub == "swap_partner":
-            en = "Roles swapped — I speak the yellow (partner) line."
+            en = "Roles swapped — I speak the orange line."
         elif is_tutor:
             en = "Dialog — yellow line (partner). You take orange next."
         else:
-            en = "Your turn — orange line in the book."
+            en = "Your turn — reply with the orange line."
         step = _step_base(activity, sub, quiz_index, lesson)
         step.update(
             {
@@ -832,14 +849,23 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
                 "auto_advance_after_audio": is_tutor,
                 "dialog_line_jp": text,
                 "dialog_speaker": "partner" if is_tutor else "learner",
-                "book_line_color": "yellow" if is_tutor else "orange",
+                "book_line_color": line_color,
                 "instruction_en": en,
                 "say_target_jp": text if not is_tutor else None,
-                "model_before_speech": not is_tutor,
+                # Conversation role-play: never TTS-model the learner's line.
+                "model_before_speech": False,
+                # Pass 1: leave Yuki's yellow line visible while you answer orange.
+                "partner_jp": yellow_text if sub == "learner" else None,
             }
         )
-        # Tutor speaks the partner line itself; learner hears a clean model of their line.
-        jp = text if is_tutor else "あなたの セリフです。"
+        # Yuki only speaks her character lines (yellow pass 1 / orange pass 2).
+        # Learner turns stay silent so it feels like a real exchange, not drill.
+        if is_tutor:
+            jp = text
+        elif sub == "swap_learner":
+            jp = "じゃ、かわりましょう。"
+        else:
+            jp = ""
         return jp, en, step
 
     if sub == "fill":
@@ -939,50 +965,394 @@ def _grammar_examples(point: dict) -> list[str]:
     return [e for e in expected if e]
 
 
+def grammar_turns(ex: dict) -> list[dict]:
+    """Expand one workbook exercise into dialogue turns (listen / fill / choose)."""
+    raw = [t for t in (ex.get("turns") or []) if isinstance(t, dict)]
+    if raw:
+        out: list[dict] = []
+        for t in raw:
+            kind = (t.get("kind") or "").strip().lower()
+            if kind not in ("listen", "fill", "choose"):
+                if t.get("choices"):
+                    kind = "choose"
+                elif t.get("blank_prompt_jp") or t.get("answers") or t.get("line_jp"):
+                    kind = "fill"
+                else:
+                    kind = "listen"
+            out.append({**t, "kind": kind})
+        return out
+
+    # Legacy flat exercise → listen (optional) + fill/choose + follow listen (optional).
+    turns: list[dict] = []
+    partner = (ex.get("partner_jp") or "").strip()
+    read_jp = (ex.get("read_jp") or "").strip()
+    follow = (ex.get("follow_jp") or "").strip()
+    if partner and (ex.get("blank_prompt_jp") or ex.get("choices") or ex.get("answers")):
+        turns.append({"kind": "listen", "jp": partner, "role": "A"})
+    if ex.get("choices"):
+        turns.append(
+            {
+                "kind": "choose",
+                "role": "B",
+                "partner_jp": None if partner else read_jp or None,
+                "read_jp": None if partner else read_jp or None,
+                "instruction_en": ex.get("instruction_en"),
+                "choices": ex.get("choices") or [],
+                "correct_ids": ex.get("correct_ids") or [],
+                "choose_multi": bool(ex.get("choose_multi")),
+            }
+        )
+    elif ex.get("blank_prompt_jp") or ex.get("answers") or ex.get("line_jp") or ex.get("expected"):
+        turns.append(
+            {
+                "kind": "fill",
+                "role": "B" if partner else "A",
+                "cue_jp": ex.get("cue_jp"),
+                "blank_prompt_jp": ex.get("blank_prompt_jp"),
+                "line_jp": ex.get("line_jp"),
+                "read_jp": None if partner else read_jp or None,
+                "instruction_en": ex.get("instruction_en"),
+                "answers": ex.get("answers") or [],
+                "full_jp": ex.get("full_jp"),
+                "answer_alts": ex.get("answer_alts") or [],
+                "expected": ex.get("expected") or [],
+            }
+        )
+    elif partner or read_jp:
+        turns.append({"kind": "listen", "jp": partner or read_jp})
+    if follow:
+        turns.append({"kind": "listen", "jp": follow})
+    return turns
+
+
+def grammar_drills(lesson_id: str) -> list[dict]:
+    """Flatten grammar points into drills (each workbook turn is one step)."""
+    drills: list[dict] = []
+    for point in _grammar_for_lesson(lesson_id):
+        exercises = [e for e in (point.get("exercises") or []) if isinstance(e, dict)]
+        base = {
+            "point": (point.get("point") or "").strip(),
+            "pattern_en": (point.get("pattern_en") or point.get("point") or "").strip(),
+            "prompt_jp": (point.get("prompt_jp") or "").strip(),
+            "prompt_en": (point.get("prompt_en") or "").strip(),
+            "examples": point.get("examples") or [],
+            "worksheet_pages": point.get("worksheet_pages") or [],
+        }
+        if exercises:
+            for ex_i, ex in enumerate(exercises):
+                turns = grammar_turns(ex)
+                if not turns:
+                    drills.append(
+                        {
+                            **base,
+                            "exercise": ex,
+                            "turn": None,
+                            "exercise_index": ex_i,
+                            "turn_index": 0,
+                            "facilitate": True,
+                        }
+                    )
+                    continue
+                for ti, turn in enumerate(turns):
+                    drills.append(
+                        {
+                            **base,
+                            "exercise": ex,
+                            "turn": turn,
+                            "exercise_index": ex_i,
+                            "turn_index": ti,
+                            "facilitate": True,
+                        }
+                    )
+        else:
+            drills.append(
+                {
+                    **base,
+                    "exercise": None,
+                    "turn": None,
+                    "exercise_index": 0,
+                    "turn_index": 0,
+                    "facilitate": False,
+                }
+            )
+    return drills
+
+
+def grammar_active(drill: dict) -> dict:
+    """The turn being practiced, falling back to a flat exercise dict."""
+    turn = drill.get("turn") if isinstance(drill.get("turn"), dict) else None
+    if turn:
+        return turn
+    ex = drill.get("exercise") if isinstance(drill.get("exercise"), dict) else None
+    return ex or {}
+
+
+def grammar_blank(ex: dict) -> dict:
+    """Normalize a grammar fill turn into a cloze blank dict for grading/UI."""
+    cue = (ex.get("cue_jp") or "").strip()
+    prompt = (ex.get("blank_prompt_jp") or "").strip()
+    if not prompt:
+        line = (ex.get("line_jp") or "").strip()
+        if line and "＿" in line:
+            prompt = line
+        elif line and cue and f"（{cue}）" in line:
+            prompt = line.replace(f"（{cue}）", "＿")
+        elif line:
+            prompt = re.sub(r"（[^）]+）", "＿", line)
+        else:
+            prompt = "＿"
+    answers = [str(a).strip() for a in (ex.get("answers") or []) if str(a).strip()]
+    full = (ex.get("full_jp") or "").strip()
+    alts = [str(a).strip() for a in (ex.get("answer_alts") or []) if str(a).strip()]
+    legacy = [str(a).strip() for a in (ex.get("expected") or []) if str(a).strip()]
+    if not answers and legacy:
+        # Prefer a short fill over a full-line legacy expected when possible.
+        shell = prompt.replace("＿", "").strip()
+        short = [e for e in legacy if e and e not in shell and (not full or e != full)]
+        answers = [min(short, key=len)] if short else [legacy[-1]]
+        if not full:
+            full = legacy[0]
+    for e in legacy:
+        if e and e not in alts:
+            alts.append(e)
+    return {
+        "prompt_jp": prompt,
+        "answers": answers,
+        "full_jp": full or None,
+        "answer_alts": alts,
+        "cue_jp": cue or None,
+    }
+
+
+def grammar_is_choose(ex: dict | None) -> bool:
+    if not ex:
+        return False
+    if (ex.get("kind") or "").strip().lower() == "choose":
+        return True
+    return bool(ex.get("choices") or [])
+
+
+def grammar_is_listen(ex: dict | None) -> bool:
+    if not ex:
+        return False
+    kind = (ex.get("kind") or "").strip().lower()
+    if kind == "listen":
+        return True
+    if kind in ("fill", "choose"):
+        return False
+    # Flat leftover with only jp and no learner task.
+    return bool((ex.get("jp") or "").strip()) and not ex.get("choices") and not (
+        ex.get("blank_prompt_jp") or ex.get("answers") or ex.get("line_jp")
+    )
+
+
+def grammar_expected(drill: dict) -> list[str]:
+    """Answers used for grading — never shown as the on-screen target in facilitate mode."""
+    active = grammar_active(drill)
+    if grammar_is_listen(active):
+        return []
+    if grammar_is_choose(active):
+        return [str(x).strip() for x in (active.get("correct_ids") or []) if str(x).strip()]
+    if active:
+        return expected_for_blank(grammar_blank(active))
+    return _grammar_examples(drill)
+
+
 def grammar_intro(lesson_id: str) -> tuple[str, str, dict]:
-    pts = _grammar_for_lesson(lesson_id)
-    if not pts:
+    drills = grammar_drills(lesson_id)
+    if not drills:
         jp = "この れっすんに ぶんぽうシートは ありません。Can-do テストに いきます。"
         en = "No grammar worksheet for this lesson — moving to Can-do checks."
     else:
-        jp = f"ぶんぽうの れんしゅう です。{len(pts)} こ あります。つぎの ぶんを いってください。"
+        jp = f"ぶんぽうの れんしゅう です。{len(drills)} こ あります。ワークシートを みてください。"
         en = (
-            f"Grammar practice — {len(pts)} short drills. "
-            "Say the Japanese line shown for each one (open your grammar worksheet if you like)."
+            f"Grammar worksheet — {len(drills)} lines. "
+            "I will read the fixed lines; you type blanks or choose answers."
         )
     step = {
         "phase": "grammar",
         "play_audio": [],
         "audio": [],
-        "expect_speech": bool(pts),
-        "expects_speech": bool(pts),
+        "expect_speech": False,
+        "expects_speech": False,
         "auto_advance_after_audio": False,
         "auto_advance": False,
         "graded": False,
-        "grammar_count": len(pts),
+        "grammar_count": len(drills),
         "instruction_en": en,
     }
     return jp, en, step
 
 
-def grammar_item(point: dict, index: int, total: int) -> tuple[str, str, dict]:
-    """One clear speakable drill — never ask the learner to recite a pattern label."""
-    expected = _grammar_examples(point)
+def grammar_item(drill: dict, index: int, total: int) -> tuple[str, str, dict]:
+    """One grammar drill. Facilitate mode: Yuki reads fixed lines; learner fills/chooses."""
+    pattern = (drill.get("point") or "").strip()
+    pattern_en = (drill.get("pattern_en") or pattern).strip()
+    expected = grammar_expected(drill)
+    facilitate = bool(drill.get("facilitate") and (drill.get("turn") or drill.get("exercise")))
+    active = grammar_active(drill)
+    parent = drill.get("exercise") if isinstance(drill.get("exercise"), dict) else {}
+    role = (active.get("role") or "").strip().upper()
+
+    if facilitate and grammar_is_listen(active):
+        line = (active.get("jp") or active.get("partner_jp") or active.get("read_jp") or "").strip()
+        instruction = (
+            (active.get("instruction_en") or "").strip()
+            or (parent.get("instruction_en") or "").strip()
+            or f"Grammar {index + 1}/{total} — listen to this line."
+        )
+        if role:
+            instruction = f"{instruction} (Speaker {role})"
+        jp = line or "きいてください。"
+        step = {
+            "phase": "grammar",
+            "play_audio": [],
+            "audio": [],
+            "expect_speech": False,
+            "expects_speech": False,
+            "expects_text": False,
+            "auto_advance_after_audio": True,
+            "auto_advance": True,
+            "graded": False,
+            "grammar_index": index,
+            "grammar_total": total,
+            "grammar_point": pattern,
+            "grammar_pattern_en": pattern_en,
+            "substep_index": index,
+            "substep_total": total,
+            "instruction_en": instruction,
+            "expected_phrases": [],
+            "say_target_jp": None,
+            "say_alternates_jp": [],
+            "dialog_line_jp": line or None,
+            "passage_jp": line or None,
+            "partner_jp": line or None,
+            "book_substep": "grammar_listen",
+            "model_before_speech": False,
+            "facilitate": True,
+            "grammar_role": role or None,
+        }
+        return jp, instruction, step
+
+    if facilitate and grammar_is_choose(active):
+        partner = (active.get("partner_jp") or "").strip()
+        read_jp = (active.get("read_jp") or "").strip()
+        instruction = (
+            (active.get("instruction_en") or "").strip()
+            or (parent.get("instruction_en") or "").strip()
+            or (drill.get("prompt_en") or "").strip()
+            or f"Grammar {index + 1}/{total} ({pattern_en}) — choose the correct answer."
+        )
+        jp = partner or read_jp or "えらんでください。"
+        choices = []
+        for c in active.get("choices") or []:
+            if not isinstance(c, dict) or not c.get("id"):
+                continue
+            choices.append(
+                {
+                    "id": str(c["id"]),
+                    "label_jp": c.get("label_jp"),
+                    "label_en": c.get("label_en"),
+                }
+            )
+        step = {
+            "phase": "grammar",
+            "play_audio": [],
+            "audio": [],
+            "expect_speech": False,
+            "expects_speech": False,
+            "expects_text": True,
+            "auto_advance_after_audio": False,
+            "auto_advance": False,
+            "graded": True,
+            "grammar_index": index,
+            "grammar_total": total,
+            "grammar_point": pattern,
+            "grammar_pattern_en": pattern_en,
+            "substep_index": index,
+            "substep_total": total,
+            "instruction_en": instruction,
+            "expected_phrases": expected,
+            "say_target_jp": None,
+            "say_alternates_jp": [],
+            "choices": choices,
+            "choose_multi": bool(active.get("choose_multi")),
+            "partner_jp": partner or None,
+            "book_substep": "grammar_choose",
+            "model_before_speech": False,
+            "facilitate": True,
+            "grammar_role": role or None,
+        }
+        return jp, instruction, step
+
+    if facilitate:
+        blank = grammar_blank(active)
+        cue = (blank.get("cue_jp") or "").strip()
+        prompt = (blank.get("prompt_jp") or "＿").strip()
+        partner = (active.get("partner_jp") or "").strip()
+        read_jp = (active.get("read_jp") or "").strip()
+        instruction = (
+            (active.get("instruction_en") or "").strip()
+            or (parent.get("instruction_en") or "").strip()
+            or (drill.get("prompt_en") or "").strip()
+            or f"Grammar {index + 1}/{total} ({pattern_en}) — type the missing part."
+        )
+        prompt_jp = (drill.get("prompt_jp") or "").strip()
+        if partner:
+            jp = partner
+        elif read_jp:
+            jp = read_jp
+        elif cue:
+            jp = f"{prompt_jp} {cue}".strip() if prompt_jp else cue
+        else:
+            jp = "空欄に ことばを 書いてください。"
+        en = instruction
+        slots = _blank_slot_count(prompt)
+        step = {
+            "phase": "grammar",
+            "play_audio": [],
+            "audio": [],
+            "expect_speech": False,
+            "expects_speech": False,
+            "expects_text": True,
+            "auto_advance_after_audio": False,
+            "auto_advance": False,
+            "graded": True,
+            "grammar_index": index,
+            "grammar_total": total,
+            "grammar_point": pattern,
+            "grammar_pattern_en": pattern_en,
+            "substep_index": index,
+            "substep_total": total,
+            "instruction_en": instruction,
+            "expected_phrases": expected,
+            "say_target_jp": None,
+            "say_alternates_jp": [],
+            "blank_prompt_jp": prompt,
+            "blank_count": slots,
+            "blank_index": index,
+            "blank_total": total,
+            "grammar_cue_jp": cue or None,
+            "partner_jp": partner or None,
+            "book_substep": "grammar_fill",
+            "model_before_speech": False,
+            "facilitate": True,
+            "grammar_role": role or None,
+        }
+        return jp, en, step
+
     target = expected[0] if expected else None
-    pattern = (point.get("point") or "").strip()
-    pattern_en = (point.get("pattern_en") or pattern).strip()
-    prompt_en = (point.get("prompt_en") or "").strip()
-    prompt_jp = (point.get("prompt_jp") or "").strip()
+    prompt_en = (drill.get("prompt_en") or "").strip()
+    prompt_jp = (drill.get("prompt_jp") or "").strip()
+    # Strip leaked answer tails like 「れい：…」 / 「Say: …」 from older prompts.
+    prompt_jp = re.split(r"[。．]?\s*れい[：:]", prompt_jp, maxsplit=1)[0].strip(" 。．")
+    prompt_en = re.split(r"\s*[—-]\s*say\b|\s+Say:\s*", prompt_en, maxsplit=1, flags=re.I)[0].strip(" .")
 
     if target:
-        # Short coach line; client TTS-models `say_target_jp` before the mic opens.
         jp = prompt_jp or f"ぶんぽう {index + 1}。つぎを いってください。"
-        en = prompt_en or f"Say this example: {target}"
-        if target not in en:
-            en = f"{en} Say: {target}"
-        instruction = prompt_en or f"Grammar {index + 1}/{total} ({pattern_en}) — say the line below."
+        en = prompt_en or f"Grammar {index + 1}/{total} ({pattern_en})."
+        instruction = prompt_en or f"Grammar {index + 1}/{total} ({pattern_en}) — say the line."
     else:
-        # Fallback for uncurated extracts: explain the pattern, allow Skip/Next.
         jp = f"ぶんぽう {index + 1}。{pattern}。ワークシートを みてください。"
         en = (
             f"Grammar {index + 1}/{total}: {pattern_en}. "
@@ -1010,52 +1380,127 @@ def grammar_item(point: dict, index: int, total: int) -> tuple[str, str, dict]:
         "say_target_jp": target,
         "say_alternates_jp": expected[1:4],
         "book_substep": "grammar_say" if target else "grammar_read",
-        "model_before_speech": bool(target),
+        # Do not pre-speak the answer; learner produces it.
+        "model_before_speech": False,
+        "facilitate": False,
     }
     return jp, en, step
+
+
+_WEAK_QUIZ_PARTNERS = {
+    "では、お願いします。",
+    "もう一度、お願いします。",
+    "こんにちは。",
+    "ちち。",
+    "ちちです。",
+}
+
+_DEFAULT_ROLEPLAY_OPENER = "じゃあ、やってみましょう。"
 
 
 def quiz_scenarios_for(lesson: dict, can_do_id: str) -> list[dict]:
     return [s for s in (lesson.get("quiz_scenarios") or []) if s.get("can_do_id") == can_do_id]
 
 
+def _scenario_rank(scenario: dict) -> tuple[int, int]:
+    """Prefer real role-plays over bare keyword prompts."""
+    partner = (scenario.get("partner_jp") or "").strip()
+    if scenario.get("setup_en") or scenario.get("goal_en"):
+        quality = 0
+    elif partner in _WEAK_QUIZ_PARTNERS:
+        quality = 2
+    else:
+        quality = 1
+    return (quality, len(partner))
+
+
 def pick_quiz_scenario(lesson: dict, can_do_id: str, attempt: int) -> dict | None:
     scenarios = quiz_scenarios_for(lesson, can_do_id)
     if not scenarios:
         return None
-    return scenarios[attempt % len(scenarios)]
+    ranked = sorted(scenarios, key=_scenario_rank)
+    # Rotate within the best quality band first.
+    best = _scenario_rank(ranked[0])[0]
+    band = [s for s in ranked if _scenario_rank(s)[0] == best]
+    return band[attempt % len(band)]
+
+
+def enrich_quiz_scenario(can_do: dict | None, scenario: dict | None) -> dict:
+    """Fill setup/goal (and weak openers) so every Can-do is a real role-play check."""
+    cd = can_do or {}
+    out = dict(scenario or {})
+    stmt_en = (cd.get("statement_en") or "").strip()
+    hint = (out.get("hint_en") or "").strip()
+    setup = (out.get("setup_en") or "").strip()
+    if not setup:
+        if hint.lower().startswith("situation:"):
+            setup = hint.split(":", 1)[1].strip()
+            for noise in (
+                " Reply using lesson phrases.",
+                " Reply using lesson phrases",
+            ):
+                if setup.endswith(noise):
+                    setup = setup[: -len(noise)].strip()
+        elif hint and not hint.lower().startswith("again"):
+            setup = hint
+        elif stmt_en:
+            setup = f"Role-play — show that you can: {stmt_en}"
+        else:
+            setup = "Role-play — reply to Yuki in Japanese."
+    out["setup_en"] = setup
+    if not (out.get("goal_en") or "").strip():
+        out["goal_en"] = (
+            f"Learner demonstrates: {stmt_en}"
+            if stmt_en
+            else "Learner communicates the can-do intent in Japanese."
+        )
+    partner = (out.get("partner_jp") or "").strip()
+    if not partner or partner in _WEAK_QUIZ_PARTNERS:
+        out["partner_jp"] = _DEFAULT_ROLEPLAY_OPENER
+    expected = out.get("expected") or []
+    if not expected:
+        expected = list((cd.get("rubric") or {}).get("must_include") or [])
+    # YAML may parse bare digits as ints — grading expects strings.
+    out["expected"] = [str(x) for x in expected if x is not None and str(x).strip()]
+    out["can_do_id"] = out.get("can_do_id") or cd.get("id")
+    return out
 
 
 def quiz_step(can_do: dict, scenario: dict | None, *, expect_speech: bool) -> dict:
-    expected = list((scenario or {}).get("expected") or [])
+    scenario = enrich_quiz_scenario(can_do, scenario)
+    expected = list(scenario.get("expected") or [])
     if not expected and can_do:
         expected = list((can_do.get("rubric") or {}).get("must_include") or [])
+    setup = (scenario.get("setup_en") or "").strip()
     step: dict = {
         "phase": "quiz",
         "play_audio": [],
         "expect_speech": expect_speech,
+        "expects_speech": expect_speech,
         "auto_advance_after_audio": False,
         "can_do_id": can_do.get("id"),
-        "book_substep": "reply",
+        "statement_en": can_do.get("statement_en"),
+        "statement_jp": can_do.get("statement_jp"),
+        "book_substep": "roleplay",
+        "book_mode": "dialog",
+        # Never reveal acceptable answers on the stage.
+        "say_target_jp": None,
+        "say_alternates_jp": [],
+        "model_before_speech": False,
+        "partner_jp": scenario.get("partner_jp"),
+        # Kept for server/harness grading only — UI must not surface these as a target.
+        "expected_phrases": expected,
+        "instruction_en": setup or "Role-play — reply in Japanese.",
+        "picture_hint_en": setup,
+        "goal_en": scenario.get("goal_en"),
     }
-    if scenario:
-        step["partner_jp"] = scenario.get("partner_jp")
-        step["expected_phrases"] = expected
-        step["instruction_en"] = scenario.get("hint_en") or "Reply in Japanese"
-        step["say_target_jp"] = expected[0] if expected else None
-        step["say_alternates_jp"] = expected[1:6]
-        step["picture_hint_en"] = scenario.get("hint_en")
     return step
 
 
 def quiz_prompt(can_do: dict, lesson: dict, scenario: dict | None = None) -> tuple[str, str, dict]:
-    if scenario and scenario.get("partner_jp"):
-        jp = str(scenario["partner_jp"])
-        en = scenario.get("hint_en") or f"Reply in Japanese to: {jp}"
-    else:
-        stmt = can_do.get("statement_jp") or can_do.get("statement_en") or ""
-        jp = f"Can-do テストです。{stmt[:50]}。 日本語で いってください。"
-        en = f"Can-do check: {can_do.get('statement_en')}"
+    scenario = enrich_quiz_scenario(can_do, scenario)
+    jp = str(scenario.get("partner_jp") or _DEFAULT_ROLEPLAY_OPENER)
+    en = scenario.get("setup_en") or f"Role-play check: {can_do.get('statement_en')}"
     step = quiz_step(can_do, scenario, expect_speech=True)
     return jp, en, step
 

@@ -173,9 +173,8 @@ def _resolve_step(
     if session.state == "intro_chat":
         return intro_step(lesson, session.quiz_index)[2]
     if session.state == "self_check":
-        can_dos = lesson.get("can_dos") or []
-        if session.quiz_index < len(can_dos):
-            return self_check_step(can_dos[session.quiz_index])
+        # Legacy sessions: skip soft rating and resume Can-do flow.
+        return {"phase": "quiz", "expect_speech": False, "play_audio": []}
     if messages:
         for m in reversed(messages):
             if m.get("role") != "assistant":
@@ -246,14 +245,6 @@ def _payload(
     normalize_session(session)
     resolved = coerce_step(_resolve_step(session, lesson, activity, messages, step))
     can_dos = lesson.get("can_dos") or []
-    pending_self = None
-    if session.state == "self_check" and session.quiz_index < len(can_dos):
-        cd = can_dos[session.quiz_index]
-        pending_self = {
-            "can_do_id": cd.get("id"),
-            "statement_en": cd.get("statement_en"),
-            "statement_jp": cd.get("statement_jp"),
-        }
     lesson_messages = [m for m in messages if not (m.get("step") or {}).get("help") and m.get("kind") != "question"]
     help_messages = [m for m in messages if (m.get("step") or {}).get("help") or m.get("kind") == "question"]
     tail, message_total, message_offset, assistant_total = slice_messages_for_payload(
@@ -305,9 +296,8 @@ def _payload(
         "grammar": flow._grammar_for_lesson(lesson["lesson_id"]),
         "vocab": lesson.get("vocab") or [],
         "grade": grade,
-        "self_check": pending_self,
-        # Always present: this used to appear only when a db handle was passed,
-        # so the field came and went between endpoints.
+        "self_check": None,
+        # Kept for API compatibility; soft star ratings are no longer part of the lesson.
         "self_checks": self_check_summary(db, lesson["lesson_id"], can_dos) if db is not None else [],
         "next_lesson_id": next_lesson_id(lesson["lesson_id"])
         if session.state == "lesson_complete"
@@ -323,11 +313,11 @@ def _estimate_book_page(
 ) -> int | None:
     """Best page to open in the textbook/worksheet for the current place."""
     if session.state == "grammar":
-        grammar = flow._grammar_for_lesson(lesson["lesson_id"])
+        drills = flow.grammar_drills(lesson["lesson_id"])
         idx = (step or {}).get("grammar_index") or session.phase_index or 0
-        if grammar:
-            point = grammar[min(int(idx), len(grammar) - 1)]
-            pages = point.get("worksheet_pages") or []
+        if drills:
+            drill = drills[min(int(idx), len(drills) - 1)]
+            pages = drill.get("worksheet_pages") or []
             for p in pages:
                 try:
                     return int(p)
@@ -409,7 +399,11 @@ def _can_do_passes(db: Session, can_do_id: str) -> int:
 
 
 def _quiz_scenario(db: Session, lesson: dict, can_do_id: str) -> dict | None:
-    return flow.pick_quiz_scenario(lesson, can_do_id, _can_do_passes(db, can_do_id))
+    raw = flow.pick_quiz_scenario(lesson, can_do_id, _can_do_passes(db, can_do_id))
+    cd = next((c for c in (lesson.get("can_dos") or []) if c.get("id") == can_do_id), None)
+    if raw is None and cd is None:
+        return None
+    return flow.enrich_quiz_scenario(cd, raw)
 
 
 def _prompt_can_do_quiz(
@@ -427,31 +421,48 @@ def _prompt_can_do_quiz(
     return step
 
 
-async def llm_refine_grade(
+async def llm_judge_can_do(
     user_text: str,
     can_do: dict,
-    base: dict,
     scenario: dict | None = None,
-) -> dict:
+    *,
+    spoken: bool = False,
+) -> dict | None:
+    """Ask the local LLM whether the learner demonstrated the can-do in this role-play.
+
+    Returns None when Ollama is unavailable so the caller can fall back to heuristics.
+    """
+    scenario = scenario or {}
     prompt = [
         {
             "role": "system",
             "content": (
-                "Grade A1 Japanese for Irodori can-do. Be lenient for beginners. "
-                "Return JSON: {passed, score, gaps, jp_feedback}. "
-                "jp_feedback must be very simple Japanese only, max 15 words, no English."
+                "You are an Irodori Starter (A1) Japanese tutor grading a short role-play.\n"
+                "Decide if the LEARNER demonstrated the can-do goal, not whether they matched a script.\n"
+                "Be lenient: accept kana/kanji variants, missing particles, and rough pronunciation "
+                "if the communicative intent is clear for a beginner.\n"
+                "Fail only if the reply is empty, English-only, off-topic, or clearly cannot do the goal.\n"
+                "Return JSON only: "
+                '{"passed": bool, "score": 0-100, "gaps": [str], "jp_feedback": str, "en_feedback": str}.\n'
+                "jp_feedback: very simple Japanese, max 12 words. en_feedback: one short English sentence."
             ),
         },
         {
             "role": "user",
             "content": json.dumps(
                 {
-                    "can_do": can_do.get("statement_en"),
-                    "must_include": (can_do.get("rubric") or {}).get("must_include"),
-                    "partner_line": (scenario or {}).get("partner_jp"),
-                    "acceptable_replies": (scenario or {}).get("expected"),
-                    "learner": user_text,
-                    "heuristic": base,
+                    "can_do_en": can_do.get("statement_en"),
+                    "can_do_jp": can_do.get("statement_jp"),
+                    "roleplay_setup": scenario.get("setup_en")
+                    or scenario.get("hint_en")
+                    or can_do.get("statement_en"),
+                    "success_looks_like": scenario.get("goal_en")
+                    or f"Learner demonstrates: {can_do.get('statement_en') or ''}",
+                    "yuki_said": scenario.get("partner_jp"),
+                    "acceptable_examples": scenario.get("expected") or [],
+                    "rubric_must_include": (can_do.get("rubric") or {}).get("must_include") or [],
+                    "learner_said": user_text,
+                    "spoken": spoken,
                 },
                 ensure_ascii=False,
             ),
@@ -460,21 +471,44 @@ async def llm_refine_grade(
     try:
         raw = await ollama_client.chat(prompt, format_json=True)
         data = json.loads(raw)
-        score = int(data.get("score", base["score"]))
-        if base.get("gaps") and not base.get("hits") and (can_do.get("rubric") or {}).get("must_include") and not scenario:
-            score = min(score, 50)
-            data["passed"] = False
-        data["score"] = score
-        data["passed"] = bool(data.get("passed")) and score >= settings.mastery_min_score
-        data["spoken"] = base.get("spoken", False)
-        data["gaps"] = data.get("gaps") or base.get("gaps") or []
-        data["jp_feedback"] = (data.get("jp_feedback") or "")[:80]
-        return data
-    except Exception:
-        base["jp_feedback"] = flow.feedback_pass_short() if base.get("passed") else flow.feedback_retry(
-            base.get("gaps") or []
-        )
-        return _apply_mastery_gate(base)
+        score = int(data.get("score") or 0)
+        score = max(0, min(100, score))
+        passed = bool(data.get("passed")) and score >= int(settings.mastery_min_score)
+        return {
+            "passed": passed,
+            "score": score,
+            "similarity": float(score),
+            "gaps": data.get("gaps") or [],
+            "hits": [],
+            "spoken": spoken,
+            "jp_feedback": str(data.get("jp_feedback") or "")[:80],
+            "en_feedback": str(data.get("en_feedback") or "")[:160],
+            "feedback_en": str(data.get("en_feedback") or "")[:160],
+            "feedback_jp": str(data.get("jp_feedback") or "")[:80],
+            "best_match": None,
+            "judge": "llm",
+        }
+    except Exception as exc:  # noqa: BLE001 - fall back to heuristic
+        log_event("orchestrator", "llm_judge_failed", error=str(exc)[:200])
+        return None
+
+
+async def llm_refine_grade(
+    user_text: str,
+    can_do: dict,
+    base: dict,
+    scenario: dict | None = None,
+) -> dict:
+    """Legacy mid-band refine — prefer llm_judge_can_do for new role-play checks."""
+    judged = await llm_judge_can_do(
+        user_text, can_do, scenario, spoken=bool(base.get("spoken"))
+    )
+    if judged is not None:
+        return judged
+    base["jp_feedback"] = flow.feedback_pass_short() if base.get("passed") else flow.feedback_retry(
+        base.get("gaps") or []
+    )
+    return _apply_mastery_gate(base)
 
 
 def apply_can_do_result(db: Session, lesson_id: str, can_do_id: str, grade: dict) -> CanDoProgress:
@@ -576,22 +610,17 @@ def _after_can_do_passed(
     messages: list[dict],
     can_do: dict,
 ) -> dict:
-    """Open soft self-check for this Can-do (does not unlock; quiz_index stays)."""
-    _transition(session, "self_check", index=session.phase_index)
-    jp = "Can-do チェックです。じぶんの できを えらんでください。"
-    en = "Soft self-check — how well could you do this? Stars only; unlock uses the graded quiz."
-    step = self_check_step(can_do)
-    _append_tutor(messages, jp, en, step, session.state)
-    return step
+    """Advance to the next Can-do role-play or lesson complete (no self-rating)."""
+    return _continue_after_can_do(db, session, lesson, messages)
 
 
-def _continue_after_self_check(
+def _continue_after_can_do(
     db: Session,
     session: ChatSession,
     lesson: dict,
     messages: list[dict],
 ) -> dict:
-    """Move to next Can-do quiz or lesson complete after self-check."""
+    """Move to next Can-do quiz or lesson complete."""
     can_dos = lesson.get("can_dos") or []
     bump_phase_index(session)
     if session.phase_index >= len(can_dos):
@@ -613,16 +642,20 @@ def _continue_after_self_check(
     return _prompt_can_do_quiz(db, session, lesson, messages, session.phase_index)
 
 
+# Back-compat alias for older call sites / tests.
+_continue_after_self_check = _continue_after_can_do
+
+
 def _begin_grammar(session: ChatSession, lesson: dict, messages: list[dict]) -> dict:
     _transition(session, "grammar", index=0)
-    pts = flow._grammar_for_lesson(lesson["lesson_id"])
-    if not pts:
+    drills = flow.grammar_drills(lesson["lesson_id"])
+    if not drills:
         jp, en, step = flow.grammar_intro(lesson["lesson_id"])
         _append_tutor(messages, jp, en, step, session.state)
         return step
     jp, en, step = flow.grammar_intro(lesson["lesson_id"])
     _append_tutor(messages, jp, en, step, session.state)
-    jp2, en2, step2 = flow.grammar_item(pts[0], 0, len(pts))
+    jp2, en2, step2 = flow.grammar_item(drills[0], 0, len(drills))
     _append_tutor(messages, jp2, en2, step2, session.state)
     return step2
 
@@ -710,20 +743,22 @@ async def advance(db: Session, lesson_id: str) -> dict:
         step = _book_advance_substep_or_track(session, lesson, messages, activity)
 
     elif session.state == "grammar":
-        pts = flow._grammar_for_lesson(lesson_id)
-        if not pts:
+        drills = flow.grammar_drills(lesson_id)
+        if not drills:
             step = _begin_quiz(session, lesson, messages, db)
         else:
             bump_phase_index(session)
-            if session.quiz_index >= len(pts):
+            if session.quiz_index >= len(drills):
                 step = _begin_quiz(session, lesson, messages, db)
             else:
-                jp, en, step = flow.grammar_item(pts[session.quiz_index], session.quiz_index, len(pts))
+                jp, en, step = flow.grammar_item(
+                    drills[session.quiz_index], session.quiz_index, len(drills)
+                )
                 _append_tutor(messages, jp, en, step, session.state)
 
     elif session.state == "self_check":
-        # Allow Skip on self-check without saving stars
-        step = _continue_after_self_check(db, session, lesson, messages)
+        # Legacy soft-rating phase — skip and continue the Can-do flow.
+        step = _continue_after_can_do(db, session, lesson, messages)
 
     elif session.state == "can_do_quiz":
         can_dos = lesson.get("can_dos") or []
@@ -829,17 +864,8 @@ async def user_message(
         return _payload(session, lesson, messages, step, db=db)
 
     if session.state == "self_check":
-        # Ignore free text during self-check; use dedicated endpoint
-        can_dos = lesson.get("can_dos") or []
-        cd = can_dos[session.quiz_index] if session.quiz_index < len(can_dos) else None
-        step = self_check_step(cd) if cd else {"phase": "self_check", "expect_speech": False}
-        _append_tutor(
-            messages,
-            "ほしを えらんでください。",
-            "Please use the star rating (or Skip).",
-            step,
-            session.state,
-        )
+        # Soft rating removed — continue as if the learner skipped it.
+        step = _continue_after_can_do(db, session, lesson, messages)
         _save_msgs(session, messages)
         db.commit()
         return _payload(session, lesson, messages, step, db=db)
@@ -931,14 +957,48 @@ async def user_message(
         return _payload(session, lesson, messages, retry, grade, db=db)
 
     if session.state == "grammar":
-        pts = flow._grammar_for_lesson(lesson_id)
-        idx = min(session.quiz_index, max(len(pts) - 1, 0)) if pts else 0
-        point = pts[idx] if pts else {}
-        # Grade only against speakable examples — never against pattern labels like "N です".
-        expected = flow._grammar_examples(point)
+        drills = flow.grammar_drills(lesson_id)
+        idx = min(session.quiz_index, max(len(drills) - 1, 0)) if drills else 0
+        drill = drills[idx] if drills else {}
+        active = flow.grammar_active(drill)
+        facilitate = bool(drill.get("facilitate") and (drill.get("turn") or drill.get("exercise")))
+        # Fixed workbook lines are listen-only — advance instead of grading.
+        if facilitate and flow.grammar_is_listen(active):
+            bump_phase_index(session)
+            if not drills or session.quiz_index >= len(drills):
+                step = _begin_quiz(session, lesson, messages, db)
+            else:
+                jp, en, step = flow.grammar_item(
+                    drills[session.quiz_index], session.quiz_index, len(drills)
+                )
+                _append_tutor(messages, jp, en, step, session.state)
+            _save_msgs(session, messages)
+            db.commit()
+            return _payload(session, lesson, messages, step, db=db)
+
+        choose = facilitate and flow.grammar_is_choose(active)
+        # Grade blanks / choices / examples — never pattern labels like "N です".
+        expected = flow.grammar_expected(drill)
         grade = None
         policy = current_policy()
-        if expected:
+        if choose:
+            grade = flow.grade_choice_answer(
+                text,
+                {
+                    "correct_ids": active.get("correct_ids") or [],
+                    "choose_mode": "all" if active.get("choose_multi") else "any",
+                },
+            )
+            if not grade.get("feedback_en") or "Listen again" in (grade.get("feedback_en") or ""):
+                grade["feedback_en"] = (
+                    "Good!" if grade.get("passed") else "Choose carefully — look at the worksheet options."
+                )
+            if not grade.get("passed"):
+                grade["feedback_jp"] = grade.get("feedback_jp") or "もういちど えらんでください。"
+            passed = bool(grade.get("passed"))
+            reply = flow.feedback_pass_short() if passed else (grade.get("feedback_jp") or "もういちど。")
+            en = grade.get("feedback_en") or ("Nice — next." if passed else "Try again.")
+        elif expected:
             grade = grade_phrases(text, expected, spoken=spoken, policy=policy)
             passed = bool(grade.get("passed"))
             reply = (
@@ -946,9 +1006,13 @@ async def user_message(
                 if passed
                 else grade.get("feedback_jp") or flow.feedback_retry(expected)
             )
-            en = grade.get("feedback_en") or (
-                "Nice — next grammar drill." if passed else f"Try saying: {expected[0]}"
-            )
+            if passed:
+                en = grade.get("feedback_en") or "Nice — next grammar drill."
+            elif facilitate:
+                # Don't leak the answer in coach text.
+                en = grade.get("feedback_en") or "Almost — check the cue and type the blank again."
+            else:
+                en = grade.get("feedback_en") or f"Try saying: {expected[0]}"
         else:
             # Uncurated point with no examples: accept any short Japanese attempt.
             passed = len(text.strip()) >= 2
@@ -956,8 +1020,8 @@ async def user_message(
             en = "Nice — next." if passed else "Say a short Japanese example, or tap Next."
 
         if not passed:
-            if pts:
-                _jp, _en, step = flow.grammar_item(point, idx, len(pts))
+            if drills:
+                _jp, _en, step = flow.grammar_item(drill, idx, len(drills))
             else:
                 step = {
                     "phase": "grammar",
@@ -969,11 +1033,21 @@ async def user_message(
             step = dict(step)
             step["play_audio"] = []
             step["model_before_speech"] = False
-            step["offer_retry_help"] = True
-            if expected:
-                step["say_target_jp"] = step.get("say_target_jp") or expected[0]
-            reply = flow.feedback_retry_choice()
-            en = flow.feedback_retry_choice_en()
+            if facilitate or step.get("expects_text"):
+                # Typed blank: keep the fill UI; never reveal the answer.
+                step["expect_speech"] = False
+                step["expects_speech"] = False
+                step["expects_text"] = True
+                step["offer_retry_help"] = False
+                step["say_target_jp"] = None
+                reply = grade.get("feedback_jp") or "もういちど。"
+                en = grade.get("feedback_en") or en
+            else:
+                step["offer_retry_help"] = True
+                if expected:
+                    step["say_target_jp"] = step.get("say_target_jp") or expected[0]
+                reply = flow.feedback_retry_choice()
+                en = flow.feedback_retry_choice_en()
             _append_tutor(messages, reply, en, step, session.state)
             _save_msgs(session, messages)
             db.commit()
@@ -994,10 +1068,12 @@ async def user_message(
             session.state,
         )
         bump_phase_index(session)
-        if not pts or session.quiz_index >= len(pts):
+        if not drills or session.quiz_index >= len(drills):
             step = _begin_quiz(session, lesson, messages, db)
         else:
-            jp, en, step = flow.grammar_item(pts[session.quiz_index], session.quiz_index, len(pts))
+            jp, en, step = flow.grammar_item(
+                drills[session.quiz_index], session.quiz_index, len(drills)
+            )
             _append_tutor(messages, jp, en, step, session.state)
         _save_msgs(session, messages)
         db.commit()
@@ -1011,52 +1087,42 @@ async def user_message(
             must = (cd.get("rubric") or {}).get("must_include") or []
             expected = list((scenario or {}).get("expected") or must)
             mastery_th = float(settings.mastery_min_score)
-            if scenario:
-                base = quiz_grade(text, expected, spoken, pass_threshold=mastery_th)
-            else:
-                base = grade_phrases(text, must, spoken=spoken, pass_threshold=mastery_th)
-            sc = float(base.get("score") or 0)
-            if 55 <= sc <= 80:
-                grade = await llm_refine_grade(text, cd, base, scenario)
-            else:
+
+            # Prefer local-LLM judgment of the role-play; fall back to phrase matching.
+            grade = await llm_judge_can_do(text, cd, scenario, spoken=spoken)
+            if grade is None:
+                if scenario:
+                    base = quiz_grade(text, expected, spoken, pass_threshold=mastery_th)
+                else:
+                    base = grade_phrases(text, must, spoken=spoken, pass_threshold=mastery_th)
                 grade = _apply_mastery_gate(dict(base))
+                grade["judge"] = "heuristic"
                 if not grade.get("jp_feedback"):
                     grade["jp_feedback"] = (
                         flow.feedback_pass_short()
                         if grade.get("passed")
                         else flow.feedback_retry(expected if scenario else must)
                     )
+
             apply_can_do_result(db, lesson_id, cd["id"], grade)
             srs_service.enqueue_from_gaps(db, lesson_id, cd["id"], grade.get("gaps") or [], text)
-            retry_phrases = expected if scenario else must
             if grade.get("passed"):
                 reply = grade.get("jp_feedback") or flow.feedback_pass_short()
+                en = grade.get("en_feedback") or grade.get("feedback_en") or f"Can-do score {grade.get('score')}%"
+                step = flow.quiz_step(cd, scenario, expect_speech=False)
+                _append_tutor(messages, reply, en, step, session.state)
+                step = _after_can_do_passed(db, session, lesson, messages, cd)
             else:
                 reply = flow.feedback_retry_choice()
-            if grade.get("passed"):
-                step = flow.quiz_step(cd, scenario, expect_speech=False)
-            else:
+                en = grade.get("en_feedback") or flow.feedback_retry_choice_en()
                 step = flow.quiz_step(cd, scenario, expect_speech=True)
                 step = dict(step)
                 step["play_audio"] = []
                 step["model_before_speech"] = False
                 step["offer_retry_help"] = True
-                if retry_phrases:
-                    step["say_target_jp"] = step.get("say_target_jp") or retry_phrases[0]
-            _append_tutor(
-                messages,
-                reply,
-                (
-                    f"Can-do score {grade.get('score')}%"
-                    if grade.get("passed")
-                    else flow.feedback_retry_choice_en()
-                ),
-                step,
-                session.state,
-            )
-            if grade.get("passed"):
-                # Soft self-check before next Can-do / complete (unlock still from graded passes)
-                step = _after_can_do_passed(db, session, lesson, messages, cd)
+                # Do not leak the answer key on retry.
+                step["say_target_jp"] = None
+                _append_tutor(messages, reply, en, step, session.state)
             _save_msgs(session, messages)
             db.commit()
             return _payload(session, lesson, messages, step, grade, db=db)
@@ -1213,39 +1279,22 @@ async def submit_self_check(
     stars: int,
     comment: str = "",
 ) -> dict:
-    """Store soft self-check and continue lesson flow. Does not affect unlock."""
+    """Deprecated soft self-check. Continues the lesson; ratings are ignored for unlock."""
     if block := locked_response(db, lesson_id):
         return block
     lesson = load_lesson(lesson_id)
     session = await ensure_session(db, lesson_id)
     messages = _msgs(session)
-    if session.state != "self_check":
-        return {"error": "Not waiting for a self-check.", "lesson_id": lesson_id}
-
-    can_dos = lesson.get("can_dos") or []
-    current = can_dos[session.quiz_index] if session.quiz_index < len(can_dos) else None
-    if not current or current.get("id") != can_do_id:
-        return {"error": "can_do_id does not match current self-check.", "lesson_id": lesson_id}
-
-    save_self_check(db, lesson_id, can_do_id, stars, comment)
-    log_event(
-        "orchestrator",
-        "self_check",
-        lesson_id=lesson_id,
-        can_do_id=can_do_id,
-        stars=stars,
-    )
-    _append_tutor(
-        messages,
-        "記録しました。",
-        f"Saved your self-check ({stars}★).",
-        {"phase": "self_check", "expect_speech": False, "play_audio": [], "help": True},
-        session.state,
-    )
-    step = _continue_after_self_check(db, session, lesson, messages)
-    _save_msgs(session, messages)
-    db.commit()
-    return _payload(session, lesson, messages, step, db=db)
+    if session.state == "self_check":
+        try:
+            save_self_check(db, lesson_id, can_do_id, stars, comment)
+        except Exception:  # noqa: BLE001
+            pass
+        step = _continue_after_can_do(db, session, lesson, messages)
+        _save_msgs(session, messages)
+        db.commit()
+        return _payload(session, lesson, messages, step, db=db)
+    return _payload(session, lesson, messages, None, db=db)
 
 
 async def get_message_history(

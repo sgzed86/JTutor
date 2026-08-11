@@ -57,13 +57,73 @@ activities:
   audio:
   - assets/audio/Y_[16-01]_kotoba1.mp3
   key_phrases:
-  - のために気をつけていることがあります
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 顔
+  - 頭
+  - 歯
+  - 首
+  - 目
+  - 耳
+  - 口
+  - 体
+  - 胸
+  - おなか
+  - 足
+  - 背中
+  - 腰
+  - 腕
+  - 手
+  - 指
+  prompt_en: Listen to the CD, then say each word one at a time (16 words).
   phrase_meta:
-  - jp: のために気をつけていることがあります
+  - jp: 顔
     tags:
-    - long
+    - short
+  - jp: 頭
+    tags:
+    - short
+  - jp: 歯
+    tags:
+    - short
+  - jp: 首
+    tags:
+    - short
+  - jp: 目
+    tags:
+    - short
+  - jp: 耳
+    tags:
+    - short
+  - jp: 口
+    tags:
+    - short
+  - jp: 体
+    tags:
+    - short
+  - jp: 胸
+    tags:
+    - short
+  - jp: おなか
+    tags:
+    - short
     - polite
+  - jp: 足
+    tags:
+    - short
+  - jp: 背中
+    tags:
+    - short
+  - jp: 腰
+    tags:
+    - short
+  - jp: 腕
+    tags:
+    - short
+  - jp: 手
+    tags:
+    - short
+  - jp: 指
+    tags:
+    - short
   book_mode: vocab_drill
 - id: A2
   kind: vocabulary
@@ -73,12 +133,57 @@ activities:
   audio:
   - assets/audio/Y_[16-02]_kotoba2.mp3
   key_phrases:
-  - のために気をつけていることがあります
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 頭が痛いです
+  - 歯が痛いです
+  - 目が痛いです
+  - 耳が痛いです
+  - 胸が痛いです
+  - 腰が痛いです
+  - 肩が痛いです
+  - 背中が痛いです
+  - お腹が痛いです
+  - 足が痛いです
+  prompt_en: Listen to the CD, then say each word one at a time (10 words).
   phrase_meta:
-  - jp: のために気をつけていることがあります
+  - jp: 頭が痛いです
     tags:
-    - long
+    - short
+    - polite
+  - jp: 歯が痛いです
+    tags:
+    - short
+    - polite
+  - jp: 目が痛いです
+    tags:
+    - short
+    - polite
+  - jp: 耳が痛いです
+    tags:
+    - short
+    - polite
+  - jp: 胸が痛いです
+    tags:
+    - short
+    - polite
+  - jp: 腰が痛いです
+    tags:
+    - short
+    - polite
+  - jp: 肩が痛いです
+    tags:
+    - short
+    - polite
+  - jp: 背中が痛いです
+    tags:
+    - short
+    - polite
+  - jp: お腹が痛いです
+    tags:
+    - short
+    - polite
+  - jp: 足が痛いです
+    tags:
+    - short
     - polite
   book_mode: vocab_drill
 - id: A3
@@ -978,56 +1083,80 @@ quiz_bank:
     prevention methods, etc.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL16_57
-  partner_jp: のために気をつけていることがあります。
-  expected: &id001
-  - のために気をつけていることがあります
-  - 食べすぎないようにしています
-  - イスを聞いています。
-  - どのように体の調子が悪いですか。
-  hint_en: Can give advice when someone is feeling unwell, or listen to and under - stand the advice.
+  setup_en: Yuki feels unwell. Give simple advice.
+  goal_en: Learner gives or understands health advice.
+  partner_jp: 頭が痛いんです…
+  expected:
+  - "休んで"
+  - "薬"
+  - "ほうがいい"
+  - "水"
+  hint_en: Yuki feels unwell. Give simple advice.
 - can_do_id: CD_EL16_57
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can give advice when someone is feeling unwell, or listen to and under - stand t
+  setup_en: Listen to advice and say what you should do.
+  goal_en: Learner understands advice for feeling unwell.
+  partner_jp: 熱があるときは、無理しないで休んだほうがいいですよ。
+  expected:
+  - "休む"
+  - "無理"
+  - "熱"
+  hint_en: Listen to advice and say what you should do.
 - can_do_id: CD_EL16_58
-  partner_jp: のために気をつけていることがあります。
-  expected: &id002
-  - のために気をつけていることがあります
-  - 食べすぎないようにしています
-  - イスを聞いています。
-  - どのように体の調子が悪いですか。
-  hint_en: Can talk about what you are mindful of to maintain your health.
+  setup_en: Talk about what you do to stay healthy.
+  goal_en: Learner talks about health habits.
+  partner_jp: 健康のために、何か気をつけていますか？
+  expected:
+  - "しています"
+  - "ように"
+  - "運動"
+  - "睡眠"
+  hint_en: Talk about what you do to stay healthy.
 - can_do_id: CD_EL16_58
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can talk about what you are mindful of to maintain your health.
+  setup_en: Share one healthy habit.
+  goal_en: Learner describes mindfulness for health.
+  partner_jp: 私は野菜を食べるようにしています。
+  expected:
+  - "しています"
+  - "ように"
+  - "です"
+  hint_en: Share one healthy habit.
 - can_do_id: CD_EL16_59
-  partner_jp: 食べすぎないようにしています。
-  expected: &id003
-  - 食べすぎないようにしています
-  - イスを聞いています。
-  - どのように体の調子が悪いですか。
-  - どうしたか？
-  hint_en: Can look at news about an epidemic illness and more or less understand the contents, such as
-    its name, symptoms, and prevention methods.
+  setup_en: Yuki summarizes epidemic news. Name / symptom / prevention?
+  goal_en: Learner understands epidemic news basics.
+  partner_jp: ニュースです。インフルエンザが流行しています。熱とせきが出ます。手洗いが大切です。
+  expected:
+  - "インフルエンザ"
+  - "熱"
+  - "手洗い"
+  hint_en: Yuki summarizes epidemic news. Name / symptom / prevention?
 - can_do_id: CD_EL16_59
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can look at news about an epidemic illness and more or less understand the conte
+  setup_en: What prevention method was mentioned?
+  goal_en: Learner extracts prevention info.
+  partner_jp: マスクをして、人混みを避けてください、とのことです。
+  expected:
+  - "マスク"
+  - "人混み"
+  - "避け"
+  hint_en: What prevention method was mentioned?
 - can_do_id: CD_EL16_60
-  partner_jp: 食べすぎないようにしています。
-  expected: &id004
-  - 食べすぎないようにしています
-  - イスを聞いています。
-  - どのように体の調子が悪いですか。
-  - プーピンさん、どうしたんですか？
-  hint_en: Can look at a poster about an illness at a hospital and understand the symptoms, prevention
-    methods, etc.
+  setup_en: Yuki reads a hospital poster. What symptoms are listed?
+  goal_en: Learner understands a health poster.
+  partner_jp: ポスターです。症状：発熱、せき、のどの痛み。予防：手洗い、うがい。
+  expected:
+  - "発熱"
+  - "せき"
+  - "手洗い"
+  hint_en: Yuki reads a hospital poster. What symptoms are listed?
 - can_do_id: CD_EL16_60
-  partner_jp: もう一度、お願いします。
-  expected: *id004
-  hint_en: Again — Can look at a poster about an illness at a hospital and understand the symptoms,
+  setup_en: Name one prevention method from the poster.
+  goal_en: Learner understands poster prevention tips.
+  partner_jp: 『うがいと換気をしましょう』と書いてあります。
+  expected:
+  - "うがい"
+  - "換気"
+  hint_en: Name one prevention method from the poster.
 english_notes: 'Is there anything you do daily for your health? What kind of things are you mindful of?
 
   Can give advice when someone is feeling unwell, or listen to and understand the advice.

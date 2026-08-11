@@ -1004,66 +1004,101 @@ quiz_bank:
     dosage.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL15_52
-  partner_jp: 熱があってのどが痛いんです。
-  expected: &id001
-  - 熱があってのどが痛いんです
-  - どんな症状ですか。
-  - いつからですか。
-  - 今日はどうしました
-  hint_en: Can explain in simple terms your symptoms at the hospital.
+  setup_en: At the hospital. Explain your symptoms simply.
+  goal_en: Learner describes symptoms.
+  partner_jp: 今日はどうしましたか？
+  expected:
+  - "痛い"
+  - "熱"
+  - "のど"
+  - "んです"
+  hint_en: At the hospital. Explain your symptoms simply.
 - can_do_id: CD_EL15_52
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can explain in simple terms your symptoms at the hospital.
+  setup_en: Say you have a fever and sore throat.
+  goal_en: Learner reports symptoms.
+  partner_jp: 症状を教えてください。
+  expected:
+  - "熱"
+  - "のど"
+  - "痛い"
+  - "です"
+  hint_en: Say you have a fever and sore throat.
 - can_do_id: CD_EL15_53
-  partner_jp: 熱があってのどが痛いんです。
-  expected: &id002
-  - 熱があってのどが痛いんです
-  - どんな症状ですか。
-  - いつからですか。
-  - 今日はどうしました
-  hint_en: Can listen to and understand the doctor at the hospital.
+  setup_en: The doctor gives advice. What should you do?
+  goal_en: Learner shows they understood the doctor.
+  partner_jp: 今日は休んでください。薬を飲んで、たくさん水を飲んでください。
+  expected:
+  - "休んで"
+  - "薬"
+  - "水"
+  hint_en: The doctor gives advice. What should you do?
 - can_do_id: CD_EL15_53
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can listen to and understand the doctor at the hospital.
+  setup_en: Confirm what the doctor said about returning.
+  goal_en: Learner understands medical instructions.
+  partner_jp: 熱が下がらなかったら、また来てください。
+  expected:
+  - "熱"
+  - "また"
+  - "来て"
+  hint_en: Confirm what the doctor said about returning.
 - can_do_id: CD_EL15_54
-  partner_jp: 熱があってのどが痛いんです。
-  expected: &id003
-  - 熱があってのどが痛いんです
-  - どんな症状ですか。
-  - いつからですか。
-  - 今日はどうしました
-  hint_en: Can fill out the necessary information on a questionnaire form at the hospital reception desk.
+  setup_en: Reception asks for form info. Say your symptoms and when they started.
+  goal_en: Learner provides questionnaire info orally.
+  partner_jp: 問診票です。いつからですか？
+  expected:
+  - "昨日から"
+  - "今日"
+  - "痛い"
+  - "熱"
+  hint_en: Reception asks for form info. Say your symptoms and when they started.
 - can_do_id: CD_EL15_54
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can fill out the necessary information on a questionnaire form at the hospital r
+  setup_en: Answer allergy and medicine questions simply.
+  goal_en: Learner fills key reception info.
+  partner_jp: アレルギーはありますか？いま薬を飲んでいますか？
+  expected:
+  - "ありません"
+  - "あります"
+  - "薬"
+  - "いいえ"
+  hint_en: Answer allergy and medicine questions simply.
 - can_do_id: CD_EL15_55
-  partner_jp: 熱があってのどが痛いんです。
-  expected: &id004
-  - 熱があってのどが痛いんです
-  - どんな症状ですか。
-  - いつからですか。
-  - 今日はどうしましたか？
-  hint_en: Can listen to instructions about medicine and understand directions for use and precautions.
+  setup_en: Pharmacist explains medicine use. How often do you take it?
+  goal_en: Learner understands medicine directions.
+  partner_jp: この薬は食後に一日三回飲んでください。
+  expected:
+  - "食後"
+  - "三回"
+  - "一日"
+  hint_en: Pharmacist explains medicine use. How often do you take it?
 - can_do_id: CD_EL15_55
-  partner_jp: もう一度、お願いします。
-  expected: *id004
-  hint_en: 'Again — Can listen to instructions about medicine and understand directions for use and '
+  setup_en: Restate one precaution you heard.
+  goal_en: Learner understands usage precautions.
+  partner_jp: お酒は飲まないでください。眠くなることがあります。
+  expected:
+  - "お酒"
+  - "眠く"
+  - "飲まない"
+  hint_en: Restate one precaution you heard.
 - can_do_id: CD_EL15_56
-  partner_jp: 熱があってのどが痛いんです。
-  expected: &id005
-  - 熱があってのどが痛いんです
-  - どんな症状ですか。
-  - いつからですか。
-  - 今日はどうしましたか？
-  hint_en: Can read instructions about medicine and understand directions for use and dosage.
+  setup_en: "Yuki reads the medicine label. What's the dosage?"
+  goal_en: Learner understands written dosage directions.
+  partner_jp: 用法：一日二回、一回一錠。朝と夜。
+  expected:
+  - "二回"
+  - "一錠"
+  - "朝"
+  - "夜"
+  hint_en: "Yuki reads the medicine label. What's the dosage?"
 - can_do_id: CD_EL15_56
-  partner_jp: もう一度、お願いします。
-  expected: *id005
-  hint_en: Again — Can read instructions about medicine and understand directions for use and dosag
+  setup_en: "From the label, when do you take it?"
+  goal_en: Learner reads medicine instructions.
+  partner_jp: 『食前に飲んでください』と書いてあります。
+  expected:
+  - "食前"
+  - "飲んで"
+  hint_en: "From the label, when do you take it?"
 english_notes: 'Have you recently visited a doctor? For what symptom did you see a doctor?
 
   Can explain in simple terms your symptoms at the hospital.

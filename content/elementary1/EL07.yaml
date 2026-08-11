@@ -573,54 +573,81 @@ quiz_bank:
   prompt_en: 'Demonstrate: Can write a message saying that you will be late for the arranged time.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL07_20
-  partner_jp: ピック待ち合わせはどんな場所でします。
-  expected: &id001
-  - ピック待ち合わせはどんな場所でします
-  - ちょっと遅れます
-  - 人の人が質問しています。
-  - 何時に行きます
-  hint_en: Can ask and understand the time and place to meet.
+  setup_en: Ask what time and where you will meet.
+  goal_en: Learner asks meeting time and place.
+  partner_jp: じゃあ、あした会いましょう。
+  expected:
+  - "何時"
+  - "どこ"
+  - "待ち合わせ"
+  hint_en: Ask what time and where you will meet.
 - can_do_id: CD_EL07_20
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can ask and understand the time and place to meet.
+  setup_en: Confirm the meeting details Yuki said.
+  goal_en: Learner understands meeting time/place.
+  partner_jp: 駅の改札前で、三時に待ち合わせしましょう。
+  expected:
+  - "三時"
+  - "改札"
+  - "駅"
+  hint_en: Confirm the meeting details Yuki said.
 - can_do_id: CD_EL07_21
-  partner_jp: ピック待ち合わせはどんな場所でします。
-  expected: &id002
-  - ピック待ち合わせはどんな場所でします
-  - ちょっと遅れます
-  - 人の人が質問しています。
-  - 何時に行きます
-  hint_en: Can talk about and decide the time and place to meet.
+  setup_en: Decide a meeting time and place with Yuki.
+  goal_en: Learner proposes/agrees on meeting details.
+  partner_jp: いつ、どこがいいですか？
+  expected:
+  - "時"
+  - "駅"
+  - "ましょう"
+  - "いいです"
+  hint_en: Decide a meeting time and place with Yuki.
 - can_do_id: CD_EL07_21
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can talk about and decide the time and place to meet.
+  setup_en: "Suggest meeting at the café at 1:00."
+  goal_en: Learner helps decide time and place.
+  partner_jp: 私は午後なら大丈夫です。
+  expected:
+  - "一時"
+  - "カフェ"
+  - "どうですか"
+  - "ましょう"
+  hint_en: "Suggest meeting at the café at 1:00."
 - can_do_id: CD_EL07_22
-  partner_jp: ピック待ち合わせはどんな場所でします。
-  expected: &id003
-  - ピック待ち合わせはどんな場所でします
-  - ちょっと遅れます
-  - 人の人が質問しています。
-  - 何時に行きます
-  hint_en: Can read and understand a message saying that the person you are meeting will be late.
+  setup_en: Yuki reads a late message. What does it say?
+  goal_en: "Learner understands a 'I'll be late' message."
+  partner_jp: メッセージです。「すみません。十分くらい遅れます。」
+  expected:
+  - "遅れ"
+  - "十分"
+  - "すみません"
+  hint_en: Yuki reads a late message. What does it say?
 - can_do_id: CD_EL07_22
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can read and understand a message saying that the person you are meeting will be
+  setup_en: Summarize the late notice.
+  goal_en: Learner understands lateness info.
+  partner_jp: 『電車が遅れて、四時になります』とのことです。
+  expected:
+  - "四時"
+  - "遅れ"
+  - "電車"
+  hint_en: Summarize the late notice.
 - can_do_id: CD_EL07_23
-  partner_jp: ピック待ち合わせはどんな場所でします。
-  expected: &id004
-  - ピック待ち合わせはどんな場所でします
-  - ちょっと遅れます
-  - 人の人が質問しています。
-  - 何時に行きます
-  hint_en: Can write a message saying that you will be late for the arranged time.
+  setup_en: "You're running late. Say a short message you would send."
+  goal_en: Learner produces a simple late message.
+  partner_jp: 友だち、待っていますよ。連絡してください。
+  expected:
+  - "遅れます"
+  - "すみません"
+  - "分"
+  hint_en: "You're running late. Say a short message you would send."
 - can_do_id: CD_EL07_23
-  partner_jp: もう一度、お願いします。
-  expected: *id004
-  hint_en: Again — Can write a message saying that you will be late for the arranged time.
+  setup_en: "Write/say: you'll be 15 minutes late."
+  goal_en: Learner communicates lateness.
+  partner_jp: いま、どこですか？
+  expected:
+  - "遅れます"
+  - "十五分"
+  - "すみません"
+  hint_en: "Write/say: you'll be 15 minutes late."
 english_notes: 'What kind of places do you meet with people? Do you arrive right on time at the time you
   promised?
 

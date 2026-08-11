@@ -139,11 +139,57 @@ class QuizScenario(Base):
     partner_jp: str | None = None
     expected: list[str] = Field(default_factory=list)
     hint_en: str | None = None
+    # Role-play briefing shown to the learner (English).
+    setup_en: str | None = None
+    # What success looks like — used by the local LLM judge.
+    goal_en: str | None = None
 
 
 class GrammarExample(Base):
     jp: str
     en: str | None = None
+
+
+class GrammarTurn(Base):
+    """One spoken/written line inside a workbook exercise dialogue."""
+
+    # listen = Yuki reads a fixed (no-blank) line; fill/choose = learner responds.
+    kind: Literal["listen", "fill", "choose"] = "listen"
+    role: str | None = None  # A / B / C (display only)
+    jp: str | None = None  # Fixed line for listen turns
+    cue_jp: str | None = None
+    blank_prompt_jp: str | None = None
+    read_jp: str | None = None
+    partner_jp: str | None = None
+    instruction_en: str | None = None
+    answers: list[str] = Field(default_factory=list)
+    full_jp: str | None = None
+    answer_alts: list[str] = Field(default_factory=list)
+    choices: list[ChoiceItem] = Field(default_factory=list)
+    correct_ids: list[str] = Field(default_factory=list)
+    choose_multi: bool = False
+
+
+class GrammarExercise(Base):
+    """One numbered workbook item (may contain several dialogue turns)."""
+
+    instruction_en: str | None = None
+    turns: list[GrammarTurn] = Field(default_factory=list)
+    # Legacy flat fields (auto-expanded into turns when `turns` is empty).
+    cue_jp: str | None = None
+    cue_en: str | None = None
+    blank_prompt_jp: str | None = None
+    read_jp: str | None = None
+    partner_jp: str | None = None
+    answers: list[str] = Field(default_factory=list)
+    full_jp: str | None = None
+    answer_alts: list[str] = Field(default_factory=list)
+    choices: list[ChoiceItem] = Field(default_factory=list)
+    correct_ids: list[str] = Field(default_factory=list)
+    choose_multi: bool = False
+    line_jp: str | None = None
+    expected: list[str] = Field(default_factory=list)
+    follow_jp: str | None = None  # Optional fixed line after the learner response
 
 
 class GrammarPoint(Base):
@@ -154,6 +200,7 @@ class GrammarPoint(Base):
     prompt_en: str | None = None
     prompt_jp: str | None = None
     examples: list[GrammarExample | str] = Field(default_factory=list)
+    exercises: list[GrammarExercise] = Field(default_factory=list)
 
 
 class VocabItem(Base):

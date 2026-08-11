@@ -1388,32 +1388,62 @@ def build_intro_questions(lesson_num: int, title_en: str, topic_en: str, can_dos
 
 
 def build_quiz_scenarios(lesson_num: int, can_dos: list[dict]) -> list[dict]:
-    if lesson_num == 1:
-        return [dict(s) for s in L01_QUIZ_SCENARIOS]
-    if lesson_num == 2:
-        return [dict(s) for s in L02_QUIZ_SCENARIOS]
+    """Prefer curated role-play catalog; fall back to L01/L02 legacy lists."""
+    from roleplay_catalog_starter import STARTER
+
     out: list[dict] = []
     for c in can_dos:
+        items = STARTER.get(c["id"])
+        if items:
+            for item in items:
+                out.append(
+                    {
+                        "can_do_id": c["id"],
+                        "setup_en": item["setup_en"],
+                        "goal_en": item["goal_en"],
+                        "partner_jp": item["partner_jp"],
+                        "expected": list(item.get("expected") or []),
+                        "hint_en": item.get("hint_en") or item["setup_en"],
+                    }
+                )
+            continue
+        # Legacy L01/L02 hand lists (pre-catalog)
+        if lesson_num == 1:
+            continue
+        if lesson_num == 2:
+            continue
         must = (c.get("rubric") or {}).get("must_include") or []
         if not must:
             continue
-        stmt = (c.get("statement_jp") or c.get("statement_en") or "")[:40]
+        stmt = (c.get("statement_en") or "")[:80]
         out.append(
             {
                 "can_do_id": c["id"],
-                "partner_jp": "では、お願いします。",
+                "setup_en": f"Role-play — show that you can: {stmt}",
+                "goal_en": f"Learner demonstrates: {stmt}",
+                "partner_jp": "じゃあ、やってみましょう。",
                 "expected": list(must),
-                "hint_en": f"Situation: {c.get('statement_en', '')} Reply using lesson phrases.",
+                "hint_en": f"Situation: {stmt}",
             }
         )
-        out.append(
+    if lesson_num == 1 and not out:
+        return [
             {
-                "can_do_id": c["id"],
-                "partner_jp": "もう一度、お願いします。",
-                "expected": list(must),
-                "hint_en": f"Again — {stmt}",
+                **dict(s),
+                "setup_en": s.get("hint_en") or "",
+                "goal_en": f"Learner demonstrates: {s.get('hint_en') or ''}",
             }
-        )
+            for s in L01_QUIZ_SCENARIOS
+        ]
+    if lesson_num == 2 and not out:
+        return [
+            {
+                **dict(s),
+                "setup_en": s.get("hint_en") or "",
+                "goal_en": f"Learner demonstrates: {s.get('hint_en') or ''}",
+            }
+            for s in L02_QUIZ_SCENARIOS
+        ]
     return out
 
 

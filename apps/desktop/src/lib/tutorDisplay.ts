@@ -15,6 +15,7 @@ export type FocusVariant =
   | "note"
   | "passage"
   | "kanji_study"
+  | "kanji_read"
   | "kanji_type";
 
 export type TutorStageModel = {
@@ -31,6 +32,9 @@ export type TutorStageModel = {
   sayLabel: string;
   sayTargetJp: string | null;
   sayAlternates: string[];
+  grammarCueJp: string | null;
+  grammarLineJp: string | null;
+  grammarPatternEn: string | null;
   lineColor: TutorLineColor;
   pictureHint: string | null;
   blankPromptJp: string | null;
@@ -39,16 +43,18 @@ export type TutorStageModel = {
   blankTotal: number | null;
   choices: { id: string; label_jp?: string | null; label_en?: string | null }[];
   chooseMulti: boolean;
+  chooseExpected: number | null;
   glossEn: string | null;
   passageJp: string | null;
   passageEn: string | null;
   kanjiItems: { kanji: string; reading?: string | null; gloss_en?: string | null }[];
+  kanjiSentences: string[];
+  kanjiFocusWords: string[];
   kanjiPrompt: {
     kanji?: string | null;
     reading?: string | null;
     gloss_en?: string | null;
-    index?: number | null;
-    total?: number | null;
+    index?: number | null;    total?: number | null;
   } | null;
   substeps: string[];
   substepIndex: number | null;
@@ -93,15 +99,26 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
       : null;
 
   const hintEn = payload.hint_en || lastAssistant(messages, (m) => m.hint_en) || "";
-  const tutorBubbleJp =
+  // During your dialog reply, keep Yuki's yellow line in the bubble (conversation).
+  const lastSpoken =
+    lastAssistant(messages, (m) => (m.content?.trim() ? m.content : undefined)) || "";
+  let tutorBubbleJp =
     step.partner_jp ||
     (substep === "partner" || substep === "swap_partner" ? step.dialog_line_jp : "") ||
-    lastAssistant(messages, (m) => m.content) ||
+    lastSpoken ||
     "…";
 
   let instructionEn = step.instruction_en || hintEn || "";
   let sayTargetJp: string | null = step.say_target_jp ?? null;
-  let sayAlternates: string[] = step.say_alternates_jp ?? step.expected_phrases ?? [];
+  const facilitate = Boolean(step.facilitate || step.grammar_cue_jp || step.grammar_line_jp);
+  const isCanDo = state === "can_do_quiz" || substep === "roleplay";
+  // Never surface expected_phrases for facilitated grammar or Can-do role-play.
+  let sayAlternates: string[] = facilitate || isCanDo
+    ? []
+    : (step.say_alternates_jp ?? step.expected_phrases ?? []);
+  const grammarCueJp = step.grammar_cue_jp ?? null;
+  const grammarLineJp = step.grammar_line_jp ?? null;
+  const grammarPatternEn = step.grammar_pattern_en ?? step.grammar_point ?? null;
   let lineColor: TutorLineColor = step.book_line_color ?? null;
   let sayLabel = "Say this";
   let focus: FocusVariant = "none";
@@ -113,6 +130,7 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
   const blankCount = Math.max(step.blank_count ?? 1, 1);
   const choices = step.choices ?? [];
   const chooseMulti = Boolean(step.choose_multi);
+  const chooseExpected = step.choose_expected ?? null;
   const glossEn = step.gloss_en ?? null;
   const passageJp = step.passage_jp ?? null;
   const passageEn = step.passage_en ?? step.culture_notes_en ?? null;
@@ -120,6 +138,8 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     .filter((it): it is { kanji: string; reading?: string | null; gloss_en?: string | null } => Boolean(it?.kanji))
     .map((it) => ({ kanji: it.kanji as string, reading: it.reading, gloss_en: it.gloss_en }));
   const kanjiPrompt = step.kanji_prompt ?? null;
+  const kanjiSentences = (step.kanji_sentences ?? []).map((s) => String(s).trim()).filter(Boolean);
+  const kanjiFocusWords = (step.kanji_focus_words ?? kanjiItems.map((it) => it.kanji)).filter(Boolean);
 
   if (!sayTargetJp && phrases.length && (substep === "repeat" || substep === "select" || substep === "reply")) {
     sayTargetJp = phrases[0];
@@ -155,7 +175,14 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
       instructionEn || "Type the missing word(s). Replay the CD if you need another listen.";
   } else if (substep === "choose" || substep === "read_check") {
     focus = "choose";
-    sayLabel = chooseMulti ? "Select all that apply" : "Choose one";
+    if (chooseMulti) {
+      sayLabel =
+        chooseExpected && chooseExpected > 1
+          ? `Select all that apply (${chooseExpected})`
+          : "Select all that apply";
+    } else {
+      sayLabel = "Choose one";
+    }
     instructionEn = instructionEn || "Tap your answer, then check.";
   } else if (substep === "note") {
     focus = "note";
@@ -166,9 +193,10 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     sayLabel = "Kanji words";
     instructionEn = instructionEn || "Check each kanji and reading, then continue.";
   } else if (substep === "kanji_read") {
-    focus = "passage";
-    sayLabel = "Read with care";
-    instructionEn = instructionEn || "Read the example lines, noticing the new kanji.";
+    focus = "kanji_read";
+    sayLabel = "Read these lines";
+    instructionEn =
+      instructionEn || "Read the following and pay careful attention to the underlined kanji.";
   } else if (substep === "kanji_type") {
     focus = "kanji_type";
     const kp = step.kanji_prompt;
@@ -181,13 +209,60 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     instructionEn =
       instructionEn ||
       (substep === "reflect"
-        ? "Read the culture note, then continue."
+        ? "Read this on your own when you like, then tap Next."
         : "Read the passage, then continue.");
+    if (substep === "reflect") {
+      tutorBubbleJp = "生活と文化";
+      tutorBubbleEn = "";
+    }
   } else if (state === "intro_chat") {
     focus = "none";
     instructionEn = instructionEn || "Warm-up — answer freely in any language.";
+  } else if (state === "can_do_quiz" || substep === "roleplay") {
+    focus = "none";
+    sayTargetJp = null;
+    sayAlternates = [];
+    sayLabel = "Your reply";
+    instructionEn =
+      step.instruction_en ||
+      instructionEn ||
+      step.statement_en ||
+      "Role-play — reply to Yuki in Japanese.";
   } else if (state === "grammar") {
-    if (sayTargetJp) {
+    if (substep === "grammar_listen") {
+      focus = "passage";
+      sayLabel = step.grammar_role ? `Speaker ${step.grammar_role}` : "Listen";
+      sayTargetJp = null;
+      sayAlternates = [];
+      instructionEn =
+        step.instruction_en ||
+        instructionEn ||
+        "Listen — this line has no blank. Yuki reads it for you.";
+    } else if (substep === "grammar_choose" || (facilitate && choices.length > 0)) {
+      focus = "choose";
+      sayLabel =
+        step.grammar_total != null
+          ? `Grammar ${(step.grammar_index ?? 0) + 1} of ${step.grammar_total}`
+          : "Choose";
+      sayTargetJp = null;
+      sayAlternates = [];
+      instructionEn =
+        step.instruction_en ||
+        instructionEn ||
+        "Listen to Yuki, then choose the correct answer from the worksheet.";
+    } else if (substep === "grammar_fill" || (facilitate && blankPromptJp)) {
+      focus = "fill";
+      sayLabel =
+        step.blank_total && step.blank_index != null
+          ? `Grammar blank ${(step.blank_index ?? 0) + 1} of ${step.blank_total}`
+          : "Type the blank";
+      sayTargetJp = null;
+      sayAlternates = [];
+      instructionEn =
+        step.instruction_en ||
+        instructionEn ||
+        "Listen to Yuki, then type the missing part using the cue.";
+    } else if (sayTargetJp) {
       focus = "say";
       sayLabel = "Say this line";
       instructionEn =
@@ -207,8 +282,13 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     } else if (substep === "pronounce") {
       sayLabel = "Pronounce clearly";
     } else if (substep === "learner" || substep === "swap_learner") {
-      sayLabel = "Your line (orange in the book)";
-      lineColor = "orange";
+      // Book colors stay fixed: partner=yellow, learner=orange. On swap the
+      // student takes yellow; trust server book_line_color when present.
+      lineColor = lineColor ?? (substep === "swap_learner" ? "yellow" : "orange");
+      sayLabel =
+        lineColor === "yellow"
+          ? "Your line (yellow in the book)"
+          : "Your reply (orange in the book)";
     } else if (substep === "reply") {
       sayLabel = "Your reply";
       tutorBubbleEn = pictureHint || instructionEn;
@@ -220,8 +300,12 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     }
   } else if (substep === "partner" || substep === "swap_partner") {
     focus = "none";
-    lineColor = "yellow";
-    instructionEn = instructionEn || "Yuki speaks the partner line (yellow in the book).";
+    lineColor = lineColor ?? (substep === "swap_partner" ? "orange" : "yellow");
+    instructionEn =
+      instructionEn ||
+      (lineColor === "orange"
+        ? "Yuki speaks the orange line."
+        : "Yuki speaks the partner line (yellow in the book).");
   }
 
   // One owner per message: the instruction band says what to do, so the bubble
@@ -250,6 +334,9 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     sayLabel,
     sayTargetJp,
     sayAlternates,
+    grammarCueJp,
+    grammarLineJp,
+    grammarPatternEn,
     lineColor,
     pictureHint,
     blankPromptJp,
@@ -258,10 +345,13 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     blankTotal: step.blank_total ?? null,
     choices,
     chooseMulti,
+    chooseExpected,
     glossEn,
     passageJp,
     passageEn,
     kanjiItems,
+    kanjiSentences,
+    kanjiFocusWords,
     kanjiPrompt,
     substeps: step.substeps ?? [],
     substepIndex: step.substep_index ?? null,

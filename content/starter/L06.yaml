@@ -69,28 +69,33 @@ activities:
   audio:
   - assets/audio/X_[06-02]_kiku2.mp3
   key_phrases:
-  - にいらっしゃいますえーチーズバーガーとテリアキバーガーとフィッシュバーガーくださいこちらでおめし上がりですか
-  - いえ、テイカーをとでおもち帰りですねありがとうございます
-  prompt_en: 'L06 activity 2: listen to the CD, then say the phrase that matches the book.'
+  - チーズバーガーとテリヤキバーガーとフィッシュバーガーください。
+  - こちらでお召し上がりですか。
+  - いえ、テイクアウトで。お持ち帰りですね。
+  prompt_en: Listen (CD 06-02). Do they eat here or take out?
   phrase_meta:
-  - jp: にいらっしゃいますえーチーズバーガーとテリアキバーガーとフィッシュバーガーくださいこちらでおめし上がりですか
+  - jp: チーズバーガーとテリヤキバーガーとフィッシュバーガーください。
     tags:
     - long
-    - polite
-  - jp: いえ、テイカーをとでおもち帰りですねありがとうございます
+  - jp: こちらでお召し上がりですか。
     tags:
     - long
-    - polite
+  - jp: いえ、テイクアウトで。お持ち帰りですね。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L06 activity 2: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Fast-food order — here or takeout.
   choices:
   - id: a
-    label_jp: はい、お待ちします
+    label_jp: ここで食べます
+    label_en: eat here
   - id: b
-    label_jp: いえ、テイカーをとでおもち帰りですねありがとうございます
+    label_jp: テイクアウト／お持ち帰りです
+    label_en: takeout
   - id: c
-    label_jp: 2緑ませんはいマヨネイズありますか
+    label_jp: マヨネーズはありますか
+    label_en: Do you have mayonnaise?
   correct_ids:
   - b
   choose_mode: any
@@ -102,41 +107,43 @@ activities:
   audio:
   - assets/audio/X_[06-03]_kiku3.mp3
   key_phrases:
-  - さんいらっしゃいますねおうかがしますはいえーとこれくださいチキンバーガーのセットですねドリンクは何になりますか
-  - じゃあウロンちゃんお願いしますこちらでおめし上がりですか
-  - はいここで
-  prompt_en: 'L06 activity 3: listen to the CD, then say the phrase that matches the book.'
+  - これください。チキンバーガーのセットですね。
+  - ドリンクは何になりますか。
+  - じゃあウーロン茶お願いします。
+  - はい、ここで。
+  prompt_en: "Listen (CD 06-03). What do they order, and where do they eat?"
   phrase_meta:
-  - jp: さんいらっしゃいますねおうかがしますはいえーとこれくださいチキンバーガーのセットですねドリンクは何になりますか
+  - jp: これください。チキンバーガーのセットですね。
     tags:
     - long
-    - polite
-  - jp: じゃあウロンちゃんお願いしますこちらでおめし上がりですか
+  - jp: ドリンクは何になりますか。
     tags:
     - long
-    - polite
-    - casual
-  - jp: はいここで
+  - jp: じゃあウーロン茶お願いします。
+    tags:
+    - long
+  - jp: はい、ここで。
     tags:
     - short
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L06 activity 3: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Burger set + drink; eat in or take out.
   choices:
   - id: a
-    label_jp: じゃあウロンちゃんお願いしますこちらでおめし上がりですか
+    label_jp: チキンバーガーのセットとウーロン茶で、ここで食べます
+    label_en: chicken burger set + oolong; eat here
   - id: b
-    label_jp: ここ、いいですか
+    label_jp: フィッシュバーガーをテイクアウトします
+    label_en: fish burger takeout
   - id: c
-    label_jp: はいここで
+    label_jp: コーヒーをください
+    label_en: coffee please
   - id: d
-    label_jp: はい、ここでありがとうございます
-  - id: e
-    label_jp: ここ
+    label_jp: マヨネーズはありますか
+    label_en: mayonnaise?
   correct_ids:
   - a
-  - c
-  choose_mode: all
+  choose_mode: any
 - id: A4
   kind: grammar_form
   book_activity: 4
@@ -149,13 +156,39 @@ activities:
   - Sサイズ、(3)何を注文したいですか。
   - チーズバーガーと、てりやきバーガーと、フィッシュバーガー、(3)何を注文したいですか。
   - これ、(3)何を注文したいですか。
-  prompt_en: Focus on the expressions used. Listen and say each pattern.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: コットコーヒーをお願いしますSサイズをお願いしますチーズバーガーとテリアキバーガーと一周バーガーくださいこれください
     tags:
     - long
     - polite
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: ホットコーヒー、＿。
+    answers:
+    - お願いします
+    answer_alts:
+    - ください
+    full_jp: ホットコーヒー、お願いします。
+  - prompt_jp: Sサイズ、＿。
+    answers:
+    - お願いします
+    answer_alts:
+    - ください
+    full_jp: Sサイズ、お願いします。
+  - prompt_jp: チーズバーガーと、てりやきバーガーと、フィッシュバーガー、＿。
+    answers:
+    - ください
+    answer_alts:
+    - お願いします
+    full_jp: チーズバーガーと、てりやきバーガーと、フィッシュバーガー、ください。
+  - prompt_jp: これ、＿。
+    answers:
+    - ください
+    answer_alts:
+    - お願いします
+    full_jp: これ、ください。
+  fill_pdf_page: 162
 - id: A5
   kind: speaking
   book_activity: 5
@@ -164,19 +197,32 @@ activities:
   audio:
   - assets/audio/X_[06-05]_hanasu1.mp3
   key_phrases:
-  - いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+  - これください。
+  - ホットコーヒーですね。こちらでお召し上がりですか。
+  - はい。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+  - jp: これください。
+    tags:
+    - short
+  - jp: ホットコーヒーですね。こちらでお召し上がりですか。
     tags:
     - long
-    - polite
+  - jp: はい。
+    tags:
+    - short
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+    jp: いらっしゃいませ。はい、おうかがいします。
   - speaker: learner
-    jp: いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+    jp: これください。
+  - speaker: partner
+    jp: ホットコーヒーですね。こちらでお召し上がりですか。
+  - speaker: learner
+    jp: はい。
+  - speaker: partner
+    jp: ありがとうございます。
   dialog_listen_audio:
   - assets/audio/X_[06-05]_hanasu1.mp3
 - id: A6
@@ -215,20 +261,36 @@ activities:
   audio:
   - assets/audio/X_[06-07]_hanasu3.mp3
   key_phrases:
-  - いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
+  - チキンバーガーのセットお願いします。
+  - じゃあウーロン茶お願いします。
+  - いいえ、テイクアウトで。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
+  - jp: チキンバーガーのセットお願いします。
     tags:
     - long
-    - polite
-    - casual
+  - jp: じゃあウーロン茶お願いします。
+    tags:
+    - long
+  - jp: いいえ、テイクアウトで。
+    tags:
+    - long
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
+    jp: いらっしゃいませ。はい、おうかがいします。
   - speaker: learner
-    jp: いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
+    jp: チキンバーガーのセットお願いします。
+  - speaker: partner
+    jp: チキンバーガーのセットですね。ドリンクは何になさいますか。
+  - speaker: learner
+    jp: じゃあウーロン茶お願いします。
+  - speaker: partner
+    jp: こちらでお召し上がりですか。
+  - speaker: learner
+    jp: いいえ、テイクアウトで。
+  - speaker: partner
+    jp: ありがとうございます。
   dialog_listen_audio:
   - assets/audio/X_[06-07]_hanasu3.mp3
 - id: A8
@@ -403,13 +465,35 @@ activities:
   audio:
   - assets/audio/X_[06-13]_kotoba1.mp3
   key_phrases:
-  - いざかやの目にうえさしみビカラーゲシー焼き取りビエダマメいいナマビいるフフロンちゃん
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 刺身
+  - 唐揚げ
+  - 焼き鳥
+  - 枝豆
+  - 生ビール
+  - ウーロン茶
+  prompt_en: Listen to the CD, then say each word one at a time (6 words).
   phrase_meta:
-  - jp: いざかやの目にうえさしみビカラーゲシー焼き取りビエダマメいいナマビいるフフロンちゃん
+  - jp: 刺身
     tags:
-    - long
+    - short
+  - jp: 唐揚げ
+    tags:
+    - short
+  - jp: 焼き鳥
+    tags:
+    - short
+  - jp: 枝豆
+    tags:
+    - short
+  - jp: 生ビール
+    tags:
+    - short
+  - jp: ウーロン茶
+    tags:
+    - short
   book_mode: vocab_drill
+  glosses_en:
+    刺身: sashimi
 - id: A14
   kind: vocabulary
   book_activity: 14
@@ -418,10 +502,23 @@ activities:
   audio:
   - assets/audio/X_[06-14]_kotoba2.mp3
   key_phrases:
-  - 1やき取りお願いします2名まびいるください3えだまめとさしみください4カラーゲットウールオンジャーお願いします
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 焼き鳥、お願いします
+  - 生ビール、ください
+  - 枝豆と刺身、ください
+  - 唐揚げとウーロン茶、お願いします
+  prompt_en: Listen to the CD, then say each word one at a time (4 words).
   phrase_meta:
-  - jp: 1やき取りお願いします2名まびいるください3えだまめとさしみください4カラーゲットウールオンジャーお願いします
+  - jp: 焼き鳥、お願いします
+    tags:
+    - long
+    - polite
+  - jp: 生ビール、ください
+    tags:
+    - long
+  - jp: 枝豆と刺身、ください
+    tags:
+    - long
+  - jp: 唐揚げとウーロン茶、お願いします
     tags:
     - long
     - polite
@@ -462,14 +559,43 @@ activities:
   audio:
   - assets/audio/X_[06-16]_katachi1.mp3
   key_phrases:
-  - 名まびる三つとウールオンちゃんひとつおねがいしますえだまめ2つくださいマヨネーズありますか
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - 生ビール3つと、ウーロン茶1つ、お願いします
+  - 枝豆2つ、ください
+  - マヨネーズ、ありますか
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
-  - jp: 名まびる三つとウールオンちゃんひとつおねがいしますえだまめ2つくださいマヨネーズありますか
+  - jp: 生ビール3つと、ウーロン茶1つ、お願いします
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  - jp: 枝豆2つ、ください
+    tags:
+    - long
+  - jp: マヨネーズ、ありますか
+    tags:
+    - long
+    - polite
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: 生ビール＿と、ウーロン茶＿（お願いします）。
+    answers:
+    - 3つ
+    - 1つ
+    answer_alts:
+    - みっつ
+    - ひとつ
+    full_jp: 生ビール3つと、ウーロン茶1つ（お願いします）。
+  - prompt_jp: 枝豆＿、ください。
+    answers:
+    - 2つ
+    answer_alts:
+    - ふたつ
+    full_jp: 枝豆2つ、ください。
+  - prompt_jp: マヨネーズ、＿か？
+    answers:
+    - あります
+    full_jp: マヨネーズ、ありますか？
+  fill_pdf_page: 170
 - id: A17
   kind: grammar_form
   book_activity: 17
@@ -478,12 +604,48 @@ activities:
   audio:
   - assets/audio/X_[06-17]_katachi2_counting.mp3
   key_phrases:
-  - ひとつ二つ三つ四つ一つ三つ七つやつここのついくつ
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - ひとつ
+  - ふたつ
+  - みっつ
+  - よっつ
+  - いつつ
+  - むっつ
+  - ななつ
+  - やっつ
+  - ここのつ
+  - いくつ
+  prompt_en: Listen, then repeat each item one at a time (10 items).
   phrase_meta:
-  - jp: ひとつ二つ三つ四つ一つ三つ七つやつここのついくつ
+  - jp: ひとつ
     tags:
-    - long
+    - short
+  - jp: ふたつ
+    tags:
+    - short
+  - jp: みっつ
+    tags:
+    - short
+  - jp: よっつ
+    tags:
+    - short
+  - jp: いつつ
+    tags:
+    - short
+  - jp: むっつ
+    tags:
+    - short
+  - jp: ななつ
+    tags:
+    - short
+  - jp: やっつ
+    tags:
+    - short
+  - jp: ここのつ
+    tags:
+    - short
+  - jp: いくつ
+    tags:
+    - short
   book_mode: listen_repeat_all
 - id: A18
   kind: speaking
@@ -493,19 +655,26 @@ activities:
   audio:
   - assets/audio/X_[06-18]_hanasu1.mp3
   key_phrases:
-  - 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
+  - すみません、生ビール3つとウーロン茶1つお願いします。
+  - あと、からあげお願いします。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
+  - jp: すみません、生ビール3つとウーロン茶1つお願いします。
     tags:
     - long
-    - polite
+  - jp: あと、からあげお願いします。
+    tags:
+    - long
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
+    jp: はい。
   - speaker: learner
-    jp: 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
+    jp: すみません、生ビール3つとウーロン茶1つお願いします。
+  - speaker: partner
+    jp: はい。
+  - speaker: learner
+    jp: あと、からあげお願いします。
   dialog_listen_audio:
   - assets/audio/X_[06-18]_hanasu1.mp3
 - id: A19
@@ -516,24 +685,22 @@ activities:
   audio:
   - assets/audio/X_[06-19]_hanasu2-1.mp3
   key_phrases:
-  - はい、思ってしまいます
-  - 2緑ませんはいマヨネイズありますか
+  - はい、持っていきます。
+  - すみません、マヨネーズありますか。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: はい、思ってしまいます
+  - jp: はい、持っていきます。
     tags:
     - long
-    - polite
-  - jp: 2緑ませんはいマヨネイズありますか
+  - jp: すみません、マヨネーズありますか。
     tags:
     - long
-    - polite
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 2緑ませんはいマヨネイズありますか
+    jp: すみません、マヨネーズありますか。
   - speaker: learner
-    jp: はい、思ってしまいます
+    jp: はい、持っていきます。
   dialog_listen_audio:
   - assets/audio/X_[06-19]_hanasu2-1.mp3
 - id: A20
@@ -593,11 +760,11 @@ activities:
     reading: にく
     gloss_en: meat
   - kanji: 好き
-    reading: さかなにくすきな
+    reading: すき
     gloss_en: like
   kanji_sentences: &id002
-  - Ａ：何
-  - Ａ：魚、どうですか？
+  - Ａ：何にしますか？　Ｂ：私は、肉にします。
+  - Ａ：魚、どうですか？　Ｂ：おいしいです。
   - ビールが好きです。
   picture_has_image: false
 - id: CULTURE
@@ -707,12 +874,32 @@ grammar:
   - 13
   examples: []
 vocab:
-- jp: いざかやの目にうえさしみビカラーゲシー焼き取りビエダマメいいナマビいるフフロンちゃん
+- jp: 刺身
+  reading: ''
+  en: sashimi
+  tags:
+  - L06
+- jp: 唐揚げ
   reading: ''
   en: ''
   tags:
   - L06
-- jp: 1やき取りお願いします2名まびいるください3えだまめとさしみください4カラーゲットウールオンジャーお願いします
+- jp: 焼き鳥
+  reading: ''
+  en: ''
+  tags:
+  - L06
+- jp: 枝豆
+  reading: ''
+  en: ''
+  tags:
+  - L06
+- jp: 生ビール
+  reading: ''
+  en: ''
+  tags:
+  - L06
+- jp: ウーロン茶
   reading: ''
   en: ''
   tags:
@@ -744,109 +931,63 @@ quiz_bank:
     ordering.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L06_18
-  partner_jp: では、お願いします。
+  setup_en: At a café. Order a drink.
+  goal_en: Learner orders with ください / お願いします.
+  partner_jp: いらっしゃいませ。ご注文は？
   expected:
-  - ください
-  hint_en: 'Situation: Can order food and drinks at a restaurant/cafe. Reply using lesson phrases.'
+  - "ください"
+  - "お願いします"
+  - "コーヒー"
+  hint_en: At a café. Order a drink.
 - can_do_id: CD_L06_18
-  partner_jp: もう一度、お願いします。
+  setup_en: Order a hamburger set and answer the drink question.
+  goal_en: Learner places an order and handles a follow-up.
+  partner_jp: チキンバーガーのセットですね。ドリンクは何になさいますか？
   expected:
-  - ください
-  hint_en: Again — 飲食店で食べ物や飲み物を注文することができる。
+  - "お願いします"
+  - "ください"
+  - "ウーロン茶"
+  hint_en: Order a hamburger set and answer the drink question.
 - can_do_id: CD_L06_19
-  partner_jp: いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
+  setup_en: Looking at a menu. Ask a simple question about an item.
+  goal_en: Learner asks about the menu simply.
+  partner_jp: メニューです。どうぞ。
   expected:
-  - いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
-  hint_en: Reply as in the book dialog (activity 5).
-- can_do_id: CD_L06_20
-  partner_jp: いらっしゃいますえ、おうかがいしますおっと高費お願いますほっと高費ですねこちらでおめしあがりですか
-  expected:
-  - はい、ここでありがとうございます
-  - いらっしゃいますえ、おうかがいしますおっと高費お願いますほっと高費ですねこちらでおめしあがりですか
-  hint_en: Reply as in the book dialog (activity 6).
-- can_do_id: CD_L06_18
-  partner_jp: いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
-  expected:
-  - いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
-  hint_en: Reply as in the book dialog (activity 7).
+  - "何ですか"
+  - "ありますか"
+  - "いくら"
+  - "おすすめ"
+  hint_en: Looking at a menu. Ask a simple question about an item.
 - can_do_id: CD_L06_19
-  partner_jp: ありさん、何にしますか
+  setup_en: Ask a friend what they will order.
+  goal_en: Learner asks what someone will have.
+  partner_jp: 何にしますか？私はうどんにします。
   expected:
-  - そう
-  - うどん、どうですか
-  - ここ、いいですか
-  - おいしいです
-  hint_en: Reply as in the book dialog (activity 8).
-- can_do_id: CD_L06_18
-  partner_jp: 一何にしますか
-  expected:
-  - 私は運動にします
-  - 一何にしますか
-  hint_en: Reply as in the book dialog (activity 10).
-- can_do_id: CD_L06_19
-  partner_jp: いいですか
-  expected:
-  - あ、どうぞ
-  - いいですか
-  - ここ
-  hint_en: Reply as in the book dialog (activity 11).
+  - "何にしますか"
+  - "どうしますか"
+  - "うどん"
+  hint_en: Ask a friend what they will order.
 - can_do_id: CD_L06_20
-  partner_jp: 3うどんどうですか
+  setup_en: "Staff asks if you'll eat here. Answer appropriately."
+  goal_en: Learner understands and answers a staff question when ordering.
+  partner_jp: こちらでお召し上がりですか？
   expected:
-  - おいしいです
-  - 3うどんどうですか
-  hint_en: Reply as in the book dialog (activity 12).
+  - "はい"
+  - "いいえ"
+  - "テイクアウト"
+  - "持ち帰り"
+  hint_en: "Staff asks if you'll eat here. Answer appropriately."
 - can_do_id: CD_L06_20
-  partner_jp: スミマ選はいえっと、名まびるみつとウロンチャーひとつあとをカラーゲーお願いしますはいスミマ選あと、エダマネフたつくださいありがとうございますスミマ選はいお水くださいあと、マヨネーズありますか
+  setup_en: Staff confirms your order. Respond.
+  goal_en: Learner shows they understood the confirmation.
+  partner_jp: ホットコーヒーですね。少々お待ちください。
   expected:
-  - はい、お待ちします
-  - スミマ選はいえっと、名まびるみつとウロンチャーひとつあとをカラーゲーお願いしますはいスミマ選あと、エダマネフたつくださいありがとうございますスミマ選はいお水くださいあと、マヨネーズありますか
-  hint_en: Reply as in the book dialog (activity 15).
-- can_do_id: CD_L06_20
-  partner_jp: 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
-  expected:
-  - 1すみませんハイラマビール3つとウールンチャー1つお願いしますハイあとカラーゲお願いします
-  hint_en: Reply as in the book dialog (activity 18).
-- can_do_id: CD_L06_18
-  partner_jp: 2緑ませんはいマヨネイズありますか
-  expected:
-  - はい、思ってしまいます
-  - 2緑ませんはいマヨネイズありますか
-  hint_en: Reply as in the book dialog (activity 19).
-- can_do_id: CD_L06_19
-  partner_jp: すみません
-  expected:
-  - はい、お持ちします
-  - お水ください
-  - すみません
-  - はい
-  hint_en: Reply as in the book dialog (activity 20).
-- can_do_id: CD_L06_18
-  partner_jp: 1いらっしゃいますえおうかがいしますほっと高評価お願いしますほっと高評価ですねサイズはSサイズお願いしますこちらでお目仕上がりですか。
-  expected:
-  - 1いらっしゃいますえおうかがいしますほっと高評価お願いしますほっと高評価ですねサイズはSサイズお願いしますこちらでお目仕上がりですか
-  - はい
-  - コットコーヒーをお願いしますSサイズをお願いしますチーズバーガーとテリアキバーガーと一周バーガーくださいこれください
-  - いらっしゃいますえーおうかがしますチキンバーガーのセットお願いしますチキンバーガーのセットですねドリンクは何になさいますかじゃあウールオンちゃんお願いしますこちらでおめし上がりですかいいえテイクアートでありがとうございます
-  - ください
-  hint_en: Can order food and drinks at a restaurant/cafe.
-- can_do_id: CD_L06_19
-  partner_jp: にいらっしゃいますえーチーズバーガーとテリアキバーガーとフィッシュバーガーくださいこちらでおめし上がりですか。
-  expected:
-  - にいらっしゃいますえーチーズバーガーとテリアキバーガーとフィッシュバーガーくださいこちらでおめし上がりですか
-  - いえ、テイカーをとでおもち帰りですねありがとうございます
-  - いらっしゃいますえーおうかがいしますこれくださいほっとくおひいですねこちらでおめしあがりですかはいありがとうございます
-  - そう
-  hint_en: Can ask about menu items simply.
-- can_do_id: CD_L06_20
-  partner_jp: さんいらっしゃいますねおうかがしますはいえーとこれくださいチキンバーガーのセットですねドリンクは何になりますか。
-  expected:
-  - さんいらっしゃいますねおうかがしますはいえーとこれくださいチキンバーガーのセットですねドリンクは何になりますか
-  - じゃあウロンちゃんお願いしますこちらでおめし上がりですか
-  - はいここで
-  - はい、ここでありがとうございます
-  hint_en: Can understand simple questions from staff when ordering.
+  - "はい"
+  - "お願いします"
+  - "ありがとう"
+  hint_en: Staff confirms your order. Respond.
 english_notes: 'Where do you go when you eat out?
 
   Can look at a menu in a fast food restaurant and understand what is available.

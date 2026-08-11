@@ -270,6 +270,28 @@ def apply_phrases_from_scripts(
 
 
 def build_quiz_scenarios(can_dos: list[dict], activities: list[dict]) -> list[dict]:
+    """Prefer curated role-play catalog over STT-derived partners."""
+    from roleplay_catalog_elementary1 import ELEMENTARY1
+
+    out: list[dict] = []
+    for c in can_dos:
+        items = ELEMENTARY1.get(c["id"])
+        if not items:
+            continue
+        for item in items:
+            out.append(
+                {
+                    "can_do_id": c["id"],
+                    "setup_en": item["setup_en"],
+                    "goal_en": item["goal_en"],
+                    "partner_jp": item["partner_jp"],
+                    "expected": list(item.get("expected") or []),
+                    "hint_en": item.get("hint_en") or item["setup_en"],
+                }
+            )
+    if out:
+        return out
+    # Legacy fallback (should not be needed once catalog is complete)
     by_cd: dict[str, list[str]] = {}
     for a in activities:
         cd = a.get("can_do_id")
@@ -280,28 +302,21 @@ def build_quiz_scenarios(can_dos: list[dict], activities: list[dict]) -> list[di
                 by_cd.setdefault(cd, [])
                 if p not in by_cd[cd]:
                     by_cd[cd].append(p)
-    out = []
     for c in can_dos:
         phrases = by_cd.get(c["id"]) or []
         must = (c.get("rubric") or {}).get("must_include") or []
         expected = list(dict.fromkeys([*phrases[:4], *must]))[:6]
-        if not expected:
+        stmt = (c.get("statement_en") or "").strip()
+        if not expected and not stmt:
             continue
-        partner = phrases[0] if phrases else "では、お願いします。"
         out.append(
             {
                 "can_do_id": c["id"],
-                "partner_jp": partner if str(partner).endswith("。") else f"{partner}。",
-                "expected": expected,
-                "hint_en": c.get("statement_en") or "Reply using a phrase from this lesson.",
-            }
-        )
-        out.append(
-            {
-                "can_do_id": c["id"],
-                "partner_jp": "もう一度、お願いします。",
-                "expected": expected,
-                "hint_en": f"Again — {(c.get('statement_en') or '')[:80]}",
+                "setup_en": f"Role-play — show that you can: {stmt}",
+                "goal_en": f"Learner demonstrates: {stmt}",
+                "partner_jp": "じゃあ、やってみましょう。",
+                "expected": expected or ["です"],
+                "hint_en": stmt or "Reply in Japanese.",
             }
         )
     return out

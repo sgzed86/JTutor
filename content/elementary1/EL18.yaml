@@ -716,66 +716,98 @@ quiz_bank:
   prompt_en: 'Demonstrate: Can write a message of congratulations or goodbye on a card.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL18_65
-  partner_jp: 人の人にお祝いを言っています。
-  expected: &id001
-  - 人の人にお祝いを言っています。
-  - 何のお祝いですか。
-  - 子どもは男の子ですか
-  - 女の子ですか。
-  hint_en: Can say congratulations for a birthday, wedding, etc.
+  setup_en: Congratulate someone on their birthday/wedding.
+  goal_en: Learner says congratulations.
+  partner_jp: 今日、誕生日なんです。
+  expected:
+  - "おめでとう"
+  - "ございます"
+  hint_en: Congratulate someone on their birthday/wedding.
 - can_do_id: CD_EL18_65
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can say congratulations for a birthday, wedding, etc.
+  setup_en: Congratulate a couple on their marriage.
+  goal_en: Learner offers congratulations.
+  partner_jp: 来月、結婚します。
+  expected:
+  - "おめでとう"
+  - "ございます"
+  hint_en: Congratulate a couple on their marriage.
 - can_do_id: CD_EL18_66
-  partner_jp: 人の人にお祝いを言っています。
-  expected: &id002
-  - 人の人にお祝いを言っています。
-  - 何のお祝いですか。
-  - 子どもは男の子ですか
-  - 女の子ですか。
-  hint_en: Can discuss what to give when selecting a gift for someone.
+  setup_en: Discuss what gift to give.
+  goal_en: Learner discusses gift ideas.
+  partner_jp: プレゼント、何がいいと思う？
+  expected:
+  - "どうですか"
+  - "いい"
+  - "あげたら"
+  - "花"
+  hint_en: Discuss what gift to give.
 - can_do_id: CD_EL18_66
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can discuss what to give when selecting a gift for someone.
+  setup_en: Suggest a gift for a newborn.
+  goal_en: Learner helps choose a gift.
+  partner_jp: 赤ちゃんが生まれたんです。何を贈ろうかな。
+  expected:
+  - "どうですか"
+  - "服"
+  - "おもちゃ"
+  - "いい"
+  hint_en: Suggest a gift for a newborn.
 - can_do_id: CD_EL18_67
-  partner_jp: 人の人にお祝いを言っています。
-  expected: &id003
-  - 人の人にお祝いを言っています。
-  - 何のお祝いですか。
-  - 子どもは男の子ですか
-  - 女の子ですか。
-  hint_en: Can thank someone and offer comments when someone gives you a gift.
+  setup_en: Someone gives you a gift. Thank them and comment.
+  goal_en: Learner thanks and comments on a gift.
+  partner_jp: これ、どうぞ。
+  expected:
+  - "ありがとう"
+  - "うれしい"
+  - "素敵"
+  hint_en: Someone gives you a gift. Thank them and comment.
 - can_do_id: CD_EL18_67
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can thank someone and offer comments when someone gives you a gift.
+  setup_en: Receive a souvenir. Respond politely.
+  goal_en: Learner thanks + offers a short comment.
+  partner_jp: 旅行のお土産です。
+  expected:
+  - "ありがとう"
+  - "ですね"
+  - "喜んで"
+  hint_en: Receive a souvenir. Respond politely.
 - can_do_id: CD_EL18_68
-  partner_jp: 人の人にお祝いを言っています。
-  expected: &id004
-  - 人の人にお祝いを言っています。
-  - 何のお祝いですか。
-  - 子どもは男の子ですか
-  - 女の子ですか。
-  hint_en: Can read and understand a post on social media that your friend wrote on their birthday.
+  setup_en: Yuki reads a birthday SNS post. What happened?
+  goal_en: Learner understands a birthday social post.
+  partner_jp: 投稿です。『今日誕生日！友だちとケーキ』。
+  expected:
+  - "誕生日"
+  - "ケーキ"
+  - "友だち"
+  hint_en: Yuki reads a birthday SNS post. What happened?
 - can_do_id: CD_EL18_68
-  partner_jp: もう一度、お願いします。
-  expected: *id004
-  hint_en: Again — Can read and understand a post on social media that your friend wrote on their b
+  setup_en: Summarize the post.
+  goal_en: Learner shows understanding of the SNS message.
+  partner_jp: 『三十歳になりました。メッセージありがとう！』とあります。
+  expected:
+  - "三十"
+  - "メッセージ"
+  - "ありがとう"
+  hint_en: Summarize the post.
 - can_do_id: CD_EL18_69
-  partner_jp: どんな意味だと思います。
-  expected: &id005
-  - どんな意味だと思います
-  - ううん、まだ。これから考える。
-  - そうですか。名前は決めましたか？
-  - もうすぐ国に帰ります。
-  hint_en: Can write a message of congratulations or goodbye on a card.
+  setup_en: Write/say a short congratulations card message.
+  goal_en: Learner produces a card message of congratulations.
+  partner_jp: カードに一言、書いてください。結婚祝いです。
+  expected:
+  - "おめでとう"
+  - "幸せ"
+  - "ください"
+  hint_en: Write/say a short congratulations card message.
 - can_do_id: CD_EL18_69
-  partner_jp: もう一度、お願いします。
-  expected: *id005
-  hint_en: Again — Can write a message of congratulations or goodbye on a card.
+  setup_en: Say goodbye/congratulations on a farewell card.
+  goal_en: Learner writes a goodbye or congratulations message.
+  partner_jp: 友だちが国へ帰ります。カードのメッセージをお願いします。
+  expected:
+  - "元気で"
+  - "また"
+  - "ありがとう"
+  - "おめでとう"
+  hint_en: Say goodbye/congratulations on a farewell card.
 english_notes: 'When do you give gifts to someone?
 
   Can say congratulations for a birthday, wedding, etc.

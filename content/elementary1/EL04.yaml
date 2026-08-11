@@ -631,42 +631,60 @@ quiz_bank:
   prompt_en: 'Demonstrate: Can read and understand simple posts about the weather on social me - dia.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL04_11
-  partner_jp: 朝から暑いです。
-  expected: &id001
-  - 朝から暑いです
-  - をしています。
-  - どんな天気ですか。
-  - いつの天気のことを話しています
-  hint_en: Can exchange greetings while talking about the weather.
+  setup_en: Greet Yuki while mentioning the weather.
+  goal_en: Learner greets and mentions weather.
+  partner_jp: おはようございます。
+  expected:
+  - "暑い"
+  - "寒い"
+  - "いい天気"
+  - "ですね"
+  hint_en: Greet Yuki while mentioning the weather.
 - can_do_id: CD_EL04_11
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can exchange greetings while talking about the weather.
+  setup_en: Yuki comments on the heat. Reply with a weather greeting.
+  goal_en: Learner exchanges a weather-related greeting.
+  partner_jp: 朝から暑いですね。
+  expected:
+  - "ですね"
+  - "暑い"
+  - "本当"
+  hint_en: Yuki comments on the heat. Reply with a weather greeting.
 - can_do_id: CD_EL04_12
-  partner_jp: 朝から暑いです。
-  expected: &id002
-  - 朝から暑いです
-  - をしています。
-  - どんな天気ですか。
-  - いつの天気のことを話しています
-  hint_en: Can listen to the weather forecast and mostly understand it.
+  setup_en: Yuki gives a short forecast. What weather is coming?
+  goal_en: Learner shows they understood a weather forecast.
+  partner_jp: 明日は雨です。午後から風が強くなります。
+  expected:
+  - "雨"
+  - "風"
+  - "明日"
+  hint_en: Yuki gives a short forecast. What weather is coming?
 - can_do_id: CD_EL04_12
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can listen to the weather forecast and mostly understand it.
+  setup_en: "Restate today's weather from the forecast."
+  goal_en: Learner understands spoken weather info.
+  partner_jp: 今日は晴れのち曇りです。気温は二十五度です。
+  expected:
+  - "晴れ"
+  - "曇り"
+  - "二十五"
+  hint_en: "Restate today's weather from the forecast."
 - can_do_id: CD_EL04_13
-  partner_jp: をしています。
-  expected: &id003
-  - をしています。
-  - どんな天気ですか。
-  - いつの天気のことを話しています
-  - 本当です
-  hint_en: Can read and understand simple posts about the weather on social me - dia.
+  setup_en: Yuki reads a weather post. What does it say?
+  goal_en: Learner shows they understood a simple weather post.
+  partner_jp: SNSです。「今日は雪！寒い！」って書いてあります。
+  expected:
+  - "雪"
+  - "寒い"
+  hint_en: Yuki reads a weather post. What does it say?
 - can_do_id: CD_EL04_13
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can read and understand simple posts about the weather on social me - dia.
+  setup_en: Summarize the weather comment you heard.
+  goal_en: Learner understands social-media style weather text.
+  partner_jp: 『台風、近いです。気をつけて』という投稿です。
+  expected:
+  - "台風"
+  - "気をつけて"
+  hint_en: Summarize the weather comment you heard.
 english_notes: 'What is your favorite weather?
 
   Can exchange greetings while talking about the weather.

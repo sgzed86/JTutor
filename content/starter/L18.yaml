@@ -80,13 +80,13 @@ activities:
   audio:
   - assets/audio/X_[18-02]_kiku2.mp3
   key_phrases:
-  - 2タンダーさん、今度の休み、何をしますか
+  - タンダーさん、今度の休み、何をしますか
   - えーっと、行け袋に帰ものに行きます
   - そうですか
   - 水判器が帰たいです
   prompt_en: 'L18 activity 2: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 2タンダーさん、今度の休み、何をしますか
+  - jp: タンダーさん、今度の休み、何をしますか
     tags:
     - long
     - polite
@@ -117,7 +117,7 @@ activities:
   - id: e
     label_jp: でも、ちょっと高かったです
   - id: f
-    label_jp: 2タンダーさん、今度の休み、何をしますか
+    label_jp: タンダーさん、今度の休み、何をしますか
   - id: g
     label_jp: えーっと、行け袋に帰ものに行きます
   - id: h
@@ -136,13 +136,13 @@ activities:
   audio:
   - assets/audio/X_[18-03]_kiku3.mp3
   key_phrases:
-  - 3クリスさんは来週の連休、どこか行きますか
+  - クリスさんは来週の連休、どこか行きますか
   - そうですか
   - いや、どこにも行きますね
   - うちでゆっくりしたいです
   prompt_en: 'L18 activity 3: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 3クリスさんは来週の連休、どこか行きますか
+  - jp: クリスさんは来週の連休、どこか行きますか
     tags:
     - long
     - polite
@@ -169,7 +169,7 @@ activities:
   - id: c
     label_jp: そうですねー雪が見たいですあと、音声に入りたいですそうですか
   - id: d
-    label_jp: 3クリスさんは来週の連休、どこか行きますか
+    label_jp: クリスさんは来週の連休、どこか行きますか
   - id: e
     label_jp: エジーにおさんはどうしますか
   - id: f
@@ -193,7 +193,7 @@ activities:
   - assets/audio/X_[18-04]_kiku4.mp3
   key_phrases:
   - でも、どこか両方したいです
-  - 42回りさん、ゴール電ウイクの予定は
+  - 回りさん、ゴール電ウイクの予定は
   - まだわかりません
   - いいですね
   prompt_en: 'L18 activity 4: listen to the CD, then say the phrase that matches the book.'
@@ -202,7 +202,7 @@ activities:
     tags:
     - long
     - polite
-  - jp: 42回りさん、ゴール電ウイクの予定は
+  - jp: 回りさん、ゴール電ウイクの予定は
     tags:
     - long
   - jp: まだわかりません
@@ -222,11 +222,11 @@ activities:
   - id: b
     label_jp: シンソン、シューマツ、何をしましたか
   - id: c
-    label_jp: 42回りさん、ゴール電ウイクの予定は
+    label_jp: 回りさん、ゴール電ウイクの予定は
   - id: d
     label_jp: また音声に行きたいです
   - id: e
-    label_jp: 一...もうすぐ夏休みですね
+    label_jp: もうすぐ夏休みですね
   - id: f
     label_jp: いいですね
   - id: g
@@ -278,14 +278,27 @@ activities:
   audio:
   - assets/audio/X_[18-06]_katachi.mp3
   key_phrases:
-  - 来週の連休どこか行きますかいやどこにも行きませんゴール電ウィークの予定はどこかでこうしたいです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - 来週の連休、どこか行きますか
+  - いや、どこにも行きません
+  - ゴールデンウィークの予定は
+  - どこかへ行きたいです
+  prompt_en: Listen, then repeat each line one at a time (4 lines).
   phrase_meta:
-  - jp: 来週の連休どこか行きますかいやどこにも行きませんゴール電ウィークの予定はどこかでこうしたいです
+  - jp: 来週の連休、どこか行きますか
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  - jp: いや、どこにも行きません
+    tags:
+    - long
+  - jp: ゴールデンウィークの予定は
+    tags:
+    - long
+  - jp: どこかへ行きたいです
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat_all
 - id: A7
   kind: speaking
   book_activity: 7
@@ -294,24 +307,28 @@ activities:
   audio:
   - assets/audio/X_[18-07]_hanasu1.mp3
   key_phrases:
-  - 友達が広島に住んでいます愛に生きたいですいいですね
-  - 夏休みどうしますか
+  - 友達が広島に住んでいます。会いに行きたいです。
+  - 夏休みどうしますか。
+  - いいですね。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: 友達が広島に住んでいます愛に生きたいですいいですね
+  - jp: 友達が広島に住んでいます。会いに行きたいです。
     tags:
     - long
-    - polite
-  - jp: 夏休みどうしますか
+  - jp: 夏休みどうしますか。
+    tags:
+    - long
+  - jp: いいですね。
     tags:
     - short
-    - polite
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 夏休みどうしますか
+    jp: 夏休みどうしますか。
   - speaker: learner
-    jp: 友達が広島に住んでいます愛に生きたいですいいですね
+    jp: 友達が広島に住んでいます。会いに行きたいです。
+  - speaker: partner
+    jp: いいですね。
   dialog_listen_audio:
   - assets/audio/X_[18-07]_hanasu1.mp3
 - id: A8
@@ -440,7 +457,7 @@ activities:
   - あと、不自産に乗りたいです
   - あと、音線に入りたいです
   - すが人者にいきたいです
-  prompt_en: Listen to the recording and fill in the blanks.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: あと、ドラヤキが食べたいです
     tags:
@@ -458,25 +475,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_fill
-  blanks:
-  - prompt_jp: あ＿、ドラヤキが食べたいです。
-    answers:
-    - と
-    full_jp: あと、ドラヤキが食べたいです
-  - prompt_jp: あ＿、不自産に乗りたいです。
-    answers:
-    - と
-    full_jp: あと、不自産に乗りたいです
-  - prompt_jp: あ＿、音線に入りたいです。
-    answers:
-    - と
-    full_jp: あと、音線に入りたいです
-  - prompt_jp: すが人者にいきたい＿。
-    answers:
-    - です
-    answer_alts: []
-    full_jp: すが人者にいきたいです
+  book_mode: listen_repeat_all
 - id: A12
   kind: grammar_form
   book_activity: 12
@@ -485,14 +484,33 @@ activities:
   audio:
   - assets/audio/X_[18-12]_katachi.mp3
   key_phrases:
-  - 京都へいきたいです新宿のすが人者にいきたいです
-  prompt_en: Focus on the expressions used. Listen and say each pattern.
+  - 京都へ行きたいです
+  - 新宿の水族館に行きたいです
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
-  - jp: 京都へいきたいです新宿のすが人者にいきたいです
+  - jp: 京都へ行きたいです
     tags:
     - long
     - polite
-  book_mode: listen_repeat_all
+  - jp: 新宿の水族館に行きたいです
+    tags:
+    - long
+    - polite
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: 京都へ＿です。
+    answers:
+    - 行きたい
+    answer_alts:
+    - いきたい
+    full_jp: 京都へ行きたいです。
+  - prompt_jp: 新宿の水族館に＿です。
+    answers:
+    - 行きたい
+    answer_alts:
+    - いきたい
+    full_jp: 新宿の水族館に行きたいです。
+  fill_pdf_page: 488
 - id: A13
   kind: speaking
   book_activity: 13
@@ -586,15 +604,19 @@ activities:
     - long
   book_mode: listen_fill
   blanks:
-  - prompt_jp: それに、ケシキも綺麗＿。
+  - prompt_jp: ＿、景色もきれいでした。
     answers:
-    - でした
-    answer_alts: []
-    full_jp: それに、ケシキも綺麗でした
-  - prompt_jp: でも、ちょっ＿高かったです。
+    - それに
+    full_jp: それに、景色もきれいでした。
+  - prompt_jp: ＿、温泉の近くで、鶏の天ぷらを食べました。
     answers:
-    - と
-    full_jp: でも、ちょっと高かったです
+    - それから
+    full_jp: それから、温泉の近くで、鶏の天ぷらを食べました。
+  - prompt_jp: おいしかったです。＿、ちょっと高かったです。
+    answers:
+    - でも
+    full_jp: おいしかったです。でも、ちょっと高かったです。
+  fill_pdf_page: 489
 - id: A16
   kind: speaking
   book_activity: 16
@@ -666,9 +688,9 @@ activities:
     gloss_en: to travel
   kanji_sentences: &id002
   - 温泉に入りたいです。
-  - ゴールデンウィークに、家
-  - 商
-  - 来週の連
+  - ゴールデンウィークに、家族で旅行しました。
+  - 商店街で、友だちに会いました。
+  - 来週の連休、予定はありますか？
   picture_has_image: false
 - id: CULTURE
   kind: culture
@@ -781,118 +803,62 @@ quiz_bank:
   prompt_en: 'In a new everyday situation, show you can: Can talk simply about future holiday plans.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L18_72
-  partner_jp: では、お願いします。
+  setup_en: Say what you want to do in Japan.
+  goal_en: Learner says what they want to do (たい).
+  partner_jp: 日本で何がしたいですか？
   expected:
-  - たい
-  hint_en: 'Situation: Can say what you want to do. Reply using lesson phrases.'
+  - "たいです"
+  - "たい"
+  - "見たい"
+  - "行きたい"
+  hint_en: Say what you want to do in Japan.
 - can_do_id: CD_L18_72
-  partner_jp: もう一度、お願いします。
+  setup_en: Talk about summer vacation plans — what do you want to do?
+  goal_en: Learner expresses a want/desire.
+  partner_jp: 夏休み、どうしますか？
   expected:
-  - たい
-  hint_en: Again — したいことを言うことができる。
+  - "たいです"
+  - "行きたい"
+  - "したい"
+  hint_en: Talk about summer vacation plans — what do you want to do?
 - can_do_id: CD_L18_73
-  partner_jp: では、お願いします。
+  setup_en: Yuki asks why. Give a simple reason with から.
+  goal_en: Learner gives a reason (どうして / から).
+  partner_jp: どうして広島に行きたいですか？
   expected:
-  - どうして
-  - から
-  hint_en: 'Situation: Can ask why and give a simple reason. Reply using lesson phrases.'
+  - "から"
+  - "友達"
+  - "住んで"
+  hint_en: Yuki asks why. Give a simple reason with から.
 - can_do_id: CD_L18_73
-  partner_jp: もう一度、お願いします。
+  setup_en: Ask Yuki why she wants to go somewhere.
+  goal_en: Learner asks why.
+  partner_jp: 温泉に入りたいです。
   expected:
-  - どうして
-  - から
-  hint_en: Again — どうしてか質問したり、簡単な理由を言ったりすることができる。
+  - "どうして"
+  - "なぜ"
+  hint_en: Ask Yuki why she wants to go somewhere.
 - can_do_id: CD_L18_74
-  partner_jp: では、お願いします。
+  setup_en: Talk about your next holiday plans.
+  goal_en: Learner talks about future holiday plans with たい / plans.
+  partner_jp: 今度の休み、何をしますか？
   expected:
-  - たい
-  hint_en: 'Situation: Can talk simply about future holiday plans. Reply using lesson phrases.'
+  - "たい"
+  - "行きます"
+  - "します"
+  hint_en: Talk about your next holiday plans.
 - can_do_id: CD_L18_74
-  partner_jp: もう一度、お願いします。
+  setup_en: Long weekend coming. Say what you want to do.
+  goal_en: Learner describes upcoming holiday plans.
+  partner_jp: 連休、どこか行きますか？
   expected:
-  - たい
-  hint_en: Again — これからの休みの予定について簡単に話すことができる。
-- can_do_id: CD_L18_72
-  partner_jp: 夏休みどうしますか
-  expected:
-  - 友達が広島に住んでいます愛に生きたいですいいですね
-  - 夏休みどうしますか
-  hint_en: Reply as in the book dialog (activity 7).
-- can_do_id: CD_L18_73
-  partner_jp: 今度の休み、何をしますか
-  expected:
-  - そうですか
-  - 水判器が書いたいです
-  - 行けぼくろに買い物に行きます
-  - 今度の休み、何をしますか
-  hint_en: Reply as in the book dialog (activity 8).
-- can_do_id: CD_L18_74
-  partner_jp: 内周の連休、どこか行きますか
-  expected:
-  - そうですか
-  - うちでゆっくりしたいです
-  - 内周の連休、どこか行きますか
-  - どこにも行きますね
-  hint_en: Reply as in the book dialog (activity 9).
-- can_do_id: CD_L18_72
-  partner_jp: あ、アニメの、君の名前の人じゃですか
-  expected:
-  - ドライモンです
-  - 私は、神職のすがちんじゃに行きたいです
-  - あ、アニメの、君の名前の人じゃですか
-  - あと、ドライアキが食べたいです
-  hint_en: Reply as in the book dialog (activity 10).
-- can_do_id: CD_L18_72
-  partner_jp: 日本で何がしたいですか
-  expected:
-  - そうですねー雪が見たいですあと、音声に入りたいですそうですか
-  - 日本で何がしたいですか
-  hint_en: Reply as in the book dialog (activity 13).
-- can_do_id: CD_L18_73
-  partner_jp: シンソン、シューマツ、何をしましたか
-  expected:
-  - おお、いいですね
-  - それから、音線の近くで、鳥のテンプラを食べました
-  - 今度は雪のロテンブロに入りたいです
-  - シンソン、シューマツ、何をしましたか
-  hint_en: Reply as in the book dialog (activity 14).
-- can_do_id: CD_L18_72
-  partner_jp: そうですか
-  expected:
-  - また音声に行きたいです
-  - それから、取りのテンプラを食べました
-  - 初めてエロテンブロに入りました
-  - レッポンセンに行きました
-  hint_en: Reply as in the book dialog (activity 16).
-- can_do_id: CD_L18_72
-  partner_jp: エジーにおさんはどうしますか。
-  expected:
-  - エジーにおさんはどうしますか
-  - 友達が広島に住んでいます
-  - 一...もうすぐ夏休みですね
-  - 愛に来たいです
-  - たい
-  hint_en: Can say what you want to do.
-- can_do_id: CD_L18_73
-  partner_jp: 2タンダーさん、今度の休み、何をしますか。
-  expected:
-  - 2タンダーさん、今度の休み、何をしますか
-  - えーっと、行け袋に帰ものに行きます
-  - そうですか
-  - 水判器が帰たいです
-  - どうして
-  - から
-  hint_en: Can ask why and give a simple reason.
-- can_do_id: CD_L18_74
-  partner_jp: 3クリスさんは来週の連休、どこか行きますか。
-  expected:
-  - 3クリスさんは来週の連休、どこか行きますか
-  - そうですか
-  - いや、どこにも行きますね
-  - うちでゆっくりしたいです
-  - たい
-  hint_en: Can talk simply about future holiday plans.
+  - "たい"
+  - "ゆっくり"
+  - "行きます"
+  - "うちで"
+  hint_en: Long weekend coming. Say what you want to do.
 english_notes: 'Can ask and answer questions about what you want to do on your days off.
 
   Where would you like to go in Japan? What would you like to do?

@@ -144,54 +144,39 @@ activities:
   audio:
   - assets/audio/Y_[11-04]_kiku2.mp3
   key_phrases:
-  - 肉と野菜は私が買って行きます
-  - の準備について話しています。
-  - だれが何を持って行きます
-  - 来週のバーベキューです
-  prompt_en: 'EL11 activity 4: listen to the CD, then say the phrase that matches the book.'
+  - マルコさんは飲み物をお願いします。
+  - すみません、私はお酒がダメですから。
+  - じゃあ、お茶も買っていきますね。
+  prompt_en: Listen (CD 11-04). What will Marco buy for the barbecue?
   phrase_meta:
-  - jp: 肉と野菜は私が買って行きます
+  - jp: マルコさんは飲み物をお願いします。
     tags:
     - long
-    - polite
-  - jp: の準備について話しています。
+  - jp: すみません、私はお酒がダメですから。
     tags:
     - long
-    - polite
-  - jp: だれが何を持って行きます
+  - jp: じゃあ、お茶も買っていきますね。
     tags:
     - long
-    - polite
-  - jp: 来週のバーベキューです
-    tags:
-    - long
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 4: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Drinks for a barbecue — alcohol vs tea.
   choices:
   - id: a
-    label_jp: の準備について話しています。
+    label_jp: お茶も買っていきます
+    label_en: will also buy tea
   - id: b
-    label_jp: 来週のバーベキューです
-  - id: c
-    label_jp: 私はいいです。
-  - id: d
-    label_jp: 塩いいです。
-  - id: e
     label_jp: 肉と野菜は私が買って行きます
-  - id: f
-    label_jp: だれが何を持って行きます
-  - id: g
-    label_jp: すみません。このお刺身、明日までもちますか？
-  - id: h
-    label_jp: このピザ、エビが入ってますか？
+    label_en: "I'll buy meat and vegetables"
+  - id: c
+    label_jp: バナナを持っていきます
+    label_en: will bring bananas
+  - id: d
+    label_jp: おにぎりを作っていきます
+    label_en: will make onigiri
   correct_ids:
   - a
-  - b
-  - e
-  - f
-  choose_mode: all
+  choose_mode: any
 - id: A5
   kind: listening
   book_activity: 5
@@ -200,54 +185,39 @@ activities:
   audio:
   - assets/audio/Y_[11-05]_kiku3.mp3
   key_phrases:
-  - 肉と野菜は私が買って行きます
-  - の準備について話しています。
-  - だれが何を持って行きます
-  - 来週のバーベキューです
-  prompt_en: 'EL11 activity 5: listen to the CD, then say the phrase that matches the book.'
+  - 私はおにぎりを作っていきますね。
+  - コップやお皿はどうしますか。
+  - それはバーベキュー場にありますから大丈夫です。
+  prompt_en: "Listen (CD 11-05). What will Hasegawa bring, and what about cups?"
   phrase_meta:
-  - jp: 肉と野菜は私が買って行きます
+  - jp: 私はおにぎりを作っていきますね。
     tags:
     - long
-    - polite
-  - jp: の準備について話しています。
+  - jp: コップやお皿はどうしますか。
     tags:
     - long
-    - polite
-  - jp: だれが何を持って行きます
+  - jp: それはバーベキュー場にありますから大丈夫です。
     tags:
     - long
-    - polite
-  - jp: 来週のバーベキューです
-    tags:
-    - long
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 5: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Barbecue prep — onigiri; cups at the site.
   choices:
   - id: a
-    label_jp: の準備について話しています。
+    label_jp: おにぎりを作っていきます
+    label_en: will make onigiri
   - id: b
-    label_jp: 私はいいです。
+    label_jp: お茶も買っていきます
+    label_en: will also buy tea
   - id: c
-    label_jp: 肉と野菜は私が買って行きます
+    label_jp: バナナを持っていきます
+    label_en: will bring bananas
   - id: d
-    label_jp: あ、じゃあ、だいじょうぶです。いただきます！
-  - id: e
-    label_jp: だれが何を持って行きます
-  - id: f
-    label_jp: 来週のバーベキューです
-  - id: g
-    label_jp: すみません。このお刺身、明日までもちますか？
-  - id: h
-    label_jp: エビ、入ってるよ。
+    label_jp: 肉と野菜は私が買って行きます
+    label_en: "I'll buy meat and vegetables"
   correct_ids:
   - a
-  - c
-  - e
-  - f
-  choose_mode: all
+  choose_mode: any
 - id: A6
   kind: listening
   book_activity: 6
@@ -256,54 +226,39 @@ activities:
   audio:
   - assets/audio/Y_[11-06]_kiku4.mp3
   key_phrases:
-  - 肉と野菜は私が買って行きます
-  - の準備について話しています。
-  - だれが何を持って行きます
-  - 行きます
-  prompt_en: 'EL11 activity 6: listen to the CD, then say the phrase that matches the book.'
+  - ノイさん、デザートはどうですか。
+  - じゃあ、バナナを持っていきます。
+  - 焼いて食べましょう。
+  prompt_en: Listen (CD 11-06). What dessert will Noi bring?
   phrase_meta:
-  - jp: 肉と野菜は私が買って行きます
+  - jp: ノイさん、デザートはどうですか。
     tags:
     - long
-    - polite
-  - jp: の準備について話しています。
+  - jp: じゃあ、バナナを持っていきます。
     tags:
     - long
-    - polite
-  - jp: だれが何を持って行きます
+  - jp: 焼いて食べましょう。
     tags:
     - long
-    - polite
-  - jp: 行きます
-    tags:
-    - short
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 6: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Barbecue dessert — bananas to grill.
   choices:
   - id: a
-    label_jp: エビ、入ってるよ。
+    label_jp: バナナを持っていきます
+    label_en: will bring bananas
   - id: b
-    label_jp: 私はいいです。
+    label_jp: お茶も買っていきます
+    label_en: will also buy tea
   - id: c
-    label_jp: だれが何を持って行きます
+    label_jp: おにぎりを作っていきます
+    label_en: will make onigiri
   - id: d
-    label_jp: ぐらいもちます。
-  - id: e
-    label_jp: の準備について話しています。
-  - id: f
-    label_jp: さあ、どうぞ。
-  - id: g
     label_jp: 肉と野菜は私が買って行きます
-  - id: h
-    label_jp: 行きます
+    label_en: "I'll buy meat and vegetables"
   correct_ids:
-  - c
-  - e
-  - g
-  - h
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A7
   kind: grammar_form
   book_activity: 7
@@ -449,7 +404,7 @@ activities:
   - 塩いいです。
   - チョコレートケーキチーズケーキ、がいいですか？
   - 私はいいです。
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: 焼き鳥も買いますか？塩たれ、がいいですか？
     tags:
@@ -467,7 +422,35 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: 焼き鳥も買いますか？　塩＿たれ、＿がいいですか？
+    answers:
+    - と
+    - どっち
+    full_jp: 焼き鳥も買いますか？　塩とたれ、どっちがいいですか？
+  - prompt_jp: 塩＿いいです。
+    answers:
+    - のほうが
+    full_jp: 塩のほうがいいです。
+  - prompt_jp: チョコレートケーキ＿チーズケーキ、＿がいいですか？
+    answers:
+    - と
+    - どっち
+    full_jp: チョコレートケーキとチーズケーキ、どっちがいいですか？
+  - prompt_jp: 私は＿いいです。
+    answers:
+    - 肉が
+    full_jp: 私は肉がいいです。
+  - prompt_jp: ＿いいです。
+    answers:
+    - 何でも
+    full_jp: 何でもいいです。
+  - prompt_jp: お茶、いろいろありますね。＿がいいですか？
+    answers:
+    - どれ
+    full_jp: お茶、いろいろありますね。どれがいいですか？
+  fill_pdf_page: 229
 - id: A12
   kind: speaking
   book_activity: 12
@@ -619,54 +602,39 @@ activities:
   audio:
   - assets/audio/Y_[11-17]_kiku1.mp3
   key_phrases:
-  - 肉と野菜は私が買って行きます
-  - 材料や消費期限などを質問しています。
-  - 何について質問しています
-  - 答えはどうですか。
-  prompt_en: 'EL11 activity 17: listen to the CD, then say the phrase that matches the book.'
+  - あのう、この料理、卵を使ってますか。
+  - いいえ、使ってませんよ。
+  - あ、じゃあ大丈夫です。いただきます。
+  prompt_en: Listen (CD 11-17). What is the guest asking about?
   phrase_meta:
-  - jp: 肉と野菜は私が買って行きます
+  - jp: あのう、この料理、卵を使ってますか。
     tags:
     - long
-    - polite
-  - jp: 材料や消費期限などを質問しています。
+  - jp: いいえ、使ってませんよ。
     tags:
     - long
-    - polite
-  - jp: 何について質問しています
+  - jp: あ、じゃあ大丈夫です。いただきます。
     tags:
     - long
-    - polite
-  - jp: 答えはどうですか。
-    tags:
-    - short
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 17: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Asking whether a dish contains egg.
   choices:
   - id: a
-    label_jp: 肉と野菜は私が買って行きます
+    label_jp: 卵を使っているかどうか
+    label_en: whether it uses egg
   - id: b
-    label_jp: お茶
-  - id: c
-    label_jp: チョコレートケーキチーズケーキ、がいいですか？
-  - id: d
-    label_jp: すみません。このラーメン、ハラルですか？
-  - id: e
     label_jp: よかったら、ピザ、どう？
-  - id: f
-    label_jp: 何について質問しています
-  - id: g
-    label_jp: 答えはどうですか。
-  - id: h
-    label_jp: 材料や消費期限などを質問しています。
+    label_en: want some pizza?
+  - id: c
+    label_jp: お茶
+    label_en: tea
+  - id: d
+    label_jp: チョコレートケーキとチーズケーキ、どっちがいいですか
+    label_en: which cake?
   correct_ids:
   - a
-  - f
-  - g
-  - h
-  choose_mode: all
+  choose_mode: any
 - id: A18
   kind: listening
   book_activity: 18
@@ -675,54 +643,40 @@ activities:
   audio:
   - assets/audio/Y_[11-18]_kiku2.mp3
   key_phrases:
-  - 肉と野菜は私が買って行きます
-  - 材料や消費期限などを質問しています。
-  - 何について質問しています
-  - 答えはどうですか。
-  prompt_en: 'EL11 activity 18: listen to the CD, then say the phrase that matches the book.'
+  - よかったら、ピザ、どう？
+  - このピザ、エビが入ってますか。
+  - じゃあ私はダメです。エビのアレルギーですから。
+  prompt_en: "Listen (CD 11-18). Why won't the guest eat the pizza?"
   phrase_meta:
-  - jp: 肉と野菜は私が買って行きます
+  - jp: よかったら、ピザ、どう？
     tags:
     - long
     - polite
-  - jp: 材料や消費期限などを質問しています。
+  - jp: このピザ、エビが入ってますか。
     tags:
     - long
-    - polite
-  - jp: 何について質問しています
+  - jp: じゃあ私はダメです。エビのアレルギーですから。
     tags:
     - long
-    - polite
-  - jp: 答えはどうですか。
-    tags:
-    - short
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 18: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Pizza — shrimp allergy.
   choices:
   - id: a
-    label_jp: 焼き鳥も買いますか？塩たれ、がいいですか？
+    label_jp: エビのアレルギーだから
+    label_en: shrimp allergy
   - id: b
-    label_jp: 材料や消費期限などを質問しています。
+    label_jp: 卵を使っているかどうか
+    label_en: whether it uses egg
   - id: c
-    label_jp: 肉と野菜は私が買って行きます
+    label_jp: ハラルかどうか
+    label_en: whether it is halal
   - id: d
-    label_jp: いいです。
-  - id: e
-    label_jp: 答えはどうですか。
-  - id: f
-    label_jp: の準備について話しています。
-  - id: g
-    label_jp: だれが何を持って行きます
-  - id: h
-    label_jp: 何について質問しています
+    label_jp: お茶も買っていきます
+    label_en: will also buy tea
   correct_ids:
-  - b
-  - c
-  - e
-  - h
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A19
   kind: listening
   book_activity: 19
@@ -731,54 +685,39 @@ activities:
   audio:
   - assets/audio/Y_[11-19]_kiku3.mp3
   key_phrases:
-  - 肉と野菜は私が買って行きます
-  - 材料や消費期限などを質問しています。
-  - 何について質問しています
-  - 答えはどうですか。
-  prompt_en: 'EL11 activity 19: listen to the CD, then say the phrase that matches the book.'
+  - すみません、このお刺身、明日までもちますか。
+  - お刺身は今日中に食べてください。
+  - 明日はちょっと無理ですね。
+  prompt_en: Listen (CD 11-19). How long will the sashimi keep?
   phrase_meta:
-  - jp: 肉と野菜は私が買って行きます
+  - jp: すみません、このお刺身、明日までもちますか。
     tags:
     - long
-    - polite
-  - jp: 材料や消費期限などを質問しています。
+  - jp: お刺身は今日中に食べてください。
     tags:
     - long
-    - polite
-  - jp: 何について質問しています
+  - jp: 明日はちょっと無理ですね。
     tags:
     - long
-    - polite
-  - jp: 答えはどうですか。
-    tags:
-    - short
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 19: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Asking about sashimi shelf life.
   choices:
   - id: a
-    label_jp: 何について質問しています
+    label_jp: 今日中に食べてください
+    label_en: eat it today
   - id: b
-    label_jp: チョコレートケーキチーズケーキ、がいいですか？
+    label_jp: エビのアレルギーだから
+    label_en: shrimp allergy
   - id: c
-    label_jp: 答えはどうですか。
+    label_jp: ハラルかどうか
+    label_en: whether it is halal
   - id: d
-    label_jp: 材料や消費期限などを質問しています。
-  - id: e
-    label_jp: このピザ、エビが入ってますか？
-  - id: f
-    label_jp: 肉と野菜は私が買って行きます
-  - id: g
-    label_jp: あ、お刺身は、今日中に食べてください。
-  - id: h
-    label_jp: 私はいいです。
+    label_jp: バナナを持っていきます
+    label_en: will bring bananas
   correct_ids:
   - a
-  - c
-  - d
-  - f
-  choose_mode: all
+  choose_mode: any
 - id: A20
   kind: listening
   book_activity: 20
@@ -787,54 +726,35 @@ activities:
   audio:
   - assets/audio/Y_[11-20]_kiku4.mp3
   key_phrases:
-  - 肉と野菜は私が買って行きます
-  - 材料や消費期限などを質問しています。
-  - 何について質問しています
-  - 答えはどうですか。
-  prompt_en: 'EL11 activity 20: listen to the CD, then say the phrase that matches the book.'
+  - すみません、このラーメン、ハラルですか。
+  - そうですよ。このコーナーの商品は全部ハラルですよ。
+  prompt_en: Listen (CD 11-20). What is the guest asking about the ramen?
   phrase_meta:
-  - jp: 肉と野菜は私が買って行きます
+  - jp: すみません、このラーメン、ハラルですか。
     tags:
     - long
-    - polite
-  - jp: 材料や消費期限などを質問しています。
+  - jp: そうですよ。このコーナーの商品は全部ハラルですよ。
     tags:
     - long
-    - polite
-  - jp: 何について質問しています
-    tags:
-    - long
-    - polite
-  - jp: 答えはどうですか。
-    tags:
-    - short
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL11 activity 20: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Asking whether ramen is halal.
   choices:
   - id: a
-    label_jp: あのう、この料理、卵を使ってますか？
+    label_jp: ハラルかどうか
+    label_en: whether it is halal
   - id: b
-    label_jp: 私はいいです。
+    label_jp: エビのアレルギーだから
+    label_en: shrimp allergy
   - id: c
-    label_jp: 材料や消費期限などを質問しています。
+    label_jp: 今日中に食べてください
+    label_en: eat it today
   - id: d
-    label_jp: 友だちの家でパーティーをします。
-  - id: e
-    label_jp: 何について質問しています
-  - id: f
-    label_jp: 肉と野菜は私が買って行きます
-  - id: g
-    label_jp: 答えはどうですか。
-  - id: h
-    label_jp: エビ、入ってるよ。
+    label_jp: 卵を使っているかどうか
+    label_en: whether it uses egg
   correct_ids:
-  - c
-  - e
-  - f
-  - g
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A21
   kind: grammar_form
   book_activity: 21

@@ -53,7 +53,32 @@ def _has_kanji(s: str) -> bool:
 def _norm(s: str) -> str:
     s = (s or "").replace("\u3000", "").replace(" ", "").replace("\t", "")
     s = s.replace("？", "?").replace("！", "!")
+    s = s.replace("……", "").replace("…", "").replace("...", "")
+    s = s.replace("、", "")
     return s
+
+
+ENDING_HEURISTIC = {
+    "です",
+    "ます",
+    "でした",
+    "ですね",
+    "ね",
+    "ください",
+    "お願いします",
+    "おねがいします",
+}
+
+
+def _is_heuristic_blanks(blanks: list[dict]) -> bool:
+    answers = [str(a) for b in blanks for a in (b.get("answers") or [])]
+    if not answers:
+        return True
+    if set(answers) <= ENDING_HEURISTIC:
+        return True
+    # Mostly polite endings with at most one particle — still not a real worksheet.
+    endings = sum(1 for a in answers if a in ENDING_HEURISTIC)
+    return endings >= max(2, len(answers) - 1)
 
 
 def strip_speaker(s: str) -> str:
@@ -303,11 +328,59 @@ def _good_answer(a: str) -> bool:
     a = (a or "").strip()
     if not a or len(a) > 16:
         return False
-    if re.search(r"[A-Za-z]{3,}", a):
+    if a in {"?", "？", "!", "！", "。", "…", "……"}:
         return False
-    if any(x in a for x in ("入門", "トピック", "第課", "Listen", "Focus")):
+    if re.search(r"[A-Za-z]{2,}", a):
+        return False
+    if re.search(r"[（）()\[\]【】]", a):
+        return False
+    if re.match(r"^\d", a):
+        return False
+    if any(
+        x in a
+        for x in (
+            "入門",
+            "トピック",
+            "第課",
+            "Listen",
+            "Focus",
+            "聞いて",
+            "言いましょう",
+            "注文",
+            "ドライアキ",
+            "またアニメ",
+            "海域",
+            "審え",
+            "何を注文",
+            "お見上げ",
+            "リズニー",
+            "どっちでも",  # often over-captured
+        )
+    ):
+        return False
+    # Worksheet answers are usually particles / short content words.
+    if len(a) > 10 and not re.search(r"[がをにではもとやの]", a):
         return False
     return True
+
+
+def _candidate_variants(cand: str) -> list[str]:
+    """Generate matching variants (drop optional paren prefixes, soft endings)."""
+    c = (cand or "").strip()
+    out = [c]
+    stripped = re.sub(r"^[（(][^）)]*[）)]", "", c).strip()
+    if stripped and stripped != c:
+        out.append(stripped)
+    for pref in ("（私は）", "(私は)", "私は"):
+        if c.startswith(pref):
+            out.append(c[len(pref) :])
+        if stripped.startswith(pref):
+            out.append(stripped[len(pref) :])
+    soft = re.sub(r"[…．.。]+$", "", c).strip()
+    if soft and soft not in out:
+        out.append(soft)
+        out.append(soft + "。")
+    return list(dict.fromkeys(x for x in out if x))
 
 
 def resolve_line(prompt: str, corpus: list[str], phrases: list[str]) -> dict | None:
@@ -317,6 +390,19 @@ def resolve_line(prompt: str, corpus: list[str], phrases: list[str]) -> dict | N
     if "＿" not in prompt:
         return None
     need = prompt.count("＿")
+
+    # Two sentences with blanks in each — resolve separately then merge.
+    if "。" in prompt.rstrip("。") and prompt.count("＿") >= 2:
+        left, right = prompt.split("。", 1)
+        if "＿" in left and "＿" in right:
+            l = resolve_line(left + "。", corpus, phrases)
+            r = resolve_line(right, corpus, phrases)
+            if l and r:
+                return {
+                    "prompt_jp": prompt,
+                    "answers": list(l["answers"]) + list(r["answers"]),
+                    "full_jp": f"{l['full_jp'].rstrip('。')}。{r['full_jp']}",
+                }
 
     # Special: two questions joined with ／ — resolve with disjoint phrase picks
     if "／" in prompt and need >= 2:
@@ -353,39 +439,61 @@ def resolve_line(prompt: str, corpus: list[str], phrases: list[str]) -> dict | N
     best_score = -10**9
     phrase_blob = " ".join(phrases)
 
-    def score(answers: list[str]) -> int:
+    def score(answers: list[str], filled: str = "") -> int:
         s = 0
         for a in answers:
             if a in phrase_blob:
                 s += 20
             elif any(a in p for p in phrases):
                 s += 20
-            if a in {"そう", "はい", "いいえ", "ええ", "うん", "まあ"}:
+            if a in {"そう", "はい", "いいえ", "ええ", "うん", "まあ", "どこ"}:
                 s -= 80
             # Mild preference for compact worksheet answers
             s -= len(a)
+        if filled:
+            nf = _norm(filled)
+            for p in phrases:
+                np = _norm(p)
+                if not np:
+                    continue
+                if nf == np or nf.rstrip("。") == np.rstrip("。"):
+                    s += 60
+                elif nf in np or np in nf:
+                    s += 35
         return s
 
     for cand in pool:
-        for window in windows:
-            answers = _match_slots(window, cand)
-            if answers is None:
-                continue
-            if len(answers) != need:
-                continue
-            if not all(_good_answer(a) for a in answers):
-                continue
-            sc = score(answers)
-            # Phrase candidates get a boost
-            if cand in phrases:
-                sc += 5
-            if sc > best_score:
-                best_score = sc
-                best = {
-                    "prompt_jp": prompt,
-                    "answers": answers,
-                    "full_jp": _fill(prompt, answers),
-                }
+        for variant in _candidate_variants(cand):
+            for window in windows:
+                win_variants = [window]
+                w2 = re.sub(r"^（私は）", "", window)
+                if w2 != window:
+                    win_variants.append(w2)
+                for win in win_variants:
+                    answers = _match_slots(win, variant)
+                    if answers is None:
+                        continue
+                    slot_need = win.count("＿")
+                    if len(answers) != slot_need:
+                        continue
+                    if slot_need != need:
+                        if not (window.startswith("（私は）") and slot_need == need):
+                            continue
+                    if not all(_good_answer(a) for a in answers):
+                        continue
+                    filled = _fill(prompt, answers)
+                    sc = score(answers, filled)
+                    if cand in phrases or variant in phrases:
+                        sc += 5
+                    if any(a in ENDING_HEURISTIC for a in answers):
+                        sc -= 3
+                    if sc > best_score:
+                        best_score = sc
+                        best = {
+                            "prompt_jp": prompt,
+                            "answers": answers,
+                            "full_jp": filled,
+                        }
     return best
 
 
@@ -408,10 +516,11 @@ def _blank_windows(prompt: str) -> list[str]:
     # Drop windows with no fixed Japanese context (＿？ alone matches anything).
     filtered = []
     for x in out:
-        fixed = re.sub(r"[＿。？?！!\s]+", "", x)
-        if fixed:
+        fixed = re.sub(r"[＿。？?！!\s…]+", "", x)
+        # Require a bit of real context so loose windows don't steal answers.
+        if len(fixed) >= 2:
             filtered.append(x)
-    return list(dict.fromkeys(filtered))
+    return list(dict.fromkeys(filtered)) or [prompt]
 
 def _fill(prompt: str, answers: list[str]) -> str:
     parts = re.split(r"＿+", prompt)
@@ -495,6 +604,36 @@ def apply_blanks(act: dict, blanks: list[dict], pdf_page: int) -> None:
             act["key_phrases"] = phrases
 
 
+def load_transcripts(book: str) -> dict[str, str]:
+    path = BOOKS[book]["dir"] / "audio_transcripts.json"
+    if not path.is_file():
+        return {}
+    import json
+
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def phrases_from_transcripts(transcripts: dict[str, str], tracks: list[str]) -> list[str]:
+    out: list[str] = []
+    for track in tracks:
+        for path, text in transcripts.items():
+            if f"_{track}_" not in path and f"[{track}]" not in path:
+                continue
+            # Prefer starter X_ tracks over elementary Y_ when both match.
+            for part in re.split(r"[。？?！!]", text or ""):
+                p = part.strip()
+                if len(p) >= 2:
+                    out.append(p)
+            # Also keep full transcript as one candidate for multi-clause lines.
+            full = (text or "").strip()
+            if full:
+                out.append(full)
+    return out
+
+
 def process_book(book: str, *, dry_run: bool, force: bool) -> int:
     cfg = BOOKS[book]
     pdf = cfg["pdf"]
@@ -507,6 +646,7 @@ def process_book(book: str, *, dry_run: bool, force: bool) -> int:
             continue
         lessons.append((path, yaml.safe_load(path.read_text(encoding="utf-8")) or {}))
 
+    transcripts = load_transcripts(book)
     doc = pymupdf.open(pdf)
     updated = 0
     touched_paths: set[Path] = set()
@@ -527,23 +667,25 @@ def process_book(book: str, *, dry_run: bool, force: bool) -> int:
         path, lesson = loc
         act = find_activity_for_tracks(lesson, tracks)
         if not act:
-            # Fallback: grammar_form / katachi near this page's activity number
             print(f"[{book}] p.{page}: no activity for tracks {tracks} prompts={prompts}")
             continue
         if act.get("blanks") and not force:
-            answers = [a for b in act["blanks"] for a in (b.get("answers") or [])]
-            heuristic = bool(answers) and set(answers) <= {
-                "です", "ます", "でした", "ですね", "ね", "ください", "お願いします", "おねがいします",
-            }
-            if not heuristic:
+            existing_n = len(act.get("blanks") or [])
+            if not _is_heuristic_blanks(act["blanks"]) and existing_n >= len(prompts):
                 print(
                     f"[{book}] {lesson.get('lesson_id')} {act.get('id')} p.{page}: "
-                    f"keep existing blanks ({len(act['blanks'])})"
+                    f"keep existing blanks ({existing_n})"
                 )
                 continue
+            if not _is_heuristic_blanks(act["blanks"]) and existing_n < len(prompts):
+                print(
+                    f"[{book}] {lesson.get('lesson_id')} {act.get('id')} p.{page}: "
+                    f"refresh incomplete blanks ({existing_n} < {len(prompts)} prompts)"
+                )
 
         corpus = dialog_corpus(doc, page)
         phrases = [p for p in (act.get("key_phrases") or []) if p]
+        phrases = list(dict.fromkeys(phrases_from_transcripts(transcripts, tracks) + phrases))
         blanks: list[dict] = []
         unresolved = 0
         for prompt in prompts:
@@ -553,25 +695,38 @@ def process_book(book: str, *, dry_run: bool, force: bool) -> int:
             else:
                 unresolved += 1
                 print(f"  ! unresolved: {prompt}")
-        if len(blanks) < max(1, (len(prompts) + 1) // 2):
+        existing = act.get("blanks") or []
+        existing_n = len(existing)
+        if unresolved:
             print(
                 f"[{book}] {lesson.get('lesson_id')} {act.get('id')} p.{page}: "
-                f"skip weak extract ({len(blanks)} ok / {unresolved} miss / {len(prompts)} lines)"
+                f"skip incomplete extract ({len(blanks)} ok / {unresolved} miss / {len(prompts)} lines)"
             )
             continue
-        existing = act.get("blanks") or []
-        if existing and len(blanks) < len(existing):
-            old_ans = [a for b in existing for a in (b.get("answers") or [])]
-            if old_ans and not (
-                set(old_ans)
-                <= {"です", "ます", "でした", "ですね", "ね", "ください", "お願いします", "おねがいします"}
-            ):
-                print(
-                    f"[{book}] {lesson.get('lesson_id')} {act.get('id')} p.{page}: "
-                    f"keep stronger existing ({len(existing)} > {len(blanks)})"
-                )
-                continue
-        # Add common alts for short age questions
+        if len(blanks) < len(prompts) or not blanks:
+            print(
+                f"[{book}] {lesson.get('lesson_id')} {act.get('id')} p.{page}: "
+                f"skip weak extract ({len(blanks)} ok / {len(prompts)} lines)"
+            )
+            continue
+        if any(not all(_good_answer(a) for a in (b.get("answers") or [])) for b in blanks):
+            print(
+                f"[{book}] {lesson.get('lesson_id')} {act.get('id')} p.{page}: "
+                f"skip dirty answers"
+            )
+            continue
+        if (
+            existing
+            and not force
+            and not _is_heuristic_blanks(existing)
+            and existing_n >= len(blanks)
+            and existing_n >= len(prompts)
+        ):
+            print(
+                f"[{book}] {lesson.get('lesson_id')} {act.get('id')} p.{page}: "
+                f"keep stronger existing ({existing_n} >= {len(blanks)})"
+            )
+            continue
         for b in blanks:
             if b.get("answers") == ["何歳"]:
                 b["answer_alts"] = list(
@@ -580,6 +735,10 @@ def process_book(book: str, *, dry_run: bool, force: bool) -> int:
             if b.get("answers") == ["いくつ"]:
                 b["answer_alts"] = list(
                     dict.fromkeys((b.get("answer_alts") or []) + ["いくつですか"])
+                )
+            if b.get("answers") == ["ちょっと"]:
+                b["answer_alts"] = list(
+                    dict.fromkeys((b.get("answer_alts") or []) + ["ちょっと…", "ちょっと……"])
                 )
         print(
             f"[{book}] {lesson.get('lesson_id')} {act.get('id')} p.{page} tracks={tracks[:3]}: "

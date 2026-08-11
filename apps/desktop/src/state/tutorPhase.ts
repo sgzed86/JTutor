@@ -85,9 +85,6 @@ export function phaseFor(input: {
   if (payload.state === "lesson_complete") {
     return { kind: "lesson_complete", nextLessonId: payload.next_lesson_id };
   }
-  if (payload.state === "self_check" && payload.self_check) {
-    return { kind: "self_check", canDoId: payload.self_check.can_do_id };
-  }
   if (expectsSpeech(payload.step)) {
     return { kind: "awaiting_speech", target: payload.step?.say_target_jp ?? null };
   }
@@ -110,7 +107,9 @@ export function expectsSpeech(step: Step | null | undefined): boolean {
 export function expectsText(step: Step | null | undefined): boolean {
   if (!step) return false;
   if (Boolean(step.expects_text) || Boolean(step.expects_notes)) return true;
-  return ["fill", "choose", "note", "read_check", "kanji_type"].includes(step.book_substep || "");
+  return ["fill", "grammar_fill", "grammar_choose", "choose", "note", "read_check", "kanji_type"].includes(
+    step.book_substep || "",
+  );
 }
 
 export function autoAdvances(step: Step | null | undefined): boolean {
@@ -166,8 +165,6 @@ export function presentationFor(
       return { mood: "thinking", status: "Hearing you…", primary: { id: "cancel", label: "Cancel" }, busy: true, showSpinner: true };
     case "grading":
       return { mood: "thinking", status: "Checking…", primary: { id: "cancel", label: "Cancel" }, busy: true, showSpinner: true };
-    case "self_check":
-      return { mood: "idle", status: "How did that go?", primary: { id: "rate", label: "Rate yourself" }, busy: false, showSpinner: false };
     case "lesson_complete":
       return {
         mood: "celebrating",

@@ -993,126 +993,68 @@ quiz_bank:
   prompt_en: 'In a new everyday situation, show you can: Can say numbers and understand numbers you hear.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L02_04
+  setup_en: "The clerk said the room number too fast. Say you don't understand."
+  goal_en: "Learner says they don't understand (わかりません)."
   partner_jp: 部屋は213です。
   expected:
-  - よくわかりません
-  - わかりません
-  - わからない
-  hint_en: You didn't catch the room number. Say you don't understand.
+  - "よくわかりません"
+  - "わかりません"
+  - "わからない"
+  hint_en: "The clerk said the room number too fast. Say you don't understand."
 - can_do_id: CD_L02_04
-  partner_jp: ここは受付です。
+  setup_en: "Reception spoke quickly. Say you don't understand well."
+  goal_en: "Learner communicates they didn't catch it."
+  partner_jp: ここは受付です。在留カードを見せてください。
   expected:
-  - よくわかりません
-  - わかりません
-  hint_en: The clerk spoke too fast. Say you don't understand well.
+  - "よくわかりません"
+  - "わかりません"
+  hint_en: "Reception spoke quickly. Say you don't understand well."
 - can_do_id: CD_L02_05
+  setup_en: You missed the room number. Ask them to say it again.
+  goal_en: Learner asks for a repeat (もう一度).
   partner_jp: 部屋は213です。
   expected:
-  - もういちど、お願いします
-  - もう一度
-  hint_en: Ask them to say it again.
+  - "もういちど、お願いします"
+  - "もう一度"
+  - "お願いします"
+  hint_en: You missed the room number. Ask them to say it again.
 - can_do_id: CD_L02_05
+  setup_en: They spoke too fast. Ask them to speak a little more slowly.
+  goal_en: Learner asks them to slow down (ゆっくり).
   partner_jp: 在留カードを見せてください。
   expected:
-  - もう少し、ゆっくり言ってください
-  - ゆっくり
-  hint_en: Ask them to speak a little more slowly.
+  - "もう少し、ゆっくり言ってください"
+  - "ゆっくり"
+  hint_en: They spoke too fast. Ask them to speak a little more slowly.
 - can_do_id: CD_L02_06
-  partner_jp: 数字を言ってください。いち。
+  setup_en: Yuki says a number. Repeat it.
+  goal_en: Learner says the number they heard.
+  partner_jp: 数字です。いち。
   expected:
-  - いち
-  - '1'
-  - 一
-  hint_en: 'Repeat the number: 1.'
+  - "いち"
+  - "1"
+  - "一"
+  hint_en: Yuki says a number. Repeat it.
 - can_do_id: CD_L02_06
+  setup_en: Yuki says a number. Repeat it.
+  goal_en: Learner says the number they heard.
+  partner_jp: 数字です。じゅう。
+  expected:
+  - "じゅう"
+  - "10"
+  - "十"
+  hint_en: Yuki says a number. Repeat it.
+- can_do_id: CD_L02_06
+  setup_en: Yuki asks you to say a number. Say 「さん」.
+  goal_en: Learner produces a number from the lesson.
   partner_jp: 数字を言ってください。さん。
   expected:
-  - さん
-  - '3'
-  - 三
-  hint_en: 'Repeat the number: 3.'
-- can_do_id: CD_L02_06
-  partner_jp: 数字を言ってください。ご。
-  expected:
-  - ご
-  - '5'
-  - 五
-  hint_en: 'Repeat the number: 5.'
-- can_do_id: CD_L02_06
-  partner_jp: 数字を言ってください。じゅう。
-  expected:
-  - じゅう
-  - '10'
-  - 十
-  hint_en: 'Repeat the number: 10.'
-- can_do_id: CD_L02_06
-  partner_jp: いくつですか。
-  expected:
-  - ゼロ
-  - いち
-  - に
-  - さん
-  - よん
-  - ご
-  - ろく
-  - なな
-  - はち
-  - きゅう
-  - じゅう
-  - '0'
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '10'
-  hint_en: Answer with any number in Japanese (0–10).
-- can_do_id: CD_L02_05
-  partner_jp: 部屋は、213です。
-  expected:
-  - もういちど、お願いします
-  - もう一度、お願いします
-  - もう一度お願いします
-  hint_en: Reply as in the book dialog (activity 5).
-- can_do_id: CD_L02_06
-  partner_jp: 部屋は、213です。
-  expected:
-  - もう少し、ゆっくり言ってください
-  - もうすこし、ゆっくり言ってください
-  hint_en: Reply as in the book dialog (activity 6).
-- can_do_id: CD_L02_05
-  partner_jp: 日本語、できますか
-  expected:
-  - はい、すこしできます
-  - はい、少しできます
-  - すこしできます
-  - はい、できます
-  hint_en: Reply as in the book dialog (activity 11).
-- can_do_id: CD_L02_06
-  partner_jp: 日本語、わかりますか
-  expected:
-  - すみません、わかりません
-  - わかりません
-  hint_en: Reply as in the book dialog (activity 12).
-- can_do_id: CD_L02_04
-  partner_jp: インドネシア語、できますか
-  expected:
-  - はい、すこしできます
-  - はい、少しできます
-  - すこしできます
-  - はい、できます
-  hint_en: Reply as in the book dialog (activity 13).
-- can_do_id: CD_L02_05
-  partner_jp: インドネシア語、わかりますか
-  expected:
-  - すみません、わかりません
-  - わかりません
-  hint_en: Reply as in the book dialog (activity 14).
+  - "さん"
+  - "3"
+  - "三"
+  hint_en: Yuki asks you to say a number. Say 「さん」.
 english_notes: 'What should you do if you don’t understand what someone has said? What should you do when
   you don’t know how to
 

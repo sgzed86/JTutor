@@ -102,6 +102,12 @@ export type Step = {
   say_target_jp?: string | null;
   /** Practice steps: Yuki speaks this target before the mic opens. */
   model_before_speech?: boolean;
+  /** Grammar workbook: Yuki cues; answer is not shown. */
+  facilitate?: boolean;
+  grammar_cue_jp?: string | null;
+  grammar_line_jp?: string | null;
+  grammar_pattern_en?: string | null;
+  grammar_role?: string | null;
   /**
    * After a missed spoken answer: show Hear CD / Hear Yuki / Try again
    * instead of auto-replaying the recording.
@@ -117,14 +123,19 @@ export type Step = {
   blank_total?: number | null;
   choices?: { id: string; label_jp?: string | null; label_en?: string | null }[];
   choose_multi?: boolean;
+  /** How many options must be selected when choose_multi is true. */
+  choose_expected?: number | null;
   gloss_en?: string | null;
   passage_jp?: string | null;
   passage_en?: string | null;
   culture_notes_en?: string | null;
+  culture_card?: boolean;
   expects_notes?: boolean;
   note_prompt_en?: string | null;
   kanji_items?: { kanji?: string | null; reading?: string | null; gloss_en?: string | null }[];
   kanji_sentences?: string[];
+  /** Headwords to underline in the kanji reading examples. */
+  kanji_focus_words?: string[];
   kanji_prompt?: {
     kanji?: string | null;
     reading?: string | null;
@@ -222,6 +233,42 @@ export type SelfCheckSummary = {
   self_comment?: string | null;
 };
 
+export type GrammarTurn = {
+  kind?: "listen" | "fill" | "choose";
+  role?: string | null;
+  jp?: string | null;
+  cue_jp?: string | null;
+  blank_prompt_jp?: string | null;
+  read_jp?: string | null;
+  partner_jp?: string | null;
+  instruction_en?: string | null;
+  answers?: string[];
+  full_jp?: string | null;
+  answer_alts?: string[];
+  choices?: { id: string; label_jp?: string | null; label_en?: string | null }[];
+  correct_ids?: string[];
+  choose_multi?: boolean;
+};
+
+export type GrammarExercise = {
+  instruction_en?: string | null;
+  turns?: GrammarTurn[];
+  cue_jp?: string | null;
+  cue_en?: string | null;
+  blank_prompt_jp?: string | null;
+  read_jp?: string | null;
+  line_jp?: string | null;
+  partner_jp?: string | null;
+  follow_jp?: string | null;
+  answers?: string[];
+  full_jp?: string | null;
+  answer_alts?: string[];
+  choices?: { id: string; label_jp?: string | null; label_en?: string | null }[];
+  correct_ids?: string[];
+  choose_multi?: boolean;
+  expected?: string[];
+};
+
 export type GrammarPoint = {
   point: string;
   worksheet_pages?: unknown[];
@@ -229,6 +276,7 @@ export type GrammarPoint = {
   prompt_en?: string;
   prompt_jp?: string;
   examples?: Array<string | { jp: string; en?: string }>;
+  exercises?: GrammarExercise[];
 };
 export type VocabItem = { jp?: string; en?: string };
 
@@ -242,6 +290,10 @@ export type TutorPayload = {
   activity_id: string | null;
   activity: Activity | null;
   messages: Message[];
+  /** Full session lengths — `messages` may be a trimmed window. */
+  message_total?: number;
+  message_offset?: number;
+  assistant_total?: number;
   lesson_messages: Message[];
   help_messages: Message[];
   can_dos: CanDo[];

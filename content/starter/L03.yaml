@@ -611,71 +611,63 @@ quiz_bank:
     for the first time.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L03_07
-  partner_jp: では、お願いします。
+  setup_en: "First meeting. Introduce yourself (name and where you're from)."
+  goal_en: Learner gives a simple self-intro with name and country/hometown.
+  partner_jp: はじめまして。自己紹介をお願いします。
   expected:
-  - です
-  - から来ました
-  hint_en: 'Situation: Can give a simple self-introduction (name, country/hometown). Reply using lesson
-    phrases.'
+  - "です"
+  - "から来ました"
+  - "はじめまして"
+  - "よろしくお願いします"
+  hint_en: "First meeting. Introduce yourself (name and where you're from)."
 - can_do_id: CD_L03_07
-  partner_jp: もう一度、お願いします。
+  setup_en: Yuki introduces herself. Give your own short introduction.
+  goal_en: "Learner replies with their own intro, not copying hers word-for-word only."
+  partner_jp: はじめまして。ユキです。日本から来ました。
   expected:
-  - です
-  - から来ました
-  hint_en: Again — 簡単な自己紹介（名前・国など）をすることができる。
+  - "です"
+  - "から来ました"
+  - "よろしくお願いします"
+  hint_en: Yuki introduces herself. Give your own short introduction.
 - can_do_id: CD_L03_08
-  partner_jp: では、お願いします。
+  setup_en: You meet someone new. Ask their name and where they are from.
+  goal_en: Learner asks name and/or hometown (お名前 / どこ).
+  partner_jp: はじめまして。どうぞよろしくお願いします。
   expected:
-  - お名前
-  - どこ
-  hint_en: 'Situation: Can ask someone''s name and where they are from. Reply using lesson phrases.'
+  - "お名前は"
+  - "お名前"
+  - "どこから"
+  - "どちらから"
+  hint_en: You meet someone new. Ask their name and where they are from.
 - can_do_id: CD_L03_08
-  partner_jp: もう一度、お願いします。
+  setup_en: Yuki says hello. Ask where she is from.
+  goal_en: Learner asks about origin/hometown.
+  partner_jp: こんにちは。ユキです。
   expected:
-  - お名前
-  - どこ
-  hint_en: Again — 相手の名前や出身を質問することができる。
+  - "どこから来ましたか"
+  - "どちらから"
+  - "どこ"
+  hint_en: Yuki says hello. Ask where she is from.
 - can_do_id: CD_L03_09
-  partner_jp: では、お願いします。
+  setup_en: First meeting. Use a set phrase like よろしくお願いします.
+  goal_en: Learner uses a first-meeting set phrase.
+  partner_jp: はじめまして。トンです。タイから来ました。
   expected:
-  - よろしく
-  hint_en: 'Situation: Can use simple set phrases when meeting someone for the first time. Reply using
-    lesson phrases.'
+  - "よろしく"
+  - "よろしくお願いします"
+  - "はじめまして"
+  hint_en: First meeting. Use a set phrase like よろしくお願いします.
 - can_do_id: CD_L03_09
-  partner_jp: もう一度、お願いします。
+  setup_en: End a short first meeting politely.
+  goal_en: Learner closes with よろしく / similar.
+  partner_jp: 今日はありがとうございました。
   expected:
-  - よろしく
-  hint_en: Again — 初めて会った人に簡単な定型表現を使うことができる。
-- can_do_id: CD_L03_07
-  partner_jp: はじめまして。
-  expected:
-  - はじめまして
-  - トンです
-  - タイから来ました
-  - よろしくお願いします
-  - です
-  - から来ました
-  hint_en: Can give a simple self-introduction (name, country/hometown).
-- can_do_id: CD_L03_08
-  partner_jp: はじめまして。
-  expected:
-  - はじめまして
-  - ヤミンです
-  - ミャンマーから来ました
-  - どうぞよろしくお願いします
-  - お名前
-  - どこ
-  hint_en: Can ask someone's name and where they are from.
-- can_do_id: CD_L03_09
-  partner_jp: はじめまして。
-  expected:
-  - はじめまして
-  - 私はマルシアです
-  - ブラジルから来ました
-  - よろしくお願いします
-  - よろしく
-  hint_en: Can use simple set phrases when meeting someone for the first time.
+  - "よろしく"
+  - "また"
+  - "失礼します"
+  hint_en: End a short first meeting politely.
 english_notes: 'What do you say when you are introducing yourself to someone you are meeting for the first
   time?
 

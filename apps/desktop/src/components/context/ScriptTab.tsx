@@ -10,6 +10,8 @@ export function ScriptTab({ payload, onSpeak }: { payload: TutorPayload | null; 
   const lines = step?.dialog_script ?? payload?.activity?.dialog_script ?? [];
   const audio = step?.audio ?? [];
   const transcripts = audio.filter((a) => a.transcript);
+  // Book colors stay fixed (partner=yellow, learner=orange); swap only who speaks.
+  const swapped = Boolean(step?.book_substep?.startsWith("swap_"));
 
   if (!lines.length && !transcripts.length) {
     return <p className="ask__empty">No script for this step. Role-play activities show the dialog here.</p>;
@@ -19,20 +21,30 @@ export function ScriptTab({ payload, onSpeak }: { payload: TutorPayload | null; 
     <>
       {lines.length > 0 && (
         <section>
-          <p className="rail__section-title">Dialog</p>
-          {lines.map((line, i) => (
-            <div className="script-line" data-speaker={line.speaker} key={i}>
-              <span className="script-line__who">{line.speaker === "partner" ? "Partner" : "You"}</span>
-              <button
-                type="button"
-                className="btn btn--ghost"
-                style={{ justifyContent: "flex-start", padding: 0 }}
-                onClick={() => onSpeak(line.jp)}
-              >
-                <span className="jp">{line.jp}</span>
-              </button>
-            </div>
-          ))}
+          <p className="rail__section-title">Dialog{swapped ? " · roles swapped" : ""}</p>
+          {lines.map((line, i) => {
+            const yellow = line.speaker === "partner";
+            const who = yellow
+              ? swapped
+                ? "You · yellow"
+                : "Yuki · yellow"
+              : swapped
+                ? "Yuki · orange"
+                : "You · orange";
+            return (
+              <div className="script-line" data-speaker={line.speaker} key={i}>
+                <span className="script-line__who">{who}</span>
+                <button
+                  type="button"
+                  className="btn btn--ghost"
+                  style={{ justifyContent: "flex-start", padding: 0 }}
+                  onClick={() => onSpeak(line.jp)}
+                >
+                  <span className="jp">{line.jp}</span>
+                </button>
+              </div>
+            );
+          })}
         </section>
       )}
 

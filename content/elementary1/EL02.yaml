@@ -907,56 +907,80 @@ quiz_bank:
     descriptions posted at work.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL02_04
-  partner_jp: が好きです。
-  expected: &id001
-  - が好きです
-  - 趣味は料理をすることです
-  - ゲームをするのが好きです
-  - 人の人が話しています。
-  hint_en: Can talk in simple terms about your hobbies and favorite things to do.
+  setup_en: Talk about your hobbies and favorite things to do.
+  goal_en: Learner talks about hobbies/favorites.
+  partner_jp: 趣味は何ですか？
+  expected:
+  - "趣味"
+  - "好きです"
+  - "すること"
+  hint_en: Talk about your hobbies and favorite things to do.
 - can_do_id: CD_EL02_04
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can talk in simple terms about your hobbies and favorite things to do.
+  setup_en: Yuki shares her hobby. Share yours.
+  goal_en: Learner responds with their own hobby.
+  partner_jp: 私の趣味は料理をすることです。
+  expected:
+  - "趣味"
+  - "好き"
+  - "です"
+  hint_en: Yuki shares her hobby. Share yours.
 - can_do_id: CD_EL02_05
-  partner_jp: が好きです。
-  expected: &id002
-  - が好きです
-  - 趣味は料理をすることです
-  - ゲームをするのが好きです
-  - 人の人が話しています。
-  hint_en: Can ask and answer questions about how you spend your days off.
+  setup_en: Ask and answer about how you spend days off.
+  goal_en: Learner discusses days off.
+  partner_jp: 休みの日は何をしますか？
+  expected:
+  - "休み"
+  - "します"
+  - "です"
+  hint_en: Ask and answer about how you spend days off.
 - can_do_id: CD_EL02_05
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can ask and answer questions about how you spend your days off.
+  setup_en: Ask Yuki what she does on weekends.
+  goal_en: Learner asks about days off.
+  partner_jp: 私はよく散歩します。
+  expected:
+  - "何をしますか"
+  - "休み"
+  - "どうしますか"
+  hint_en: Ask Yuki what she does on weekends.
 - can_do_id: CD_EL02_06
-  partner_jp: ゲームをするのが好きです。
-  expected: &id003
-  - ゲームをするのが好きです
-  - 人の人が話しています。
-  - 趣味や好きなことは何ですか。
-  - 趣味は何ですか？
-  hint_en: Can read staff descriptions posted in a store, facility, etc. and under - stand their families,
-    hobbies, etc.
+  setup_en: Yuki reads a staff intro card. Say what hobbies you heard.
+  goal_en: Learner shows they understood family/hobby info from a description.
+  partner_jp: 田中さんです。趣味は写真です。家族は妻と子ども二人です。
+  expected:
+  - "写真"
+  - "趣味"
+  - "家族"
+  - "子ども"
+  hint_en: Yuki reads a staff intro card. Say what hobbies you heard.
 - can_do_id: CD_EL02_06
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: 'Again — Can read staff descriptions posted in a store, facility, etc. and under - stand '
+  setup_en: "From the staff card, who likes games?"
+  goal_en: Learner extracts info from a short description.
+  partner_jp: リーさんの趣味はゲームをすることです。休日は家で過ごします。
+  expected:
+  - "リー"
+  - "ゲーム"
+  - "趣味"
+  hint_en: "From the staff card, who likes games?"
 - can_do_id: CD_EL02_07
-  partner_jp: ゲームをするのが好きです。
-  expected: &id004
-  - ゲームをするのが好きです
-  - 人の人が話しています。
-  - 趣味や好きなことは何ですか。
-  - 趣味は何ですか？
-  hint_en: Can write in simple terms about your hobbies, your days off, etc. for staff descriptions posted
-    at work.
+  setup_en: Say a short staff-intro style line about your hobby and days off.
+  goal_en: Learner produces a simple self blurb for a staff board.
+  partner_jp: 自己紹介カードを書いてください。趣味と休みの日のことです。
+  expected:
+  - "趣味"
+  - "好き"
+  - "休み"
+  hint_en: Say a short staff-intro style line about your hobby and days off.
 - can_do_id: CD_EL02_07
-  partner_jp: もう一度、お願いします。
-  expected: *id004
-  hint_en: Again — Can write in simple terms about your hobbies, your days off, etc. for staff desc
+  setup_en: "Dictate a short intro: hobby + weekend."
+  goal_en: Learner writes/says hobby and free-day info simply.
+  partner_jp: じゃあ、あなたのカードをお願いします。
+  expected:
+  - "趣味は"
+  - "です"
+  - "します"
+  hint_en: "Dictate a short intro: hobby + weekend."
 english_notes: 'How do you spend your days off?
 
   Can talk in simple terms about your hobbies and favorite things to do.

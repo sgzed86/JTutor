@@ -387,54 +387,39 @@ activities:
   audio:
   - assets/audio/Y_[12-10]_kiku1.mp3
   key_phrases:
-  - ています。
-  - それについてどう言っています
   - よかったら、この卵焼き、食べてみてください。
   - ありがとうございます。……あ、甘くておいしいですね。
-  prompt_en: 'EL12 activity 10: listen to the CD, then say the phrase that matches the book.'
+  - もう一つどうですか。
+  prompt_en: Listen (CD 12-10). What does the host say when offering food?
   phrase_meta:
-  - jp: ています。
-    tags:
-    - short
-    - polite
-  - jp: それについてどう言っています
-    tags:
-    - long
-    - polite
   - jp: よかったら、この卵焼き、食べてみてください。
     tags:
     - long
-    - polite
   - jp: ありがとうございます。……あ、甘くておいしいですね。
     tags:
     - long
-    - polite
+  - jp: もう一つどうですか。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL12 activity 10: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Offering tamagoyaki to try.
   choices:
   - id: a
-    label_jp: 食べてみてください。
-  - id: b
     label_jp: よかったら、この卵焼き、食べてみてください。
+    label_en: please try this tamagoyaki
+  - id: b
+    label_jp: わー、それ、辛そうな料理ですね。
+    label_en: that looks spicy
   - id: c
-    label_jp: ています。
+    label_jp: それ、何ですか？
+    label_en: what is that?
   - id: d
     label_jp: へー。じゃ、今度、買ってみます。
-  - id: e
-    label_jp: ありがとうございます。……あ、甘くておいしいですね。
-  - id: f
-    label_jp: どんな味ですか。
-  - id: g
-    label_jp: それについてどう言っています
-  - id: h
-    label_jp: これ？これは、チョコレートバニラクリームラテ。
+    label_en: "I'll buy some next time"
   correct_ids:
-  - b
-  - c
-  - e
-  - g
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A11
   kind: listening
   book_activity: 11
@@ -443,54 +428,40 @@ activities:
   audio:
   - assets/audio/Y_[12-11]_kiku2.mp3
   key_phrases:
-  - ています。
-  - それについてどう言っています
-  - よかったら、この卵焼き、食べてみてください。
-  - ありがとうございます。……あ、甘くておいしいですね。
-  prompt_en: 'EL12 activity 11: listen to the CD, then say the phrase that matches the book.'
+  - お好み焼き、おいしい？
+  - はい、おいしいです。私の国のバインセオに似ています。
+  - もう少し食べる？あ、大丈夫です。もうお腹が一杯です。
+  prompt_en: Listen (CD 12-11). How does the guest describe the okonomiyaki?
   phrase_meta:
-  - jp: ています。
-    tags:
-    - short
-    - polite
-  - jp: それについてどう言っています
+  - jp: お好み焼き、おいしい？
     tags:
     - long
     - polite
-  - jp: よかったら、この卵焼き、食べてみてください。
+  - jp: はい、おいしいです。私の国のバインセオに似ています。
     tags:
     - long
-    - polite
-  - jp: ありがとうございます。……あ、甘くておいしいですね。
+  - jp: もう少し食べる？あ、大丈夫です。もうお腹が一杯です。
     tags:
     - long
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL12 activity 11: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Comparing okonomiyaki to a dish from their country.
   choices:
   - id: a
-    label_jp: よかったら、この卵焼き、食べてみてください。
+    label_jp: 私の国の料理に似ています
+    label_en: similar to food from my country
   - id: b
-    label_jp: ています。
+    label_jp: よかったら、この卵焼き、食べてみてください。
+    label_en: please try this tamagoyaki
   - id: c
     label_jp: わー、それ、辛そうな料理ですね。
+    label_en: that looks spicy
   - id: d
-    label_jp: すみません。
-  - id: e
-    label_jp: これですか？私の国のカレーです。あまり辛くないですよ。
-  - id: f
-    label_jp: ありがとうございます。……あ、甘くておいしいですね。
-  - id: g
-    label_jp: そのお弁当、おいしそうですね。
-  - id: h
-    label_jp: それについてどう言っています
+    label_jp: すみません、酸っぱくてちょっと苦手です
+    label_en: too sour for me
   correct_ids:
   - a
-  - b
-  - f
-  - h
-  choose_mode: all
+  choose_mode: any
 - id: A12
   kind: listening
   book_activity: 12
@@ -499,54 +470,41 @@ activities:
   audio:
   - assets/audio/Y_[12-12]_kiku3.mp3
   key_phrases:
-  - ています。
-  - それについてどう言っています
-  - よかったら、この卵焼き、食べてみてください。
-  - ありがとうございます。……あ、甘くておいしいですね。
-  prompt_en: 'EL12 activity 12: listen to the CD, then say the phrase that matches the book.'
+  - それ、何ですか。これ？梅干し。食べてみる？
+  - どう？
+  - すみません、酸っぱくてちょっと苦手です。
+  prompt_en: Listen (CD 12-12). How does the guest react to the umeboshi?
   phrase_meta:
-  - jp: ています。
+  - jp: それ、何ですか。これ？梅干し。食べてみる？
+    tags:
+    - long
+    - polite
+  - jp: どう？
     tags:
     - short
     - polite
-  - jp: それについてどう言っています
+  - jp: すみません、酸っぱくてちょっと苦手です。
     tags:
     - long
-    - polite
-  - jp: よかったら、この卵焼き、食べてみてください。
-    tags:
-    - long
-    - polite
-  - jp: ありがとうございます。……あ、甘くておいしいですね。
-    tags:
-    - long
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL12 activity 12: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Trying pickled plum — too sour.
   choices:
   - id: a
-    label_jp: ありがとうございます。……あ、甘くておいしいですね。
+    label_jp: すみません、酸っぱくてちょっと苦手です
+    label_en: too sour; not my favorite
   - id: b
-    label_jp: それ、何ですか？
-  - id: c
-    label_jp: あ、これですか？おいしいですよ。駅前のコンビニで買いました。
-  - id: d
-    label_jp: これ？これは、チョコレートバニラクリームラテ。
-  - id: e
-    label_jp: 味は、うす？
-  - id: f
     label_jp: よかったら、この卵焼き、食べてみてください。
-  - id: g
-    label_jp: ています。
-  - id: h
-    label_jp: それについてどう言っています
+    label_en: please try this tamagoyaki
+  - id: c
+    label_jp: 甘くておいしいですね
+    label_en: sweet and delicious
+  - id: d
+    label_jp: へー。じゃ、今度、買ってみます。
+    label_en: "I'll buy some next time"
   correct_ids:
   - a
-  - f
-  - g
-  - h
-  choose_mode: all
+  choose_mode: any
 - id: A13
   kind: listening
   book_activity: 13
@@ -555,54 +513,39 @@ activities:
   audio:
   - assets/audio/Y_[12-13]_kiku4.mp3
   key_phrases:
-  - ています。
-  - それについてどう言っています
-  - よかったら、この卵焼き、食べてみてください。
-  - ありがとうございます。……あ、甘くておいしいですね。
-  prompt_en: 'EL12 activity 13: listen to the CD, then say the phrase that matches the book.'
+  - すき焼き、おいしいですね。
+  - 卵は使わないんですか。
+  - あ、生卵はちょっとダメです。すみません。
+  prompt_en: "Listen (CD 12-13). What can't the guest eat with the sukiyaki?"
   phrase_meta:
-  - jp: ています。
-    tags:
-    - short
-    - polite
-  - jp: それについてどう言っています
+  - jp: すき焼き、おいしいですね。
     tags:
     - long
-    - polite
-  - jp: よかったら、この卵焼き、食べてみてください。
+  - jp: 卵は使わないんですか。
     tags:
     - long
-    - polite
-  - jp: ありがとうございます。……あ、甘くておいしいですね。
+  - jp: あ、生卵はちょっとダメです。すみません。
     tags:
     - long
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL12 activity 13: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Sukiyaki — raw egg is a problem.
   choices:
   - id: a
-    label_jp: それ、辛料理ですね。
+    label_jp: 生卵はちょっとダメです
+    label_en: "can't have raw egg"
   - id: b
-    label_jp: 辛そうな料理です
-  - id: c
-    label_jp: 食べてみてください。
-  - id: d
-    label_jp: 味は、うす？
-  - id: e
-    label_jp: それについてどう言っています
-  - id: f
-    label_jp: ありがとうございます。……あ、甘くておいしいですね。
-  - id: g
-    label_jp: ています。
-  - id: h
     label_jp: よかったら、この卵焼き、食べてみてください。
+    label_en: please try this tamagoyaki
+  - id: c
+    label_jp: すみません、酸っぱくてちょっと苦手です
+    label_en: too sour for me
+  - id: d
+    label_jp: 私の国の料理に似ています
+    label_en: similar to food from my country
   correct_ids:
-  - e
-  - f
-  - g
-  - h
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A14
   kind: grammar_form
   book_activity: 14
@@ -782,7 +725,7 @@ activities:
   - おいしいです。
   - プリンに似てます
   - ると思います
-  prompt_en: Focus on the expressions used. Listen and say each pattern.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: 味は、うす？
     tags:
@@ -799,7 +742,25 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: プリンに似てますけど、甘＿、おいしいですよ。
+    answers:
+    - くなくて
+    full_jp: プリンに似てますけど、甘くなくて、おいしいですよ。
+  - prompt_jp: 鶏肉とか、エビとか、きのことかが＿。
+    answers:
+    - 入ってます
+    full_jp: 鶏肉とか、エビとか、きのことかが入ってます。
+  - prompt_jp: ときどき、銀杏も＿よ。
+    answers:
+    - 入れます
+    full_jp: ときどき、銀杏も入れますよ。
+  - prompt_jp: 味は、うす＿？
+    answers:
+    - くないですか
+    full_jp: 味は、うすくないですか？
+  fill_pdf_page: 253
 - id: A20
   kind: speaking
   book_activity: 20

@@ -337,8 +337,9 @@ def find_kanji_page(doc: pymupdf.Document, start: int, end: int) -> int | None:
 
 
 def cleanup_sentence(s: str) -> str:
-    s = s.replace("\u3000", " ").strip()
-    s = re.sub(r"\s+", "", s)
+    # Keep a single ideographic space between paired examples (一月　八月).
+    s = (s or "").replace("\u3000", " ").strip()
+    s = re.sub(r"\s+", "　", s)
     # Truncate if step-3 instruction leaked into the last example.
     s = re.split(r"(?:キーボードやスマートフォンで入|上の.+のことばを)", s, maxsplit=1)[0]
     return s.strip(" 　")
@@ -355,9 +356,12 @@ def extract_sentences(text: str) -> list[str]:
     else:
         chunk = text
 
-    lines: list[str] = []
+    # (text, paired_indent) — paired_indent marks a second example on the same
+    # numbered line (PDF indents 八月 under ① 一月).
+    lines: list[tuple[str, bool]] = []
     for raw in chunk.splitlines():
-        ln = raw.strip().replace("\u3000", " ").strip()
+        paired = bool(re.match(r"^[\t \u3000]+", raw or ""))
+        ln = (raw or "").replace("\u3000", " ").strip()
         if not ln:
             continue
         if ln.startswith("©") or "Japan Foundation" in ln:
@@ -370,11 +374,11 @@ def extract_sentences(text: str) -> list[str]:
             break
         if ln in {"3", "上"} or ln.startswith("上の"):
             break
-        lines.append(ln)
+        lines.append((ln, paired))
 
     sentences: list[str] = []
     current: str | None = None
-    for ln in lines:
+    for ln, paired in lines:
         m = re.match(rf"^([{CIRCLED}])\s*(.*)$", ln)
         if m:
             if current:
@@ -384,7 +388,10 @@ def extract_sentences(text: str) -> list[str]:
             current = m.group(2) or ""
             continue
         if current is not None:
-            current += ln
+            if paired and ln:
+                current += "　" + ln
+            else:
+                current += ln
     if current:
         cleaned = cleanup_sentence(current)
         if cleaned:
@@ -519,7 +526,78 @@ def extract_items(text: str, chrome_prefixes: tuple[str, ...] = ("入門", "初�
                 i += consume
                 continue
         i += 1
-    return items
+    return _normalize_items(items)
+
+
+# Canonical readings when PDF assembly concatenates neighbouring cards.
+_CANONICAL_READINGS: dict[str, str] = {
+    "子ども": "こども",
+    "曜日": "ようび",
+    "聞きます": "ききます",
+    "来ます": "きます",
+    "乗ります": "のります",
+    "行きます": "いきます",
+    "会社": "かいしゃ",
+    "見ます": "みます",
+    "読みます": "よみます",
+    "本": "ほん",
+    "友だち": "ともだち",
+    "何": "なに",
+    "東": "ひがし",
+    "西": "にし",
+    "南": "みなみ",
+    "北": "きた",
+}
+
+
+def _normalize_items(items: list[dict]) -> list[dict]:
+    """Merge split cards like ～曜 + 曜日 → 曜日／ようび; fix known bad readings."""
+    out: list[dict] = []
+    i = 0
+    while i < len(items):
+        cur = items[i]
+        nxt = items[i + 1] if i + 1 < len(items) else None
+        kanji = cur.get("kanji") or ""
+        if nxt and kanji in {"～曜", "〜曜"} and (nxt.get("kanji") or "") == "曜日":
+            out.append(
+                {
+                    "kanji": "曜日",
+                    "reading": "ようび",
+                    "gloss_en": GLOSS.get("曜日", "day of the week"),
+                }
+            )
+            i += 2
+            continue
+        item = dict(cur)
+        reading = item.get("reading") or ""
+        canon = _CANONICAL_READINGS.get(kanji)
+        if canon and (not reading or len(reading) > len(canon) + 1 or reading != canon):
+            # Replace concatenated / missing readings; keep exact canon matches.
+            if reading != canon:
+                item["reading"] = canon
+        if "gloss_en" not in item and kanji in GLOSS:
+            item["gloss_en"] = GLOSS[kanji]
+        out.append(item)
+        i += 1
+    return out
+
+
+def _prefer_items(old: list[dict], new: list[dict]) -> list[dict]:
+    """Keep prior headwords when a fresh parse clearly regresses."""
+    new = _normalize_items(new)
+    old = _normalize_items(old)
+    if not new:
+        return old
+    if not old:
+        return new
+    if len(new) + 2 < len(old):
+        return old
+    # Absurd mega-readings → prefer old (after normalize).
+    if any(len(i.get("reading") or "") > 12 for i in new) and not any(
+        len(i.get("reading") or "") > 12 for i in old
+    ):
+        return old
+    return new
 
 
 def extract_lesson(
@@ -528,16 +606,23 @@ def extract_lesson(
     chrome_prefixes: tuple[str, ...],
 ) -> dict | None:
     pages = lesson.get("pdf_pages") or []
-    if len(pages) < 2:
-        return None
-    start, end = int(pages[0]), int(pages[1])
-    page = find_kanji_page(doc, start, end)
+    page = None
+    if len(pages) >= 2:
+        start, end = int(pages[0]), int(pages[1])
+        page = find_kanji_page(doc, start, end)
+    # Fall back to the page already stored on the KANJI activity.
+    if page is None:
+        for act in lesson.get("activities") or []:
+            if act.get("id") == "KANJI" or act.get("book_mode") == "kanji_words":
+                if act.get("pdf_page"):
+                    page = int(act["pdf_page"])
+                    break
     if page is None:
         return None
     text = doc[page - 1].get_text()
     items = extract_items(text, chrome_prefixes=chrome_prefixes)
     sentences = extract_sentences(text)
-    if not items:
+    if not items and not sentences:
         return None
     return {
         "pdf_page": page,
@@ -548,28 +633,46 @@ def extract_lesson(
 
 def upsert_activity(lesson: dict, section: dict) -> None:
     acts = list(lesson.get("activities") or [])
+    existing = next(
+        (a for a in acts if a.get("id") == "KANJI" or a.get("book_mode") == "kanji_words"),
+        None,
+    )
+    old_items = list((existing or {}).get("kanji_items") or [])
+    items = _prefer_items(old_items, list(section.get("items") or []))
+    sentences = list(section.get("sentences") or []) or list((existing or {}).get("kanji_sentences") or [])
+    if not items and not sentences:
+        return
+
     acts = [a for a in acts if a.get("id") != "KANJI" and a.get("book_mode") != "kanji_words"]
     max_ba = max((float(a.get("book_activity") or 0) for a in acts), default=0)
     culture = next((a for a in acts if a.get("id") == "CULTURE"), None)
-    ba = float(culture["book_activity"]) - 0.5 if culture else max_ba + 1
+    ba = (
+        float(existing["book_activity"])
+        if existing and existing.get("book_activity") is not None
+        else (float(culture["book_activity"]) - 0.5 if culture else max_ba + 1)
+    )
     activity = {
         "id": "KANJI",
         "kind": "kanji",
         "book_activity": ba,
         "label": "kanji_kotoba",
         "audio": [],
-        "key_phrases": [it["kanji"] for it in section["items"]],
+        "key_phrases": [it["kanji"] for it in items],
         "book_mode": "kanji_words",
         "prompt_en": "Kanji words — check meanings, read the example lines, then type each word.",
         "pdf_page": section["pdf_page"],
-        "kanji_items": section["items"],
-        "kanji_sentences": section["sentences"],
+        "kanji_items": items,
+        "kanji_sentences": sentences,
         "picture_has_image": False,
     }
     acts.append(activity)
     acts.sort(key=lambda a: float(a.get("book_activity") or 0))
     lesson["activities"] = acts
-    lesson["kanji_words"] = section
+    lesson["kanji_words"] = {
+        "pdf_page": section["pdf_page"],
+        "items": items,
+        "sentences": sentences,
+    }
 
 
 def process_book(book: str, *, dry_run: bool) -> int:

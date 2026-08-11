@@ -232,7 +232,7 @@ export const api = {
     const form = new FormData();
     form.append("file", blob, "speech.webm");
     form.append("language", language);
-    if (hint?.trim()) form.append("hint", hint.trim().slice(0, 200));
+    if (hint?.trim()) form.append("hint", hint.trim().slice(0, 360));
     return request<Transcript>("/voice/transcribe", {
       method: "POST",
       body: form,

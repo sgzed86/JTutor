@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { TutorStageModel } from "../../lib/tutorDisplay";
 
 export const CHECK_BLANKS_EVENT = "jtutor-check-blanks";
@@ -16,6 +16,40 @@ export function fillBlankPrompt(prompt: string, fills: string[]): string {
     out += parts[i + 1] ?? "";
   }
   return out;
+}
+
+const CIRCLED = "①②③④⑤⑥⑦⑧⑨⑩";
+
+/** Underline lesson kanji headwords inside an example sentence. */
+export function highlightKanjiFocus(text: string, focusWords: string[]): ReactNode[] {
+  const words = [...new Set(focusWords.filter(Boolean))].sort((a, b) => b.length - a.length);
+  if (!words.length) return [text];
+  const nodes: React.ReactNode[] = [];
+  let rest = text;
+  let key = 0;
+  while (rest) {
+    let hit: { at: number; word: string } | null = null;
+    for (const word of words) {
+      const at = rest.indexOf(word);
+      if (at < 0) continue;
+      if (!hit || at < hit.at || (at === hit.at && word.length > hit.word.length)) {
+        hit = { at, word };
+      }
+    }
+    if (!hit) {
+      nodes.push(rest);
+      break;
+    }
+    if (hit.at > 0) nodes.push(rest.slice(0, hit.at));
+    nodes.push(
+      <span className="kanji-focus" key={`k-${key}`}>
+        {hit.word}
+      </span>,
+    );
+    key += 1;
+    rest = rest.slice(hit.at + hit.word.length);
+  }
+  return nodes;
 }
 
 /**
@@ -107,6 +141,37 @@ export function FocusCard({
     return <KanjiTypeCard model={model} onSubmitText={onSubmitText} disabled={textSubmitDisabled} />;
   }
 
+  if (model.focus === "kanji_read") {
+    const lines = model.kanjiSentences.length
+      ? model.kanjiSentences
+      : (model.passageJp || "")
+          .split("\n")
+          .map((s) => s.replace(/^[①②③④⑤⑥⑦⑧⑨⑩\d.]+\s*/, "").trim())
+          .filter(Boolean);
+    return (
+      <div className="focus-card" data-variant="kanji-read">
+        <div className="focus-card__head">
+          <span className="focus-card__label">{model.sayLabel}</span>
+          <span className="pill">Kanji</span>
+        </div>
+        <p className="focus-card__alt">
+          Underlined kanji are the ones from this lesson — read the lines carefully.
+        </p>
+        <ol className="kanji-read-list jp">
+          {lines.map((line, i) => (
+            <li key={`${i}-${line}`}>
+              <span className="kanji-read-list__mark" aria-hidden>
+                {CIRCLED[i] ?? `${i + 1}.`}
+              </span>
+              <span className="kanji-read-list__text">{highlightKanjiFocus(line, model.kanjiFocusWords)}</span>
+            </li>
+          ))}
+        </ol>
+        <p className="focus-card__alt">Tap Next when you are ready to type the words.</p>
+      </div>
+    );
+  }
+
   if (model.focus === "passage") {
     return (
       <div className="focus-card" data-variant="passage">
@@ -114,9 +179,13 @@ export function FocusCard({
           <span className="focus-card__label">{model.sayLabel}</span>
           <span className="pill">Read</span>
         </div>
-        {model.passageJp && <p className="focus-card__jp jp">{model.passageJp}</p>}
+        {model.passageJp && <p className="focus-card__jp jp focus-card__passage">{model.passageJp}</p>}
         {model.passageEn && <p className="focus-card__alt focus-card__passage">{model.passageEn}</p>}
-        <p className="focus-card__alt">Tap Next when you are ready to continue.</p>
+        <p className="focus-card__alt">
+          {model.sayLabel.startsWith("Speaker")
+            ? "Yuki reads this fixed workbook line — no blank here."
+            : "Tap Next when you are ready to continue."}
+        </p>
       </div>
     );
   }
@@ -128,6 +197,7 @@ export function FocusCard({
         <span className="focus-card__label">{model.sayLabel}</span>
         {preview && <span className="pill">Coming up</span>}
         {model.lineColor === "orange" && <span className="pill">Orange line</span>}
+        {model.lineColor === "yellow" && <span className="pill">Yellow line</span>}
         {model.sayTargetJp && (
           <button
             type="button"
@@ -190,6 +260,14 @@ function BlankFillCard({
         <span className="pill">Type your answer</span>
       </div>
       <form ref={formRef} className="blank-fill" onSubmit={submit}>
+        {model.grammarCueJp && (
+          <p className="focus-card__alt jp">
+            Cue:（{model.grammarCueJp}）
+          </p>
+        )}
+        {model.grammarPatternEn && model.focus === "fill" && model.grammarCueJp && (
+          <p className="focus-card__alt">{model.grammarPatternEn}</p>
+        )}
         <p className="blank-fill__prompt jp" aria-label="Fill in the blanks">
           {parts.map((part, i) => (
             <span key={`p-${i}`}>
@@ -220,7 +298,7 @@ function BlankFillCard({
           </button>
         </div>
       </form>
-      <p className="focus-card__alt">Use Japanese input. Replay Tutor/CD if you want to hear it again.</p>
+      <p className="focus-card__alt">Use Japanese input. Replay Tutor if you want to hear the cue again.</p>
     </div>
   );
 }
@@ -265,7 +343,13 @@ function ChooseCard({
     <div className="focus-card" data-variant="choose">
       <div className="focus-card__head">
         <span className="focus-card__label">{model.sayLabel}</span>
-        <span className="pill">{model.chooseMulti ? "Select all" : "Choose one"}</span>
+        <span className="pill">
+          {model.chooseMulti
+            ? model.chooseExpected && model.chooseExpected > 1
+              ? `Select ${model.chooseExpected}`
+              : "Select all"
+            : "Choose one"}
+        </span>
       </div>
       {model.passageEn && <p className="focus-card__alt">{model.passageEn}</p>}
       <form ref={formRef} className="choice-list" onSubmit={submit}>
@@ -281,7 +365,10 @@ function ChooseCard({
               aria-pressed={active}
             >
               <span className="choice-list__id">{c.id}</span>
-              <span className="choice-list__label jp">{c.label_jp || c.label_en || c.id}</span>
+              <span className="choice-list__label">
+                <span className="jp">{c.label_jp || c.label_en || c.id}</span>
+                {c.label_jp && c.label_en ? <span className="choice-list__en">{c.label_en}</span> : null}
+              </span>
             </button>
           );
         })}

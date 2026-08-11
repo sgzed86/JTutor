@@ -544,7 +544,7 @@ activities:
   - あと1
   - 分ぐらいで終わりそうです
   - 終わりました
-  prompt_en: Focus on the expressions used. Listen and say each pattern.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: どのぐらいかかりですか？
     tags:
@@ -560,7 +560,17 @@ activities:
   - jp: 終わりました
     tags:
     - short
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: どのぐらいかかり＿ですか？
+    answers:
+    - そう
+    full_jp: どのぐらいかかりそうですか？
+  - prompt_jp: あと10 分ぐらいで終わり＿です。
+    answers:
+    - そう
+    full_jp: あと10 分ぐらいで終わりそうです。
+  fill_pdf_page: 271
 - id: A12
   kind: speaking
   book_activity: 12

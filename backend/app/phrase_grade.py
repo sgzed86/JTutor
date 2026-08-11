@@ -90,6 +90,13 @@ def normalize_jp_for_grade(s: str) -> str:
     # Keep long vowels (ビール ≠ ビル).
     for old, new in _KANJI_VARIANTS:
         s = s.replace(old, new)
+    # 1 / 一 / いち and 25歳 / にじゅうごさい should compare equal.
+    try:
+        from backend.app.speech.jp_text import digits_and_kanji_to_kana
+
+        s = digits_and_kanji_to_kana(s)
+    except Exception:  # noqa: BLE001 - grading must never crash on import issues
+        pass
     out: list[str] = []
     for ch in s:
         code = ord(ch)

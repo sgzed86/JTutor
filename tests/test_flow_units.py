@@ -145,3 +145,51 @@ def test_expected_phrases_for_repeat_accepts_alternates():
     got = flow.expected_phrases_for_substep(activity, 1)
     assert got[0] == "おはよう"
     assert "おはようございます" in got
+
+
+def test_dialog_role_swap_keeps_book_colors_with_exchanged_lines():
+    """Pass 1: Yuki yellow / student orange. Pass 2: student yellow / Yuki orange."""
+    activity = {
+        "id": "A16",
+        "book_mode": "dialog",
+        "key_phrases": ["ミロさんは何歳ですか", "25歳です"],
+        "dialog_script": [
+            {"speaker": "partner", "jp": "ミロさんは何歳ですか"},
+            {"speaker": "learner", "jp": "25歳です"},
+        ],
+    }
+    lesson = {"id": "L04", "title_en": "Age"}
+    # listen=0, shadow=1, partner=2, learner=3, swap_learner=4, swap_partner=5
+    jp_partner, _, partner = flow.book_step(activity, lesson, 2)
+    assert partner["book_substep"] == "partner"
+    assert partner["dialog_line_jp"] == "ミロさんは何歳ですか"
+    assert partner["book_line_color"] == "yellow"
+    assert partner["expect_speech"] is False
+    assert jp_partner == "ミロさんは何歳ですか"
+
+    jp_learner, _, learner = flow.book_step(activity, lesson, 3)
+    assert learner["book_substep"] == "learner"
+    assert learner["say_target_jp"] == "25歳です"
+    assert learner["book_line_color"] == "orange"
+    assert learner["expect_speech"] is True
+    assert learner["model_before_speech"] is False
+    assert learner.get("partner_jp") == "ミロさんは何歳ですか"
+    assert jp_learner == ""  # no coach TTS — conversation reply
+
+    jp_swap, _, swap_you = flow.book_step(activity, lesson, 4)
+    assert swap_you["book_substep"] == "swap_learner"
+    assert swap_you["say_target_jp"] == "ミロさんは何歳ですか"
+    assert swap_you["book_line_color"] == "yellow"
+    assert swap_you["expect_speech"] is True
+    assert swap_you["model_before_speech"] is False
+    assert "yellow" in (swap_you.get("instruction_en") or "").lower()
+    assert "25歳" not in jp_swap  # must not model the learner line
+
+    _, en, swap_yuki = flow.book_step(activity, lesson, 5)
+    assert swap_yuki["book_substep"] == "swap_partner"
+    assert swap_yuki["dialog_line_jp"] == "25歳です"
+    assert swap_yuki["book_line_color"] == "orange"
+    assert swap_yuki["expect_speech"] is False
+    assert "orange" in (en or "").lower()
+
+    assert flow.expected_phrases_for_substep(activity, 4)[0] == "ミロさんは何歳ですか"

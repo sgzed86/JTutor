@@ -903,120 +903,83 @@ quiz_bank:
   prompt_en: 'In a new everyday situation, show you can: Can thank someone or apologize.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L01_01
+  setup_en: A coworker greets you in the morning. Greet them back.
+  goal_en: Learner returns a morning greeting (おはよう / おはようございます).
   partner_jp: おはよう！
   expected:
-  - おはよう
-  - おはようございます
+  - "おはよう"
+  - "おはようございます"
   hint_en: A coworker greets you in the morning. Greet them back.
 - can_do_id: CD_L01_01
+  setup_en: Someone says hello in the afternoon. Reply with a greeting.
+  goal_en: Learner replies with こんにちは.
   partner_jp: こんにちは。
   expected:
-  - こんにちは
+  - "こんにちは"
   hint_en: Someone says hello in the afternoon. Reply with a greeting.
 - can_do_id: CD_L01_01
+  setup_en: Evening — someone greets you. Respond in kind.
+  goal_en: Learner replies with こんばんは.
   partner_jp: こんばんは。
   expected:
-  - こんばんは
-  hint_en: Evening greeting — respond in kind.
+  - "こんばんは"
+  hint_en: Evening — someone greets you. Respond in kind.
 - can_do_id: CD_L01_02
+  setup_en: Your classmate is leaving. Say goodbye the same way.
+  goal_en: Learner says a parting greeting (じゃあ、また / similar).
   partner_jp: じゃあ、また。
   expected:
-  - じゃあ、また
-  - じゃあまた
+  - "じゃあ、また"
+  - "じゃあまた"
+  - "また"
   hint_en: Your classmate is leaving. Say goodbye the same way.
 - can_do_id: CD_L01_02
+  setup_en: A senior colleague is leaving the office. Reply appropriately.
+  goal_en: Learner uses a workplace parting phrase (お疲れ / 失礼).
   partner_jp: お先に失礼します。
   expected:
-  - お先に失礼します
-  - 失礼します
+  - "お疲れさまです"
+  - "お疲れさまでした"
+  - "失礼します"
   hint_en: A senior colleague is leaving the office. Reply appropriately.
 - can_do_id: CD_L01_02
+  setup_en: Work is over for the day. Reply to their closing phrase.
+  goal_en: Learner replies to お疲れさまでした.
   partner_jp: お疲れさまでした。
   expected:
-  - お疲れさまでした
-  - お疲れ
+  - "お疲れさまでした"
+  - "お疲れさまです"
+  - "お疲れ"
   hint_en: Work is over for the day. Reply to their closing phrase.
 - can_do_id: CD_L01_03
+  setup_en: Someone offers you something. Thank them.
+  goal_en: Learner thanks them (ありがとう).
   partner_jp: どうぞ。
   expected:
-  - ありがとう
-  - ありがとうございます
-  - どうも
+  - "ありがとう"
+  - "ありがとうございます"
+  - "どうも"
   hint_en: Someone offers you something. Thank them.
 - can_do_id: CD_L01_03
-  partner_jp: あ、すみません！
+  setup_en: You bumped into someone. Apologize.
+  goal_en: Learner apologizes (すみません / ごめん).
+  partner_jp: あ！
   expected:
-  - すみません
-  - ごめん
+  - "すみません"
+  - "ごめんなさい"
+  - "ごめん"
   hint_en: You bumped into someone. Apologize.
 - can_do_id: CD_L01_03
+  setup_en: They thanked you. Give a short polite reply.
+  goal_en: Learner replies to thanks (どういたしまして / いいえ / どうも).
   partner_jp: ありがとうございます。
   expected:
-  - どうも
-  - いいえ
-  - どういたしまして
+  - "どういたしまして"
+  - "いいえ"
+  - "どうも"
   hint_en: They thanked you. Give a short polite reply.
-- can_do_id: CD_L01_03
-  partner_jp: おはようございます
-  expected:
-  - おはよう
-  - おはようございます
-  hint_en: Reply as in the book dialog (activity 6).
-- can_do_id: CD_L01_02
-  partner_jp: こんにちは
-  expected:
-  - こんにちは
-  hint_en: Reply as in the book dialog (activity 8).
-- can_do_id: CD_L01_03
-  partner_jp: こんばんは
-  expected:
-  - こんばんは
-  hint_en: Reply as in the book dialog (activity 9).
-- can_do_id: CD_L01_02
-  partner_jp: お先に失礼します
-  expected:
-  - 失礼します
-  - お先に失礼します
-  hint_en: Reply as in the book dialog (activity 14).
-- can_do_id: CD_L01_03
-  partner_jp: 失礼します
-  expected:
-  - 失礼します
-  hint_en: Reply as in the book dialog (activity 15).
-- can_do_id: CD_L01_01
-  partner_jp: お疲れさまでした
-  expected:
-  - お疲れさま
-  - お疲れさまでした
-  hint_en: Reply as in the book dialog (activity 16).
-- can_do_id: CD_L01_02
-  partner_jp: おやすみなさい
-  expected:
-  - おやすみ
-  hint_en: Reply as in the book dialog (activity 17).
-- can_do_id: CD_L01_02
-  partner_jp: どうぞ
-  expected:
-  - ありがとうございます
-  hint_en: Reply as in the book dialog (activity 26).
-- can_do_id: CD_L01_03
-  partner_jp: あ、すみません
-  expected:
-  - すみません
-  hint_en: Reply as in the book dialog (activity 27).
-- can_do_id: CD_L01_01
-  partner_jp: ありがとうございます
-  expected:
-  - どうも
-  - ありがとうございます
-  hint_en: Reply as in the book dialog (activity 28).
-- can_do_id: CD_L01_02
-  partner_jp: すみません
-  expected:
-  - いいえ
-  - すみません
-  hint_en: Reply as in the book dialog (activity 29).
 english_notes: 'In your language, what do you say when you meet someone or when you leave? Does it depend
   on the time or who
 

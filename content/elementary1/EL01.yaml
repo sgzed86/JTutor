@@ -1244,42 +1244,63 @@ quiz_bank:
   prompt_en: 'Demonstrate: Can talk in simple terms about your work in Japan.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL01_01
-  partner_jp: お久しぶりです。
-  expected: &id001
-  - お久しぶりです。
-  - あ、お久しぶりです。
-  - したい仕事があります
-  - で働いています
-  hint_en: Can exchange greetings with a person you are meeting for the first time in a long time.
+  setup_en: You meet a friend after a long time. Exchange a greeting.
+  goal_en: "Learner uses a 'long time no see' greeting."
+  partner_jp: あ、久しぶり！
+  expected:
+  - "久しぶり"
+  - "お久しぶりです"
+  - "元気"
+  hint_en: You meet a friend after a long time. Exchange a greeting.
 - can_do_id: CD_EL01_01
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can exchange greetings with a person you are meeting for the first time in a lon
+  setup_en: Yuki greets you after a long time. Reply.
+  goal_en: Learner returns the reunion greeting.
+  partner_jp: お久しぶりです。お元気ですか？
+  expected:
+  - "お久しぶりです"
+  - "おかげさまで"
+  - "元気です"
+  hint_en: Yuki greets you after a long time. Reply.
 - can_do_id: CD_EL01_02
-  partner_jp: はい。おかげさまで。
-  expected: &id002
-  - はい。おかげさまで。
-  - お元気ですか？
-  - したい仕事があります
-  - で働いています
-  hint_en: Can talk in simple terms about how you have been recently when asked by a close person.
+  setup_en: "A close friend asks how you've been. Answer simply."
+  goal_en: Learner talks simply about recent life.
+  partner_jp: 最近、どう？元気？
+  expected:
+  - "元気です"
+  - "おかげさまで"
+  - "忙しい"
+  - "です"
+  hint_en: "A close friend asks how you've been. Answer simply."
 - can_do_id: CD_EL01_02
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: 'Again — Can talk in simple terms about how you have been recently when asked by a close '
+  setup_en: Ask Yuki how she has been lately.
+  goal_en: "Learner asks about someone's recent life."
+  partner_jp: 久しぶりですね。
+  expected:
+  - "元気ですか"
+  - "最近どう"
+  - "どうですか"
+  hint_en: Ask Yuki how she has been lately.
 - can_do_id: CD_EL01_03
-  partner_jp: お久しぶりです。
-  expected: &id003
-  - お久しぶりです。
-  - あ、久しぶり。
-  - したい仕事があります
-  - で働いています
-  hint_en: Can talk in simple terms about your work in Japan.
+  setup_en: Someone asks about your work in Japan. Answer simply.
+  goal_en: Learner talks simply about their work in Japan.
+  partner_jp: 日本では、どんな仕事をしていますか？
+  expected:
+  - "働いています"
+  - "仕事"
+  - "です"
+  hint_en: Someone asks about your work in Japan. Answer simply.
 - can_do_id: CD_EL01_03
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can talk in simple terms about your work in Japan.
+  setup_en: Say what kind of work you do.
+  goal_en: Learner describes their job simply.
+  partner_jp: 仕事、大変ですか？
+  expected:
+  - "です"
+  - "働いて"
+  - "工場"
+  - "会社"
+  hint_en: Say what kind of work you do.
 english_notes: 'Is there a job you want to do when you go to Japan?
 
   Can exchange greetings with a person you are meeting for the first time in a long time.

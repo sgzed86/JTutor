@@ -48,12 +48,88 @@ activities:
   audio:
   - assets/audio/X_[09-01]_kotoba1.mp3
   key_phrases:
-  - 時間え切るし夜で午前い午後え一時二時三時夜地午時六時一時八時十時十一時十二時南地ジューゴッション三時夜地
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 朝
+  - 昼
+  - 夜
+  - 午前
+  - 午後
+  - 一時
+  - 二時
+  - 三時
+  - 四時
+  - 五時
+  - 六時
+  - 七時
+  - 八時
+  - 九時
+  - 十時
+  - 十一時
+  - 十二時
+  - 半
+  - 十五分
+  - 三十分
+  prompt_en: Listen to the CD, then say each word one at a time (20 words).
   phrase_meta:
-  - jp: 時間え切るし夜で午前い午後え一時二時三時夜地午時六時一時八時十時十一時十二時南地ジューゴッション三時夜地
+  - jp: 朝
     tags:
-    - long
+    - short
+  - jp: 昼
+    tags:
+    - short
+  - jp: 夜
+    tags:
+    - short
+  - jp: 午前
+    tags:
+    - short
+  - jp: 午後
+    tags:
+    - short
+  - jp: 一時
+    tags:
+    - short
+  - jp: 二時
+    tags:
+    - short
+  - jp: 三時
+    tags:
+    - short
+  - jp: 四時
+    tags:
+    - short
+  - jp: 五時
+    tags:
+    - short
+  - jp: 六時
+    tags:
+    - short
+  - jp: 七時
+    tags:
+    - short
+  - jp: 八時
+    tags:
+    - short
+  - jp: 九時
+    tags:
+    - short
+  - jp: 十時
+    tags:
+    - short
+  - jp: 十一時
+    tags:
+    - short
+  - jp: 十二時
+    tags:
+    - short
+  - jp: 半
+    tags:
+    - short
+  - jp: 十五分
+    tags:
+    - short
+  - jp: 三十分
+    tags:
+    - short
   book_mode: vocab_drill
 - id: A2
   kind: vocabulary
@@ -63,12 +139,52 @@ activities:
   audio:
   - assets/audio/X_[09-02]_kotoba2.mp3
   key_phrases:
-  - 1今何時ですか9時です2今何時ですか10時半です3今何時ですか430分です4何時ですか朝の8時です5今何時ですか1時です6今何時ですか4の11時です77今何時ですか7今何時ですか5時です8今何時ですか5時3時分です9今何時ですか5時15分です10今何時ですか55時415分です
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 今、何時ですか
+  - 九時です
+  - 十時半です
+  - 四時三十分です
+  - 朝の八時です
+  - 一時です
+  - 十一時です
+  - 五時です
+  - 五時十五分です
+  prompt_en: Listen to the CD, then say each word one at a time (9 words).
   phrase_meta:
-  - jp: 1今何時ですか9時です2今何時ですか10時半です3今何時ですか430分です4何時ですか朝の8時です5今何時ですか1時です6今何時ですか4の11時です77今何時ですか7今何時ですか5時です8今何時ですか5時3時分です9今何時ですか5時15分です10今何時ですか55時415分です
+  - jp: 今、何時ですか
     tags:
-    - long
+    - short
+    - polite
+  - jp: 九時です
+    tags:
+    - short
+    - polite
+  - jp: 十時半です
+    tags:
+    - short
+    - polite
+  - jp: 四時三十分です
+    tags:
+    - short
+    - polite
+  - jp: 朝の八時です
+    tags:
+    - short
+    - polite
+  - jp: 一時です
+    tags:
+    - short
+    - polite
+  - jp: 十一時です
+    tags:
+    - short
+    - polite
+  - jp: 五時です
+    tags:
+    - short
+    - polite
+  - jp: 五時十五分です
+    tags:
+    - short
     - polite
   book_mode: vocab_drill
 - id: A3
@@ -158,54 +274,43 @@ activities:
   audio:
   - assets/audio/X_[09-05]_kiku3.mp3
   key_phrases:
-  - おすいですね夜はゲームをしますへぇぇぇぇぇぇおさを何時におきますか
-  - さん村神さんは何時に寝ますか
-  - 二時頃ですご全二時
-  - 8時15分ですおさーい
-  prompt_en: 'L09 activity 5: listen to the CD, then say the phrase that matches the book.'
+  - 村上さんは何時に寝ますか。
+  - 2時ごろです。
+  - 朝は何時に起きますか。
+  - 8時15分です。
+  prompt_en: Listen (CD 09-05). When does Murakami sleep and wake up?
   phrase_meta:
-  - jp: おすいですね夜はゲームをしますへぇぇぇぇぇぇおさを何時におきますか
+  - jp: 村上さんは何時に寝ますか。
     tags:
     - long
-    - polite
-  - jp: さん村神さんは何時に寝ますか
-    tags:
-    - long
-    - polite
-  - jp: 二時頃ですご全二時
+  - jp: 2時ごろです。
     tags:
     - short
-    - polite
-  - jp: 8時15分ですおさーい
+  - jp: 朝は何時に起きますか。
     tags:
     - long
-    - polite
+  - jp: 8時15分です。
+    tags:
+    - short
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L09 activity 5: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Daily schedule times.
   choices:
   - id: a
-    label_jp: じゃあ土曜日にしましょう
+    label_jp: 2時ごろ寝て、8時15分に起きます
+    label_en: "sleeps ~2:00; wakes 8:15"
   - id: b
-    label_jp: 二時頃ですご全二時
+    label_jp: 9時に寝て、6時に起きます
+    label_en: sleeps 9; wakes 6
   - id: c
-    label_jp: 私も大丈夫です
+    label_jp: 土曜日にプールに行きます
+    label_en: goes to the pool on Saturday
   - id: d
-    label_jp: 仕事は、マイアサー9時からです
-  - id: e
-    label_jp: 8時15分ですおさーい
-  - id: f
-    label_jp: おすいですね夜はゲームをしますへぇぇぇぇぇぇおさを何時におきますか
-  - id: g
-    label_jp: 1アルちゃんさん、プール、いつ行きますか
-  - id: h
-    label_jp: さん村神さんは何時に寝ますか
+    label_jp: 仕事は毎朝9時からです
+    label_en: work starts at 9
   correct_ids:
-  - b
-  - e
-  - f
-  - h
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A6
   kind: grammar_form
   book_activity: 6
@@ -217,7 +322,7 @@ activities:
   - ご事に起きます私は、大体ひちじごろを起きます夜は、何時に寝ますか
   - 10時半に寝ます11時頃寝ます
   - あさ、何時に起きますか
-  prompt_en: Focus on the expressions used. Listen and say each pattern.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: ご事に起きます私は、大体ひちじごろを起きます夜は、何時に寝ますか
     tags:
@@ -231,7 +336,35 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: 朝、何時＿起きますか？
+    answers:
+    - に
+    full_jp: 朝、何時に起きますか？
+  - prompt_jp: 5時＿起きます。
+    answers:
+    - に
+    full_jp: 5時に起きます。
+  - prompt_jp: 私は、だいたい、7時＿起きます。
+    answers:
+    - に
+    full_jp: 私は、だいたい、7時に起きます。
+  - prompt_jp: 夜は、何時＿寝ますか？
+    answers:
+    - に
+    full_jp: 夜は、何時に寝ますか？
+  - prompt_jp: 10時半＿寝ます。
+    answers:
+    - に
+    full_jp: 10時半に寝ます。
+  - prompt_jp: 11時＿寝ます。
+    answers:
+    - に
+    answer_alts:
+    - ごろ
+    full_jp: 11時に寝ます。
+  fill_pdf_page: 242
 - id: A7
   kind: speaking
   book_activity: 7
@@ -299,7 +432,7 @@ activities:
   - 1日のスケジュールを説明します
   - 3時から3時半まで、やすみ時間です
   - 仕事は、マイアサー9時からです
-  - 12時から1時まで、広やすみです
+  - 2時から1時まで、広やすみです
   prompt_en: 'L09 activity 9: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 1日のスケジュールを説明します
@@ -314,7 +447,7 @@ activities:
     tags:
     - long
     - polite
-  - jp: 12時から1時まで、広やすみです
+  - jp: 2時から1時まで、広やすみです
     tags:
     - long
     - polite
@@ -325,7 +458,7 @@ activities:
   - id: a
     label_jp: 私は、だいたい知事頃をおきます
   - id: b
-    label_jp: 12時から1時まで、広やすみです
+    label_jp: 2時から1時まで、広やすみです
   - id: c
     label_jp: 3時から3時半まで、やすみ時間です
   - id: d
@@ -335,7 +468,7 @@ activities:
   - id: f
     label_jp: 仕事は、マイアサー9時からです
   - id: g
-    label_jp: 2寄びです7何寄びですか
+    label_jp: 寄びです7何寄びですか
   - id: h
     label_jp: 私は日呼びがいいです
   correct_ids:
@@ -353,13 +486,33 @@ activities:
   - assets/audio/X_[09-10]_katachi.mp3
   key_phrases:
   - 仕事はマイヤサクジからです12時から1時まで、広やすみです3時から3時半まで、休み時間です仕事は6時までです
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: 仕事はマイヤサクジからです12時から1時まで、広やすみです3時から3時半まで、休み時間です仕事は6時までです
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: 仕事は、毎朝9時＿です。
+    answers:
+    - から
+    full_jp: 仕事は、毎朝9時からです。
+  - prompt_jp: 12時＿1時＿、昼休みです。
+    answers:
+    - から
+    - まで
+    full_jp: 12時から1時まで、昼休みです。
+  - prompt_jp: 3時＿3時半＿、休み時間です。
+    answers:
+    - から
+    - まで
+    full_jp: 3時から3時半まで、休み時間です。
+  - prompt_jp: 仕事は、6時＿です。
+    answers:
+    - まで
+    full_jp: 仕事は、6時までです。
+  fill_pdf_page: 245
 - id: A11
   kind: vocabulary
   book_activity: 11
@@ -368,12 +521,36 @@ activities:
   audio:
   - assets/audio/X_[09-11]_kotoba1.mp3
   key_phrases:
-  - 呼びえ月曜日びかよびし水曜日び木曜日いい金曜日え土曜日ジ日曜日
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 月曜日
+  - 火曜日
+  - 水曜日
+  - 木曜日
+  - 金曜日
+  - 土曜日
+  - 日曜日
+  prompt_en: Listen to the CD, then say each word one at a time (7 words).
   phrase_meta:
-  - jp: 呼びえ月曜日びかよびし水曜日び木曜日いい金曜日え土曜日ジ日曜日
+  - jp: 月曜日
     tags:
-    - long
+    - short
+  - jp: 火曜日
+    tags:
+    - short
+  - jp: 水曜日
+    tags:
+    - short
+  - jp: 木曜日
+    tags:
+    - short
+  - jp: 金曜日
+    tags:
+    - short
+  - jp: 土曜日
+    tags:
+    - short
+  - jp: 日曜日
+    tags:
+    - short
   book_mode: vocab_drill
 - id: A12
   kind: vocabulary
@@ -441,13 +618,13 @@ activities:
   audio:
   - assets/audio/X_[09-13]_kiku1.mp3
   key_phrases:
-  - 1アルちゃんさん、プール、いつ行きますか
+  - アルちゃんさん、プール、いつ行きますか
   - うーん、私は、日曜日がいいです
   - リアムさんは、私も大丈夫です
   - じゃあ、日曜日にしましょう
   prompt_en: 'L09 activity 13: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 1アルちゃんさん、プール、いつ行きますか
+  - jp: アルちゃんさん、プール、いつ行きますか
     tags:
     - long
     - polite
@@ -478,7 +655,7 @@ activities:
   - id: e
     label_jp: なんてに寝ますか
   - id: f
-    label_jp: 1アルちゃんさん、プール、いつ行きますか
+    label_jp: アルちゃんさん、プール、いつ行きますか
   - id: g
     label_jp: じゃあ、水曜日にしましょう
   - id: h
@@ -530,7 +707,7 @@ activities:
   - id: c
     label_jp: じゃあ、水曜日にしましょう
   - id: d
-    label_jp: ご事におきますご事早いですねえ、毎朝上人号します夜は10時半に寝ますそうですか
+    label_jp: 事におきますご事早いですねえ、毎朝上人号します夜は10時半に寝ますそうですか
   - id: e
     label_jp: 土寄びです4何寄びですか
   - id: f
@@ -554,7 +731,7 @@ activities:
   - assets/audio/X_[09-15]_kiku3.mp3
   key_phrases:
   - すみませんどう呼びはちょっと私は日曜日がいいですあ、私は日曜日はダメですすみませんじゃあ、金曜日の夜は
-  - 32あさんえがいつがいいですか
+  - あさんえがいつがいいですか
   - 金曜日大丈夫ですじゃあ、金曜日にしましょう
   - 私はどう呼びがいいです
   prompt_en: 'L09 activity 15: listen to the CD, then say the phrase that matches the book.'
@@ -564,7 +741,7 @@ activities:
     - long
     - polite
     - casual
-  - jp: 32あさんえがいつがいいですか
+  - jp: あさんえがいつがいいですか
     tags:
     - long
     - polite
@@ -582,13 +759,13 @@ activities:
   picture_hint_en: 'L09 activity 15: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: 32あさんえがいつがいいですか
+    label_jp: あさんえがいつがいいですか
   - id: b
     label_jp: 私はどう呼びがいいです
   - id: c
     label_jp: パウロさんも山川さんも夜はやいですね
   - id: d
-    label_jp: 12時から1時まで、広やすみです
+    label_jp: 2時から1時まで、広やすみです
   - id: e
     label_jp: 水寄びです3何寄びですか
   - id: f
@@ -632,20 +809,30 @@ activities:
     - polite
   book_mode: listen_fill
   blanks:
-  - prompt_jp: 私は＿呼びがいいです。
+  - prompt_jp: ＿が＿ですか？
     answers:
-    - と
-    full_jp: 私はと呼びがいいです
-  - prompt_jp: 私は日呼びがいい＿。
+    - いつ
+    - いい
+    full_jp: いつがいいですか？
+  - prompt_jp: 私は、土曜日が＿です。ヌンさんは？
     answers:
-    - です
-    answer_alts: []
-    full_jp: 私は日呼びがいいです
-  - prompt_jp: 私は日呼びはダメ＿。
+    - いい
+    full_jp: 私は、土曜日がいいです。ヌンさんは？
+  - prompt_jp: すみません、土曜日は＿……。
     answers:
-    - です
-    answer_alts: []
-    full_jp: 私は日呼びはダメです
+    - ちょっと
+    full_jp: すみません、土曜日はちょっと……。
+  - prompt_jp: 私は、日曜日が＿です。
+    answers:
+    - いい
+    full_jp: 私は、日曜日がいいです。
+  - prompt_jp: 私は、日曜日は＿です。すみません。
+    answers:
+    - だめ
+    answer_alts:
+    - ダメ
+    full_jp: 私は、日曜日はだめです。すみません。
+  fill_pdf_page: 249
 - id: A17
   kind: speaking
   book_activity: 17
@@ -730,25 +917,34 @@ activities:
   audio:
   - assets/audio/X_[09-19]_hanasu3.mp3
   key_phrases:
-  - 私はドヨービがいいですすみませんドヨービはちょっと私は日曜日がいいです日曜日はダメですすみませんじゃあ金曜日の夜は大丈夫ですじゃあ金曜日にしましょう
-  - 映画いつがいいですか
+  - 私は土曜日がいいです。
+  - じゃあ金曜日にしましょう。
+  - 映画、いつがいいですか。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: 私はドヨービがいいですすみませんドヨービはちょっと私は日曜日がいいです日曜日はダメですすみませんじゃあ金曜日の夜は大丈夫ですじゃあ金曜日にしましょう
+  - jp: 私は土曜日がいいです。
     tags:
     - long
-    - polite
-    - casual
-  - jp: 映画いつがいいですか
+  - jp: じゃあ金曜日にしましょう。
     tags:
-    - short
-    - polite
+    - long
+  - jp: 映画、いつがいいですか。
+    tags:
+    - long
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 映画いつがいいですか
+    jp: 映画、いつがいいですか。
   - speaker: learner
-    jp: 私はドヨービがいいですすみませんドヨービはちょっと私は日曜日がいいです日曜日はダメですすみませんじゃあ金曜日の夜は大丈夫ですじゃあ金曜日にしましょう
+    jp: 私は土曜日がいいです。
+  - speaker: partner
+    jp: すみません、土曜日はちょっと…。
+  - speaker: learner
+    jp: 私は日曜日がいいです。
+  - speaker: partner
+    jp: 日曜日はだめです。すみません。じゃあ金曜日の夜は大丈夫です。
+  - speaker: learner
+    jp: じゃあ金曜日にしましょう。
   dialog_listen_audio:
   - assets/audio/X_[09-19]_hanasu3.mp3
 - id: KANJI
@@ -783,7 +979,7 @@ activities:
     gloss_en: Saturday / earth
   - kanji: 水
     reading: すい
-    gloss_en: Wednesday / water
+    gloss_en: water
   - kanji: 日
     reading: にち
     gloss_en: Sunday / day / sun
@@ -791,12 +987,12 @@ activities:
     reading: もく
     gloss_en: Thursday / tree
   - kanji: 曜日
-    reading: げつきんかどすいにちもくようび
+    reading: ようび
     gloss_en: day of the week
   kanji_sentences: &id002
-  - 仕
-  - 土曜日と日曜日は、休
-  - Ａ：いつがいいですか？
+  - 仕事は、月曜日から金曜日までです。
+  - 土曜日と日曜日は、休みです。
+  - Ａ：いつがいいですか？　Ｂ：水曜日がいいです。
   - 火曜日と木曜日は、だめです。
   picture_has_image: false
 - id: CULTURE
@@ -855,47 +1051,167 @@ activities:
   picture_has_image: false
 grammar: []
 vocab:
-- jp: 時間え切るし夜で午前い午後え一時二時三時夜地午時六時一時八時十時十一時十二時南地ジューゴッション三時夜地
+- jp: 朝
   reading: ''
   en: ''
   tags:
   - L09
-- jp: 1今何時ですか9時です2今何時ですか10時半です3今何時ですか430分です4何時ですか朝の8時です5今何時ですか1時です6今何時ですか4の11時です77今何時ですか7今何時ですか5時です8今何時ですか5時3時分です9今何時ですか5時15分です10今何時ですか55時415分です
+- jp: 昼
   reading: ''
   en: ''
   tags:
   - L09
-- jp: 呼びえ月曜日びかよびし水曜日び木曜日いい金曜日え土曜日ジ日曜日
+- jp: 夜
   reading: ''
   en: ''
   tags:
   - L09
-- jp: 月寄びです2何寄びですか
+- jp: 午前
   reading: ''
   en: ''
   tags:
   - L09
-- jp: 水寄びです3何寄びですか
+- jp: 午後
   reading: ''
   en: ''
   tags:
   - L09
-- jp: 土寄びです4何寄びですか
+- jp: 一時
   reading: ''
   en: ''
   tags:
   - L09
-- jp: 2寄びです7何寄びですか
+- jp: 二時
   reading: ''
   en: ''
   tags:
   - L09
-- jp: 1何寄びですか
+- jp: 三時
   reading: ''
   en: ''
   tags:
   - L09
-- jp: 5何寄びですか
+- jp: 四時
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 五時
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 六時
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 七時
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 八時
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 九時
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 十時
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 十一時
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 十二時
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 半
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 十五分
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 三十分
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 月曜日
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 火曜日
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 水曜日
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 木曜日
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 金曜日
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 土曜日
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 日曜日
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 九時です
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 十時半です
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 朝の八時です
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 一時です
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 十一時です
+  reading: ''
+  en: ''
+  tags:
+  - L09
+- jp: 五時です
   reading: ''
   en: ''
   tags:
@@ -926,86 +1242,61 @@ quiz_bank:
   prompt_en: 'In a new everyday situation, show you can: Can understand simple spoken times and schedules.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L09_32
-  partner_jp: では、お願いします。
+  setup_en: Say what time you wake up.
+  goal_en: Learner says a start time with 時.
+  partner_jp: 朝、何時に起きますか？
   expected:
-  - 時
-  hint_en: 'Situation: Can say what time something starts and ends. Reply using lesson phrases.'
+  - "時に"
+  - "時"
+  - "起きます"
+  hint_en: Say what time you wake up.
 - can_do_id: CD_L09_32
-  partner_jp: もう一度、お願いします。
+  setup_en: Say when you sleep / finish something.
+  goal_en: Learner says an end time.
+  partner_jp: 夜は何時に寝ますか？
   expected:
-  - 時
-  hint_en: Again — 何時から何時までか言うことができる。
+  - "時"
+  - "寝ます"
+  - "頃"
+  hint_en: Say when you sleep / finish something.
 - can_do_id: CD_L09_33
-  partner_jp: では、お願いします。
+  setup_en: Ask Yuki what time she wakes up.
+  goal_en: Learner asks about a daily schedule.
+  partner_jp: 私は毎朝ジョギングします。
   expected:
-  - 何時
-  hint_en: 'Situation: Can ask about daily schedules simply. Reply using lesson phrases.'
+  - "何時に"
+  - "何時"
+  hint_en: Ask Yuki what time she wakes up.
 - can_do_id: CD_L09_33
-  partner_jp: もう一度、お願いします。
+  setup_en: Plan a movie. Ask when is good.
+  goal_en: Learner asks about schedule timing.
+  partner_jp: 映画、行きたいですね。
   expected:
-  - 何時
-  hint_en: Again — 毎日のスケジュールについて簡単に質問することができる。
-- can_do_id: CD_L09_32
-  partner_jp: 何時におきますか
-  expected:
-  - ご事におきます早いですねマイヤさ、上限号します
-  - 何時におきますか
-  hint_en: Reply as in the book dialog (activity 7).
-- can_do_id: CD_L09_33
-  partner_jp: なんてに寝ますか
-  expected:
-  - 二時頃寝ますおそいですね夜はゲームをします
-  - なんてに寝ますか
-  hint_en: Reply as in the book dialog (activity 8).
-- can_do_id: CD_L09_33
-  partner_jp: 映画いつがいいですか
-  expected:
-  - じゃあ、土曜日にしましょう
-  - 映画いつがいいですか
-  - 私は、土曜日がいいです
-  - 私も大丈夫です
-  hint_en: Reply as in the book dialog (activity 17).
+  - "いつ"
+  - "何時"
+  - "土曜日"
+  hint_en: Plan a movie. Ask when is good.
 - can_do_id: CD_L09_34
-  partner_jp: 映画いつがいいですか
+  setup_en: Yuki says her schedule. Say what time she sleeps.
+  goal_en: Learner shows they understood spoken times.
+  partner_jp: 朝は七時に起きます。夜は十一時に寝ます。
   expected:
-  - じゃあ土曜日にしましょう
-  - 映画いつがいいですか
-  - 私は土曜日がいいです
-  - 土曜日、大丈夫です
-  hint_en: Reply as in the book dialog (activity 18).
-- can_do_id: CD_L09_32
-  partner_jp: 映画いつがいいですか
-  expected:
-  - 私はドヨービがいいですすみませんドヨービはちょっと私は日曜日がいいです日曜日はダメですすみませんじゃあ金曜日の夜は大丈夫ですじゃあ金曜日にしましょう
-  - 映画いつがいいですか
-  hint_en: Reply as in the book dialog (activity 19).
-- can_do_id: CD_L09_32
-  partner_jp: 時間え切るし夜で午前い午後え一時二時三時夜地午時六時一時八時十時十一時十二時南地ジューゴッション三時夜地。
-  expected:
-  - 時間え切るし夜で午前い午後え一時二時三時夜地午時六時一時八時十時十一時十二時南地ジューゴッション三時夜地
-  - 夜は何時に寝ますか
-  - そうですか
-  - パウロさんも山川さんも夜はやいですね
-  - 時
-  hint_en: Can say what time something starts and ends.
-- can_do_id: CD_L09_33
-  partner_jp: 1今何時ですか9時です2今何時ですか10時半です3今何時ですか430分です4何時ですか朝の8時です5今何時ですか1時です6今何時ですか4の11時です77今何時ですか7今何時ですか5時です8今何時ですか5時3時分です9今何時ですか5時15分です10今何時ですか55時415分です。
-  expected:
-  - 1今何時ですか9時です2今何時ですか10時半です3今何時ですか430分です4何時ですか朝の8時です5今何時ですか1時です6今何時ですか4の11時です77今何時ですか7今何時ですか5時です8今何時ですか5時3時分です9今何時ですか5時15分です10今何時ですか55時415分です
-  - おすいですね夜はゲームをしますへぇぇぇぇぇぇおさを何時におきますか
-  - さん村神さんは何時に寝ますか
-  - 二時頃ですご全二時
-  - 何時
-  hint_en: Can ask about daily schedules simply.
+  - "十一時"
+  - "7時"
+  - "七時"
+  - "寝ます"
+  hint_en: Yuki says her schedule. Say what time she sleeps.
 - can_do_id: CD_L09_34
-  partner_jp: 1おはようございますおはようございますパオロさんも山川さんも毎日早いですねパオロさん、朝何時におきますか。
+  setup_en: Yuki says the time. What time is it?
+  goal_en: Learner restates the time they heard.
+  partner_jp: 今、十時半です。
   expected:
-  - 1おはようございますおはようございますパオロさんも山川さんも毎日早いですねパオロさん、朝何時におきますか
-  - ご事におきますご事早いですねえ、毎朝上人号します夜は10時半に寝ますそうですか
-  - ご事に起きます私は、大体ひちじごろを起きます夜は、何時に寝ますか
-  - 10時半に寝ます11時頃寝ます
-  hint_en: Can understand simple spoken times and schedules.
+  - "十時半"
+  - "10時半"
+  - "半"
+  hint_en: Yuki says the time. What time is it?
 english_notes: 'What time do you wake up each day? What time do you go to bed?
 
   Can ask and answer questions about when you get up and when you sleep.

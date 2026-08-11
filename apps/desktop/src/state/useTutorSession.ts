@@ -33,9 +33,19 @@ export type Notice = {
 
 let noticeId = 0;
 
+function assistantTotal(payload: TutorPayload): number {
+  if (typeof payload.assistant_total === "number") return payload.assistant_total;
+  return payload.messages.filter((m) => m.role === "assistant").length;
+}
+
+/** Newest coach lines since `alreadySpoken` absolute assistant count. */
 function assistantLines(payload: TutorPayload, alreadySpoken: number): Message[] {
-  const assistants = payload.messages.filter((m) => m.role === "assistant");
-  return assistants.slice(alreadySpoken);
+  const total = assistantTotal(payload);
+  const pending = Math.max(0, total - alreadySpoken);
+  if (pending <= 0) return [];
+  const assistants = payload.messages.filter((m) => m.role === "assistant" && !m.step?.help);
+  // Window may be shorter than pending; take what we still have (usually the latest 1).
+  return assistants.slice(-Math.min(pending, assistants.length));
 }
 
 function shouldModelTarget(step: Step | null | undefined): boolean {
@@ -44,10 +54,14 @@ function shouldModelTarget(step: Step | null | undefined): boolean {
 }
 
 function jobsFor(step: Step | null | undefined, lines: Message[]): AudioJob[] {
-  const jobs: AudioJob[] = lines.map((m) => ({ kind: "tts" as const, text: m.content }));
+  // Skip empty coach lines (dialog learner turns stay silent for conversation).
+  const jobs: AudioJob[] = lines
+    .filter((m) => Boolean(m.content?.trim()))
+    .map((m) => ({ kind: "tts" as const, text: m.content }));
   const tracks = step?.play_audio || [];
   for (const path of tracks) jobs.push({ kind: "book", path });
   // Clear isolated model of the phrase the learner should say (after coach/CD).
+  // Dialog role-play leaves this off so Yuki does not speak your line first.
   const target = step?.say_target_jp?.trim();
   if (shouldModelTarget(step) && target) {
     const alreadySpoken = lines.some((m) => m.content.trim() === target);
@@ -268,10 +282,16 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
       try {
         const hint =
           result.purpose === "answer"
-            ? payload?.step?.say_target_jp ||
-              payload?.step?.expected_phrases?.[0] ||
-              payload?.activity?.key_phrases?.[0] ||
-              ""
+            ? [
+                payload?.step?.say_target_jp,
+                ...(payload?.step?.say_alternates_jp ?? []),
+                ...(payload?.step?.expected_phrases ?? []),
+                ...(payload?.activity?.key_phrases ?? []),
+              ]
+                .filter((p): p is string => Boolean(p?.trim()))
+                .filter((p, i, arr) => arr.indexOf(p) === i)
+                .slice(0, 6)
+                .join("。")
             : "";
         const transcript = await api.transcribe(result.blob, "ja", controller.signal, hint);
         text = (transcript.text || "").trim();
@@ -332,8 +352,8 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
         const first = await api.startTutor(lessonId, controller.signal);
         if (cancelled) return;
         // Resuming: do not re-speak the whole backlog, only the latest line.
-        const assistants = first.messages.filter((m) => m.role === "assistant").length;
-        spokenCountRef.current = assistants > 1 ? assistants - 1 : 0;
+        const total = assistantTotal(first);
+        spokenCountRef.current = total > 0 ? total - 1 : 0;
         applyPayload(first);
       } catch (err) {
         if (!cancelled) reportError(err);
@@ -357,15 +377,46 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
   useEffect(() => {
     if (!payload || payload.kind === "help") return;
     const step = payload.step;
+    // Quiet student-read steps (Life & culture): show the card, no TTS, no auto-advance.
+    const studentRead =
+      step?.book_substep === "reflect" ||
+      step?.book_mode === "culture_read" ||
+      Boolean(step?.culture_card);
+    if (studentRead) {
+      spokenCountRef.current = Math.max(spokenCountRef.current, assistantTotal(payload));
+      return;
+    }
+
+    const total = assistantTotal(payload);
     const newLines = assistantLines(payload, spokenCountRef.current);
-    const total = payload.messages.filter((m) => m.role === "assistant").length;
     const hasBook = (step?.play_audio || []).length > 0;
     const needsModel = shouldModelTarget(step);
-    if (!newLines.length && !hasBook && !needsModel) return;
-    spokenCountRef.current = total;
+    // Role-play: Yuki's character line must be heard even if message accounting
+    // got ahead (React Strict Mode remount / trimmed message window).
+    const yukiDialogLine =
+      step?.book_substep === "partner" || step?.book_substep === "swap_partner"
+        ? (step.dialog_line_jp || "").trim()
+        : "";
+    if (!newLines.length && !hasBook && !needsModel && !yukiDialogLine) return;
+    spokenCountRef.current = Math.max(spokenCountRef.current, total);
 
     let cancelled = false;
     const jobs = jobsFor(step, newLines);
+    if (
+      yukiDialogLine &&
+      !jobs.some((j) => j.kind === "tts" && j.text.trim() === yukiDialogLine)
+    ) {
+      jobs.unshift({ kind: "tts", text: yukiDialogLine });
+    }
+    // If accounting dropped the coach line but this step auto-advances, still speak
+    // the latest non-empty assistant text so lesson intros are not skipped.
+    if (!jobs.length && !hasBook && autoAdvances(step)) {
+      const fallback =
+        yukiDialogLine ||
+        [...newLines].reverse().find((m) => m.content?.trim())?.content?.trim() ||
+        "";
+      if (fallback) jobs.push({ kind: "tts", text: fallback });
+    }
     (async () => {
       if (jobs.length) await audio.play(jobs);
       if (cancelled) return;
@@ -377,6 +428,9 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
         (mode === "after_audio" || mode === "after_audio_and_answer");
 
       if (shouldAuto) {
+        // Never auto-advance past a step that still had nothing to play — forces
+        // the learner to tap Next instead of skipping Yuki silently.
+        if (!jobs.length && !hasBook) return;
         const delay = settingsRef.current.lessons.auto_advance_delay_ms;
         setPendingAdvance({ startedAt: Date.now(), delayMs: delay });
         advanceTimerRef.current = setTimeout(() => {
@@ -402,6 +456,9 @@ export function useTutorSession(lessonId: string, settings: UserSettings) {
 
     return () => {
       cancelled = true;
+      // Prevent a remount/advance race from skipping Yuki mid-line and jumping
+      // straight to the learner prompt.
+      clearPendingAdvance();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [payload]);

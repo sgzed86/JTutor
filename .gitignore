@@ -22,6 +22,10 @@ venv/
 .pytest_cache/
 dist/
 build/
+# Keep Electron/app icons (electron-builder reads buildResources = build/)
+!build/
+!build/icon.png
+!build/icon.ico
 
 # Node / Electron
 node_modules/

@@ -1045,54 +1045,80 @@ quiz_bank:
   prompt_en: 'Demonstrate: Can ask and understand how to fill out a form, such as a vacation re - quest.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL14_48
-  partner_jp: 少し遅くなります。
-  expected: &id001
-  - 少し遅くなります
-  - ています。
-  - 何の連絡ですか。
-  - 理由は何ですか。
-  hint_en: Can call your workplace to say that you will be late or take the day off.
+  setup_en: "Call work to say you'll be late."
+  goal_en: Learner phones in late/absent.
+  partner_jp: はい、〇〇商店です。
+  expected:
+  - "遅れます"
+  - "休みます"
+  - "すみません"
+  hint_en: "Call work to say you'll be late."
 - can_do_id: CD_EL14_48
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can call your workplace to say that you will be late or take the day off.
+  setup_en: "Call to take the day off (you're sick)."
+  goal_en: Learner makes an absence call.
+  partner_jp: もしもし、人事です。
+  expected:
+  - "休みます"
+  - "具合が悪い"
+  - "すみません"
+  hint_en: "Call to take the day off (you're sick)."
 - can_do_id: CD_EL14_49
-  partner_jp: 少し遅くなります。
-  expected: &id002
-  - 少し遅くなります
-  - ています。
-  - 何の連絡ですか。
-  - 理由は何ですか。
-  hint_en: Can ask for permission from a co-worker when leaving the area for a moment.
+  setup_en: Ask a coworker if you can step out briefly.
+  goal_en: Learner asks permission to leave briefly.
+  partner_jp: いま、忙しい？
+  expected:
+  - "いいですか"
+  - "ちょっと"
+  - "行ってきます"
+  hint_en: Ask a coworker if you can step out briefly.
 - can_do_id: CD_EL14_49
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can ask for permission from a co-worker when leaving the area for a moment.
+  setup_en: Ask permission to go to the bathroom/convenience store.
+  goal_en: Learner requests brief leave permission.
+  partner_jp: 何か用？
+  expected:
+  - "いいですか"
+  - "コンビニ"
+  - "トイレ"
+  hint_en: Ask permission to go to the bathroom/convenience store.
 - can_do_id: CD_EL14_50
-  partner_jp: 少し遅くなります。
-  expected: &id003
-  - 少し遅くなります
-  - ています。
-  - 何の連絡ですか。
-  - 理由は何ですか。
-  hint_en: Can ask for permission in advance when you want to take a day off from work.
+  setup_en: Ask in advance for a day off next week.
+  goal_en: Learner asks permission for planned leave.
+  partner_jp: 来週のシフト、確認したいことがありますか？
+  expected:
+  - "休みたい"
+  - "いいですか"
+  - "お願いします"
+  hint_en: Ask in advance for a day off next week.
 - can_do_id: CD_EL14_50
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can ask for permission in advance when you want to take a day off from work.
+  setup_en: Request Friday off.
+  goal_en: Learner requests advance time off.
+  partner_jp: 何か相談ですか？
+  expected:
+  - "金曜日"
+  - "休み"
+  - "いいですか"
+  hint_en: Request Friday off.
 - can_do_id: CD_EL14_51
-  partner_jp: 少し遅くなります。
-  expected: &id004
-  - 少し遅くなります
-  - ています。
-  - 何の連絡ですか。
-  - 理由は何ですか。
-  hint_en: Can ask and understand how to fill out a form, such as a vacation re - quest.
+  setup_en: Ask how to fill out a vacation form.
+  goal_en: Learner asks how to complete a leave form.
+  partner_jp: 休暇届ですね。
+  expected:
+  - "書き方"
+  - "どこに"
+  - "教えて"
+  - "ですか"
+  hint_en: Ask how to fill out a vacation form.
 - can_do_id: CD_EL14_51
-  partner_jp: もう一度、お願いします。
-  expected: *id004
-  hint_en: Again — Can ask and understand how to fill out a form, such as a vacation re - quest.
+  setup_en: Yuki explains the form. What do you write in the reason box?
+  goal_en: Learner understands form instructions.
+  partner_jp: 理由欄に『私用』と書いて、日付を入れて提出してください。
+  expected:
+  - "私用"
+  - "日付"
+  - "提出"
+  hint_en: Yuki explains the form. What do you write in the reason box?
 english_notes: 'For what reason do you take time off from work?
 
   Can call your workplace to say that you will be late or take the day off.

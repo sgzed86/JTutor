@@ -160,6 +160,13 @@ async def _run_async(
                 trace.append(_trace_row(f"say:{text}", payload))
                 continue
 
+            # Grammar workbook blanks are typed (book listen_fill still advances in goldens).
+            if payload.get("state") == "grammar" and step.get("expects_text"):
+                text = answer(payload)
+                payload = await orchestrator.user_message(db, lesson_id, text, spoken=False)
+                trace.append(_trace_row(f"type:{text}", payload))
+                continue
+
             payload = await orchestrator.advance(db, lesson_id)
             trace.append(_trace_row("advance", payload))
         else:  # pragma: no cover - guard against a non-terminating flow

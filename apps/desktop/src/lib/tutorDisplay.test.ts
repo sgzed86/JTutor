@@ -54,18 +54,57 @@ describe("buildTutorStageModel", () => {
 
   it("marks the learner role-play line orange", () => {
     const model = buildTutorStageModel(
-      payload({ book_substep: "learner", expects_speech: true, dialog_line_jp: "はじめまして" }),
+      payload({
+        book_substep: "learner",
+        expects_speech: true,
+        dialog_line_jp: "はじめまして",
+        book_line_color: "orange",
+      }),
     );
     expect(model.lineColor).toBe("orange");
     expect(model.sayTargetJp).toBe("はじめまして");
+    expect(model.sayLabel).toContain("orange");
+  });
+
+  it("marks the swapped learner turn yellow (student takes partner line)", () => {
+    const model = buildTutorStageModel(
+      payload({
+        book_substep: "swap_learner",
+        expects_speech: true,
+        dialog_line_jp: "ミロさんは何歳ですか",
+        say_target_jp: "ミロさんは何歳ですか",
+        book_line_color: "yellow",
+      }),
+    );
+    expect(model.lineColor).toBe("yellow");
+    expect(model.sayLabel).toContain("yellow");
+    expect(model.focus).toBe("say");
   });
 
   it("does not show a say card while Yuki speaks the partner line", () => {
     const model = buildTutorStageModel(
-      payload({ book_substep: "partner", expects_speech: false, dialog_line_jp: "こんにちは" }),
+      payload({
+        book_substep: "partner",
+        expects_speech: false,
+        dialog_line_jp: "こんにちは",
+        book_line_color: "yellow",
+      }),
     );
     expect(model.focus).toBe("none");
     expect(model.lineColor).toBe("yellow");
+  });
+
+  it("marks Yuki orange on the swapped partner turn", () => {
+    const model = buildTutorStageModel(
+      payload({
+        book_substep: "swap_partner",
+        expects_speech: false,
+        dialog_line_jp: "25歳です",
+        book_line_color: "orange",
+      }),
+    );
+    expect(model.focus).toBe("none");
+    expect(model.lineColor).toBe("orange");
   });
 
   it("renders a shadow card for shadowing", () => {
@@ -90,5 +129,33 @@ describe("buildTutorStageModel", () => {
       payload({ book_substep: "listen" }, { book_page: 101, pdf_pages: [101, 123] }),
     );
     expect(model.bookPageLabel).toBe("Book p. 101");
+  });
+
+  it("shows grammar blanks without leaking the answer", () => {
+    const model = buildTutorStageModel(
+      payload(
+        {
+          book_substep: "grammar_fill",
+          expects_text: true,
+          facilitate: true,
+          grammar_cue_jp: "バトさん，ミロさん",
+          blank_prompt_jp: "紹介します。こちら、＿。",
+          blank_count: 1,
+          blank_index: 0,
+          blank_total: 2,
+          grammar_pattern_en: "A and B (と)",
+          expected_phrases: ["紹介します。こちら、バトさんとミロさんです。"],
+          say_target_jp: null,
+          instruction_en: "Listen to Yuki, then type the blank with と.",
+        },
+        { state: "grammar" },
+      ),
+    );
+    expect(model.focus).toBe("fill");
+    expect(model.sayTargetJp).toBeNull();
+    expect(model.sayAlternates).toEqual([]);
+    expect(model.blankPromptJp).toBe("紹介します。こちら、＿。");
+    expect(model.grammarCueJp).toBe("バトさん，ミロさん");
+    expect(model.sayLabel).toContain("Grammar blank");
   });
 });

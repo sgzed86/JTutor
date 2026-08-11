@@ -791,42 +791,64 @@ quiz_bank:
   prompt_en: 'Demonstrate: Can look at a town map and get information about famous spots, stores, etc.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL05_14
-  partner_jp: とてもにぎやかで便利です。
-  expected: &id001
-  - とてもにぎやかで便利です
-  - 人の人が話しています。
-  - この町はどうだと言っています
-  - この町には慣れましたか？
-  hint_en: Can talk in simple terms about your impressions of your town.
+  setup_en: Give your impressions of your town.
+  goal_en: Learner talks about impressions of their town.
+  partner_jp: 住んでいる町は、どうですか？
+  expected:
+  - "便利"
+  - "にぎやか"
+  - "静か"
+  - "です"
+  hint_en: Give your impressions of your town.
 - can_do_id: CD_EL05_14
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can talk in simple terms about your impressions of your town.
+  setup_en: Yuki says her town is busy. Share your impression.
+  goal_en: Learner gives a town impression.
+  partner_jp: 私の町はとてもにぎやかで便利です。
+  expected:
+  - "です"
+  - "便利"
+  - "静か"
+  - "好き"
+  hint_en: Yuki says her town is busy. Share your impression.
 - can_do_id: CD_EL05_15
-  partner_jp: とてもにぎやかで便利です。
-  expected: &id002
-  - とてもにぎやかで便利です
-  - 人の人が話しています。
-  - この町はどうだと言っています
-  - この町には慣れましたか？
-  hint_en: Can ask questions about recommended places around town and under - stand the answers.
+  setup_en: Ask for a recommended place around town.
+  goal_en: Learner asks for recommendations.
+  partner_jp: この辺、詳しいですよ。
+  expected:
+  - "おすすめ"
+  - "どこ"
+  - "ありますか"
+  hint_en: Ask for a recommended place around town.
 - can_do_id: CD_EL05_15
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can ask questions about recommended places around town and under - stand the ans
+  setup_en: Ask where a good café is.
+  goal_en: Learner asks about recommended places and shows understanding.
+  partner_jp: 何か聞きたいことがありますか？
+  expected:
+  - "カフェ"
+  - "おすすめ"
+  - "どこ"
+  hint_en: Ask where a good café is.
 - can_do_id: CD_EL05_16
-  partner_jp: とてもにぎやかで便利です。
-  expected: &id003
-  - とてもにぎやかで便利です
-  - 人の人が話しています。
-  - この町はどうだと言っています
-  - この町には慣れましたか？
-  hint_en: Can look at a town map and get information about famous spots, stores, etc.
+  setup_en: Yuki describes the map. Where is the station?
+  goal_en: Learner gets info about spots from a map description.
+  partner_jp: 駅は真ん中です。公園は駅の北です。コンビニは駅の前です。
+  expected:
+  - "駅"
+  - "公園"
+  - "コンビニ"
+  - "北"
+  hint_en: Yuki describes the map. Where is the station?
 - can_do_id: CD_EL05_16
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can look at a town map and get information about famous spots, stores, etc.
+  setup_en: "From the map talk, name one famous spot."
+  goal_en: Learner extracts place info.
+  partner_jp: 有名なのは旧寺と市場です。市場は日曜がおすすめです。
+  expected:
+  - "寺"
+  - "市場"
+  - "日曜"
+  hint_en: "From the map talk, name one famous spot."
 english_notes: 'What is it like where you live?
 
   Can talk in simple terms about your impressions of your town.

@@ -78,12 +78,12 @@ activities:
   audio:
   - assets/audio/X_[14-02]_kiku2.mp3
   key_phrases:
-  - 2あの、飲み物のジドアハンバイキはどこにありますか
+  - あの、飲み物のジドアハンバイキはどこにありますか
   - ありがとうございます
   - あっちにやりますよ
   prompt_en: 'L14 activity 2: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 2あの、飲み物のジドアハンバイキはどこにありますか
+  - jp: あの、飲み物のジドアハンバイキはどこにありますか
     tags:
     - long
     - polite
@@ -109,9 +109,9 @@ activities:
   - id: d
     label_jp: あーー、キレイな水ですねー
   - id: e
-    label_jp: 5お、古いお手らがありますね
+    label_jp: お、古いお手らがありますね
   - id: f
-    label_jp: 2あの、飲み物のジドアハンバイキはどこにありますか
+    label_jp: あの、飲み物のジドアハンバイキはどこにありますか
   - id: g
     label_jp: この多くですありがとうございます
   correct_ids:
@@ -152,7 +152,7 @@ activities:
   - id: d
     label_jp: さんすみませんコインロックアはどこにありますか
   - id: e
-    label_jp: 2あの、飲み物のジドアハンバイキはどこにありますか
+    label_jp: あの、飲み物のジドアハンバイキはどこにありますか
   correct_ids:
   - b
   - d
@@ -165,11 +165,11 @@ activities:
   audio:
   - assets/audio/X_[14-04]_kiku4.mp3
   key_phrases:
-  - 4きついんじゃわどこですか
+  - きついんじゃわどこですか
   - あ、このビルにはありますそうですか
   prompt_en: 'L14 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 4きついんじゃわどこですか
+  - jp: きついんじゃわどこですか
     tags:
     - long
     - polite
@@ -186,7 +186,7 @@ activities:
   - id: b
     label_jp: あ、このビルにはありますそうですか
   - id: c
-    label_jp: 4きついんじゃわどこですか
+    label_jp: きついんじゃわどこですか
   - id: d
     label_jp: 今、開札の前にいますわかりました
   - id: e
@@ -206,7 +206,7 @@ activities:
   - この近くに、コンビニはありますか
   - ありがとうございます
   - えぇ、この先です
-  - ごすみません
+  - すみません
   prompt_en: 'L14 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: この近くに、コンビニはありますか
@@ -221,7 +221,7 @@ activities:
     tags:
     - short
     - polite
-  - jp: ごすみません
+  - jp: すみません
     tags:
     - short
     - polite
@@ -240,7 +240,7 @@ activities:
   - id: e
     label_jp: すみませんこの近くにATMはありますか
   - id: f
-    label_jp: ごすみません
+    label_jp: すみません
   - id: g
     label_jp: あ、このビルにはありますそうですか
   - id: h
@@ -259,11 +259,11 @@ activities:
   audio:
   - assets/audio/X_[14-06]_kiku6 .mp3
   key_phrases:
-  - 6あのーこの近くにATMはありますか
+  - あのーこの近くにATMはありますか
   - この奥ですわかりました
   prompt_en: 'L14 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 6あのーこの近くにATMはありますか
+  - jp: あのーこの近くにATMはありますか
     tags:
     - long
     - polite
@@ -280,7 +280,7 @@ activities:
   - id: b
     label_jp: あっちらですありがとうございます
   - id: c
-    label_jp: 6あのーこの近くにATMはありますか
+    label_jp: あのーこの近くにATMはありますか
   - id: d
     label_jp: 6見て
   - id: e
@@ -323,17 +323,26 @@ activities:
   blanks:
   - prompt_jp: トイレは、＿か？
     answers:
-    - といれはどこです
-    full_jp: トイレは、といれはどこですか？
+    - どこです
+    answer_alts:
+    - どこ
+    full_jp: トイレは、どこですか？
   - prompt_jp: コインロッカーは、＿か？
     answers:
-    - といれはどこです
-    full_jp: コインロッカーは、といれはどこですか？
-  - prompt_jp: この近く＿、ATM は＿か？
+    - どこにあります
+    answer_alts:
+    - どこです
+    full_jp: コインロッカーは、どこにありますか？
+  - prompt_jp: この近く＿、コンビニは＿か？
     answers:
     - に
     - あります
-    full_jp: この近くに、ATM はありますか？
+    full_jp: この近くに、コンビニはありますか？
+  - prompt_jp: この近く＿、ATMは＿か？
+    answers:
+    - に
+    - あります
+    full_jp: この近くに、ATMはありますか？
   fill_pdf_page: 371
 - id: A8
   kind: speaking
@@ -442,12 +451,37 @@ activities:
   audio:
   - assets/audio/X_[14-12]_kotoba2.mp3
   key_phrases:
-  - 1車の上にいます2車の下にいます3車の後ろにいます4車の横にいます5車の中にいます6車の前にいます
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 車の上にいます
+  - 車の下にいます
+  - 車の後ろにいます
+  - 車の横にいます
+  - 車の中にいます
+  - 車の前にいます
+  prompt_en: Listen to the CD, then say each word one at a time (6 words).
   phrase_meta:
-  - jp: 1車の上にいます2車の下にいます3車の後ろにいます4車の横にいます5車の中にいます6車の前にいます
+  - jp: 車の上にいます
     tags:
-    - long
+    - short
+    - polite
+  - jp: 車の下にいます
+    tags:
+    - short
+    - polite
+  - jp: 車の後ろにいます
+    tags:
+    - short
+    - polite
+  - jp: 車の横にいます
+    tags:
+    - short
+    - polite
+  - jp: 車の中にいます
+    tags:
+    - short
+    - polite
+  - jp: 車の前にいます
+    tags:
+    - short
     - polite
   book_mode: vocab_drill
 - id: A13
@@ -460,7 +494,7 @@ activities:
   key_phrases:
   - いるまさ、今どこですか
   - 今、開札の前にいますわかりました
-  - 1もしもし
+  - もしもし
   - もしもし
   prompt_en: 'L14 activity 13: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
@@ -472,7 +506,7 @@ activities:
     tags:
     - long
     - polite
-  - jp: 1もしもし
+  - jp: もしもし
     tags:
     - short
   - jp: もしもし
@@ -489,7 +523,7 @@ activities:
   - id: c
     label_jp: ここは水元公園です
   - id: d
-    label_jp: 1もしもし
+    label_jp: もしもし
   - id: e
     label_jp: 3このカワーはシマンとかはです
   - id: f
@@ -512,11 +546,11 @@ activities:
   audio:
   - assets/audio/X_[14-14]_kiku2.mp3
   key_phrases:
-  - 2あ、ピセットですお、ピセットさん、今どこにいますか
+  - あ、ピセットですお、ピセットさん、今どこにいますか
   - えっと、コンビニの中にいます中ですね今、そっちに行きます
   prompt_en: 'L14 activity 14: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 2あ、ピセットですお、ピセットさん、今どこにいますか
+  - jp: あ、ピセットですお、ピセットさん、今どこにいますか
     tags:
     - long
     - polite
@@ -529,9 +563,9 @@ activities:
   picture_hint_en: 'L14 activity 14: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: 2あ、ピセットですお、ピセットさん、今どこにいますか
+    label_jp: あ、ピセットですお、ピセットさん、今どこにいますか
   - id: b
-    label_jp: 6あのーこの近くにATMはありますか
+    label_jp: あのーこの近くにATMはありますか
   - id: c
     label_jp: えっと、コンビニの中にいます中ですね今、そっちに行きます
   - id: d
@@ -550,25 +584,36 @@ activities:
   audio:
   - assets/audio/X_[14-15]_kiku3.mp3
   key_phrases:
-  - 3もしもしもしもしリリアンさんはい今どこえー今インフォメーションの横ですインフォメーションねわかったすぐいく
-  prompt_en: 'L14 activity 15: listen to the CD, then say the phrase that matches the book.'
+  - もしもし、リリアンさん。
+  - 今どこ？
+  - 今、インフォメーションの横です。
+  prompt_en: Listen (CD 14-15). Where is Lilian now?
   phrase_meta:
-  - jp: 3もしもしもしもしリリアンさんはい今どこえー今インフォメーションの横ですインフォメーションねわかったすぐいく
+  - jp: もしもし、リリアンさん。
     tags:
     - long
+  - jp: 今どこ？
+    tags:
+    - short
     - polite
+  - jp: 今、インフォメーションの横です。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L14 activity 15: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Phone — current location.
   choices:
   - id: a
-    label_jp: 2あ、ピセットですお、ピセットさん、今どこにいますか
+    label_jp: インフォメーションの横にいます
+    label_en: beside the information desk
   - id: b
     label_jp: コンビニの中にいます
+    label_en: inside the convenience store
   - id: c
-    label_jp: 3もしもしもしもしリリアンさんはい今どこえー今インフォメーションの横ですインフォメーションねわかったすぐいく
+    label_jp: ピセットさんのところにいます
+    label_en: "at Pisset's place"
   correct_ids:
-  - c
+  - a
   choose_mode: any
 - id: A16
   kind: listening
@@ -579,14 +624,14 @@ activities:
   - assets/audio/X_[14-16]_kiku4.mp3
   key_phrases:
   - 今、エスカレーターの下にいますエスカレーターの下ですねわかりましたちょっと待っててくださいね
-  - 4あのチェですあ、チェサー今はどこにいますか
+  - あのチェですあ、チェサー今はどこにいますか
   prompt_en: 'L14 activity 16: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 今、エスカレーターの下にいますエスカレーターの下ですねわかりましたちょっと待っててくださいね
     tags:
     - long
     - polite
-  - jp: 4あのチェですあ、チェサー今はどこにいますか
+  - jp: あのチェですあ、チェサー今はどこにいますか
     tags:
     - long
     - polite
@@ -597,7 +642,7 @@ activities:
   - id: a
     label_jp: コインロッターはどこにありますか
   - id: b
-    label_jp: 4あのチェですあ、チェサー今はどこにいますか
+    label_jp: あのチェですあ、チェサー今はどこにいますか
   - id: c
     label_jp: すみませんトイレはどこですか
   correct_ids:
@@ -635,6 +680,14 @@ activities:
     - polite
   book_mode: listen_fill
   blanks:
+  - prompt_jp: 今、＿にいますか？
+    answers:
+    - どこ
+    full_jp: 今、どこにいますか？
+  - prompt_jp: 改札の＿にいます。
+    answers:
+    - 前
+    full_jp: 改札の前にいます。
   - prompt_jp: コンビニの＿にいます。
     answers:
     - 中
@@ -720,17 +773,64 @@ activities:
   audio:
   - assets/audio/X_[14-20]_kotoba1.mp3
   key_phrases:
-  - ふるいビ新しいシー大きい大きなビ小さい小さないい高いF低いジ逃げやかなHしずかなI黄色いジェせまいK綺麗なL来たない
-  - どんなところ
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 古い
+  - 新しい
+  - 大きい
+  - 小さな
+  - 高い
+  - 低い
+  - にぎやかな
+  - 静かな
+  - 広い
+  - せまい
+  - きれいな
+  - きたない
+  prompt_en: Listen to the CD, then say each word one at a time (12 words).
   phrase_meta:
-  - jp: ふるいビ新しいシー大きい大きなビ小さい小さないい高いF低いジ逃げやかなHしずかなI黄色いジェせまいK綺麗なL来たない
+  - jp: 古い
     tags:
-    - long
-  - jp: どんなところ
+    - short
+  - jp: 新しい
+    tags:
+    - short
+  - jp: 大きい
+    tags:
+    - short
+  - jp: 小さな
+    tags:
+    - short
+  - jp: 高い
+    tags:
+    - short
+  - jp: 低い
+    tags:
+    - short
+  - jp: にぎやかな
+    tags:
+    - short
+  - jp: 静かな
+    tags:
+    - short
+  - jp: 広い
+    tags:
+    - short
+  - jp: せまい
+    tags:
+    - short
+  - jp: きれいな
+    tags:
+    - short
+  - jp: きたない
     tags:
     - short
   book_mode: vocab_drill
+  glosses_en:
+    古い: old
+    新しい: new
+    大きい: big
+    広い: spacious
+    せまい: narrow / small (space)
+    きたない: dirty
 - id: A21
   kind: vocabulary
   book_activity: 21
@@ -739,13 +839,56 @@ activities:
   audio:
   - assets/audio/X_[14-21]_kotoba2.mp3
   key_phrases:
-  - 1逃げ赤ですね2高いですね3大きいですね4フルーヨイですね5綺麗ですね6広いですね7小さいですね8新しいですね9来たないですね10静かですね11低いですね12せ前ですね
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - にぎやかですね
+  - 高いですね
+  - 大きいですね
+  - 古いですね
+  - きれいですね
+  - 広いですね
+  - 小さいですね
+  - 新しいですね
+  - きたないですね
+  - 静かですね
+  - 低いですね
+  - せまいですね
+  prompt_en: Listen to the CD, then say each word one at a time (12 words).
   phrase_meta:
-  - jp: 1逃げ赤ですね2高いですね3大きいですね4フルーヨイですね5綺麗ですね6広いですね7小さいですね8新しいですね9来たないですね10静かですね11低いですね12せ前ですね
+  - jp: にぎやかですね
     tags:
-    - long
-    - polite
+    - short
+  - jp: 高いですね
+    tags:
+    - short
+  - jp: 大きいですね
+    tags:
+    - short
+  - jp: 古いですね
+    tags:
+    - short
+  - jp: きれいですね
+    tags:
+    - short
+  - jp: 広いですね
+    tags:
+    - short
+  - jp: 小さいですね
+    tags:
+    - short
+  - jp: 新しいですね
+    tags:
+    - short
+  - jp: きたないですね
+    tags:
+    - short
+  - jp: 静かですね
+    tags:
+    - short
+  - jp: 低いですね
+    tags:
+    - short
+  - jp: せまいですね
+    tags:
+    - short
   book_mode: vocab_drill
 - id: A22
   kind: listening
@@ -799,7 +942,7 @@ activities:
   - id: b
     label_jp: ここは徐々省展大ですあ、逃げ赤な通りですね
   - id: c
-    label_jp: 1すみません
+    label_jp: すみません
   correct_ids:
   - b
   choose_mode: any
@@ -860,14 +1003,14 @@ activities:
   - assets/audio/X_[14-25]_kiku4.mp3
   key_phrases:
   - 大きな建物ですねあああれはサッポロ動画見です焼級上ですへぇ、大きいですね
-  - 4あれは何ですか
+  - あれは何ですか
   prompt_en: 'L14 activity 25: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 大きな建物ですねあああれはサッポロ動画見です焼級上ですへぇ、大きいですね
     tags:
     - long
     - polite
-  - jp: 4あれは何ですか
+  - jp: あれは何ですか
     tags:
     - short
     - polite
@@ -880,7 +1023,7 @@ activities:
   - id: b
     label_jp: 大きな建物ですねあああれはサッポロ動画見です焼級上ですへぇ、大きいですね
   - id: c
-    label_jp: 4あれは何ですか
+    label_jp: あれは何ですか
   - id: d
     label_jp: 3このカワーはシマンとかはです
   - id: e
@@ -897,13 +1040,13 @@ activities:
   audio:
   - assets/audio/X_[14-26]_kiku5.mp3
   key_phrases:
-  - 5お、古いお手らがありますね
+  - お、古いお手らがありますね
   - いいお手らでしょう
   - 水戦時です
   - はい
   prompt_en: 'L14 activity 26: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 5お、古いお手らがありますね
+  - jp: お、古いお手らがありますね
     tags:
     - long
     - polite
@@ -930,7 +1073,7 @@ activities:
   - id: d
     label_jp: 水戦時です
   - id: e
-    label_jp: 5お、古いお手らがありますね
+    label_jp: お、古いお手らがありますね
   - id: f
     label_jp: 今、どこに言いますか
   - id: g
@@ -951,27 +1094,33 @@ activities:
   audio:
   - assets/audio/X_[14-27]_kiku6.mp3
   key_phrases:
-  - あれはセンタービルあれはスニトモビルあれは3つイビル高いビルがたくさんありますねそうだね
-  - 6見て
-  prompt_en: 'L14 activity 27: listen to the CD, then say the phrase that matches the book.'
+  - 見て。
+  - あれはセンタービル。あれは住友ビル。あれは三井ビル。
+  - 高いビルがたくさんありますね。
+  prompt_en: Listen (CD 14-27). What are they looking at?
   phrase_meta:
-  - jp: あれはセンタービルあれはスニトモビルあれは3つイビル高いビルがたくさんありますねそうだね
-    tags:
-    - long
-    - polite
-  - jp: 6見て
+  - jp: 見て。
     tags:
     - short
+  - jp: あれはセンタービル。あれは住友ビル。あれは三井ビル。
+    tags:
+    - long
+  - jp: 高いビルがたくさんありますね。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L14 activity 27: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: City buildings.
   choices:
   - id: a
-    label_jp: 6見て
+    label_jp: 高いビルがたくさんあります
+    label_en: there are many tall buildings
   - id: b
-    label_jp: あっちにやりますよ
+    label_jp: この近くにATMはありますか
+    label_en: Is there an ATM nearby?
   - id: c
-    label_jp: 6あのーこの近くにATMはありますか
+    label_jp: あっちにやりますよ
+    label_en: "I'll do it over there"
   correct_ids:
   - a
   choose_mode: any
@@ -984,13 +1133,43 @@ activities:
   - assets/audio/X_[14-28]_katachi.mp3
   key_phrases:
   - 広い公園ですね古いお手らがありますね高いビルがたくさんありますね逃げやかな通りですね綺麗な水ですね大きな建物ですね大きいですね
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: 広い公園ですね古いお手らがありますね高いビルがたくさんありますね逃げやかな通りですね綺麗な水ですね大きな建物ですね大きいですね
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: ＿公園ですね。
+    answers:
+    - 広い
+    full_jp: 広い公園ですね。
+  - prompt_jp: ＿お寺がありますね。
+    answers:
+    - 古い
+    full_jp: 古いお寺がありますね。
+  - prompt_jp: ＿ビルがたくさんありますね。
+    answers:
+    - 高い
+    full_jp: 高いビルがたくさんありますね。
+  - prompt_jp: ＿通りですね。
+    answers:
+    - にぎやかな
+    full_jp: にぎやかな通りですね。
+  - prompt_jp: ＿水ですね。
+    answers:
+    - きれいな
+    full_jp: きれいな水ですね。
+  - prompt_jp: ＿建物ですね。
+    answers:
+    - 大きな
+    full_jp: 大きな建物ですね。
+  - prompt_jp: ＿ですね。
+    answers:
+    - 大きい
+    full_jp: 大きいですね。
+  fill_pdf_page: 379
 - id: A29
   kind: speaking
   book_activity: 29
@@ -1076,11 +1255,11 @@ activities:
     reading: たかいまえうしろよこひくい
     gloss_en: low / short
   kanji_sentences: &id002
-  - 東
-  - 私
-  - ビルの横に、低い建
-  - 今
-  - バイクで行
+  - 東大寺は、とても大きいです。
+  - 私の国は、小さいです。高い山がたくさんあります。
+  - ビルの横に、低い建物があります。
+  - 今、コンビニの前にいます。
+  - バイクで行きましょう。後ろに乗ってください。
   picture_has_image: false
 - id: CULTURE
   kind: culture
@@ -1169,27 +1348,112 @@ grammar:
   - 40
   examples: []
 vocab:
-- jp: 1え上bしたc前dcf
+- jp: 古い
+  reading: ''
+  en: old
+  tags:
+  - L14
+- jp: 新しい
+  reading: ''
+  en: new
+  tags:
+  - L14
+- jp: 大きい
+  reading: ''
+  en: big
+  tags:
+  - L14
+- jp: 小さな
   reading: ''
   en: ''
   tags:
   - L14
-- jp: 1車の上にいます2車の下にいます3車の後ろにいます4車の横にいます5車の中にいます6車の前にいます
+- jp: 高い
   reading: ''
   en: ''
   tags:
   - L14
-- jp: ふるいビ新しいシー大きい大きなビ小さい小さないい高いF低いジ逃げやかなHしずかなI黄色いジェせまいK綺麗なL来たない
+- jp: 低い
   reading: ''
   en: ''
   tags:
   - L14
-- jp: どんなところ
+- jp: にぎやかな
   reading: ''
   en: ''
   tags:
   - L14
-- jp: 1逃げ赤ですね2高いですね3大きいですね4フルーヨイですね5綺麗ですね6広いですね7小さいですね8新しいですね9来たないですね10静かですね11低いですね12せ前ですね
+- jp: 静かな
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: 広い
+  reading: ''
+  en: spacious
+  tags:
+  - L14
+- jp: せまい
+  reading: ''
+  en: narrow / small (space)
+  tags:
+  - L14
+- jp: きれいな
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: きたない
+  reading: ''
+  en: dirty
+  tags:
+  - L14
+- jp: 高いですね
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: 大きいですね
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: 古いですね
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: きれいですね
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: 広いですね
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: 小さいですね
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: 新しいですね
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: 静かですね
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: 低いですね
+  reading: ''
+  en: ''
+  tags:
+  - L14
+- jp: せまいですね
   reading: ''
   en: ''
   tags:
@@ -1221,83 +1485,63 @@ quiz_bank:
   prompt_en: 'In a new everyday situation, show you can: Can describe size/appearance with simple adjectives.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L14_55
-  partner_jp: では、お願いします。
+  setup_en: Looking at a park. Make a simple comment.
+  goal_en: Learner comments with ですね / simple adjective.
+  partner_jp: ここは水元公園です。
   expected:
-  - ですね
-  hint_en: 'Situation: Can comment simply on buildings and places you see. Reply using lesson phrases.'
+  - "ですね"
+  - "きれい"
+  - "広い"
+  - "いい"
+  hint_en: Looking at a park. Make a simple comment.
 - can_do_id: CD_L14_55
-  partner_jp: もう一度、お願いします。
+  setup_en: Looking at a tall building. React.
+  goal_en: Learner gives a simple impression.
+  partner_jp: みて、あのビル！
   expected:
-  - ですね
-  hint_en: Again — 建物や場所について簡単に感想を言うことができる。
+  - "ですね"
+  - "高い"
+  - "すごい"
+  hint_en: Looking at a tall building. React.
 - can_do_id: CD_L14_56
-  partner_jp: すみませんトイレはどこですか
+  setup_en: Ask what this place is.
+  goal_en: Learner asks/confirm what a place is.
+  partner_jp: 着きましたよ。
   expected:
-  - あっちらですありがとうございます
-  - すみませんトイレはどこですか
-  hint_en: Reply as in the book dialog (activity 8).
-- can_do_id: CD_L14_57
-  partner_jp: すみませんこの近くにATMはありますか
-  expected:
-  - この多くですありがとうございます
-  - すみませんこの近くにATMはありますか
-  hint_en: Reply as in the book dialog (activity 9).
-- can_do_id: CD_L14_55
-  partner_jp: すみませんこんいんどっかはどこにありますか
-  expected:
-  - ちょっとわかりませんそうですか
-  - すみませんこんいんどっかはどこにありますか
-  hint_en: Reply as in the book dialog (activity 10).
-- can_do_id: CD_L14_57
-  partner_jp: 今、どこにいますか
-  expected:
-  - 今、コンビニの中にいますわかりました
-  - 今、どこにいますか
-  - もしもし
-  hint_en: Reply as in the book dialog (activity 18).
-- can_do_id: CD_L14_55
-  partner_jp: もしもし今どこですか
-  expected:
-  - 今開札の前ですわかりました
-  - もしもし今どこですか
-  - もしもし
-  hint_en: Reply as in the book dialog (activity 19).
+  - "ここは何ですか"
+  - "何ですか"
+  - "どこ"
+  hint_en: Ask what this place is.
 - can_do_id: CD_L14_56
-  partner_jp: ここは水元公園です
+  setup_en: Ask where the toilet is.
+  goal_en: Learner asks about a place nearby.
+  partner_jp: この建物、大きいですね。
   expected:
-  - ここは水元公園です
-  hint_en: Reply as in the book dialog (activity 29).
+  - "トイレはどこですか"
+  - "どこですか"
+  hint_en: Ask where the toilet is.
 - can_do_id: CD_L14_57
-  partner_jp: ここは水元公園です綺麗な公園ですね
+  setup_en: Describe the park simply (big/pretty/quiet).
+  goal_en: Learner uses a simple adjective description.
+  partner_jp: 水元公園、どうですか？
   expected:
-  - ここは水元公園です綺麗な公園ですね
-  hint_en: Reply as in the book dialog (activity 30).
-- can_do_id: CD_L14_55
-  partner_jp: トイレはどこですか。
-  expected:
-  - トイレはどこですか
-  - あっちらです
-  - 1すみません
-  - どうも
-  - ですね
-  hint_en: Can comment simply on buildings and places you see.
-- can_do_id: CD_L14_56
-  partner_jp: 2あの、飲み物のジドアハンバイキはどこにありますか。
-  expected:
-  - 2あの、飲み物のジドアハンバイキはどこにありますか
-  - ありがとうございます
-  - あっちにやりますよ
-  - この近くに、コンビニはありますか
-  hint_en: Can ask/confirm what a place is.
+  - "きれい"
+  - "広い"
+  - "静か"
+  - "です"
+  hint_en: Describe the park simply (big/pretty/quiet).
 - can_do_id: CD_L14_57
-  partner_jp: さんすみませんコインロックアはどこにありますか。
+  setup_en: Yuki asks about a shop. Describe it.
+  goal_en: Learner describes appearance/size simply.
+  partner_jp: あのコンビニ、わかりますか？
   expected:
-  - さんすみませんコインロックアはどこにありますか
-  - あ、すみませんちょっとわからないですねそうですか
-  - 6あのーこの近くにATMはありますか
-  - この奥ですわかりました
-  hint_en: Can describe size/appearance with simple adjectives.
+  - "小さい"
+  - "便利"
+  - "近い"
+  - "です"
+  hint_en: Yuki asks about a shop. Describe it.
 english_notes: 'What facilities and places are in your town? What are they like?
 
   Can ask where the toilets or an ATM, etc., are.

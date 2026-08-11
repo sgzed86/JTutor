@@ -2,7 +2,6 @@ import { useCallback, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ContextPanel } from "../components/context/ContextPanel";
 import { NoticeStack } from "../components/feedback/NoticeStack";
-import { SelfCheckModal } from "../components/stage/SelfCheckModal";
 import { TutorStage } from "../components/stage/TutorStage";
 import { TransportBar } from "../components/transport/TransportBar";
 import { useSettings } from "../state/useSettings";
@@ -169,15 +168,6 @@ export function TutorPage({
         onRestart={() => void actions.restart()}
         onJumpCanDo={(reset) => void actions.jumpToCanDo(reset)}
         onToggleContext={onToggleContext}
-      />
-
-      <SelfCheckModal
-        open={phase.kind === "self_check"}
-        statementEn={payload?.self_check?.statement_en}
-        statementJp={payload?.self_check?.statement_jp}
-        busy={presentation.busy}
-        onSubmit={(stars, comment) => void actions.submitSelfCheck(stars, comment)}
-        onSkip={() => void actions.advance()}
       />
 
       <NoticeStack notices={session.notices} onDismiss={session.dismissNotice} />

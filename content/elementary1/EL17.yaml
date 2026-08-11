@@ -319,7 +319,7 @@ activities:
   picture_hint_en: 'EL17 activity 8: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: ごめんください。
+    label_jp: めんください。
   - id: b
     label_jp: これは、魔よけです。壁にかけると、悪いものが入って来ません。
   - id: c
@@ -439,7 +439,7 @@ activities:
   - id: d
     label_jp: どんなものですか。
   - id: e
-    label_jp: ごめんください。
+    label_jp: めんください。
   - id: f
     label_jp: ありがとう。今度、使ってみるね。
   - id: g
@@ -1039,54 +1039,83 @@ quiz_bank:
     their house.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL17_61
-  partner_jp: お母さんが作ったの？。
-  expected: &id001
-  - お母さんが作ったの？
-  - これは、ミャンマーの母が作ったんです。
-  - お守りです
-  - 福田さんの家を訪問しました
-  hint_en: Can exchange basic greetings when you visit someone’s house.
+  setup_en: "You visit someone's house. Give a basic greeting."
+  goal_en: Learner uses visiting greetings.
+  partner_jp: はい、どうぞ。
+  expected:
+  - "ごめんください"
+  - "おじゃまします"
+  - "はじめまして"
+  hint_en: "You visit someone's house. Give a basic greeting."
 - can_do_id: CD_EL17_61
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can exchange basic greetings when you visit someone’s house.
+  setup_en: Enter the home politely.
+  goal_en: Learner greets when visiting.
+  partner_jp: あ、来てくれた！上がって。
+  expected:
+  - "おじゃまします"
+  - "ありがとう"
+  - "ごめんください"
+  hint_en: Enter the home politely.
 - can_do_id: CD_EL17_62
-  partner_jp: お兄さんは、今。
-  expected: &id002
-  - お兄さんは、今
-  - これは、兄がくれたお守りです。
-  - 兄がくれたお守りです
-  - ごめんください。
-  hint_en: Can give a simple explanation about a gift you give.
+  setup_en: Give a simple explanation about the gift you brought.
+  goal_en: Learner explains a gift simply.
+  partner_jp: これ、何ですか？
+  expected:
+  - "お土産"
+  - "です"
+  - "母が"
+  - "作った"
+  hint_en: Give a simple explanation about the gift you brought.
 - can_do_id: CD_EL17_62
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can give a simple explanation about a gift you give.
+  setup_en: Present a souvenir and say a bit about it.
+  goal_en: Learner explains their gift.
+  partner_jp: 手みやげ、ありがとう！
+  expected:
+  - "です"
+  - "国の"
+  - "お菓子"
+  - "お土産"
+  hint_en: Present a souvenir and say a bit about it.
 - can_do_id: CD_EL17_63
-  partner_jp: あ、ありがとうございます。
-  expected: &id003
-  - あ、ありがとうございます。
-  - これ、お土産です。
-  - 兄がくれたお守りです
-  - ごめんください。
-  hint_en: Can talk about your belongings, for example, where you bought it or who gave it to you.
+  setup_en: Talk about an item — where you bought it or who gave it.
+  goal_en: Learner talks about belongings origin.
+  partner_jp: そのお守り、いいですね。どこで買いましたか？
+  expected:
+  - "兄が"
+  - "くれました"
+  - "買いました"
+  - "です"
+  hint_en: Talk about an item — where you bought it or who gave it.
 - can_do_id: CD_EL17_63
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: 'Again — Can talk about your belongings, for example, where you bought it or who gave it '
+  setup_en: Explain your decoration/amulet.
+  goal_en: "Learner explains an item's story."
+  partner_jp: それは何ですか？
+  expected:
+  - "です"
+  - "もらった"
+  - "買った"
+  - "から"
+  hint_en: Explain your decoration/amulet.
 - can_do_id: CD_EL17_64
-  partner_jp: へー。
-  expected: &id004
-  - へー。
-  - ネパールから持って来た飾りです。
-  - 兄がくれたお守りです
-  - ごめんください。
-  hint_en: Can write a simple email to thank someone who, for example, invited you to their house.
+  setup_en: Say a short thank-you email after visiting.
+  goal_en: Learner produces a simple thank-you message.
+  partner_jp: 昨日はありがとう。メール、書いてみて。
+  expected:
+  - "ありがとう"
+  - "楽しかった"
+  - "また"
+  hint_en: Say a short thank-you email after visiting.
 - can_do_id: CD_EL17_64
-  partner_jp: もう一度、お願いします。
-  expected: *id004
-  hint_en: Again — Can write a simple email to thank someone who, for example, invited you to their
+  setup_en: Thank them for inviting you.
+  goal_en: Learner writes/says thanks for the visit.
+  partner_jp: 招待してくれて、どう感じましたか？メールで伝えて。
+  expected:
+  - "ありがとう"
+  - "おじゃま"
+  - "でした"
+  hint_en: Thank them for inviting you.
 english_notes: 'What will you bring as a gift to Japan?
 
   Can exchange basic greetings when you visit someone’s house.

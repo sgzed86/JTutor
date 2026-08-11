@@ -73,13 +73,13 @@ activities:
   - assets/audio/X_[17-02]_kiku2.mp3
   key_phrases:
   - 日曜日は地務で運動しましたへへへ
-  - 2てださん日曜日は何をしましたか
+  - てださん日曜日は何をしましたか
   prompt_en: 'L17 activity 2: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 日曜日は地務で運動しましたへへへ
     tags:
     - long
-  - jp: 2てださん日曜日は何をしましたか
+  - jp: てださん日曜日は何をしましたか
     tags:
     - long
   book_mode: listen_choose
@@ -91,7 +91,7 @@ activities:
   - id: b
     label_jp: 昨日は、桜もあるに帰物に行きました
   - id: c
-    label_jp: 2てださん日曜日は何をしましたか
+    label_jp: てださん日曜日は何をしましたか
   - id: d
     label_jp: 休みはどうでしたか
   - id: e
@@ -124,7 +124,7 @@ activities:
   picture_hint_en: 'L17 activity 3: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: ご事らを見ました
+    label_jp: 事らを見ました
   - id: b
     label_jp: 私はどこにも生きませんでした
   - id: c
@@ -147,7 +147,7 @@ activities:
   key_phrases:
   - 昨日は、桜もあるに帰物に行きました
   - そうですか
-  - 4マイさん、昨日の休みは何をしましたか
+  - マイさん、昨日の休みは何をしましたか
   - 復興会いました
   prompt_en: 'L17 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
@@ -158,7 +158,7 @@ activities:
     tags:
     - short
     - polite
-  - jp: 4マイさん、昨日の休みは何をしましたか
+  - jp: マイさん、昨日の休みは何をしましたか
     tags:
     - long
   - jp: 復興会いました
@@ -179,9 +179,9 @@ activities:
   - id: e
     label_jp: 復興会いました
   - id: f
-    label_jp: 4マイさん、昨日の休みは何をしましたか
+    label_jp: マイさん、昨日の休みは何をしましたか
   - id: g
-    label_jp: 6アンドレアさん週末は何をしましたか
+    label_jp: アンドレアさん週末は何をしましたか
   - id: h
     label_jp: 映画を見に行きました
   correct_ids:
@@ -199,7 +199,7 @@ activities:
   - assets/audio/X_[17-05]_kiku5.mp3
   key_phrases:
   - どうよびは友達と、農民に行きました
-  - ごっ...ルディさん、どにちは何をしましたか
+  - っ...ルディさん、どにちは何をしましたか
   - 日曜日は、ヒルマで寝ました
   - ああああ
   prompt_en: 'L17 activity 5: listen to the CD, then say the phrase that matches the book.'
@@ -207,7 +207,7 @@ activities:
   - jp: どうよびは友達と、農民に行きました
     tags:
     - long
-  - jp: ごっ...ルディさん、どにちは何をしましたか
+  - jp: っ...ルディさん、どにちは何をしましたか
     tags:
     - long
   - jp: 日曜日は、ヒルマで寝ました
@@ -229,7 +229,7 @@ activities:
   - id: d
     label_jp: どうよびは友達と、農民に行きました
   - id: e
-    label_jp: ごっ...ルディさん、どにちは何をしましたか
+    label_jp: っ...ルディさん、どにちは何をしましたか
   - id: f
     label_jp: とても良かったです楽しかったです
   - id: g
@@ -252,7 +252,7 @@ activities:
   key_phrases:
   - 何もしませんでした家でゆっくりしましたそうですか
   - あネットで家族と話しましたあ、いいですね
-  - 6アンドレアさん週末は何をしましたか
+  - アンドレアさん週末は何をしましたか
   prompt_en: 'L17 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
   - jp: 何もしませんでした家でゆっくりしましたそうですか
@@ -263,7 +263,7 @@ activities:
     tags:
     - long
     - polite
-  - jp: 6アンドレアさん週末は何をしましたか
+  - jp: アンドレアさん週末は何をしましたか
     tags:
     - long
   book_mode: listen_choose
@@ -279,7 +279,7 @@ activities:
   - id: d
     label_jp: 日曜日は地務で運動しましたへへへ
   - id: e
-    label_jp: 6アンドレアさん週末は何をしましたか
+    label_jp: アンドレアさん週末は何をしましたか
   - id: f
     label_jp: 何もしませんでした家でゆっくりしましたそうですか
   - id: g
@@ -299,7 +299,7 @@ activities:
   key_phrases:
   - おふろうと大ドコロを掃除しました大けストラのコンサートに行きました復興を買いました昼まで寝ました熱とで家族と話しました何もしませんでした家で行くりしました
   - 休みは何をしましたか
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: おふろうと大ドコロを掃除しました大けストラのコンサートに行きました復興を買いました昼まで寝ました熱とで家族と話しました何もしませんでした家で行くりしました
     tags:
@@ -308,7 +308,42 @@ activities:
   - jp: 休みは何をしましたか
     tags:
     - short
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: 休みは、何をし＿か？
+    answers:
+    - ました
+    full_jp: 休みは、何をしましたか？
+  - prompt_jp: お風呂と台所を掃除し＿。
+    answers:
+    - ました
+    full_jp: お風呂と台所を掃除しました。
+  - prompt_jp: オーケストラのコンサートに行き＿。
+    answers:
+    - ました
+    full_jp: オーケストラのコンサートに行きました。
+  - prompt_jp: 服を買い＿。
+    answers:
+    - ました
+    full_jp: 服を買いました。
+  - prompt_jp: 昼まで寝＿。
+    answers:
+    - ました
+    full_jp: 昼まで寝ました。
+  - prompt_jp: ネットで、家族と話し＿。
+    answers:
+    - ました
+    full_jp: ネットで、家族と話しました。
+  - prompt_jp: 何＿し＿。
+    answers:
+    - も
+    - ませんでした
+    full_jp: 何もしませんでした。
+  - prompt_jp: 家でゆっくりし＿。
+    answers:
+    - ました
+    full_jp: 家でゆっくりしました。
+  fill_pdf_page: 453
 - id: A8
   kind: speaking
   book_activity: 8
@@ -370,33 +405,36 @@ activities:
   audio:
   - assets/audio/X_[17-10]_kaiwa.mp3
   key_phrases:
-  - 私はどこにも行きませんでした家で日本語を勉強しましたすごいすごい
-  - 私は私は私は私は私は友達と中央公園の国際フェスティバルに行きましたえぇ
-  - とても良かったです楽しかったですカノルさんはどこに行きましたか
-  - マリエルさんは私は1日10相時と選択をしました大変でしたそうですか
+  - まあまあでした。
+  - 私はどこにも行きませんでした。家で日本語を勉強しました。
+  - 友達と中央公園の国際フェスティバルに行きました。
+  - とても良かったです。楽しかったです。
   prompt_en: Listen to the conversation, then practice both roles.
   phrase_meta:
-  - jp: 私はどこにも行きませんでした家で日本語を勉強しましたすごいすごい
+  - jp: まあまあでした。
+    tags:
+    - short
+  - jp: 私はどこにも行きませんでした。家で日本語を勉強しました。
     tags:
     - long
-    - polite
-  - jp: 私は私は私は私は私は友達と中央公園の国際フェスティバルに行きましたえぇ
+  - jp: 友達と中央公園の国際フェスティバルに行きました。
     tags:
     - long
-  - jp: とても良かったです楽しかったですカノルさんはどこに行きましたか
+  - jp: とても良かったです。楽しかったです。
     tags:
     - long
-    - polite
-  - jp: マリエルさんは私は1日10相時と選択をしました大変でしたそうですか
-    tags:
-    - long
-    - polite
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: おもしろかったですか
+    jp: おもしろかったですか。
   - speaker: learner
-    jp: 私はどこにも行きませんでした家で日本語を勉強しましたすごいすごい
+    jp: まあまあでした。
+  - speaker: partner
+    jp: カノルさんはどこに行きましたか。
+  - speaker: learner
+    jp: 私はどこにも行きませんでした。家で日本語を勉強しました。
+  - speaker: partner
+    jp: すごい！
   dialog_listen_audio:
   - assets/audio/X_[17-10]_kaiwa.mp3
 - id: A11
@@ -558,10 +596,10 @@ activities:
     reading: かいます
     gloss_en: to buy
   kanji_sentences: &id002
-  - Ａ：休みは、何
+  - Ａ：休みは、何をしましたか？　Ｂ：映画を見に行きました。
   - アイスクリームを買いました。百円でした。
   - たくさん日本語を勉強しました。
-  - この家
+  - この家は、4　千万円です。
   picture_has_image: false
 - id: CULTURE
   kind: culture
@@ -678,90 +716,61 @@ quiz_bank:
   prompt_en: 'In a new everyday situation, show you can: Can give a simple impression of an event/outing.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L17_69
-  partner_jp: では、お願いします。
+  setup_en: Say what you did on your day off.
+  goal_en: Learner says past activities with ました.
+  partner_jp: 休みは何をしましたか？
   expected:
-  - ました
-  hint_en: 'Situation: Can say what you did on a day off. Reply using lesson phrases.'
+  - "ました"
+  - "行きました"
+  - "しました"
+  hint_en: Say what you did on your day off.
 - can_do_id: CD_L17_69
-  partner_jp: もう一度、お願いします。
+  setup_en: Yuki asks about Sunday. Answer.
+  goal_en: Learner reports past weekend activities.
+  partner_jp: 日曜日は何をしましたか？
   expected:
-  - ました
-  hint_en: Again — 休みの日にしたことを言うことができる。
+  - "ました"
+  - "しませんでした"
+  hint_en: Yuki asks about Sunday. Answer.
 - can_do_id: CD_L17_70
-  partner_jp: では、お願いします。
+  setup_en: Ask how the festival was.
+  goal_en: Learner asks for an impression (どう).
+  partner_jp: 国際フェスティバルに行きました。
   expected:
-  - どう
-  hint_en: 'Situation: Can ask how something was (impressions). Reply using lesson phrases.'
+  - "どうでしたか"
+  - "どうだった"
+  - "どう"
+  hint_en: Ask how the festival was.
 - can_do_id: CD_L17_70
-  partner_jp: もう一度、お願いします。
+  setup_en: Ask if the movie was interesting.
+  goal_en: Learner asks how something was.
+  partner_jp: 昨日、映画を見ました。
   expected:
-  - どう
-  hint_en: Again — どうだったか感想を質問することができる。
+  - "おもしろかったですか"
+  - "どうでしたか"
+  - "どう"
+  hint_en: Ask if the movie was interesting.
 - can_do_id: CD_L17_71
-  partner_jp: では、お願いします。
+  setup_en: Give a simple impression of your outing.
+  goal_en: Learner gives an impression (楽しかった / よかった).
+  partner_jp: 休みはどうでしたか？
   expected:
-  - でした
-  hint_en: 'Situation: Can give a simple impression of an event/outing. Reply using lesson phrases.'
+  - "でした"
+  - "楽しかった"
+  - "よかった"
+  - "大変"
+  hint_en: Give a simple impression of your outing.
 - can_do_id: CD_L17_71
-  partner_jp: もう一度、お願いします。
+  setup_en: Yuki went to a concert. React with a short impression question or comment.
+  goal_en: Learner comments on an event simply.
+  partner_jp: オーケストラのコンサートに行きました。
   expected:
-  - でした
-  hint_en: Again — 出来事や外出について簡単な感想を言うことができる。
-- can_do_id: CD_L17_70
-  partner_jp: やすみは何をしましたか
-  expected:
-  - じむで運動しました
-  - やすみは何をしましたか
-  hint_en: Reply as in the book dialog (activity 8).
-- can_do_id: CD_L17_71
-  partner_jp: 日曜日は何をしましたか
-  expected:
-  - 何もしませんでした
-  - 日曜日は何をしましたか
-  hint_en: Reply as in the book dialog (activity 9).
-- can_do_id: CD_L17_69
-  partner_jp: おもしろかったですか
-  expected:
-  - 私はどこにも行きませんでした家で日本語を勉強しましたすごいすごい
-  - 私は私は私は私は私は友達と中央公園の国際フェスティバルに行きましたえぇ
-  - とても良かったです楽しかったですカノルさんはどこに行きましたか
-  - マリエルさんは私は1日10相時と選択をしました大変でしたそうですか
-  hint_en: Reply as in the book dialog (activity 10).
-- can_do_id: CD_L17_69
-  partner_jp: そうですか
-  expected:
-  - 国際フェスティバルに行きました
-  - 楽しかったです
-  - そうですか
-  - 休みはどうでしたか
-  hint_en: Reply as in the book dialog (activity 13).
-- can_do_id: CD_L17_70
-  partner_jp: そうですか
-  expected:
-  - 映画を見に行きました
-  - ご事らを見ました
-  - そうですか
-  - やすみはどうでしたか
-  hint_en: Reply as in the book dialog (activity 14).
-- can_do_id: CD_L17_70
-  partner_jp: 日曜日は地務で運動しましたへへへ。
-  expected:
-  - 日曜日は地務で運動しましたへへへ
-  - 2てださん日曜日は何をしましたか
-  - どうよびは友達と、農民に行きました
-  - ごっ...ルディさん、どにちは何をしましたか
-  - どう
-  hint_en: Can ask how something was (impressions).
-- can_do_id: CD_L17_71
-  partner_jp: オーテストラのコンサートに行きましたうん、いいですね。
-  expected:
-  - オーテストラのコンサートに行きましたうん、いいですね
-  - さあそうさあ集末は何をしましたか
-  - 何もしませんでした家でゆっくりしましたそうですか
-  - あネットで家族と話しましたあ、いいですね
-  - でした
-  hint_en: Can give a simple impression of an event/outing.
+  - "いいですね"
+  - "どうでしたか"
+  - "でした"
+  hint_en: Yuki went to a concert. React with a short impression question or comment.
 english_notes: 'Can give a simple answer when asked what you did on your day off.
 
   What did you do on your recent day off?

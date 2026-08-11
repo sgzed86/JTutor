@@ -49,14 +49,18 @@ activities:
   audio:
   - assets/audio/X_[10-01]_kiku1.mp3
   key_phrases:
-  - 1すみませんちょっとお手伝ってくださいはい
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  - すみません、ちょっと手伝ってください
+  - はい
+  prompt_en: Listen to the CD, then repeat each line.
   phrase_meta:
-  - jp: 1すみませんちょっとお手伝ってくださいはい
+  - jp: すみません、ちょっと手伝ってください
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  - jp: はい
+    tags:
+    - short
+  book_mode: listen_repeat_all
 - id: A2
   kind: listening
   book_activity: 2
@@ -65,10 +69,10 @@ activities:
   audio:
   - assets/audio/X_[10-02]_kiku2.mp3
   key_phrases:
-  - 2えーとダンボルそこに置いてくださいはい、分かりました
+  - えーとダンボルそこに置いてくださいはい、分かりました
   prompt_en: 'L10 activity 2: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 2えーとダンボルそこに置いてくださいはい、分かりました
+  - jp: えーとダンボルそこに置いてくださいはい、分かりました
     tags:
     - long
     - polite
@@ -77,11 +81,11 @@ activities:
   picture_hint_en: 'L10 activity 2: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: 8はい、分かりました
+    label_jp: はい、分かりました
   - id: b
-    label_jp: 2えーとダンボルそこに置いてくださいはい、分かりました
+    label_jp: えーとダンボルそこに置いてくださいはい、分かりました
   - id: c
-    label_jp: 2あのースマホの充電機ありますか
+    label_jp: あのースマホの充電機ありますか
   correct_ids:
   - b
   choose_mode: any
@@ -117,7 +121,7 @@ activities:
   - id: d
     label_jp: ありますよ
   - id: e
-    label_jp: 2エンピツありますか
+    label_jp: エンピツありますか
   correct_ids:
   - b
   - c
@@ -130,11 +134,11 @@ activities:
   audio:
   - assets/audio/X_[10-04]_kiku4.mp3
   key_phrases:
-  - 4名さん、テーブルの上、片付けてください
+  - 名さん、テーブルの上、片付けてください
   - はい、分かりました
   prompt_en: 'L10 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 4名さん、テーブルの上、片付けてください
+  - jp: 名さん、テーブルの上、片付けてください
     tags:
     - long
     - polite
@@ -146,13 +150,13 @@ activities:
   picture_hint_en: 'L10 activity 4: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: 4名さん、テーブルの上、片付けてください
+    label_jp: 名さん、テーブルの上、片付けてください
   - id: b
     label_jp: ありますよすみませんかり手もいいですか
   - id: c
     label_jp: どうぞ
   - id: d
-    label_jp: 4ほちきすありますか
+    label_jp: ほちきすありますか
   - id: e
     label_jp: はい、分かりました
   correct_ids:
@@ -167,10 +171,10 @@ activities:
   audio:
   - assets/audio/X_[10-05]_kiku5.mp3
   key_phrases:
-  - ごっちょっとそこのドライバーとってはいどうぞありがとう
+  - っちょっとそこのドライバーとってはいどうぞありがとう
   prompt_en: 'L10 activity 5: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: ごっちょっとそこのドライバーとってはいどうぞありがとう
+  - jp: っちょっとそこのドライバーとってはいどうぞありがとう
     tags:
     - long
   book_mode: listen_choose
@@ -180,7 +184,7 @@ activities:
   - id: a
     label_jp: おちきつかり手もいいですか
   - id: b
-    label_jp: ごっちょっとそこのドライバーとってはいどうぞありがとう
+    label_jp: っちょっとそこのドライバーとってはいどうぞありがとう
   - id: c
     label_jp: どうぞ
   correct_ids:
@@ -194,10 +198,10 @@ activities:
   audio:
   - assets/audio/X_[10-06]_kiku6.mp3
   key_phrases:
-  - 6デレーザーさん、ごみしてて、はい
+  - デレーザーさん、ごみしてて、はい
   prompt_en: 'L10 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 6デレーザーさん、ごみしてて、はい
+  - jp: デレーザーさん、ごみしてて、はい
     tags:
     - long
   book_mode: listen_choose
@@ -207,9 +211,9 @@ activities:
   - id: a
     label_jp: 生まブレネさん、一つ並べて
   - id: b
-    label_jp: 2えーとダンボルそこに置いてくださいはい、分かりました
+    label_jp: えーとダンボルそこに置いてくださいはい、分かりました
   - id: c
-    label_jp: 6デレーザーさん、ごみしてて、はい
+    label_jp: デレーザーさん、ごみしてて、はい
   correct_ids:
   - c
   choose_mode: any
@@ -257,10 +261,10 @@ activities:
   audio:
   - assets/audio/X_[10-08]_kiku8.mp3
   key_phrases:
-  - 813はいまどをしめてくれるはい
+  - はいまどをしめてくれるはい
   prompt_en: 'L10 activity 8: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 813はいまどをしめてくれるはい
+  - jp: はいまどをしめてくれるはい
     tags:
     - long
   book_mode: listen_choose
@@ -268,11 +272,11 @@ activities:
   picture_hint_en: 'L10 activity 8: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: 2あのこれいいですか
+    label_jp: あのこれいいですか
   - id: b
     label_jp: こと
   - id: c
-    label_jp: 813はいまどをしめてくれるはい
+    label_jp: はいまどをしめてくれるはい
   correct_ids:
   - c
   choose_mode: any
@@ -303,11 +307,11 @@ activities:
   picture_hint_en: 'L10 activity 9: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: ごっちょっとそこのドライバーとってはいどうぞありがとう
+    label_jp: っちょっとそこのドライバーとってはいどうぞありがとう
   - id: b
     label_jp: 1これ5p30枚をねがいはい30ですね
   - id: c
-    label_jp: 1すみませんちょっとお手伝ってくださいはい
+    label_jp: すみませんちょっとお手伝ってくださいはい
   - id: d
     label_jp: はい、分かりました
   - id: e
@@ -330,13 +334,57 @@ activities:
   - assets/audio/X_[10-10]_katachi.mp3
   key_phrases:
   - ちょっと手伝ってくださいダンボールそこに置いてくださいこれ数記さんに持っていてくださいテーブレの上片付けてくださいそこのドライバーとってゴミしててイス並えてまとしめてくれるプロジェクターとりも今持ってきてくれるStechbS
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: ちょっと手伝ってくださいダンボールそこに置いてくださいこれ数記さんに持っていてくださいテーブレの上片付けてくださいそこのドライバーとってゴミしててイス並えてまとしめてくれるプロジェクターとりも今持ってきてくれるStechbS
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: ちょっと、手伝っ＿。
+    answers:
+    - てください
+    full_jp: ちょっと、手伝ってください。
+  - prompt_jp: 段ボール、そこに置い＿。
+    answers:
+    - てください
+    full_jp: 段ボール、そこに置いてください。
+  - prompt_jp: これ、鈴木さんに持って行っ＿。
+    answers:
+    - てください
+    full_jp: これ、鈴木さんに持って行ってください。
+  - prompt_jp: テーブルの上、片付け＿。
+    answers:
+    - てください
+    full_jp: テーブルの上、片付けてください。
+  - prompt_jp: そこのドライバー、取っ＿。
+    answers:
+    - てください
+    full_jp: そこのドライバー、取ってください。
+  - prompt_jp: ごみ、捨て＿。
+    answers:
+    - てください
+    full_jp: ごみ、捨ててください。
+  - prompt_jp: いす、並べ＿。
+    answers:
+    - てください
+    full_jp: いす、並べてください。
+  - prompt_jp: 窓、閉め＿？
+    answers:
+    - てくれる
+    answer_alts:
+    - てくれますか
+    - てください
+    full_jp: 窓、閉めてくれる？
+  - prompt_jp: プロジェクタとリモコン、持って来＿？
+    answers:
+    - てくれる
+    answer_alts:
+    - てくれますか
+    - てください
+    full_jp: プロジェクタとリモコン、持って来てくれる？
+  fill_pdf_page: 261
 - id: A11
   kind: listening
   book_activity: 11
@@ -357,11 +405,11 @@ activities:
   picture_hint_en: 'L10 activity 11: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: 6デレーザーさん、ごみしてて、はい
+    label_jp: デレーザーさん、ごみしてて、はい
   - id: b
     label_jp: 1これコピー30枚をねがいはい30ですね
   - id: c
-    label_jp: ごっちょっとそこのドライバーとってはいどうぞありがとう
+    label_jp: っちょっとそこのドライバーとってはいどうぞありがとう
   correct_ids:
   - b
   choose_mode: any
@@ -373,23 +421,29 @@ activities:
   audio:
   - assets/audio/X_[10-12]_kiku2.mp3
   key_phrases:
-  - 同理の部屋10時までに片付けてくださいはい10時ですね
-  prompt_en: 'L10 activity 12: listen to the CD, then say the phrase that matches the book.'
+  - 隣の部屋、10時までに片付けてください。
+  - はい、10時ですね。
+  prompt_en: Listen (CD 10-12). What do they ask you to do?
   phrase_meta:
-  - jp: 同理の部屋10時までに片付けてくださいはい10時ですね
+  - jp: 隣の部屋、10時までに片付けてください。
     tags:
     - long
-    - polite
+  - jp: はい、10時ですね。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L10 activity 12: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Workplace request.
   choices:
   - id: a
-    label_jp: 同理の部屋10時までに片付けてくださいはい10時ですね
+    label_jp: 隣の部屋を10時までに片付けてください
+    label_en: tidy the next room by 10
   - id: b
-    label_jp: いいよはいすみません
+    label_jp: スマホの充電器ありますか
+    label_en: Do you have a phone charger?
   - id: c
-    label_jp: 2あのースマホの充電機ありますか
+    label_jp: ダンボールをそこに置いてください
+    label_en: Put the boxes there
   correct_ids:
   - a
   choose_mode: any
@@ -401,52 +455,44 @@ activities:
   audio:
   - assets/audio/X_[10-13]_kiku3.mp3
   key_phrases:
-  - いくつですか
-  - 3会議室にイスやつ並べてくれる
-  - 8はい、分かりました
-  - すみません
-  prompt_en: 'L10 activity 13: listen to the CD, then say the phrase that matches the book.'
+  - 会議室にいすを8つ並べてくれる？
+  - すみません、いくつですか。
+  - 8つです。
+  - はい、分かりました。
+  prompt_en: Listen (CD 10-13). What do they ask you to do?
   phrase_meta:
-  - jp: いくつですか
-    tags:
-    - short
-    - polite
-  - jp: 3会議室にイスやつ並べてくれる
+  - jp: 会議室にいすを8つ並べてくれる？
     tags:
     - long
-  - jp: 8はい、分かりました
-    tags:
-    - short
-  - jp: すみません
-    tags:
-    - short
     - polite
+  - jp: すみません、いくつですか。
+    tags:
+    - long
+  - jp: 8つです。
+    tags:
+    - short
+  - jp: はい、分かりました。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L10 activity 13: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Workplace request — chairs.
   choices:
   - id: a
-    label_jp: さんこれ、続き3人持っていってください
+    label_jp: 会議室にいすを8つ並べてください
+    label_en: line up 8 chairs in the meeting room
   - id: b
-    label_jp: いくつですか
+    label_jp: コピーを30枚お願いします
+    label_en: 30 copies please
   - id: c
-    label_jp: 13G重要地15G16G10スチジ18G10G20G21G22G23G10G
+    label_jp: 続きを3人持っていってください
+    label_en: take the sequel to three people
   - id: d
-    label_jp: 8はい、分かりました
-  - id: e
-    label_jp: 3会議室にイスやつ並べてくれる
-  - id: f
-    label_jp: 2あのこれいいですか
-  - id: g
-    label_jp: すみません
-  - id: h
-    label_jp: こと
+    label_jp: スマホを充電してください
+    label_en: charge the phone
   correct_ids:
-  - b
-  - d
-  - e
-  - g
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A14
   kind: listening
   book_activity: 14
@@ -455,25 +501,39 @@ activities:
   audio:
   - assets/audio/X_[10-14]_kiku4.mp3
   key_phrases:
-  - 4もしもしリンサーはいあとで14番に自分質に生きてくださいすみません何時ですか14番午後2時半です分かりました
-  prompt_en: 'L10 activity 14: listen to the CD, then say the phrase that matches the book.'
+  - もしもし、リンジーさん。
+  - あとで14番の面接室に来てください。
+  - 何時ですか。
+  - 午後2時半です。
+  prompt_en: Listen (CD 10-14). Where and when should Lindsay go?
   phrase_meta:
-  - jp: 4もしもしリンサーはいあとで14番に自分質に生きてくださいすみません何時ですか14番午後2時半です分かりました
+  - jp: もしもし、リンジーさん。
     tags:
     - long
-    - polite
+  - jp: あとで14番の面接室に来てください。
+    tags:
+    - long
+  - jp: 何時ですか。
+    tags:
+    - short
+  - jp: 午後2時半です。
+    tags:
+    - short
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L10 activity 14: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Phone message / appointment.
   choices:
   - id: a
-    label_jp: 2えーとダンボルそこに置いてくださいはい、分かりました
+    label_jp: 14番の面接室に午後2時半に来てください
+    label_en: "come to interview room 14 at 2:30 p.m."
   - id: b
-    label_jp: 4もしもしリンサーはいあとで14番に自分質に生きてくださいすみません何時ですか14番午後2時半です分かりました
+    label_jp: ダンボールをそこに置いてください
+    label_en: put the boxes there
   - id: c
-    label_jp: 6デレーザーさん、ごみしてて、はい
+    label_jp: ごみを捨ててください
+    label_en: throw away the trash
   correct_ids:
-  - b
+  - a
   choose_mode: any
 - id: A15
   kind: grammar_form
@@ -483,14 +543,45 @@ activities:
   audio:
   - assets/audio/X_[10-15]_katachi1.mp3
   key_phrases:
-  - これコピー30万用ねないはい30ですね隣の部屋10字までに片付けてくださいはい10字ですね海月にイスやつ並べてくれるすみませんいくつですかやつですはちあとで10字半に自分しつに来てくださいすみませんなんじですか10字半ご後に自判です
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - これ、コピー30枚、お願いします
+  - はい、30枚ですね
+  - 隣の部屋、10時までに片付けてください
+  - はい、10時ですね
+  - 会議室にいすを8つ並べてくれますか
+  - すみません、いくつですか
+  - 8つです
+  - あとで10時半に事務室に来てください
+  prompt_en: Listen, then repeat each line one at a time (8 lines).
   phrase_meta:
-  - jp: これコピー30万用ねないはい30ですね隣の部屋10字までに片付けてくださいはい10字ですね海月にイスやつ並べてくれるすみませんいくつですかやつですはちあとで10字半に自分しつに来てくださいすみませんなんじですか10字半ご後に自判です
+  - jp: これ、コピー30枚、お願いします
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  - jp: はい、30枚ですね
+    tags:
+    - long
+  - jp: 隣の部屋、10時までに片付けてください
+    tags:
+    - long
+  - jp: はい、10時ですね
+    tags:
+    - long
+  - jp: 会議室にいすを8つ並べてくれますか
+    tags:
+    - long
+    - polite
+  - jp: すみません、いくつですか
+    tags:
+    - long
+    - polite
+  - jp: 8つです
+    tags:
+    - short
+    - polite
+  - jp: あとで10時半に事務室に来てください
+    tags:
+    - long
+  book_mode: listen_repeat_all
 - id: A16
   kind: grammar_form
   book_activity: 16
@@ -499,12 +590,60 @@ activities:
   audio:
   - assets/audio/X_[10-16]_katachi2_time.mp3
   key_phrases:
-  - 13G重要地15G16G10スチジ18G10G20G21G22G23G10G
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - 一時
+  - 二時
+  - 三時
+  - 四時
+  - 五時
+  - 六時
+  - 七時
+  - 八時
+  - 九時
+  - 十時
+  - 十一時
+  - 十二時
+  - 半
+  prompt_en: Listen, then repeat each item one at a time (13 items).
   phrase_meta:
-  - jp: 13G重要地15G16G10スチジ18G10G20G21G22G23G10G
+  - jp: 一時
     tags:
-    - long
+    - short
+  - jp: 二時
+    tags:
+    - short
+  - jp: 三時
+    tags:
+    - short
+  - jp: 四時
+    tags:
+    - short
+  - jp: 五時
+    tags:
+    - short
+  - jp: 六時
+    tags:
+    - short
+  - jp: 七時
+    tags:
+    - short
+  - jp: 八時
+    tags:
+    - short
+  - jp: 九時
+    tags:
+    - short
+  - jp: 十時
+    tags:
+    - short
+  - jp: 十一時
+    tags:
+    - short
+  - jp: 十二時
+    tags:
+    - short
+  - jp: 半
+    tags:
+    - short
   book_mode: listen_repeat_all
 - id: A17
   kind: speaking
@@ -514,19 +653,22 @@ activities:
   audio:
   - assets/audio/X_[10-17]_hanasu1-1.mp3
   key_phrases:
-  - 1これ5p30枚をねがいはい30ですね
+  - これ、A4、30枚をお願いします。
+  - はい、30ですね。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: 1これ5p30枚をねがいはい30ですね
+  - jp: これ、A4、30枚をお願いします。
     tags:
     - long
-    - polite
+  - jp: はい、30ですね。
+    tags:
+    - long
   book_mode: dialog
   dialog_script:
-  - speaker: partner
-    jp: 1これ5p30枚をねがいはい30ですね
   - speaker: learner
-    jp: 1これ5p30枚をねがいはい30ですね
+    jp: これ、A4、30枚をお願いします。
+  - speaker: partner
+    jp: はい、30ですね。
   dialog_listen_audio:
   - assets/audio/X_[10-17]_hanasu1-1.mp3
 - id: A18
@@ -565,19 +707,31 @@ activities:
   audio:
   - assets/audio/X_[10-19]_hanasu2-1.mp3
   key_phrases:
-  - にいつやつ並べてくれるすみませんいくつですかやつですわかりました
+  - すみません、いくつですか。
+  - いす、4つ並べてくれる？
+  - わかりました。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: にいつやつ並べてくれるすみませんいくつですかやつですわかりました
+  - jp: すみません、いくつですか。
+    tags:
+    - long
+  - jp: いす、4つ並べてくれる？
     tags:
     - long
     - polite
+  - jp: わかりました。
+    tags:
+    - short
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: にいつやつ並べてくれるすみませんいくつですかやつですわかりました
+    jp: いす、4つ並べてくれる？
   - speaker: learner
-    jp: にいつやつ並べてくれるすみませんいくつですかやつですわかりました
+    jp: すみません、いくつですか。
+  - speaker: partner
+    jp: 4つです。
+  - speaker: learner
+    jp: わかりました。
   dialog_listen_audio:
   - assets/audio/X_[10-19]_hanasu2-1.mp3
 - id: A20
@@ -588,19 +742,30 @@ activities:
   audio:
   - assets/audio/X_[10-20]_hanasu2-2.mp3
   key_phrases:
-  - 同様に自分に来てくださいすみません何時ですか同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に
+  - すみません、何時ですか。
+  - 10時に事務所に来てください。
+  - わかりました。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: 同様に自分に来てくださいすみません何時ですか同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に
+  - jp: すみません、何時ですか。
     tags:
     - long
-    - polite
+  - jp: 10時に事務所に来てください。
+    tags:
+    - long
+  - jp: わかりました。
+    tags:
+    - short
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 同様に自分に来てくださいすみません何時ですか同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に
+    jp: 10時に事務所に来てください。
   - speaker: learner
-    jp: 同様に自分に来てくださいすみません何時ですか同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に
+    jp: すみません、何時ですか。
+  - speaker: partner
+    jp: 10時です。
+  - speaker: learner
+    jp: わかりました。
   dialog_listen_audio:
   - assets/audio/X_[10-20]_hanasu2-2.mp3
 - id: A21
@@ -611,13 +776,38 @@ activities:
   audio:
   - assets/audio/X_[10-21]_kotoba1.mp3
   key_phrases:
-  - 道具えかしますびかりますし母にびかったいい乗りえこっち気付エンピツH天愛天宅ジェスマホの10年期け不正
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 貸します
+  - 借ります
+  - ボールペン
+  - 鉛筆
+  - ホッチキス
+  - スマホの充電器
+  - はさみ
+  prompt_en: Listen to the CD, then say each word one at a time (7 words).
   phrase_meta:
-  - jp: 道具えかしますびかりますし母にびかったいい乗りえこっち気付エンピツH天愛天宅ジェスマホの10年期け不正
+  - jp: 貸します
     tags:
-    - long
+    - short
     - polite
+  - jp: 借ります
+    tags:
+    - short
+    - polite
+  - jp: ボールペン
+    tags:
+    - short
+  - jp: 鉛筆
+    tags:
+    - short
+  - jp: ホッチキス
+    tags:
+    - short
+  - jp: スマホの充電器
+    tags:
+    - short
+  - jp: はさみ
+    tags:
+    - short
   book_mode: vocab_drill
 - id: A22
   kind: vocabulary
@@ -672,10 +862,10 @@ activities:
   audio:
   - assets/audio/X_[10-23]_kiku1.mp3
   key_phrases:
-  - 1すみません落ち着す化してくださいどうぞどうも
+  - すみません落ち着す化してくださいどうぞどうも
   prompt_en: 'L10 activity 23: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 1すみません落ち着す化してくださいどうぞどうも
+  - jp: すみません落ち着す化してくださいどうぞどうも
     tags:
     - long
     - polite
@@ -685,7 +875,7 @@ activities:
   picture_hint_en: 'L10 activity 23: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: 1すみません落ち着す化してくださいどうぞどうも
+    label_jp: すみません落ち着す化してくださいどうぞどうも
   - id: b
     label_jp: 生まブレネさん、一つ並べて
   - id: c
@@ -701,12 +891,12 @@ activities:
   audio:
   - assets/audio/X_[10-24]_kiku2.mp3
   key_phrases:
-  - 2あのこれいいですか
+  - あのこれいいですか
   - いいよはいすみません
   - こと
   prompt_en: 'L10 activity 24: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 2あのこれいいですか
+  - jp: あのこれいいですか
     tags:
     - short
     - polite
@@ -724,15 +914,15 @@ activities:
   - id: a
     label_jp: すみません、お地気数化してください
   - id: b
-    label_jp: 2あのこれいいですか
+    label_jp: あのこれいいですか
   - id: c
     label_jp: こと
   - id: d
-    label_jp: 1すみませんこれいいですか
+    label_jp: すみませんこれいいですか
   - id: e
-    label_jp: 2エンピツありますか
+    label_jp: エンピツありますか
   - id: f
-    label_jp: 3住みません電沢ありますか
+    label_jp: 住みません電沢ありますか
   - id: g
     label_jp: いいよはいすみません
   correct_ids:
@@ -748,46 +938,39 @@ activities:
   audio:
   - assets/audio/X_[10-25]_kiku3.mp3
   key_phrases:
-  - 3住みません電沢ありますか
-  - あるよはいじゃあちょっとかります
-  - 電沢
-  prompt_en: 'L10 activity 25: listen to the CD, then say the phrase that matches the book.'
+  - すみません、辞書ありますか。
+  - あるよ。
+  - じゃあちょっと借ります。
+  prompt_en: Listen (CD 10-25). What do they borrow?
   phrase_meta:
-  - jp: 3住みません電沢ありますか
+  - jp: すみません、辞書ありますか。
     tags:
     - long
-    - polite
-  - jp: あるよはいじゃあちょっとかります
-    tags:
-    - long
-    - polite
-    - casual
-  - jp: 電沢
+  - jp: あるよ。
     tags:
     - short
+  - jp: じゃあちょっと借ります。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L10 activity 25: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Borrowing something at work.
   choices:
   - id: a
-    label_jp: 1これ5p30枚をねがいはい30ですね
+    label_jp: 辞書を借ります
+    label_en: borrows a dictionary
   - id: b
-    label_jp: 3住みません電沢ありますか
+    label_jp: 鉛筆ありますか
+    label_en: Do you have a pencil?
   - id: c
-    label_jp: 同理の部屋10時までに片付けてくださいはい10時ですね
+    label_jp: コピーを30枚お願いします
+    label_en: 30 copies please
   - id: d
-    label_jp: あるよはいじゃあちょっとかります
-  - id: e
-    label_jp: 2エンピツありますか
-  - id: f
-    label_jp: 電沢
-  - id: g
-    label_jp: 隣の部屋、10時までに片付けてください
+    label_jp: 隣の部屋を片付けてください
+    label_en: tidy the next room
   correct_ids:
-  - b
-  - d
-  - f
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A26
   kind: listening
   book_activity: 26
@@ -796,13 +979,13 @@ activities:
   audio:
   - assets/audio/X_[10-26]_kiku4.mp3
   key_phrases:
-  - 4あの、スマホの10電気ありますか
+  - あの、スマホの10電気ありますか
   - かりてもいいですか
   - ありますよ
   - すみません
   prompt_en: 'L10 activity 26: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 4あの、スマホの10電気ありますか
+  - jp: あの、スマホの10電気ありますか
     tags:
     - long
     - polite
@@ -824,13 +1007,13 @@ activities:
   picture_hint_en: 'L10 activity 26: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: 4あの、スマホの10電気ありますか
+    label_jp: あの、スマホの10電気ありますか
   - id: b
-    label_jp: 2えーとダンボルそこに置いてくださいはい、分かりました
+    label_jp: えーとダンボルそこに置いてくださいはい、分かりました
   - id: c
-    label_jp: 3スマホの10年期ありますか
+    label_jp: スマホの10年期ありますか
   - id: d
-    label_jp: 1電タクありますか
+    label_jp: 電タクありますか
   - id: e
     label_jp: ありますよ
   - id: f
@@ -872,28 +1055,28 @@ activities:
   audio:
   - assets/audio/X_[10-28]_hanasu1-1.mp3
   key_phrases:
-  - すみません
-  - 1すみませんこれいいですか
-  - どうぞ
+  - どうぞ。
+  - すみません、これいいですか。
+  - すみません。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: すみません
+  - jp: どうぞ。
     tags:
     - short
-    - polite
-  - jp: 1すみませんこれいいですか
+  - jp: すみません、これいいですか。
     tags:
     - long
-    - polite
-  - jp: どうぞ
+  - jp: すみません。
     tags:
     - short
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 1すみませんこれいいですか
+    jp: すみません、これいいですか。
   - speaker: learner
-    jp: すみません
+    jp: どうぞ。
+  - speaker: partner
+    jp: すみません。
   dialog_listen_audio:
   - assets/audio/X_[10-28]_hanasu1-1.mp3
 - id: A29
@@ -968,30 +1151,34 @@ activities:
   audio:
   - assets/audio/X_[10-31]_hanasu2.mp3
   key_phrases:
-  - だわさじゃあちょっとかります
-  - ありますよすみませんかり手もいいですか
-  - 2あのースマホの充電機ありますか
+  - ありますよ。
+  - すみません、借りてもいいですか。
+  - あのー、スマホの充電器ありますか。
+  - どうぞ。じゃあ、ちょっと借ります。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: だわさじゃあちょっとかります
+  - jp: ありますよ。
+    tags:
+    - short
+  - jp: すみません、借りてもいいですか。
     tags:
     - long
-    - polite
-    - casual
-  - jp: ありますよすみませんかり手もいいですか
+  - jp: あのー、スマホの充電器ありますか。
     tags:
     - long
-    - polite
-  - jp: 2あのースマホの充電機ありますか
+  - jp: どうぞ。じゃあ、ちょっと借ります。
     tags:
     - long
-    - polite
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 2あのースマホの充電機ありますか
+    jp: あのー、スマホの充電器ありますか。
   - speaker: learner
-    jp: だわさじゃあちょっとかります
+    jp: ありますよ。
+  - speaker: partner
+    jp: すみません、借りてもいいですか。
+  - speaker: learner
+    jp: どうぞ。じゃあ、ちょっと借ります。
   dialog_listen_audio:
   - assets/audio/X_[10-31]_hanasu2.mp3
 - id: KANJI
@@ -1015,7 +1202,7 @@ activities:
     reading: あさ
     gloss_en: morning
   - kanji: 時
-    reading: null
+    reading: じ
     gloss_en: o'clock / hour
   - kanji: 昼
     reading: ひる
@@ -1033,11 +1220,11 @@ activities:
     reading: まい
     gloss_en: counter for flat objects
   kanji_sentences: &id002
-  - 仕
-  - 朝、10時に、部
-  - 12時半から、昼休
-  - 明
-  - コピー、30枚お願
+  - 仕事は、9　時15　分からです。
+  - 朝、10　時に、部屋に来てください。
+  - 12　時半から、昼休みです。
+  - 明日の夜までにお願いします。
+  - コピー、30　枚お願いします。
   picture_has_image: false
 - id: CULTURE
   kind: culture
@@ -1159,27 +1346,37 @@ grammar:
   - 25
   examples: []
 vocab:
-- jp: 道具えかしますびかりますし母にびかったいい乗りえこっち気付エンピツH天愛天宅ジェスマホの10年期け不正
+- jp: 貸します
   reading: ''
   en: ''
   tags:
   - L10
-- jp: 3スマホの10年期ありますか
+- jp: 借ります
   reading: ''
   en: ''
   tags:
   - L10
-- jp: 2エンピツありますか
+- jp: ボールペン
   reading: ''
   en: ''
   tags:
   - L10
-- jp: 4ほちきすありますか
+- jp: 鉛筆
   reading: ''
   en: ''
   tags:
   - L10
-- jp: 1電タクありますか
+- jp: ホッチキス
+  reading: ''
+  en: ''
+  tags:
+  - L10
+- jp: スマホの充電器
+  reading: ''
+  en: ''
+  tags:
+  - L10
+- jp: はさみ
   reading: ''
   en: ''
   tags:
@@ -1210,104 +1407,61 @@ quiz_bank:
   prompt_en: 'In a new everyday situation, show you can: Can make simple requests at work or home.'
   spoken_required: true
 quiz_scenarios:
-- can_do_id: CD_L10_40
-  partner_jp: では、お願いします。
-  expected:
-  - 貸して
-  - ください
-  hint_en: 'Situation: Can ask someone to lend you something. Reply using lesson phrases.'
-- can_do_id: CD_L10_40
-  partner_jp: もう一度、お願いします。
-  expected:
-  - 貸して
-  - ください
-  hint_en: Again — ものを貸してくれるよう頼むことができる。
-- can_do_id: CD_L10_41
-  partner_jp: では、お願いします。
-  expected:
-  - ください
-  hint_en: 'Situation: Can make simple requests at work or home. Reply using lesson phrases.'
-- can_do_id: CD_L10_41
-  partner_jp: もう一度、お願いします。
-  expected:
-  - ください
-  hint_en: Again — 職場や家で簡単な依頼をすることができる。
-- can_do_id: CD_L10_40
-  partner_jp: 1これ5p30枚をねがいはい30ですね
-  expected:
-  - 1これ5p30枚をねがいはい30ですね
-  hint_en: Reply as in the book dialog (activity 17).
-- can_do_id: CD_L10_41
-  partner_jp: 隣の部屋、10時までに片付けてください
-  expected:
-  - はい、10時ですね
-  - 隣の部屋、10時までに片付けてください
-  hint_en: Reply as in the book dialog (activity 18).
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L10_39
-  partner_jp: にいつやつ並べてくれるすみませんいくつですかやつですわかりました
+  setup_en: Your supervisor gives a short instruction. Confirm what you should do.
+  goal_en: Learner shows they understood a simple work instruction.
+  partner_jp: 隣の部屋、十時までに片付けてください。
   expected:
-  - にいつやつ並べてくれるすみませんいくつですかやつですわかりました
-  hint_en: Reply as in the book dialog (activity 19).
-- can_do_id: CD_L10_40
-  partner_jp: 同様に自分に来てくださいすみません何時ですか同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に
-  expected:
-  - 同様に自分に来てくださいすみません何時ですか同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に同様に
-  hint_en: Reply as in the book dialog (activity 20).
+  - "十時"
+  - "片付け"
+  - "わかりました"
+  - "はい"
+  hint_en: Your supervisor gives a short instruction. Confirm what you should do.
 - can_do_id: CD_L10_39
-  partner_jp: 1すみませんこれいいですか
+  setup_en: Yuki asks you to arrange cups. Confirm how many.
+  goal_en: Learner understands and confirms the instruction.
+  partner_jp: コップを八つ並べてください。
   expected:
-  - すみません
-  - 1すみませんこれいいですか
-  - どうぞ
-  hint_en: Reply as in the book dialog (activity 28).
+  - "八つ"
+  - "わかりました"
+  - "はい"
+  hint_en: Yuki asks you to arrange cups. Confirm how many.
 - can_do_id: CD_L10_40
-  partner_jp: すみません、お地気数化してください
+  setup_en: You need a charger. Ask to borrow it.
+  goal_en: Learner asks to borrow something (貸して / 借りてもいい).
+  partner_jp: はい、何ですか？
   expected:
-  - すみません
-  - すみません、お地気数化してください
-  - どうぞ
-  hint_en: Reply as in the book dialog (activity 29).
+  - "貸してください"
+  - "借りてもいいですか"
+  - "ありますか"
+  hint_en: You need a charger. Ask to borrow it.
+- can_do_id: CD_L10_40
+  setup_en: Ask to borrow a pen.
+  goal_en: Learner makes a lend-request.
+  partner_jp: すみません、ちょっと…
+  expected:
+  - "貸してください"
+  - "ペン"
+  - "いいですか"
+  hint_en: Ask to borrow a pen.
 - can_do_id: CD_L10_41
-  partner_jp: おちきつかり手もいいですか
+  setup_en: Make a simple request at work (copy / clean / bring).
+  goal_en: Learner makes a simple request with ください.
+  partner_jp: 何か手伝いましょうか？
   expected:
-  - すみません
-  - おちきつかり手もいいですか
-  - どうぞ
-  hint_en: Reply as in the book dialog (activity 30).
-- can_do_id: CD_L10_39
-  partner_jp: 2あのースマホの充電機ありますか
-  expected:
-  - だわさじゃあちょっとかります
-  - ありますよすみませんかり手もいいですか
-  - 2あのースマホの充電機ありますか
-  hint_en: Reply as in the book dialog (activity 31).
-- can_do_id: CD_L10_39
-  partner_jp: 1すみませんちょっとお手伝ってくださいはい。
-  expected:
-  - 1すみませんちょっとお手伝ってくださいはい
-  - 4名さん、テーブルの上、片付けてください
-  - はい、分かりました
-  - 生まブレネさん、一つ並べて
-  hint_en: Can understand short simple instructions at work.
-- can_do_id: CD_L10_40
-  partner_jp: 2えーとダンボルそこに置いてくださいはい、分かりました。
-  expected:
-  - 2えーとダンボルそこに置いてくださいはい、分かりました
-  - ごっちょっとそこのドライバーとってはいどうぞありがとう
-  - 813はいまどをしめてくれるはい
-  - 1これコピー30枚をねがいはい30ですね
-  - 貸して
-  - ください
-  hint_en: Can ask someone to lend you something.
+  - "ください"
+  - "お願いします"
+  hint_en: Make a simple request at work (copy / clean / bring).
 - can_do_id: CD_L10_41
-  partner_jp: さんこれ、続き3人持っていってください。
+  setup_en: Ask someone to wait a moment.
+  goal_en: Learner makes a short request.
+  partner_jp: いま、いいですか？
   expected:
-  - さんこれ、続き3人持っていってください
-  - はい、分かりました
-  - 6デレーザーさん、ごみしてて、はい
-  - グロジェクターとディマカン持って来てくれる
-  - ください
-  hint_en: Can make simple requests at work or home.
+  - "ちょっと待ってください"
+  - "ください"
+  - "お願いします"
+  hint_en: Ask someone to wait a moment.
 english_notes: 'Have you had a job before? What kind of work did you do?
 
   Can listen to short and simple instructions at work and understand what to do.

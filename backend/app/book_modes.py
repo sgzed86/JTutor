@@ -33,7 +33,7 @@ FLOW_BY_MODE: dict[str, list[str]] = {
     "pronunciation": ["listen"],  # expanded per phrase
     "vocab_drill": ["listen"],  # expanded per phrase
     "kana_trace": ["listen", "trace"],
-    "culture_read": ["listen", "reflect"],
+    "culture_read": ["reflect"],
     "kanji_words": ["kanji_study"],  # expanded in flow_substeps()
     "repeat": ["listen", "repeat"],  # legacy default
 }
@@ -104,11 +104,11 @@ SUBSTEPS: dict[str, SubStepSpec] = {
     ),
     "swap_learner": SubStepSpec(
         "swap_learner", True, False, False, True,
-        "Swap — you first", "Roles swapped: you speak first.",
+        "Swap — you first", "Roles swapped: you speak the yellow line first.",
     ),
     "swap_partner": SubStepSpec(
         "swap_partner", False, True, False, False,
-        "Swap — partner", "Roles swapped: Yuki replies.",
+        "Swap — partner", "Roles swapped: Yuki speaks the orange line.",
     ),
     "pronounce": SubStepSpec(
         "pronounce", True, False, False, True,
@@ -152,10 +152,14 @@ def book_mode(activity: dict | None) -> str:
     return (activity.get("book_mode") or "listen_repeat").strip()
 
 
+def activity_key_phrases(activity: dict | None) -> list[str]:
+    return [str(p).strip() for p in (activity or {}).get("key_phrases") or [] if str(p).strip()]
+
+
 def flow_substeps(activity: dict | None) -> list[str]:
     mode = book_mode(activity)
     if mode == "listen_repeat_all":
-        phrases = [p for p in (activity or {}).get("key_phrases") or [] if p]
+        phrases = activity_key_phrases(activity)
         n = max(len(phrases), 1)
         return ["listen"] + ["repeat"] * n
     if mode == "listen_fill":
@@ -167,14 +171,13 @@ def flow_substeps(activity: dict | None) -> list[str]:
         n = max(len(blanks), 1)
         return ["listen"] + ["fill"] * n
     if mode in ("vocab_drill", "pronunciation"):
-        phrases = [p for p in (activity or {}).get("key_phrases") or [] if p]
+        phrases = activity_key_phrases(activity)
         n = max(len(phrases), 1)
         step = "vocab_say" if mode == "vocab_drill" else "pronounce"
         return ["listen"] + [step] * n
     if mode == "culture_read":
-        # Skip empty listen when there is no audio.
-        audio = list((activity or {}).get("audio") or [])
-        return ["listen", "reflect"] if audio else ["reflect"]
+        # Student reads Life & culture on their own — no listen/CD auto chain.
+        return ["reflect"]
     if mode == "reading":
         if (activity or {}).get("choices") or (activity or {}).get("blanks"):
             return ["read", "read_check"]

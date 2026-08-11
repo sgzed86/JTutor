@@ -100,12 +100,32 @@ activities:
   audio:
   - assets/audio/X_[12-03]_kotoba1.mp3
   key_phrases:
-  - カレンダーえ今日ビ明日シ朝ってビ今週いい来週
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - カレンダー
+  - 今日
+  - 明日
+  - あさって
+  - 今週
+  - 来週
+  prompt_en: Listen to the CD, then say each word one at a time (6 words).
   phrase_meta:
-  - jp: カレンダーえ今日ビ明日シ朝ってビ今週いい来週
+  - jp: カレンダー
     tags:
-    - long
+    - short
+  - jp: 今日
+    tags:
+    - short
+  - jp: 明日
+    tags:
+    - short
+  - jp: あさって
+    tags:
+    - short
+  - jp: 今週
+    tags:
+    - short
+  - jp: 来週
+    tags:
+    - short
   book_mode: vocab_drill
 - id: A4
   kind: vocabulary
@@ -115,10 +135,35 @@ activities:
   audio:
   - assets/audio/X_[12-04]_kotoba2.mp3
   key_phrases:
-  - 1いつですかあさってです2いつですかきょうと明日です3いつですか今週の土曜日です4いつですか5いつですか来週の月曜日です6いつですか来週のかよびともくよびです7いつですか来週の金曜日といおびです3いつですか来週の金曜日です3いつですか3いつですか
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - いつですか。あさってです
+  - いつですか。きょうとあしたです
+  - いつですか。今週の土曜日です
+  - いつですか。来週の月曜日です
+  - いつですか。来週の火曜日と木曜日です
+  - いつですか。来週の金曜日と日曜日です
+  prompt_en: Listen to the CD, then say each word one at a time (6 words).
   phrase_meta:
-  - jp: 1いつですかあさってです2いつですかきょうと明日です3いつですか今週の土曜日です4いつですか5いつですか来週の月曜日です6いつですか来週のかよびともくよびです7いつですか来週の金曜日といおびです3いつですか来週の金曜日です3いつですか3いつですか
+  - jp: いつですか。あさってです
+    tags:
+    - long
+    - polite
+  - jp: いつですか。きょうとあしたです
+    tags:
+    - long
+    - polite
+  - jp: いつですか。今週の土曜日です
+    tags:
+    - long
+    - polite
+  - jp: いつですか。来週の月曜日です
+    tags:
+    - long
+    - polite
+  - jp: いつですか。来週の火曜日と木曜日です
+    tags:
+    - long
+    - polite
+  - jp: いつですか。来週の金曜日と日曜日です
     tags:
     - long
     - polite
@@ -164,7 +209,7 @@ activities:
   key_phrases:
   - うちやまさんは、行きますか
   - そうですか
-  - 2うちやまさん、来週、夏松りがありますね
+  - うちやまさん、来週、夏松りがありますね
   - いいえ、行きますね
   prompt_en: 'L12 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
@@ -176,7 +221,7 @@ activities:
     tags:
     - short
     - polite
-  - jp: 2うちやまさん、来週、夏松りがありますね
+  - jp: うちやまさん、来週、夏松りがありますね
     tags:
     - long
     - polite
@@ -189,7 +234,7 @@ activities:
   picture_hint_en: 'L12 activity 6: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: よん子侍一緒に飲みに行きませんか
+    label_jp: 子侍一緒に飲みに行きませんか
   - id: b
     label_jp: そうですか
   - id: c
@@ -201,7 +246,7 @@ activities:
   - id: f
     label_jp: うちやまさんは、行きますか
   - id: g
-    label_jp: 2うちやまさん、来週、夏松りがありますね
+    label_jp: うちやまさん、来週、夏松りがありますね
   - id: h
     label_jp: いいえ、行きませんそうですか
   correct_ids:
@@ -245,7 +290,7 @@ activities:
   picture_hint_en: 'L12 activity 7: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: 一緒に行きませんか
+    label_jp: 緒に行きませんか
   - id: b
     label_jp: みんなで一緒に焼き肉を食べに行きませんか
   - id: c
@@ -255,7 +300,7 @@ activities:
   - id: e
     label_jp: えぇ、そうですか
   - id: f
-    label_jp: 2うちやまさん、来週、夏松りがありますね
+    label_jp: うちやまさん、来週、夏松りがありますね
   - id: g
     label_jp: どこでありますか
   - id: h
@@ -274,25 +319,35 @@ activities:
   audio:
   - assets/audio/X_[12-08]_kiku4.mp3
   key_phrases:
-  - 4アントによさん今週の金曜日見る子さんの体の試合に行きますかもちろん行きます私も行きます楽しみですねそうですね
-  prompt_en: 'L12 activity 8: listen to the CD, then say the phrase that matches the book.'
+  - アントニオさん、今週の金曜日、サッカーの試合に行きますか。
+  - もちろん行きます。私も行きます。
+  - 楽しみですね。
+  prompt_en: Listen (CD 12-08). Are they going to the match?
   phrase_meta:
-  - jp: 4アントによさん今週の金曜日見る子さんの体の試合に行きますかもちろん行きます私も行きます楽しみですねそうですね
+  - jp: アントニオさん、今週の金曜日、サッカーの試合に行きますか。
     tags:
     - long
-    - polite
+  - jp: もちろん行きます。私も行きます。
+    tags:
+    - long
+  - jp: 楽しみですね。
+    tags:
+    - short
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L12 activity 8: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Invitation / plans.
   choices:
   - id: a
-    label_jp: 一時半からです一時半大丈夫ですじゃあ一緒に行きましょう
+    label_jp: 金曜日のサッカーの試合に行きます
+    label_en: "going to Friday's soccer match"
   - id: b
-    label_jp: えぇ、そうですか
+    label_jp: 一時半から映画に行きます
+    label_en: "movie at 1:30"
   - id: c
-    label_jp: 4アントによさん今週の金曜日見る子さんの体の試合に行きますかもちろん行きます私も行きます楽しみですねそうですね
+    label_jp: 行きません。残念です
+    label_en: not going; too bad
   correct_ids:
-  - c
+  - a
   choose_mode: any
 - id: A9
   kind: listening
@@ -302,53 +357,43 @@ activities:
   audio:
   - assets/audio/X_[12-09]_kiku5.mp3
   key_phrases:
-  - 業さん、明日のボーネン会に行きますか
-  - そうですか、残念です
-  - おぉ、私は行きます
-  - ごっ
-  prompt_en: 'L12 activity 9: listen to the CD, then say the phrase that matches the book.'
+  - 業さん、明日の忘年会に行きますか。
+  - ごめんなさい。
+  - 私は行きます。
+  - そうですか、残念です。
+  prompt_en: Listen (CD 12-09). Who is going to the year-end party?
   phrase_meta:
-  - jp: 業さん、明日のボーネン会に行きますか
+  - jp: 業さん、明日の忘年会に行きますか。
     tags:
     - long
-    - polite
-  - jp: そうですか、残念です
+  - jp: ごめんなさい。
     tags:
     - short
-    - polite
-  - jp: おぉ、私は行きます
+  - jp: 私は行きます。
     tags:
     - short
-    - polite
-  - jp: ごっ
+  - jp: そうですか、残念です。
     tags:
-    - short
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L12 activity 9: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Invitation — going or not.
   choices:
   - id: a
-    label_jp: おぉ、私は行きます
+    label_jp: 一人は行って、一人は行きません
+    label_en: "one goes, one doesn't"
   - id: b
-    label_jp: にそりゃさん、みんなで一緒に焼きに行こう旅に行きませんか
+    label_jp: 二人とも行きます
+    label_en: both go
   - id: c
-    label_jp: いいですね、いつですか
+    label_jp: タイフェスティバルに行きます
+    label_en: going to a Thai festival
   - id: d
-    label_jp: どこですか
-  - id: e
-    label_jp: そうですか、残念です
-  - id: f
-    label_jp: 日曜日にサクラコを演でタイフェスティバルがありますねガウインさんは行きますか
-  - id: g
-    label_jp: ごっ
-  - id: h
-    label_jp: 業さん、明日のボーネン会に行きますか
+    label_jp: 日曜日に焼肉に行きます
+    label_en: yakiniku on Sunday
   correct_ids:
   - a
-  - e
-  - g
-  - h
-  choose_mode: all
+  choose_mode: any
 - id: A10
   kind: grammar_form
   book_activity: 10
@@ -409,24 +454,22 @@ activities:
   audio:
   - assets/audio/X_[12-12]_hanasu1.mp3
   key_phrases:
-  - はい、行きます私も行きます楽しみですね
-  - 日曜日にサクラコを演でタイフェスティバルがありますねガウインさんは行きますか
+  - はい、行きます。私も行きます。楽しみですね。
+  - 日曜日に桜公園でタイフェスティバルがありますね。ガウインさんは行きますか。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: はい、行きます私も行きます楽しみですね
+  - jp: はい、行きます。私も行きます。楽しみですね。
     tags:
     - long
-    - polite
-  - jp: 日曜日にサクラコを演でタイフェスティバルがありますねガウインさんは行きますか
+  - jp: 日曜日に桜公園でタイフェスティバルがありますね。ガウインさんは行きますか。
     tags:
     - long
-    - polite
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 日曜日にサクラコを演でタイフェスティバルがありますねガウインさんは行きますか
+    jp: 日曜日に桜公園でタイフェスティバルがありますね。ガウインさんは行きますか。
   - speaker: learner
-    jp: はい、行きます私も行きます楽しみですね
+    jp: はい、行きます。私も行きます。楽しみですね。
   dialog_listen_audio:
   - assets/audio/X_[12-12]_hanasu1.mp3
 - id: A13
@@ -467,7 +510,7 @@ activities:
   key_phrases:
   - ありなさんも一緒に行きませんか
   - どこですか
-  - 一今週、みんなでハイキングに行きます
+  - 今週、みんなでハイキングに行きます
   - あさってですか
   prompt_en: 'L12 activity 14: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
@@ -479,7 +522,7 @@ activities:
     tags:
     - short
     - polite
-  - jp: 一今週、みんなでハイキングに行きます
+  - jp: 今週、みんなでハイキングに行きます
     tags:
     - long
     - polite
@@ -500,7 +543,7 @@ activities:
   - id: d
     label_jp: どこでありますか
   - id: e
-    label_jp: 一今週、みんなでハイキングに行きます
+    label_jp: 今週、みんなでハイキングに行きます
   - id: f
     label_jp: どこですか
   - id: g
@@ -551,13 +594,13 @@ activities:
   - id: a
     label_jp: 重要化です来週の会曜日ですね、会曜日はちょっと、住みませんそうですか
   - id: b
-    label_jp: 1ガウインさん、日曜日に、サクラコウェンデ台フェスキバルがありますね
+    label_jp: ガウインさん、日曜日に、サクラコウェンデ台フェスキバルがありますね
   - id: c
     label_jp: みんなで一緒に焼き肉を食べに行きませんか
   - id: d
     label_jp: にそりゃさん、みんなで一緒に焼きに行こう旅に行きませんか
   - id: e
-    label_jp: 2うちやまさん、来週、夏松りがありますね
+    label_jp: うちやまさん、来週、夏松りがありますね
   - id: f
     label_jp: マーフィルさんも、上手にさんも行きますよ
   - id: g
@@ -578,55 +621,43 @@ activities:
   audio:
   - assets/audio/X_[12-16]_kiku3.mp3
   key_phrases:
-  - さんあにたさん明日の夜、サクラプラザで映画があります一緒に見に行きませんか
-  - 一時半からです一時半大丈夫ですじゃあ一緒に行きましょう
-  - 男は辛いようですうーん何時からですか
-  - いいですね何の映画ですか
-  prompt_en: 'L12 activity 16: listen to the CD, then say the phrase that matches the book.'
+  - アニタさん、明日の夜、サクラプラザで映画があります。一緒に見に行きませんか。
+  - いいですね。何の映画ですか。
+  - 男はつらいよ、です。
+  - 一時半からです。じゃあ一緒に行きましょう。
+  prompt_en: Listen (CD 12-16). What plans do they make?
   phrase_meta:
-  - jp: さんあにたさん明日の夜、サクラプラザで映画があります一緒に見に行きませんか
+  - jp: アニタさん、明日の夜、サクラプラザで映画があります。一緒に見に行きませんか。
     tags:
     - long
-    - polite
-  - jp: 一時半からです一時半大丈夫ですじゃあ一緒に行きましょう
+  - jp: いいですね。何の映画ですか。
     tags:
     - long
-    - polite
-    - casual
-  - jp: 男は辛いようですうーん何時からですか
+  - jp: 男はつらいよ、です。
     tags:
     - long
-    - polite
-  - jp: いいですね何の映画ですか
+  - jp: 一時半からです。じゃあ一緒に行きましょう。
     tags:
     - long
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L12 activity 16: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Movie invitation.
   choices:
   - id: a
-    label_jp: 一緒にみに行きませんか
+    label_jp: 明日の夜、一時半から映画を見に行きます
+    label_en: "movie tomorrow night at 1:30"
   - id: b
-    label_jp: じゃあ、行きましょう
+    label_jp: サッカーの試合に行きます
+    label_en: going to a soccer match
   - id: c
-    label_jp: いいですね何の映画ですか
+    label_jp: 忘年会に行きます
+    label_en: year-end party
   - id: d
-    label_jp: 一時半からです一時半大丈夫ですじゃあ一緒に行きましょう
-  - id: e
-    label_jp: さんあにたさん明日の夜、サクラプラザで映画があります一緒に見に行きませんか
-  - id: f
-    label_jp: うちやまさんは、行きますか
-  - id: g
-    label_jp: じゃあ行きましょう
-  - id: h
-    label_jp: 男は辛いようですうーん何時からですか
+    label_jp: 行きません。残念です
+    label_en: not going
   correct_ids:
-  - c
-  - d
-  - e
-  - h
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A17
   kind: listening
   book_activity: 17
@@ -635,13 +666,13 @@ activities:
   audio:
   - assets/audio/X_[12-17]_kiku4.mp3
   key_phrases:
-  - よん子侍一緒に飲みに行きませんか
+  - 子侍一緒に飲みに行きませんか
   - いつですか
   - そうですか
   - 今日はダメです
   prompt_en: 'L12 activity 17: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: よん子侍一緒に飲みに行きませんか
+  - jp: 子侍一緒に飲みに行きませんか
     tags:
     - long
     - polite
@@ -664,13 +695,13 @@ activities:
   - id: a
     label_jp: みんなで一緒に焼き肉を食べに行きませんか
   - id: b
-    label_jp: よん子侍一緒に飲みに行きませんか
+    label_jp: 子侍一緒に飲みに行きませんか
   - id: c
     label_jp: 今日はダメです
   - id: d
     label_jp: そうですか
   - id: e
-    label_jp: 一緒に飲みに行きませんか
+    label_jp: 緒に飲みに行きませんか
   - id: f
     label_jp: まやさんは行きますか
   - id: g
@@ -791,30 +822,30 @@ activities:
   audio:
   - assets/audio/X_[12-21]_hanasu2.mp3
   key_phrases:
-  - 重要化ですすみません重要化はちょっとじゃあまた今度行きましょう
-  - いいですねいつですか
-  - 一緒に焼き肉を食べに行きませんか
+  - いいですね。いつですか。
+  - すみません、土曜日はちょっと…。じゃあまた今度行きましょう。
+  - 一緒に焼き肉を食べに行きませんか。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: 重要化ですすみません重要化はちょっとじゃあまた今度行きましょう
+  - jp: いいですね。いつですか。
     tags:
     - long
-    - polite
-    - casual
-  - jp: いいですねいつですか
-    tags:
-    - short
-    - polite
-  - jp: 一緒に焼き肉を食べに行きませんか
+  - jp: すみません、土曜日はちょっと…。じゃあまた今度行きましょう。
     tags:
     - long
-    - polite
+  - jp: 一緒に焼き肉を食べに行きませんか。
+    tags:
+    - long
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 一緒に焼き肉を食べに行きませんか
+    jp: 一緒に焼き肉を食べに行きませんか。
   - speaker: learner
-    jp: 重要化ですすみません重要化はちょっとじゃあまた今度行きましょう
+    jp: いいですね。いつですか。
+  - speaker: partner
+    jp: 土曜日です。
+  - speaker: learner
+    jp: すみません、土曜日はちょっと…。じゃあまた今度行きましょう。
   dialog_listen_audio:
   - assets/audio/X_[12-21]_hanasu2.mp3
 - id: KANJI
@@ -852,9 +883,9 @@ activities:
     reading: ねんがつにちきょうこんしゅうこんど
     gloss_en: next time / this time
   kanji_sentences: &id002
-  - 今週、みんなで映
-  - また、今度行
-  - 今日は、2021年12月31日です。
+  - 今週、みんなで映画に行きませんか？
+  - また、今度行きましょう。
+  - 今日は、2021　年12　月31　日です。
   picture_has_image: false
 - id: CULTURE
   kind: culture
@@ -970,12 +1001,67 @@ grammar:
   - 32
   examples: []
 vocab:
-- jp: カレンダーえ今日ビ明日シ朝ってビ今週いい来週
+- jp: いつ
   reading: ''
   en: ''
   tags:
   - L12
-- jp: 1いつですかあさってです2いつですかきょうと明日です3いつですか今週の土曜日です4いつですか5いつですか来週の月曜日です6いつですか来週のかよびともくよびです7いつですか来週の金曜日といおびです3いつですか来週の金曜日です3いつですか3いつですか
+- jp: きょう
+  reading: ''
+  en: ''
+  tags:
+  - L12
+- jp: あした
+  reading: ''
+  en: ''
+  tags:
+  - L12
+- jp: あさって
+  reading: ''
+  en: ''
+  tags:
+  - L12
+- jp: 今週
+  reading: ''
+  en: ''
+  tags:
+  - L12
+- jp: 来週
+  reading: ''
+  en: ''
+  tags:
+  - L12
+- jp: 月曜日
+  reading: ''
+  en: ''
+  tags:
+  - L12
+- jp: 火曜日
+  reading: ''
+  en: ''
+  tags:
+  - L12
+- jp: 水曜日
+  reading: ''
+  en: ''
+  tags:
+  - L12
+- jp: 木曜日
+  reading: ''
+  en: ''
+  tags:
+  - L12
+- jp: 金曜日
+  reading: ''
+  en: ''
+  tags:
+  - L12
+- jp: 土曜日
+  reading: ''
+  en: ''
+  tags:
+  - L12
+- jp: 日曜日
   reading: ''
   en: ''
   tags:
@@ -1006,71 +1092,62 @@ quiz_bank:
   prompt_en: 'In a new everyday situation, show you can: Can suggest a simple plan for going out.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L12_47
-  partner_jp: では、お願いします。
+  setup_en: Invite Yuki to eat yakiniku together.
+  goal_en: Learner invites someone (ませんか / 一緒).
+  partner_jp: 今週、ひまです。
   expected:
-  - ませんか
-  - 一緒
-  hint_en: 'Situation: Can invite someone to do something together. Reply using lesson phrases.'
+  - "行きませんか"
+  - "ませんか"
+  - "一緒"
+  hint_en: Invite Yuki to eat yakiniku together.
 - can_do_id: CD_L12_47
-  partner_jp: もう一度、お願いします。
+  setup_en: Invite a friend to a festival.
+  goal_en: Learner makes an invitation.
+  partner_jp: 日曜日にタイフェスティバルがありますよ。
   expected:
-  - ませんか
-  - 一緒
-  hint_en: Again — 一緒に何かをするよう誘うことができる。
-- can_do_id: CD_L12_49
-  partner_jp: 日曜日にサクラコを演でタイフェスティバルがありますねガウインさんは行きますか
-  expected:
-  - はい、行きます私も行きます楽しみですね
-  - 日曜日にサクラコを演でタイフェスティバルがありますねガウインさんは行きますか
-  hint_en: Reply as in the book dialog (activity 12).
-- can_do_id: CD_L12_47
-  partner_jp: 今週の金曜日、ミルクさんのカラテの試合に行きますか
-  expected:
-  - いいえ、行きませんそうですか
-  - 今週の金曜日、ミルクさんのカラテの試合に行きますか
-  hint_en: Reply as in the book dialog (activity 13).
+  - "行きませんか"
+  - "一緒に"
+  - "ませんか"
+  hint_en: Invite a friend to a festival.
 - can_do_id: CD_L12_48
-  partner_jp: ありなさんも一緒に行きませんか
+  setup_en: Yuki invites you. Accept.
+  goal_en: Learner accepts an invitation.
+  partner_jp: 一緒に焼き肉を食べに行きませんか？
   expected:
-  - じゃあ行きましょう
-  - 今週、みんなでハイキングに行きます
-  - 今度の土曜日です
-  - ありなさんも一緒に行きませんか
-  hint_en: Reply as in the book dialog (activity 20).
-- can_do_id: CD_L12_49
-  partner_jp: 一緒に焼き肉を食べに行きませんか
-  expected:
-  - 重要化ですすみません重要化はちょっとじゃあまた今度行きましょう
-  - いいですねいつですか
-  - 一緒に焼き肉を食べに行きませんか
-  hint_en: Reply as in the book dialog (activity 21).
-- can_do_id: CD_L12_47
-  partner_jp: 1月2月3月4月5月6月7月8月9月10月11月12月7月。
-  expected:
-  - 1月2月3月4月5月6月7月8月9月10月11月12月7月
-  - 1いつですかあさってです2いつですかきょうと明日です3いつですか今週の土曜日です4いつですか5いつですか来週の月曜日です6いつですか来週のかよびともくよびです7いつですか来週の金曜日といおびです3いつですか来週の金曜日です3いつですか3いつですか
-  - まやさんは行きますか
-  - どこでありますか
-  - ませんか
-  - 一緒
-  hint_en: Can invite someone to do something together.
+  - "いいですね"
+  - "行きましょう"
+  - "はい"
+  hint_en: Yuki invites you. Accept.
 - can_do_id: CD_L12_48
-  partner_jp: ついたちふつかみっかよっかいつかむいかなのかよおかここのかトーカ11日12日13日14日15日16日17日18日10日あつか21日22日23日24日25日26日27日28日29日30日31日何日。
+  setup_en: "Yuki invites you, but you're busy. Decline politely."
+  goal_en: Learner declines simply and politely.
+  partner_jp: 今度の土曜日、ハイキングに行きませんか？
   expected:
-  - ついたちふつかみっかよっかいつかむいかなのかよおかここのかトーカ11日12日13日14日15日16日17日18日10日あつか21日22日23日24日25日26日27日28日29日30日31日何日
-  - 1ガウインさん、日曜日に、サクラコウェンデ台フェスキバルがありますね
-  - 行きますか
-  - はい、行きます
-  hint_en: Can accept or decline an invitation simply.
+  - "ちょっと"
+  - "すみません"
+  - "また今度"
+  hint_en: "Yuki invites you, but you're busy. Decline politely."
 - can_do_id: CD_L12_49
-  partner_jp: カレンダーえ今日ビ明日シ朝ってビ今週いい来週。
+  setup_en: Suggest a day for going out.
+  goal_en: Learner suggests a simple plan (day/time).
+  partner_jp: いつがいいですか？
   expected:
-  - カレンダーえ今日ビ明日シ朝ってビ今週いい来週
-  - うちやまさんは、行きますか
-  - そうですか
-  - 2うちやまさん、来週、夏松りがありますね
-  hint_en: Can suggest a simple plan for going out.
+  - "土曜日"
+  - "日曜日"
+  - "ましょう"
+  - "いいです"
+  hint_en: Suggest a day for going out.
+- can_do_id: CD_L12_49
+  setup_en: "Propose going to see a friend's match."
+  goal_en: Learner suggests a plan.
+  partner_jp: 金曜の夜、ひまですか？
+  expected:
+  - "行きましょう"
+  - "どうですか"
+  - "ませんか"
+  hint_en: "Propose going to see a friend's match."
 english_notes: 'What festivals or events take place in your neighborhood? Who do you go with?
 
   Can read an event notice and find the important information, such as the date, time, and place.

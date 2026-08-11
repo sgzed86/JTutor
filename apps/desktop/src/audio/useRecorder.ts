@@ -34,6 +34,8 @@ type Options = {
 
 const CALIBRATION_MS = 400;
 const ONSET_MS = 150;
+/** Short answers (いち / に) need a little air after onset before silence can cut. */
+const MIN_UTTERANCE_MS = 750;
 const WAVE_BARS = 48;
 
 export type Recorder = {
@@ -147,7 +149,13 @@ export function useRecorder(options: Options): Recorder {
         }
 
         const opts = optionsRef.current;
-        if (s.heard && opts.autoStopOnSilence && now - s.lastLoudAt > opts.silenceMs) {
+        const utteredMs = s.onsetAt ? now - s.onsetAt : 0;
+        if (
+          s.heard &&
+          opts.autoStopOnSilence &&
+          utteredMs >= MIN_UTTERANCE_MS &&
+          now - s.lastLoudAt > opts.silenceMs
+        ) {
           stop();
           return;
         }

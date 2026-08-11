@@ -1008,15 +1008,15 @@ activities:
     reading: はは
     gloss_en: mother
   - kanji: 子ども
-    reading: ちちははども
+    reading: こども
     gloss_en: child / children
   - kanji: 日本
     reading: にほん
     gloss_en: Japan
   kanji_sentences: &id002
   - 父と母です。
-  - 私
-  - 日本に住
+  - 私の子どもです。
+  - 日本に住んでいます。
   picture_has_image: false
 - id: CULTURE
   kind: culture
@@ -1068,64 +1068,319 @@ activities:
     生 〜sensee'
   picture_has_image: false
 grammar:
+# Worksheet pp. 5–6 — every dialogue line (listen = no blank; fill/choose = learner).
 - point: N1 と N2
   pattern_en: A and B (と)
-  prompt_jp: ふたりを しょうかいしてください。れい：夫と子どもです。
-  prompt_en: Introduce two people with と — say 夫と子どもです.
+  prompt_jp: れいのように、『〜と』を つかって かいてください。
+  prompt_en: Type it using 〜と, like the example in your worksheet.
   worksheet_pages:
   - 5
   examples:
-  - jp: 夫と子どもです
-  - jp: いもうととおとうとです
-  - jp: おっとと子どもです
-- point: 何歳ですか
-  pattern_en: Ask someone's age
-  prompt_jp: 年を きいてください。何歳ですか。
-  prompt_en: Ask how old someone is.
+  - jp: 夫と娘です
+  exercises:
+  - instruction_en: Worksheet ❶-1
+    turns:
+    - kind: fill
+      role: A
+      cue_jp: バトさん，ミロさん
+      blank_prompt_jp: 紹介します。こちら、＿。
+      read_jp: 紹介します。こちら、バトさん、ミロさん。
+      answers:
+      - バトさんとミロさんです
+      full_jp: 紹介します。こちら、バトさんとミロさんです。
+      answer_alts:
+      - こちら、バトさんとミロさんです。
+      - バトさんとミロさんです
+    - kind: listen
+      role: B
+      jp: タンです。どうぞよろしくお願いします。
+  - instruction_en: Worksheet ❶-2
+    turns:
+    - kind: listen
+      role: A
+      jp: これ、バトさんの家族ですか？
+    - kind: fill
+      role: B
+      cue_jp: 父，母，妹，犬のハチ
+      blank_prompt_jp: はい。＿。
+      answers:
+      - 父と母と妹と犬のハチです
+      full_jp: はい。父と母と妹と犬のハチです。
+      answer_alts:
+      - はい、父と母と妹と犬のハチです
+      - 父と母と妹と犬のハチです
+- point: ですか？
+  pattern_en: Choose the correct answer (ですか？)
+  prompt_jp: れいのように、ただしいことばを えらびましょう。
+  prompt_en: Choose the correct word, like the example in your worksheet.
   worksheet_pages:
   - 5
-  examples:
-  - jp: 何歳ですか
-  - jp: いくつですか
-  - jp: おいくつですか
+  exercises:
+  - instruction_en: Worksheet ❷-1
+    turns:
+    - kind: listen
+      role: A
+      jp: おいくつですか？
+    - kind: choose
+      role: B
+      choices:
+      - id: a
+        label_jp: 母です
+      - id: b
+        label_jp: 87歳です
+      - id: c
+        label_jp: リナです
+      correct_ids:
+      - b
+  - instruction_en: Worksheet ❷-2
+    turns:
+    - kind: listen
+      role: A
+      jp: アクバルさん、ご出身は、どこですか？
+    - kind: choose
+      role: B
+      choices:
+      - id: a
+        label_jp: 恋人です
+      - id: b
+        label_jp: 25歳です
+      - id: c
+        label_jp: インドネシアから来ました
+      correct_ids:
+      - c
+  - instruction_en: Worksheet ❷-3
+    turns:
+    - kind: listen
+      role: A
+      jp: お名前は？
+    - kind: listen
+      role: B
+      jp: しんいちです。
+    - kind: listen
+      role: A
+      jp: しんいち。いくつですか？
+    - kind: choose
+      role: B
+      choices:
+      - id: a
+        label_jp: 子どもです
+      - id: b
+        label_jp: 4歳です
+      - id: c
+        label_jp: ペットのジョンです
+      correct_ids:
+      - b
+  - instruction_en: Worksheet ❷-4
+    turns:
+    - kind: listen
+      role: A
+      jp: これ、だれですか？
+    - kind: choose
+      role: B
+      choices:
+      - id: a
+        label_jp: 弟です
+      - id: b
+        label_jp: 26歳です
+      - id: c
+        label_jp: タイからです
+      correct_ids:
+      - a
+  - instruction_en: Worksheet ❷-5
+    turns:
+    - kind: listen
+      role: A
+      jp: あ、かわいいですね。
+    - kind: listen
+      role: B
+      jp: ペットのジョンです。
+    - kind: listen
+      role: A
+      jp: 何歳？
+    - kind: choose
+      role: B
+      choices:
+      - id: a
+        label_jp: 犬です
+      - id: b
+        label_jp: 8歳です
+      - id: c
+        label_jp: 東京に住んでいます
+      correct_ids:
+      - b
 - point: 【place】に住んでいます
   pattern_en: live in + place
-  prompt_jp: どこに すんでいますか。れい：東京に住んでいます。
-  prompt_en: Say where someone lives with に住んでいます.
+  prompt_jp: れいのように、『〜に住んでいます』を つかって かいてください。
+  prompt_en: Type it using 〜に住んでいます, like the worksheet.
   worksheet_pages:
-  - 5
+  - 6
   examples:
-  - jp: 東京に住んでいます
   - jp: 赤羽に住んでいます
-  - jp: フィリピンに住んでいます
-- point: これ誰ですか
-  pattern_en: Who is this? (photo)
-  prompt_jp: しゃしんを みて きいてください。これ誰ですか。
-  prompt_en: Ask who is in a photo.
-  worksheet_pages:
-  - 5
-  examples:
-  - jp: これ誰ですか
-  - jp: これ、だれですか
+  exercises:
+  - instruction_en: Worksheet ❸-1
+    turns:
+    - kind: listen
+      role: A
+      jp: こちら、友だちのヒマルさんです。
+    - kind: fill
+      role: B
+      cue_jp: 日本
+      blank_prompt_jp: こんにちは。ヒマルさんも、＿か？
+      read_jp: こんにちは。ヒマルさんも、
+      answers:
+      - 日本に住んでいます
+      full_jp: こんにちは。ヒマルさんも、日本に住んでいますか？
+      answer_alts:
+      - 日本に住んでいますか
+      - ヒマルさんも、日本に住んでいますか？
+    - kind: fill
+      role: C
+      cue_jp: 東京
+      blank_prompt_jp: はい。＿。
+      answers:
+      - 東京に住んでいます
+      full_jp: はい。東京に住んでいます。
+  - instruction_en: Worksheet ❸-2
+    turns:
+    - kind: listen
+      role: A
+      jp: これ、だれですか？
+    - kind: listen
+      role: B
+      jp: 恋人のマルシアです。
+    - kind: fill
+      role: A
+      cue_jp: どこ
+      blank_prompt_jp: マルシアさんは、＿か？
+      read_jp: マルシアさんは、
+      answers:
+      - どこに住んでいます
+      full_jp: マルシアさんは、どこに住んでいますか？
+      answer_alts:
+      - どこに住んでいますか
+    - kind: fill
+      role: B
+      cue_jp: ブラジル
+      blank_prompt_jp: ＿。
+      answers:
+      - ブラジルに住んでいます
+      full_jp: ブラジルに住んでいます。
+  - instruction_en: Worksheet ❸-3
+    turns:
+    - kind: listen
+      role: A
+      jp: バトさんは、どこに住んでいますか？
+    - kind: fill
+      role: B
+      cue_jp: 東京
+      blank_prompt_jp: ＿。
+      answers:
+      - 東京に住んでいます
+      full_jp: 東京に住んでいます。
+    - kind: listen
+      role: A
+      jp: そうですか。
+    - kind: fill
+      role: A
+      cue_jp: 東京
+      blank_prompt_jp: 私も＿。
+      read_jp: 私も
+      answers:
+      - 東京に住んでいます
+      full_jp: 私も東京に住んでいます。
+    - kind: listen
+      role: A
+      jp: リナさんは？
+    - kind: fill
+      role: C
+      cue_jp: 横浜
+      blank_prompt_jp: 私は、＿。
+      answers:
+      - 横浜に住んでいます
+      full_jp: 私は、横浜に住んでいます。
 - point: N1 の N2
   pattern_en: my / someone's + noun
-  prompt_jp: だれの かぞくですか。れい：私の母です。
-  prompt_en: Say who someone is with の — like 私の母です.
+  prompt_jp: れいのように、『〜の〜』を つかって こたえてください。
+  prompt_en: Answer with 〜の〜, like the worksheet photo talk.
   worksheet_pages:
   - 6
   examples:
   - jp: 私の母です
-  - jp: あねの子どもです
-  - jp: ペットのジョンです
-- point: かわいいですね
-  pattern_en: react to a photo
-  prompt_jp: かわいい とき いってください。
-  prompt_en: React to a cute photo.
-  worksheet_pages:
-  - 5
-  examples:
-  - jp: かわいいですね
-  - jp: そうですか
+  exercises:
+  - instruction_en: Worksheet ❹-1
+    turns:
+    - kind: listen
+      role: A
+      jp: これ、だれですか？
+    - kind: fill
+      role: B
+      cue_jp: 兄｜子ども
+      blank_prompt_jp: ＿。
+      answers:
+      - 兄の子どもです
+      full_jp: 兄の子どもです。
+      answer_alts:
+      - あにの子どもです
+      - あにのこどもです
+      - 兄のこどもです
+  - instruction_en: Worksheet ❹-2
+    turns:
+    - kind: listen
+      role: A
+      jp: これ、だれですか？
+    - kind: fill
+      role: B
+      cue_jp: 弟｜恋人
+      blank_prompt_jp: ＿。
+      answers:
+      - 弟の恋人です
+      full_jp: 弟の恋人です。
+      answer_alts:
+      - おとうとの恋人です
+  - instruction_en: Worksheet ❹-3
+    turns:
+    - kind: listen
+      role: A
+      jp: これ、だれですか？
+    - kind: fill
+      role: B
+      cue_jp: 友だち｜バトさん
+      blank_prompt_jp: ＿。
+      answers:
+      - 友だちのバトさんです
+      full_jp: 友だちのバトさんです。
+      answer_alts:
+      - 友達のバトさんです
+      - ともだちのバトさんです
+  - instruction_en: Worksheet ❹-4
+    turns:
+    - kind: listen
+      role: A
+      jp: これ、だれですか？
+    - kind: fill
+      role: B
+      cue_jp: 妹｜タン
+      blank_prompt_jp: ＿。19歳です。
+      answers:
+      - 妹のタンです
+      full_jp: 妹のタンです。19歳です。
+      answer_alts:
+      - いもうとのタンです
+      - 妹のタンです。
+  - instruction_en: Worksheet ❹-5
+    turns:
+    - kind: listen
+      role: A
+      jp: あ、犬。かわいいですね。
+    - kind: fill
+      role: B
+      cue_jp: ペット｜ロッキー
+      blank_prompt_jp: ありがとうございます。＿。
+      answers:
+      - ペットのロッキーです
+      full_jp: ありがとうございます。ペットのロッキーです。
+      answer_alts:
+      - ペットのロッキーです。
 vocab:
 - jp: ちち
   reading: ''
@@ -1248,96 +1503,82 @@ quiz_bank:
     is, etc.).'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L04_12
-  partner_jp: では、お願いします。
+  setup_en: "Yuki introduces her family. Listen, then say who you heard (father, mother, sister…)."
+  goal_en: Learner shows they understood the family introduction.
+  partner_jp: 紹介します。こちら、父と母と妹です。
   expected:
-  - 家族
-  hint_en: 'Situation: Can listen to a family being introduced and understand who is who. Reply using
-    lesson phrases.'
+  - "父と母と妹です"
+  - "ちちとははといもうとです"
+  - "父"
+  - "母"
+  - "妹"
+  - "家族"
+  hint_en: "Yuki introduces her family. Listen, then say who you heard (father, mother, sister…)."
 - can_do_id: CD_L04_12
-  partner_jp: もう一度、お願いします。
+  setup_en: Yuki introduces two people. Say who they are using と.
+  goal_en: Learner restates who was introduced (with と if possible).
+  partner_jp: 紹介します。こちら、バトさんとミロさんです。
   expected:
-  - 家族
-  hint_en: Again — 家族の紹介を聞いて、家族のメンバーを理解することができる。
+  - "バトさんとミロさんです"
+  - "バトさん"
+  - "ミロさん"
+  hint_en: Yuki introduces two people. Say who they are using と.
 - can_do_id: CD_L04_13
-  partner_jp: では、お願いします。
+  setup_en: Yuki asks where you live. Answer with に住んでいます.
+  goal_en: Learner answers where they live using に住んでいます.
+  partner_jp: どこに住んでいますか？
   expected:
-  - 住んで
-  hint_en: 'Situation: Can ask and answer about where you live, age, etc. Reply using lesson phrases.'
+  - "東京に住んでいます"
+  - "赤羽に住んでいます"
+  - "住んでいます"
+  hint_en: Yuki asks where you live. Answer with に住んでいます.
 - can_do_id: CD_L04_13
-  partner_jp: もう一度、お願いします。
+  setup_en: Meet Miro. Ask how old she is.
+  goal_en: "Learner asks someone's age."
+  partner_jp: こんにちは。ミロです。フィリピンから来ました。
   expected:
-  - 住んで
-  hint_en: Again — 住んでいるところや年齢などを質問したり、答えたりすることができる。
+  - "何歳ですか"
+  - "いくつですか"
+  - "おいくつですか"
+  hint_en: Meet Miro. Ask how old she is.
+- can_do_id: CD_L04_13
+  setup_en: Yuki asks your age. Answer with 〜歳です.
+  goal_en: Learner answers their age.
+  partner_jp: 何歳ですか？
+  expected:
+  - "歳です"
+  - "さいです"
+  hint_en: Yuki asks your age. Answer with 〜歳です.
 - can_do_id: CD_L04_14
-  partner_jp: では、お願いします。
+  setup_en: Looking at a photo together. Ask who someone is.
+  goal_en: Learner asks who is in the photo.
+  partner_jp: このしゃしん、みてください。
   expected:
-  - 誰
-  - だれ
-  hint_en: 'Situation: Can ask simple questions about a photo (who someone is, etc.). Reply using lesson
-    phrases.'
+  - "これ誰ですか"
+  - "これ、だれですか"
+  - "だれですか"
+  hint_en: Looking at a photo together. Ask who someone is.
 - can_do_id: CD_L04_14
-  partner_jp: もう一度、お願いします。
+  setup_en: Yuki asks who is in the photo. Answer using の.
+  goal_en: "Learner answers who someone is, ideally with の."
+  partner_jp: これ、だれですか？
   expected:
-  - 誰
-  - だれ
-  hint_en: Again — 写真を見ながら簡単な質問をしたり答えたりすることができる。
-- can_do_id: CD_L04_12
-  partner_jp: ミロさんは何歳ですか
-  expected:
-  - 25歳です
-  - ミロさんは何歳ですか
-  hint_en: Reply as in the book dialog (activity 16).
-- can_do_id: CD_L04_13
-  partner_jp: どこに住んでいますか
-  expected:
-  - 赤羽に住んでいます
-  - どこに住んでいますか
-  hint_en: Reply as in the book dialog (activity 17).
-- can_do_id: CD_L04_13
-  partner_jp: これ誰ですか
-  expected:
-  - 友達です
-  - これ誰ですか
-  - どこに住んでいますか
-  - 東京に住んでいます
-  hint_en: Reply as in the book dialog (activity 23).
+  - "私の母です"
+  - "あねの子どもです"
+  - "友だちのバトさんです"
+  - "の"
+  hint_en: Yuki asks who is in the photo. Answer using の.
 - can_do_id: CD_L04_14
-  partner_jp: これ誰ですか
+  setup_en: "Looking at a cute pet photo. React, then ask how old the pet is."
+  goal_en: "Learner reacts and/or asks the pet's age."
+  partner_jp: みて。ペットのロッキーです。
   expected:
-  - あねの子どもです
-  - これ誰ですか
-  - 何歳ですか
-  - 3歳です
-  hint_en: Reply as in the book dialog (activity 24).
-- can_do_id: CD_L04_12
-  partner_jp: ちち。
-  expected:
-  - ちち
-  - はは
-  - あに
-  - あね
-  - 家族
-  hint_en: Can listen to a family being introduced and understand who is who.
-- can_do_id: CD_L04_13
-  partner_jp: ちちです。
-  expected:
-  - ちちです
-  - ははです
-  - あにです
-  - あねです
-  - 住んで
-  hint_en: Can ask and answer about where you live, age, etc.
-- can_do_id: CD_L04_14
-  partner_jp: こんにちは。
-  expected:
-  - こんにちは
-  - つまです
-  - ヒマルです
-  - よろしくお願いします
-  - 誰
-  - だれ
-  hint_en: Can ask simple questions about a photo (who someone is, etc.).
+  - "かわいいですね"
+  - "何歳ですか"
+  - "いくつですか"
+  hint_en: "Looking at a cute pet photo. React, then ask how old the pet is."
 english_notes: 'Preparation for the words
 
   族 My family 】

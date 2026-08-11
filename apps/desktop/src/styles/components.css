@@ -764,12 +764,41 @@
 .focus-card[data-variant="fill"] { text-align: left; border-color: var(--ink); }
 .focus-card[data-variant="choose"],
 .focus-card[data-variant="note"],
-.focus-card[data-variant="passage"] { text-align: left; }
+.focus-card[data-variant="passage"],
+.focus-card[data-variant="grammar-cue"] { text-align: left; }
 .focus-card__passage {
   white-space: pre-wrap;
   max-height: 14rem;
   overflow: auto;
   line-height: 1.55;
+}
+.focus-card[data-variant="kanji-read"] {
+  text-align: left;
+}
+.kanji-read-list {
+  list-style: none;
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-3);
+}
+.kanji-read-list li {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  gap: var(--sp-2);
+  align-items: baseline;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  line-height: 1.55;
+}
+.kanji-read-list__mark {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.kanji-focus {
+  text-decoration: underline;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.18em;
+  text-decoration-color: var(--accent);
 }
 .focus-card[data-line="orange"] { border-color: var(--book-orange); background: var(--book-orange-soft); }
 .focus-card[data-line="yellow"] { border-color: var(--book-yellow); background: var(--book-yellow-soft); }
@@ -829,7 +858,8 @@
   text-transform: uppercase;
   color: var(--text-muted);
 }
-.choice-list__label { flex: 1; font-size: var(--fs-lg); }
+.choice-list__label { flex: 1; font-size: var(--fs-lg); display: flex; flex-direction: column; gap: 0.15rem; align-items: flex-start; }
+.choice-list__en { font-size: var(--fs-sm); opacity: 0.72; font-weight: 500; }
 
 .note-form { display: grid; gap: 0.75rem; }
 .note-form__input {

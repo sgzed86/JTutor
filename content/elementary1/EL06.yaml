@@ -684,42 +684,63 @@ quiz_bank:
     gives you a ride.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL06_17
-  partner_jp: 聞かれたりしたことがあります。
-  expected: &id001
-  - 聞かれたりしたことがあります
-  - 人に道を聞いています。
-  - すみません。バス停はどこですか？
-  - 次の角を右に曲がってください。
-  hint_en: Can ask and understand directions.
+  setup_en: Ask where the bus stop is.
+  goal_en: Learner asks for directions.
+  partner_jp: はい、どうしましたか？
+  expected:
+  - "どこですか"
+  - "バス停"
+  - "すみません"
+  hint_en: Ask where the bus stop is.
 - can_do_id: CD_EL06_17
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can ask and understand directions.
+  setup_en: Yuki gives directions. Confirm the next step.
+  goal_en: Learner shows they understood directions.
+  partner_jp: 次の角を右に曲がってください。まっすぐです。
+  expected:
+  - "右"
+  - "まっすぐ"
+  - "わかりました"
+  hint_en: Yuki gives directions. Confirm the next step.
 - can_do_id: CD_EL06_18
-  partner_jp: 聞かれたりしたことがあります。
-  expected: &id002
-  - 聞かれたりしたことがあります
-  - 人に道を聞いています。
-  - 行ったらいいですか？
-  - つ目です。
-  hint_en: Can ask and understand directions on the phone.
+  setup_en: On the phone. Ask how to get to the meeting place.
+  goal_en: Learner asks for directions by phone.
+  partner_jp: もしもし。いまどこですか？
+  expected:
+  - "どうやって"
+  - "行き方"
+  - "どこ"
+  hint_en: On the phone. Ask how to get to the meeting place.
 - can_do_id: CD_EL06_18
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can ask and understand directions on the phone.
+  setup_en: "Phone directions: confirm which exit."
+  goal_en: Learner understands phone directions.
+  partner_jp: 東口を出て、コンビニの前で待ってください。
+  expected:
+  - "東口"
+  - "コンビニ"
+  - "わかりました"
+  hint_en: "Phone directions: confirm which exit."
 - can_do_id: CD_EL06_19
-  partner_jp: 聞かれたりしたことがあります。
-  expected: &id003
-  - 聞かれたりしたことがあります
-  - 人に道を聞いています。
-  - すみません。バス停はどこですか？
-  - 次の角を右に曲がってください。
-  hint_en: Can give directions to the destination by car when, for example, some - one gives you a ride.
+  setup_en: "You're in a car. Tell the driver where to turn."
+  goal_en: Learner gives simple directions by car.
+  partner_jp: 次、どっちですか？
+  expected:
+  - "右"
+  - "左"
+  - "まっすぐ"
+  - "曲がって"
+  hint_en: "You're in a car. Tell the driver where to turn."
 - can_do_id: CD_EL06_19
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can give directions to the destination by car when, for example, some - one give
+  setup_en: Guide Yuki to the station entrance.
+  goal_en: Learner gives destination directions.
+  partner_jp: 駅、近いですか？案内してください。
+  expected:
+  - "まっすぐ"
+  - "右"
+  - "左"
+  - "です"
+  hint_en: Guide Yuki to the station entrance.
 english_notes: 'Have you asked someone for directions or been asked for directions?
 
   Can ask and understand directions.

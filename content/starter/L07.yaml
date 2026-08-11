@@ -48,13 +48,64 @@ activities:
   audio:
   - assets/audio/X_[07-01]_kotoba1.mp3
   key_phrases:
-  - 日本の家え現感ビお風呂しトイレビ海団いい部屋フベランダバルコニジダイドコロキッチンHにははい今リビングジェ1回K2回
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 玄関
+  - お風呂
+  - トイレ
+  - 階段
+  - 部屋
+  - ベランダ
+  - キッチン
+  - ダイニング
+  - リビング
+  - 一階
+  - 二階
+  prompt_en: Listen to the CD, then say each word one at a time (11 words).
   phrase_meta:
-  - jp: 日本の家え現感ビお風呂しトイレビ海団いい部屋フベランダバルコニジダイドコロキッチンHにははい今リビングジェ1回K2回
+  - jp: 玄関
     tags:
-    - long
+    - short
+  - jp: お風呂
+    tags:
+    - short
+  - jp: トイレ
+    tags:
+    - short
+  - jp: 階段
+    tags:
+    - short
+  - jp: 部屋
+    tags:
+    - short
+  - jp: ベランダ
+    tags:
+    - short
+  - jp: キッチン
+    tags:
+    - short
+  - jp: ダイニング
+    tags:
+    - short
+  - jp: リビング
+    tags:
+    - short
+  - jp: 一階
+    tags:
+    - short
+  - jp: 二階
+    tags:
+    - short
   book_mode: vocab_drill
+  glosses_en:
+    玄関: entrance
+    お風呂: bath
+    トイレ: toilet
+    階段: stairs
+    部屋: room
+    ベランダ: balcony
+    キッチン: kitchen
+    リビング: living room
+    一階: 1st floor
+    二階: 2nd floor
 - id: A2
   kind: vocabulary
   book_activity: 2
@@ -63,10 +114,50 @@ activities:
   audio:
   - assets/audio/X_[07-02]_kotoba2.mp3
   key_phrases:
-  - 122元環です31回です4リビングです5ダイドコロです65フロとトイレです7回断です82回です9ベランダです10私の部屋です
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - ここは玄関です
+  - ここは一階です
+  - ここはリビングです
+  - ここはダイニングです
+  - ここはお風呂とトイレです
+  - ここは階段です
+  - ここは二階です
+  - ここはベランダです
+  - ここは私の部屋です
+  prompt_en: Listen to the CD, then say each word one at a time (9 words).
   phrase_meta:
-  - jp: 122元環です31回です4リビングです5ダイドコロです65フロとトイレです7回断です82回です9ベランダです10私の部屋です
+  - jp: ここは玄関です
+    tags:
+    - short
+    - polite
+  - jp: ここは一階です
+    tags:
+    - short
+    - polite
+  - jp: ここはリビングです
+    tags:
+    - long
+    - polite
+  - jp: ここはダイニングです
+    tags:
+    - long
+    - polite
+  - jp: ここはお風呂とトイレです
+    tags:
+    - long
+    - polite
+  - jp: ここは階段です
+    tags:
+    - short
+    - polite
+  - jp: ここは二階です
+    tags:
+    - short
+    - polite
+  - jp: ここはベランダです
+    tags:
+    - long
+    - polite
+  - jp: ここは私の部屋です
     tags:
     - long
     - polite
@@ -79,14 +170,47 @@ activities:
   audio:
   - assets/audio/X_[07-03]_kiku.mp3
   key_phrases:
-  - どうぞはいてくださいはいはいここは限感です靴を抜いてくださいはいここは関連にしつですこんにちはお世話になりますよろしくお願いしますここはトリレですはいここは大ドコロですはいここは食道ですご飯を食べます分かりましたここはお風呂ですはい1回に部屋が4つありますここは村さんの部屋ですはいここに会談があります2回に対策の部屋があります
-  prompt_en: Listen to the audio and check understanding for this can-do.
+  - どうぞ入ってください
+  - ここは玄関です
+  - 靴を脱いでください
+  - ここはリビングです
+  - こんにちは。お世話になります。よろしくお願いします
+  - ここはトイレです
+  - ここは台所です
+  - ここは食堂です。ご飯を食べます
+  prompt_en: Listen, then repeat each line one at a time (8 lines).
   phrase_meta:
-  - jp: どうぞはいてくださいはいはいここは限感です靴を抜いてくださいはいここは関連にしつですこんにちはお世話になりますよろしくお願いしますここはトリレですはいここは大ドコロですはいここは食道ですご飯を食べます分かりましたここはお風呂ですはい1回に部屋が4つありますここは村さんの部屋ですはいここに会談があります2回に対策の部屋があります
+  - jp: どうぞ入ってください
+    tags:
+    - long
+  - jp: ここは玄関です
+    tags:
+    - short
+    - polite
+  - jp: 靴を脱いでください
+    tags:
+    - long
+  - jp: ここはリビングです
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  - jp: こんにちは。お世話になります。よろしくお願いします
+    tags:
+    - long
+    - polite
+  - jp: ここはトイレです
+    tags:
+    - short
+    - polite
+  - jp: ここは台所です
+    tags:
+    - short
+    - polite
+  - jp: ここは食堂です。ご飯を食べます
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat_all
 - id: A4
   kind: grammar_form
   book_activity: 4
@@ -126,13 +250,64 @@ activities:
   audio:
   - assets/audio/X_[07-05]_kotoba1.mp3
   key_phrases:
-  - カデンカグえやこんビレゾーコし電子レンジリ水判期いいトースターフベッドジフトンHテーブルイスジェセンタッキケテレビエルY5
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - エアコン
+  - 冷蔵庫
+  - 電子レンジ
+  - 洗濯機
+  - トースター
+  - ベッド
+  - 布団
+  - テーブル
+  - いす
+  - テレビ
+  - Wi-Fi
+  prompt_en: Listen to the CD, then say each word one at a time (11 words).
   phrase_meta:
-  - jp: カデンカグえやこんビレゾーコし電子レンジリ水判期いいトースターフベッドジフトンHテーブルイスジェセンタッキケテレビエルY5
+  - jp: エアコン
     tags:
-    - long
+    - short
+  - jp: 冷蔵庫
+    tags:
+    - short
+  - jp: 電子レンジ
+    tags:
+    - short
+  - jp: 洗濯機
+    tags:
+    - short
+  - jp: トースター
+    tags:
+    - short
+  - jp: ベッド
+    tags:
+    - short
+  - jp: 布団
+    tags:
+    - short
+  - jp: テーブル
+    tags:
+    - short
+  - jp: いす
+    tags:
+    - short
+  - jp: テレビ
+    tags:
+    - short
+  - jp: Wi-Fi
+    tags:
+    - short
   book_mode: vocab_drill
+  glosses_en:
+    エアコン: air conditioner
+    冷蔵庫: refrigerator
+    電子レンジ: microwave
+    洗濯機: washing machine
+    トースター: toaster
+    ベッド: bed
+    布団: futon
+    テーブル: table
+    いす: chair
+    テレビ: TV
 - id: A6
   kind: vocabulary
   book_activity: 6
@@ -141,10 +316,45 @@ activities:
   audio:
   - assets/audio/X_[07-06]_kotoba2.mp3
   key_phrases:
-  - 1エアコンがあります2センタッキがあります3テレビがあります4レゾークと水判器があります5電子レンジとトースターがあります6ベッドと含んがあります7テーブルトイスがあります8ワイファイがあります
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - エアコンがあります
+  - 洗濯機があります
+  - テレビがあります
+  - 冷蔵庫と洗濯機があります
+  - 電子レンジとトースターがあります
+  - ベッドと布団があります
+  - テーブルといすがあります
+  - Wi-Fiがあります
+  prompt_en: Listen to the CD, then say each word one at a time (8 words).
   phrase_meta:
-  - jp: 1エアコンがあります2センタッキがあります3テレビがあります4レゾークと水判器があります5電子レンジとトースターがあります6ベッドと含んがあります7テーブルトイスがあります8ワイファイがあります
+  - jp: エアコンがあります
+    tags:
+    - long
+    - polite
+  - jp: 洗濯機があります
+    tags:
+    - short
+    - polite
+  - jp: テレビがあります
+    tags:
+    - short
+    - polite
+  - jp: 冷蔵庫と洗濯機があります
+    tags:
+    - long
+    - polite
+  - jp: 電子レンジとトースターがあります
+    tags:
+    - long
+    - polite
+  - jp: ベッドと布団があります
+    tags:
+    - long
+    - polite
+  - jp: テーブルといすがあります
+    tags:
+    - long
+    - polite
+  - jp: Wi-Fiがあります
     tags:
     - long
     - polite
@@ -192,7 +402,7 @@ activities:
   - id: d
     label_jp: 電子連治はないです
   - id: e
-    label_jp: 1回に、手上がよっつあります
+    label_jp: 回に、手上がよっつあります
   - id: f
     label_jp: はいここです分かりました
   - id: g
@@ -271,7 +481,7 @@ activities:
   - 通スターはありませんベッドは
   - ベッドはないですテレビは
   - 電子連治はありますか
-  prompt_en: Focus on the expressions used. Listen and say each pattern.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: あります通スターはありますか
     tags:
@@ -289,7 +499,37 @@ activities:
     tags:
     - short
     - polite
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: 電子レンジは＿？
+    answers:
+    - ありますか
+    full_jp: 電子レンジはありますか？
+  - prompt_jp: ＿。
+    answers:
+    - あります
+    full_jp: あります。
+  - prompt_jp: トースターは＿？
+    answers:
+    - ありますか
+    full_jp: トースターはありますか？
+  - prompt_jp: トースターは＿。
+    answers:
+    - ありません
+    full_jp: トースターはありません。
+  - prompt_jp: ベッドは＿。
+    answers:
+    - ないです
+    answer_alts:
+    - ありません
+    full_jp: ベッドはないです。
+  - prompt_jp: ＿。
+    answers:
+    - ないです
+    answer_alts:
+    - ありません
+    full_jp: ないです。
+  fill_pdf_page: 187
 - id: A10
   kind: speaking
   book_activity: 10
@@ -382,17 +622,61 @@ activities:
   audio:
   - assets/audio/X_[07-13]_kotoba1.mp3
   key_phrases:
-  - 広いびせまいし大きいび小さいいい新しいえふるいじ静かなHうるさいはいきれいなきたない
-  - どんなへ
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 広い
+  - せまい
+  - 大きい
+  - 小さい
+  - 新しい
+  - 古い
+  - 静か
+  - うるさい
+  - きれい
+  - きたない
+  prompt_en: Listen to the CD, then say each word one at a time (10 words).
   phrase_meta:
-  - jp: 広いびせまいし大きいび小さいいい新しいえふるいじ静かなHうるさいはいきれいなきたない
+  - jp: 広い
     tags:
-    - long
-  - jp: どんなへ
+    - short
+  - jp: せまい
+    tags:
+    - short
+  - jp: 大きい
+    tags:
+    - short
+  - jp: 小さい
+    tags:
+    - short
+  - jp: 新しい
+    tags:
+    - short
+  - jp: 古い
+    tags:
+    - short
+  - jp: 静か
+    tags:
+    - short
+    - polite
+  - jp: うるさい
+    tags:
+    - short
+  - jp: きれい
+    tags:
+    - short
+  - jp: きたない
     tags:
     - short
   book_mode: vocab_drill
+  glosses_en:
+    広い: spacious
+    せまい: narrow / small (space)
+    大きい: big
+    小さい: small
+    新しい: new
+    古い: old
+    静か: quiet
+    うるさい: noisy
+    きれい: clean / pretty
+    きたない: dirty
 - id: A14
   kind: vocabulary
   book_activity: 14
@@ -401,12 +685,57 @@ activities:
   audio:
   - assets/audio/X_[07-14]_kotoba2.mp3
   key_phrases:
-  - 1大きいです2広いです3古いです4静かです5綺麗です6小さいです7せまいです8新しいです9来たないです10うるさいです
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 大きいです
+  - 広いです
+  - 古いです
+  - 静かです
+  - きれいです
+  - 小さいです
+  - せまいです
+  - 新しいです
+  - きたないです
+  - うるさいです
+  prompt_en: Listen to the CD, then say each word one at a time (10 words).
   phrase_meta:
-  - jp: 1大きいです2広いです3古いです4静かです5綺麗です6小さいです7せまいです8新しいです9来たないです10うるさいです
+  - jp: 大きいです
     tags:
-    - long
+    - short
+    - polite
+  - jp: 広いです
+    tags:
+    - short
+    - polite
+  - jp: 古いです
+    tags:
+    - short
+    - polite
+  - jp: 静かです
+    tags:
+    - short
+    - polite
+  - jp: きれいです
+    tags:
+    - short
+    - polite
+  - jp: 小さいです
+    tags:
+    - short
+    - polite
+  - jp: せまいです
+    tags:
+    - short
+    - polite
+  - jp: 新しいです
+    tags:
+    - short
+    - polite
+  - jp: きたないです
+    tags:
+    - short
+    - polite
+  - jp: うるさいです
+    tags:
+    - short
     - polite
   book_mode: vocab_drill
 - id: A15
@@ -417,13 +746,13 @@ activities:
   audio:
   - assets/audio/X_[07-15]_kiku1.mp3
   key_phrases:
-  - 1大都さんはどこに住んでいますか
+  - 大都さんはどこに住んでいますか
   - 家はどうですか
   - そうですか
   - 長花に住んでいます
   prompt_en: 'L07 activity 15: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 1大都さんはどこに住んでいますか
+  - jp: 大都さんはどこに住んでいますか
     tags:
     - long
     - polite
@@ -458,7 +787,7 @@ activities:
   - id: g
     label_jp: はい言えばどう
   - id: h
-    label_jp: 1大都さんはどこに住んでいますか
+    label_jp: 大都さんはどこに住んでいますか
   correct_ids:
   - b
   - c
@@ -568,7 +897,7 @@ activities:
   - assets/audio/X_[07-18]_kiku4.mp3
   key_phrases:
   - ちょっとふろいですでも広いですん
-  - 4NODEMOさんの家は、見なみく
+  - NODEMOさんの家は、見なみく
   - 家はどう
   - はい
   prompt_en: 'L07 activity 18: listen to the CD, then say the phrase that matches the book.'
@@ -577,7 +906,7 @@ activities:
     tags:
     - long
     - polite
-  - jp: 4NODEMOさんの家は、見なみく
+  - jp: NODEMOさんの家は、見なみく
     tags:
     - long
   - jp: 家はどう
@@ -603,7 +932,7 @@ activities:
   - id: f
     label_jp: ちょっとふろいですでも広いですん
   - id: g
-    label_jp: 1大都さんはどこに住んでいますか
+    label_jp: 大都さんはどこに住んでいますか
   correct_ids:
   - b
   - e
@@ -631,10 +960,32 @@ activities:
     - polite
   book_mode: listen_fill
   blanks:
-  - prompt_jp: ちょっ＿せまいですちょっとふるいですでも広いですとても綺麗ですしずかです。
+  - prompt_jp: ちょっと＿です。
     answers:
-    - と
-    full_jp: ちょっとせまいですちょっとふるいですでも広いですとても綺麗ですしずかです
+    - せまい
+    answer_alts:
+    - 狭い
+    full_jp: ちょっとせまいです。
+  - prompt_jp: ちょっと＿です。でも、＿です。
+    answers:
+    - ふるい
+    - 広い
+    answer_alts:
+    - 古い
+    full_jp: ちょっとふるいです。でも、広いです。
+  - prompt_jp: とても＿です。
+    answers:
+    - きれい
+    answer_alts:
+    - 綺麗
+    full_jp: とてもきれいです。
+  - prompt_jp: ＿です。
+    answers:
+    - しずか
+    answer_alts:
+    - 静か
+    full_jp: しずかです。
+  fill_pdf_page: 191
 - id: A20
   kind: speaking
   book_activity: 20
@@ -714,46 +1065,39 @@ activities:
   audio:
   - assets/audio/X_[07-22]_kiku1.mp3
   key_phrases:
-  - 一ビサルさんはどこに住んでいますか会社の両に住んでいます広いですか
-  - でも、とても静かです近くに声がありますそうですか
-  - え、広くないですそうですか
-  prompt_en: 'L07 activity 22: listen to the CD, then say the phrase that matches the book.'
+  - ビサルさんはどこに住んでいますか。
+  - 会社の近くに住んでいます。
+  - 広くないです。でも、とても静かです。
+  prompt_en: "Listen (CD 07-22). Where does Bisal live, and how is the place?"
   phrase_meta:
-  - jp: 一ビサルさんはどこに住んでいますか会社の両に住んでいます広いですか
+  - jp: ビサルさんはどこに住んでいますか。
     tags:
     - long
-    - polite
-  - jp: でも、とても静かです近くに声がありますそうですか
+  - jp: 会社の近くに住んでいます。
     tags:
     - long
-    - polite
-  - jp: え、広くないですそうですか
+  - jp: 広くないです。でも、とても静かです。
     tags:
     - long
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L07 activity 22: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Home size / quiet or not.
   choices:
   - id: a
-    label_jp: でも、とても静かです近くに声がありますそうですか
+    label_jp: 会社の近く。広くないけど静かです
+    label_en: near work; not big but quiet
   - id: b
-    label_jp: しよう、くどにあります
+    label_jp: とても広いマンションです
+    label_en: very spacious condo
   - id: c
-    label_jp: 一ビサルさんはどこに住んでいますか会社の両に住んでいます広いですか
+    label_jp: 駅の隣に住んでいます
+    label_en: lives next to the station
   - id: d
-    label_jp: あ、ベッドはないです
-  - id: e
-    label_jp: え、広くないですそうですか
-  - id: f
-    label_jp: 1回に、手上がよっつあります
-  - id: g
-    label_jp: 通スターはありませんベッドは
+    label_jp: ベッドはありません
+    label_en: no bed
   correct_ids:
   - a
-  - c
-  - e
-  choose_mode: all
+  choose_mode: any
 - id: A23
   kind: listening
   book_activity: 23
@@ -818,54 +1162,39 @@ activities:
   audio:
   - assets/audio/X_[07-24]_kiku3.mp3
   key_phrases:
-  - うちは行っこだってすごいですねでも大きくないですそうですか
-  - いやー、新しくないですとても古いですそうですか
-  - さん前田さんはマンションですか
-  - 地獄にお手輩があります大手輩もとても古いですへぇ
-  prompt_en: 'L07 activity 24: listen to the CD, then say the phrase that matches the book.'
+  - 前田さんはマンションですか。
+  - うちは一戸建てです。でも大きくないです。
+  - 新しくないです。とても古いです。
+  prompt_en: Listen (CD 07-24). What kind of home does Maeda have?
   phrase_meta:
-  - jp: うちは行っこだってすごいですねでも大きくないですそうですか
+  - jp: 前田さんはマンションですか。
     tags:
     - long
-    - polite
-  - jp: いやー、新しくないですとても古いですそうですか
+  - jp: うちは一戸建てです。でも大きくないです。
     tags:
     - long
-    - polite
-  - jp: さん前田さんはマンションですか
+  - jp: 新しくないです。とても古いです。
     tags:
     - long
-    - polite
-  - jp: 地獄にお手輩があります大手輩もとても古いですへぇ
-    tags:
-    - long
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L07 activity 24: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Condo vs house; new/old; size.
   choices:
   - id: a
-    label_jp: 1大都さんはどこに住んでいますか
+    label_jp: 一戸建てで、大きくなくて古いです
+    label_en: detached house; not big; old
   - id: b
-    label_jp: とても綺麗ですいいですね
+    label_jp: 新しいマンションです
+    label_en: new condo
   - id: c
-    label_jp: さん前田さんはマンションですか
+    label_jp: 会社の近くのアパートです
+    label_en: apartment near work
   - id: d
-    label_jp: うちは行っこだってすごいですねでも大きくないですそうですか
-  - id: e
-    label_jp: あります通スターはありますか
-  - id: f
-    label_jp: いやー、新しくないですとても古いですそうですか
-  - id: g
-    label_jp: 地獄にお手輩があります大手輩もとても古いですへぇ
-  - id: h
-    label_jp: 綺麗ですか
+    label_jp: とても綺麗で広いです
+    label_en: very clean and spacious
   correct_ids:
-  - c
-  - d
-  - f
-  - g
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A25
   kind: grammar_form
   book_activity: 25
@@ -900,16 +1229,22 @@ activities:
   blanks:
   - prompt_jp: いえ、＿です。
     answers:
-    - いや、新しくない
-    full_jp: いえ、いや、新しくないです。
+    - 広くない
+    full_jp: いえ、広くないです。
   - prompt_jp: あまり＿です。
     answers:
     - 静かじゃない
+    answer_alts:
+    - しずかじゃない
     full_jp: あまり静かじゃないです。
+  - prompt_jp: （家は）＿です。
+    answers:
+    - 大きくない
+    full_jp: （家は）大きくないです。
   - prompt_jp: いえ、＿です。
     answers:
-    - いや、新しくない
-    full_jp: いえ、いや、新しくないです。
+    - 新しくない
+    full_jp: いえ、新しくないです。
   fill_pdf_page: 195
 - id: A26
   kind: speaking
@@ -1043,17 +1378,17 @@ activities:
     reading: いえ
     gloss_en: house / home
   - kanji: 新しい
-    reading: いえあたらしい
+    reading: あたらしい
     gloss_en: new
   - kanji: 広い
     reading: ひろい
     gloss_en: spacious / wide
   - kanji: 古い
-    reading: ひろいふるい
+    reading: ふるい
     gloss_en: old
   kanji_sentences: &id002
-  - Ａ：家はどうですか？
-  - Ａ：寮
+  - Ａ：家はどうですか？　Ｂ：ちょっと古いです。
+  - Ａ：寮は新しいですか？　Ｂ：いいえ。でも、広いです。
   picture_has_image: false
 - id: CULTURE
   kind: culture
@@ -1149,37 +1484,212 @@ grammar:
   - 16
   examples: []
 vocab:
-- jp: 日本の家え現感ビお風呂しトイレビ海団いい部屋フベランダバルコニジダイドコロキッチンHにははい今リビングジェ1回K2回
+- jp: 玄関
+  reading: ''
+  en: entrance
+  tags:
+  - L07
+- jp: お風呂
+  reading: ''
+  en: bath
+  tags:
+  - L07
+- jp: トイレ
+  reading: ''
+  en: toilet
+  tags:
+  - L07
+- jp: 階段
+  reading: ''
+  en: stairs
+  tags:
+  - L07
+- jp: 部屋
+  reading: ''
+  en: room
+  tags:
+  - L07
+- jp: ベランダ
+  reading: ''
+  en: balcony
+  tags:
+  - L07
+- jp: キッチン
+  reading: ''
+  en: kitchen
+  tags:
+  - L07
+- jp: ダイニング
   reading: ''
   en: ''
   tags:
   - L07
-- jp: 122元環です31回です4リビングです5ダイドコロです65フロとトイレです7回断です82回です9ベランダです10私の部屋です
+- jp: リビング
+  reading: ''
+  en: living room
+  tags:
+  - L07
+- jp: 一階
+  reading: ''
+  en: 1st floor
+  tags:
+  - L07
+- jp: 二階
+  reading: ''
+  en: 2nd floor
+  tags:
+  - L07
+- jp: 広い
+  reading: ''
+  en: spacious
+  tags:
+  - L07
+- jp: せまい
+  reading: ''
+  en: narrow / small (space)
+  tags:
+  - L07
+- jp: 大きい
+  reading: ''
+  en: big
+  tags:
+  - L07
+- jp: 小さい
+  reading: ''
+  en: small
+  tags:
+  - L07
+- jp: 新しい
+  reading: ''
+  en: new
+  tags:
+  - L07
+- jp: 古い
+  reading: ''
+  en: old
+  tags:
+  - L07
+- jp: 静か
+  reading: ''
+  en: quiet
+  tags:
+  - L07
+- jp: うるさい
+  reading: ''
+  en: noisy
+  tags:
+  - L07
+- jp: きれい
+  reading: ''
+  en: clean / pretty
+  tags:
+  - L07
+- jp: きたない
+  reading: ''
+  en: dirty
+  tags:
+  - L07
+- jp: 大きいです
   reading: ''
   en: ''
   tags:
   - L07
-- jp: カデンカグえやこんビレゾーコし電子レンジリ水判期いいトースターフベッドジフトンHテーブルイスジェセンタッキケテレビエルY5
+- jp: 広いです
   reading: ''
   en: ''
   tags:
   - L07
-- jp: 1エアコンがあります2センタッキがあります3テレビがあります4レゾークと水判器があります5電子レンジとトースターがあります6ベッドと含んがあります7テーブルトイスがあります8ワイファイがあります
+- jp: 古いです
   reading: ''
   en: ''
   tags:
   - L07
-- jp: 広いびせまいし大きいび小さいいい新しいえふるいじ静かなHうるさいはいきれいなきたない
+- jp: 静かです
   reading: ''
   en: ''
   tags:
   - L07
-- jp: どんなへ
+- jp: きれいです
   reading: ''
   en: ''
   tags:
   - L07
-- jp: 1大きいです2広いです3古いです4静かです5綺麗です6小さいです7せまいです8新しいです9来たないです10うるさいです
+- jp: 小さいです
+  reading: ''
+  en: ''
+  tags:
+  - L07
+- jp: せまいです
+  reading: ''
+  en: ''
+  tags:
+  - L07
+- jp: 新しいです
+  reading: ''
+  en: ''
+  tags:
+  - L07
+- jp: きたないです
+  reading: ''
+  en: ''
+  tags:
+  - L07
+- jp: うるさいです
+  reading: ''
+  en: ''
+  tags:
+  - L07
+- jp: エアコン
+  reading: ''
+  en: air conditioner
+  tags:
+  - L07
+- jp: 冷蔵庫
+  reading: ''
+  en: refrigerator
+  tags:
+  - L07
+- jp: 電子レンジ
+  reading: ''
+  en: microwave
+  tags:
+  - L07
+- jp: 洗濯機
+  reading: ''
+  en: washing machine
+  tags:
+  - L07
+- jp: トースター
+  reading: ''
+  en: toaster
+  tags:
+  - L07
+- jp: ベッド
+  reading: ''
+  en: bed
+  tags:
+  - L07
+- jp: 布団
+  reading: ''
+  en: futon
+  tags:
+  - L07
+- jp: テーブル
+  reading: ''
+  en: table
+  tags:
+  - L07
+- jp: いす
+  reading: ''
+  en: chair
+  tags:
+  - L07
+- jp: テレビ
+  reading: ''
+  en: TV
+  tags:
+  - L07
+- jp: Wi-Fi
   reading: ''
   en: ''
   tags:
@@ -1210,93 +1720,64 @@ quiz_bank:
   prompt_en: 'In a new everyday situation, show you can: Can simply describe where you live.'
   spoken_required: true
 quiz_scenarios:
-- can_do_id: CD_L07_27
-  partner_jp: では、お願いします。
-  expected:
-  - ありますか
-  hint_en: 'Situation: Can ask whether needed items are in a room/house. Reply using lesson phrases.'
-- can_do_id: CD_L07_27
-  partner_jp: もう一度、お願いします。
-  expected:
-  - ありますか
-  hint_en: Again — 家や部屋に必要なものがそろっているか質問して確認することができる。
-- can_do_id: CD_L07_28
-  partner_jp: では、お願いします。
-  expected:
-  - 住んで
-  hint_en: 'Situation: Can simply describe where you live. Reply using lesson phrases.'
-- can_do_id: CD_L07_28
-  partner_jp: もう一度、お願いします。
-  expected:
-  - 住んで
-  hint_en: Again — どこに住んでいるか簡単に説明することができる。
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L07_26
-  partner_jp: 電子連治はありますか
+  setup_en: Yuki gives a short house tour. Say what rooms you heard.
+  goal_en: Learner shows they understood the layout (rooms mentioned).
+  partner_jp: 案内します。ここはリビングです。隣はキッチンです。二階に寝室があります。
   expected:
-  - あります
-  - 電子連治はありますか
-  hint_en: Reply as in the book dialog (activity 10).
-- can_do_id: CD_L07_27
-  partner_jp: 電子連治はありますか
-  expected:
-  - ありません
-  - 電子連治はありますか
-  hint_en: Reply as in the book dialog (activity 11).
-- can_do_id: CD_L07_28
-  partner_jp: 電子連治はありますか
-  expected:
-  - 電子連治はないです
-  - 電子連治はありますか
-  hint_en: Reply as in the book dialog (activity 12).
-- can_do_id: CD_L07_27
-  partner_jp: どこに住んでいますか
-  expected:
-  - そうですか
-  - ちょっとせまいです
-  - 言えばどうですか
-  - どこに住んでいますか
-  hint_en: Reply as in the book dialog (activity 20).
-- can_do_id: CD_L07_28
-  partner_jp: どこに住んでいますか
-  expected:
-  - 立ても綺麗ですそうですか
-  - 死ん間ちです言えばどうですか
-  - どこに住んでいますか
-  hint_en: Reply as in the book dialog (activity 21).
+  - "リビング"
+  - "キッチン"
+  - "寝室"
+  - "二階"
+  hint_en: Yuki gives a short house tour. Say what rooms you heard.
 - can_do_id: CD_L07_26
-  partner_jp: どこに住んでいますか
+  setup_en: Yuki describes her apartment. Summarize where the bathroom is.
+  goal_en: Learner restates a location from the tour.
+  partner_jp: お風呂とトイレは一階です。ベランダもあります。
   expected:
-  - 近くに学校があります
-  - 北間地のアバートに住んでいます静かですか
-  - いや、静かじゃないですそうですか
-  - どこに住んでいますか
-  hint_en: Reply as in the book dialog (activity 28).
-- can_do_id: CD_L07_26
-  partner_jp: 日本の家え現感ビお風呂しトイレビ海団いい部屋フベランダバルコニジダイドコロキッチンHにははい今リビングジェ1回K2回。
-  expected:
-  - 日本の家え現感ビお風呂しトイレビ海団いい部屋フベランダバルコニジダイドコロキッチンHにははい今リビングジェ1回K2回
-  - 1回に、手上がよっつあります
-  - 2回に、体3の部屋があります
-  - ここは管理にしつです
-  hint_en: Can understand a simple house tour and layout.
+  - "お風呂"
+  - "トイレ"
+  - "一階"
+  - "ベランダ"
+  hint_en: Yuki describes her apartment. Summarize where the bathroom is.
 - can_do_id: CD_L07_27
-  partner_jp: 122元環です31回です4リビングです5ダイドコロです65フロとトイレです7回断です82回です9ベランダです10私の部屋です。
+  setup_en: Looking at a room. Ask if there is a microwave.
+  goal_en: Learner asks whether something is there (ありますか).
+  partner_jp: 私の部屋です。どうぞ。
   expected:
-  - 122元環です31回です4リビングです5ダイドコロです65フロとトイレです7回断です82回です9ベランダです10私の部屋です
-  - カデンカグえやこんビレゾーコし電子レンジリ水判期いいトースターフベッドジフトンHテーブルイスジェセンタッキケテレビエルY5
-  - ここは、ソンさんの部屋です
-  - ここに、ふとんがありますよ
-  - ありますか
-  hint_en: Can ask whether needed items are in a room/house.
+  - "ありますか"
+  - "電子レンジはありますか"
+  - "ありますか"
+  hint_en: Looking at a room. Ask if there is a microwave.
+- can_do_id: CD_L07_27
+  setup_en: Ask if the apartment has a washing machine.
+  goal_en: Learner checks for a needed item.
+  partner_jp: このアパートはどうですか？
+  expected:
+  - "洗濯機はありますか"
+  - "ありますか"
+  hint_en: Ask if the apartment has a washing machine.
 - can_do_id: CD_L07_28
-  partner_jp: どうぞはいてくださいはいはいここは限感です靴を抜いてくださいはいここは関連にしつですこんにちはお世話になりますよろしくお願いしますここはトリレですはいここは大ドコロですはいここは食道ですご飯を食べます分かりましたここはお風呂ですはい1回に部屋が4つありますここは村さんの部屋ですはいここに会談があります2回に対策の部屋があります。
+  setup_en: Someone asks where you live. Answer simply.
+  goal_en: Learner describes where they live.
+  partner_jp: どこに住んでいますか？
   expected:
-  - どうぞはいてくださいはいはいここは限感です靴を抜いてくださいはいここは関連にしつですこんにちはお世話になりますよろしくお願いしますここはトリレですはいここは大ドコロですはいここは食道ですご飯を食べます分かりましたここはお風呂ですはい1回に部屋が4つありますここは村さんの部屋ですはいここに会談があります2回に対策の部屋があります
-  - 1エアコンがあります2センタッキがあります3テレビがあります4レゾークと水判器があります5電子レンジとトースターがあります6ベッドと含んがあります7テーブルトイスがあります8ワイファイがあります
-  - あります通スターはありますか
-  - 通スターはありませんベッドは
-  - 住んで
-  hint_en: Can simply describe where you live.
+  - "住んでいます"
+  - "アパート"
+  - "に"
+  hint_en: Someone asks where you live. Answer simply.
+- can_do_id: CD_L07_28
+  setup_en: Describe your place briefly (size/quiet is fine).
+  goal_en: Learner gives a simple description of their home.
+  partner_jp: おうちはどんなところですか？
+  expected:
+  - "住んで"
+  - "です"
+  - "静か"
+  - "狭い"
+  - "広い"
+  hint_en: Describe your place briefly (size/quiet is fine).
 english_notes: 'What kind of house do you live in at the moment?
 
   Can listen to simple explanations when being shown around a house and understand the layout.

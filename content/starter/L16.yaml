@@ -49,12 +49,48 @@ activities:
   audio:
   - assets/audio/X_[16-01]_kotoba1.mp3
   key_phrases:
-  - 年端え1b5円c10円d50円e100円f500円g1000円h2000円i5000円g1万円
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 一円
+  - 五円
+  - 十円
+  - 五十円
+  - 百円
+  - 五百円
+  - 千円
+  - 二千円
+  - 五千円
+  - 一万円
+  prompt_en: Listen to the CD, then say each word one at a time (10 words).
   phrase_meta:
-  - jp: 年端え1b5円c10円d50円e100円f500円g1000円h2000円i5000円g1万円
+  - jp: 一円
     tags:
-    - long
+    - short
+  - jp: 五円
+    tags:
+    - short
+  - jp: 十円
+    tags:
+    - short
+  - jp: 五十円
+    tags:
+    - short
+  - jp: 百円
+    tags:
+    - short
+  - jp: 五百円
+    tags:
+    - short
+  - jp: 千円
+    tags:
+    - short
+  - jp: 二千円
+    tags:
+    - short
+  - jp: 五千円
+    tags:
+    - short
+  - jp: 一万円
+    tags:
+    - short
   book_mode: vocab_drill
 - id: A2
   kind: vocabulary
@@ -64,12 +100,40 @@ activities:
   audio:
   - assets/audio/X_[16-02]_kotoba2_number1.mp3
   key_phrases:
-  - チャック200300400500600700800900200200200200200200
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 二百
+  - 三百
+  - 四百
+  - 五百
+  - 六百
+  - 七百
+  - 八百
+  - 九百
+  prompt_en: Listen to the CD, then say each word one at a time (8 words).
   phrase_meta:
-  - jp: チャック200300400500600700800900200200200200200200
+  - jp: 二百
     tags:
-    - long
+    - short
+  - jp: 三百
+    tags:
+    - short
+  - jp: 四百
+    tags:
+    - short
+  - jp: 五百
+    tags:
+    - short
+  - jp: 六百
+    tags:
+    - short
+  - jp: 七百
+    tags:
+    - short
+  - jp: 八百
+    tags:
+    - short
+  - jp: 九百
+    tags:
+    - short
   book_mode: vocab_drill
 - id: A3
   kind: vocabulary
@@ -79,12 +143,40 @@ activities:
   audio:
   - assets/audio/X_[16-03]_kotoba2_price1.mp3
   key_phrases:
-  - 200円300円400円500円600円700円800円900円
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 二百円
+  - 三百円
+  - 四百円
+  - 五百円
+  - 六百円
+  - 七百円
+  - 八百円
+  - 九百円
+  prompt_en: Listen to the CD, then say each word one at a time (8 words).
   phrase_meta:
-  - jp: 200円300円400円500円600円700円800円900円
+  - jp: 二百円
     tags:
-    - long
+    - short
+  - jp: 三百円
+    tags:
+    - short
+  - jp: 四百円
+    tags:
+    - short
+  - jp: 五百円
+    tags:
+    - short
+  - jp: 六百円
+    tags:
+    - short
+  - jp: 七百円
+    tags:
+    - short
+  - jp: 八百円
+    tags:
+    - short
+  - jp: 九百円
+    tags:
+    - short
   book_mode: vocab_drill
 - id: A4
   kind: vocabulary
@@ -104,12 +196,48 @@ activities:
   audio:
   - assets/audio/X_[16-05]_kotoba2_price2.mp3
   key_phrases:
-  - 1000円2000円3000円4000円5000円6000円7000円8000円9000円1万円
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 千円
+  - 二千円
+  - 三千円
+  - 四千円
+  - 五千円
+  - 六千円
+  - 七千円
+  - 八千円
+  - 九千円
+  - 一万円
+  prompt_en: Listen to the CD, then say each word one at a time (10 words).
   phrase_meta:
-  - jp: 1000円2000円3000円4000円5000円6000円7000円8000円9000円1万円
+  - jp: 千円
     tags:
-    - long
+    - short
+  - jp: 二千円
+    tags:
+    - short
+  - jp: 三千円
+    tags:
+    - short
+  - jp: 四千円
+    tags:
+    - short
+  - jp: 五千円
+    tags:
+    - short
+  - jp: 六千円
+    tags:
+    - short
+  - jp: 七千円
+    tags:
+    - short
+  - jp: 八千円
+    tags:
+    - short
+  - jp: 九千円
+    tags:
+    - short
+  - jp: 一万円
+    tags:
+    - short
   book_mode: vocab_drill
 - id: A6
   kind: vocabulary
@@ -119,12 +247,47 @@ activities:
   audio:
   - assets/audio/X_[16-06]_kotoba3.mp3
   key_phrases:
-  - 1670円です2200円です31500円です43360円です5750円です69580円です71万発生円です3500円です
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 千六百七十円です
+  - 二千二百円です
+  - 千五百円です
+  - 三千三百六十円です
+  - 七百五十円です
+  - 九千五百八十円です
+  - 一万八千円です
+  - 三千五百円です
+  prompt_en: Listen to the CD, then say each word one at a time (8 words).
   phrase_meta:
-  - jp: 1670円です2200円です31500円です43360円です5750円です69580円です71万発生円です3500円です
+  - jp: 千六百七十円です
+    tags:
+    - short
+    - polite
+  - jp: 二千二百円です
+    tags:
+    - short
+    - polite
+  - jp: 千五百円です
+    tags:
+    - short
+    - polite
+  - jp: 三千三百六十円です
     tags:
     - long
+    - polite
+  - jp: 七百五十円です
+    tags:
+    - short
+    - polite
+  - jp: 九千五百八十円です
+    tags:
+    - long
+    - polite
+  - jp: 一万八千円です
+    tags:
+    - short
+    - polite
+  - jp: 三千五百円です
+    tags:
+    - short
     - polite
   book_mode: vocab_drill
 - id: A7
@@ -151,35 +314,35 @@ activities:
   audio:
   - assets/audio/X_[16-08]_kiku2.mp3
   key_phrases:
-  - 2すみませんこれいくらですか
-  - これ
-  prompt_en: 'L16 activity 8: listen to the CD, then say the phrase that matches the book.'
+  - すみません、これいくらですか。
+  - 1980円です。
+  prompt_en: Listen (CD 16-08). How much is it?
   phrase_meta:
-  - jp: 2すみませんこれいくらですか
+  - jp: すみません、これいくらですか。
     tags:
     - long
-    - polite
-  - jp: これ
+  - jp: 1980円です。
     tags:
     - short
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L16 activity 8: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Asking the price.
   choices:
   - id: a
-    label_jp: よろしくお願いします
+    label_jp: 1980円です
+    label_en: "1,980 yen"
   - id: b
-    label_jp: 2すみませんこれいくらですか
+    label_jp: よろしくお願いします
+    label_en: please treat me well
   - id: c
     label_jp: ありがとうございます
+    label_en: thank you
   - id: d
-    label_jp: これ
-  - id: e
-    label_jp: これは24円ですじゃあそれくださいこのおかしいいくらですか
+    label_jp: 3万4千500円です
+    label_en: "¥34,500"
   correct_ids:
-  - b
-  - d
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A9
   kind: listening
   book_activity: 9
@@ -188,12 +351,12 @@ activities:
   audio:
   - assets/audio/X_[16-09]_kiku3.mp3
   key_phrases:
-  - 3すみませんこれいくらですか
+  - すみませんこれいくらですか
   - これですか
   - えっと、2cm円です
   prompt_en: 'L16 activity 9: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 3すみませんこれいくらですか
+  - jp: すみませんこれいくらですか
     tags:
     - long
     - polite
@@ -212,7 +375,7 @@ activities:
   - id: a
     label_jp: 1こちら頭目ますか
   - id: b
-    label_jp: 3すみませんこれいくらですか
+    label_jp: すみませんこれいくらですか
   - id: c
     label_jp: これですか
   - id: d
@@ -220,9 +383,9 @@ activities:
   - id: e
     label_jp: ありがとうございます
   - id: f
-    label_jp: 2スプーンはいくつをつけしますか2つお願いします
+    label_jp: スプーンはいくつをつけしますか2つお願いします
   - id: g
-    label_jp: 3あのこれいくらですか
+    label_jp: あのこれいくらですか
   correct_ids:
   - b
   - c
@@ -236,25 +399,31 @@ activities:
   audio:
   - assets/audio/X_[16-10]_kiku4.mp3
   key_phrases:
-  - 4あのー緑ませんこれいくらですかはいこれですねえっと3万4千ご100円です
-  prompt_en: 'L16 activity 10: listen to the CD, then say the phrase that matches the book.'
+  - すみません、これいくらですか。
+  - 3万4千500円です。
+  prompt_en: Listen (CD 16-10). How much is it?
   phrase_meta:
-  - jp: 4あのー緑ませんこれいくらですかはいこれですねえっと3万4千ご100円です
+  - jp: すみません、これいくらですか。
     tags:
     - long
-    - polite
+  - jp: 3万4千500円です。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L16 activity 10: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Asking the price.
   choices:
   - id: a
-    label_jp: はい、この気をつと集まり10個ね
+    label_jp: 3万4千500円です
+    label_en: "¥34,500"
   - id: b
-    label_jp: 4あのー緑ませんこれいくらですかはいこれですねえっと3万4千ご100円です
+    label_jp: 1980円です
+    label_en: "¥1,980"
   - id: c
     label_jp: ありがとうございます
+    label_en: thank you
   correct_ids:
-  - b
+  - a
   choose_mode: any
 - id: A11
   kind: listening
@@ -264,37 +433,39 @@ activities:
   audio:
   - assets/audio/X_[16-11]_kiku1.mp3
   key_phrases:
-  - 1すみませんそのカレンダー行くのですか
-  - あこれは2,40円ですじゃあそれください
-  prompt_en: 'L16 activity 11: listen to the CD, then say the phrase that matches the book.'
+  - すみません、そのカレンダーいくらですか。
+  - あ、これは240円です。
+  - じゃあそれください。
+  prompt_en: "Listen (CD 16-11). What do they buy, and for how much?"
   phrase_meta:
-  - jp: 1すみませんそのカレンダー行くのですか
+  - jp: すみません、そのカレンダーいくらですか。
     tags:
     - long
-    - polite
-  - jp: あこれは2,40円ですじゃあそれください
+  - jp: あ、これは240円です。
     tags:
     - long
-    - polite
-    - casual
+  - jp: じゃあそれください。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L16 activity 11: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Price + purchase.
   choices:
   - id: a
-    label_jp: 1すみませんそのカレンダー行くのですか
+    label_jp: カレンダーは240円。それください
+    label_en: "calendar ¥240 — I'll take it"
   - id: b
-    label_jp: あこれは2,40円ですじゃあそれください
+    label_jp: ケーキを二つお願いします
+    label_en: two cakes please
   - id: c
-    label_jp: チョコレートケーキとチーズケーキ、ニコズつをお願いします
+    label_jp: これいくらですか
+    label_en: How much is this?
   - id: d
-    label_jp: 2すみませんこれいくらですか
-  - id: e
-    label_jp: これは24円ですじゃあそれくださいこのおかしいいくらですか
+    label_jp: お菓子は230円です
+    label_en: snacks are ¥230
   correct_ids:
   - a
-  - b
-  choose_mode: all
+  choose_mode: any
 - id: A12
   kind: listening
   book_activity: 12
@@ -303,42 +474,39 @@ activities:
   audio:
   - assets/audio/X_[16-12]_kiku2.mp3
   key_phrases:
-  - このおかしいいくらですか
-  - じゃあこれもお願いします
-  - 20030円です
-  prompt_en: 'L16 activity 12: listen to the CD, then say the phrase that matches the book.'
+  - このお菓子、いくらですか。
+  - 230円です。
+  - じゃあこれもお願いします。
+  prompt_en: Listen (CD 16-12). How much are the snacks?
   phrase_meta:
-  - jp: このおかしいいくらですか
+  - jp: このお菓子、いくらですか。
     tags:
     - long
-    - polite
-  - jp: じゃあこれもお願いします
-    tags:
-    - long
-    - polite
-    - casual
-  - jp: 20030円です
+  - jp: 230円です。
     tags:
     - short
-    - polite
+  - jp: じゃあこれもお願いします。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L16 activity 12: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Price check + another item.
   choices:
   - id: a
-    label_jp: 1個2個3個4個5個6個7個8個9個10個5個5個5個5個5個5個5個5個5個
+    label_jp: お菓子は230円です。これもお願いします
+    label_en: snacks ¥230; this too please
   - id: b
-    label_jp: このおかしいいくらですか
+    label_jp: 1個2個3個…
+    label_en: counting pieces
   - id: c
-    label_jp: じゃあこれもお願いします
+    label_jp: カレンダーは240円です
+    label_en: calendar ¥240
   - id: d
-    label_jp: これ
-  - id: e
     label_jp: はい、ありがとうございます
+    label_en: thank you
   correct_ids:
-  - b
-  - c
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A13
   kind: listening
   book_activity: 13
@@ -347,37 +515,39 @@ activities:
   audio:
   - assets/audio/X_[16-13]_kiku3.mp3
   key_phrases:
-  - あ、そのままねきねこはえっとはせはピックインですそうですかじゃあいいです
-  - 3あのこれいくらですか
-  prompt_en: 'L16 activity 13: listen to the CD, then say the phrase that matches the book.'
+  - あの、これいくらですか。
+  - あ、それね。猫？えっと、それはパキスタン製です。
+  - そうですか。じゃあいいです。
+  prompt_en: Listen (CD 16-13). Do they buy it?
   phrase_meta:
-  - jp: あ、そのままねきねこはえっとはせはピックインですそうですかじゃあいいです
+  - jp: あの、これいくらですか。
     tags:
     - long
-    - polite
-    - casual
-  - jp: 3あのこれいくらですか
+  - jp: あ、それね。猫？えっと、それはパキスタン製です。
     tags:
     - long
-    - polite
+  - jp: そうですか。じゃあいいです。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L16 activity 13: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Price / made-in — buy or not.
   choices:
   - id: a
-    label_jp: 3あのこれいくらですか
+    label_jp: パキスタン製なので、買いません
+    label_en: "made in Pakistan — won't buy"
   - id: b
-    label_jp: 1個2個3個4個5個6個7個8個9個10個5個5個5個5個5個5個5個5個5個
+    label_jp: 1個ください
+    label_en: one please
   - id: c
-    label_jp: このおかしいいくらですか
+    label_jp: お菓子は230円です
+    label_en: snacks ¥230
   - id: d
-    label_jp: はい
-  - id: e
-    label_jp: あ、そのままねきねこはえっとはせはピックインですそうですかじゃあいいです
+    label_jp: じゃああれください
+    label_en: "I'll take that one"
   correct_ids:
   - a
-  - e
-  choose_mode: all
+  choose_mode: any
 - id: A14
   kind: listening
   book_activity: 14
@@ -386,26 +556,35 @@ activities:
   audio:
   - assets/audio/X_[16-14]_kiku4.mp3
   key_phrases:
-  - 4すみませんあのTシャツイクラですかああれは1990円ですじゃああれください
-  prompt_en: 'L16 activity 14: listen to the CD, then say the phrase that matches the book.'
+  - すみません、あのTシャツいくらですか。
+  - あれは1990円です。
+  - じゃああれください。
+  prompt_en: Listen (CD 16-14). How much is the T-shirt?
   phrase_meta:
-  - jp: 4すみませんあのTシャツイクラですかああれは1990円ですじゃああれください
+  - jp: すみません、あのTシャツいくらですか。
     tags:
     - long
-    - polite
-    - casual
+  - jp: あれは1990円です。
+    tags:
+    - long
+  - jp: じゃああれください。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L16 activity 14: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Price + purchase.
   choices:
   - id: a
-    label_jp: ありがとうございます
+    label_jp: Tシャツは1990円。あれください
+    label_en: "T-shirt ¥1990 — I'll take it"
   - id: b
-    label_jp: 4すみませんあのTシャツイクラですかああれは1990円ですじゃああれください
+    label_jp: たこ焼きをください
+    label_en: takoyaki please
   - id: c
-    label_jp: いらっしゃいませ頼縦やつくださいはい、ありがとうございました
+    label_jp: ありがとうございます
+    label_en: thank you
   correct_ids:
-  - b
+  - a
   choose_mode: any
 - id: A15
   kind: grammar_form
@@ -415,32 +594,108 @@ activities:
   audio:
   - assets/audio/X_[16-15]_katachi.mp3
   key_phrases:
-  - これは24円ですじゃあそれくださいこのおかしいいくらですか
-  - そのまねきねこは発生800円ですあのTシャツいくらですか
-  - 23円ですじゃあこれもお願いしますこれいくらですか
-  - 俺は1990円ですじゃああれください
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - そのカレンダー、いくらですか
+  - これは240円です
+  - じゃあ、それください
+  - このお菓子、いくらですか
+  - 230円です
+  - じゃあ、これもお願いします
+  - そのまねきねこは800円です
+  - あのTシャツ、いくらですか
+  - あれは1990円です
+  - じゃあ、あれください
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
-  - jp: これは24円ですじゃあそれくださいこのおかしいいくらですか
+  - jp: そのカレンダー、いくらですか
     tags:
     - long
     - polite
-    - casual
-  - jp: そのまねきねこは発生800円ですあのTシャツいくらですか
+  - jp: これは240円です
     tags:
     - long
     - polite
-  - jp: 23円ですじゃあこれもお願いしますこれいくらですか
+  - jp: じゃあ、それください
+    tags:
+    - long
+  - jp: このお菓子、いくらですか
     tags:
     - long
     - polite
-    - casual
-  - jp: 俺は1990円ですじゃああれください
+  - jp: 230円です
+    tags:
+    - short
+    - polite
+  - jp: じゃあ、これもお願いします
     tags:
     - long
     - polite
-    - casual
-  book_mode: listen_repeat_all
+  - jp: そのまねきねこは800円です
+    tags:
+    - long
+    - polite
+  - jp: あのTシャツ、いくらですか
+    tags:
+    - long
+    - polite
+  - jp: あれは1990円です
+    tags:
+    - long
+    - polite
+  - jp: じゃあ、あれください
+    tags:
+    - long
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: そのカレンダー、＿か？
+    answers:
+    - いくらです
+    full_jp: そのカレンダー、いくらですか？
+  - prompt_jp: これは＿です。
+    answers:
+    - 240円
+    answer_alts:
+    - 二百四十円
+    full_jp: これは240円です。
+  - prompt_jp: じゃあ、＿。
+    answers:
+    - それください
+    full_jp: じゃあ、それください。
+  - prompt_jp: このお菓子、＿か？
+    answers:
+    - いくらです
+    full_jp: このお菓子、いくらですか？
+  - prompt_jp: ＿です。
+    answers:
+    - 230円
+    answer_alts:
+    - 二百三十円
+    full_jp: 230円です。
+  - prompt_jp: じゃあ、＿。
+    answers:
+    - これもお願いします
+    full_jp: じゃあ、これもお願いします。
+  - prompt_jp: そのまねきねこは＿です。
+    answers:
+    - 800円
+    answer_alts:
+    - 八百円
+    full_jp: そのまねきねこは800円です。
+  - prompt_jp: あのTシャツ、＿か？
+    answers:
+    - いくらです
+    full_jp: あのTシャツ、いくらですか？
+  - prompt_jp: あれは＿です。
+    answers:
+    - 1990円
+    answer_alts:
+    - 千九百九十円
+    - "1,990円"
+    full_jp: あれは1990円です。
+  - prompt_jp: じゃあ、＿。
+    answers:
+    - あれください
+    full_jp: じゃあ、あれください。
+  fill_pdf_page: 432
 - id: A16
   kind: speaking
   book_activity: 16
@@ -449,20 +704,28 @@ activities:
   audio:
   - assets/audio/X_[16-16]_hanasu1.mp3
   key_phrases:
-  - すみませんあのティシャツいくらですか1990円ですじゃああれください
+  - すみません、あのTシャツいくらですか。
+  - 1990円です。
+  - じゃあ、あれください。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: すみませんあのティシャツいくらですか1990円ですじゃああれください
+  - jp: すみません、あのTシャツいくらですか。
     tags:
     - long
-    - polite
-    - casual
+  - jp: 1990円です。
+    tags:
+    - short
+  - jp: じゃあ、あれください。
+    tags:
+    - long
   book_mode: dialog
   dialog_script:
-  - speaker: partner
-    jp: すみませんあのティシャツいくらですか1990円ですじゃああれください
   - speaker: learner
-    jp: すみませんあのティシャツいくらですか1990円ですじゃああれください
+    jp: すみません、あのTシャツいくらですか。
+  - speaker: partner
+    jp: 1990円です。
+  - speaker: learner
+    jp: じゃあ、あれください。
   dialog_listen_audio:
   - assets/audio/X_[16-16]_hanasu1.mp3
 - id: A17
@@ -473,20 +736,28 @@ activities:
   audio:
   - assets/audio/X_[16-17]_hanasu2.mp3
   key_phrases:
-  - すみませんこれいくらですか1990円ですじゃあいいです
+  - すみません、これいくらですか。
+  - 1990円です。
+  - じゃあ、いいです。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: すみませんこれいくらですか1990円ですじゃあいいです
+  - jp: すみません、これいくらですか。
     tags:
     - long
-    - polite
-    - casual
+  - jp: 1990円です。
+    tags:
+    - short
+  - jp: じゃあ、いいです。
+    tags:
+    - long
   book_mode: dialog
   dialog_script:
-  - speaker: partner
-    jp: すみませんこれいくらですか1990円ですじゃあいいです
   - speaker: learner
-    jp: すみませんこれいくらですか1990円ですじゃあいいです
+    jp: すみません、これいくらですか。
+  - speaker: partner
+    jp: 1990円です。
+  - speaker: learner
+    jp: じゃあ、いいです。
   dialog_listen_audio:
   - assets/audio/X_[16-17]_hanasu2.mp3
 - id: A18
@@ -497,25 +768,35 @@ activities:
   audio:
   - assets/audio/X_[16-18]_kiku1.mp3
   key_phrases:
-  - 1いらっしゃいます大焼きやつくださいはい大焼きやつありがとうございます
-  prompt_en: 'L16 activity 18: listen to the CD, then say the phrase that matches the book.'
+  - いらっしゃいませ。
+  - たこ焼きください。
+  - はい、たこ焼き。ありがとうございます。
+  prompt_en: Listen (CD 16-18). What do they order?
   phrase_meta:
-  - jp: 1いらっしゃいます大焼きやつくださいはい大焼きやつありがとうございます
+  - jp: いらっしゃいませ。
     tags:
     - long
-    - polite
+  - jp: たこ焼きください。
+    tags:
+    - long
+  - jp: はい、たこ焼き。ありがとうございます。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L16 activity 18: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Food stall order.
   choices:
   - id: a
-    label_jp: さん、フクロアどうしますか
+    label_jp: たこ焼きをください
+    label_en: takoyaki please
   - id: b
-    label_jp: 1いらっしゃいます大焼きやつくださいはい大焼きやつありがとうございます
+    label_jp: 袋はどうしますか
+    label_en: bag?
   - id: c
-    label_jp: いらっしゃいませ頼縦やつくださいはい、ありがとうございました
+    label_jp: 頼むやつください
+    label_en: the requested one please
   correct_ids:
-  - b
+  - a
   choose_mode: any
 - id: A19
   kind: listening
@@ -571,23 +852,33 @@ activities:
   audio:
   - assets/audio/X_[16-20]_kiku3.mp3
   key_phrases:
-  - 3いらっしゃいますえこの引き肉200gくださいはい200gですね
-  prompt_en: 'L16 activity 20: listen to the CD, then say the phrase that matches the book.'
+  - いらっしゃいませ。
+  - このひき肉、200gください。
+  - はい、200gですね。
+  prompt_en: Listen (CD 16-20). What do they buy?
   phrase_meta:
-  - jp: 3いらっしゃいますえこの引き肉200gくださいはい200gですね
+  - jp: いらっしゃいませ。
     tags:
     - long
-    - polite
+  - jp: このひき肉、200gください。
+    tags:
+    - long
+  - jp: はい、200gですね。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L16 activity 20: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Butcher / meat counter.
   choices:
   - id: a
-    label_jp: 3いらっしゃいますえこの引き肉200gくださいはい200gですね
+    label_jp: ひき肉を200gください
+    label_en: 200g ground meat
   - id: b
-    label_jp: これは24円ですじゃあそれくださいこのおかしいいくらですか
+    label_jp: これは240円です
+    label_en: this is ¥240
   - id: c
-    label_jp: あ、そのままねきねこはえっとはせはピックインですそうですかじゃあいいです
+    label_jp: パキスタン製です
+    label_en: made in Pakistan
   correct_ids:
   - a
   choose_mode: any
@@ -599,10 +890,10 @@ activities:
   audio:
   - assets/audio/X_[16-21]_kiku4.mp3
   key_phrases:
-  - よんいらっしゃいませチョコレートケーキとチーズケーチニコズツをお願いしますはい、ニコズツですねかしこわりました
+  - いらっしゃいませチョコレートケーキとチーズケーチニコズツをお願いしますはい、ニコズツですねかしこわりました
   prompt_en: 'L16 activity 21: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: よんいらっしゃいませチョコレートケーキとチーズケーチニコズツをお願いしますはい、ニコズツですねかしこわりました
+  - jp: いらっしゃいませチョコレートケーキとチーズケーチニコズツをお願いしますはい、ニコズツですねかしこわりました
     tags:
     - long
     - polite
@@ -611,7 +902,7 @@ activities:
   picture_hint_en: 'L16 activity 21: listen to the CD, then say the phrase that matches the book.'
   choices:
   - id: a
-    label_jp: よんいらっしゃいませチョコレートケーキとチーズケーチニコズツをお願いしますはい、ニコズツですねかしこわりました
+    label_jp: いらっしゃいませチョコレートケーキとチーズケーチニコズツをお願いしますはい、ニコズツですねかしこわりました
   - id: b
     label_jp: よろしくお願いします
   - id: c
@@ -627,23 +918,33 @@ activities:
   audio:
   - assets/audio/X_[16-22]_kiku5.mp3
   key_phrases:
-  - ごいらっしゃいませえーっと、コンブ2つタラコ1つうめー見つくださいはいコンブが2つタラコが1つうめが3つですね
-  prompt_en: 'L16 activity 22: listen to the CD, then say the phrase that matches the book.'
+  - いらっしゃいませ。
+  - こんぶ2つ、たらこ1つ、うめ3つください。
+  - はい、こんぶが2つ、たらこが1つ、うめが3つですね。
+  prompt_en: Listen (CD 16-22). What do they order?
   phrase_meta:
-  - jp: ごいらっしゃいませえーっと、コンブ2つタラコ1つうめー見つくださいはいコンブが2つタラコが1つうめが3つですね
+  - jp: いらっしゃいませ。
     tags:
     - long
-    - polite
+  - jp: こんぶ2つ、たらこ1つ、うめ3つください。
+    tags:
+    - long
+  - jp: はい、こんぶが2つ、たらこが1つ、うめが3つですね。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L16 activity 22: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Market stall — several items.
   choices:
   - id: a
-    label_jp: ごいらっしゃいませえーっと、コンブ2つタラコ1つうめー見つくださいはいコンブが2つタラコが1つうめが3つですね
+    label_jp: こんぶ2つ、たらこ1つ、うめ3つ
+    label_en: "2 kombu, 1 tarako, 3 ume"
   - id: b
-    label_jp: さん、フクロアどうしますか
+    label_jp: たこ焼きをください
+    label_en: takoyaki please
   - id: c
-    label_jp: 1いらっしゃいます大焼きやつくださいはい大焼きやつありがとうございます
+    label_jp: 袋はどうしますか
+    label_en: bag?
   correct_ids:
   - a
   choose_mode: any
@@ -656,13 +957,40 @@ activities:
   - assets/audio/X_[16-23]_katachi1.mp3
   key_phrases:
   - タイヤキやつください黒毛をつと収まい10個ください引き肉200gくださいコンブ2つ、タラコ1つ、うめみつくださいチョコレートケーキとチーズケーキ、ニコズつおねがいします
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: タイヤキやつください黒毛をつと収まい10個ください引き肉200gくださいコンブ2つ、タラコ1つ、うめみつくださいチョコレートケーキとチーズケーキ、ニコズつおねがいします
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: たい焼き8＿、ください。
+    answers:
+    - つ
+    full_jp: たい焼き8つ、ください。
+  - prompt_jp: コロッケ4＿と、シュウマイ10＿、ください。
+    answers:
+    - つ
+    - 個
+    full_jp: コロッケ4つと、シュウマイ10個、ください。
+  - prompt_jp: ひき肉200＿、ください。
+    answers:
+    - g
+    answer_alts:
+    - グラム
+    full_jp: ひき肉200g、ください。
+  - prompt_jp: 昆布2＿、たらこ1＿、梅3＿、ください。
+    answers:
+    - つ
+    - つ
+    - つ
+    full_jp: 昆布2つ、たらこ1つ、梅3つ、ください。
+  - prompt_jp: チョコレートケーキとチーズケーキ、2個＿お願いします。
+    answers:
+    - ずつ
+    full_jp: チョコレートケーキとチーズケーキ、2個ずつお願いします。
+  fill_pdf_page: 431
 - id: A24
   kind: grammar_form
   book_activity: 24
@@ -671,12 +999,48 @@ activities:
   audio:
   - assets/audio/X_[16-24]_katachi2_number.mp3
   key_phrases:
-  - 1個2個3個4個5個6個7個8個9個10個5個5個5個5個5個5個5個5個5個
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - 一個
+  - 二個
+  - 三個
+  - 四個
+  - 五個
+  - 六個
+  - 七個
+  - 八個
+  - 九個
+  - 十個
+  prompt_en: Listen, then repeat each item one at a time (10 items).
   phrase_meta:
-  - jp: 1個2個3個4個5個6個7個8個9個10個5個5個5個5個5個5個5個5個5個
+  - jp: 一個
     tags:
-    - long
+    - short
+  - jp: 二個
+    tags:
+    - short
+  - jp: 三個
+    tags:
+    - short
+  - jp: 四個
+    tags:
+    - short
+  - jp: 五個
+    tags:
+    - short
+  - jp: 六個
+    tags:
+    - short
+  - jp: 七個
+    tags:
+    - short
+  - jp: 八個
+    tags:
+    - short
+  - jp: 九個
+    tags:
+    - short
+  - jp: 十個
+    tags:
+    - short
   book_mode: listen_repeat_all
 - id: A25
   kind: speaking
@@ -801,19 +1165,52 @@ activities:
   audio:
   - assets/audio/X_[16-29]_kaiwa.mp3
   key_phrases:
-  - お次の方どうぞお願いしますこちらあたためますかはいお願いしますスプーンはいくつおつけしますか二つお願いします福祉はどうしますか大丈夫ですおかいけ825円になりますスイカでお願いしますこちらに立ちしてくださいありがとうございました
+  - お願いします。
+  - はい、お願いします。
+  - 二つお願いします。
+  - 大丈夫です。
+  - Suicaでお願いします。
   prompt_en: Listen to the conversation, then practice both roles.
   phrase_meta:
-  - jp: お次の方どうぞお願いしますこちらあたためますかはいお願いしますスプーンはいくつおつけしますか二つお願いします福祉はどうしますか大丈夫ですおかいけ825円になりますスイカでお願いしますこちらに立ちしてくださいありがとうございました
+  - jp: お願いします。
+    tags:
+    - short
+  - jp: はい、お願いします。
     tags:
     - long
-    - polite
+  - jp: 二つお願いします。
+    tags:
+    - long
+  - jp: 大丈夫です。
+    tags:
+    - short
+  - jp: Suicaでお願いします。
+    tags:
+    - long
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: お次の方どうぞお願いしますこちらあたためますかはいお願いしますスプーンはいくつおつけしますか二つお願いします福祉はどうしますか大丈夫ですおかいけ825円になりますスイカでお願いしますこちらに立ちしてくださいありがとうございました
+    jp: お次の方どうぞ。
   - speaker: learner
-    jp: お次の方どうぞお願いしますこちらあたためますかはいお願いしますスプーンはいくつおつけしますか二つお願いします福祉はどうしますか大丈夫ですおかいけ825円になりますスイカでお願いしますこちらに立ちしてくださいありがとうございました
+    jp: お願いします。
+  - speaker: partner
+    jp: こちら、あたためますか。
+  - speaker: learner
+    jp: はい、お願いします。
+  - speaker: partner
+    jp: スプーンはいくつおつけしますか。
+  - speaker: learner
+    jp: 二つお願いします。
+  - speaker: partner
+    jp: 袋はどうしますか。
+  - speaker: learner
+    jp: 大丈夫です。
+  - speaker: partner
+    jp: お会計、825円になります。
+  - speaker: learner
+    jp: Suicaでお願いします。
+  - speaker: partner
+    jp: こちらにタッチしてください。ありがとうございました。
   dialog_listen_audio:
   - assets/audio/X_[16-29]_kaiwa.mp3
 - id: A30
@@ -852,19 +1249,22 @@ activities:
   audio:
   - assets/audio/X_[16-31]_hanasu2.mp3
   key_phrases:
-  - 2スプーンはいくつをつけしますか2つお願いします
+  - 二つお願いします。
+  - スプーンはいくつおつけしますか。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: 2スプーンはいくつをつけしますか2つお願いします
+  - jp: 二つお願いします。
     tags:
     - long
-    - polite
+  - jp: スプーンはいくつおつけしますか。
+    tags:
+    - long
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 2スプーンはいくつをつけしますか2つお願いします
+    jp: スプーンはいくつおつけしますか。
   - speaker: learner
-    jp: 2スプーンはいくつをつけしますか2つお願いします
+    jp: 二つお願いします。
   dialog_listen_audio:
   - assets/audio/X_[16-31]_hanasu2.mp3
 - id: A32
@@ -903,19 +1303,28 @@ activities:
   audio:
   - assets/audio/X_[16-33]_hanasu4.mp3
   key_phrases:
-  - 4おかいけ125円になります水果でお願いしますありがとうございました
+  - Suicaでお願いします。
+  - お会計、125円になります。
+  - ありがとうございました。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: 4おかいけ125円になります水果でお願いしますありがとうございました
+  - jp: Suicaでお願いします。
     tags:
     - long
-    - polite
+  - jp: お会計、125円になります。
+    tags:
+    - long
+  - jp: ありがとうございました。
+    tags:
+    - long
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 4おかいけ125円になります水果でお願いしますありがとうございました
+    jp: お会計、125円になります。
   - speaker: learner
-    jp: 4おかいけ125円になります水果でお願いしますありがとうございました
+    jp: Suicaでお願いします。
+  - speaker: partner
+    jp: ありがとうございました。
   dialog_listen_audio:
   - assets/audio/X_[16-33]_hanasu4.mp3
 - id: KANJI
@@ -969,13 +1378,13 @@ activities:
     reading: じゅう
     gloss_en: ten
   kanji_sentences: &id002
-  - 一月
+  - 一月　八月
   - 六時
   - 十円
-  - 五階
+  - 五階　九階
   - 三個
-  - 四枚
-  - 二割
+  - 四枚　七枚
+  - 二割引
   picture_has_image: false
 - id: CULTURE
   kind: culture
@@ -1061,27 +1470,162 @@ grammar:
   - 44
   examples: []
 vocab:
-- jp: 年端え1b5円c10円d50円e100円f500円g1000円h2000円i5000円g1万円
+- jp: 一円
   reading: ''
   en: ''
   tags:
   - L16
-- jp: チャック200300400500600700800900200200200200200200
+- jp: 五円
   reading: ''
   en: ''
   tags:
   - L16
-- jp: 200円300円400円500円600円700円800円900円
+- jp: 十円
   reading: ''
   en: ''
   tags:
   - L16
-- jp: 1000円2000円3000円4000円5000円6000円7000円8000円9000円1万円
+- jp: 五十円
   reading: ''
   en: ''
   tags:
   - L16
-- jp: 1670円です2200円です31500円です43360円です5750円です69580円です71万発生円です3500円です
+- jp: 百円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 五百円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 千円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 二千円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 五千円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 一万円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 二百
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 三百
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 四百
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 五百
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 六百
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 七百
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 八百
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 九百
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 二百円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 三百円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 四百円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 六百円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 七百円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 八百円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 九百円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 三千円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 四千円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 六千円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 七千円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 八千円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 九千円
+  reading: ''
+  en: ''
+  tags:
+  - L16
+- jp: 千五百円です
   reading: ''
   en: ''
   tags:
@@ -1112,125 +1656,58 @@ quiz_bank:
   prompt_en: 'In a new everyday situation, show you can: Can say the amount/quantity you need when shopping.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L16_66
-  partner_jp: では、お願いします。
+  setup_en: Yuki says a price. How much is it?
+  goal_en: Learner shows they understood the price.
+  partner_jp: このTシャツは1990円です。
   expected:
-  - 円
-  hint_en: 'Situation: Can listen to and understand the price of a product. Reply using lesson phrases.'
+  - "1990円"
+  - "円"
+  - "千円"
+  hint_en: Yuki says a price. How much is it?
 - can_do_id: CD_L16_66
-  partner_jp: もう一度、お願いします。
+  setup_en: At checkout. Restate the total you heard.
+  goal_en: Learner understands a spoken price.
+  partner_jp: お会計、825円になります。
   expected:
-  - 円
-  hint_en: Again — 商品の値段を聞いて理解することができる。
+  - "825円"
+  - "円"
+  hint_en: At checkout. Restate the total you heard.
 - can_do_id: CD_L16_67
-  partner_jp: では、お願いします。
+  setup_en: Ask how much this is.
+  goal_en: Learner asks the price (いくら).
+  partner_jp: そのシャツ、いいですね。
   expected:
-  - いくら
-  hint_en: 'Situation: Can ask staff the price of an item. Reply using lesson phrases.'
+  - "いくらですか"
+  - "いくら"
+  hint_en: Ask how much this is.
 - can_do_id: CD_L16_67
-  partner_jp: もう一度、お願いします。
+  setup_en: Ask the price of that cake.
+  goal_en: Learner asks staff for a price.
+  partner_jp: ケーキ、いろいろありますよ。
   expected:
-  - いくら
-  hint_en: Again — 店の人に値段を質問して、答えを理解することができる。
+  - "いくらですか"
+  - "いくら"
+  hint_en: Ask the price of that cake.
 - can_do_id: CD_L16_68
-  partner_jp: では、お願いします。
+  setup_en: At the meat counter. Say how much you want (e.g. 200g).
+  goal_en: Learner states amount/quantity when shopping.
+  partner_jp: いらっしゃいませ。何にしますか？
   expected:
-  - ください
-  hint_en: 'Situation: Can say the amount/quantity you need when shopping. Reply using lesson phrases.'
+  - "ください"
+  - "グラム"
+  - "お願いします"
+  hint_en: At the meat counter. Say how much you want (e.g. 200g).
 - can_do_id: CD_L16_68
-  partner_jp: もう一度、お願いします。
+  setup_en: Order two cakes.
+  goal_en: Learner says a quantity.
+  partner_jp: ケーキですね。いくつですか？
   expected:
-  - ください
-  hint_en: Again — 買い物をするとき、必要な量や数を伝えることができる。
-- can_do_id: CD_L16_66
-  partner_jp: すみませんあのティシャツいくらですか1990円ですじゃああれください
-  expected:
-  - すみませんあのティシャツいくらですか1990円ですじゃああれください
-  hint_en: Reply as in the book dialog (activity 16).
-- can_do_id: CD_L16_67
-  partner_jp: すみませんこれいくらですか1990円ですじゃあいいです
-  expected:
-  - すみませんこれいくらですか1990円ですじゃあいいです
-  hint_en: Reply as in the book dialog (activity 17).
-- can_do_id: CD_L16_66
-  partner_jp: いらっしゃいませ頼縦やつくださいはい、ありがとうございました
-  expected:
-  - いらっしゃいませ頼縦やつくださいはい、ありがとうございました
-  hint_en: Reply as in the book dialog (activity 25).
-- can_do_id: CD_L16_67
-  partner_jp: いらっしゃいますえっ引き肉200gくださいはい、ありがとうございました
-  expected:
-  - いらっしゃいますえっ引き肉200gくださいはい、ありがとうございました
-  hint_en: Reply as in the book dialog (activity 26).
-- can_do_id: CD_L16_68
-  partner_jp: よろしくお願いします
-  expected:
-  - ありがとうございます
-  - これってよっつと集前10個ください
-  - よろしくお願いします
-  - はい
-  hint_en: Reply as in the book dialog (activity 27).
-- can_do_id: CD_L16_66
-  partner_jp: いらっしゃいませ
-  expected:
-  - はい、ありがとうございます
-  - チョコレートケーキとチーズケーキ、ニコズつをお願いします
-  - いらっしゃいませ
-  hint_en: Reply as in the book dialog (activity 28).
-- can_do_id: CD_L16_67
-  partner_jp: お次の方どうぞお願いしますこちらあたためますかはいお願いしますスプーンはいくつおつけしますか二つお願いします福祉はどうしますか大丈夫ですおかいけ825円になりますスイカでお願いしますこちらに立ちしてくださいありがとうございました
-  expected:
-  - お次の方どうぞお願いしますこちらあたためますかはいお願いしますスプーンはいくつおつけしますか二つお願いします福祉はどうしますか大丈夫ですおかいけ825円になりますスイカでお願いしますこちらに立ちしてくださいありがとうございました
-  hint_en: Reply as in the book dialog (activity 29).
-- can_do_id: CD_L16_68
-  partner_jp: 1こちら頭目ますか
-  expected:
-  - はいお願いします
-  - 1こちら頭目ますか
-  hint_en: Reply as in the book dialog (activity 30).
-- can_do_id: CD_L16_66
-  partner_jp: 2スプーンはいくつをつけしますか2つお願いします
-  expected:
-  - 2スプーンはいくつをつけしますか2つお願いします
-  hint_en: Reply as in the book dialog (activity 31).
-- can_do_id: CD_L16_67
-  partner_jp: さん、フクロアどうしますか
-  expected:
-  - 大丈夫です
-  - さん、フクロアどうしますか
-  hint_en: Reply as in the book dialog (activity 32).
-- can_do_id: CD_L16_68
-  partner_jp: 4おかいけ125円になります水果でお願いしますありがとうございました
-  expected:
-  - 4おかいけ125円になります水果でお願いしますありがとうございました
-  hint_en: Reply as in the book dialog (activity 33).
-- can_do_id: CD_L16_66
-  partner_jp: 年端え1b5円c10円d50円e100円f500円g1000円h2000円i5000円g1万円。
-  expected:
-  - 年端え1b5円c10円d50円e100円f500円g1000円h2000円i5000円g1万円
-  - 1あのーこれいくらですか300円です
-  - 4あのー緑ませんこれいくらですかはいこれですねえっと3万4千ご100円です
-  - あ、そのままねきねこはえっとはせはピックインですそうですかじゃあいいです
-  - 円
-  hint_en: Can listen to and understand the price of a product.
-- can_do_id: CD_L16_67
-  partner_jp: チャック200300400500600700800900200200200200200200。
-  expected:
-  - チャック200300400500600700800900200200200200200200
-  - 1000円2000円3000円4000円5000円6000円7000円8000円9000円1万円
-  - 2すみませんこれいくらですか
-  - これ
-  - いくら
-  hint_en: Can ask staff the price of an item.
-- can_do_id: CD_L16_68
-  partner_jp: 200円300円400円500円600円700円800円900円。
-  expected:
-  - 200円300円400円500円600円700円800円900円
-  - 1670円です2200円です31500円です43360円です5750円です69580円です71万発生円です3500円です
-  - 3すみませんこれいくらですか
-  - これですか
-  - ください
-  hint_en: Can say the amount/quantity you need when shopping.
+  - "二つ"
+  - "ください"
+  - "お願いします"
+  hint_en: Order two cakes.
 english_notes: 'Can listen to and understand the price of a product.
 
   What kind of stores do you often go to?

@@ -17,6 +17,7 @@ from threading import Lock
 
 from backend.app.config import settings
 from backend.app.logging_setup import get_logger, log_event
+from backend.app.speech.jp_text import build_stt_prompt, cleanup_learner_transcript
 
 _log = get_logger("speech.stt")
 
@@ -117,10 +118,27 @@ class TranscriptionService:
     ) -> Transcript:
         self._load_sync()
         assert self._model is not None
-        kwargs: dict = {"language": language}
-        # Bias orthography toward the target line (は vs わ) without requiring it.
-        if initial_prompt and initial_prompt.strip():
-            kwargs["initial_prompt"] = initial_prompt.strip()[:200]
+        prompt = build_stt_prompt(initial_prompt)
+        # Short classroom answers (いち / 25歳) need beam search + no prompt carry-over.
+        kwargs: dict = {
+            "language": language,
+            "beam_size": 5,
+            "best_of": 5,
+            "patience": 1.0,
+            "condition_on_previous_text": False,
+            "without_timestamps": True,
+            "vad_filter": True,
+            "vad_parameters": {
+                "min_silence_duration_ms": 250,
+                "speech_pad_ms": 220,
+            },
+            "temperature": (0.0, 0.2, 0.4),
+            "compression_ratio_threshold": 2.6,
+            "log_prob_threshold": -1.0,
+            "no_speech_threshold": 0.55,
+        }
+        if prompt:
+            kwargs["initial_prompt"] = prompt
         segments, info = self._model.transcribe(str(path), **kwargs)
         parts: list[str] = []
         raw: list[dict] = []
@@ -133,10 +151,21 @@ class TranscriptionService:
                 logprobs.append(seg.avg_logprob)
             if getattr(seg, "no_speech_prob", None) is not None:
                 no_speech.append(seg.no_speech_prob)
+        text = cleanup_learner_transcript("".join(parts))
+        # Empty / likely-hallucinated short clip: try once more without VAD.
+        duration = float(getattr(info, "duration", 0.0) or 0.0)
+        if (not text or (duration > 0 and duration < 1.2 and len(text) > 24)) and kwargs.get(
+            "vad_filter"
+        ):
+            kwargs["vad_filter"] = False
+            segments, info = self._model.transcribe(str(path), **kwargs)
+            parts = [(seg.text or "").strip() for seg in segments]
+            text = cleanup_learner_transcript("".join(parts))
+            duration = float(getattr(info, "duration", 0.0) or duration)
         return Transcript(
-            text="".join(parts).strip(),
+            text=text,
             language=getattr(info, "language", language or "ja"),
-            duration_s=float(getattr(info, "duration", 0.0) or 0.0),
+            duration_s=duration,
             avg_logprob=(sum(logprobs) / len(logprobs)) if logprobs else None,
             no_speech_prob=(max(no_speech) if no_speech else None),
         )

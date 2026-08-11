@@ -427,7 +427,7 @@ activities:
   - すみません。「ぼご」は、？
   - あ、「母語」は、子どものときからいつも使っていることばです。
   - 日本語教室に参加したいんです
-  prompt_en: Focus on the expressions used. Listen and say each pattern.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: 母語は？
     tags:
@@ -444,7 +444,21 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: すみません。「ぼご」は、＿？
+    answers:
+    - どういう意味ですか
+    full_jp: すみません。「ぼご」は、どういう意味ですか？
+  - prompt_jp: 高校＿、少し勉強しました。
+    answers:
+    - のとき
+    full_jp: 高校のとき、少し勉強しました。
+  - prompt_jp: 仕事＿、会社の人と少し話します。
+    answers:
+    - の時
+    full_jp: 仕事の時、会社の人と少し話します。
+  fill_pdf_page: 213
 - id: A11
   kind: speaking
   book_activity: 11

@@ -94,15 +94,15 @@ activities:
   - id: a
     label_jp: そうですか
   - id: b
-    label_jp: 1初めは何ですか
+    label_jp: 初めは何ですか
   - id: c
     label_jp: 神は何ですか
   - id: d
-    label_jp: 3趣味は何ですか
+    label_jp: 趣味は何ですか
   - id: e
     label_jp: えーと、音楽が好きです
   - id: f
-    label_jp: 一締みは何ですか
+    label_jp: 締みは何ですか
   - id: g
     label_jp: 海物が好きです
   correct_ids:
@@ -118,45 +118,35 @@ activities:
   audio:
   - assets/audio/X_[11-03]_kiku3.mp3
   key_phrases:
-  - 3趣味は何ですか
-  - んー、アニメが好きです
-  - ああ、アニメ
-  prompt_en: 'L11 activity 3: listen to the CD, then say the phrase that matches the book.'
+  - 趣味は何ですか。
+  - アニメが好きです。
+  prompt_en: Listen (CD 11-03). What is their hobby?
   phrase_meta:
-  - jp: 3趣味は何ですか
+  - jp: 趣味は何ですか。
     tags:
     - short
-    - polite
-  - jp: んー、アニメが好きです
+  - jp: アニメが好きです。
     tags:
     - long
-    - polite
-  - jp: ああ、アニメ
-    tags:
-    - short
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L11 activity 3: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Hobby question.
   choices:
   - id: a
-    label_jp: ああ、アニメ
+    label_jp: 趣味はアニメです
+    label_en: hobby is anime
   - id: b
-    label_jp: 大手をとっと公園で手にスをしますあと時々一人で情境をしますへぇいいですね
+    label_jp: 公園でテニスをします
+    label_en: plays tennis in the park
   - id: c
-    label_jp: 一逃げるさん休みの日はいつも何をしますか
+    label_jp: 休みの日は掃除をします
+    label_en: cleans on days off
   - id: d
-    label_jp: 3趣味は何ですか
-  - id: e
-    label_jp: スポーツ、好きですか
-  - id: f
-    label_jp: バスケットボールと水映が好きです
-  - id: g
-    label_jp: んー、アニメが好きです
+    label_jp: バスケットボールが好きです
+    label_en: likes basketball
   correct_ids:
   - a
-  - d
-  - g
-  choose_mode: all
+  choose_mode: any
 - id: A4
   kind: listening
   book_activity: 4
@@ -165,11 +155,11 @@ activities:
   audio:
   - assets/audio/X_[11-04]_kiku4.mp3
   key_phrases:
-  - 4締みは何ですか
+  - 締みは何ですか
   - 締みは6者と映画です6者と映画いいですね
   prompt_en: 'L11 activity 4: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 4締みは何ですか
+  - jp: 締みは何ですか
     tags:
     - short
     - polite
@@ -188,7 +178,7 @@ activities:
   - id: c
     label_jp: えっとゲームですえぇゲームですか
   - id: d
-    label_jp: 4締みは何ですか
+    label_jp: 締みは何ですか
   - id: e
     label_jp: 締みは6者と映画です6者と映画いいですね
   correct_ids:
@@ -242,7 +232,7 @@ activities:
   - id: f
     label_jp: テレビはあまり見ません
   - id: g
-    label_jp: 一締みは何ですか
+    label_jp: 締みは何ですか
   - id: h
     label_jp: 市民は何ですか
   correct_ids:
@@ -259,13 +249,13 @@ activities:
   audio:
   - assets/audio/X_[11-06]_kiku6 .mp3
   key_phrases:
-  - 6神は何ですか
+  - 神は何ですか
   - えーと、音楽が好きです
   - 私もです
   - 音楽
   prompt_en: 'L11 activity 6: listen to the CD, then say the phrase that matches the book.'
   phrase_meta:
-  - jp: 6神は何ですか
+  - jp: 神は何ですか
     tags:
     - short
     - polite
@@ -289,13 +279,13 @@ activities:
   - id: b
     label_jp: 音楽
   - id: c
-    label_jp: 3森田さんは休みの日は何をしますか
+    label_jp: 森田さんは休みの日は何をしますか
   - id: d
     label_jp: 私もです
   - id: e
-    label_jp: 6神は何ですか
+    label_jp: 神は何ですか
   - id: f
-    label_jp: 1初めは何ですか
+    label_jp: 初めは何ですか
   - id: g
     label_jp: テレビは見ますか
   - id: h
@@ -328,10 +318,28 @@ activities:
     - polite
   book_mode: listen_fill
   blanks:
-  - prompt_jp: ゲームですアニメが好きです独者＿映画ですスポーツですあと料理も好きです。
+  - prompt_jp: 趣味は、＿ですか？
     answers:
-    - と
-    full_jp: ゲームですアニメが好きです独者と映画ですスポーツですあと料理も好きです
+    - 何
+    full_jp: 趣味は、何ですか？
+  - prompt_jp: ゲーム＿。
+    answers:
+    - です
+    full_jp: ゲームです。
+  - prompt_jp: アニメ＿。
+    answers:
+    - が好きです
+    full_jp: アニメが好きです。
+  - prompt_jp: 読書と映画＿。
+    answers:
+    - です
+    full_jp: 読書と映画です。
+  - prompt_jp: スポーツ＿。あと、料理＿。
+    answers:
+    - です
+    - も好きです
+    full_jp: スポーツです。あと、料理も好きです。
+  fill_pdf_page: 286
 - id: A8
   kind: speaking
   book_activity: 8
@@ -447,7 +455,7 @@ activities:
   - ドラゴンボールが大好きですスポーツはあまり好きじゃないですドラゴンボールが大好きです
   - パスケットボールと水合が好きですどんな漫画が好きですか
   - どんなスポーツが好きですか
-  prompt_en: Focus on the expressions used. Listen and say each pattern.
+  prompt_en: Listen to the recording and fill in the blanks.
   phrase_meta:
   - jp: ドラゴンボールが大好きですスポーツはあまり好きじゃないですドラゴンボールが大好きです
     tags:
@@ -461,7 +469,26 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_repeat_all
+  book_mode: listen_fill
+  blanks:
+  - prompt_jp: ＿スポーツが好きですか？
+    answers:
+    - どんな
+    full_jp: どんなスポーツが好きですか？
+  - prompt_jp: ＿マンガが好きですか？
+    answers:
+    - どんな
+    full_jp: どんなマンガが好きですか？
+  - prompt_jp: スポーツは、＿好き＿です。
+    answers:
+    - あまり
+    - じゃない
+    full_jp: スポーツは、あまり好きじゃないです。
+  - prompt_jp: 「ドラゴンボール」が＿です。
+    answers:
+    - 大好き
+    full_jp: 「ドラゴンボール」が大好きです。
+  fill_pdf_page: 290
 - id: A12
   kind: speaking
   book_activity: 12
@@ -503,24 +530,22 @@ activities:
   audio:
   - assets/audio/X_[11-13]_hanasu2-1.mp3
   key_phrases:
-  - はい好きですパスケットボールが大好きです
-  - 2スポーツ好きですか
+  - はい、好きです。バスケットボールが大好きです。
+  - スポーツ好きですか。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: はい好きですパスケットボールが大好きです
+  - jp: はい、好きです。バスケットボールが大好きです。
     tags:
     - long
-    - polite
-  - jp: 2スポーツ好きですか
+  - jp: スポーツ好きですか。
     tags:
-    - short
-    - polite
+    - long
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: 2スポーツ好きですか
+    jp: スポーツ好きですか。
   - speaker: learner
-    jp: はい好きですパスケットボールが大好きです
+    jp: はい、好きです。バスケットボールが大好きです。
   dialog_listen_audio:
   - assets/audio/X_[11-13]_hanasu2-1.mp3
 - id: A14
@@ -569,22 +594,68 @@ activities:
   audio:
   - assets/audio/X_[11-15]_kotoba1.mp3
   key_phrases:
-  - 音楽を聞きますビ音を読みますしペレビを見ますビスポーツをしますいいそう字をしますえ
-  - 選択をしますジ料理をしますHゲームをしますはい3ポーしますジェン開門をしますK勉強をしますエルゆっくりします
-  - 休みの日え
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 音楽を聞きます
+  - 本を読みます
+  - テレビを見ます
+  - スポーツをします
+  - 掃除をします
+  - 洗濯をします
+  - 料理をします
+  - ゲームをします
+  - 散歩をします
+  - 買い物をします
+  - 勉強をします
+  - ゆっくりします
+  prompt_en: Listen to the CD, then say each word one at a time (12 words).
   phrase_meta:
-  - jp: 音楽を聞きますビ音を読みますしペレビを見ますビスポーツをしますいいそう字をしますえ
-    tags:
-    - long
-    - polite
-  - jp: 選択をしますジ料理をしますHゲームをしますはい3ポーしますジェン開門をしますK勉強をしますエルゆっくりします
-    tags:
-    - long
-    - polite
-  - jp: 休みの日え
+  - jp: 音楽を聞きます
     tags:
     - short
+    - polite
+  - jp: 本を読みます
+    tags:
+    - short
+    - polite
+  - jp: テレビを見ます
+    tags:
+    - short
+    - polite
+  - jp: スポーツをします
+    tags:
+    - short
+    - polite
+  - jp: 掃除をします
+    tags:
+    - short
+    - polite
+  - jp: 洗濯をします
+    tags:
+    - short
+    - polite
+  - jp: 料理をします
+    tags:
+    - short
+    - polite
+  - jp: ゲームをします
+    tags:
+    - short
+    - polite
+  - jp: 散歩をします
+    tags:
+    - short
+    - polite
+  - jp: 買い物をします
+    tags:
+    - short
+    - polite
+  - jp: 勉強をします
+    tags:
+    - short
+    - polite
+  - jp: ゆっくりします
+    tags:
+    - short
+    - polite
   book_mode: vocab_drill
 - id: A16
   kind: vocabulary
@@ -594,10 +665,50 @@ activities:
   audio:
   - assets/audio/X_[11-16]_kotoba2.mp3
   key_phrases:
-  - 1安みの日は今を読みます2安みの日はゲームをします3安みの日はゆっくりします4安みの日は音楽を聞きます5安みの日はテレビを見ます6安みの日は3安みの日は3安みの日は相時と選択をします8安みの日は回もの通りをします9安みの日は日本語を勉強します10安みの日はスポーツをします
-  prompt_en: Learn the vocabulary with the audio, then say each item aloud.
+  - 休みの日は本を読みます
+  - 休みの日はゲームをします
+  - 休みの日はゆっくりします
+  - 休みの日は音楽を聞きます
+  - 休みの日はテレビを見ます
+  - 休みの日は友だちと洗濯をします
+  - 休みの日は買い物をします
+  - 休みの日は日本語を勉強します
+  - 休みの日はスポーツをします
+  prompt_en: Listen to the CD, then say each word one at a time (9 words).
   phrase_meta:
-  - jp: 1安みの日は今を読みます2安みの日はゲームをします3安みの日はゆっくりします4安みの日は音楽を聞きます5安みの日はテレビを見ます6安みの日は3安みの日は3安みの日は相時と選択をします8安みの日は回もの通りをします9安みの日は日本語を勉強します10安みの日はスポーツをします
+  - jp: 休みの日は本を読みます
+    tags:
+    - long
+    - polite
+  - jp: 休みの日はゲームをします
+    tags:
+    - long
+    - polite
+  - jp: 休みの日はゆっくりします
+    tags:
+    - long
+    - polite
+  - jp: 休みの日は音楽を聞きます
+    tags:
+    - long
+    - polite
+  - jp: 休みの日はテレビを見ます
+    tags:
+    - long
+    - polite
+  - jp: 休みの日は友だちと洗濯をします
+    tags:
+    - long
+    - polite
+  - jp: 休みの日は買い物をします
+    tags:
+    - long
+    - polite
+  - jp: 休みの日は日本語を勉強します
+    tags:
+    - long
+    - polite
+  - jp: 休みの日はスポーツをします
     tags:
     - long
     - polite
@@ -610,36 +721,39 @@ activities:
   audio:
   - assets/audio/X_[11-17]_kiku1.mp3
   key_phrases:
-  - そうですね私はいつもそうじと選択をしますあとよく友達と会話をしますそうですか
-  - 一逃げるさん休みの日はいつも何をしますか
-  prompt_en: 'L11 activity 17: listen to the CD, then say the phrase that matches the book.'
+  - ニゲルさん、休みの日はいつも何をしますか。
+  - いつも掃除と洗濯をします。
+  - あとよく友達と話します。
+  prompt_en: Listen (CD 11-17). What does Nigel do on days off?
   phrase_meta:
-  - jp: そうですね私はいつもそうじと選択をしますあとよく友達と会話をしますそうですか
+  - jp: ニゲルさん、休みの日はいつも何をしますか。
     tags:
     - long
-    - polite
-  - jp: 一逃げるさん休みの日はいつも何をしますか
+  - jp: いつも掃除と洗濯をします。
     tags:
     - long
-    - polite
+  - jp: あとよく友達と話します。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L11 activity 17: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Weekend / day-off activities.
   choices:
   - id: a
-    label_jp: 何が好きですか
+    label_jp: 掃除と洗濯をして、よく友達と話します
+    label_en: cleaning/laundry; often talks with friends
   - id: b
-    label_jp: そうですね帯帯、打ちでゆっくりしますスポーツはしますか
-  - id: c
-    label_jp: そうですね私はいつもそうじと選択をしますあとよく友達と会話をしますそうですか
-  - id: d
     label_jp: 漫画が好きです
-  - id: e
-    label_jp: 一逃げるさん休みの日はいつも何をしますか
+    label_en: likes manga
+  - id: c
+    label_jp: うちでゆっくりします
+    label_en: relaxes at home
+  - id: d
+    label_jp: スポーツをします
+    label_en: does sports
   correct_ids:
-  - c
-  - e
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A18
   kind: listening
   book_activity: 18
@@ -704,46 +818,43 @@ activities:
   audio:
   - assets/audio/X_[11-19]_kiku3.mp3
   key_phrases:
-  - そとでスポーツをしますスポーツいいですねどんなスポーツをしますか
-  - 大手をとっと公園で手にスをしますあと時々一人で情境をしますへぇいいですね
-  - 3森田さんは休みの日は何をしますか
-  prompt_en: 'L11 activity 19: listen to the CD, then say the phrase that matches the book.'
+  - 森田さんは休みの日は何をしますか。
+  - 外でスポーツをします。
+  - 友達と公園でテニスをします。
+  - 時々一人でジョギングをします。
+  prompt_en: Listen (CD 11-19). What does Morita do on days off?
   phrase_meta:
-  - jp: そとでスポーツをしますスポーツいいですねどんなスポーツをしますか
+  - jp: 森田さんは休みの日は何をしますか。
     tags:
     - long
-    - polite
-  - jp: 大手をとっと公園で手にスをしますあと時々一人で情境をしますへぇいいですね
+  - jp: 外でスポーツをします。
     tags:
     - long
-    - polite
-  - jp: 3森田さんは休みの日は何をしますか
+  - jp: 友達と公園でテニスをします。
     tags:
     - long
-    - polite
+  - jp: 時々一人でジョギングをします。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L11 activity 19: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Weekend sports.
   choices:
   - id: a
-    label_jp: よく友達と書いても同じです
+    label_jp: 公園でテニスやジョギングをします
+    label_en: tennis / jogging in the park
   - id: b
-    label_jp: あ、いいですね
+    label_jp: よく友達と買い物します
+    label_en: often shops with friends
   - id: c
-    label_jp: そとでスポーツをしますスポーツいいですねどんなスポーツをしますか
+    label_jp: ゲームをします
+    label_en: plays games
   - id: d
-    label_jp: 3森田さんは休みの日は何をしますか
-  - id: e
-    label_jp: 大手をとっと公園で手にスをしますあと時々一人で情境をしますへぇいいですね
-  - id: f
-    label_jp: えっとゲームですえぇゲームですか
-  - id: g
-    label_jp: ジョンジョンさんの趣味は何ですか
+    label_jp: 音楽を聞きます
+    label_en: listens to music
   correct_ids:
-  - c
-  - d
-  - e
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A20
   kind: listening
   book_activity: 20
@@ -752,44 +863,39 @@ activities:
   audio:
   - assets/audio/X_[11-20]_kiku4.mp3
   key_phrases:
-  - 42しかわさんはんー休みの日はうちでゴロゴロゴロゴロふとんでゆっくりおー時々パチンコーするかなパチンコー
-  - 日本のゲームそうですか
-  - なんですか
-  - スポーツは全然しないねwitnessesが
-  prompt_en: 'L11 activity 20: listen to the CD, then say the phrase that matches the book.'
+  - 石川さんは休みの日はうちでゴロゴロします。
+  - 時々パチンコするかな。
+  - スポーツは全然しないね。
+  prompt_en: Listen (CD 11-20). What does Ishikawa do on days off?
   phrase_meta:
-  - jp: 42しかわさんはんー休みの日はうちでゴロゴロゴロゴロふとんでゆっくりおー時々パチンコーするかなパチンコー
+  - jp: 石川さんは休みの日はうちでゴロゴロします。
     tags:
     - long
-  - jp: 日本のゲームそうですか
+  - jp: 時々パチンコするかな。
     tags:
     - long
-    - polite
-  - jp: なんですか
-    tags:
-    - short
-    - polite
-  - jp: スポーツは全然しないねwitnessesが
+  - jp: スポーツは全然しないね。
     tags:
     - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'L11 activity 20: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Weekend habits.
   choices:
   - id: a
-    label_jp: なんですか
+    label_jp: うちでゴロゴロ。時々パチンコ。スポーツはしない
+    label_en: lounges at home; sometimes pachinko; no sports
   - id: b
-    label_jp: そとでスポーツをしますスポーツいいですねどんなスポーツをしますか
+    label_jp: 外でスポーツをします
+    label_en: does sports outside
   - id: c
-    label_jp: 休みの日はいつも何をしますか
+    label_jp: 掃除と洗濯をします
+    label_en: cleaning and laundry
   - id: d
-    label_jp: 日本のゲームそうですか
-  - id: e
-    label_jp: 音楽
+    label_jp: アニメが好きです
+    label_en: likes anime
   correct_ids:
   - a
-  - d
-  choose_mode: all
+  choose_mode: any
 - id: A21
   kind: grammar_form
   book_activity: 21
@@ -802,7 +908,7 @@ activities:
   - よく友達と書いても同じです
   - いつも相次と選択をします
   - テレビはあまり見ません
-  prompt_en: Listen to the recording and fill in the blanks.
+  prompt_en: Focus on the expressions used. Listen and say each pattern.
   phrase_meta:
   - jp: 休みの日はいつも何をしますか
     tags:
@@ -820,17 +926,7 @@ activities:
     tags:
     - long
     - polite
-  book_mode: listen_fill
-  blanks:
-  - prompt_jp: よく友達＿書いても同じです。
-    answers:
-    - と
-    full_jp: よく友達と書いても同じです
-  - prompt_jp: いつも相次と選択をし＿。
-    answers:
-    - ます
-    answer_alts: []
-    full_jp: いつも相次と選択をします
+  book_mode: listen_repeat_all
 - id: A22
   kind: grammar_form
   book_activity: 22
@@ -839,14 +935,29 @@ activities:
   audio:
   - assets/audio/X_[11-22]_katachi2.mp3
   key_phrases:
-  - 友達と会話をしますうちでゆっくりします外でスポーツをします後と公園で手にすをします
-  prompt_en: Focus on the grammar form (katachi). Listen and repeat the patterns.
+  - 友だちと会話をします
+  - うちでゆっくりします
+  - 外でスポーツをします
+  - 友だちと公園でテニスをします
+  prompt_en: Listen, then repeat each line one at a time (4 lines).
   phrase_meta:
-  - jp: 友達と会話をしますうちでゆっくりします外でスポーツをします後と公園で手にすをします
+  - jp: 友だちと会話をします
     tags:
     - long
     - polite
-  book_mode: listen_repeat
+  - jp: うちでゆっくりします
+    tags:
+    - long
+    - polite
+  - jp: 外でスポーツをします
+    tags:
+    - long
+    - polite
+  - jp: 友だちと公園でテニスをします
+    tags:
+    - long
+    - polite
+  book_mode: listen_repeat_all
 - id: A23
   kind: speaking
   book_activity: 23
@@ -855,29 +966,34 @@ activities:
   audio:
   - assets/audio/X_[11-23]_hanasu1.mp3
   key_phrases:
-  - はい時々しますおっとと公園で手に進みます
-  - そうですね大手打ちでゆっくりしますスポーツはしますか
-  - やすみの日はいつも何をしますか
+  - そうですね、うちでゆっくりします。
+  - はい、時々します。夫と公園でテニスします。
+  - 休みの日はいつも何をしますか。
+  - スポーツはしますか。
   prompt_en: Practice speaking along with the model audio, then say it yourself.
   phrase_meta:
-  - jp: はい時々しますおっとと公園で手に進みます
+  - jp: そうですね、うちでゆっくりします。
     tags:
     - long
-    - polite
-  - jp: そうですね大手打ちでゆっくりしますスポーツはしますか
+  - jp: はい、時々します。夫と公園でテニスします。
     tags:
     - long
-    - polite
-  - jp: やすみの日はいつも何をしますか
+  - jp: 休みの日はいつも何をしますか。
     tags:
     - long
-    - polite
+  - jp: スポーツはしますか。
+    tags:
+    - long
   book_mode: dialog
   dialog_script:
   - speaker: partner
-    jp: やすみの日はいつも何をしますか
+    jp: 休みの日はいつも何をしますか。
   - speaker: learner
-    jp: はい時々しますおっとと公園で手に進みます
+    jp: そうですね、うちでゆっくりします。
+  - speaker: partner
+    jp: スポーツはしますか。
+  - speaker: learner
+    jp: はい、時々します。夫と公園でテニスします。
   dialog_listen_audio:
   - assets/audio/X_[11-23]_hanasu1.mp3
 - id: A24
@@ -936,7 +1052,7 @@ activities:
     reading: ほん
     gloss_en: book
   - kanji: 聞きます
-    reading: ほんききます
+    reading: ききます
     gloss_en: to listen / ask
   - kanji: 友だち
     reading: ともだち
@@ -948,10 +1064,10 @@ activities:
     reading: なに
     gloss_en: what
   kanji_sentences: &id002
-  - Ａ：休
+  - Ａ：休みの日は、何をしますか？　Ｂ：たいてい、本を読みます。
   - テレビは、あまり見ません。
-  - よく、音
-  - ときどき、友だちと、買
+  - よく、音楽を聞きます。
+  - ときどき、友だちと、買い物をします。
   picture_has_image: false
 - id: CULTURE
   kind: culture
@@ -1032,22 +1148,32 @@ grammar:
   - 28
   examples: []
 vocab:
-- jp: 音楽を聞きますビ音を読みますしペレビを見ますビスポーツをしますいいそう字をしますえ
+- jp: 本を読みます
   reading: ''
   en: ''
   tags:
   - L11
-- jp: 選択をしますジ料理をしますHゲームをしますはい3ポーしますジェン開門をしますK勉強をしますエルゆっくりします
+- jp: 掃除をします
   reading: ''
   en: ''
   tags:
   - L11
-- jp: 休みの日え
+- jp: 洗濯をします
   reading: ''
   en: ''
   tags:
   - L11
-- jp: 1安みの日は今を読みます2安みの日はゲームをします3安みの日はゆっくりします4安みの日は音楽を聞きます5安みの日はテレビを見ます6安みの日は3安みの日は3安みの日は相時と選択をします8安みの日は回もの通りをします9安みの日は日本語を勉強します10安みの日はスポーツをします
+- jp: 料理をします
+  reading: ''
+  en: ''
+  tags:
+  - L11
+- jp: 散歩をします
+  reading: ''
+  en: ''
+  tags:
+  - L11
+- jp: 勉強をします
   reading: ''
   en: ''
   tags:
@@ -1078,120 +1204,61 @@ quiz_bank:
   prompt_en: 'In a new everyday situation, show you can: Can say simply what you do on days off.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_L11_44
-  partner_jp: では、お願いします。
+  setup_en: Yuki asks about your hobbies. Answer simply.
+  goal_en: Learner answers about hobbies.
+  partner_jp: 趣味は何ですか？
   expected:
-  - 趣味
-  hint_en: 'Situation: Can answer simply when asked about hobbies. Reply using lesson phrases.'
+  - "趣味"
+  - "好きです"
+  - "です"
+  hint_en: Yuki asks about your hobbies. Answer simply.
 - can_do_id: CD_L11_44
-  partner_jp: もう一度、お願いします。
+  setup_en: Someone asks if you like sports. Answer.
+  goal_en: Learner answers a hobby/like question.
+  partner_jp: スポーツ、好きですか？
   expected:
-  - 趣味
-  hint_en: Again — 趣味について質問されたとき、簡単に答えることができる。
+  - "好きです"
+  - "好きじゃない"
+  - "あまり"
+  hint_en: Someone asks if you like sports. Answer.
 - can_do_id: CD_L11_45
-  partner_jp: では、お願いします。
+  setup_en: Ask Yuki about her hobbies.
+  goal_en: Learner asks about hobbies/likes.
+  partner_jp: 私の趣味は料理です。
   expected:
-  - 好き
-  hint_en: 'Situation: Can ask and answer about hobbies and likes. Reply using lesson phrases.'
+  - "趣味は何ですか"
+  - "何が好きですか"
+  - "好きですか"
+  hint_en: Ask Yuki about her hobbies.
 - can_do_id: CD_L11_45
-  partner_jp: もう一度、お願いします。
+  setup_en: Ask what anime/manga they like.
+  goal_en: Learner asks about likes.
+  partner_jp: アニメ、よく見ます。
   expected:
-  - 好き
-  hint_en: Again — 趣味や好きなことを質問したり答えたりすることができる。
+  - "何が好きですか"
+  - "好きな"
+  - "好きですか"
+  hint_en: Ask what anime/manga they like.
 - can_do_id: CD_L11_46
-  partner_jp: では、お願いします。
+  setup_en: Say what you usually do on days off.
+  goal_en: Learner talks about days off.
+  partner_jp: 休みの日はいつも何をしますか？
   expected:
-  - 休み
-  hint_en: 'Situation: Can say simply what you do on days off. Reply using lesson phrases.'
+  - "休み"
+  - "します"
+  - "ゆっくり"
+  hint_en: Say what you usually do on days off.
 - can_do_id: CD_L11_46
-  partner_jp: もう一度、お願いします。
+  setup_en: Yuki talks about her weekend. Say what you do.
+  goal_en: Learner describes their free-day activity.
+  partner_jp: 私は休みの日に公園へ行きます。
   expected:
-  - 休み
-  hint_en: Again — 休みの日に何をするか簡単に言うことができる。
-- can_do_id: CD_L11_45
-  partner_jp: 趣味は何ですか
-  expected:
-  - そうですか
-  - アニメが好きです
-  - 趣味は何ですか
-  hint_en: Reply as in the book dialog (activity 8).
-- can_do_id: CD_L11_46
-  partner_jp: 趣味は何ですか
-  expected:
-  - いいですね
-  - 趣味は何ですか
-  - 独手と営がです
-  hint_en: Reply as in the book dialog (activity 9).
-- can_do_id: CD_L11_44
-  partner_jp: ジョンジョンさんの趣味は何ですか
-  expected:
-  - あ、いいですね
-  - ジョンジョンさんの趣味は何ですか
-  - バスケットボールと水映が好きです
-  - スポーツはあまり好きじゃないです
-  hint_en: Reply as in the book dialog (activity 10).
-- can_do_id: CD_L11_46
-  partner_jp: 一締みは何ですか
-  expected:
-  - バスケットボールと水映が好きです
-  - スポーツですどんなスポーツが好きですか
-  - 一締みは何ですか
-  hint_en: Reply as in the book dialog (activity 12).
-- can_do_id: CD_L11_44
-  partner_jp: 2スポーツ好きですか
-  expected:
-  - はい好きですパスケットボールが大好きです
-  - 2スポーツ好きですか
-  hint_en: Reply as in the book dialog (activity 13).
-- can_do_id: CD_L11_45
-  partner_jp: スポーツ、好きですか
-  expected:
-  - 漫画が好きです
-  - あまり好きじゃないです
-  - スポーツ、好きですか
-  - 何が好きですか
-  hint_en: Reply as in the book dialog (activity 14).
-- can_do_id: CD_L11_45
-  partner_jp: やすみの日はいつも何をしますか
-  expected:
-  - はい時々しますおっとと公園で手に進みます
-  - そうですね大手打ちでゆっくりしますスポーツはしますか
-  - やすみの日はいつも何をしますか
-  hint_en: Reply as in the book dialog (activity 23).
-- can_do_id: CD_L11_46
-  partner_jp: やすみの日はいつも何をしますか
-  expected:
-  - いいえ、あまりしません
-  - そうですね帯帯、打ちでゆっくりしますスポーツはしますか
-  - やすみの日はいつも何をしますか
-  hint_en: Reply as in the book dialog (activity 24).
-- can_do_id: CD_L11_44
-  partner_jp: えっとゲームですえぇゲームですか。
-  expected:
-  - えっとゲームですえぇゲームですか
-  - 1初めは何ですか
-  - 4締みは何ですか
-  - 締みは6者と映画です6者と映画いいですね
-  - 趣味
-  hint_en: Can answer simply when asked about hobbies.
-- can_do_id: CD_L11_45
-  partner_jp: 神は何ですか。
-  expected:
-  - 神は何ですか
-  - そうですか
-  - 海物が好きです
-  - 市民は何ですか
-  - 好き
-  hint_en: Can ask and answer about hobbies and likes.
-- can_do_id: CD_L11_46
-  partner_jp: 3趣味は何ですか。
-  expected:
-  - 3趣味は何ですか
-  - んー、アニメが好きです
-  - ああ、アニメ
-  - 6神は何ですか
-  - 休み
-  hint_en: Can say simply what you do on days off.
+  - "休み"
+  - "します"
+  - "です"
+  hint_en: Yuki talks about her weekend. Say what you do.
 english_notes: 'What are your hobbies? What do you do when you have days off?
 
   Can give a simple answer when asked about your hobbies.

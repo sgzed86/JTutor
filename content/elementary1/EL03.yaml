@@ -149,54 +149,35 @@ activities:
   audio:
   - assets/audio/Y_[03-05]_kiku1.mp3
   key_phrases:
-  - はとても寒くなります
-  - 人の人が話しています。
-  - のどれですか。
-  - それぞれどんな特徴があります
-  prompt_en: 'EL03 activity 5: listen to the CD, then say the phrase that matches the book.'
+  - 一年中夏です。
+  - ずっと暑いです。
+  prompt_en: "Listen (CD 03-05). What seasons does Joey's country have?"
   phrase_meta:
-  - jp: はとても寒くなります
+  - jp: 一年中夏です。
     tags:
     - short
-    - polite
-  - jp: 人の人が話しています。
-    tags:
-    - long
-    - polite
-  - jp: のどれですか。
+  - jp: ずっと暑いです。
     tags:
     - short
-    - polite
-  - jp: それぞれどんな特徴があります
-    tags:
-    - long
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL03 activity 5: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Seasons — summer all year.
   choices:
   - id: a
-    label_jp: のどれですか。
+    label_jp: 一年中夏です。ずっと暑いです。
+    label_en: summer all year; always hot
   - id: b
-    label_jp: 人の人が話しています。
+    label_jp: 雨季と乾季があります
+    label_en: rainy and dry seasons
   - id: c
-    label_jp: 好きな季節はいつですか
+    label_jp: 冬はとても寒くなります
+    label_en: winter gets very cold
   - id: d
-    label_jp: それぞれどんな特徴があります
-  - id: e
-    label_jp: 好きな季節はいつですか？
-  - id: f
-    label_jp: ジョーイさんの国には、どんな季節がありますか？
-  - id: g
-    label_jp: 好きな季節について話しています。
-  - id: h
-    label_jp: はとても寒くなります
+    label_jp: 秋が好きです
+    label_en: likes autumn
   correct_ids:
   - a
-  - b
-  - d
-  - h
-  choose_mode: all
+  choose_mode: any
 - id: A6
   kind: listening
   book_activity: 6
@@ -205,54 +186,39 @@ activities:
   audio:
   - assets/audio/Y_[03-06]_kiku2.mp3
   key_phrases:
-  - はとても寒くなります
-  - 人の人が話しています。
-  - のどれですか。
-  - それぞれどんな特徴があります
-  prompt_en: 'EL03 activity 6: listen to the CD, then say the phrase that matches the book.'
+  - 雨季と乾季があります。
+  - 雨季はとても暑いです。
+  - 乾季は少し涼しくなります。
+  prompt_en: "Listen (CD 03-06). What seasons does Tam's country have?"
   phrase_meta:
-  - jp: はとても寒くなります
-    tags:
-    - short
-    - polite
-  - jp: 人の人が話しています。
+  - jp: 雨季と乾季があります。
     tags:
     - long
-    - polite
-  - jp: のどれですか。
-    tags:
-    - short
-    - polite
-  - jp: それぞれどんな特徴があります
+  - jp: 雨季はとても暑いです。
     tags:
     - long
-    - polite
+  - jp: 乾季は少し涼しくなります。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL03 activity 6: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: Seasons — rainy season and dry season.
   choices:
   - id: a
-    label_jp: それぞれどんな特徴があります
+    label_jp: 雨季と乾季があります
+    label_en: rainy and dry seasons
   - id: b
     label_jp: 一年中夏です。ずっと暑いです。
+    label_en: summer all year
   - id: c
-    label_jp: 秋が好きです。
+    label_jp: 冬はとても寒くなります
+    label_en: winter is very cold
   - id: d
-    label_jp: どうしてですか？
-  - id: e
-    label_jp: 人の人が話しています。
-  - id: f
-    label_jp: 雨季と乾季があります。
-  - id: g
-    label_jp: のどれですか。
-  - id: h
-    label_jp: はとても寒くなります
+    label_jp: 秋が好きです
+    label_en: likes autumn
   correct_ids:
   - a
-  - e
-  - g
-  - h
-  choose_mode: all
+  choose_mode: any
 - id: A7
   kind: listening
   book_activity: 7
@@ -261,54 +227,39 @@ activities:
   audio:
   - assets/audio/Y_[03-07]_kiku3.mp3
   key_phrases:
-  - はとても寒くなります
-  - 人の人が話しています。
-  - のどれですか。
-  - それぞれどんな特徴があります
-  prompt_en: 'EL03 activity 7: listen to the CD, then say the phrase that matches the book.'
+  - 日本と同じで四季があります。
+  - 夏はとても暑いです。
+  - 冬はとても寒いです。
+  prompt_en: "Listen (CD 03-07). What are summers and winters like in Vyal's country?"
   phrase_meta:
-  - jp: はとても寒くなります
-    tags:
-    - short
-    - polite
-  - jp: 人の人が話しています。
+  - jp: 日本と同じで四季があります。
     tags:
     - long
-    - polite
-  - jp: のどれですか。
-    tags:
-    - short
-    - polite
-  - jp: それぞれどんな特徴があります
+  - jp: 夏はとても暑いです。
     tags:
     - long
-    - polite
+  - jp: 冬はとても寒いです。
+    tags:
+    - long
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL03 activity 7: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: "Four seasons — very hot summers, very cold winters."
   choices:
   - id: a
-    label_jp: とても暑いです
+    label_jp: 四季があります。夏はとても暑くて、冬はとても寒いです
+    label_en: "four seasons; very hot summers, very cold winters"
   - id: b
-    label_jp: どうしてですか？
+    label_jp: 一年中夏です。ずっと暑いです。
+    label_en: summer all year
   - id: c
-    label_jp: はとても寒くなります
+    label_jp: 雨季と乾季があります
+    label_en: rainy and dry seasons
   - id: d
-    label_jp: それぞれどんな特徴があります
-  - id: e
-    label_jp: 人の人が話しています。
-  - id: f
-    label_jp: 好きな季節はいつですか
-  - id: g
-    label_jp: 好きな季節はいつですか？
-  - id: h
-    label_jp: のどれですか。
+    label_jp: 秋が好きです
+    label_en: likes autumn
   correct_ids:
-  - c
-  - d
-  - e
-  - h
-  choose_mode: all
+  - a
+  choose_mode: any
 - id: A8
   kind: listening
   book_activity: 8
@@ -317,54 +268,39 @@ activities:
   audio:
   - assets/audio/Y_[03-08]_kiku4.mp3
   key_phrases:
-  - はとても寒くなります
-  - 人の人が話しています。
-  - のどれですか。
-  - それぞれどんな特徴があります
-  prompt_en: 'EL03 activity 8: listen to the CD, then say the phrase that matches the book.'
+  - 四季があります。
+  - 夏はとても短いです。冬はとても長いです。
+  - 雪がたくさん降ります。とても寒いです。
+  prompt_en: "Listen (CD 03-08). What is winter like in Xiao's country?"
   phrase_meta:
-  - jp: はとても寒くなります
+  - jp: 四季があります。
     tags:
     - short
-    - polite
-  - jp: 人の人が話しています。
+  - jp: 夏はとても短いです。冬はとても長いです。
     tags:
     - long
-    - polite
-  - jp: のどれですか。
-    tags:
-    - short
-    - polite
-  - jp: それぞれどんな特徴があります
+  - jp: 雪がたくさん降ります。とても寒いです。
     tags:
     - long
-    - polite
   book_mode: listen_choose
   picture_has_image: true
-  picture_hint_en: 'EL03 activity 8: listen to the CD, then say the phrase that matches the book.'
+  picture_hint_en: "Four seasons — short summer, long cold winter."
   choices:
   - id: a
-    label_jp: はとても寒くなります
-  - id: b
-    label_jp: のどれですか。
-  - id: c
-    label_jp: 一年中夏です。ずっと暑いです。
-  - id: d
     label_jp: 冬はとても寒くなります
-  - id: e
-    label_jp: 人の人が話しています。
-  - id: f
-    label_jp: それぞれどんな特徴があります
-  - id: g
-    label_jp: 日本を紹介する映像を見ています。
-  - id: h
-    label_jp: そうですか。
+    label_en: winter gets very cold
+  - id: b
+    label_jp: 一年中夏です。ずっと暑いです。
+    label_en: summer all year
+  - id: c
+    label_jp: 雨季と乾季があります
+    label_en: rainy and dry seasons
+  - id: d
+    label_jp: 秋が好きです
+    label_en: likes autumn
   correct_ids:
   - a
-  - b
-  - e
-  - f
-  choose_mode: all
+  choose_mode: any
 - id: A9
   kind: speaking
   book_activity: 9
@@ -745,42 +681,65 @@ quiz_bank:
   prompt_en: 'Demonstrate: Can talk in simple terms about your favorite season and the reason.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL03_08
-  partner_jp: 冬はとても寒くなります。
-  expected: &id001
-  - 冬はとても寒くなります
-  - 春は桜の花が咲きます
-  - はとても寒くなります
-  - 人の人が話しています。
-  hint_en: Can watch a short video about the four seasons in Japan and under - stand seasonal characteristics.
+  setup_en: Yuki describes Japanese seasons. Which season did she mention for cherry blossoms?
+  goal_en: Learner shows they understood seasonal characteristics.
+  partner_jp: 春は桜の花が咲きます。夏はとても暑いです。冬は寒くて雪が降る所もあります。
+  expected:
+  - "春"
+  - "桜"
+  - "夏"
+  - "冬"
+  hint_en: Yuki describes Japanese seasons. Which season did she mention for cherry blossoms?
 - can_do_id: CD_EL03_08
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can watch a short video about the four seasons in Japan and under - stand season
+  setup_en: Summarize one seasonal fact you heard.
+  goal_en: Learner restates a seasonal characteristic.
+  partner_jp: 秋は紅葉がきれいです。食べ物もおいしい季節です。
+  expected:
+  - "秋"
+  - "紅葉"
+  - "おいしい"
+  hint_en: Summarize one seasonal fact you heard.
 - can_do_id: CD_EL03_09
-  partner_jp: 冬はとても寒くなります。
-  expected: &id002
-  - 冬はとても寒くなります
-  - 春は桜の花が咲きます
-  - はとても寒くなります
-  - 人の人が話しています。
-  hint_en: Can talk in simple terms about the seasonal characteristics of your own country.
+  setup_en: Talk about seasons in your country.
+  goal_en: Learner describes seasonal characteristics of their country.
+  partner_jp: あなたの国には、どんな季節がありますか？
+  expected:
+  - "季節"
+  - "暑い"
+  - "寒い"
+  - "です"
+  hint_en: Talk about seasons in your country.
 - can_do_id: CD_EL03_09
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can talk in simple terms about the seasonal characteristics of your own country.
+  setup_en: Compare winter in your country to Japan.
+  goal_en: "Learner talks simply about their country's seasons."
+  partner_jp: 日本の冬は寒いです。あなたの国は？
+  expected:
+  - "冬"
+  - "です"
+  - "暑い"
+  - "寒い"
+  hint_en: Compare winter in your country to Japan.
 - can_do_id: CD_EL03_10
-  partner_jp: はとても寒くなります。
-  expected: &id003
-  - はとても寒くなります
-  - 日本を紹介する映像を見ています。
-  - 冬はとても寒くなります
-  - ジョーイさんの国には、どんな季節がありますか？
-  hint_en: Can talk in simple terms about your favorite season and the reason.
+  setup_en: Say your favorite season and why.
+  goal_en: Learner states favorite season with a reason.
+  partner_jp: 好きな季節は何ですか？どうしてですか？
+  expected:
+  - "好き"
+  - "から"
+  - "季節"
+  - "です"
+  hint_en: Say your favorite season and why.
 - can_do_id: CD_EL03_10
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can talk in simple terms about your favorite season and the reason.
+  setup_en: Yuki likes summer. Share your favorite and a reason.
+  goal_en: Learner gives favorite season + reason.
+  partner_jp: 私は夏が好きです。海に行けるからです。
+  expected:
+  - "好き"
+  - "から"
+  - "です"
+  hint_en: Yuki likes summer. Share your favorite and a reason.
 english_notes: 'What are the seasons like in your country?
 
   Can watch a short video about the four seasons in Japan and understand seasonal characteristics.

@@ -1219,54 +1219,84 @@ quiz_bank:
     study methods.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL09_27
-  partner_jp: どこで日本語を勉強しました。
-  expected: &id001
-  - どこで日本語を勉強しました
-  - 人の人が話しています。
-  - 日本語を勉強しました
-  - 読み方を教えてもらえません
-  hint_en: Can talk in simple terms about your experience learning Japanese.
+  setup_en: Talk about your experience learning Japanese.
+  goal_en: Learner talks about Japanese learning experience.
+  partner_jp: どこで日本語を勉強しましたか？
+  expected:
+  - "勉強"
+  - "日本語"
+  - "です"
+  hint_en: Talk about your experience learning Japanese.
 - can_do_id: CD_EL09_27
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can talk in simple terms about your experience learning Japanese.
+  setup_en: "Say how long you've studied Japanese."
+  goal_en: Learner describes learning background simply.
+  partner_jp: 日本語、どのくらい勉強していますか？
+  expected:
+  - "勉強"
+  - "年"
+  - "月"
+  - "です"
+  hint_en: "Say how long you've studied Japanese."
 - can_do_id: CD_EL09_28
-  partner_jp: どこで日本語を勉強しました。
-  expected: &id002
-  - どこで日本語を勉強しました
-  - 人の人が話しています。
-  - 日本語を勉強しました
-  - どこで日本語を勉強しましたか？
-  hint_en: Can give your impressions and comments about learning Japanese.
+  setup_en: Give your impressions of learning Japanese.
+  goal_en: Learner comments on studying Japanese.
+  partner_jp: 日本語の勉強、どうですか？
+  expected:
+  - "難しい"
+  - "楽しい"
+  - "です"
+  - "でも"
+  hint_en: Give your impressions of learning Japanese.
 - can_do_id: CD_EL09_28
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can give your impressions and comments about learning Japanese.
+  setup_en: Say what is hard or fun about Japanese.
+  goal_en: Learner gives learning impressions.
+  partner_jp: 漢字は難しいですか？
+  expected:
+  - "難しい"
+  - "楽しい"
+  - "好き"
+  - "です"
+  hint_en: Say what is hard or fun about Japanese.
 - can_do_id: CD_EL09_29
-  partner_jp: どこで日本語を勉強しました。
-  expected: &id003
-  - どこで日本語を勉強しました
-  - 人の人が話しています。
-  - 日本語を勉強しました
-  - どこで日本語を勉強しましたか？
-  hint_en: Can ask someone for help when, for example, you have a problem with Japanese.
+  setup_en: "You don't understand a word. Ask for help."
+  goal_en: Learner asks for help with Japanese.
+  partner_jp: はい、何ですか？
+  expected:
+  - "教えて"
+  - "わかりません"
+  - "何ですか"
+  - "読み方"
+  hint_en: "You don't understand a word. Ask for help."
 - can_do_id: CD_EL09_29
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can ask someone for help when, for example, you have a problem with Japanese.
+  setup_en: Ask how to read this kanji.
+  goal_en: Learner requests help with Japanese.
+  partner_jp: このメニュー、見てください。
+  expected:
+  - "読み方"
+  - "教えて"
+  - "何と読みますか"
+  hint_en: Ask how to read this kanji.
 - can_do_id: CD_EL09_30
-  partner_jp: どこで日本語を勉強しました。
-  expected: &id004
-  - どこで日本語を勉強しました
-  - 人の人が話しています。
-  - 日本語を勉強しました
-  - 読み方を教えてもらえません
-  hint_en: Can read an online forum about learning Japanese and understand the recommended study methods.
+  setup_en: Yuki summarizes a study forum tip. What method was recommended?
+  goal_en: Learner understands a recommended study method.
+  partner_jp: フォーラムでは『毎日、短い会話を聞く』がおすすめだそうです。
+  expected:
+  - "聞く"
+  - "毎日"
+  - "会話"
+  - "おすすめ"
+  hint_en: Yuki summarizes a study forum tip. What method was recommended?
 - can_do_id: CD_EL09_30
-  partner_jp: もう一度、お願いします。
-  expected: *id004
-  hint_en: 'Again — Can read an online forum about learning Japanese and understand the recommended '
+  setup_en: Restate one study tip you heard.
+  goal_en: Learner shows understanding of online study advice.
+  partner_jp: 『単語は例文で覚えるといい』と書いてありました。
+  expected:
+  - "単語"
+  - "例文"
+  - "覚える"
+  hint_en: Restate one study tip you heard.
 english_notes: 'How is your Japanese learning going? What do you find interesting? What do you find difficult?
 
   Can talk in simple terms about your experience learning Japanese.

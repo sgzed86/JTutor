@@ -1075,43 +1075,61 @@ quiz_bank:
   prompt_en: 'Demonstrate: Can give your impressions about the event to the person you went with.'
   spoken_required: true
 quiz_scenarios:
+# Real role-plays for Can-do checks (LLM-judged; expected = fallback examples).
 - can_do_id: CD_EL08_24
-  partner_jp: もう行きました。
-  expected: &id001
-  - もう行きました
-  - 知り合いを誘っています。
-  - 何に誘いました
-  - 新しいアウトレットモール、行きましたか？
-  hint_en: Can ask someone out to eat, go shopping, or go to an event while asking about their experience
-    and interest.
+  setup_en: "Invite Yuki out while asking if she's been to the new mall."
+  goal_en: Learner invites while checking experience/interest.
+  partner_jp: 最近、どう？
+  expected:
+  - "行きませんか"
+  - "行きましたか"
+  - "一緒"
+  hint_en: "Invite Yuki out while asking if she's been to the new mall."
 - can_do_id: CD_EL08_24
-  partner_jp: もう一度、お願いします。
-  expected: *id001
-  hint_en: Again — Can ask someone out to eat, go shopping, or go to an event while asking about th
+  setup_en: "Ask if they like festivals, then invite them."
+  goal_en: Learner invites with interest check.
+  partner_jp: 週末、ひまです。
+  expected:
+  - "好きですか"
+  - "行きませんか"
+  - "どうですか"
+  hint_en: "Ask if they like festivals, then invite them."
 - can_do_id: CD_EL08_25
-  partner_jp: もう行きました。
-  expected: &id002
-  - もう行きました
-  - 知り合いを誘っています。
-  - 何に誘いました
-  - 新しいアウトレットモール、行きましたか？
-  hint_en: Can discuss what to do next and where to go while you are out with someone.
+  setup_en: "You're already out. Suggest what to do next."
+  goal_en: Learner discusses next place/activity while out.
+  partner_jp: 次、どこに行きましょうか？
+  expected:
+  - "ましょう"
+  - "どうですか"
+  - "行きたい"
+  hint_en: "You're already out. Suggest what to do next."
 - can_do_id: CD_EL08_25
-  partner_jp: もう一度、お願いします。
-  expected: *id002
-  hint_en: Again — Can discuss what to do next and where to go while you are out with someone.
+  setup_en: After shopping. Propose coffee or going home.
+  goal_en: Learner discusses the next step.
+  partner_jp: そろそろお腹すきました。
+  expected:
+  - "食べ"
+  - "ましょう"
+  - "どう"
+  hint_en: After shopping. Propose coffee or going home.
 - can_do_id: CD_EL08_26
-  partner_jp: もう行きました。
-  expected: &id003
-  - もう行きました
-  - 知り合いを誘っています。
-  - 何に誘いました
-  - 新しいアウトレットモール、行きましたか？
-  hint_en: Can give your impressions about the event to the person you went with.
+  setup_en: "After an event, give your impressions to Yuki."
+  goal_en: Learner shares impressions of the outing.
+  partner_jp: 今日のイベント、どうでしたか？
+  expected:
+  - "楽しかった"
+  - "よかった"
+  - "でした"
+  hint_en: "After an event, give your impressions to Yuki."
 - can_do_id: CD_EL08_26
-  partner_jp: もう一度、お願いします。
-  expected: *id003
-  hint_en: Again — Can give your impressions about the event to the person you went with.
+  setup_en: Comment on the place you visited together.
+  goal_en: Learner gives impressions to their companion.
+  partner_jp: アウトレット、初めてでしたね。
+  expected:
+  - "ですね"
+  - "楽しかった"
+  - "また"
+  hint_en: Comment on the place you visited together.
 english_notes: 'What kind of places do you ask your friend to accompany you to?
 
   Can ask someone out to eat, go shopping, or go to an event while asking about their experience and interest.

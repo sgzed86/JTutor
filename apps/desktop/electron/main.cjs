@@ -15,6 +15,15 @@ function projectRoot() {
   return app.isPackaged ? process.resourcesPath : path.join(__dirname, "..", "..", "..");
 }
 
+function appIconPath() {
+  // Prefer the Windows .ico (taskbar/shortcut), fall back to PNG.
+  const ico = path.join(__dirname, "icon.ico");
+  const png = path.join(__dirname, "icon.png");
+  if (fs.existsSync(ico)) return ico;
+  if (fs.existsSync(png)) return png;
+  return undefined;
+}
+
 function createSplash() {
   const win = new BrowserWindow({
     width: 420,
@@ -23,6 +32,7 @@ function createSplash() {
     resizable: false,
     show: false,
     backgroundColor: "#141f33",
+    icon: appIconPath(),
     webPreferences: { contextIsolation: true, nodeIntegration: false },
   });
   win.loadFile(path.join(__dirname, "splash.html"));
@@ -47,6 +57,7 @@ function createMainWindow(baseUrl) {
     title: "Jtutor",
     backgroundColor: "#141f33",
     show: false,
+    icon: appIconPath(),
     webPreferences: {
       preload: path.join(__dirname, "preload.cjs"),
       contextIsolation: true,
@@ -202,6 +213,10 @@ function registerIpc() {
   });
 
   ipcMain.handle("jtutor:diagnostics", () => (supervisor ? supervisor.diagnostics() : null));
+}
+
+if (process.platform === "win32") {
+  app.setAppUserModelId("com.jtutor.app");
 }
 
 if (!app.requestSingleInstanceLock()) {

@@ -121,3 +121,39 @@ def test_mother_haha_still_passes():
 def test_grade_reports_the_transcript_back():
     g = grade_phrases("おはよ", ["おはよう"], spoken=True)
     assert g["transcript"] == "おはよ"
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [
+        ("1", "いち"),
+        ("いち", "いち"),
+        ("一", "いち"),
+        ("25歳", "にじゅうごさい"),
+        ("二十五歳", "にじゅうごさい"),
+        ("25歳です", "にじゅうごさいです"),
+        ("にじゅうごさい", "にじゅうごさい"),
+        ("ゼロ", "ぜろ"),
+        ("0", "ぜろ"),
+        ("じゅういち", "じゅういち"),
+        ("11", "じゅういち"),
+    ],
+)
+def test_number_normalization(raw, expected):
+    assert normalize_jp_for_grade(raw) == expected
+
+
+@pytest.mark.parametrize(
+    ("said", "target"),
+    [
+        ("1", "いち"),
+        ("いち", "1"),
+        ("25歳", "にじゅうごさい"),
+        ("にじゅうごさいです", "25歳です"),
+        ("二十五歳", "25歳"),
+        ("11", "じゅういち"),
+    ],
+)
+def test_number_variants_pass_grading(said, target):
+    g = grade_phrases(said, [target], spoken=True)
+    assert g["passed"] is True, g

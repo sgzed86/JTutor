@@ -24,7 +24,6 @@ export const MODE_INFO: Record<string, ModeInfo> = {
   shadow_dialog: { title: "Shadowing", description: "Speak quietly along with the dialog. Not graded.", icon: "🎧" },
   dialog: { title: "Role-play", description: "Partner line, your line, then swap roles.", icon: "💬" },
   intro_chat: { title: "Warm-up", description: "Answer a short question — any language is fine.", icon: "👋" },
-  self_check: { title: "Self-check", description: "Rate how well you managed this Can-do.", icon: "⭐" },
   repeat: { title: "Listen & repeat", description: "Play the CD, then say the same phrase.", icon: "🔁" },
 };
 
@@ -33,6 +32,10 @@ export const SUBSTEP_LABEL: Record<string, string> = {
   shadow: "Shadow",
   repeat: "Repeat",
   fill: "Fill in",
+  grammar_fill: "Grammar blank",
+  grammar_choose: "Grammar choose",
+  grammar_listen: "Grammar line",
+  grammar_say: "Grammar",
   choose: "Choose",
   note: "Notes",
   read: "Read",
@@ -46,10 +49,11 @@ export const SUBSTEP_LABEL: Record<string, string> = {
   kanji_type: "Type kanji",
   partner: "Partner line",
   learner: "Your line",
-  swap_learner: "Swap — you first",
-  swap_partner: "Swap — partner",
+  swap_learner: "Swap — you (yellow)",
+  swap_partner: "Swap — Yuki (orange)",
   reply: "Can-do reply",
   free_answer: "Your answer",
+  roleplay: "Can-do role-play",
   rate: "Rate yourself",
 };
 
@@ -59,7 +63,6 @@ export const PHASE_LABEL: Record<string, string> = {
   book: "Book practice",
   grammar: "Grammar",
   can_do_quiz: "Can-do check",
-  self_check: "Self-check",
   lesson_complete: "Complete",
 };
 

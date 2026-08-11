@@ -78,12 +78,12 @@ describe("phaseFor", () => {
     expect(phase).toEqual({ kind: "lesson_complete", nextLessonId: "L02" });
   });
 
-  it("opens the self-check when the server is waiting for one", () => {
+  it("treats legacy self_check state as idle so the learner can continue", () => {
     const phase = phaseFor({
       ...idle,
       payload: payload({ state: "self_check", self_check: { can_do_id: "CD_L01_01" } }),
     });
-    expect(phase).toEqual({ kind: "self_check", canDoId: "CD_L01_01" });
+    expect(phase.kind).toBe("idle_can_continue");
   });
 });
 
@@ -97,7 +97,6 @@ describe("presentationFor", () => {
     { kind: "transcribing" },
     { kind: "grading" },
     { kind: "idle_can_continue" },
-    { kind: "self_check", canDoId: "x" },
     { kind: "lesson_complete", nextLessonId: null },
     { kind: "blocked", reason: "mic_denied", message: "nope" },
   ] as const;
