@@ -131,8 +131,8 @@ SUBSTEPS: dict[str, SubStepSpec] = {
         "Kanji words", "Check each kanji and its reading.",
     ),
     "kanji_read": SubStepSpec(
-        "kanji_read", False, False, False, False,
-        "Read", "Read the example lines with the new kanji.",
+        "kanji_read", True, False, False, True,
+        "Read aloud", "Read this example line with the new kanji.",
     ),
     "kanji_type": SubStepSpec(
         "kanji_type", False, False, False, True,
@@ -188,9 +188,16 @@ def flow_substeps(activity: dict | None) -> list[str]:
             for it in (activity or {}).get("kanji_items") or []
             if isinstance(it, dict) and (it.get("kanji") or "").strip()
         ]
-        n = max(len(items), 1)
-        # Study all cards → read example lines → type each word
-        return ["kanji_study", "kanji_read"] + ["kanji_type"] * n
+        sentences = [
+            str(s).strip()
+            for s in (activity or {}).get("kanji_sentences") or []
+            if str(s).strip()
+        ]
+        n_items = max(len(items), 1)
+        # Study all cards → read each example line aloud → type each word
+        if sentences:
+            return ["kanji_study"] + ["kanji_read"] * len(sentences) + ["kanji_type"] * n_items
+        return ["kanji_study"] + ["kanji_type"] * n_items
     return list(FLOW_BY_MODE.get(mode, FLOW_BY_MODE["listen_repeat"]))
 
 
@@ -220,14 +227,38 @@ def pronounce_phrase_index(activity: dict | None, quiz_index: int) -> int | None
     return phrase_drill_index(activity, quiz_index, modes={"pronunciation"})
 
 
-def kanji_type_index(activity: dict | None, quiz_index: int) -> int | None:
-    """Index into kanji_items for the current kanji_type step (after study+read)."""
+def kanji_sentence_count(activity: dict | None) -> int:
+    return len(
+        [
+            str(s).strip()
+            for s in (activity or {}).get("kanji_sentences") or []
+            if str(s).strip()
+        ]
+    )
+
+
+def kanji_read_index(activity: dict | None, quiz_index: int) -> int | None:
+    """Index into kanji_sentences for the current kanji_read step (after study)."""
     if book_mode(activity) != "kanji_words":
         return None
-    # flow: [study, read] + type*n  → first type is quiz_index 2
-    if quiz_index < 2:
+    n_sents = kanji_sentence_count(activity)
+    if n_sents <= 0:
         return None
-    return quiz_index - 2
+    # flow: [study] + read*n + type*m → first read is quiz_index 1
+    if quiz_index < 1 or quiz_index > n_sents:
+        return None
+    return quiz_index - 1
+
+
+def kanji_type_index(activity: dict | None, quiz_index: int) -> int | None:
+    """Index into kanji_items for the current kanji_type step (after study+reads)."""
+    if book_mode(activity) != "kanji_words":
+        return None
+    # flow: [study] + read*n_sents + type*n → first type follows all reads
+    offset = 1 + kanji_sentence_count(activity)
+    if quiz_index < offset:
+        return None
+    return quiz_index - offset
 
 
 def graded_substeps() -> frozenset[str]:

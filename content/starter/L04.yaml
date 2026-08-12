@@ -319,22 +319,24 @@ activities:
     - polite
   book_mode: listen_fill
   blanks:
+  # CD: 呉さん、夫と子どもです。 / バトさん、紹介します。 / いもうととおとうとです。
   - prompt_jp: 呉さん、夫＿子どもです。
     answers:
     - と
-    full_jp: 夫と子どもです
-  - prompt_jp: バトさん。＿。妹と弟です。
+    full_jp: 呉さん、夫と子どもです。
+  - prompt_jp: バトさん、＿。
     answers:
     - 紹介します
     answer_alts:
     - しょうかいします
-    full_jp: 紹介します
-  - prompt_jp: 妹＿弟です。
+    full_jp: バトさん、紹介します。
+  - prompt_jp: ＿。
     answers:
-    - と
-    full_jp: いもうととおとうとです
+    - いもうととおとうとです
     answer_alts:
     - 妹と弟です
+    - いもうとと弟です
+    full_jp: いもうととおとうとです。
   picture_has_image: false
 - id: A8
   kind: conversation
@@ -888,12 +890,14 @@ activities:
   picture_has_image: false
   fill_pdf_page: 111
   blanks:
+  # Book の-forms; CD also accepts 誰ですか / あねの子どもです.
   - prompt_jp: これ、＿ですか？
     answers:
     - だれの
     answer_alts:
     - 誰の
     - だれ
+    - 誰
     full_jp: これ、だれのですか？
   - prompt_jp: ＿母です。
     answers:

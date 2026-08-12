@@ -21,6 +21,39 @@ MAX_TURNS = 900
 def _answer_for(payload: dict[str, Any]) -> str:
     """What a learner who always answers correctly would say at this step."""
     step = payload.get("step") or {}
+    sub = step.get("book_substep")
+
+    if sub == "kanji_type":
+        kp = step.get("kanji_prompt") or {}
+        if kp.get("kanji"):
+            return str(kp["kanji"])
+        if kp.get("reading"):
+            return str(kp["reading"])
+
+    if sub in ("choose", "read_check", "grammar_choose") or (
+        step.get("choices") and step.get("expects_text") and sub != "fill"
+    ):
+        expected = step.get("expected_phrases") or []
+        if expected and all(len(str(x)) <= 4 for x in expected):
+            return ",".join(str(x) for x in expected)
+        lesson_id = str(payload.get("lesson_id") or "")
+        activity_id = payload.get("activity_id")
+        if lesson_id and activity_id and sub in ("choose", "read_check"):
+            try:
+                from backend.app.curriculum_loader import load_lesson
+                from backend.app.lesson_flow import track_by_id
+
+                lesson = load_lesson(lesson_id)
+                full_act = track_by_id(lesson, activity_id) or {}
+                ids = [str(x).strip() for x in (full_act.get("correct_ids") or []) if str(x).strip()]
+                if ids:
+                    return ",".join(ids)
+            except Exception:
+                pass
+        choices = step.get("choices") or []
+        if choices:
+            return str(choices[0].get("id") or "a")
+
     if payload.get("state") == "grammar":
         expected = step.get("expected_phrases") or []
         if expected:
@@ -36,12 +69,17 @@ def _answer_for(payload: dict[str, Any]) -> str:
                     return str(ex)
             if point.get("point"):
                 return str(point["point"])[:80]
+
     target = step.get("say_target_jp")
     if target:
         return str(target)
     expected = step.get("expected_phrases") or step.get("say_alternates_jp") or []
     if expected:
         return str(expected[0])
+    if step.get("blank_prompt_jp"):
+        # Filled cloze answers live in expected_phrases when the server sends them
+        # (grammar facilitate). Book listen_fill strips answers — fall through.
+        pass
     line = step.get("dialog_line_jp")
     if line:
         return str(line)
@@ -63,6 +101,29 @@ def _answer_for(payload: dict[str, Any]) -> str:
                 return str(must[0])
 
     activity = payload.get("activity") or {}
+    if sub == "fill":
+        # Public activity strips answers — reload the lesson for the gold answer.
+        lesson_id = str(payload.get("lesson_id") or "")
+        activity_id = payload.get("activity_id")
+        b_idx = step.get("blank_index")
+        if lesson_id and activity_id is not None and isinstance(b_idx, int):
+            try:
+                from backend.app.curriculum_loader import load_lesson
+                from backend.app.lesson_flow import expected_for_blank, track_by_id
+
+                lesson = load_lesson(lesson_id)
+                full_act = track_by_id(lesson, activity_id) or {}
+                blanks = [
+                    b
+                    for b in (full_act.get("blanks") or [])
+                    if isinstance(b, dict) and (b.get("prompt_jp") or "").strip()
+                ]
+                if 0 <= b_idx < len(blanks):
+                    expected = expected_for_blank(blanks[b_idx])
+                    if expected:
+                        return str(expected[0])
+            except Exception:
+                pass
     phrases = activity.get("key_phrases") or []
     if phrases:
         return str(phrases[0])
@@ -160,9 +221,10 @@ async def _run_async(
                 trace.append(_trace_row(f"say:{text}", payload))
                 continue
 
-            # Grammar workbook blanks are typed (book listen_fill still advances in goldens).
-            if payload.get("state") == "grammar" and step.get("expects_text"):
+            # Typed workbook steps: grammar blanks, book listen_fill, kanji_type, MCQ.
+            if step.get("expects_text"):
                 text = answer(payload)
+                # Choice steps submit ids; cloze/kanji submit Japanese.
                 payload = await orchestrator.user_message(db, lesson_id, text, spoken=False)
                 trace.append(_trace_row(f"type:{text}", payload))
                 continue

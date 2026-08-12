@@ -136,6 +136,9 @@ export type Step = {
   kanji_sentences?: string[];
   /** Headwords to underline in the kanji reading examples. */
   kanji_focus_words?: string[];
+  /** Which kanji example line the learner should read aloud (0-based). */
+  kanji_read_index?: number | null;
+  kanji_read_total?: number | null;
   kanji_prompt?: {
     kanji?: string | null;
     reading?: string | null;

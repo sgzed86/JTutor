@@ -1174,13 +1174,13 @@ activities:
   - prompt_jp: お茶、飲みますか？ — はい、＿。
     answers:
     - お願いします
-    full_jp: はい、お願いします。
+    full_jp: お茶、飲みますか？ — はい、お願いします。
   - prompt_jp: お茶、飲みますか？ — いいえ、＿。
     answers:
     - けっこうです
     answer_alts:
     - 結構です
-    full_jp: いいえ、けっこうです。
+    full_jp: お茶、飲みますか？ — いいえ、けっこうです。
   fill_pdf_page: 133
 - id: A26
   kind: grammar_form
