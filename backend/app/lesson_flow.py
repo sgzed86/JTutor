@@ -240,7 +240,7 @@ def _kanji_items(activity: dict | None) -> list[dict]:
 
 def grade_kanji_type(text: str, item: dict) -> dict:
     """Accept the kanji headword, or its reading as a soft alternative."""
-    from backend.app.phrase_grade import grade_phrases, current_policy
+    from backend.app.phrase_grade import current_policy, grade_phrases
 
     kanji = (item.get("kanji") or "").strip()
     reading = (item.get("reading") or "").strip()

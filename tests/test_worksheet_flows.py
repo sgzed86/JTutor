@@ -10,13 +10,13 @@ from backend.app.book_modes import (
 )
 from backend.app.curriculum_loader import load_lesson
 from backend.app.lesson_flow import (
+    _fill_prompt,
     book_step,
     expected_for_blank,
     expected_phrases_for_substep,
     grammar_drills,
     grammar_item,
     track_by_id,
-    _fill_prompt,
 )
 
 

@@ -30,6 +30,12 @@ export type SubStep =
   | "kanji_study"
   | "kanji_read"
   | "kanji_type"
+  | "grammar_listen"
+  | "grammar_fill"
+  | "grammar_choose"
+  | "grammar_say"
+  | "grammar_read"
+  | "roleplay"
   | "reply"
   | "free_answer"
   | "rate";
