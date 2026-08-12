@@ -10,6 +10,7 @@ from backend.app.book_modes import (
     book_mode,
     fill_blank_index,
     flow_substeps,
+    kanji_read_index,
     kanji_type_index,
     pronounce_phrase_index,
     repeat_phrase_index,
@@ -239,7 +240,7 @@ def _kanji_items(activity: dict | None) -> list[dict]:
 
 def grade_kanji_type(text: str, item: dict) -> dict:
     """Accept the kanji headword, or its reading as a soft alternative."""
-    from backend.app.phrase_grade import grade_phrases, current_policy
+    from backend.app.phrase_grade import current_policy, grade_phrases
 
     kanji = (item.get("kanji") or "").strip()
     reading = (item.get("reading") or "").strip()
@@ -617,24 +618,37 @@ def _book_step_impl(activity: dict, lesson: dict, quiz_index: int) -> tuple[str,
             for it in _kanji_items(activity)
             if str(it.get("kanji") or "").strip()
         ]
-        # Match the book prompt (blank = underline in the textbook).
-        jp = "＿＿＿＿の漢字に注意して読みましょう。"
-        en = "Read the following and pay careful attention to the kanji with ____."
-        circled = "①②③④⑤⑥⑦⑧⑨⑩"
-        numbered = [
-            f"{circled[i] if i < len(circled) else f'{i + 1}.'} {s}" for i, s in enumerate(sentences)
-        ]
+        r_idx = kanji_read_index(activity, quiz_index)
+        total = len(sentences) or 1
+        n = (r_idx + 1) if r_idx is not None else 1
+        line = (
+            sentences[min(r_idx, len(sentences) - 1)]
+            if (r_idx is not None and sentences)
+            else (sentences[0] if sentences else "")
+        )
+        # Book: read the underlined-kanji lines aloud, one at a time.
+        jp = "この せんを よんでください。"
+        en = (
+            f"Read this line aloud ({n}/{total}), paying attention to the underlined kanji."
+            if line
+            else "Read the kanji example lines aloud."
+        )
         step = _step_base(activity, sub, quiz_index, lesson)
         step.update(
             {
                 "play_audio": [],
-                "expect_speech": False,
+                "expect_speech": True,
+                "expects_speech": True,
                 "auto_advance": False,
                 "instruction_en": en,
                 "book_mode": "kanji_words",
                 "kanji_sentences": sentences,
                 "kanji_focus_words": focus_words,
-                "passage_jp": "\n".join(numbered) or None,
+                "kanji_read_index": r_idx,
+                "kanji_read_total": total,
+                "say_target_jp": line or None,
+                "passage_jp": line or None,
+                "model_before_speech": False,
             }
         )
         return jp, en, step
@@ -952,6 +966,12 @@ def expected_phrases_for_substep(activity: dict, quiz_index: int) -> list[str]:
             blank = blanks[min(b_idx, len(blanks) - 1)]
             return expected_for_blank(blank)
         return expected_for_blank(blanks[0]) if blanks else phrases
+    if sub == "kanji_read":
+        sentences = [s for s in (activity.get("kanji_sentences") or []) if str(s).strip()]
+        r_idx = kanji_read_index(activity, quiz_index)
+        if r_idx is not None and sentences:
+            return [sentences[min(r_idx, len(sentences) - 1)]]
+        return sentences[:1]
     return phrases
 
 
@@ -963,6 +983,33 @@ def _grammar_examples(point: dict) -> list[str]:
         elif isinstance(ex, str) and ex.strip():
             expected.append(ex.strip())
     return [e for e in expected if e]
+
+
+def _is_worksheet_grammar_point(point: dict) -> bool:
+    """Keep curated points; drop OCR dialogue debris with nothing to practice."""
+    if not isinstance(point, dict):
+        return False
+    if any(isinstance(e, dict) for e in (point.get("exercises") or [])):
+        return True
+    if _grammar_examples(point):
+        return True
+    text = (point.get("point") or "").strip()
+    if not text:
+        return False
+    # Dialogue / emoji OCR leftovers from worksheet scans.
+    if re.search(r"[😞😄]", text):
+        return False
+    if text.startswith(("A：", "A:", "B：", "B:")):
+        return False
+    if "→（" in text or "→(" in text:
+        return False
+    # Pattern-like labels (N です, V-て, 〜ます) still open the worksheet page.
+    if re.search(r"(です|ます|じゃない|〜|N\b|V-|イ\s*A|ナ\s*A|【)", text):
+        return True
+    # Bare truncated dialogue fragments without examples — skip.
+    if len(text) > 24 and ("？" in text or "?" in text):
+        return False
+    return len(text) <= 24
 
 
 def grammar_turns(ex: dict) -> list[dict]:
@@ -1026,9 +1073,11 @@ def grammar_turns(ex: dict) -> list[dict]:
 
 
 def grammar_drills(lesson_id: str) -> list[dict]:
-    """Flatten grammar points into drills (each workbook turn is one step)."""
+    """Flatten grammar points into drills (each workbook turn/line is one step)."""
     drills: list[dict] = []
     for point in _grammar_for_lesson(lesson_id):
+        if not _is_worksheet_grammar_point(point):
+            continue
         exercises = [e for e in (point.get("exercises") or []) if isinstance(e, dict)]
         base = {
             "point": (point.get("point") or "").strip(),
@@ -1065,16 +1114,34 @@ def grammar_drills(lesson_id: str) -> list[dict]:
                         }
                     )
         else:
-            drills.append(
-                {
-                    **base,
-                    "exercise": None,
-                    "turn": None,
-                    "exercise_index": 0,
-                    "turn_index": 0,
-                    "facilitate": False,
-                }
-            )
+            # No facilitate turns: walk every example line (worksheet practice lines).
+            example_lines = _grammar_examples(point)
+            if example_lines:
+                for ei, line in enumerate(example_lines):
+                    drills.append(
+                        {
+                            **base,
+                            "examples": [{"jp": line}],
+                            "example_index": ei,
+                            "example_total": len(example_lines),
+                            "exercise": None,
+                            "turn": None,
+                            "exercise_index": 0,
+                            "turn_index": 0,
+                            "facilitate": False,
+                        }
+                    )
+            else:
+                drills.append(
+                    {
+                        **base,
+                        "exercise": None,
+                        "turn": None,
+                        "exercise_index": 0,
+                        "turn_index": 0,
+                        "facilitate": False,
+                    }
+                )
     return drills
 
 
@@ -1167,7 +1234,7 @@ def grammar_intro(lesson_id: str) -> tuple[str, str, dict]:
         jp = f"ぶんぽうの れんしゅう です。{len(drills)} こ あります。ワークシートを みてください。"
         en = (
             f"Grammar worksheet — {len(drills)} lines. "
-            "I will read the fixed lines; you type blanks or choose answers."
+            "We will go through each line: I read fixed lines; you type blanks, choose, or say examples."
         )
     step = {
         "phase": "grammar",
@@ -1347,11 +1414,20 @@ def grammar_item(drill: dict, index: int, total: int) -> tuple[str, str, dict]:
     # Strip leaked answer tails like 「れい：…」 / 「Say: …」 from older prompts.
     prompt_jp = re.split(r"[。．]?\s*れい[：:]", prompt_jp, maxsplit=1)[0].strip(" 。．")
     prompt_en = re.split(r"\s*[—-]\s*say\b|\s+Say:\s*", prompt_en, maxsplit=1, flags=re.I)[0].strip(" .")
+    example_i = drill.get("example_index")
+    example_n = drill.get("example_total")
 
     if target:
         jp = prompt_jp or f"ぶんぽう {index + 1}。つぎを いってください。"
-        en = prompt_en or f"Grammar {index + 1}/{total} ({pattern_en})."
-        instruction = prompt_en or f"Grammar {index + 1}/{total} ({pattern_en}) — say the line."
+        if example_i is not None and example_n:
+            en = (
+                f"Grammar worksheet line {index + 1}/{total} ({pattern_en}) — "
+                f"say example {int(example_i) + 1} of {int(example_n)}."
+            )
+            instruction = en
+        else:
+            en = prompt_en or f"Grammar {index + 1}/{total} ({pattern_en})."
+            instruction = prompt_en or f"Grammar {index + 1}/{total} ({pattern_en}) — say the line."
     else:
         jp = f"ぶんぽう {index + 1}。{pattern}。ワークシートを みてください。"
         en = (

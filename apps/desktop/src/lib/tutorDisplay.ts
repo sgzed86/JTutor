@@ -50,6 +50,8 @@ export type TutorStageModel = {
   kanjiItems: { kanji: string; reading?: string | null; gloss_en?: string | null }[];
   kanjiSentences: string[];
   kanjiFocusWords: string[];
+  kanjiReadIndex: number | null;
+  kanjiReadTotal: number | null;
   kanjiPrompt: {
     kanji?: string | null;
     reading?: string | null;
@@ -140,6 +142,8 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
   const kanjiPrompt = step.kanji_prompt ?? null;
   const kanjiSentences = (step.kanji_sentences ?? []).map((s) => String(s).trim()).filter(Boolean);
   const kanjiFocusWords = (step.kanji_focus_words ?? kanjiItems.map((it) => it.kanji)).filter(Boolean);
+  const kanjiReadIndex = step.kanji_read_index ?? null;
+  const kanjiReadTotal = step.kanji_read_total ?? null;
 
   if (!sayTargetJp && phrases.length && (substep === "repeat" || substep === "select" || substep === "reply")) {
     sayTargetJp = phrases[0];
@@ -194,9 +198,13 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     instructionEn = instructionEn || "Check each kanji and reading, then continue.";
   } else if (substep === "kanji_read") {
     focus = "kanji_read";
-    sayLabel = "Read these lines";
+    const n = (step.kanji_read_index ?? 0) + 1;
+    const total = step.kanji_read_total ?? kanjiSentences.length;
+    sayLabel = total ? `Read line ${n} of ${total}` : "Read aloud";
     instructionEn =
-      instructionEn || "Read the following and pay careful attention to the underlined kanji.";
+      instructionEn ||
+      "Read this line aloud — underlined kanji are the ones from this lesson.";
+    sayTargetJp = step.say_target_jp ?? step.passage_jp ?? null;
   } else if (substep === "kanji_type") {
     focus = "kanji_type";
     const kp = step.kanji_prompt;
@@ -352,6 +360,8 @@ export function buildTutorStageModel(payload: TutorPayload): TutorStageModel {
     kanjiItems,
     kanjiSentences,
     kanjiFocusWords,
+    kanjiReadIndex,
+    kanjiReadTotal,
     kanjiPrompt,
     substeps: step.substeps ?? [],
     substepIndex: step.substep_index ?? null,

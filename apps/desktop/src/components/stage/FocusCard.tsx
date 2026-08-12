@@ -132,7 +132,7 @@ export function FocusCard({
             </button>
           ))}
         </div>
-        <p className="focus-card__alt">Tap a card to hear it. Then tap Next to read the example lines.</p>
+        <p className="focus-card__alt">Tap a card to hear it. Then tap Next to read each example line aloud.</p>
       </div>
     );
   }
@@ -142,32 +142,38 @@ export function FocusCard({
   }
 
   if (model.focus === "kanji_read") {
+    const currentIdx = model.kanjiReadIndex ?? 0;
     const lines = model.kanjiSentences.length
       ? model.kanjiSentences
       : (model.passageJp || "")
           .split("\n")
           .map((s) => s.replace(/^[①②③④⑤⑥⑦⑧⑨⑩\d.]+\s*/, "").trim())
           .filter(Boolean);
+    const current = model.sayTargetJp || lines[currentIdx] || lines[0] || "";
     return (
       <div className="focus-card" data-variant="kanji-read">
         <div className="focus-card__head">
           <span className="focus-card__label">{model.sayLabel}</span>
-          <span className="pill">Kanji</span>
+          <span className="pill">Read aloud</span>
         </div>
         <p className="focus-card__alt">
-          Underlined kanji are the ones from this lesson — read the lines carefully.
+          Underlined kanji are from this lesson — say this line into the mic.
         </p>
-        <ol className="kanji-read-list jp">
-          {lines.map((line, i) => (
-            <li key={`${i}-${line}`}>
-              <span className="kanji-read-list__mark" aria-hidden>
-                {CIRCLED[i] ?? `${i + 1}.`}
-              </span>
-              <span className="kanji-read-list__text">{highlightKanjiFocus(line, model.kanjiFocusWords)}</span>
-            </li>
-          ))}
-        </ol>
-        <p className="focus-card__alt">Tap Next when you are ready to type the words.</p>
+        <p className="kanji-read-current jp" aria-label="Line to read">
+          {highlightKanjiFocus(current, model.kanjiFocusWords)}
+        </p>
+        {lines.length > 1 && (
+          <ol className="kanji-read-list jp" aria-label="All example lines">
+            {lines.map((line, i) => (
+              <li key={`${i}-${line}`} data-current={i === currentIdx ? "1" : "0"}>
+                <span className="kanji-read-list__mark" aria-hidden>
+                  {CIRCLED[i] ?? `${i + 1}.`}
+                </span>
+                <span className="kanji-read-list__text">{highlightKanjiFocus(line, model.kanjiFocusWords)}</span>
+              </li>
+            ))}
+          </ol>
+        )}
       </div>
     );
   }

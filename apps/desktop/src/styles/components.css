@@ -775,20 +775,30 @@
 .focus-card[data-variant="kanji-read"] {
   text-align: left;
 }
+.kanji-read-current {
+  margin: var(--sp-3) 0 0;
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+  line-height: 1.55;
+}
 .kanji-read-list {
   list-style: none;
   margin: var(--sp-3) 0 0;
   padding: 0;
   display: grid;
-  gap: var(--sp-3);
+  gap: var(--sp-2);
 }
 .kanji-read-list li {
   display: grid;
   grid-template-columns: 2.25rem 1fr;
   gap: var(--sp-2);
   align-items: baseline;
-  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
   line-height: 1.55;
+  opacity: 0.55;
+}
+.kanji-read-list li[data-current="1"] {
+  opacity: 1;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
 }
 .kanji-read-list__mark {
   color: var(--text-muted);

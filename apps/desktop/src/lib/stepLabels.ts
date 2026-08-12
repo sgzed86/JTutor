@@ -45,7 +45,7 @@ export const SUBSTEP_LABEL: Record<string, string> = {
   pronounce: "Pronunciation",
   reflect: "Life & culture",
   kanji_study: "Kanji words",
-  kanji_read: "Read kanji lines",
+  kanji_read: "Read kanji line aloud",
   kanji_type: "Type kanji",
   partner: "Partner line",
   learner: "Your line",

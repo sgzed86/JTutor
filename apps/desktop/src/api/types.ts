@@ -30,6 +30,12 @@ export type SubStep =
   | "kanji_study"
   | "kanji_read"
   | "kanji_type"
+  | "grammar_listen"
+  | "grammar_fill"
+  | "grammar_choose"
+  | "grammar_say"
+  | "grammar_read"
+  | "roleplay"
   | "reply"
   | "free_answer"
   | "rate";
@@ -136,6 +142,9 @@ export type Step = {
   kanji_sentences?: string[];
   /** Headwords to underline in the kanji reading examples. */
   kanji_focus_words?: string[];
+  /** Which kanji example line the learner should read aloud (0-based). */
+  kanji_read_index?: number | null;
+  kanji_read_total?: number | null;
   kanji_prompt?: {
     kanji?: string | null;
     reading?: string | null;
